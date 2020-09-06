@@ -3,18 +3,73 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://subedi.ml/</loc>
+    <loc>https://subedi.ml/about/</loc>
     <lastmod>2020-09-05T17:12:41+05:45</lastmod>
   </url>
   
   <url>
-    <loc>https://subedi.ml/posts/my-first-post/</loc>
-    <lastmod>2020-09-05T17:12:41+05:45</lastmod>
+    <loc>https://subedi.ml/</loc>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/capstone/</loc>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/compiler/</loc>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/posts/ducompiler/</loc>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/java/</loc>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
   </url>
   
   <url>
     <loc>https://subedi.ml/posts/</loc>
-    <lastmod>2020-09-05T17:12:41+05:45</lastmod>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/</loc>
+    <lastmod>2013-09-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/faro/</loc>
+    <lastmod>2012-12-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/group-theory/</loc>
+    <lastmod>2012-12-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/posts/faro_shuffle/</loc>
+    <lastmod>2012-12-05T17:12:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/posts/mandelbrot_area/</loc>
+    <lastmod>2012-11-02T10:02:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/mandelbrot/</loc>
+    <lastmod>2012-11-02T10:02:41+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/monte-carlo/</loc>
+    <lastmod>2012-11-02T10:02:41+05:45</lastmod>
   </url>
   
   <url>
@@ -23,10 +78,6 @@
   
   <url>
     <loc>https://subedi.ml/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/tags/</loc>
   </url>
   
 </urlset>

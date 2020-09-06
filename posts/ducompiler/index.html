@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi </title>
+	<title>Ayush Subedi  | Compiler from Scratch</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.74.2" />
 	
@@ -26,9 +26,6 @@
 
 	
 
-	
-	<link rel="alternate" href="/series/index.xml" type="application/rss+xml" title="Ayush Subedi">
-	<link rel="feed" href="/series/index.xml" type="application/rss+xml" title="Ayush Subedi">
 	
 	
 	
@@ -69,11 +66,149 @@ onload='renderMathInElement(document.body);'></script>
 		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
 			<div
 				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
-					<div class="pb-4">
-		<h1 >
-			<a href="https://subedi.ml" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
-		</h1>
-	</div>
+				
+<div>
+	<h2>
+		<a href="https://subedi.ml" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">Compiler from Scratch</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">For our Computer Science capstone project, we take on the beast - building a compiler from scratch.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/compiler'>compiler</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/java'>java</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/capstone'>capstone</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2013-09-05T17:12:41&#43;05:45">2013-9-5 17:12</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h3 id="the-du-compiler">The Du Compiler:</h3>
+<p>For our Computer Science capstone project, we take on the beast - building a compiler from scratch. We had about three months to do it but we really had no clue of what we were doing for the first month and a half. Although we knew plenty of what there was to know about compilers in theory, we soon realized that building one from scratch was not going to be easy. We started with baby steps, and by the time the project was due, we were taking giant leaps (we had no other option). In the end, it turned out to be a reasonably fine compiler and an excellent experience. During these three months, I had the best and the worst experiences of my academic life. Therefore, this project is really special.</p>
+<p>Since this project belongs to two other people also, I won&rsquo;t be posting any source code. This post will just have some example code for Du-Compiler.</p>
+<p>Finally, for anyone looking for a reasonably challenging senior projects, I would strongly encourage building a compiler. I say this for couple of reasons. First of all, it changes the way we look at code. It gives a better understanding of what exactly happens when the compile button is hit. In another words, it makes you aware of what is going on internally. Secondly, it involves learning/relearning several Computer Science topics such as regular expressions, hash table, data-structures, tree traversals, assembly level programming etc. It also involves A LOT of coding. When it all pans out, you are going to love what you have in your skill set.</p>
+<h4 id="examples">Examples</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Hello World
+duhawk helloworld{
+  duPrint(%Hello World%);
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Simple Addition
+duhawk simpleAdd{ 
+  int a;
+  a=5;
+  int b;    
+  b = a + 5;
+  duPrint b;  
+}
+//Result: 10
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Simple Pattern
+duhawk test{ 
+  int i;
+  i=1;
+  int j;
+  j=1;
+  while (i<span style="color:#960050;background-color:#1e0010">&lt;</span>=10){
+   j=1;
+   while (j<span style="color:#960050;background-color:#1e0010">&lt;</span>=i){
+    duPrint(%*%);
+    j=j + 1;
+   }
+   duPrintln(%%);
+   i= i + 1;
+  }
+} 
+
+/*
+Result
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+*/
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">duhawk test{ 
+int c;  
+int d;     
+duPrint (%Multiplication table of: %);  
+duInput a;
+duPrint (%upto: %);
+duInput b;     
+
+ for (c=1;c<span style="color:#960050;background-color:#1e0010">&lt;</span>=b;c=c + 1){
+         duPrint a;
+         duPrint (% X %);
+         duPrint c;
+         duPrint (% = %);
+         d = a*c;
+         duPrintln d;    
+        }
+} 
+
+/*
+Input for a = 19
+Input for b = 15
+Result:
+Multiplication table of: 19
+upto: 15
+19 X 1 = 19
+19 X 2 = 38
+19 X 3 = 57
+19 X 4 = 76
+19 X 5 = 95
+19 X 6 = 114
+19 X 7 = 133
+19 X 8 = 152
+19 X 9 = 171
+19 X 10 = 190
+19 X 11 = 209
+19 X 12 = 228
+19 X 13 = 247
+19 X 14 = 266
+19 X 15 = 285
+*/
+</code></pre></div></div>
+	</section>
+
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
 	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
 	
 	
@@ -84,7 +219,8 @@ onload='renderMathInElement(document.body);'></script>
 	</li>
 	
 	<li class="px-1 md:px-0">
-		<a href="/posts/" title="Posts page" >
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
 			Posts
 		</a>
 	</li>
@@ -102,10 +238,6 @@ onload='renderMathInElement(document.body);'></script>
 	</li>
 	
 	
-	<li>
-		<a href='/series/index.xml'>RSS</a>
-	</li>
-	
 	
 	
 	<div id="fastSearch" class="m-0">
@@ -118,62 +250,6 @@ onload='renderMathInElement(document.body);'></script>
 	</div>
 	
 </ul>
-			</div>
-		</header>
-		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
-			
-
-
-<article>
-	<div>
-		
-	</div>
-</article>
-<div>
-	<section>
-		
-	</section>
-</div>
-
-		</main>
-		<aside role="contentinfo"
-			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
-			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
-				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="md:max-w-xs  flex flex-col md:items-end pt-2">
 	
 
 <div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
@@ -248,20 +324,78 @@ onload='renderMathInElement(document.body);'></script>
 	</a>
 	
 </div>
-	<div class="a-gray text-sm text-gray-500 leading-tight">
+	<div class="text-sm text-gray-500 leading-tight a-gray">
 		Copyright © 2009–2020
 		<br />
-		Built with Hugo and theme <a 
-			href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>.
-			<br />
-			16 pages, 2421 words in total.
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 471 words in this page.
 	</div>
 </div>
+
 			</div>
 		</aside>
 		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
 			
-			
+<hr class="double-line" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/faro_shuffle/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        The Faro Shuffle
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/about/">
+        Resume
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/faro_shuffle/">The Faro Shuffle</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/mandelbrot_area/">Area of the Mandelbrot Set</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "ayushsubedidisqus" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+<hr />
+
 		</footer>
 		
 

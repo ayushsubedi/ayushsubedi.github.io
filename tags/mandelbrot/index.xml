@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mandelbrot on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/mandelbrot/</link>
+    <description>Recent content in mandelbrot on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Fri, 02 Nov 2012 10:02:41 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/mandelbrot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Area of the Mandelbrot Set</title>
+      <link>https://subedi.ml/posts/mandelbrot_area/</link>
+      <pubDate>Fri, 02 Nov 2012 10:02:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/mandelbrot_area/</guid>
+      <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-ofFkTWEt7kw/U0evleXzgRI/AAAAAAAACl8/zg4_1dxmg7w/s1600/800px-Mandel_zoom_08_satellite_antenna.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The area of the Mandelbrot Set&lt;/strong&gt;
+The Mandelbrot set is a fractal (illustrates self-similarity). The set is obtained from the quadratic recurrence equation,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/V7ITPlrYZthFKEr263nwxpjVUiiLdwJ3L5z8rZPxVshqkDW1xj_BcYKUrf246BkzlwaXV5QoVZzFNUkmiXB6TuUKl8Y9l3nhVgA3dZr6_ovtk4rGCrb-AixpAtdrqCgkISYZDg56ngNsLPxZ6ys2h5hnDZXIlGU=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;with&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/X-AGG1lSNsjhTrneJ3h2fypSNEr7abgYdF71JPMEwx24toeCKmXIa9c_9XKl09oRwaE1i_4Cx4AJ0tt9pg6Jn20iP6lveWG7K60LQjInQKJPAA=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;, where points&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/Sz22hiBRGEIHg61Cft2B1Ngq6LjmT0TqvwbBIaH565JVFBbPbc1_AUAAQgs81OxuVd1KqFrCYZJo=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;in the complex plane for which the orbit of&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/LR4RXn0pCOL_pp956EEQ7ZXawp2p-vTPX_UjFP7oPeqA2kDvd1OoEsoB41Rb6piOeYSi1-EZ2lzInyCkRlQ4vzL5F6KGOReYfco-WxhwX2I=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;does not tend to infinity are in the set. The Mandelbrot set is a compact set, contained in the closed disk of radius 2 around the origin. Since it is contained in a disk of known area, it is possible to approximate the area of the Mandelbrot Set&amp;rsquo;s using Monte Carlo method.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-FCl6L4iNcbQ/Uo4VZENpRWI/AAAAAAAACFM/MpzH9iF2b3c/s400/use.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Java:&lt;/strong&gt;
+Since Java does not inherently understand complex numbers, a &amp;ldquo;real&amp;rdquo; approach will be applied to perform the quadratic recurrence equation,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/V7ITPlrYZthFKEr263nwxpjVUiiLdwJ3L5z8rZPxVshqkDW1xj_BcYKUrf246BkzlwaXV5QoVZzFNUkmiXB6TuUKl8Y9l3nhVgA3dZr6_ovtk4rGCrb-AixpAtdrqCgkISYZDg56ngNsLPxZ6ys2h5hnDZXIlGU=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;First, as shown in the figure above, inscribe the disk in a square of length 4 units. Let&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/0yH1bkH6k3-YTHGlilL24aCKOeBoQY6IIs1otCW1XJZziPl873Drng-ae1OaB05EyYRvTp-xGlDOeyfE_vBhS5E=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;represent the coordinate along x-axis (real) and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/dxhyDjv6XZgw-_WuwpK9p8L2LK7A-RFhcxXe-fn9uyjp7RObuV1kvVmcmuYlTr8oO_Te_rWY4ylDCAMtvdVgp6E=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;represent the coordinate along y axis. Now set&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/eP_4t-eW257n3jmR8D1kh4EEJ1tCPsiySrBJrsqqHw-ZBk4lL07CD6G3itIldJdehKKEzjywvisTTqD9LxeN2MRQnQ=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/ZFARvm9iFhC_1Be81TOSDOf2Jho1NnN0L0WYIv-MO_249eSxbbNunvaDe4Svun8g20b8AGQEYpuTl38Q6ilzYM9A2Q=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;, where&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/hdeTD5wklsqEAljaDSnzAq7RFC4y_QjSvbKC_TSNLFZSYcOpoD5AANfGLwB95TiqmUV4OSujWjm8=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/k4rrnp9_gt6i9Zyf7jMI0qiROpdnvBXWqwQIWfzrgTRSkDHpLk198pua5NGt05fPHbyws5HqDftE=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;are randomly generated real numbers from [-2, 2]. Basically, the&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/hdeTD5wklsqEAljaDSnzAq7RFC4y_QjSvbKC_TSNLFZSYcOpoD5AANfGLwB95TiqmUV4OSujWjm8=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/k4rrnp9_gt6i9Zyf7jMI0qiROpdnvBXWqwQIWfzrgTRSkDHpLk198pua5NGt05fPHbyws5HqDftE=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;coordinates are being duplicated at this step to preserve the point&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/Sz22hiBRGEIHg61Cft2B1Ngq6LjmT0TqvwbBIaH565JVFBbPbc1_AUAAQgs81OxuVd1KqFrCYZJo=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;. Next, iteratively compute the following from&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/rpzM0IBRXdvzJoamA8eeL5M5X8C1-x23i7_UE8_wT6sePiID0hgrA1EMyQjoWnids9gT_mqKcUn4evYYjnG4Tt6fcKgLu0YRpqQnXxT-nwpdyBbPTIcr3hutDaJfx6fR3meYBj5zEgZvpQw=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;(for programming purposes, choose a large Dwell Limit). Simultaneously, check if&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/u2tI5wMdfS6PewRi_P8jgvOKOfocArri-stZmD4ByAlFuq3A5lydC11XQzizAhdLmahxzXnVM8SEk362OxJUJrU2NBbtFjAORPjnrzla2qjGK9TG5I1-XYbHwg5oeI2YHBjHzEfjVz3lI5mYmXq9=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;. If yes, increase count (not in the set) by 1 and get out of the loop (since all points should be contained in the disk).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/m8TcApmBEEAw108G1VlY7-EvQ4Be6UvoxXt2M400U8pseBlJtkposiJNr1X8Q2cBZjMu9H6EBYFOfvGzTb5ceTC9qQSxihh-xbGA81wKh-tGP3I7xWrJENQKCdjGHxorHdQ2SZJ0OzbHgR0kDkr-iK9KOwWE8mQ7Ww=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/umqP60O-kSi-Pn9U9wOWkcr8q6dUag1pk_PQ0VRtJI7Yp2cwzwK3s6JsC3WS2j7sk8m8hp04espvb2DAOPK0JF37-PEIQvdGq_Q6GKKNQm2EaAwlrt_eoRBuTS9vHfE=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Compute the ratio of number of points that are in the set to total number of points used. Then multiply the area of square (16 units square) to get the approximate are of the Mandelbrot set.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Java Code:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import java.util.Date;
+import java.util.Random;
+
+public class MandelbrotArea {
+
+    public static int mcRep = 5000;
+    public static int dwellLimit = 2048;
+    
+
+    /**
+     * @return random double in [-2,2]
+     */
+    public static double random() {
+        return (new Random().nextDouble() * 4) - 2;
+    }
+
+    /**
+     * @param r: real part of the complex number
+     * @param s: imaginary part of the complex number
+     * @return
+     */
+    public static boolean isMandelbrotSet(double r, double s) {
+        
+        double a = r, b = s, temp;
+        
+        // Iterative function
+        for (int j = 1; j &amp;lt;= dwellLimit; j++) {
+            temp = a;
+            a = Math.pow(a, 2) - Math.pow(b, 2) + r;
+            b = (2 * temp * b) + s;
+            
+            if (Math.pow(a, 2) + Math.pow(b, 2) &amp;gt; 4) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        long startTime = new Date().getTime();
+        long count = 0;
+        for (int i = 0; i &amp;lt;= mcRep; i++) {
+            if (isMandelbrotSet(random(), random())) {
+                count++;
+            }
+        }
+        System.out.println(&amp;quot;Input -&amp;gt; DwellLimit: &amp;quot; + dwellLimit + &amp;quot;, McRep: &amp;quot; + mcRep);
+        System.out.println(&amp;quot;Area: &amp;quot; + ((double) (count * 16)) / mcRep);
+        System.out.println(&amp;quot;Execution time: &amp;quot; + (new Date().getTime() - startTime) + &amp;quot; ms&amp;quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Input -&amp;gt; DwellLimit: 2048, McRep: 5000
+Area: 1.5136
+Execution time: 389 ms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;monte.Carlo &amp;lt;- 5000
+x &amp;lt;- runif(monte.Carlo, -2, 2)
+y &amp;lt;- runif(monte.Carlo, -2, 2)
+list &amp;lt;- numeric(monte.Carlo)
+
+for (j in 1:monte.Carlo){
+  list[j] &amp;lt;- if (inmandelbrotset(complex(real = x[j], imaginary = y[j]))) 1 else 0
+}
+area&amp;lt;-mean(list)*16
+
+
+# function that checks if a point E mandelbrot set
+inmandelbrotset &amp;lt;- function(c)
+{
+  dwell.limit &amp;lt;- 2048
+  z &amp;lt;- 0  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

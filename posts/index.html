@@ -32,17 +32,6 @@
 	
 	
 	
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-FAKE', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 	
 	
 	
@@ -89,15 +78,15 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<li class="px-1 md:px-0">
-		<a href="/posts/" title="Posts page" 
-			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
-			Posts
+		<a href="/about/" title="About page" >
+			About
 		</a>
 	</li>
 	
 	<li class="px-1 md:px-0">
-		<a href="/categories/" title="Categories page" >
-			Categories
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
 		</a>
 	</li>
 	
@@ -108,8 +97,8 @@ onload='renderMathInElement(document.body);'></script>
 	</li>
 	
 	<li class="px-1 md:px-0">
-		<a href="/about/" title="About page" >
-			About
+		<a href="/categories/" title="Categories page" >
+			Categories
 		</a>
 	</li>
 	
@@ -119,6 +108,15 @@ onload='renderMathInElement(document.body);'></script>
 	</li>
 	
 	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
 	
 </ul>
 			</div>
@@ -132,16 +130,52 @@ onload='renderMathInElement(document.body);'></script>
 		<hr class="p-0 pt-4 m-0" />
 		<section class="flex flex-col md:flex-row items-start items-baseline">
 			<div class="md:pl-4 pb-2 md:sticky top-0 order-1 pr-6">
-				<h2 class=" text-eucalyptus-600">2020</h2>
+				<h2 class=" text-eucalyptus-600">2013</h2>
 			</div>
 			<ul class="order-2 flex-grow">
 				
 				<div class="py-2 flex">
 					<span class="font-serif pr-4 flex-shrink-0">09-05</span>
 					<div class="font-serif font-medium">
-						<a href="https://subedi.ml/posts/my-first-post/">
-							My First Post
+						<a href="https://subedi.ml/posts/ducompiler/">
+							Compiler from Scratch
 						</a>
+						
+						<div class="pl-4  text-gray-600 font-light">For our Computer Science capstone project, we take on the beast - building a compiler from scratch.</div>
+						
+					</div>
+				</div>
+				
+			</ul>
+		</section>
+		
+		<hr class="p-0 pt-4 m-0" />
+		<section class="flex flex-col md:flex-row items-start items-baseline">
+			<div class="md:pl-4 pb-2 md:sticky top-0 order-1 pr-6">
+				<h2 class=" text-eucalyptus-600">2012</h2>
+			</div>
+			<ul class="order-2 flex-grow">
+				
+				<div class="py-2 flex">
+					<span class="font-serif pr-4 flex-shrink-0">12-05</span>
+					<div class="font-serif font-medium">
+						<a href="https://subedi.ml/posts/faro_shuffle/">
+							The Faro Shuffle
+						</a>
+						
+						<div class="pl-4  text-gray-600 font-light">It only takes eight consecutive Faro shuffles to bring a 52-card deck back to its original order.</div>
+						
+					</div>
+				</div>
+				
+				<div class="py-2 flex">
+					<span class="font-serif pr-4 flex-shrink-0">11-02</span>
+					<div class="font-serif font-medium">
+						<a href="https://subedi.ml/posts/mandelbrot_area/">
+							Area of the Mandelbrot Set
+						</a>
+						
+						<div class="pl-4  text-gray-600 font-light">Area of the Mandelbrot Set using Monte Carlo Simulations.</div>
 						
 					</div>
 				</div>
@@ -158,6 +192,26 @@ onload='renderMathInElement(document.body);'></script>
 			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
 			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
 				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -252,7 +306,7 @@ onload='renderMathInElement(document.body);'></script>
 		Built with Hugo and theme <a 
 			href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>.
 			<br />
-			6 pages, 0 words in total.
+			16 pages, 2421 words in total.
 	</div>
 </div>
 			</div>
@@ -271,6 +325,9 @@ onload='renderMathInElement(document.body);'></script>
 
 <script src="/dist/app.js"></script>
 
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
 
 	</div>
 </body>

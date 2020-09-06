@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>capstone on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/capstone/</link>
+    <description>Recent content in capstone on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Thu, 05 Sep 2013 17:12:41 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/capstone/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Compiler from Scratch</title>
+      <link>https://subedi.ml/posts/ducompiler/</link>
+      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/ducompiler/</guid>
+      <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
+&lt;p&gt;For our Computer Science capstone project, we take on the beast - building a compiler from scratch. We had about three months to do it but we really had no clue of what we were doing for the first month and a half. Although we knew plenty of what there was to know about compilers in theory, we soon realized that building one from scratch was not going to be easy. We started with baby steps, and by the time the project was due, we were taking giant leaps (we had no other option). In the end, it turned out to be a reasonably fine compiler and an excellent experience. During these three months, I had the best and the worst experiences of my academic life. Therefore, this project is really special.&lt;/p&gt;
+&lt;p&gt;Since this project belongs to two other people also, I won&amp;rsquo;t be posting any source code. This post will just have some example code for Du-Compiler.&lt;/p&gt;
+&lt;p&gt;Finally, for anyone looking for a reasonably challenging senior projects, I would strongly encourage building a compiler. I say this for couple of reasons. First of all, it changes the way we look at code. It gives a better understanding of what exactly happens when the compile button is hit. In another words, it makes you aware of what is going on internally. Secondly, it involves learning/relearning several Computer Science topics such as regular expressions, hash table, data-structures, tree traversals, assembly level programming etc. It also involves A LOT of coding. When it all pans out, you are going to love what you have in your skill set.&lt;/p&gt;
+&lt;h4 id=&#34;examples&#34;&gt;Examples&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Hello World
+duhawk helloworld{
+  duPrint(%Hello World%);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Addition
+duhawk simpleAdd{ 
+  int a;
+  a=5;
+  int b;    
+  b = a + 5;
+  duPrint b;  
+}
+//Result: 10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Pattern
+duhawk test{ 
+  int i;
+  i=1;
+  int j;
+  j=1;
+  while (i&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;&lt;/span&gt;=10){
+   j=1;
+   while (j&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;&lt;/span&gt;=i){
+    duPrint(%*%);
+    j=j + 1;
+   }
+   duPrintln(%%);
+   i= i + 1;
+  }
+} 
+
+/*
+Result
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;duhawk test{ 
+int c;  
+int d;     
+duPrint (%Multiplication table of: %);  
+duInput a;
+duPrint (%upto: %);
+duInput b;     
+
+ for (c=1;c&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;&lt;/span&gt;=b;c=c + 1){
+         duPrint a;
+         duPrint (% X %);
+         duPrint c;
+         duPrint (% = %);
+         d = a*c;
+         duPrintln d;    
+        }
+} 
+
+/*
+Input for a = 19
+Input for b = 15
+Result:
+Multiplication table of: 19
+upto: 15
+19 X 1 = 19
+19 X 2 = 38
+19 X 3 = 57
+19 X 4 = 76
+19 X 5 = 95
+19 X 6 = 114
+19 X 7 = 133
+19 X 8 = 152
+19 X 9 = 171
+19 X 10 = 190
+19 X 11 = 209
+19 X 12 = 228
+19 X 13 = 247
+19 X 14 = 266
+19 X 15 = 285
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

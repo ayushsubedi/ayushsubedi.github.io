@@ -7,9 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Thu, 05 Sep 2013 17:12:41 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>capstone</title>
+      <link>https://subedi.ml/tags/capstone/</link>
+      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/capstone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compiler</title>
+      <link>https://subedi.ml/tags/compiler/</link>
+      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/compiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://subedi.ml/tags/java/</link>
+      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>faro</title>
+      <link>https://subedi.ml/tags/faro/</link>
+      <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/faro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>group theory</title>
+      <link>https://subedi.ml/tags/group-theory/</link>
+      <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/group-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mandelbrot</title>
+      <link>https://subedi.ml/tags/mandelbrot/</link>
+      <pubDate>Fri, 02 Nov 2012 10:02:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/mandelbrot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monte carlo</title>
+      <link>https://subedi.ml/tags/monte-carlo/</link>
+      <pubDate>Fri, 02 Nov 2012 10:02:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/monte-carlo/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
