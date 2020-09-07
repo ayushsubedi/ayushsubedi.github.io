@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching Materials on Ayush Subedi</title>
+    <link>https://subedi.ml/categories/teaching-materials/</link>
+    <description>Recent content in Teaching Materials on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Thu, 20 Dec 2018 10:11:01 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/categories/teaching-materials/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spirathon 2019</title>
+      <link>https://subedi.ml/posts/spirathon/</link>
+      <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/spirathon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Torpe Blockchain</title>
+      <link>https://subedi.ml/posts/torpe/</link>
+      <pubDate>Sun, 28 Oct 2018 01:10:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/torpe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Basics of Encryption</title>
+      <link>https://subedi.ml/posts/encryption/</link>
+      <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Republic of Zorgania</title>
+      <link>https://subedi.ml/posts/zorgania/</link>
+      <pubDate>Fri, 18 Apr 2014 09:13:12 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/zorgania/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-UeCtdNRm02c/U1CxJR6GsdI/AAAAAAAACpA/3P9OqkZ9eIQ/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Zorganian Republic has some very strange customs. Couples only wish to have female children as only females can inherit the family&amp;rsquo;s wealth, so if they have a male child they keep having more children until they have a girl. If they have a girl, they stop having children. What is the ratio of girls to boys in Zorgania?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The ratio of girls to boys in Zorgania is 1:1. This might be a little counter-intuitive at first. Here are some ways of tackling this problem.
+&lt;strong&gt;1. Monte Carlo Simulation:&lt;/strong&gt;
+Although, Monte Carlo simulation does not necessarily show why the result is 1:1, it is appropriate because of the very counter-intuitive nature of the problem. At the very least, it helps us see that the result is indeed 1:1. Therefore, this is a good start.&lt;/p&gt;
+&lt;p&gt;The following R code estimates the probability of a child being a boy in Zorgania.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;couples &amp;lt;- 100000
+boycount &amp;lt;- 0
+
+for (i in 1:couples){
+    # 0: boy
+    while (sample(c(0,1),1) == 0) {
+    boycount=boycount+1
+  }
+}
+probability &amp;lt;- boycount/(couples+boycount)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-T_wWq6Bc8pA/U1C18KqTM-I/AAAAAAAACpI/XcFVRcq7n_Q/s1600/Untitled-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Understanding the question better:&lt;/strong&gt;
+Here is another question: What is the probability of getting a tail in a fair coin toss, if all seven previous tosses resulted in heads? Since coin flips are independent events, the probability is still going to be 0.5. Similarly in this case, the child births are independent. It does not matter if the couples stop giving birth after they have a baby-girl. The expected value is unchanged.&lt;/p&gt;
+&lt;p&gt;For example, consider five couples: C1, C2, C3, C4 and C5.
+If B-&amp;gt; Boy and G-&amp;gt; Girl. Using R&amp;rsquo;s sample().
+For C1:  {B, G}
+For C2: {G}
+For C3: {B, B, G}
+For C4: {B, G}
+For C5: {G}&lt;/p&gt;
+&lt;p&gt;Now, ignore the couples and only consider the children. The children are {B, G, G, B, B, G, B, G, G}. The only thing happening here is simply the generation of  either a B or a G with equal probability for each generation. At this point, it is quite obvious that the part that has to do with &amp;ldquo;couple&amp;hellip;.&amp;rdquo; in the question is to mislead and confuse similar to the &amp;ldquo;previous seven tosses..&amp;rdquo; example that I mentioned in the beginning of 2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.  Counting:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-7FiIun81q9I/U1Daw9uveiI/AAAAAAAACpY/ppyL8FvonUg/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If we start with 512 couples (hence 512 first borns), half of them are going to have a girl as their first. Those couples will stop having children. Among, the other half couples who had a son as their first child, half of them are going to have a girl as their second child and so on. At every step there is an equal numbers of boys and girls. Therefore, the expected ratio is 1:1.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

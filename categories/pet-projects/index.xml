@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pet Projects on Ayush Subedi</title>
+    <link>https://subedi.ml/categories/pet-projects/</link>
+    <description>Recent content in Pet Projects on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Mon, 31 Dec 2018 10:10:11 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/categories/pet-projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shabda Kathmandu</title>
+      <link>https://subedi.ml/posts/shabda_kathmandu/</link>
+      <pubDate>Mon, 31 Dec 2018 10:10:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/shabda_kathmandu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inclusive Newspaper</title>
+      <link>https://subedi.ml/posts/inclusive_newspaper/</link>
+      <pubDate>Wed, 08 Aug 2018 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/inclusive_newspaper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Startup analysis using Seedstars data</title>
+      <link>https://subedi.ml/posts/seedstars/</link>
+      <pubDate>Sat, 03 Mar 2018 06:16:55 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/seedstars/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Birds, Plane, Superman</title>
+      <link>https://subedi.ml/posts/bird_plane_superman/</link>
+      <pubDate>Fri, 02 Feb 2018 10:09:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/bird_plane_superman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Etymology and Ngram</title>
+      <link>https://subedi.ml/posts/etymology/</link>
+      <pubDate>Fri, 01 Jan 2016 03:11:02 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/etymology/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-27bPJS8zz2U/VoYeWiH1_KI/AAAAAAAADls/jICpVOc5TgI/s640/device-2016-01-01-120842.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-6Xv1iQcDotc/VoYeXNoE2hI/AAAAAAAADl0/G4zmm32fYlA/s640/device-2016-01-01-120905.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-ea19AL8mOfE/VoYeW9Uo0VI/AAAAAAAADlw/6RkqkRfgaJU/s640/device-2016-01-01-120925.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-gs3TAlYHfVg/VoYeXhZA5tI/AAAAAAAADl4/UgtYJvD8vwg/s640/device-2016-01-01-120949.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-GSujGmWfm54/VoYeYlB6lvI/AAAAAAAADmA/Gh_xPB8BBa0/s640/device-2016-01-01-121445.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-VOXTeCw9gdE/VoYeY6DDGYI/AAAAAAAADmE/7ivZxz8Hl0o/s640/device-2016-01-01-121557.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-lPqt7XqUuQ4/VoYeZpvYGzI/AAAAAAAADmI/iFzvhII5v7g/s640/device-2016-01-01-121745.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It uses MPAndroidChart which allows users to scroll within the graphs too.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-361ntSWDTWw/VoYeakNusJI/AAAAAAAADmY/6GmWF_C1fRQ/s640/device-2016-01-01-122005.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-_jzCIzggctw/VoYeaYUrOfI/AAAAAAAADmU/XG3vr349b3g/s640/device-2016-01-01-122031.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Net Promoter Scale (NPS)</title>
+      <link>https://subedi.ml/posts/nps/</link>
+      <pubDate>Sat, 04 Apr 2015 04:01:02 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/nps/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-TYuOQ1UJLzE/V_PgIfgdzfI/AAAAAAAAFaQ/Z-fVeyyIQm4gG386D_AeGtlePk5LsJCBACLcB/s320/nps.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I recently stumbled upon a customer loyalty measurement scale termed Net Promoter Scale (NPS in short) via a conversation with a businessy friend of mine who was researching on it. I was truly amazed by the simplicity yet brilliance of NPS. Moreover, this is ideal for someone like me who wants to get honest customer feedback without harassing them with poorly designed questionnaires regarding a product.
+The pith of NPS lies in the question:&lt;/p&gt;
+&lt;p&gt;“How likely is it that you would recommend our company/product/service to a friend or colleague?”&lt;/p&gt;
+&lt;p&gt;Those who respond with a score of 9-10 are called Promoters, and are considered likely to show positive behaviors like repeat purchase and positive referrals. Those who respond with a score of 0-6 are labeled Detractors, and they are believed to exhibit the negative behaviors like driving away from the brand, negative referrals. Responses of 7 and 8 are labeled Passives, and their behavior falls in the middle of Promoters and Detractors.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The NPS Calculation formula&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(Number of Promoters — Number of Detractors) / (Number of Respondents) x 100&lt;/p&gt;
+&lt;p&gt;NPS ranges from -100 to 100 (inclusive).&lt;/p&gt;
+&lt;p&gt;With me doing the charting part and my friend doing the result implication and significance part we developed a simple NPS calculator app that takes total detractors, passives and promotors to output NPS. Refer to the screenshots below to identify what different NPS score signify.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-yR9Uh-3fjtI/V_PdWVu4SsI/AAAAAAAAFZ8/-oIJzJLRZcosIJ0sq5pXI3dQY27A5QXaQCLcB/s640/device-2016-07-28-134536.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-CuzujNNn7h0/V_PdW0rI7iI/AAAAAAAAFaA/_VpTJjIk7bMbOC-OmfvJfJ-0LQQrwFp2QCLcB/s640/device-2016-07-28-134930.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-9LbkQR3dmIo/V_PdWO6Ze6I/AAAAAAAAFZ4/EHBiqOCcElkuDcyjjs7yxSXxEGPQ2y47QCLcB/s640/device-2016-07-28-135017.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-iYDH-ZWLyzg/V_PdXWu_eXI/AAAAAAAAFaE/u5T-JsYLZYIqGVolndwWWPW2WbGT4qlqACLcB/s640/device-2016-07-28-135116.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fractal Plots</title>
+      <link>https://subedi.ml/posts/fractal_plots/</link>
+      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/fractal_plots/</guid>
+      <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Mby3dBcaRKo/U0zGR29ZF9I/AAAAAAAACm4/qjEeUPPlBsU/s1600/Rplot03.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is the naive/brute-force implementation of the Mandelbrot Set plotting. I just followed the algorithm.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Plotting the Mandelbrot Set 
+
+# length of sequence for real and imaginary parts of complex numbers
+length &amp;lt;- 1000
+
+# sequences for real and imaginary parts
+real = seq(-1.8,0.6, len=length)
+imaginary = seq(-1.2,1.2, len=length)
+
+
+result &amp;lt;- matrix(nrow = length, ncol = length)
+
+for (i in 1:length)
+{
+  for (j in 1:length)
+  {
+    result[i,j]=inmandelbrotset(complex(real = real[i], imaginary = imaginary[j]))       
+  }
+}
+
+image(result, axes=FALSE)
+
+
+
+# function that checks if a point E mandelbrot set
+inmandelbrotset &amp;lt;- function(c)
+{
+  dwell.limit &amp;lt;- 2048
+  z &amp;lt;- 0  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-Iqm_BdgidJU/U0qOV5YyfsI/AAAAAAAACmM/FXeCXs-kNkM/s1600/output_fSU8xz.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding colors:&lt;/strong&gt;
+We now have a Boolean matrix that records if a point is in the Mandelbrot Set. Since the matrix can only have two values : true or false, thus far, we have only been able to plot read and white images. The next step is to add colors such that we get more information on when a particular point escapes the radius of 2. Again, this is the naive/brute force way of doing it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Mandelbrot Plotting with colors 
+length &amp;lt;- 1000
+real = seq(-2.0,2.0, len=length)
+imaginary = seq(-2.0,2.0, len=length)
+result &amp;lt;- matrix(nrow = length, ncol = length)
+dwell.limit &amp;lt;- 512
+
+for (i in 1:length)
+{
+  for (j in 1:length)
+  {  
+    z &amp;lt;- 0
+    c &amp;lt;-complex(real = real[i], imaginary = imaginary[j])
+    for (k in 1:dwell.limit)
+    { 
+      
+      z &amp;lt;- z ** 2 + c
+      if (Mod(z) &amp;gt; 2)
+      {      
+        result[i,j]=k
+        break
+      }
+    }     
+    
+  }
+}
+set.seed(2)
+image(result,breaks=0:dwell.limit
+      ,col=c(1,sample(terrain.colors
+                      (dwell.limit-1,alpha = .8))),asp=1,ax=F)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-gxswS7fcV5k/U0zNhDoPqcI/AAAAAAAACnE/za9JUEmkQ3M/s1600/Rplot06.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-hNco2zVAeSs/U0z4XWixrUI/AAAAAAAACoU/dFvirhQFLvQ/s1600/Rplot14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and, just for the heck of it..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-XkuSH0dAMF8/U0z6YBmVmKI/AAAAAAAACok/0DfUTNEMYpc/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ASCII Mandelbrot Set using R (naive)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s &amp;lt;- seq(-1.7,1.2, by =.1)
+a &amp;lt;- &amp;quot;&amp;quot;
+for (i in 1:length(s))
+{  
+  for (j in 1:length(s))
+  {
+   a&amp;lt;-cat(a,inmandelbrotset(complex(r = s[j], i = s[i])))     
+  }  
+  a &amp;lt;- cat(a,&amp;quot;\n&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-SqMXDu-orPE/U1YH-90-fQI/AAAAAAAACqs/lydpeihbFMk/s1600/Untitled-1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Achieved by returning a &amp;quot; &amp;quot; or &amp;ldquo;#&amp;rdquo; instead of FALSE or TRUE from function &amp;ldquo;inmandelbrotset&amp;rdquo;.
+&lt;strong&gt;A better algorithm&lt;/strong&gt;
+Utilizing R&amp;rsquo;s easy to use lists in implementation:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-13I74YsZA3Q/U00ph_v2sqI/AAAAAAAACos/0BwTZdK1xtg/s1600/Untitled1.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# more efficient algorithm to plot the Mandelbrot set 
+
+sequence &amp;lt;- seq(-2,2,len=1000)
+dwell.limit &amp;lt;- 200
+
+# matrix of points to be iterated 
+complex.matrix &amp;lt;- t((sapply(sequence,function(x)x+1i*sequence)))
+in.mandelbrot.index &amp;lt;- 1:length(complex.matrix)
+iter=z=array(0,dim(complex.matrix)) 
+           
+for(i in 1:dwell.limit){ 
+  # complex quadratic polynomial function for all points
+  z[in.mandelbrot.index]=complex.matrix[in.mandelbrot.index]+z[in.mandelbrot.index]^2 
+  # boolean matrix
+  result=Mod(z[in.mandelbrot.index])&amp;lt;=2  
+  # if result is false, store the iteration 
+  iter[in.mandelbrot.index[!result]]=i
+  # save all the index where points are still in the mandelbrot
+  in.mandelbrot.index=in.mandelbrot.index[result]
+}
+set.seed(19)
+image(iter,main=paste(&amp;quot;Iterations: &amp;quot;, i, sep=&amp;quot; &amp;quot;), breaks=0:dwell.limit
+      ,col=c(1,sample(rainbow
+                      (dwell.limit-1,alpha = .8))),ax=F, asp=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Plotting the Julia set&lt;/strong&gt;
+A little modification to the code above (red and white Mandelbrot) produces Julia Sets. The idea here is to set a constant C and send Z to the function instead of C.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c &amp;lt;- complex(real=-0.1,imaginary=0.651) 
+label &amp;lt;- toString(c)
+injulia &amp;lt;- function(z)
+{
+  dwell.limit &amp;lt;- 128
+  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-q4rNT8vd-4o/U0tP_jGwdpI/AAAAAAAACmc/GjVN5c_lWNw/s1600/output_i4d2h6.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding colors:&lt;/strong&gt;
+This is achieved by following the same process as above.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-U9PdaivxB30/U0zZeEfcLOI/AAAAAAAACnQ/WbgnqUuE1Ww/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-F3PRK6CQCPA/U0zZweXvhFI/AAAAAAAACnY/moDHQIhBi1E/s1600/Rplot10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-AxtVIdnIOOo/U0za42jqSHI/AAAAAAAACng/lanOjpzFeOE/s1600/Rplot13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sierpinski Gasket using Chaos game&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#### Chaos game for generation of Sierpinski Gasket
+# 1. Take 3 points in a plane to form a triangle, you need not draw it.
+# 2. Randomly select any point inside the triangle and consider that your current position.
+# 3. Randomly select any one of the 3 vertex points.
+# 4. Move half the distance from your current position to the selected vertex.
+# 5. Plot the current position.
+# 6. Repeat from step 3
+
+plot.new()
+iterations &amp;lt;- 2000
+vertices &amp;lt;- matrix(c(0,0,0.5,1,1,0),3,2, byrow=T)
+current.point &amp;lt;- c(0.5,0.5)
+random.vertex &amp;lt;- sample(1:3,iterations,replace=T)
+plot.result = matrix(nrow=iterations,ncol=2)
+for (i in 1:iterations){
+ current.point &amp;lt;- (current.point+vertices[random.vertex[i],])/2
+ plot.result[i,] &amp;lt;- current.point
+}
+points(plot.result,pch = 46)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-gzjEuswLUvg/U1IpGu-W6wI/AAAAAAAACpo/EUR7t3Pyrgo/s1600/output_CRtwqO.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Adding colors:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;points(plot.result,pch = 46,col=c(13,3,41)[random.vertex])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-Kog9tekKz5A/U1IqRVeK99I/AAAAAAAACp0/0uOMoFOJxds/s1600/Rplot26.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-5dN5kmWtLD0/U1J4WJPWDiI/AAAAAAAACqc/PoeEYiO4esg/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Lost Brothers</title>
+      <link>https://subedi.ml/posts/thelostbrothers/</link>
+      <pubDate>Mon, 31 Mar 2014 12:11:45 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/thelostbrothers/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-jB1157xl870/UznA7_yh_qI/AAAAAAAACfc/rioorJr5fhQ/s1600/Bdc6oaRT9.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For quite some time now, my father and my uncle have been debating over the coordinates of their houses with respect to each others. Albeit barely 750 meters from each other, there is not much visible reference points or landmarks to figure it out accurately. The blame is on the molasses thick concrete jungle of Kathmandu valley. (Side-note: Kathmandu will soon be synonymous to the word asphyxiation). Although, I sincerely appreciate their curiosity, I think it is time to end this for once and for all.&lt;/p&gt;
+&lt;p&gt;I have used photos of my sister (Ashma) and my cousin (Samip) as labels to the directions.&lt;/p&gt;
+&lt;p&gt;The app implements Canvas to &amp;ldquo;draw&amp;rdquo; the direction. The two GPS coordinates (obtained from Google Earth) were hard-coded into the program and Azimuth from orientation sensor was used to calculate the direction. Basically, it is a compass that points the direction from one house to the other instead of pointing North.
+Apart from this rather trivial implementation, the code can be modified to achieve some fun/interesting/useful developments. For instance, the direction of Mecca for Muslim prayers is one that comes to mind. Or, it could be modified into a bearing pointer app by using GPS data and some input EditTexts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code Snippet&lt;/strong&gt;
+onCreate&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  mCustomDrawableView = new CustomDrawableView(this);
+  setContentView(mCustomDrawableView); // Register the sensor listeners
+  Resources res = getResources();
+  samip = BitmapFactory.decodeResource(res, R.drawable.samip);
+  ashma = BitmapFactory.decodeResource(res, R.drawable.ashma);
+  // Fill in correct latitude and longitude
+  currentLoc.setLatitude(0.000000);
+  currentLoc.setLongitude(0.00000);
+  currentLoc.setAltitude(00);
+  destinationLoc.setLatitude(0.00000);
+  destinationLoc.setLongitude(0.0000);
+  mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+  accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+  magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Canvas&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; Float azimuth;
+ public Bitmap samip;
+ public Bitmap ashma;
+
+ public class CustomDrawableView extends View {
+  Paint compassAxis = new Paint();
+  Paint compassCircle = new Paint();
+  Paint compasAarrow = new Paint();
+
+  public CustomDrawableView(Context context) {
+   super(context);
+   compassAxis.setColor(0xff00ff00);
+   compassAxis.setStyle(Style.STROKE);
+   compassAxis.setStrokeWidth(2);
+   compassAxis.setAntiAlias(true);
+   compassCircle.setColor(0xff000000);
+   compassCircle.setStyle(Style.STROKE);
+   compassCircle.setStrokeWidth(10);
+   compassCircle.setAntiAlias(true);
+   compasAarrow.setColor(0xff0000ff);
+   compasAarrow.setStyle(Style.STROKE);
+   compasAarrow.setStrokeWidth(3);
+   compasAarrow.setAntiAlias(true);
+
+  };
+
+  protected void onDraw(Canvas canvas) {
+   int width = getWidth(), height = getHeight();
+   int centerx = width / 2, centery = height / 2;
+   /*
+    * Drawing the axis and circle Being symmetrical, these don&#39;t need
+    * to be rotated
+    */
+   // Axis
+   canvas.drawLine(centerx, 0, centerx, height, compassAxis);
+   canvas.drawLine(0, centery, width, centery, compassAxis);
+   // Circle
+   canvas.drawCircle(centerx, centery, 200, compassCircle);
+
+   /*
+    * since this was a pretty small scope app, magnetic north was not
+    * changed to real north. See: &amp;quot;GeomagneticField&amp;quot;
+    */
+   // Used Float instead of float for this check
+   if (azimuth != null) {
+    // Converting radians to degrees
+    float temp = (float) Math.toDegrees(azimuth);
+    float bearing = currentLoc.bearingTo(destinationLoc);
+    float direction = temp - bearing;
+    canvas.rotate(-direction, centerx, centery);
+   }
+   canvas.drawLine(centerx, centery - 200, centerx, centery, compasAarrow);
+   canvas.drawBitmap(samip, centerx + 5, centery - 200, compassAxis);
+   canvas.drawBitmap(ashma, centerx + 5, centery - 15, compassAxis);
+
+  }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Screenshots:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-KH6uVX49fFA/Uzu2oY0VCTI/AAAAAAAACgE/5_rfL55f0J4/s1600/ashmatosamip.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-ybjvNLwJseo/Uzu2o-iKgDI/AAAAAAAACgI/ROqtPEWuXA4/s1600/ashmatosamipmenu.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-Ri5qmjH9TWo/Uzu2pi_1kRI/AAAAAAAACgU/USFWoFfQSe4/s1600/samiptoashma.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And after some time wasting:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-aRNMlhRQy-o/UzwIWzVYEbI/AAAAAAAACgk/8Wh_SAAL3DA/s1600/device-2014-04-02-183459.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Android&#43;Arduino RC Car</title>
+      <link>https://subedi.ml/posts/rc_car/</link>
+      <pubDate>Fri, 31 Jan 2014 11:03:13 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/rc_car/</guid>
+      <description>&lt;h3 id=&#34;androidarduino-rc-car&#34;&gt;Android+Arduino RC Car&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-_8RnAwamLOM/UuxigwOv4HI/AAAAAAAACW4/mW5MxPQ7HdY/s1600/DSC_0027.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;http://www.ayushsubedi.com/2013/07/androidrccar.html&#34;&gt;previous attempt&lt;/a&gt; was in shambles due to the lack of proper products. This time, I got myself a Sainsmart L293D motor driver (actually a cloned version of the ever so popular Adafruit L293D driver) and a handy four wheel drive chassis. Hereupon, the only adjustment  required was the use of analog pins as digital pins. This is the consequence of the motor driver using up all the digital pins and leaving no pins for the Bluetooth shield. I also hooked up the Arduino to a USB power bank.&lt;/p&gt;
+&lt;p&gt;Tools used:
+~ Arduino Uno
+~ 4WD Chassis
+~ SainSmart motor driver (L293D)
+~ Sunkee 30ft Bluetooth Module
+~ Anker 15000 mAh power bank&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-a_8ouJ9TTOU/UuxyfHkp7DI/AAAAAAAACXI/8h4QGB3fCQo/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Arduino&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//Project: Android RC Car
+//Author: Ayush Subedi
+
+#include &amp;lt;AFMotor.h&amp;gt; //import Adafruit Motor library
+#include &amp;lt;SoftwareSerial.h&amp;gt;// import the serial library
+SoftwareSerial newPorts(15, 17); // RX =15= A1, TX=17=A3  
+AF_DCMotor motor1(1, MOTOR12_1KHZ); // create motor #1, 1KHz pwm
+AF_DCMotor motor2(2, MOTOR12_1KHZ); // create motor #2, 1KHz pwm
+AF_DCMotor motor3(3, MOTOR34_1KHZ); // create motor #3, 1KHz pwm
+AF_DCMotor motor4(4, MOTOR34_1KHZ); // create motor #4, 1KHz pwm
+
+void setup() {
+  newPorts.begin(9600);           
+  motor1.setSpeed(255);     // set the speed to 200/255
+  motor2.setSpeed(255);     // set the speed to 200/255
+  motor3.setSpeed(255);     // set the speed to 200/255
+  motor4.setSpeed(255);     // set the speed to 200/255
+}
+
+void loop() {  
+    while (newPorts.available() &amp;gt; 0)
+  {
+    char ch = newPorts.read();
+    newPorts.println(newPorts.read());  
+    executeReceivedCommand(ch);
+  } 
+}
+
+void executeReceivedCommand(char command)
+{
+  switch (command)
+  {
+    //Forward
+  case &#39;0&#39;:
+    motor1.run(FORWARD);     
+    motor2.run(FORWARD);
+    motor3.run(FORWARD);
+    motor4.run(FORWARD);  
+  break;
+    
+    //Reverse
+  case &#39;1&#39;:
+    motor1.run(BACKWARD);     
+    motor2.run(BACKWARD);
+    motor3.run(BACKWARD);
+    motor4.run(BACKWARD);
+   
+  break;     
+
+    //Left : skid steering
+    case &#39;3&#39;:
+    motor1.run(FORWARD);
+    motor4.run(FORWARD);
+    motor2.run(RELEASE);
+    motor3.run(RELEASE);
+  break;
+  
+    //Right : skid steering
+    case &#39;4&#39;:
+    motor2.run(FORWARD);
+    motor3.run(FORWARD);
+    motor1.run(RELEASE);
+    motor4.run(RELEASE);
+  break;
+
+     //Stall
+  case &#39;2&#39;:
+    motor1.run(RELEASE);      
+    motor2.run(RELEASE);
+    motor3.run(RELEASE);
+    motor4.run(RELEASE);    
+  break;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-cuy1cpGVbTE/Uux-d0HoVHI/AAAAAAAACXY/RiNMCCUG3Ss/s1600/device-2014-02-01-103955.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-BYq7Y80m_CQ/Uux-fb2qPsI/AAAAAAAACXw/CP5jKd5ZeMM/s1600/device-2014-02-01-104054.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-5GwL64mI0GM/Uux-ey1e-eI/AAAAAAAACXk/FtT7x2U8ozU/s1600/device-2014-02-01-104037.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In a nutshell, the Android device sends &lt;em&gt;Char&lt;/em&gt; type to Arduino which is used to rotate the motors to maneuver towards a desired direction.&lt;/p&gt;
+&lt;p&gt;Forward: 0
+Reverse: 1
+Stop: 2
+Left: 3
+Right: 4&lt;/p&gt;
+&lt;p&gt;The car turns left and right by implementing &lt;em&gt;skid steering&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pictures and Video:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-s2w3-5LZqMo/Uuyr1gptrFI/AAAAAAAACYI/HpUrDAo6bro/s1600/DSC_0033.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-v1Yr71b9nEg/Uuyr5-n2T3I/AAAAAAAACYQ/uPvTKj_qzow/s1600/DSC_0035.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-SbQNev4Xlac/UuytAzkVbWI/AAAAAAAACYc/nDIj4OcxYCc/s1600/DSC_0036.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/KiaEGsHsIco&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Snakes and Ladders</title>
+      <link>https://subedi.ml/posts/snakesandladders/</link>
+      <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/snakesandladders/</guid>
+      <description>&lt;h3 id=&#34;snakes-and-ladders&#34;&gt;Snakes and Ladders&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-tefYwsHiebo/UrrjwTMNHvI/AAAAAAAACTM/CqzL6R9QJTo/s320/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This game needs no introduction. Although there are several variations of this game (mainly on position of the snakes and ladders), the rules are generally the same. Some of the rules, (which are part of my algorithm) are mentioned below. Also, this game requires no skill as it solely depends on luck/probability. This allows several mathematical questions relating to this game be answered using Monte Carlo simulation. However, for this post, I will only be investigating from an analytic/subjective stand point. That is, I will be using Markov Chain to answer those questions.
+&lt;strong&gt;Markov Chain&lt;/strong&gt;
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Markov_chain&#34;&gt;Wikipedia link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The game&amp;rsquo;s &lt;em&gt;Markov property&lt;/em&gt; or &lt;em&gt;memorylessness&lt;/em&gt; allows us to use Markov Chain. That is, the probability of occurrence of next event only depends on current event and not on any other events that occurred before. An example from our game: It does not matter if the player reached square 31 using the ladder from square 9, or by traversing the hard way around. Once the player is in 31, the probability of getting to square 32 does not depend on the &amp;ldquo;past&amp;rdquo;.
+&lt;strong&gt;Transition matrix&lt;/strong&gt;
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Stochastic_matrix&#34;&gt;Wikipedia link&lt;/a&gt;
+Transition matrix is a 2 dimensional array that encapsulates state transitional probabilities. For example, a transition matrix &lt;em&gt;P&lt;/em&gt;, given the following information (Mathematical model of one dimensional random walk),&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-EzQITg5YrJs/Uruin1dO4FI/AAAAAAAACTk/HtS3zjNiA28/s200/Untitled-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;would be,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-hGD2n01zTNc/Urui8NwZN8I/AAAAAAAACTs/Li8N0-FFep4/s320/Untitled-3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transition matrix for Snakes and Ladders&lt;/strong&gt;
+&lt;strong&gt;Trivial Transition Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First of all, consider a case where there are no snakes or ladders. Let us call this our Trivial (for the lack of words) scenario.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-S5UwD_wC1JE/Uru0Zpth-zI/AAAAAAAACT8/X4pTBXhceAc/s400/null.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This definitely makes for a boring game. However, it helps with the math. First of all, the square 0 is the position the player is before the game starts.  Now, since we are using a cubic die, on the first roll, the probability of going from 0 to 1, 0 to 2, 0 to 3, 0 to 4, 0 to 5, and 0 to six is 1/6. Since we are not accounting for snakes or ladders, the probability of going from box i to boxes i+1, i+2, i+3, i+4, i+5, and i+6 are all going to be 1/6, unless we run out of space. That is, if we are at 97, the person can only move to next step if the die rolls 1, 2 or 3. For anything greater, the person will not go to the next step. Therefore, in this case, the probabilities are: 97 to 98 = 1/6, 97 to 99 = 1/6, 97 to 100 = 1/6 and 97 to 97 = 3/6.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building the Trivial transition matrix based on the aforementioned rule.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; import Jama.Matrix;
+        /**
+  * @return 101X101 Transition Matrix for case: Trivial
+  */
+ public Matrix trivialMatrix() {
+  int difference, playerPosition = 0, matrixSize=101;
+  double transitionM[][] = new double\[matrixSize\][matrixSize];
+  double probability = 1.0 / 6;
+
+  for (playerPosition = 0; playerPosition &amp;lt; transitionM.length; playerPosition++) {
+   for (int i = 1; i &amp;lt;= 6; i++) {
+    if ((difference = matrixSize - playerPosition) &amp;lt;= 6) {
+     for (int k = 1; k &amp;lt; difference; k++) {
+      transitionM\[playerPosition\][playerPosition + k] = probability;
+     }
+     transitionM\[playerPosition\][playerPosition] = (6 - difference + 1) * probability;
+    } else {
+     transitionM\[playerPosition\][playerPosition + i] = probability;
+    }
+   }
+  }
+  return new Matrix(transitionM);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Top-Left&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-D7P9nwwtH8o/UrvDvXHBE-I/AAAAAAAACUU/wc5T45yEeR4/s640/top.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bottom-Right&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-0AVTUWGwEao/UrvDue1c5XI/AAAAAAAACUM/xYxHR6t-a08/s640/bottom.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-Trivial Transition Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-CePQbx-Vnlo/UrxXO198xGI/AAAAAAAACWk/gbsFLketz9Y/s400/chutesladders.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Snakes:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;98 ~ 78, 95 ~ 75, 93 ~ 73, 87 ~ 24, 64 ~ 60, 62 ~ 19, 56 ~ 53, 49 ~ 11, 48 ~ 26, 16 ~ 6&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ladders:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1 ~ 38, 4 ~ 14, 9 ~ 31, 21 ~ 42, 28 ~ 84, 36 ~ 44, 51 ~ 67, 71 ~ 91, 80 ~ 100&lt;/p&gt;
+&lt;p&gt;I decided to use a simple &lt;em&gt;List&lt;/em&gt; implementation for this. This might most likely be the Brute-Force implementation (I know several ways to make it better but none to make it worse). One way to make it more efficient would be to use 82 by 82 matrix instead of 101 by 101.&lt;/p&gt;
+&lt;p&gt;The advantage of using this implementation over the 82 by 82 matrix (apart from easy implementation) is that this method can be used for any snakes and ladders board variation. It also allows us to check for some hypothetical cases or answer more important questions. Eg: What is the best way to position snakes and ladders for maximum thrill to a player?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building the non-Trivial transition matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @return 101X101 Transition Matrix for case: non-Trivial
+  */
+ public Matrix nonTrivialMatrix() {
+  int playerPosition,matrixSize=101,difference;  
+  List&amp;lt;Integer&amp;gt; from = Arrays.asList(1, 4, 9, 21, 28, 36, 51, 71, 80, 98, 95, 93, 87, 64, 62, 56, 49, 48, 16);
+  List&amp;lt;Integer&amp;gt; to = Arrays.asList(38, 14, 31, 42, 84, 44, 67, 91, 100, 78, 75, 73, 24, 60, 19, 53, 11, 26, 6);
+  double probability = 1.0 / 6;
+  double transitionM[][] = new double\[matrixSize\][matrixSize];
+
+  for (playerPosition = 0; playerPosition &amp;lt; transitionM.length; playerPosition++) {
+   if (!from.contains(playerPosition)) {
+    for (int i = 1; i &amp;lt;= 6; i++) {
+     if ((difference = 6 - playerPosition) &amp;lt;= 6) {
+      for (int k = 1; k &amp;lt; difference; k++) {
+       if (from.contains(playerPosition + k)) {
+        transitionM\[playerPosition\][to.get(from.indexOf(playerPosition + k))] = probability;
+       } else {
+        transitionM\[playerPosition\][playerPosition + k] = probability;
+       }
+      }
+      if (from.contains(playerPosition)) {
+       transitionM\[playerPosition\][to.get(from.indexOf(playerPosition))] = (6 - difference + 1) * probability;
+      } else {
+       transitionM\[playerPosition\][playerPosition] = (6 - difference + 1) * probability;
+      }
+
+     } else {
+      if (from.contains(playerPosition + i)) {
+       transitionM\[playerPosition\][to.get(from.indexOf(playerPosition + i))] = transitionM\[playerPosition\][to.get(from.indexOf(playerPosition + i))] + probability;
+      } else {
+       transitionM\[playerPosition\][playerPosition + i] = transitionM\[playerPosition\][playerPosition + i] + probability;
+      }
+     }
+    }
+   }
+  }
+  return new Matrix(transitionM);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Top-Left&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-R9-biUUcmiw/UrvWUKP8x_I/AAAAAAAACU4/2sEIXy2oWH8/s1600/top.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bottom-Right&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-9S88JEZ_wYs/UrvWUFzELZI/AAAAAAAACU0/VV-9PT6f_9Q/s1600/bottom.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Probability Vector&lt;/strong&gt;
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Probability_vector&#34;&gt;Wikipedia link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Probability vectors&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/Hh3RpupM-kluBlTwZebvrdQRabRQm1MBBT8BxVN-0SREDnW-h4BUVUojSeKr75ReQjKuoaFYosiFamRmhKcO6I4=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;represents the probability of being on a certain square after n dice rolls. It is a vector with non-negative entries that add up to one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/CTz-FJf12YwQ9Yza6ImhV1zcBzFlWuoLgEN7_kTPBj1jqI801oTFpXtz8QBfEasNx7oGg5-jCsIZZP04_bBjMuKClb8g9R3WwADyc8-jfMGRoHV7pzUNnuXqoBnyoJWmBKwu2OED2aYHkA6kixUpnHzhPwQ3cgBquv45tRFaP4g5nYdIQDz1jkTietoz5rKWnt2gB2ej7V0rBalxUXcd3wQ8xb3p_g5yxnQU=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;implies that the probability of being on square 0 is 1. This is our input.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/sQMpxr8aHFBdLfBjKG8VHPLKg3OujQct4vbkigk-5CYuq47XuvfnbcPitvyyvECmBDlOBh7oYAzqiaX2TqxlKZVAYoFv638FVBzv7VOBAI6JMYi-FiDLrWsPf5LpfjenkwF-=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/OhLb7b5YJ5ANaHWCFlQSeN0-4GmP3AyO8In7yXt429XH_2cHs3Tt9UO9Pw4Jrq73grU-oli7IqPTy6tW0ytx0swIxRyDjLR9oPv0NBeWUA97Amq5ySpbL9sNLK6WeGuStyfi=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If &lt;em&gt;P&lt;/em&gt; is the Trivial transition matrix,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/4mEywZbxQeUlfNhJpOqy5YgOw8zZKrKdUi9qDR4MnG0aqcyUdBiV2Xp0rmiA6W7l2_e2YzgBlBIthsOgIBbGgcx-950O3BIxTCRcgscSXTSr91--xb1kOrK5WE7XpqlLRlXe9IKCKzCFcjroJxy7mFKXV-Sl51rm9vzijx3htBU86q9h0cE9-gD2-z3COWP7HRCJxz86pBFwOJraltHK1xgMU_ra0v1p9bWG-8jFGvm727rn68rnFDP_IsN94A3SKaUaK5pGtyjjpXJEzABzQogWbRhUsM3daBF9LtIE5zQg9UvagLjX5e9FynO5VUA-rhcRA6oGRJvx1T6UyvPYaznYqxCaa48nTZnQEI-jTF_KOIDdlLVHUn032GXz2mOZS_T6f8dbl6QHUlxrWCYU77cGuiOVyuLGcN5ddg8KlSXkmQBiQg=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If &lt;em&gt;P&lt;/em&gt; is the non-Trivial transition matrix.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/K5vuIHoJbyyyBUyaV3zHcNnuXG40AF9v-b744Ti2N-reLSDS0HLLl3FPyXe3AMA73J68US1C7n01nvFZZUygR6TF8olnaSYyeozOGxct_41Nw__mcxbIy8u5EGSHqIhbrIQaIiYkM_NmuPZc3726kpY4ET16ghuT3iBFvhI_wnzFxNiYiZ8KOqocXBsDh83WLl0t7Vit5AWWKJYIw06tRAF095AHnlwzr_cQetRvJT97IGU-_ZS3IbuHoXzBCfvaONpojNCm6vup8v4rTGz_dGK1hP96D4q3jcNfRT7yOJL9MiApAmeJ5yaVjPXz7S1fd3J-bUEUPa-5Zg3rCtOTE8RJPeYLH2c234olprBbEuePH_mDZiQktWyixOLnoXhHE5r_hPNeIA0O-U1B3VH3I_Eqa-tORAE5DizAO5GnYMYDidg=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building the Probability Vector&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @return Probability Vector with 1 being the first element
+  */
+ public Matrix probabilityVector() {
+  double probabilityV[] = new double[101];
+  probabilityV[0] = 1;
+  return new Matrix(probabilityV, 1);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Question 1:&lt;/strong&gt;
+&lt;strong&gt;Probability of being on square&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;s&lt;/strong&gt;&lt;/em&gt; &lt;strong&gt;after&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;n&lt;/strong&gt;&lt;/em&gt; &lt;strong&gt;dice rolls:&lt;/strong&gt;
+Using &lt;em&gt;Vn-1 * P = Vn&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @param transitionMatrix
+  * @param probabilityVector
+  * @param diceRolls
+  */
+ public static void squareProbability(Matrix transitionMatrix, Matrix probabilityVector, int diceRolls) {
+  NumberFormat nf = NumberFormat.getInstance();
+  nf.setMinimumFractionDigits(20);
+  System.out.println(&amp;quot;Dice rolls: &amp;quot;+diceRolls);
+  for (int i = 1; i &amp;lt;= diceRolls; i++) {
+   probabilityVector = probabilityVector.times(transitionMatrix);  
+  } 
+  probabilityVector.print(nf, 3);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Some outputs for the Trivial matrix:&lt;/strong&gt;
+I used html tables to simulate the board (basically printed the html tags within java code).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-bf4gfazPSTc/UrwPSUJvCoI/AAAAAAAACWM/abBVtWiWIc8/s1600/tr1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-r_ZPoixoCAI/UrwPSY02p7I/AAAAAAAACWI/1KSdh5wPRBw/s1600/tr2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Some outputs for the non-Trivial matrix:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-7PbGjTJB88s/UrwMVSZjdFI/AAAAAAAACVo/2_Qtz0iE1H4/s1600/diceroll7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-FRoHkWaBFzo/UrwMT-6BQ1I/AAAAAAAACVc/YoU-insHUCA/s1600/diceroll30.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Uk5AevQ4NVs/UrwMVCMIlbI/AAAAAAAACVs/cjwBJ7t2FFI/s1600/diceroll60.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-71cSgHwz5D0/UrwMThK9VhI/AAAAAAAACVY/37G5e4G-VFU/s1600/diceroll100.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-AyEuODg3l6g/UrwMTvZ86HI/AAAAAAAACVg/UbRnTDGnqCI/s1600/dice1000.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Question 2:&lt;/strong&gt;
+&lt;strong&gt;Minimum length of  a game and occurrence probability&lt;/strong&gt;
+That is, after how many n, is the probability at square 100 greater than 0 for the first time?&lt;/p&gt;
+&lt;p&gt;For the trivial case, the answer is, ceiling of 100/6 = 17.&lt;/p&gt;
+&lt;p&gt;For the non-trivial case,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @param transitionMatrix
+  * @param probabilityVector
+  */
+ public static void gameCompletion(Matrix transitionMatrix, Matrix probabilityVector) {
+  NumberFormat nf = NumberFormat.getInstance();
+  nf.setMinimumFractionDigits(30);
+  int box = 100;
+  int diceRolls = 0;
+  while (probabilityVector.get(0, box) == 0) {
+   diceRolls++;
+   probabilityVector = probabilityVector.times(transitionMatrix);   
+  }
+  System.out.println(&amp;quot;The game can be completed in min of &amp;quot; + diceRolls + &amp;quot; dice rolls.&amp;quot;);
+  System.out.println(&amp;quot;Probability of it happening: &amp;quot; + nf.format(probabilityVector.get(0, box)));
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The game can be completed in min of 7 dice rolls.
+Probability of it happening: 0.001564643347050754000000000000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rolls of {4,6,6,2,6,4,6} is one shortest solution.
+However, in theory, the game could last forever. Therefore, there is no longest game.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The game can be completed in min of 17 dice rolls.
+Probability of it happening: 0.000000000009038995585604526000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rolls of {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6} is the only shortest solution.
+Longest game in this case is 100 dice rolls. The player will have to roll 1, 100 consecutive times from start.
+&lt;strong&gt;Question 3:&lt;/strong&gt;
+&lt;strong&gt;Expected length of a game:&lt;/strong&gt;
+Let &lt;em&gt;subStochasticMatrix&lt;/em&gt; be the &lt;em&gt;100 by 100&lt;/em&gt; matrix obtained by deleting the last row and column of the transition matrix. Also, let &lt;em&gt;I&lt;/em&gt; be &lt;em&gt;100 by 100&lt;/em&gt; identity matrix. Let &lt;em&gt;inverse&lt;/em&gt; be the inverse of the difference of &lt;em&gt;I&lt;/em&gt; and &lt;em&gt;subStochasticMatrix.&lt;/em&gt; The expected number of rolls is given by the sum of entries in top row of the matrix &lt;em&gt;inverse&lt;/em&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @param transitionMatrix
+  * @param probabilityVector
+  */
+ public static void expectedLength(Matrix transitionMatrix, Matrix probabilityVector){
+  Matrix subStochasticMatrix=transitionMatrix.getMatrix(0, 99, 0 ,99);
+  Matrix I = Matrix.identity(100,100);  
+  Matrix inverse = (I.minus(subStochasticMatrix)).inverse();
+  double sum=0;
+  for (int i =0;i&amp;lt;=99;i++){
+   sum=sum+inverse.get(0, i);
+  }
+  System.out.println(&amp;quot;Expected game length: &amp;quot;+sum);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Expected game length: 39.59836564020812
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Expected game length: 33.33333333333334
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

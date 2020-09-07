@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Capstone Projects on Ayush Subedi</title>
+    <link>https://subedi.ml/categories/capstone-projects/</link>
+    <description>Recent content in Capstone Projects on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Thu, 05 Sep 2013 17:12:41 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/categories/capstone-projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Compiler from Scratch</title>
+      <link>https://subedi.ml/posts/ducompiler/</link>
+      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/ducompiler/</guid>
+      <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
+&lt;p&gt;For our Computer Science capstone project, we take on the beast - building a compiler from scratch. We had about three months to do it but we really had no clue of what we were doing for the first month and a half. Although we knew plenty of what there was to know about compilers in theory, we soon realized that building one from scratch was not going to be easy. We started with baby steps, and by the time the project was due, we were taking giant leaps (we had no other option). In the end, it turned out to be a reasonably fine compiler and an excellent experience. During these three months, I had the best and the worst experiences of my academic life. Therefore, this project is really special.&lt;/p&gt;
+&lt;p&gt;Since this project belongs to two other people also, I won&amp;rsquo;t be posting any source code. This post will just have some example code for Du-Compiler.&lt;/p&gt;
+&lt;p&gt;Finally, for anyone looking for a reasonably challenging senior projects, I would strongly encourage building a compiler. I say this for couple of reasons. First of all, it changes the way we look at code. It gives a better understanding of what exactly happens when the compile button is hit. In another words, it makes you aware of what is going on internally. Secondly, it involves learning/relearning several Computer Science topics such as regular expressions, hash table, data-structures, tree traversals, assembly level programming etc. It also involves A LOT of coding. When it all pans out, you are going to love what you have in your skill set.&lt;/p&gt;
+&lt;h4 id=&#34;examples&#34;&gt;Examples&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Hello World
+duhawk helloworld{
+  duPrint(%Hello World%);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Addition
+duhawk simpleAdd{ 
+  int a;
+  a=5;
+  int b;    
+  b = a + 5;
+  duPrint b;  
+}
+//Result: 10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Pattern
+duhawk test{ 
+  int i;
+  i=1;
+  int j;
+  j=1;
+  while (i&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;&lt;/span&gt;=10){
+   j=1;
+   while (j&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;&lt;/span&gt;=i){
+    duPrint(%*%);
+    j=j + 1;
+   }
+   duPrintln(%%);
+   i= i + 1;
+  }
+} 
+
+/*
+Result
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;duhawk test{ 
+int c;  
+int d;     
+duPrint (%Multiplication table of: %);  
+duInput a;
+duPrint (%upto: %);
+duInput b;     
+
+ for (c=1;c&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;&lt;/span&gt;=b;c=c + 1){
+         duPrint a;
+         duPrint (% X %);
+         duPrint c;
+         duPrint (% = %);
+         d = a*c;
+         duPrintln d;    
+        }
+} 
+
+/*
+Input for a = 19
+Input for b = 15
+Result:
+Multiplication table of: 19
+upto: 15
+19 X 1 = 19
+19 X 2 = 38
+19 X 3 = 57
+19 X 4 = 76
+19 X 5 = 95
+19 X 6 = 114
+19 X 7 = 133
+19 X 8 = 152
+19 X 9 = 171
+19 X 10 = 190
+19 X 11 = 209
+19 X 12 = 228
+19 X 13 = 247
+19 X 14 = 266
+19 X 15 = 285
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Area of the Mandelbrot Set</title>
+      <link>https://subedi.ml/posts/mandelbrot_area/</link>
+      <pubDate>Wed, 02 Jan 2013 10:01:09 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/mandelbrot_area/</guid>
+      <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-ofFkTWEt7kw/U0evleXzgRI/AAAAAAAACl8/zg4_1dxmg7w/s1600/800px-Mandel_zoom_08_satellite_antenna.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The area of the Mandelbrot Set&lt;/strong&gt;
+The Mandelbrot set is a fractal (illustrates self-similarity). The set is obtained from the quadratic recurrence equation,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/V7ITPlrYZthFKEr263nwxpjVUiiLdwJ3L5z8rZPxVshqkDW1xj_BcYKUrf246BkzlwaXV5QoVZzFNUkmiXB6TuUKl8Y9l3nhVgA3dZr6_ovtk4rGCrb-AixpAtdrqCgkISYZDg56ngNsLPxZ6ys2h5hnDZXIlGU=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;with&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/X-AGG1lSNsjhTrneJ3h2fypSNEr7abgYdF71JPMEwx24toeCKmXIa9c_9XKl09oRwaE1i_4Cx4AJ0tt9pg6Jn20iP6lveWG7K60LQjInQKJPAA=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;, where points&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/Sz22hiBRGEIHg61Cft2B1Ngq6LjmT0TqvwbBIaH565JVFBbPbc1_AUAAQgs81OxuVd1KqFrCYZJo=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;in the complex plane for which the orbit of&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/LR4RXn0pCOL_pp956EEQ7ZXawp2p-vTPX_UjFP7oPeqA2kDvd1OoEsoB41Rb6piOeYSi1-EZ2lzInyCkRlQ4vzL5F6KGOReYfco-WxhwX2I=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;does not tend to infinity are in the set. The Mandelbrot set is a compact set, contained in the closed disk of radius 2 around the origin. Since it is contained in a disk of known area, it is possible to approximate the area of the Mandelbrot Set&amp;rsquo;s using Monte Carlo method.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-FCl6L4iNcbQ/Uo4VZENpRWI/AAAAAAAACFM/MpzH9iF2b3c/s400/use.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Java:&lt;/strong&gt;
+Since Java does not inherently understand complex numbers, a &amp;ldquo;real&amp;rdquo; approach will be applied to perform the quadratic recurrence equation,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/V7ITPlrYZthFKEr263nwxpjVUiiLdwJ3L5z8rZPxVshqkDW1xj_BcYKUrf246BkzlwaXV5QoVZzFNUkmiXB6TuUKl8Y9l3nhVgA3dZr6_ovtk4rGCrb-AixpAtdrqCgkISYZDg56ngNsLPxZ6ys2h5hnDZXIlGU=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;First, as shown in the figure above, inscribe the disk in a square of length 4 units. Let&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/0yH1bkH6k3-YTHGlilL24aCKOeBoQY6IIs1otCW1XJZziPl873Drng-ae1OaB05EyYRvTp-xGlDOeyfE_vBhS5E=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;represent the coordinate along x-axis (real) and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/dxhyDjv6XZgw-_WuwpK9p8L2LK7A-RFhcxXe-fn9uyjp7RObuV1kvVmcmuYlTr8oO_Te_rWY4ylDCAMtvdVgp6E=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;represent the coordinate along y axis. Now set&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/eP_4t-eW257n3jmR8D1kh4EEJ1tCPsiySrBJrsqqHw-ZBk4lL07CD6G3itIldJdehKKEzjywvisTTqD9LxeN2MRQnQ=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/ZFARvm9iFhC_1Be81TOSDOf2Jho1NnN0L0WYIv-MO_249eSxbbNunvaDe4Svun8g20b8AGQEYpuTl38Q6ilzYM9A2Q=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;, where&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/hdeTD5wklsqEAljaDSnzAq7RFC4y_QjSvbKC_TSNLFZSYcOpoD5AANfGLwB95TiqmUV4OSujWjm8=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/k4rrnp9_gt6i9Zyf7jMI0qiROpdnvBXWqwQIWfzrgTRSkDHpLk198pua5NGt05fPHbyws5HqDftE=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;are randomly generated real numbers from [-2, 2]. Basically, the&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/hdeTD5wklsqEAljaDSnzAq7RFC4y_QjSvbKC_TSNLFZSYcOpoD5AANfGLwB95TiqmUV4OSujWjm8=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/k4rrnp9_gt6i9Zyf7jMI0qiROpdnvBXWqwQIWfzrgTRSkDHpLk198pua5NGt05fPHbyws5HqDftE=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;coordinates are being duplicated at this step to preserve the point&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/Sz22hiBRGEIHg61Cft2B1Ngq6LjmT0TqvwbBIaH565JVFBbPbc1_AUAAQgs81OxuVd1KqFrCYZJo=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;. Next, iteratively compute the following from&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/rpzM0IBRXdvzJoamA8eeL5M5X8C1-x23i7_UE8_wT6sePiID0hgrA1EMyQjoWnids9gT_mqKcUn4evYYjnG4Tt6fcKgLu0YRpqQnXxT-nwpdyBbPTIcr3hutDaJfx6fR3meYBj5zEgZvpQw=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;(for programming purposes, choose a large Dwell Limit). Simultaneously, check if&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/u2tI5wMdfS6PewRi_P8jgvOKOfocArri-stZmD4ByAlFuq3A5lydC11XQzizAhdLmahxzXnVM8SEk362OxJUJrU2NBbtFjAORPjnrzla2qjGK9TG5I1-XYbHwg5oeI2YHBjHzEfjVz3lI5mYmXq9=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;. If yes, increase count (not in the set) by 1 and get out of the loop (since all points should be contained in the disk).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/m8TcApmBEEAw108G1VlY7-EvQ4Be6UvoxXt2M400U8pseBlJtkposiJNr1X8Q2cBZjMu9H6EBYFOfvGzTb5ceTC9qQSxihh-xbGA81wKh-tGP3I7xWrJENQKCdjGHxorHdQ2SZJ0OzbHgR0kDkr-iK9KOwWE8mQ7Ww=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/umqP60O-kSi-Pn9U9wOWkcr8q6dUag1pk_PQ0VRtJI7Yp2cwzwK3s6JsC3WS2j7sk8m8hp04espvb2DAOPK0JF37-PEIQvdGq_Q6GKKNQm2EaAwlrt_eoRBuTS9vHfE=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Compute the ratio of number of points that are in the set to total number of points used. Then multiply the area of square (16 units square) to get the approximate are of the Mandelbrot set.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Java Code:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import java.util.Date;
+import java.util.Random;
+
+public class MandelbrotArea {
+
+    public static int mcRep = 5000;
+    public static int dwellLimit = 2048;
+    
+
+    /**
+     * @return random double in [-2,2]
+     */
+    public static double random() {
+        return (new Random().nextDouble() * 4) - 2;
+    }
+
+    /**
+     * @param r: real part of the complex number
+     * @param s: imaginary part of the complex number
+     * @return
+     */
+    public static boolean isMandelbrotSet(double r, double s) {
+        
+        double a = r, b = s, temp;
+        
+        // Iterative function
+        for (int j = 1; j &amp;lt;= dwellLimit; j++) {
+            temp = a;
+            a = Math.pow(a, 2) - Math.pow(b, 2) + r;
+            b = (2 * temp * b) + s;
+            
+            if (Math.pow(a, 2) + Math.pow(b, 2) &amp;gt; 4) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        long startTime = new Date().getTime();
+        long count = 0;
+        for (int i = 0; i &amp;lt;= mcRep; i++) {
+            if (isMandelbrotSet(random(), random())) {
+                count++;
+            }
+        }
+        System.out.println(&amp;quot;Input -&amp;gt; DwellLimit: &amp;quot; + dwellLimit + &amp;quot;, McRep: &amp;quot; + mcRep);
+        System.out.println(&amp;quot;Area: &amp;quot; + ((double) (count * 16)) / mcRep);
+        System.out.println(&amp;quot;Execution time: &amp;quot; + (new Date().getTime() - startTime) + &amp;quot; ms&amp;quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Input -&amp;gt; DwellLimit: 2048, McRep: 5000
+Area: 1.5136
+Execution time: 389 ms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;monte.Carlo &amp;lt;- 5000
+x &amp;lt;- runif(monte.Carlo, -2, 2)
+y &amp;lt;- runif(monte.Carlo, -2, 2)
+list &amp;lt;- numeric(monte.Carlo)
+
+for (j in 1:monte.Carlo){
+  list[j] &amp;lt;- if (inmandelbrotset(complex(real = x[j], imaginary = y[j]))) 1 else 0
+}
+area&amp;lt;-mean(list)*16
+
+
+# function that checks if a point E mandelbrot set
+inmandelbrotset &amp;lt;- function(c)
+{
+  dwell.limit &amp;lt;- 2048
+  z &amp;lt;- 0  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Faro Shuffle</title>
+      <link>https://subedi.ml/posts/faro_shuffle/</link>
+      <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/faro_shuffle/</guid>
+      <description>&lt;h3 id=&#34;the-faro-shuffle&#34;&gt;The Faro Shuffle:&lt;/h3&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/HmByI7lf5sUIht42g1AmRxOmq0INAaxCGyZ52ojil8Q7lOjqRT0T3fXCUZs_YfG-emi-W5zXYcIuUY7VYuOT_ChzIXTNFjBqc03axiORyFZNoUQ-RsH8eNWJpqbFHoW33lwq14cZoVAJ6g=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A Faro shuffle is probably one of the most intricate skills in an elite magician&amp;rsquo;s arsenal. Although it&amp;rsquo;s simple in concept, it is extremely difficult to perform and it typically needs years and years of practice. The idea of a shuffle is to randomize the cards, and since a typical shuffle is sloppy, that is usually true. However, a Faro shuffle is not random at all. In a perfect shuffle or a Faro shuffle the cards are divided exactly in half (top and bottom) and then interspersed alternately. Twenty one consecutive (out) Faro shuffles for a 50-card deck. However, it only takes eight consecutive Faro shuffles to bring a 52-card deck back to its original order. Interesting.
+&lt;strong&gt;Java:&lt;/strong&gt;
+If the number of cards in the deck is 12,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class outFaro {
+ public static void main(String[] args) {
+
+  // the number of card in the deck
+  int numberofcardindeck = 12;
+  // creating an array of cards
+  int[] deck = new int[numberofcardindeck];
+
+  // printing the order of cards in original deck
+  System.out.println(&amp;quot;Original deck&amp;quot;);
+  for (int i = 0; i &amp;lt; numberofcardindeck; i++) {
+   deck[i] = i + 1;
+   System.out.print(deck[i] + &amp;quot; &amp;quot;);
+  }
+  System.out.println();
+
+  // dividing the cards in half
+  int[] firsthalfdeck = new int[numberofcardindeck / 2];
+  int[] secondhalfdeck = new int[numberofcardindeck / 2];
+
+  // performing a (out) Faro shuffle
+  for (int Faro = 1; Faro &amp;lt;= 50; Faro++) {
+
+   for (int i = 0; i &amp;lt; numberofcardindeck / 2; i++) {
+    firsthalfdeck[i] = deck[i];
+    secondhalfdeck[i] = deck[i + (numberofcardindeck / 2)];
+   }
+
+   for (int i = 0; i &amp;lt; numberofcardindeck / 2; i++) {
+    deck[2 * i] = firsthalfdeck[i];
+    deck[2 * i + 1] = secondhalfdeck[i];
+   }
+   System.out.println();
+   System.out.println(&amp;quot;Order under Faro Shuffle: &amp;quot; + Faro);
+   for (int i = 0; i &amp;lt; numberofcardindeck; i++) {
+    System.out.print(deck[i] + &amp;quot; &amp;quot;);
+   }
+   // done when the second card comes back to its original position
+   if (deck[1] == 2) {
+    break;
+   }
+  }
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Original deck
+1 2 3 4 5 6 7 8 9 10 11 12 
+
+Order under Faro Shuffle: 1
+1 7 2 8 3 9 4 10 5 11 6 12 
+Order under Faro Shuffle: 2
+1 4 7 10 2 5 8 11 3 6 9 12 
+Order under Faro Shuffle: 3
+1 8 4 11 7 3 10 6 2 9 5 12 
+Order under Faro Shuffle: 4
+1 10 8 6 4 2 11 9 7 5 3 12 
+Order under Faro Shuffle: 5
+1 11 10 9 8 7 6 5 4 3 2 12 
+Order under Faro Shuffle: 6
+1 6 11 5 10 4 9 3 8 2 7 12 
+Order under Faro Shuffle: 7
+1 9 6 3 11 8 5 2 10 7 4 12 
+Order under Faro Shuffle: 8
+1 5 9 2 6 10 3 7 11 4 8 12 
+Order under Faro Shuffle: 9
+1 3 5 7 9 11 2 4 6 8 10 12 
+Order under Faro Shuffle: 10
+1 2 3 4 5 6 7 8 9 10 11 12 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After 10 out-Faro shuffles, the card returns to its original permutation. Therefore, 10 is the order of the permutation.&lt;/p&gt;
+&lt;p&gt;The table below shows number of cards in a deck and the number of out-Faro shuffles required to bring it back to its original permutation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-KmHq4RSH4ms/Uq29yVj05wI/AAAAAAAACLM/2k8ZStuAFHE/s640/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The definition of permutation and permutation group:&lt;/p&gt;
+&lt;p&gt;“A permutation of a set A is a function from A to A that is both one-to-one and onto. A permutation group of a set A is a set of permutations of A that forms a group under function composition.”&lt;/p&gt;
+&lt;p&gt;A Faro Shuffle is one-to-one and onto. At any frequency of the shuffle, every index (1-n) will have a unique card. Also, for every card, there is a unique index regardless of the frequency of the shuffle. The permutation for every “Number of cards” can be thought as a group under the operation - &lt;em&gt;FaroShuffle&lt;/em&gt;. Also, since “Number of Faro Shuffles” returns us back to the original permutation, we can establish it as the order of the permutation group.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-whe87B4VHc0/Uq3CE6GueDI/AAAAAAAACLY/g_dqBtk3rqM/s640/Una.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Theorem: &lt;em&gt;The order of a permutation of a finite set written in disjoint cycle form is the least common multiple of the lengths of the cycles.The order of a permutation of a finite set written in disjoint cycle form is the least common multiple of the lengths of the cycles.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is one of the most important Group Theory Theorems. Let us consider a 52-card deck to demonstrate this. From the Java code, the order is 8 when n is 52. Instead of looking at disjoint cycle form of the permutation to figure out the order of each element, we can also look at every permutation the original permutation has been to before returning to the original permutation. For n = 52, the table below shows all the permutations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-B4_BNs2bQeA/Uq2Zi1lqTdI/AAAAAAAACKo/Cx615gOzaa8/s400/Untitled-3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;From the table above, order of 1 and 52 = 1, order of 18 and 35 = 2 and order of rest of the elements = 8
+The  L.C.M (1,2,8) = 8 is the order of the group according to the Theorem. This is also what we got from the Java code.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conjectures / Proofs:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-DeHQjZrkGVo/Uq2c0tppv9I/AAAAAAAACK8/1gzd9lQiGzE/s640/Untitled-5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In-Faro and Out-Faro&lt;/strong&gt;
+In an out-Faro shuffle, the top card from first half of the deck always remains on top. In an in-Faro shuffle, the top card from second half will be the new top card of the new shuffled deck.&lt;/p&gt;
+&lt;p&gt;Since I did not have a deck of card with me, and I was bored, I wrote a very simple Android app to demonstrate in and out shuffle.&lt;/p&gt;
+&lt;p&gt;Generating a random deck with 4 cards. Notice that the &lt;em&gt;Eight of Hearts&lt;/em&gt; is on top.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-fR-pQ6azcW4/Uq7GGeUNPqI/AAAAAAAACOo/C1BGTjCQ9-o/s400/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Out-Faro 1:  &lt;em&gt;Eight of Hearts&lt;/em&gt; is on top.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-f64pkNJmVR8/Uq7GWRD_b8I/AAAAAAAACOw/j8Qs84Y2P8w/s400/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Out-Faro 2:  &lt;em&gt;Eight of Hearts&lt;/em&gt; is still on top and the deck is back in its original permutation. Therefore, order = 2.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-fR-pQ6azcW4/Uq7GGeUNPqI/AAAAAAAACOo/C1BGTjCQ9-o/s400/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In-Faro 1:  Using the same deck, &lt;em&gt;Eight of Hearts&lt;/em&gt; is no longer on top.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-RoXQAQWNgvw/Uq7HyrqFmRI/AAAAAAAACO8/uvGljin3cRk/s400/3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In-Faro 2:  Again&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-eZopVi0mdAI/Uq7IFsSKRMI/AAAAAAAACPE/WKf8Rn9D4zE/s400/4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In-Faro 3:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-Vx4p3xhUfxg/Uq7IGBRuyUI/AAAAAAAACPM/evS-FcN4jcs/s400/5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In-Faro 4: Back to its original order. Order = 4.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-w2GJfne76_s/Uq7IGXAUwSI/AAAAAAAACPQ/9zzmBMllX2Y/s400/6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;More screenshots:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-PhT--wNzS3E/Uq7JnQJtKGI/AAAAAAAACP0/AkEqRL5LHr8/s400/device-2013-12-16-151947.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-3CAkE5EPu-w/Uq7Jp7eIKxI/AAAAAAAACP8/ytswOcUmqbk/s400/device-2013-12-16-151958.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-ePVfCZMrQWk/Uq7JtzGGRwI/AAAAAAAACQM/jWqHUj49vJc/s400/device-2013-12-16-152030.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-WgONazrZPvU/Uq7Jy9f60CI/AAAAAAAACQc/kfB_kFQqtG8/s400/device-2013-12-16-152042.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/--SRvsM5UK7I/Uq7Jx-Xci4I/AAAAAAAACQU/qTUsHoc5Ty8/s400/device-2013-12-16-152050.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Another reason for writing the app was to see the connection between Binary Number System and Faro Shuffle. I read somewhere that magicians and gamblers use this for their advantage.&lt;/p&gt;
+&lt;p&gt;Consider a random eight card deck.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-SMd8cvUS844/Uq7PPihPgbI/AAAAAAAACRM/Un7UIqS7LEk/s400/binary1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now, the trick is, to send the &lt;em&gt;Queen of Clubs&lt;/em&gt; to say for example, 7th position in the deck (6 cards on top of it), the gambler would perform two in-Faros and one out-Faro. 6 in binary is 110; so, for digit 1, the magician would perform an in-Faro and for 0, an out-Faro.&lt;/p&gt;
+&lt;p&gt;1st in-Faro:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-DqmhoUID2Io/Uq7P1qVtGXI/AAAAAAAACRc/OXsCOC7M_mk/s400/binary2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2nd in-Faro:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-FRMYpkOdQbM/Uq7P1JS4BCI/AAAAAAAACRY/0qE01kWzlHE/s400/binary3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;out-Faro:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-9KMuxP3ozb4/Uq7P1FJO6YI/AAAAAAAACRU/9ItWqREP3sw/s400/binary4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Queen of Clubs&lt;/em&gt; is now in the 7th position. Also, its really interesting that this works irrespective of the number of cards in the deck.&lt;/p&gt;
+&lt;p&gt;I also found that the order of (2n+2) out-Faro shuffle is equal to the order of (2n) in-Faro shuffles.&lt;/p&gt;
+&lt;p&gt;I find that pretty interesting and I do not really see that to be obvious. It also implies that for no 2n, In-Faro=Out-Faro (I think). I will be investigating on these more later.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-65LUDQXD348/Uq3ICctaxPI/AAAAAAAACLo/WYRQ_r6GCvM/s640/Untitled-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://4.bp.blogspot.com/-65LUDQXD348/Uq3ICctaxPI/AAAAAAAACLo/WYRQ_r6GCvM/s1600/Untitled-2.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
