@@ -6,11 +6,64 @@
     <description>Recent content in Moonlit on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2009–2020</copyright>
-    <lastBuildDate>Mon, 01 Oct 2018 06:10:01 +0545</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 06:18:16 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/categories/moonlit/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Synthetic Data Generation</title>
+      <link>https://subedi.ml/posts/synthetic_data_harvesting/</link>
+      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/synthetic_data_harvesting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>You vs Bezos</title>
+      <link>https://subedi.ml/posts/bezos/</link>
+      <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/bezos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devs in Nepal</title>
+      <link>https://subedi.ml/posts/devs_in_nepal/</link>
+      <pubDate>Mon, 01 Jun 2020 12:12:12 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/devs_in_nepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheers Hospital Analysis</title>
+      <link>https://subedi.ml/posts/cheers_analysis/</link>
+      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/cheers_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Melting Glaciers of Nepal</title>
+      <link>https://subedi.ml/posts/melting_glaciers/</link>
+      <pubDate>Tue, 05 Nov 2019 07:36:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/melting_glaciers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fraud Detection</title>
+      <link>https://subedi.ml/posts/fraud_detection/</link>
+      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/fraud_detection/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Feasibility study with sentiment analysis and voronoi</title>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>participations on Ayush Subedi</title>
+    <link>https://subedi.ml/categories/participations/</link>
+    <description>Recent content in participations on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Nov 2019 08:05:11 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/categories/participations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>British College AI Conference</title>
+      <link>https://subedi.ml/posts/british_ai_conference/</link>
+      <pubDate>Tue, 05 Nov 2019 08:05:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/british_ai_conference/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>World Bank on Ayush Subedi</title>
+    <link>https://subedi.ml/categories/world-bank/</link>
+    <description>Recent content in World Bank on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Jan 2020 09:45:16 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/categories/world-bank/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data in News</title>
+      <link>https://subedi.ml/posts/data_in_news/</link>
+      <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/data_in_news/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nepal Data Literacy Program</title>
+      <link>https://subedi.ml/posts/nepal_data_literacy/</link>
+      <pubDate>Tue, 31 Dec 2019 08:00:10 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/nepal_data_literacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solveathon Nepal 2019</title>
+      <link>https://subedi.ml/posts/solveathon_nepal/</link>
+      <pubDate>Thu, 05 Dec 2019 09:09:55 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/solveathon_nepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for better policy</title>
+      <link>https://subedi.ml/posts/evidence_better_policy/</link>
+      <pubDate>Sun, 01 Dec 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/evidence_better_policy/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

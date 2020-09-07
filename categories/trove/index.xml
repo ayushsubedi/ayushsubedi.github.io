@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trove on Ayush Subedi</title>
+    <link>https://subedi.ml/categories/trove/</link>
+    <description>Recent content in Trove on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Sep 2019 09:16:00 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/categories/trove/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trove Summary</title>
+      <link>https://subedi.ml/posts/trove_summary/</link>
+      <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/trove_summary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Underlying Architecture of Trove</title>
+      <link>https://subedi.ml/posts/trove_architecture/</link>
+      <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/trove_architecture/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

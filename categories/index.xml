@@ -6,25 +6,15 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2009–2020</copyright>
-    <lastBuildDate>Mon, 31 Dec 2018 10:10:11 +0545</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2020 10:02:00 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Pet Projects</title>
-      <link>https://subedi.ml/categories/pet-projects/</link>
-      <pubDate>Mon, 31 Dec 2018 10:10:11 +0545</pubDate>
-      
-      <guid>https://subedi.ml/categories/pet-projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Teaching Materials</title>
       <link>https://subedi.ml/categories/teaching-materials/</link>
-      <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
+      <pubDate>Sat, 11 Jul 2020 10:02:00 +0545</pubDate>
       
       <guid>https://subedi.ml/categories/teaching-materials/</guid>
       <description></description>
@@ -33,9 +23,45 @@
     <item>
       <title>Moonlit</title>
       <link>https://subedi.ml/categories/moonlit/</link>
-      <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
+      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
       
       <guid>https://subedi.ml/categories/moonlit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>World Bank</title>
+      <link>https://subedi.ml/categories/world-bank/</link>
+      <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/categories/world-bank/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>participations</title>
+      <link>https://subedi.ml/categories/participations/</link>
+      <pubDate>Tue, 05 Nov 2019 08:05:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/categories/participations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trove</title>
+      <link>https://subedi.ml/categories/trove/</link>
+      <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/categories/trove/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pet Projects</title>
+      <link>https://subedi.ml/categories/pet-projects/</link>
+      <pubDate>Mon, 31 Dec 2018 10:10:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/categories/pet-projects/</guid>
       <description></description>
     </item>
     
