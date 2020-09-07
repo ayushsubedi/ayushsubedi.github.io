@@ -7,10 +7,118 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2009–2020</copyright>
-    <lastBuildDate>Thu, 05 Sep 2013 17:12:41 +0545</lastBuildDate>
+    <lastBuildDate>Sun, 01 Oct 2017 11:02:11 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>product</title>
+      <link>https://subedi.ml/tags/product/</link>
+      <pubDate>Sun, 01 Oct 2017 11:02:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tootle</title>
+      <link>https://subedi.ml/tags/tootle/</link>
+      <pubDate>Sun, 01 Oct 2017 11:02:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/tootle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://subedi.ml/tags/android/</link>
+      <pubDate>Sat, 22 Oct 2016 04:01:02 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>etymology</title>
+      <link>https://subedi.ml/tags/etymology/</link>
+      <pubDate>Fri, 01 Jan 2016 03:11:02 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/etymology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monte carlo</title>
+      <link>https://subedi.ml/tags/monte-carlo/</link>
+      <pubDate>Fri, 18 Apr 2014 09:13:12 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/monte-carlo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>https://subedi.ml/tags/probability/</link>
+      <pubDate>Fri, 18 Apr 2014 09:13:12 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://subedi.ml/tags/r/</link>
+      <pubDate>Fri, 18 Apr 2014 09:13:12 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mandelbrot</title>
+      <link>https://subedi.ml/tags/mandelbrot/</link>
+      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/mandelbrot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viz</title>
+      <link>https://subedi.ml/tags/viz/</link>
+      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arduino</title>
+      <link>https://subedi.ml/tags/arduino/</link>
+      <pubDate>Fri, 31 Jan 2014 11:03:13 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://subedi.ml/tags/java/</link>
+      <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markov chains</title>
+      <link>https://subedi.ml/tags/markov-chains/</link>
+      <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/markov-chains/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>capstone</title>
@@ -31,15 +139,6 @@
     </item>
     
     <item>
-      <title>java</title>
-      <link>https://subedi.ml/tags/java/</link>
-      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
-      
-      <guid>https://subedi.ml/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>faro</title>
       <link>https://subedi.ml/tags/faro/</link>
       <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
@@ -54,24 +153,6 @@
       <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
       
       <guid>https://subedi.ml/tags/group-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mandelbrot</title>
-      <link>https://subedi.ml/tags/mandelbrot/</link>
-      <pubDate>Fri, 02 Nov 2012 10:02:41 +0545</pubDate>
-      
-      <guid>https://subedi.ml/tags/mandelbrot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>monte carlo</title>
-      <link>https://subedi.ml/tags/monte-carlo/</link>
-      <pubDate>Fri, 02 Nov 2012 10:02:41 +0545</pubDate>
-      
-      <guid>https://subedi.ml/tags/monte-carlo/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>arduino on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/arduino/</link>
+    <description>Recent content in arduino on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Fri, 31 Jan 2014 11:03:13 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android&#43;Arduino RC Car</title>
+      <link>https://subedi.ml/posts/rc_car/</link>
+      <pubDate>Fri, 31 Jan 2014 11:03:13 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/rc_car/</guid>
+      <description>&lt;h3 id=&#34;androidarduino-rc-car&#34;&gt;Android+Arduino RC Car&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-_8RnAwamLOM/UuxigwOv4HI/AAAAAAAACW4/mW5MxPQ7HdY/s1600/DSC_0027.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;http://www.ayushsubedi.com/2013/07/androidrccar.html&#34;&gt;previous attempt&lt;/a&gt; was in shambles due to the lack of proper products. This time, I got myself a Sainsmart L293D motor driver (actually a cloned version of the ever so popular Adafruit L293D driver) and a handy four wheel drive chassis. Hereupon, the only adjustment  required was the use of analog pins as digital pins. This is the consequence of the motor driver using up all the digital pins and leaving no pins for the Bluetooth shield. I also hooked up the Arduino to a USB power bank.&lt;/p&gt;
+&lt;p&gt;Tools used:
+~ Arduino Uno
+~ 4WD Chassis
+~ SainSmart motor driver (L293D)
+~ Sunkee 30ft Bluetooth Module
+~ Anker 15000 mAh power bank&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-a_8ouJ9TTOU/UuxyfHkp7DI/AAAAAAAACXI/8h4QGB3fCQo/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Arduino&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//Project: Android RC Car
+//Author: Ayush Subedi
+
+#include &amp;lt;AFMotor.h&amp;gt; //import Adafruit Motor library
+#include &amp;lt;SoftwareSerial.h&amp;gt;// import the serial library
+SoftwareSerial newPorts(15, 17); // RX =15= A1, TX=17=A3  
+AF_DCMotor motor1(1, MOTOR12_1KHZ); // create motor #1, 1KHz pwm
+AF_DCMotor motor2(2, MOTOR12_1KHZ); // create motor #2, 1KHz pwm
+AF_DCMotor motor3(3, MOTOR34_1KHZ); // create motor #3, 1KHz pwm
+AF_DCMotor motor4(4, MOTOR34_1KHZ); // create motor #4, 1KHz pwm
+
+void setup() {
+  newPorts.begin(9600);           
+  motor1.setSpeed(255);     // set the speed to 200/255
+  motor2.setSpeed(255);     // set the speed to 200/255
+  motor3.setSpeed(255);     // set the speed to 200/255
+  motor4.setSpeed(255);     // set the speed to 200/255
+}
+
+void loop() {  
+    while (newPorts.available() &amp;gt; 0)
+  {
+    char ch = newPorts.read();
+    newPorts.println(newPorts.read());  
+    executeReceivedCommand(ch);
+  } 
+}
+
+void executeReceivedCommand(char command)
+{
+  switch (command)
+  {
+    //Forward
+  case &#39;0&#39;:
+    motor1.run(FORWARD);     
+    motor2.run(FORWARD);
+    motor3.run(FORWARD);
+    motor4.run(FORWARD);  
+  break;
+    
+    //Reverse
+  case &#39;1&#39;:
+    motor1.run(BACKWARD);     
+    motor2.run(BACKWARD);
+    motor3.run(BACKWARD);
+    motor4.run(BACKWARD);
+   
+  break;     
+
+    //Left : skid steering
+    case &#39;3&#39;:
+    motor1.run(FORWARD);
+    motor4.run(FORWARD);
+    motor2.run(RELEASE);
+    motor3.run(RELEASE);
+  break;
+  
+    //Right : skid steering
+    case &#39;4&#39;:
+    motor2.run(FORWARD);
+    motor3.run(FORWARD);
+    motor1.run(RELEASE);
+    motor4.run(RELEASE);
+  break;
+
+     //Stall
+  case &#39;2&#39;:
+    motor1.run(RELEASE);      
+    motor2.run(RELEASE);
+    motor3.run(RELEASE);
+    motor4.run(RELEASE);    
+  break;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-cuy1cpGVbTE/Uux-d0HoVHI/AAAAAAAACXY/RiNMCCUG3Ss/s1600/device-2014-02-01-103955.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-BYq7Y80m_CQ/Uux-fb2qPsI/AAAAAAAACXw/CP5jKd5ZeMM/s1600/device-2014-02-01-104054.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-5GwL64mI0GM/Uux-ey1e-eI/AAAAAAAACXk/FtT7x2U8ozU/s1600/device-2014-02-01-104037.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In a nutshell, the Android device sends &lt;em&gt;Char&lt;/em&gt; type to Arduino which is used to rotate the motors to maneuver towards a desired direction.&lt;/p&gt;
+&lt;p&gt;Forward: 0
+Reverse: 1
+Stop: 2
+Left: 3
+Right: 4&lt;/p&gt;
+&lt;p&gt;The car turns left and right by implementing &lt;em&gt;skid steering&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pictures and Video:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-s2w3-5LZqMo/Uuyr1gptrFI/AAAAAAAACYI/HpUrDAo6bro/s1600/DSC_0033.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-v1Yr71b9nEg/Uuyr5-n2T3I/AAAAAAAACYQ/uPvTKj_qzow/s1600/DSC_0035.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-SbQNev4Xlac/UuytAzkVbWI/AAAAAAAACYc/nDIj4OcxYCc/s1600/DSC_0036.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/KiaEGsHsIco&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>probability on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/probability/</link>
+    <description>Recent content in probability on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Fri, 18 Apr 2014 09:13:12 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/probability/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Republic of Zorgania</title>
+      <link>https://subedi.ml/posts/zorgania/</link>
+      <pubDate>Fri, 18 Apr 2014 09:13:12 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/zorgania/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-UeCtdNRm02c/U1CxJR6GsdI/AAAAAAAACpA/3P9OqkZ9eIQ/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Zorganian Republic has some very strange customs. Couples only wish to have female children as only females can inherit the family&amp;rsquo;s wealth, so if they have a male child they keep having more children until they have a girl. If they have a girl, they stop having children. What is the ratio of girls to boys in Zorgania?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The ratio of girls to boys in Zorgania is 1:1. This might be a little counter-intuitive at first. Here are some ways of tackling this problem.
+&lt;strong&gt;1. Monte Carlo Simulation:&lt;/strong&gt;
+Although, Monte Carlo simulation does not necessarily show why the result is 1:1, it is appropriate because of the very counter-intuitive nature of the problem. At the very least, it helps us see that the result is indeed 1:1. Therefore, this is a good start.&lt;/p&gt;
+&lt;p&gt;The following R code estimates the probability of a child being a boy in Zorgania.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;couples &amp;lt;- 100000
+boycount &amp;lt;- 0
+
+for (i in 1:couples){
+    # 0: boy
+    while (sample(c(0,1),1) == 0) {
+    boycount=boycount+1
+  }
+}
+probability &amp;lt;- boycount/(couples+boycount)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-T_wWq6Bc8pA/U1C18KqTM-I/AAAAAAAACpI/XcFVRcq7n_Q/s1600/Untitled-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Understanding the question better:&lt;/strong&gt;
+Here is another question: What is the probability of getting a tail in a fair coin toss, if all seven previous tosses resulted in heads? Since coin flips are independent events, the probability is still going to be 0.5. Similarly in this case, the child births are independent. It does not matter if the couples stop giving birth after they have a baby-girl. The expected value is unchanged.&lt;/p&gt;
+&lt;p&gt;For example, consider five couples: C1, C2, C3, C4 and C5.
+If B-&amp;gt; Boy and G-&amp;gt; Girl. Using R&amp;rsquo;s sample().
+For C1:  {B, G}
+For C2: {G}
+For C3: {B, B, G}
+For C4: {B, G}
+For C5: {G}&lt;/p&gt;
+&lt;p&gt;Now, ignore the couples and only consider the children. The children are {B, G, G, B, B, G, B, G, G}. The only thing happening here is simply the generation of  either a B or a G with equal probability for each generation. At this point, it is quite obvious that the part that has to do with &amp;ldquo;couple&amp;hellip;.&amp;rdquo; in the question is to mislead and confuse similar to the &amp;ldquo;previous seven tosses..&amp;rdquo; example that I mentioned in the beginning of 2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.  Counting:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-7FiIun81q9I/U1Daw9uveiI/AAAAAAAACpY/ppyL8FvonUg/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If we start with 512 couples (hence 512 first borns), half of them are going to have a girl as their first. Those couples will stop having children. Among, the other half couples who had a son as their first child, half of them are going to have a girl as their second child and so on. At every step there is an equal numbers of boys and girls. Therefore, the expected ratio is 1:1.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Snakes and Ladders</title>
+      <link>https://subedi.ml/posts/snakesandladders/</link>
+      <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/snakesandladders/</guid>
+      <description>&lt;h3 id=&#34;snakes-and-ladders&#34;&gt;Snakes and Ladders&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-tefYwsHiebo/UrrjwTMNHvI/AAAAAAAACTM/CqzL6R9QJTo/s320/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This game needs no introduction. Although there are several variations of this game (mainly on position of the snakes and ladders), the rules are generally the same. Some of the rules, (which are part of my algorithm) are mentioned below. Also, this game requires no skill as it solely depends on luck/probability. This allows several mathematical questions relating to this game be answered using Monte Carlo simulation. However, for this post, I will only be investigating from an analytic/subjective stand point. That is, I will be using Markov Chain to answer those questions.
+&lt;strong&gt;Markov Chain&lt;/strong&gt;
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Markov_chain&#34;&gt;Wikipedia link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The game&amp;rsquo;s &lt;em&gt;Markov property&lt;/em&gt; or &lt;em&gt;memorylessness&lt;/em&gt; allows us to use Markov Chain. That is, the probability of occurrence of next event only depends on current event and not on any other events that occurred before. An example from our game: It does not matter if the player reached square 31 using the ladder from square 9, or by traversing the hard way around. Once the player is in 31, the probability of getting to square 32 does not depend on the &amp;ldquo;past&amp;rdquo;.
+&lt;strong&gt;Transition matrix&lt;/strong&gt;
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Stochastic_matrix&#34;&gt;Wikipedia link&lt;/a&gt;
+Transition matrix is a 2 dimensional array that encapsulates state transitional probabilities. For example, a transition matrix &lt;em&gt;P&lt;/em&gt;, given the following information (Mathematical model of one dimensional random walk),&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-EzQITg5YrJs/Uruin1dO4FI/AAAAAAAACTk/HtS3zjNiA28/s200/Untitled-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;would be,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-hGD2n01zTNc/Urui8NwZN8I/AAAAAAAACTs/Li8N0-FFep4/s320/Untitled-3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transition matrix for Snakes and Ladders&lt;/strong&gt;
+&lt;strong&gt;Trivial Transition Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First of all, consider a case where there are no snakes or ladders. Let us call this our Trivial (for the lack of words) scenario.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-S5UwD_wC1JE/Uru0Zpth-zI/AAAAAAAACT8/X4pTBXhceAc/s400/null.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This definitely makes for a boring game. However, it helps with the math. First of all, the square 0 is the position the player is before the game starts.  Now, since we are using a cubic die, on the first roll, the probability of going from 0 to 1, 0 to 2, 0 to 3, 0 to 4, 0 to 5, and 0 to six is 1/6. Since we are not accounting for snakes or ladders, the probability of going from box i to boxes i+1, i+2, i+3, i+4, i+5, and i+6 are all going to be 1/6, unless we run out of space. That is, if we are at 97, the person can only move to next step if the die rolls 1, 2 or 3. For anything greater, the person will not go to the next step. Therefore, in this case, the probabilities are: 97 to 98 = 1/6, 97 to 99 = 1/6, 97 to 100 = 1/6 and 97 to 97 = 3/6.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building the Trivial transition matrix based on the aforementioned rule.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; import Jama.Matrix;
+        /**
+  * @return 101X101 Transition Matrix for case: Trivial
+  */
+ public Matrix trivialMatrix() {
+  int difference, playerPosition = 0, matrixSize=101;
+  double transitionM[][] = new double\[matrixSize\][matrixSize];
+  double probability = 1.0 / 6;
+
+  for (playerPosition = 0; playerPosition &amp;lt; transitionM.length; playerPosition++) {
+   for (int i = 1; i &amp;lt;= 6; i++) {
+    if ((difference = matrixSize - playerPosition) &amp;lt;= 6) {
+     for (int k = 1; k &amp;lt; difference; k++) {
+      transitionM\[playerPosition\][playerPosition + k] = probability;
+     }
+     transitionM\[playerPosition\][playerPosition] = (6 - difference + 1) * probability;
+    } else {
+     transitionM\[playerPosition\][playerPosition + i] = probability;
+    }
+   }
+  }
+  return new Matrix(transitionM);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Top-Left&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-D7P9nwwtH8o/UrvDvXHBE-I/AAAAAAAACUU/wc5T45yEeR4/s640/top.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bottom-Right&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-0AVTUWGwEao/UrvDue1c5XI/AAAAAAAACUM/xYxHR6t-a08/s640/bottom.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-Trivial Transition Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-CePQbx-Vnlo/UrxXO198xGI/AAAAAAAACWk/gbsFLketz9Y/s400/chutesladders.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Snakes:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;98 ~ 78, 95 ~ 75, 93 ~ 73, 87 ~ 24, 64 ~ 60, 62 ~ 19, 56 ~ 53, 49 ~ 11, 48 ~ 26, 16 ~ 6&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ladders:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1 ~ 38, 4 ~ 14, 9 ~ 31, 21 ~ 42, 28 ~ 84, 36 ~ 44, 51 ~ 67, 71 ~ 91, 80 ~ 100&lt;/p&gt;
+&lt;p&gt;I decided to use a simple &lt;em&gt;List&lt;/em&gt; implementation for this. This might most likely be the Brute-Force implementation (I know several ways to make it better but none to make it worse). One way to make it more efficient would be to use 82 by 82 matrix instead of 101 by 101.&lt;/p&gt;
+&lt;p&gt;The advantage of using this implementation over the 82 by 82 matrix (apart from easy implementation) is that this method can be used for any snakes and ladders board variation. It also allows us to check for some hypothetical cases or answer more important questions. Eg: What is the best way to position snakes and ladders for maximum thrill to a player?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building the non-Trivial transition matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @return 101X101 Transition Matrix for case: non-Trivial
+  */
+ public Matrix nonTrivialMatrix() {
+  int playerPosition,matrixSize=101,difference;  
+  List&amp;lt;Integer&amp;gt; from = Arrays.asList(1, 4, 9, 21, 28, 36, 51, 71, 80, 98, 95, 93, 87, 64, 62, 56, 49, 48, 16);
+  List&amp;lt;Integer&amp;gt; to = Arrays.asList(38, 14, 31, 42, 84, 44, 67, 91, 100, 78, 75, 73, 24, 60, 19, 53, 11, 26, 6);
+  double probability = 1.0 / 6;
+  double transitionM[][] = new double\[matrixSize\][matrixSize];
+
+  for (playerPosition = 0; playerPosition &amp;lt; transitionM.length; playerPosition++) {
+   if (!from.contains(playerPosition)) {
+    for (int i = 1; i &amp;lt;= 6; i++) {
+     if ((difference = 6 - playerPosition) &amp;lt;= 6) {
+      for (int k = 1; k &amp;lt; difference; k++) {
+       if (from.contains(playerPosition + k)) {
+        transitionM\[playerPosition\][to.get(from.indexOf(playerPosition + k))] = probability;
+       } else {
+        transitionM\[playerPosition\][playerPosition + k] = probability;
+       }
+      }
+      if (from.contains(playerPosition)) {
+       transitionM\[playerPosition\][to.get(from.indexOf(playerPosition))] = (6 - difference + 1) * probability;
+      } else {
+       transitionM\[playerPosition\][playerPosition] = (6 - difference + 1) * probability;
+      }
+
+     } else {
+      if (from.contains(playerPosition + i)) {
+       transitionM\[playerPosition\][to.get(from.indexOf(playerPosition + i))] = transitionM\[playerPosition\][to.get(from.indexOf(playerPosition + i))] + probability;
+      } else {
+       transitionM\[playerPosition\][playerPosition + i] = transitionM\[playerPosition\][playerPosition + i] + probability;
+      }
+     }
+    }
+   }
+  }
+  return new Matrix(transitionM);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Top-Left&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-R9-biUUcmiw/UrvWUKP8x_I/AAAAAAAACU4/2sEIXy2oWH8/s1600/top.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bottom-Right&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-9S88JEZ_wYs/UrvWUFzELZI/AAAAAAAACU0/VV-9PT6f_9Q/s1600/bottom.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Probability Vector&lt;/strong&gt;
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Probability_vector&#34;&gt;Wikipedia link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Probability vectors&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/Hh3RpupM-kluBlTwZebvrdQRabRQm1MBBT8BxVN-0SREDnW-h4BUVUojSeKr75ReQjKuoaFYosiFamRmhKcO6I4=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;represents the probability of being on a certain square after n dice rolls. It is a vector with non-negative entries that add up to one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/CTz-FJf12YwQ9Yza6ImhV1zcBzFlWuoLgEN7_kTPBj1jqI801oTFpXtz8QBfEasNx7oGg5-jCsIZZP04_bBjMuKClb8g9R3WwADyc8-jfMGRoHV7pzUNnuXqoBnyoJWmBKwu2OED2aYHkA6kixUpnHzhPwQ3cgBquv45tRFaP4g5nYdIQDz1jkTietoz5rKWnt2gB2ej7V0rBalxUXcd3wQ8xb3p_g5yxnQU=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;implies that the probability of being on square 0 is 1. This is our input.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/proxy/sQMpxr8aHFBdLfBjKG8VHPLKg3OujQct4vbkigk-5CYuq47XuvfnbcPitvyyvECmBDlOBh7oYAzqiaX2TqxlKZVAYoFv638FVBzv7VOBAI6JMYi-FiDLrWsPf5LpfjenkwF-=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/OhLb7b5YJ5ANaHWCFlQSeN0-4GmP3AyO8In7yXt429XH_2cHs3Tt9UO9Pw4Jrq73grU-oli7IqPTy6tW0ytx0swIxRyDjLR9oPv0NBeWUA97Amq5ySpbL9sNLK6WeGuStyfi=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If &lt;em&gt;P&lt;/em&gt; is the Trivial transition matrix,&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/proxy/4mEywZbxQeUlfNhJpOqy5YgOw8zZKrKdUi9qDR4MnG0aqcyUdBiV2Xp0rmiA6W7l2_e2YzgBlBIthsOgIBbGgcx-950O3BIxTCRcgscSXTSr91--xb1kOrK5WE7XpqlLRlXe9IKCKzCFcjroJxy7mFKXV-Sl51rm9vzijx3htBU86q9h0cE9-gD2-z3COWP7HRCJxz86pBFwOJraltHK1xgMU_ra0v1p9bWG-8jFGvm727rn68rnFDP_IsN94A3SKaUaK5pGtyjjpXJEzABzQogWbRhUsM3daBF9LtIE5zQg9UvagLjX5e9FynO5VUA-rhcRA6oGRJvx1T6UyvPYaznYqxCaa48nTZnQEI-jTF_KOIDdlLVHUn032GXz2mOZS_T6f8dbl6QHUlxrWCYU77cGuiOVyuLGcN5ddg8KlSXkmQBiQg=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If &lt;em&gt;P&lt;/em&gt; is the non-Trivial transition matrix.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/proxy/K5vuIHoJbyyyBUyaV3zHcNnuXG40AF9v-b744Ti2N-reLSDS0HLLl3FPyXe3AMA73J68US1C7n01nvFZZUygR6TF8olnaSYyeozOGxct_41Nw__mcxbIy8u5EGSHqIhbrIQaIiYkM_NmuPZc3726kpY4ET16ghuT3iBFvhI_wnzFxNiYiZ8KOqocXBsDh83WLl0t7Vit5AWWKJYIw06tRAF095AHnlwzr_cQetRvJT97IGU-_ZS3IbuHoXzBCfvaONpojNCm6vup8v4rTGz_dGK1hP96D4q3jcNfRT7yOJL9MiApAmeJ5yaVjPXz7S1fd3J-bUEUPa-5Zg3rCtOTE8RJPeYLH2c234olprBbEuePH_mDZiQktWyixOLnoXhHE5r_hPNeIA0O-U1B3VH3I_Eqa-tORAE5DizAO5GnYMYDidg=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Building the Probability Vector&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @return Probability Vector with 1 being the first element
+  */
+ public Matrix probabilityVector() {
+  double probabilityV[] = new double[101];
+  probabilityV[0] = 1;
+  return new Matrix(probabilityV, 1);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Question 1:&lt;/strong&gt;
+&lt;strong&gt;Probability of being on square&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;s&lt;/strong&gt;&lt;/em&gt; &lt;strong&gt;after&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;n&lt;/strong&gt;&lt;/em&gt; &lt;strong&gt;dice rolls:&lt;/strong&gt;
+Using &lt;em&gt;Vn-1 * P = Vn&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @param transitionMatrix
+  * @param probabilityVector
+  * @param diceRolls
+  */
+ public static void squareProbability(Matrix transitionMatrix, Matrix probabilityVector, int diceRolls) {
+  NumberFormat nf = NumberFormat.getInstance();
+  nf.setMinimumFractionDigits(20);
+  System.out.println(&amp;quot;Dice rolls: &amp;quot;+diceRolls);
+  for (int i = 1; i &amp;lt;= diceRolls; i++) {
+   probabilityVector = probabilityVector.times(transitionMatrix);  
+  } 
+  probabilityVector.print(nf, 3);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Some outputs for the Trivial matrix:&lt;/strong&gt;
+I used html tables to simulate the board (basically printed the html tags within java code).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-bf4gfazPSTc/UrwPSUJvCoI/AAAAAAAACWM/abBVtWiWIc8/s1600/tr1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-r_ZPoixoCAI/UrwPSY02p7I/AAAAAAAACWI/1KSdh5wPRBw/s1600/tr2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Some outputs for the non-Trivial matrix:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-7PbGjTJB88s/UrwMVSZjdFI/AAAAAAAACVo/2_Qtz0iE1H4/s1600/diceroll7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-FRoHkWaBFzo/UrwMT-6BQ1I/AAAAAAAACVc/YoU-insHUCA/s1600/diceroll30.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Uk5AevQ4NVs/UrwMVCMIlbI/AAAAAAAACVs/cjwBJ7t2FFI/s1600/diceroll60.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-71cSgHwz5D0/UrwMThK9VhI/AAAAAAAACVY/37G5e4G-VFU/s1600/diceroll100.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-AyEuODg3l6g/UrwMTvZ86HI/AAAAAAAACVg/UbRnTDGnqCI/s1600/dice1000.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Question 2:&lt;/strong&gt;
+&lt;strong&gt;Minimum length of  a game and occurrence probability&lt;/strong&gt;
+That is, after how many n, is the probability at square 100 greater than 0 for the first time?&lt;/p&gt;
+&lt;p&gt;For the trivial case, the answer is, ceiling of 100/6 = 17.&lt;/p&gt;
+&lt;p&gt;For the non-trivial case,&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @param transitionMatrix
+  * @param probabilityVector
+  */
+ public static void gameCompletion(Matrix transitionMatrix, Matrix probabilityVector) {
+  NumberFormat nf = NumberFormat.getInstance();
+  nf.setMinimumFractionDigits(30);
+  int box = 100;
+  int diceRolls = 0;
+  while (probabilityVector.get(0, box) == 0) {
+   diceRolls++;
+   probabilityVector = probabilityVector.times(transitionMatrix);   
+  }
+  System.out.println(&amp;quot;The game can be completed in min of &amp;quot; + diceRolls + &amp;quot; dice rolls.&amp;quot;);
+  System.out.println(&amp;quot;Probability of it happening: &amp;quot; + nf.format(probabilityVector.get(0, box)));
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The game can be completed in min of 7 dice rolls.
+Probability of it happening: 0.001564643347050754000000000000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rolls of {4,6,6,2,6,4,6} is one shortest solution.
+However, in theory, the game could last forever. Therefore, there is no longest game.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The game can be completed in min of 17 dice rolls.
+Probability of it happening: 0.000000000009038995585604526000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rolls of {6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6} is the only shortest solution.
+Longest game in this case is 100 dice rolls. The player will have to roll 1, 100 consecutive times from start.
+&lt;strong&gt;Question 3:&lt;/strong&gt;
+&lt;strong&gt;Expected length of a game:&lt;/strong&gt;
+Let &lt;em&gt;subStochasticMatrix&lt;/em&gt; be the &lt;em&gt;100 by 100&lt;/em&gt; matrix obtained by deleting the last row and column of the transition matrix. Also, let &lt;em&gt;I&lt;/em&gt; be &lt;em&gt;100 by 100&lt;/em&gt; identity matrix. Let &lt;em&gt;inverse&lt;/em&gt; be the inverse of the difference of &lt;em&gt;I&lt;/em&gt; and &lt;em&gt;subStochasticMatrix.&lt;/em&gt; The expected number of rolls is given by the sum of entries in top row of the matrix &lt;em&gt;inverse&lt;/em&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; /**
+  * @param transitionMatrix
+  * @param probabilityVector
+  */
+ public static void expectedLength(Matrix transitionMatrix, Matrix probabilityVector){
+  Matrix subStochasticMatrix=transitionMatrix.getMatrix(0, 99, 0 ,99);
+  Matrix I = Matrix.identity(100,100);  
+  Matrix inverse = (I.minus(subStochasticMatrix)).inverse();
+  double sum=0;
+  for (int i =0;i&amp;lt;=99;i++){
+   sum=sum+inverse.get(0, i);
+  }
+  System.out.println(&amp;quot;Expected game length: &amp;quot;+sum);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Expected game length: 39.59836564020812
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Trivial Matrix&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Expected game length: 33.33333333333334
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

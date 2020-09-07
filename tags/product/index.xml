@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>product on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/product/</link>
+    <description>Recent content in product on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Sun, 01 Oct 2017 11:02:11 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/product/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A brief history of Tootle</title>
+      <link>https://subedi.ml/posts/tootle_history/</link>
+      <pubDate>Sun, 01 Oct 2017 11:02:11 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/tootle_history/</guid>
+      <description>&lt;h3 id=&#34;a-brief-history-of-tootle&#34;&gt;A brief history of Tootle&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-PdO1BY4SST8/WP6x0XBJKPI/AAAAAAAAHqc/UaCecAEMDYoe4D414rhzbgupbpk4n5XDwCLcB/s320/change-copy.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Hello World,
+When Tootle started, there were four of us. At the time, we were working on EdCrayon (Three60’s Education and Classroom Management System). The development of EdCrayon was pretty much complete and one of the better schools in town had been implementing it for a year. We were busy with building fewer last minute requirements such as Nepalese school standard digital report cards and student ranking systems. After those were done and the academic session ended, we were preparing for the next academic session and we were also in talks with several schools for implementation of EdCrayon.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://princihere.files.wordpress.com/2016/10/androiddevices.png?w=456&amp;amp;h=393&amp;amp;zoom=2&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://princihere.files.wordpress.com/2016/10/androiddevices.png?w=456&amp;amp;h=393&amp;amp;zoom=2&#34;&gt;https://princihere.files.wordpress.com/2016/10/androiddevices.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;However, because of earthquake of 2015, the school that were lined up decided to back out and use their EdCrayon allocated resources on repairing the infrastructure damages. We would come to work and not feel productive at all. Due to the sheer boredom at work, we started researching on several ideas including location based services. One of the very first ideas was to create an app that would allow users to track location of Sajha buses on Google Maps so that they could plan on leaving offices/homes by referencing estimated time of arrival provided by the app. Even though Sajha buses were comparatively convenient, the problem was that people had to wait for the buses, generally up to half an hour,  since bus stops arrival timings were more or less random.  We developed the prototype for a Sajha bus route but since Sajha bus did not show any interest we decided to move on to other ideas.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-LUNyxO3d1Do/V_SwqMqhWwI/AAAAAAAAFa4/koo69yvCxmkgOBKS4ilOyneOA94iMAQkQCLcB/s640/Screenshot_2016-01-26-07-23-09.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Meanwhile, I was researching on asynchronous API calls for a pet project of mine. I had been trying to figure out the best way to sync client’s on-device offline database and off-device master database. In this process, one of the first things that I did was to look into creating my own implementation by syncing Android SQLite database with MySQL database. Up until this point, when ever client sync was required, I would simply clear out the content adapter’s list, remove all elements, get all elements from master server and refill the adapter. This allowed for easy implementation. However, even if nothing was changed in the client database, whenever the client hit the sync button or pulled to refresh, the process would get repeated. Basically the question I was trying to answer was,
+“Is it faster and less expensive to individually assess for updates by comparing updated_date and id or to simply truncate and refill?” During the research for this, I stumbled upon newer technologies that would allow setting up changes listeners on client’s devices to refresh the changed list without having to trigger an action to sync the data. Using this finding and our research from location based services, we felt comfortable tackling the idea for a ride sharing application from a technological perspective, and Tootle was born.
+Tootle was not Tootle from the very beginning. We continued our research on appropriate Business Models, Brand Positioning, Business Strategy, and Marketing and Delivery. Based on the changes in how we were going to position our brand in the market, we changed the product name from CabIO (digital cabs), KAR.ma (share your ride for karma), Bzuli (environmentally conscious ride sharing) and finally to Tootle (a fun way to travel without restricting the service to electric vehicles and only four wheeled vehicles). In the meantime, based on the Business Models and Brand Positioning, several elements of the app were also changed.&lt;/p&gt;
+&lt;p&gt;Although the concept of ride sharing is not new, and several companies such as Uber, Lyft, Ola and Go-Jek have implemented it tremendously well, Tootle is different mainly due to three core elements. First of all, we let our partners decide if they want to take a ride, i.e, we introduced the idea of casual Tootle partners. For example, a partner A can decide to give rides throughout the day and make this his/her full time job or simply give rides that matches his/her travel itinerary. The technology is adjusted in such a way that a tootle ride requests are sent to several partners within a vicinity rather than just one partner. Unlike aforementioned companies, there are no penalties involved for not taking a ride. Secondly, albeit not completely by choice, we have realized that frugality invites creativity. At every step of technology development, we have had to strategize inexpensive yet effective ways to solve problems. Although we are still purely in development phase as of today, I believe we can really take pride in what we have accomplished given the resources. This is also reflective in the product. We were forced to think about minimizing data consumption (given the high data cost in Nepal) and poor internet infrastructure. Currently, on average, a particular ride for a partner in terms of data exhausts 1 MB while him/her being able to log in, select appropriate ride, complete the ride and get paid, while the backend collects ride information such as timestamps for actions and exact route followed. This costs him/her 50 Paisa which is approximately $0.005. Finally, last but not the least, the major difference comes in the form of technology adaptation, contextualization and more importantly, communication. Kathmandu is traditionally more or less a close-knit community where people prefer talking to people to garner a sense of confirmation and safely. Therefore, it was crucial to build a simple and clean UI that gets the job done and focus massively on developing technologies that provided real time ride statistics to our team at call center so that they could assist people giving and taking Tootle rides. Similarly, since digitization of payment was essential but Nepal is not ready for secure and realtime credit card transaction, apart from local third party digital wallet integration we also have QR top-ups. To summarize, although from the surface, Tootle is a ride sharing application like Uber, it has established its own identity via contextualization of the requirements of Nepali needs. This is apparent throughout the technology.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tootle Today&lt;/strong&gt;
+From our experience, we have realized that market drives technology and not the other way around. We have also realized that although technology is merely a facilitator, it can do wonders to solve problems and invoke habit changes if done correctly.  Now, we have a multidisciplinary team of 15 striving to make Tootle technologies and services better each passing day with the goal of doing it correctly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learnings from Tootle</title>
+      <link>https://subedi.ml/posts/tootle_learnings/</link>
+      <pubDate>Sat, 28 Jan 2017 13:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/tootle_learnings/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-xoX-IvzEIrQ/WABs5p6To1I/AAAAAAAAFrs/IWVJmZ1RCtMsuxGVD9tBO_he__--YMo-QCLcB/s320/client%2Bcopy%2Bcopy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tootle.today/&#34;&gt;Link to Tootle Website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tootle is a ride sharing service that matches bike riders and commuters. While the concept is not new, there are several contextualization factors that makes it unique. As research and development engineer and lead software developer, this was my biggest challenge to date and I learnt a lot of things. However, since we worked in a very small team, I occasionally came across problems related to branding, client relationship, marketing and overall B2C business model. This blog post will dive into those learnings rather than focus on technological implementations. To summarize the entire post, it is about my journey from a single dimensional software developer to a software developer who also understands project management, human resources, market, competition, branding and plethora of other factors that a software developer whose long term goal is to become a tech entrepreneur needs in their arsenal.&lt;br&gt;
+Start small, &lt;a href=&#34;http://www.rome.com&#34;&gt;www.rome.com&lt;/a&gt; was not built in a day
+This is trivial for most people, but not for me. There were times I was so focused on completing a task that I lost the bigger picture. Breaking down a task into smaller subtasks and solving them as soundly as possible is the key. Also, when you push yourself too hard, you miss small details that might have huge consequences in the future. Think scalability while solving little problems. Like Will Smith said, &amp;ldquo;You don&amp;rsquo;t set out to build a wall. You don&amp;rsquo;t say &amp;lsquo;I&amp;rsquo;m going to build the biggest, baddest, greatest wall that&amp;rsquo;s ever been built.&amp;rsquo; You don&amp;rsquo;t start there. You say, &amp;lsquo;I&amp;rsquo;m going to lay this brick as perfectly as a brick can be laid. You do that every single day. And soon you have a wall.&amp;rdquo; Also, Hofstadter&amp;rsquo;s law will come along to shatter all your to-do plans for the day. It&amp;rsquo;s just the way it is. Deal with it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Lk7I4HamgPU/WACFovpy-MI/AAAAAAAAFr8/LpuH3ASDSr0wCiVsi0BonqIXJ8pNVJGRACLcB/s640/chicago-used-2__large.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Development and design is an iterative, never ending process. It is not a sprint but a marathon.
+Seeking perfectionism hurts. First of all, there is no perfect code or design. There might be something that looks, feels and works great today, but it is never going to be perfect. You will always have to come back to that line of code, redesign that slider that looked great once upon a time and continuously update based on user feedback. Coding is a little of writing code and a lot of maintaining it. You are never really done. Project preplanning and risk management might help with not having to go back to drawing board again and again, but development and design is very much an agile process.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-hbPfWCuBPDU/WAC67Mu7hjI/AAAAAAAAFsM/siEA9pK5dIcN4Fi7f77l2ECePKVSRDREACLcB/s640/Untitled-1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Hire people who love what they do and love learning
+Coworkers become your second family. During the course of Tootle development, I actually spent more time with my coworkers than my family.  Fortunately, everyone involved with Tootle are very passionate, hard-working and motivated people who never shy from learning. Also, certain characteristics such as being ardent, an embodiment and advocate of the product, and hardworking are more important than being skillful. I was also on the hiring team and I made sure to look for these characteristics. After all, Leicester City won 2015-2016 Barclays Premier League primarily because of their team spirit.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-MgSmVKnBG6E/WADATaZCg8I/AAAAAAAAFso/s7XZFY3qo8YEvTTLx849gULxVczPL2JBgCLcB/s640/IMG_20160803_034012.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Prioritize what is important
+There will be a lot of bugs. Code related stuff aside, there will also be several things that need attention. However, time is limited. At times you could be in front of your computer debugging for hours and hours, but still the issue tracker list and crash reporting list will be full. Therefore it is necessary to prioritize based on impact level. Assessing impact of a particular task can be difficult. However, if you have an awesome team, it is just a matter of discussing from a business and technical point of view. Also distinguishing between bugs, enhancement, improvement proposal and task is very important.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-R4umTfdBp5I/WADEcT34m5I/AAAAAAAAFs0/Spcrbd31xgwMAEOpzQUN_dpgqm0AM8DJQCLcB/s640/Screen%2BShot%2B2016-10-14%2Bat%2B5.25.10%2BPM.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Communication solves 95% of all problems
+Communication is the key. Often during the day, talk to coworkers about the problems that you are having. First of all, when you explain the problem to someone, you understand the problem better yourself. Secondly, you are also in sync with what problems everyone else is facing. Similarly, simply talking about work related problems, expressing how you feel about deadlines, doing risk analysis together, discussing business strategy together, communicating dissatisfactions etc. will help solve a lot of problems earlier. So, constantly take a break, look outside the window, get a glass of water and simply talk.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-HsYnKpgPHsg/WADJ8GgOX-I/AAAAAAAAFtM/KAKTeA7shkcuSpdYWCYNFDXgJIFau89kwCLcB/s640/IMG_20160610_123707.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Stress can be a catalyst if applied properly
+This project was very much stressful. Retrospectively, it was supposed to be too because of its complexity. One of the things I really struggled with is handling stress. I have gotten better over the course of this project. However, I am still working on learning to change stress to a catalyst. I hope to become Arsene Wenger someday (giggles). However, I have learnt that if things don&amp;rsquo;t work tonight, you simply have to sleep over it. The freshness of morning solves a lot of problems.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-O_vPh17qjB0/WADQ7nuM8sI/AAAAAAAAFuI/NZ7piERzA-s2daUKxvRjAFdHk9deKo8HwCLcB/s640/IMG_20160916_181959.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-NjOsMilsicA/WADPc4iPTnI/AAAAAAAAFuA/4MXAY_3LQYsvGloIusf9xTy7j1-ciliGQCLcB/s640/IMG_20160630_123334.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You could also just watch SRK dance in Hosh na khud kahi josh&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;Go running in the morning, be healthy
+This one is self-explanatory. Run to remain stress free and healthy. I stopped running for a while because I was lazy. But, I was also lazy because I was not running.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-hqJRkJ3zMsc/WADVl2Az7OI/AAAAAAAAFv8/9rcEydolrfspR83o1PG7PM_cmBoxoHhEQCLcB/s640/IMG_20160505_062623.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Competition is good
+While reading The Personal MBA by Josh Kaufman, I realized that having market competition is actually advantageous. This concept was really counterintuitive to me previously. Competition is good because it implies higher probability of fulfillment of something known as the Iron Law of Market. It basically means that like you, other people have also seen the availability of the market you are targeting. Similarly, there is a lot to learn from your competition. Learning and applying the principles of game theory helps a lot too.
+Awesome tech implementation is second to client&amp;rsquo;s requirement
+You could spend weeks and months on awesome, flawless and amazing features that your clients don&amp;rsquo;t really care about or half an hour on simple features that makes all the difference to them. For example, adding a bitcoin as payment system would be cool, but allowing a female client to select a female driver makes the product secure and also adds marketing and advertising weight.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-fxSXJWd4UB8/WADoBxzEHWI/AAAAAAAAFwo/sdGRY963BeI7n1JlhALZLyFUsgngI8FNACLcB/s320/opengraph.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Beta tests are really really really important
+You could sit hours upon hours, days upon days trying to find and fix all the problems. But, finding problems is more difficult once you know your product inside out. You are in a controlled office environment with fast internet, limited real test devices and a clear understanding of product workings. There is no way for you to find all the problems. The solution is to find real users to test, use and provide feedbacks. Canary tests and beta tests are therefore very important.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-xKUeEk1hM9k/WADh-E7zfzI/AAAAAAAAFwU/Ud6JiIQ19jUvBahjniooj6PV1NPoLJFAwCLcB/s320/264d35bbe2af57848d1759f2c38381de.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Just because you like it, does not mean users are going to like it also
+You might absolutely love your product. However, it does not mean every user will like it also. Be prepared to get bad ratings. Also, they are not wrong to dislike something you adore so much.&lt;/p&gt;
+&lt;p&gt;Previous projects and keeping up to date with latest technologies help a lot
+I really believe this one is a biggie. Regardless of whether or not a product succeeds, it is always a stepping stone for future products. This product would not have been possible or would have been terribly difficult without Edcrayon, Edquake, and dozens of other location related prototype. When prototyping, research on newer stacks and practices.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-LUNyxO3d1Do/V_SwqMqhWwI/AAAAAAAAFa4/koo69yvCxmkgOBKS4ilOyneOA94iMAQkQCLcB/s640/Screenshot_2016-01-26-07-23-09.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the end, revenue matters the most
+In the words of Josh Kaufman,
+Do not be a &lt;strong&gt;mercenary&lt;/strong&gt; since dedication in craft, patience to find right market to be dedicated towards and consistency is required to eventually make money.&lt;/p&gt;
+&lt;p&gt;Also, do not be a &lt;strong&gt;crusader&lt;/strong&gt; since you need money to pay the bills.&lt;/p&gt;
+&lt;p&gt;Wish us good luck with our tootle journey.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-2pcq_NaTEPc/WADmug3aiHI/AAAAAAAAFwg/tXWl4D7WPvMpLZXT9EX2FjwDK21Y1h6aQCLcB/s640/driver%2Bcopy.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Edquake</title>
+      <link>https://subedi.ml/posts/edquake/</link>
+      <pubDate>Sat, 22 Oct 2016 04:01:02 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/edquake/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-F9T_4XWrLWI/V_Mq01LcubI/AAAAAAAAFWs/R9b8VPWqyYQJF6Zc8VfXMK4XJBj5avpGwCLcB/s1600/app_icon.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The objective of the game was to use texts, audios, videos, badges, quizzes, points, stories and characters to educate users on preparation for earthquake and decision making during and after earthquake.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Application Description&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/WqtzEdJfNSNT2C5SwfFDEtKsU5Lrk0xKLHIovgFJkYGAQrTQ1pjxhA7UlnSKJEO0Ul2eyT_n2-DIzKxULxlZhsgbzd2Sb4rPxhnO0Hylj3ABLyZmJZJ9tzfh1uEZCJf6_9FIp2P5&#34; alt=&#34;introvideo.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Before the game starts, a teaser video is played where an event of earthquake is shown inside a home scenario. The video is shown in order to reflect the importance of earthquake preparedness. The video can be skipped the next time as per the choice of the player.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Application Home Screen&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The application home screen allows users to start a new game, resume from where they left off previously, change game settings such as sound and language settings and submit their score to leaderboards, and quit the application. It also displays current user name and character selection along with all the badges that the user has won.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/oIWHVynC4ePa3xCN8XG2elUGZ2-eq_u-6Qd5ZANZfQo2ap4yVL991phcz0fV59erHbTVwZvIP2Dpq1GMEfO_77NyfpUrCuZso5nqEZUig0sSZyWG2MIVb42yIOQwxj1GxWlS33WP&#34; alt=&#34;home.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Starting a new game&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Upon starting a new game, a dialog appears where the user enter his/her name and selects a character. The user can choose two characters that of a boy or a girl in order to play the game. These characters will also act as protagonists in animated stories.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/3I7fr1MuTdBwWjHG61LegJ2uMSqIVQO71Pp-EE84EZGyqU-UasbGVJRlIbYt-iZW6RVRC5TE5iNMZ1DWA_1iwZ2xh6y__63LiPx02w3Ip8ysWyy5XcVqKBILCxmOmu2tW-aDvW8A&#34; alt=&#34;newgame.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Badges&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Badges are provided to users upon completion of a milestone or a level. The badges provides an incentive for the players and makes the game more engaging and interesting.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/FwUlooxiHXdSxTRwmtWRoAxYVFopXNKXysDfClxWAtzNys-RfmSHimhcSr9ydO6uBa582vDP8sxRSXoT52nLzdt7s7Jcatt8IJ3wpGHMdOX93daCwnw57cUbOKy2UfltYMyKONE&#34; alt=&#34;badge.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PSA and Video Activities&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Engines have been setup to support audio and video activities.&lt;/p&gt;
+&lt;p&gt;The radio can be used as an informative element in the game. For example:&lt;/p&gt;
+&lt;p&gt;A PSA for earthquake preparation informing about vital items one needs in their emergency backpack can be played in the radio.&lt;/p&gt;
+&lt;p&gt;The video platform can support a series of storytelling addressing to different type of circumstances and safety tips regarding the effects of earthquake. Nepali subtitles also appear on the bottom of each videos.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/CluwZbm53BdQ5boMC6g36wFSWbL8owIk5NFhJLZ0PIwaxypkCHJ3A3wAxegXkAqeLslaGhurVzBn6R3eERk38RvI-xCm5Z5Q9GSlTAhMOzEaEglTc3ufHC7NnGaxqvbxGmEJXojl&#34; alt=&#34;video.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/8Tjm-tIquE2X07NVwO5XEqe3fhNAGyBHZojpL_60QmgmTdU4nyV3fLSKuCzAuLuYMiMAaXBnxDlY66aLckRA2Yp5QHXKBuaA3jYOL3fKNojx3QDBquuD_qHt8mYKUwnec6G6OmM&#34; alt=&#34;psavideo.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Drag and Drop Activity&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Engines have been setup to support drag and drop activities.&lt;/p&gt;
+&lt;p&gt;Based on this drag and drop engine we have developed relevant games. For example:&lt;/p&gt;
+&lt;p&gt;Preparing a GoBag&lt;/p&gt;
+&lt;p&gt;Following the PSA, the users are required to drag and drop items from a set of vital items (such as first aid kid) and useless items (such as toys) to their backpack. Since the backpack can only hold a certain number of items, the users will have to optimize for best preparation. Upon completion, the app lets the users know if their selection is correct.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/69MzYc05ZZG6yu7HKm9y6tR4MxwHV_aX3OflB803ZHcwp2xah2y6g_ajm4HsVMJkhBEAhxUYS_HATvPaaNOqLu1pK3loLH2zKs1xLnIxNByKnkUJWQHfVb_WbUPQstzYb-Q59hIT&#34; alt=&#34;gobag.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/ai4GfFjSUQAYClVGGIWva3oVp2JqHBU5-xff1G_-QOkhotg9rIszF6FlIB0XsJT-X2mtIVg7FHg1niPHCwdZ6IZjgCXH0vcuTUeZJ31VhDGzm0PLuFdWxArWjd9ADQ3mZ4hd38dy&#34; alt=&#34;resultgobag.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Similarly, the app will let the users know if their selection was wise. In case of wrong selection, the app will also let the users know why their selection was incorrect. Unlike other quiz activities, the difference here is that the users will still be allowed to go back to change their answer. The rationale was to follow a formative teaching approach.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quiz Engines&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Engines have been setup to support quiz platform.&lt;/p&gt;
+&lt;p&gt;Quizzes produces better organization of knowledge by helping the brain organize material in clusters to allow better retrieval. It also identifies gap in knowledge and lets people know what is learned and what is not.&lt;/p&gt;
+&lt;p&gt;The quiz engines supports quiz games which can be very informative. The answers chosen can also lead to some consequent information or videos later.&lt;/p&gt;
+&lt;p&gt;There are four different types of quiz questions.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Grid Select&lt;/li&gt;
+&lt;li&gt;True and False&lt;/li&gt;
+&lt;li&gt;Multiple Choice Questions (3 Options)&lt;/li&gt;
+&lt;li&gt;Multiple Choice Questions (4 Options)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first two types of questions carry a marking rubric of 200 points. The user receives complete points if he/she answers it correctly in the first go. The point a user can collect from each quiz is reduced depending on the number of mistakes.The third question carry a marking rubric of 300 points and the fourth question carry a marking rubric of 400 points. Similarly, depending on the mistakes, the point is reduced. The result is displayed with additional tip information and graphics.&lt;/p&gt;
+&lt;p&gt;Example 1: Grid Quiz Activity&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/2ITZwj6fUgwu7Bb_0ec0g7LEhNe5Z6P_Dkt_a-5xvZm7gazrRyh1sQodr_FjWMkF4w2qJJ0XwFDIQonMOeM3QgsuC1XsPnhjvnVyboTmp9IYhQ-tx7z_Fjc8MNcZ2WLvNPq4Sz_N&#34; alt=&#34;gridquestion.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh4.googleusercontent.com/WztWvUAaXPQwn5Rcqk-d_o4XxU3ork_zpLHbg2oXRMw3ZfOcC7ewHhw1D9sVIOb-Kfc2F6JYTUYl4GSMB02sdYc33mJBgvEmmIecn6TQ3VXKHg29bQF8WfkxmrsdpqXY_tkwc9ad&#34; alt=&#34;gridtip.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Example 2: Multiple Choice Quiz Activity (3 options)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/WZVvS4rQXp6qCbO6thPJiltwl_KnZznBWIQEf8iI7Q5uSStg7SuKkPVNCJSP4GKH_ne0b91_wT4Go27TBOf_uSNxooxQz2_nOtJaRKcHvN2kuAHvbefBn-YW7f1PFFxI2I-N84dE&#34; alt=&#34;quiz3.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/wdafblASu42lSEY-50jES3O35KGUhWb8CA0VN4vj8n_QBameDsFpHIM26hY79H01bWdj9KnQKp8BcynerxGfsnBqj3gH__hSLWgbkrBwI_h8N3yb7DgB5LVHo22F1k_eswKxowWd&#34; alt=&#34;tip.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Leaderboards and Facebook sharing&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The application will allow users to submit their points to a global leaderboards system. This will allow users to compete with other players.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/UCWt40HM_5shPllWkHS_AZlZo8GSZN7TsxCM-LPO8FWgA675PHU28BN6Rr1e11gPpV4jdqarUZ7lGnUUnuJWmlkeL2X3FaXf7njPOTIHfqoU1nDDxlAwL2N7fdwOlPcSI7icXd1O&#34; alt=&#34;leaderboards.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-uwmYsHlEUBc/V_OBYKgYBEI/AAAAAAAAFXQ/Pf3ySXoIIlw832JDTGFat0HvIyauso3mgCLcB/s640/initiativeshare.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Edcrayon</title>
+      <link>https://subedi.ml/posts/edcrayon/</link>
+      <pubDate>Mon, 01 Feb 2016 02:21:02 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/edcrayon/</guid>
+      <description>&lt;p&gt;Edcrayon’s &lt;strong&gt;Universal Deployment Model&lt;/strong&gt;, converts tablets or phones to a smart, self-paced, predictive learning environment. It packages the following features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Thousands of qualitative educational content that students can browse from and download for offline use.&lt;/li&gt;
+&lt;li&gt;Gamified and engaging UI to make sure students love learning from the application.&lt;/li&gt;
+&lt;li&gt;Serves as supplement to topics being taught in school or simply for self-study.&lt;/li&gt;
+&lt;li&gt;Available in different languages to facilitate mother tongue learning.&lt;/li&gt;
+&lt;li&gt;Learning materials is localized and contextualized too.&lt;/li&gt;
+&lt;li&gt;Provides practice lessons and quizzes auto-graded by the application so that the students can work their way through the assessments as in self-paced learning.&lt;/li&gt;
+&lt;li&gt;Features quiz engines that adapts to students previous knowledge on a particular subject material. If a student struggles with a specific type of problem the application will generate more questions of similar type.&lt;/li&gt;
+&lt;li&gt;Provides performance charts and allows students to track their own performance.&lt;/li&gt;
+&lt;li&gt;Facilitates discussion forums to allow students from different places to discuss and share ideas.&lt;/li&gt;
+&lt;li&gt;The performance data will also be sent to regional or central data repository for analysis purposes. The data will help decision makers to facilitate better or different features and contents to ensure more productivity and performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Current challenges in education&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Delivery of published books to every part of the country has been a significant problem due to the expenses involved in publishing and also due to the lack of road infrastructure.&lt;/li&gt;
+&lt;li&gt;Even in cases where books are delivered on a timely basis, it only facilitates traditional teacher-centered teaching pedagogy. Twenty first century education calls for individualized learning which cannot be achieved since published books are not tailored to learners specific needs. Not all students get the optimum learning value from text based materials alone.&lt;/li&gt;
+&lt;li&gt;Several schools have a large teacher to student ratio. Teachers also invest a huge portion of their time on things like keeping comprehensive performance records of every student, preparing and keeping track of lesson plans, and various other administrative tasks. If a system aided the teachers with these mundane tasks, the time saved can instead be utilized for student teaching and classroom engagement. Individualized attention can be provided to the students even in classes where the ratio is high.&lt;/li&gt;
+&lt;li&gt;Decision makers in schools do not have all the performance data of all students and/or teachers at all time. A quantitative analytical report of performance with historical data assists in decision making processes.&lt;/li&gt;
+&lt;li&gt;Schools still follow standardized and summative assessment system. This is partially because the system is inherent in us. However, we believe that the main reason is simply logistical. Large student size, lack of formative assessment tools, lack of engines to create individualized assessment etc. are some contributors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Use of technology in education can facilitate myriad of tools that help in solving the challenges. Edcrayon facilitates easy delivery of qualitative media contents, smart algorithms and/or modules that allow for individualized learning via tailored content pushing and group creation, self-paced learning, smart performance charts, and formative and summative assessment models.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-eXZ9VM-OWZM/V_MVakbmxDI/AAAAAAAAFUg/EfhsVuZsws0Zw-ftKJA021kg_xIaoGt7wCLcB/s640/Picture1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Currently, private schools have benefitted from Edcrayon’s &lt;strong&gt;Classroom Deployment Model&lt;/strong&gt;. This deployment model converts a traditional classroom environment to technology based, student-centered model. It packages the following features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Constitute all the elements of &lt;strong&gt;Universal Deployment Model&lt;/strong&gt; with an addition to a guided learning and teaching environment.&lt;/li&gt;
+&lt;li&gt;Replaces the traditional learning and teaching classroom environment to a student centered, formatively assessed, skill based, interactive learning and teaching environment.&lt;/li&gt;
+&lt;li&gt;Rather than learning at their own pace, which has its own merits, this approach allows students to communicate and learn from teachers and other students in the classroom.&lt;/li&gt;
+&lt;li&gt;Facilitates teachers with student performance charts.&lt;/li&gt;
+&lt;li&gt;Allows teachers to assign tailored materials for more individualized learning approach.&lt;/li&gt;
+&lt;li&gt;Facilitates formative and Inquiry based assessment through continuous feedbacks from teacher and other students.&lt;/li&gt;
+&lt;li&gt;Performance data of students and teacher are available to decision makers.&lt;/li&gt;
+&lt;li&gt;Government proposed Continuous Assessment System is implemented.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Makes it very easy to perform day to day tasks such as attendance, register keeping, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-qF84ESiz8oE/V_MVyl9kXkI/AAAAAAAAFUk/BuinU2WVf5EvSO0RQvXFSP2HsXh-ObyjQCLcB/s640/Picture1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Some Screenshots of Android Application:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-C8883IR1tcQ/V_MWU5VvStI/AAAAAAAAFU0/z6aN0vSudLond9e1Yog23Iq6AU0i5vCzQCLcB/s640/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-A4xB6ScPSKQ/V_MWVhGVVkI/AAAAAAAAFU4/u2iK9bFJgqc-InOsmsXPb20iPl9U9V4nwCLcB/s400/1a.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-wwFQ5yi-xUM/V_MWVz8Z0mI/AAAAAAAAFU8/45M7I4gL5w4tUmjUPbjk_GbZkECh1mipQCLcB/s400/1b.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-Y4XGMr31mh8/V_MWVxt3WLI/AAAAAAAAFVA/e5ONdON2GNkUvx2xyDUGuvGtbzWdvmSdwCLcB/s400/1c.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-g13-VYs9eFM/V_MWWvSXWmI/AAAAAAAAFVE/KDz9JvW_5qgyGP1y5vzsqcfNkUIHOg2hwCLcB/s400/1d.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-NqRBOXa3HDc/V_MWWnUBQHI/AAAAAAAAFVI/CYo0z_s6IKc4gyhnvWhBlXZHGoxTsOiEgCLcB/s640/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-AT1VQ1zweWM/V_MWW8KJ25I/AAAAAAAAFVM/JDZ9JV4SWxQ91k90FT4ZksdQ0Jnev-bLQCLcB/s640/3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-Xm78ERg-zsI/V_MWXaKdeyI/AAAAAAAAFVQ/Pxb6-EjEgMAV_uCyDHq8YLqvyVh5mpT7ACLcB/s640/4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-4ICUopDvz1Y/V_MWXvV1g6I/AAAAAAAAFVU/ueQXICt2acAGA_6f1birVx3WwHeXUQY3ACLcB/s640/5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Some Screenshots of Web Application:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-Q2BQPkFvWc8/V_MWZs4_JkI/AAAAAAAAFVs/WO-dChISlU0Zo2EeQufDEmIptZKYckatwCLcB/s400/AdminclassroomManagement.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-QzFNzJgA8Hg/V_MWXzZcb2I/AAAAAAAAFVY/q3TG7rqZ-M8RkMo5Z3QPdyn2kj0LM4CLQCLcB/s400/AdminHealthManagement.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/--9mIhWMeG24/V_MWYT67p-I/AAAAAAAAFVc/fYhJ8xYXxKwKp_IZrRDX-DGq5nSYgcSBQCLcB/s400/AdminUICharts.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-unOE-mQha9o/V_MWY5LWPyI/AAAAAAAAFVk/pBRnQDkyQNoxKyxh4ylgHJByCBey7CbSQCLcB/s400/AdminUIClassroom.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-J219JDo0oqc/V_MWYy6m5fI/AAAAAAAAFVg/2bopGIoeHg8oZPqK1ICViVY1heldu9TFACLcB/s400/AdminUICourse.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-_Lzsf25EnhA/V_MWZDW11YI/AAAAAAAAFVo/UjGDs-3w5ZMe1KGRhxNh2quTDtsdXrkEACLcB/s400/AdminUserManagement.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My role of R&amp;amp;D engineer and Project Lead incorporated architecting overall logic and process flow of Administrative and TeacherUI consisting User, Content, Classroom, Health and Pedagogy Management System. I also designed and co-developed EdCrayon Android application incorporating offline services, interactive charts, formative pedagogy, quiz engines among other features. Additionally, I developed several database administrative tools, wrote several crons and selenium test scripts, and managed multiple school servers. Similarly, I also trained and mentored junior programmers in programming methodologies and best practices. Additionally, I was also involved in training teachers, school-coordinators and school principal to use EdCrayon. Apart from my primary focus on technology, I also served as a core group member in defining and prioritizing technology investments and business objectives.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Prototype samples:&lt;/strong&gt;
+&lt;a href=&#34;https://drive.google.com/open?id=0B-XDuviH5KgwRmh4RExXOXZiUEE&#34;&gt;Sample 1&lt;/a&gt;
+&lt;a href=&#34;https://drive.google.com/open?id=0B-XDuviH5KgwUkw2U0IwazU5VUE&#34;&gt;Sample 2&lt;/a&gt;
+&lt;a href=&#34;https://drive.google.com/open?id=0B-XDuviH5Kgwbm9JU1dGZ3NmM28&#34;&gt;Sample 3&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

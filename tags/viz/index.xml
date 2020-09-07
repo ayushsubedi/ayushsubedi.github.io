@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>viz on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/viz/</link>
+    <description>Recent content in viz on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2009–2020</copyright>
+    <lastBuildDate>Tue, 15 Apr 2014 17:12:41 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/viz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fractal Plots</title>
+      <link>https://subedi.ml/posts/fractal_plots/</link>
+      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/fractal_plots/</guid>
+      <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Mby3dBcaRKo/U0zGR29ZF9I/AAAAAAAACm4/qjEeUPPlBsU/s1600/Rplot03.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is the naive/brute-force implementation of the Mandelbrot Set plotting. I just followed the algorithm.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Plotting the Mandelbrot Set 
+
+# length of sequence for real and imaginary parts of complex numbers
+length &amp;lt;- 1000
+
+# sequences for real and imaginary parts
+real = seq(-1.8,0.6, len=length)
+imaginary = seq(-1.2,1.2, len=length)
+
+
+result &amp;lt;- matrix(nrow = length, ncol = length)
+
+for (i in 1:length)
+{
+  for (j in 1:length)
+  {
+    result[i,j]=inmandelbrotset(complex(real = real[i], imaginary = imaginary[j]))       
+  }
+}
+
+image(result, axes=FALSE)
+
+
+
+# function that checks if a point E mandelbrot set
+inmandelbrotset &amp;lt;- function(c)
+{
+  dwell.limit &amp;lt;- 2048
+  z &amp;lt;- 0  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-Iqm_BdgidJU/U0qOV5YyfsI/AAAAAAAACmM/FXeCXs-kNkM/s1600/output_fSU8xz.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding colors:&lt;/strong&gt;
+We now have a Boolean matrix that records if a point is in the Mandelbrot Set. Since the matrix can only have two values : true or false, thus far, we have only been able to plot read and white images. The next step is to add colors such that we get more information on when a particular point escapes the radius of 2. Again, this is the naive/brute force way of doing it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Mandelbrot Plotting with colors 
+length &amp;lt;- 1000
+real = seq(-2.0,2.0, len=length)
+imaginary = seq(-2.0,2.0, len=length)
+result &amp;lt;- matrix(nrow = length, ncol = length)
+dwell.limit &amp;lt;- 512
+
+for (i in 1:length)
+{
+  for (j in 1:length)
+  {  
+    z &amp;lt;- 0
+    c &amp;lt;-complex(real = real[i], imaginary = imaginary[j])
+    for (k in 1:dwell.limit)
+    { 
+      
+      z &amp;lt;- z ** 2 + c
+      if (Mod(z) &amp;gt; 2)
+      {      
+        result[i,j]=k
+        break
+      }
+    }     
+    
+  }
+}
+set.seed(2)
+image(result,breaks=0:dwell.limit
+      ,col=c(1,sample(terrain.colors
+                      (dwell.limit-1,alpha = .8))),asp=1,ax=F)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-gxswS7fcV5k/U0zNhDoPqcI/AAAAAAAACnE/za9JUEmkQ3M/s1600/Rplot06.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-hNco2zVAeSs/U0z4XWixrUI/AAAAAAAACoU/dFvirhQFLvQ/s1600/Rplot14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and, just for the heck of it..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-XkuSH0dAMF8/U0z6YBmVmKI/AAAAAAAACok/0DfUTNEMYpc/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ASCII Mandelbrot Set using R (naive)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s &amp;lt;- seq(-1.7,1.2, by =.1)
+a &amp;lt;- &amp;quot;&amp;quot;
+for (i in 1:length(s))
+{  
+  for (j in 1:length(s))
+  {
+   a&amp;lt;-cat(a,inmandelbrotset(complex(r = s[j], i = s[i])))     
+  }  
+  a &amp;lt;- cat(a,&amp;quot;\n&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-SqMXDu-orPE/U1YH-90-fQI/AAAAAAAACqs/lydpeihbFMk/s1600/Untitled-1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Achieved by returning a &amp;quot; &amp;quot; or &amp;ldquo;#&amp;rdquo; instead of FALSE or TRUE from function &amp;ldquo;inmandelbrotset&amp;rdquo;.
+&lt;strong&gt;A better algorithm&lt;/strong&gt;
+Utilizing R&amp;rsquo;s easy to use lists in implementation:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-13I74YsZA3Q/U00ph_v2sqI/AAAAAAAACos/0BwTZdK1xtg/s1600/Untitled1.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# more efficient algorithm to plot the Mandelbrot set 
+
+sequence &amp;lt;- seq(-2,2,len=1000)
+dwell.limit &amp;lt;- 200
+
+# matrix of points to be iterated 
+complex.matrix &amp;lt;- t((sapply(sequence,function(x)x+1i*sequence)))
+in.mandelbrot.index &amp;lt;- 1:length(complex.matrix)
+iter=z=array(0,dim(complex.matrix)) 
+           
+for(i in 1:dwell.limit){ 
+  # complex quadratic polynomial function for all points
+  z[in.mandelbrot.index]=complex.matrix[in.mandelbrot.index]+z[in.mandelbrot.index]^2 
+  # boolean matrix
+  result=Mod(z[in.mandelbrot.index])&amp;lt;=2  
+  # if result is false, store the iteration 
+  iter[in.mandelbrot.index[!result]]=i
+  # save all the index where points are still in the mandelbrot
+  in.mandelbrot.index=in.mandelbrot.index[result]
+}
+set.seed(19)
+image(iter,main=paste(&amp;quot;Iterations: &amp;quot;, i, sep=&amp;quot; &amp;quot;), breaks=0:dwell.limit
+      ,col=c(1,sample(rainbow
+                      (dwell.limit-1,alpha = .8))),ax=F, asp=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Plotting the Julia set&lt;/strong&gt;
+A little modification to the code above (red and white Mandelbrot) produces Julia Sets. The idea here is to set a constant C and send Z to the function instead of C.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c &amp;lt;- complex(real=-0.1,imaginary=0.651) 
+label &amp;lt;- toString(c)
+injulia &amp;lt;- function(z)
+{
+  dwell.limit &amp;lt;- 128
+  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-q4rNT8vd-4o/U0tP_jGwdpI/AAAAAAAACmc/GjVN5c_lWNw/s1600/output_i4d2h6.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding colors:&lt;/strong&gt;
+This is achieved by following the same process as above.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-U9PdaivxB30/U0zZeEfcLOI/AAAAAAAACnQ/WbgnqUuE1Ww/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-F3PRK6CQCPA/U0zZweXvhFI/AAAAAAAACnY/moDHQIhBi1E/s1600/Rplot10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-AxtVIdnIOOo/U0za42jqSHI/AAAAAAAACng/lanOjpzFeOE/s1600/Rplot13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sierpinski Gasket using Chaos game&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#### Chaos game for generation of Sierpinski Gasket
+# 1. Take 3 points in a plane to form a triangle, you need not draw it.
+# 2. Randomly select any point inside the triangle and consider that your current position.
+# 3. Randomly select any one of the 3 vertex points.
+# 4. Move half the distance from your current position to the selected vertex.
+# 5. Plot the current position.
+# 6. Repeat from step 3
+
+plot.new()
+iterations &amp;lt;- 2000
+vertices &amp;lt;- matrix(c(0,0,0.5,1,1,0),3,2, byrow=T)
+current.point &amp;lt;- c(0.5,0.5)
+random.vertex &amp;lt;- sample(1:3,iterations,replace=T)
+plot.result = matrix(nrow=iterations,ncol=2)
+for (i in 1:iterations){
+ current.point &amp;lt;- (current.point+vertices[random.vertex[i],])/2
+ plot.result[i,] &amp;lt;- current.point
+}
+points(plot.result,pch = 46)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-gzjEuswLUvg/U1IpGu-W6wI/AAAAAAAACpo/EUR7t3Pyrgo/s1600/output_CRtwqO.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Adding colors:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;points(plot.result,pch = 46,col=c(13,3,41)[random.vertex])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-Kog9tekKz5A/U1IqRVeK99I/AAAAAAAACp0/0uOMoFOJxds/s1600/Rplot26.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-5dN5kmWtLD0/U1J4WJPWDiI/AAAAAAAACqc/PoeEYiO4esg/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
