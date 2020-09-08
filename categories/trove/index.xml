@@ -26,7 +26,69 @@
       <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/trove_architecture/</guid>
-      <description></description>
+      <description>&lt;p&gt;After &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;releasing&lt;/a&gt; &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;Trove&lt;/a&gt;, our inboxes and &lt;a href=&#34;https://twitter.com/Trovenow&#34;&gt;DMs&lt;/a&gt; flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the &lt;a href=&#34;https://blockstack.org/&#34;&gt;Blockstack&lt;/a&gt; platform. &lt;strong&gt;The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.&lt;/strong&gt;  &lt;br&gt;
+The engineers @Trove have strong understanding and experience of centralized applications. We followed the decentralized space, and also built small prototypes in Blockstack and Ethereum platforms. But, Trove is our first endeavour to create a full end-to-end Decentralized Application from scratch. We had questions.
+Actually, a lot of them.&lt;/p&gt;
+&lt;h3 id=&#34;proof-of-concept&#34;&gt;Proof of Concept&lt;/h3&gt;
+&lt;p&gt;A proof of concept entails investigating to be convinced of an idea. In our case, the idea was a bookmark manager. However, we also had to deep dive into the Blockstack platform to get a gist of the second part of our idea, i.e., decentralization.
+We started with a &lt;em&gt;very very simple decentralized app.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1600/0*Maa7FgRAd3IqJLwt.png&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We quickly put together a decentralized app that allowed users to save their favorite words. Although the app does not make sense from a usability perspective, and might be hilarious to even think about deploying it to production, it helped answer a lot of our questions:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How will the users login/signup to use the app?&lt;/strong&gt;
+The users will create an ID with Blockstack. &lt;strong&gt;The ID will be used to sign in all apps in the Blockstack ecosystem.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Where is the data stored?&lt;/strong&gt;
+By default, when an ID is created in Blockstack, each user ID is also issued some storage space. &lt;strong&gt;This storage system is called Gaia.&lt;/strong&gt; The primary purpose of Gaia is to store any relevant data for the apps that the user uses in the Blockstack ecosystem. However, Blockstack also allows users to choose their own Gaia hub and to configure the back-end provider to store data with. Learn more &lt;a href=&#34;https://github.com/blockstack/gaia&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How is the data stored in Gaia?&lt;/strong&gt;
+Gaia is not a DBMS. The data for an app is stored in one or many text format files (JSON) within the app’s hub in Gaia.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Is it encrypted?&lt;/strong&gt;
+This depends on the developers. The developers can choose whether or not a file should be encrypted. For our case, the words in the proof of concept app were encrypted and the bookmarks for Trove are encrypted as well.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How is it decentralized?&lt;/strong&gt;
+One of the most common questions we have been receiving is regarding decentralization. Several users new to the Blockstack ecosystem have asked, &lt;em&gt;“If all of my bookmarks are in the same place, how is it decentralized?”&lt;/em&gt;. Well, there are a few ways of thinking about this. From the perspective of the developers, all of the data pertaining to the app are scattered in several Gaia storage all over. There is no possible way for the makers of an app to have all of the data of all of the users in a centralized repository. This makes it decentralized. Also, no central repository implies no machine learning algorithm tinkering to garner patterns and trends on collective data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now, can we now build a MVP for our purposes?&lt;/strong&gt;
+Yes.
+At this point, we had a better understanding of the approach to make Trove possible and optimized to leverage on Blockstack and Gaia. &lt;strong&gt;Moreover, we realized that a bookmark manager would be an ideal exploration for this platform because bookmarks are sacred to a specific user, and they are not normally shared.&lt;/strong&gt; We might eventually work on the functionality of publicly shared bookmarks in the future if our users request it.&lt;/p&gt;
+&lt;h1 id=&#34;product-specification-and-minimum-viable-product&#34;&gt;&lt;strong&gt;Product Specification and Minimum Viable Product&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1600/0*36-E1o7DqQQbsfNn.jpg&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The team collectively decided to pursue these functionalities for the first version of the app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CRUD bookmarks&lt;/li&gt;
+&lt;li&gt;CRUD buckets/categories for bookmarks&lt;/li&gt;
+&lt;li&gt;CRUD tags&lt;/li&gt;
+&lt;li&gt;Favorite bookmarks&lt;/li&gt;
+&lt;li&gt;Archive bookmarks&lt;/li&gt;
+&lt;li&gt;Archive buckets/categories&lt;/li&gt;
+&lt;li&gt;Extract meta tags of bookmarks&lt;/li&gt;
+&lt;li&gt;Extract HTML body of bookmarks for Read Mode (Parked for future version of the app)&lt;/li&gt;
+&lt;li&gt;Extract keywords from bookmarks (Parked for future version of the app)&lt;/li&gt;
+&lt;li&gt;Filter using buckets/categories, tags, favourites&lt;/li&gt;
+&lt;li&gt;Search&lt;/li&gt;
+&lt;li&gt;Browser extensions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;architecture&#34;&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;How are the files stored in Gaia for Trove?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/632/1*WzrD9Qjlpt4PbkA-T0Iu1w.png&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Every Trove user has three files associated with their Gaia hub to store bookmark, collections and archived objects. This schema is also backward compatible. Backward compatibility is a major issue with Gaia because schema changes in the future to incorporate any other features where we do not have access to user’s Gaia (by definition), is a major constraint and therefore needs precautions.
+**If we were to add &lt;em&gt;Read Mode&lt;/em&gt; in the future (which will have massive content and makes no sense to be stored inside bookmark object anyway), it can be stored on a separate file {bookmark_id}.json and referenced with the id. This implies, in the future, a user will have 3+ files, while everything remains maintainable, compatible and scalable.
+A randomly generated id in base 36 (0–9, a-z) with a length of 9 is used for each category and each bookmark. The probability of collision for a user limits to 0 (1/36⁹). This decision was made so that ids can be assigned on the go without having to keep track of array sizes for incremental ids.
+When a bookmark is created, and assigned to a category, the bookmark object stores the id of the category and not the name. This referential association allows for seamless category name edits.
+For the sake of blog post brevity, we are leaving out a lot of the trivial implementation that is common with centralized architecture design pattern (archive, tags, filter, search etc).
+&lt;strong&gt;Extension&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1600/0*CUrk-zRTYflhc_Ja.jpeg&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We initially started with one click bookmark save on our extension. This implied a seamless experience for the users. However, server-less comes with its limitation. In a centralized system, once the user clicked on the extension, we would have sent the URL to our back-end, scraped meta-tags and stored it in a database record referencing the user. We do not have the liberty here. The URL is sent to our open-sourced back-end for meta tag extraction, but that is all it does. It returns the response back to the extension, which does the rest. This implies a user would have to wait for a few seconds while:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We collect meta tags from back-end&lt;/li&gt;
+&lt;li&gt;Collect all bookmarks from Gaia&lt;/li&gt;
+&lt;li&gt;Change 2 to an array&lt;/li&gt;
+&lt;li&gt;Append response from back-end to the array&lt;/li&gt;
+&lt;li&gt;Save array to Gaia as a JSON&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Therefore, we decided to make it a two-step process. We are still researching on ways to make this part seamless to our users.
+&lt;strong&gt;URL Meta Extractor&lt;/strong&gt;
+A simple Flask app using &lt;a href=&#34;https://newspaper.readthedocs.io/en/latest/&#34;&gt;Newspaper&lt;/a&gt; package has been used for the purpose of URL extraction. The back-end extractor is open sourced at &lt;a href=&#34;https://gitlab.com/trovenow/trovenow_url_parser&#34;&gt;https://gitlab.com/trovenow/trovenow_url_parser&lt;/a&gt;.
+Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/trovenow&#34;&gt;&lt;strong&gt;tweet us&lt;/strong&gt;&lt;/a&gt; ****for more clarification. We would love to hear your feedback. Also, please show your support by up-voting us &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;&lt;strong&gt;here.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1270/1*Gnvj5hkPrKuSJnmvBjAfLQ.png&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Final Version (v1) of Trove&lt;/strong&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

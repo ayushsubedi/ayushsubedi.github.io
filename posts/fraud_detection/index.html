@@ -105,7 +105,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/'></a>
+		href='/tags/ml'>ML</a>
 	
 	
 	
@@ -122,7 +122,114 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="fraud-detection">Fraud Detection</h1>
+<h2 id="research-items">Research Items</h2>
+<ol>
+<li>Data Sets</li>
+<li>Relevant Papers</li>
+<li>Available Solutions</li>
+<li>Machine learning</li>
+<li>Pre-processing</li>
+<li>Features analysis</li>
+<li>Modelling</li>
+<li>Evaluation</li>
+<li>Suggested Solution</li>
+</ol>
+<h2 id="1-data-sets">1. Data Sets</h2>
+<p>The first step is to find fraud data sets for modeling purposes. Unfortunately, fraud data sets are really difficult to find publicly because of the confidential information that they contain. Listed below are some of the data sets found and notes on them.</p>
+<p><strong>Real world data set from Kaggle (ULB)</strong></p>
+<p><a href="https://www.kaggle.com/mlg-ulb/creditcardfraud">https://www.kaggle.com/mlg-ulb/creditcardfraud</a></p>
+<p>The data set contains labelled credit card transactions labeled as fraudulent or genuine. Unfortunately, the column labels do not make sense because PCA has been applied for dimensional reduction. Therefore, it is very difficult to understand what each of the columns represent. Nonetheless, it is real world data.  The data sets contains transactions made by credit cards in September 2013 by European cardholders. This data set presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. <strong>The data set is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.</strong></p>
+<p>This data set has been analysed and models have been created below in the document, with F1 score of 94%.</p>
+<p><strong>Synthetic data set from Kaggle (NTNU)</strong></p>
+<p><a href="https://www.kaggle.com/ntnu-testimon/paysim1">https://www.kaggle.com/ntnu-testimon/paysim1</a></p>
+<p>The data set contains synthetic (created) transaction data. The advantage of using this data set is that PCA has not been pre-performed, thus allowing extraction of all useful information. However, the data set is scaled down to 1/4th of the original data set.</p>
+<h2 id="2-papers">2. Papers:</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Link</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Summary</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf">https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf</a></td>
+<td>Toward Scalable Learning with Non-uniform Class and Cost Distributions: A Case Study in Credit Card Fraud Detection</td>
+<td>Handling skewed datasets, compares credit card fraud detection models, and evaluate how the different sets of features have an impact on the results with the help of a real credit card fraud dataset provided by a large European card processing company (the dataset above). The results show an average increase in savings of 13% by including the proposed periodic features into the methods. <br><br>Using 50-50 split in fraud, non-fraud leads to better models.<br><br>von Mises distribution: <a href="https://en.wikipedia.org/wiki/Von_Mises_distribution">https://en.wikipedia.org/wiki/Von_Mises_distribution</a></td>
+</tr>
+<tr>
+<td><a href="https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf">https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf</a></td>
+<td>Credit Card Fraud Detection using Meta-Learning: Issues and Initials Results</td>
+<td>Apart from the finding like above (using balanced training), the paper talks about using metrics other than accuracy for model evaluation.</td>
+</tr>
+<tr>
+<td><a href="http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466">http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466</a></td>
+<td>Credit Card Fraud Detection Using Machine Learning As Data Mining Technique</td>
+<td>95% accuracy based on Naive based derivatives.</td>
+</tr>
+<tr>
+<td><a href="https://www.jair.org/index.php/jair/article/view/10302/24590">https://www.jair.org/index.php/jair/article/view/10302/24590</a></td>
+<td>SMOTE: Synthetic Minority Over-sampling Technique</td>
+<td>Using SMOTE method as described in the paper is another alternative of getting around the skewness problem.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-research-on-available-solutions">3. Research on available solutions:</h2>
+<p><strong>Airbnb</strong>
+<a href="https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60">https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60</a></p>
+<p>Ways to mitigate potential bad actors to carry out different types of attacks:</p>
+<ul>
+<li>Product changes: 2FA, email verification, etc etc</li>
+<li>Anomaly detection: Scripted attacks that can cause anomaly</li>
+<li>heuristics/machine learning model based on different factors</li>
+</ul>
+<p>Framework</p>
+<ul>
+<li>Fast and robust</li>
+<li>Agile (catch up game)</li>
+</ul>
+<p>PMML: Predictive model markup language
+Openscoring: encodes several common types of machine learning models</p>
+<p>They do not provide fraud detection as a service.</p>
+<p><strong>Paypal</strong></p>
+<p><a href="https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/">https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/</a></p>
+<p>Paypal recently acquired Simility for fraud detection.</p>
+<p>Simility looks at various session, device, and behavioral bio-metrics and builds a profile for what constitutes “normal” user login behavior; if an anomaly is spotted, it can act to prevent the action.</p>
+<p><a href="https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0">https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0</a></p>
+<p><strong>Stripe</strong></p>
+<p><a href="https://stripe.com/us/radar">https://stripe.com/us/radar</a></p>
+<p>Even if a card is new to your business, there’s an 89% chance it’s been seen before on the Stripe network.</p>
+<h2 id="4-machine-learning">4. Machine Learning</h2>
+<ul>
+<li>Supervised learning was applied to the PCA data set discussed in the data sets section.</li>
+<li>Different ensemble machine learning algorithms were tested, rather than using one particular algorithm for modelling.</li>
+<li>Metrics like Precision, Recall, F1 score were used to evaluate the model and get a better understanding of True Positives, True Negatives, False Positive and False Negatives.</li>
+</ul>
+<p><a href="https://github.com/ayushsubedi/fraud_detection/blob/master/PCA_applied_dataset.ipynb">Link to complete notebook</a></p>
+<p><strong>Results:</strong></p>
+<p><strong>Random Forest</strong></p>
+<pre><code>Accuracy score for Random Forest : 0.9538461538461539
+Precision score Random Forest : 0.98
+Recall score Random Forest : 0.9245283018867925
+F1 score Random Forest : 0.9514563106796116
+</code></pre>
+<p><strong>Bagging</strong></p>
+<pre><code>Accuracy score for Bagging : 0.963076923076923
+Precision score Bagging : 0.9867549668874173
+Recall score Bagging : 0.9371069182389937
+F1 score Bagging : 0.9612903225806452
+</code></pre>
+<p><strong>AdaBoost</strong></p>
+<pre><code>Accuracy score for Ada Boost Classifier : 0.9446153846153846
+Precision score Ada Boost Classifier : 0.9795918367346939
+Recall score Ada Boost Classifier : 0.9056603773584906
+F1 score Ada Boost Classifier : 0.9411764705882353
+</code></pre>
+<p><strong>False Positives vs False Negatives</strong></p>
+<p><img src="https://uc29b242eafa0323079c59de5fc0.previews.dropboxusercontent.com/p/thumb/AA6wvSlgpVw_UCQieCOAFCnCY7-pM3DqJHXKMIImW212qOFwUAphNe5k_qajpfHMLtsf6neHowUSn7aMPUrwwhlgxD3j9AfUAD7CsTD961sQ6gaht6kn2wfdJYm46GwQwW8DncIuzVtzwh8q169uEdp7Fw_0uBaBxCNJbQoqt-YVRI1f8nskTqVx_NrLJyVybhA5lW_dc02Iqhrql5kbv35sLLsCN_B9D0CdV3Dxdup3twa-YtsUF1xBqwXki83c3dtM4dnkbsNMiwk3w6MHXlu6T-Yyn-VuPVFOnNRWYapLlpWZMz-Q9F7TMz1ISka9udXN4jDlJF-gucN_RAECXwB0wpP5XZI35aWjvtyhXrPhubrOFzBHDQN_51eiGbuAvpceW6J8UKBaGzOZgsLl5jwK/p.jpeg" alt=""></p>
+</div>
 	</section>
 
 
@@ -252,7 +359,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 0 words in this page.
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 702 words in this page.
 	</div>
 </div>
 
@@ -284,52 +391,10 @@ onload='renderMathInElement(document.body);'></script>
 
 
 
-<div class="font-serif pb-2 flex align-start leading-loose">
-	<span class="heading pr-6 leading-loose">Related</span>
-	<span >
-		
-			<a href="/posts/shabda_kathmandu/">Shabda Kathmandu</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/spirathon/">Spirathon 2019</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/torpe/">Torpe Blockchain</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/feasibility_study/">Feasibility study with sentiment analysis and voronoi</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/inclusive_newspaper/">Inclusive Newspaper</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/seedstars/">Startup analysis using Seedstars data</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/encryption/">Basics of Encryption</a>
-		
-</span>
-</div>
-
 </div>
 <hr />
 <div class="pb-2">
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
     
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ayushsubedidisqus" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 <hr />
 

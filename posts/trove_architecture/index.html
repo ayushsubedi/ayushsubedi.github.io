@@ -105,7 +105,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/'></a>
+		href='/tags/blockchain'>Blockchain</a>
 	
 	
 	
@@ -122,7 +122,69 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><p>After <a href="https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d">releasing</a> <a href="https://app.trovenow.com/">Trove</a>, our inboxes and <a href="https://twitter.com/Trovenow">DMs</a> flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the <a href="https://blockstack.org/">Blockstack</a> platform. <strong>The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.</strong>  <br>
+The engineers @Trove have strong understanding and experience of centralized applications. We followed the decentralized space, and also built small prototypes in Blockstack and Ethereum platforms. But, Trove is our first endeavour to create a full end-to-end Decentralized Application from scratch. We had questions.
+Actually, a lot of them.</p>
+<h3 id="proof-of-concept">Proof of Concept</h3>
+<p>A proof of concept entails investigating to be convinced of an idea. In our case, the idea was a bookmark manager. However, we also had to deep dive into the Blockstack platform to get a gist of the second part of our idea, i.e., decentralization.
+We started with a <em>very very simple decentralized app.</em></p>
+<p><img src="https://miro.medium.com/max/1600/0*Maa7FgRAd3IqJLwt.png" alt="Image for post"></p>
+<p>We quickly put together a decentralized app that allowed users to save their favorite words. Although the app does not make sense from a usability perspective, and might be hilarious to even think about deploying it to production, it helped answer a lot of our questions:</p>
+<p><strong>How will the users login/signup to use the app?</strong>
+The users will create an ID with Blockstack. <strong>The ID will be used to sign in all apps in the Blockstack ecosystem.</strong></p>
+<p><strong>Where is the data stored?</strong>
+By default, when an ID is created in Blockstack, each user ID is also issued some storage space. <strong>This storage system is called Gaia.</strong> The primary purpose of Gaia is to store any relevant data for the apps that the user uses in the Blockstack ecosystem. However, Blockstack also allows users to choose their own Gaia hub and to configure the back-end provider to store data with. Learn more <a href="https://github.com/blockstack/gaia">here</a>.</p>
+<p><strong>How is the data stored in Gaia?</strong>
+Gaia is not a DBMS. The data for an app is stored in one or many text format files (JSON) within the app’s hub in Gaia.</p>
+<p><strong>Is it encrypted?</strong>
+This depends on the developers. The developers can choose whether or not a file should be encrypted. For our case, the words in the proof of concept app were encrypted and the bookmarks for Trove are encrypted as well.</p>
+<p><strong>How is it decentralized?</strong>
+One of the most common questions we have been receiving is regarding decentralization. Several users new to the Blockstack ecosystem have asked, <em>“If all of my bookmarks are in the same place, how is it decentralized?”</em>. Well, there are a few ways of thinking about this. From the perspective of the developers, all of the data pertaining to the app are scattered in several Gaia storage all over. There is no possible way for the makers of an app to have all of the data of all of the users in a centralized repository. This makes it decentralized. Also, no central repository implies no machine learning algorithm tinkering to garner patterns and trends on collective data.</p>
+<p><strong>Now, can we now build a MVP for our purposes?</strong>
+Yes.
+At this point, we had a better understanding of the approach to make Trove possible and optimized to leverage on Blockstack and Gaia. <strong>Moreover, we realized that a bookmark manager would be an ideal exploration for this platform because bookmarks are sacred to a specific user, and they are not normally shared.</strong> We might eventually work on the functionality of publicly shared bookmarks in the future if our users request it.</p>
+<h1 id="product-specification-and-minimum-viable-product"><strong>Product Specification and Minimum Viable Product</strong></h1>
+<p><img src="https://miro.medium.com/max/1600/0*36-E1o7DqQQbsfNn.jpg" alt="Image for post"></p>
+<p>The team collectively decided to pursue these functionalities for the first version of the app:</p>
+<ol>
+<li>CRUD bookmarks</li>
+<li>CRUD buckets/categories for bookmarks</li>
+<li>CRUD tags</li>
+<li>Favorite bookmarks</li>
+<li>Archive bookmarks</li>
+<li>Archive buckets/categories</li>
+<li>Extract meta tags of bookmarks</li>
+<li>Extract HTML body of bookmarks for Read Mode (Parked for future version of the app)</li>
+<li>Extract keywords from bookmarks (Parked for future version of the app)</li>
+<li>Filter using buckets/categories, tags, favourites</li>
+<li>Search</li>
+<li>Browser extensions</li>
+</ol>
+<h1 id="architecture"><strong>Architecture</strong></h1>
+<p><strong>How are the files stored in Gaia for Trove?</strong></p>
+<p><img src="https://miro.medium.com/max/632/1*WzrD9Qjlpt4PbkA-T0Iu1w.png" alt="Image for post"></p>
+<p>Every Trove user has three files associated with their Gaia hub to store bookmark, collections and archived objects. This schema is also backward compatible. Backward compatibility is a major issue with Gaia because schema changes in the future to incorporate any other features where we do not have access to user’s Gaia (by definition), is a major constraint and therefore needs precautions.
+**If we were to add <em>Read Mode</em> in the future (which will have massive content and makes no sense to be stored inside bookmark object anyway), it can be stored on a separate file {bookmark_id}.json and referenced with the id. This implies, in the future, a user will have 3+ files, while everything remains maintainable, compatible and scalable.
+A randomly generated id in base 36 (0–9, a-z) with a length of 9 is used for each category and each bookmark. The probability of collision for a user limits to 0 (1/36⁹). This decision was made so that ids can be assigned on the go without having to keep track of array sizes for incremental ids.
+When a bookmark is created, and assigned to a category, the bookmark object stores the id of the category and not the name. This referential association allows for seamless category name edits.
+For the sake of blog post brevity, we are leaving out a lot of the trivial implementation that is common with centralized architecture design pattern (archive, tags, filter, search etc).
+<strong>Extension</strong></p>
+<p><img src="https://miro.medium.com/max/1600/0*CUrk-zRTYflhc_Ja.jpeg" alt="Image for post"></p>
+<p>We initially started with one click bookmark save on our extension. This implied a seamless experience for the users. However, server-less comes with its limitation. In a centralized system, once the user clicked on the extension, we would have sent the URL to our back-end, scraped meta-tags and stored it in a database record referencing the user. We do not have the liberty here. The URL is sent to our open-sourced back-end for meta tag extraction, but that is all it does. It returns the response back to the extension, which does the rest. This implies a user would have to wait for a few seconds while:</p>
+<ol>
+<li>We collect meta tags from back-end</li>
+<li>Collect all bookmarks from Gaia</li>
+<li>Change 2 to an array</li>
+<li>Append response from back-end to the array</li>
+<li>Save array to Gaia as a JSON</li>
+</ol>
+<p>Therefore, we decided to make it a two-step process. We are still researching on ways to make this part seamless to our users.
+<strong>URL Meta Extractor</strong>
+A simple Flask app using <a href="https://newspaper.readthedocs.io/en/latest/">Newspaper</a> package has been used for the purpose of URL extraction. The back-end extractor is open sourced at <a href="https://gitlab.com/trovenow/trovenow_url_parser">https://gitlab.com/trovenow/trovenow_url_parser</a>.
+Use the <a href="https://app.trovenow.com/"><strong>app</strong></a> and <a href="https://twitter.com/trovenow"><strong>tweet us</strong></a> ****for more clarification. We would love to hear your feedback. Also, please show your support by up-voting us <a href="https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d"><strong>here.</strong></a></p>
+<p><img src="https://miro.medium.com/max/1270/1*Gnvj5hkPrKuSJnmvBjAfLQ.png" alt="Image for post"></p>
+<p><strong>Final Version (v1) of Trove</strong></p>
+</div>
 	</section>
 
 
@@ -252,7 +314,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 0 words in this page.
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 1129 words in this page.
 	</div>
 </div>
 
@@ -284,54 +346,10 @@ onload='renderMathInElement(document.body);'></script>
 
 
 
-<div class="font-serif pb-2 flex align-start leading-loose">
-	<span class="heading pr-6 leading-loose">Related</span>
-	<span >
-		
-			<a href="/posts/fraud_detection/">Fraud Detection</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/shabda_kathmandu/">Shabda Kathmandu</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/spirathon/">Spirathon 2019</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/torpe/">Torpe Blockchain</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/feasibility_study/">Feasibility study with sentiment analysis and voronoi</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/inclusive_newspaper/">Inclusive Newspaper</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/seedstars/">Startup analysis using Seedstars data</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/encryption/">Basics of Encryption</a>
-		
-</span>
-</div>
-
 </div>
 <hr />
 <div class="pb-2">
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
     
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "ayushsubedidisqus" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 <hr />
 

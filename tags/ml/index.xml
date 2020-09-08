@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/ml/</link>
+    <description>Recent content in ML on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Jan 2019 08:06:19 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fraud Detection</title>
+      <link>https://subedi.ml/posts/fraud_detection/</link>
+      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/fraud_detection/</guid>
+      <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
+&lt;h2 id=&#34;research-items&#34;&gt;Research Items&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Data Sets&lt;/li&gt;
+&lt;li&gt;Relevant Papers&lt;/li&gt;
+&lt;li&gt;Available Solutions&lt;/li&gt;
+&lt;li&gt;Machine learning&lt;/li&gt;
+&lt;li&gt;Pre-processing&lt;/li&gt;
+&lt;li&gt;Features analysis&lt;/li&gt;
+&lt;li&gt;Modelling&lt;/li&gt;
+&lt;li&gt;Evaluation&lt;/li&gt;
+&lt;li&gt;Suggested Solution&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;1-data-sets&#34;&gt;1. Data Sets&lt;/h2&gt;
+&lt;p&gt;The first step is to find fraud data sets for modeling purposes. Unfortunately, fraud data sets are really difficult to find publicly because of the confidential information that they contain. Listed below are some of the data sets found and notes on them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Real world data set from Kaggle (ULB)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kaggle.com/mlg-ulb/creditcardfraud&#34;&gt;https://www.kaggle.com/mlg-ulb/creditcardfraud&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data set contains labelled credit card transactions labeled as fraudulent or genuine. Unfortunately, the column labels do not make sense because PCA has been applied for dimensional reduction. Therefore, it is very difficult to understand what each of the columns represent. Nonetheless, it is real world data.  The data sets contains transactions made by credit cards in September 2013 by European cardholders. This data set presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. &lt;strong&gt;The data set is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This data set has been analysed and models have been created below in the document, with F1 score of 94%.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Synthetic data set from Kaggle (NTNU)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kaggle.com/ntnu-testimon/paysim1&#34;&gt;https://www.kaggle.com/ntnu-testimon/paysim1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data set contains synthetic (created) transaction data. The advantage of using this data set is that PCA has not been pre-performed, thus allowing extraction of all useful information. However, the data set is scaled down to 1/4th of the original data set.&lt;/p&gt;
+&lt;h2 id=&#34;2-papers&#34;&gt;2. Papers:&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Link&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Title&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf&#34;&gt;https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Toward Scalable Learning with Non-uniform Class and Cost Distributions: A Case Study in Credit Card Fraud Detection&lt;/td&gt;
+&lt;td&gt;Handling skewed datasets, compares credit card fraud detection models, and evaluate how the different sets of features have an impact on the results with the help of a real credit card fraud dataset provided by a large European card processing company (the dataset above). The results show an average increase in savings of 13% by including the proposed periodic features into the methods. &lt;br&gt;&lt;br&gt;Using 50-50 split in fraud, non-fraud leads to better models.&lt;br&gt;&lt;br&gt;von Mises distribution: &lt;a href=&#34;https://en.wikipedia.org/wiki/Von_Mises_distribution&#34;&gt;https://en.wikipedia.org/wiki/Von_Mises_distribution&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf&#34;&gt;https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Credit Card Fraud Detection using Meta-Learning: Issues and Initials Results&lt;/td&gt;
+&lt;td&gt;Apart from the finding like above (using balanced training), the paper talks about using metrics other than accuracy for model evaluation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466&#34;&gt;http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Credit Card Fraud Detection Using Machine Learning As Data Mining Technique&lt;/td&gt;
+&lt;td&gt;95% accuracy based on Naive based derivatives.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.jair.org/index.php/jair/article/view/10302/24590&#34;&gt;https://www.jair.org/index.php/jair/article/view/10302/24590&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SMOTE: Synthetic Minority Over-sampling Technique&lt;/td&gt;
+&lt;td&gt;Using SMOTE method as described in the paper is another alternative of getting around the skewness problem.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;3-research-on-available-solutions&#34;&gt;3. Research on available solutions:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Airbnb&lt;/strong&gt;
+&lt;a href=&#34;https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60&#34;&gt;https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ways to mitigate potential bad actors to carry out different types of attacks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Product changes: 2FA, email verification, etc etc&lt;/li&gt;
+&lt;li&gt;Anomaly detection: Scripted attacks that can cause anomaly&lt;/li&gt;
+&lt;li&gt;heuristics/machine learning model based on different factors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Framework&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fast and robust&lt;/li&gt;
+&lt;li&gt;Agile (catch up game)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PMML: Predictive model markup language
+Openscoring: encodes several common types of machine learning models&lt;/p&gt;
+&lt;p&gt;They do not provide fraud detection as a service.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paypal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/&#34;&gt;https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paypal recently acquired Simility for fraud detection.&lt;/p&gt;
+&lt;p&gt;Simility looks at various session, device, and behavioral bio-metrics and builds a profile for what constitutes “normal” user login behavior; if an anomaly is spotted, it can act to prevent the action.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0&#34;&gt;https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stripe&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stripe.com/us/radar&#34;&gt;https://stripe.com/us/radar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Even if a card is new to your business, there’s an 89% chance it’s been seen before on the Stripe network.&lt;/p&gt;
+&lt;h2 id=&#34;4-machine-learning&#34;&gt;4. Machine Learning&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Supervised learning was applied to the PCA data set discussed in the data sets section.&lt;/li&gt;
+&lt;li&gt;Different ensemble machine learning algorithms were tested, rather than using one particular algorithm for modelling.&lt;/li&gt;
+&lt;li&gt;Metrics like Precision, Recall, F1 score were used to evaluate the model and get a better understanding of True Positives, True Negatives, False Positive and False Negatives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ayushsubedi/fraud_detection/blob/master/PCA_applied_dataset.ipynb&#34;&gt;Link to complete notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Random Forest&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Random Forest : 0.9538461538461539
+Precision score Random Forest : 0.98
+Recall score Random Forest : 0.9245283018867925
+F1 score Random Forest : 0.9514563106796116
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bagging&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Bagging : 0.963076923076923
+Precision score Bagging : 0.9867549668874173
+Recall score Bagging : 0.9371069182389937
+F1 score Bagging : 0.9612903225806452
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;AdaBoost&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Ada Boost Classifier : 0.9446153846153846
+Precision score Ada Boost Classifier : 0.9795918367346939
+Recall score Ada Boost Classifier : 0.9056603773584906
+F1 score Ada Boost Classifier : 0.9411764705882353
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;False Positives vs False Negatives&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uc29b242eafa0323079c59de5fc0.previews.dropboxusercontent.com/p/thumb/AA6wvSlgpVw_UCQieCOAFCnCY7-pM3DqJHXKMIImW212qOFwUAphNe5k_qajpfHMLtsf6neHowUSn7aMPUrwwhlgxD3j9AfUAD7CsTD961sQ6gaht6kn2wfdJYm46GwQwW8DncIuzVtzwh8q169uEdp7Fw_0uBaBxCNJbQoqt-YVRI1f8nskTqVx_NrLJyVybhA5lW_dc02Iqhrql5kbv35sLLsCN_B9D0CdV3Dxdup3twa-YtsUF1xBqwXki83c3dtM4dnkbsNMiwk3w6MHXlu6T-Yyn-VuPVFOnNRWYapLlpWZMz-Q9F7TMz1ISka9udXN4jDlJF-gucN_RAECXwB0wpP5XZI35aWjvtyhXrPhubrOFzBHDQN_51eiGbuAvpceW6J8UKBaGzOZgsLl5jwK/p.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

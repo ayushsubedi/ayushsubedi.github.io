@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Oct 2017 11:02:11 +0545</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2020 10:09:16 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tableau</title>
+      <link>https://subedi.ml/tags/tableau/</link>
+      <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/tableau/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>viz</title>
+      <link>https://subedi.ml/tags/viz/</link>
+      <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blockchain</title>
+      <link>https://subedi.ml/tags/blockchain/</link>
+      <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML</title>
+      <link>https://subedi.ml/tags/ml/</link>
+      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blockchainß</title>
+      <link>https://subedi.ml/tags/blockchain%C3%9F/</link>
+      <pubDate>Sun, 28 Oct 2018 01:10:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/blockchain%C3%9F/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>product</title>
@@ -80,15 +125,6 @@
       <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
       
       <guid>https://subedi.ml/tags/mandelbrot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>viz</title>
-      <link>https://subedi.ml/tags/viz/</link>
-      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
-      
-      <guid>https://subedi.ml/tags/viz/</guid>
       <description></description>
     </item>
     

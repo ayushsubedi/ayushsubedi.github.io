@@ -83,12 +83,13 @@ SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/s
     </item>
     
     <item>
-      <title>You vs Bezos</title>
+      <title>You vs Bezos - Weber Fencher law</title>
       <link>https://subedi.ml/posts/bezos/</link>
       <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/bezos/</guid>
-      <description></description>
+      <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
+&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1599480108593&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;https:&amp;#47;&amp;#47;moonlitplayground.ml&amp;#47;bezos&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;WIPbezos&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en&#39; /&gt;&lt;param name=&#39;filter&#39; value=&#39;publish=yes&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1599480108593&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;750px&#39;;vizElement.style.height=&#39;904px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;</description>
     </item>
     
     <item>
@@ -178,7 +179,69 @@ SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/s
       <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/trove_architecture/</guid>
-      <description></description>
+      <description>&lt;p&gt;After &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;releasing&lt;/a&gt; &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;Trove&lt;/a&gt;, our inboxes and &lt;a href=&#34;https://twitter.com/Trovenow&#34;&gt;DMs&lt;/a&gt; flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the &lt;a href=&#34;https://blockstack.org/&#34;&gt;Blockstack&lt;/a&gt; platform. &lt;strong&gt;The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.&lt;/strong&gt;  &lt;br&gt;
+The engineers @Trove have strong understanding and experience of centralized applications. We followed the decentralized space, and also built small prototypes in Blockstack and Ethereum platforms. But, Trove is our first endeavour to create a full end-to-end Decentralized Application from scratch. We had questions.
+Actually, a lot of them.&lt;/p&gt;
+&lt;h3 id=&#34;proof-of-concept&#34;&gt;Proof of Concept&lt;/h3&gt;
+&lt;p&gt;A proof of concept entails investigating to be convinced of an idea. In our case, the idea was a bookmark manager. However, we also had to deep dive into the Blockstack platform to get a gist of the second part of our idea, i.e., decentralization.
+We started with a &lt;em&gt;very very simple decentralized app.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1600/0*Maa7FgRAd3IqJLwt.png&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We quickly put together a decentralized app that allowed users to save their favorite words. Although the app does not make sense from a usability perspective, and might be hilarious to even think about deploying it to production, it helped answer a lot of our questions:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How will the users login/signup to use the app?&lt;/strong&gt;
+The users will create an ID with Blockstack. &lt;strong&gt;The ID will be used to sign in all apps in the Blockstack ecosystem.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Where is the data stored?&lt;/strong&gt;
+By default, when an ID is created in Blockstack, each user ID is also issued some storage space. &lt;strong&gt;This storage system is called Gaia.&lt;/strong&gt; The primary purpose of Gaia is to store any relevant data for the apps that the user uses in the Blockstack ecosystem. However, Blockstack also allows users to choose their own Gaia hub and to configure the back-end provider to store data with. Learn more &lt;a href=&#34;https://github.com/blockstack/gaia&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How is the data stored in Gaia?&lt;/strong&gt;
+Gaia is not a DBMS. The data for an app is stored in one or many text format files (JSON) within the app’s hub in Gaia.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Is it encrypted?&lt;/strong&gt;
+This depends on the developers. The developers can choose whether or not a file should be encrypted. For our case, the words in the proof of concept app were encrypted and the bookmarks for Trove are encrypted as well.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How is it decentralized?&lt;/strong&gt;
+One of the most common questions we have been receiving is regarding decentralization. Several users new to the Blockstack ecosystem have asked, &lt;em&gt;“If all of my bookmarks are in the same place, how is it decentralized?”&lt;/em&gt;. Well, there are a few ways of thinking about this. From the perspective of the developers, all of the data pertaining to the app are scattered in several Gaia storage all over. There is no possible way for the makers of an app to have all of the data of all of the users in a centralized repository. This makes it decentralized. Also, no central repository implies no machine learning algorithm tinkering to garner patterns and trends on collective data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now, can we now build a MVP for our purposes?&lt;/strong&gt;
+Yes.
+At this point, we had a better understanding of the approach to make Trove possible and optimized to leverage on Blockstack and Gaia. &lt;strong&gt;Moreover, we realized that a bookmark manager would be an ideal exploration for this platform because bookmarks are sacred to a specific user, and they are not normally shared.&lt;/strong&gt; We might eventually work on the functionality of publicly shared bookmarks in the future if our users request it.&lt;/p&gt;
+&lt;h1 id=&#34;product-specification-and-minimum-viable-product&#34;&gt;&lt;strong&gt;Product Specification and Minimum Viable Product&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1600/0*36-E1o7DqQQbsfNn.jpg&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The team collectively decided to pursue these functionalities for the first version of the app:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CRUD bookmarks&lt;/li&gt;
+&lt;li&gt;CRUD buckets/categories for bookmarks&lt;/li&gt;
+&lt;li&gt;CRUD tags&lt;/li&gt;
+&lt;li&gt;Favorite bookmarks&lt;/li&gt;
+&lt;li&gt;Archive bookmarks&lt;/li&gt;
+&lt;li&gt;Archive buckets/categories&lt;/li&gt;
+&lt;li&gt;Extract meta tags of bookmarks&lt;/li&gt;
+&lt;li&gt;Extract HTML body of bookmarks for Read Mode (Parked for future version of the app)&lt;/li&gt;
+&lt;li&gt;Extract keywords from bookmarks (Parked for future version of the app)&lt;/li&gt;
+&lt;li&gt;Filter using buckets/categories, tags, favourites&lt;/li&gt;
+&lt;li&gt;Search&lt;/li&gt;
+&lt;li&gt;Browser extensions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;architecture&#34;&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;How are the files stored in Gaia for Trove?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/632/1*WzrD9Qjlpt4PbkA-T0Iu1w.png&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Every Trove user has three files associated with their Gaia hub to store bookmark, collections and archived objects. This schema is also backward compatible. Backward compatibility is a major issue with Gaia because schema changes in the future to incorporate any other features where we do not have access to user’s Gaia (by definition), is a major constraint and therefore needs precautions.
+**If we were to add &lt;em&gt;Read Mode&lt;/em&gt; in the future (which will have massive content and makes no sense to be stored inside bookmark object anyway), it can be stored on a separate file {bookmark_id}.json and referenced with the id. This implies, in the future, a user will have 3+ files, while everything remains maintainable, compatible and scalable.
+A randomly generated id in base 36 (0–9, a-z) with a length of 9 is used for each category and each bookmark. The probability of collision for a user limits to 0 (1/36⁹). This decision was made so that ids can be assigned on the go without having to keep track of array sizes for incremental ids.
+When a bookmark is created, and assigned to a category, the bookmark object stores the id of the category and not the name. This referential association allows for seamless category name edits.
+For the sake of blog post brevity, we are leaving out a lot of the trivial implementation that is common with centralized architecture design pattern (archive, tags, filter, search etc).
+&lt;strong&gt;Extension&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1600/0*CUrk-zRTYflhc_Ja.jpeg&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We initially started with one click bookmark save on our extension. This implied a seamless experience for the users. However, server-less comes with its limitation. In a centralized system, once the user clicked on the extension, we would have sent the URL to our back-end, scraped meta-tags and stored it in a database record referencing the user. We do not have the liberty here. The URL is sent to our open-sourced back-end for meta tag extraction, but that is all it does. It returns the response back to the extension, which does the rest. This implies a user would have to wait for a few seconds while:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We collect meta tags from back-end&lt;/li&gt;
+&lt;li&gt;Collect all bookmarks from Gaia&lt;/li&gt;
+&lt;li&gt;Change 2 to an array&lt;/li&gt;
+&lt;li&gt;Append response from back-end to the array&lt;/li&gt;
+&lt;li&gt;Save array to Gaia as a JSON&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Therefore, we decided to make it a two-step process. We are still researching on ways to make this part seamless to our users.
+&lt;strong&gt;URL Meta Extractor&lt;/strong&gt;
+A simple Flask app using &lt;a href=&#34;https://newspaper.readthedocs.io/en/latest/&#34;&gt;Newspaper&lt;/a&gt; package has been used for the purpose of URL extraction. The back-end extractor is open sourced at &lt;a href=&#34;https://gitlab.com/trovenow/trovenow_url_parser&#34;&gt;https://gitlab.com/trovenow/trovenow_url_parser&lt;/a&gt;.
+Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/trovenow&#34;&gt;&lt;strong&gt;tweet us&lt;/strong&gt;&lt;/a&gt; ****for more clarification. We would love to hear your feedback. Also, please show your support by up-voting us &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;&lt;strong&gt;here.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/1270/1*Gnvj5hkPrKuSJnmvBjAfLQ.png&#34; alt=&#34;Image for post&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Final Version (v1) of Trove&lt;/strong&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -187,7 +250,114 @@ SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/s
       <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/fraud_detection/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
+&lt;h2 id=&#34;research-items&#34;&gt;Research Items&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Data Sets&lt;/li&gt;
+&lt;li&gt;Relevant Papers&lt;/li&gt;
+&lt;li&gt;Available Solutions&lt;/li&gt;
+&lt;li&gt;Machine learning&lt;/li&gt;
+&lt;li&gt;Pre-processing&lt;/li&gt;
+&lt;li&gt;Features analysis&lt;/li&gt;
+&lt;li&gt;Modelling&lt;/li&gt;
+&lt;li&gt;Evaluation&lt;/li&gt;
+&lt;li&gt;Suggested Solution&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;1-data-sets&#34;&gt;1. Data Sets&lt;/h2&gt;
+&lt;p&gt;The first step is to find fraud data sets for modeling purposes. Unfortunately, fraud data sets are really difficult to find publicly because of the confidential information that they contain. Listed below are some of the data sets found and notes on them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Real world data set from Kaggle (ULB)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kaggle.com/mlg-ulb/creditcardfraud&#34;&gt;https://www.kaggle.com/mlg-ulb/creditcardfraud&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data set contains labelled credit card transactions labeled as fraudulent or genuine. Unfortunately, the column labels do not make sense because PCA has been applied for dimensional reduction. Therefore, it is very difficult to understand what each of the columns represent. Nonetheless, it is real world data.  The data sets contains transactions made by credit cards in September 2013 by European cardholders. This data set presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. &lt;strong&gt;The data set is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This data set has been analysed and models have been created below in the document, with F1 score of 94%.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Synthetic data set from Kaggle (NTNU)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kaggle.com/ntnu-testimon/paysim1&#34;&gt;https://www.kaggle.com/ntnu-testimon/paysim1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data set contains synthetic (created) transaction data. The advantage of using this data set is that PCA has not been pre-performed, thus allowing extraction of all useful information. However, the data set is scaled down to 1/4th of the original data set.&lt;/p&gt;
+&lt;h2 id=&#34;2-papers&#34;&gt;2. Papers:&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Link&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Title&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf&#34;&gt;https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Toward Scalable Learning with Non-uniform Class and Cost Distributions: A Case Study in Credit Card Fraud Detection&lt;/td&gt;
+&lt;td&gt;Handling skewed datasets, compares credit card fraud detection models, and evaluate how the different sets of features have an impact on the results with the help of a real credit card fraud dataset provided by a large European card processing company (the dataset above). The results show an average increase in savings of 13% by including the proposed periodic features into the methods. &lt;br&gt;&lt;br&gt;Using 50-50 split in fraud, non-fraud leads to better models.&lt;br&gt;&lt;br&gt;von Mises distribution: &lt;a href=&#34;https://en.wikipedia.org/wiki/Von_Mises_distribution&#34;&gt;https://en.wikipedia.org/wiki/Von_Mises_distribution&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf&#34;&gt;https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Credit Card Fraud Detection using Meta-Learning: Issues and Initials Results&lt;/td&gt;
+&lt;td&gt;Apart from the finding like above (using balanced training), the paper talks about using metrics other than accuracy for model evaluation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466&#34;&gt;http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Credit Card Fraud Detection Using Machine Learning As Data Mining Technique&lt;/td&gt;
+&lt;td&gt;95% accuracy based on Naive based derivatives.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.jair.org/index.php/jair/article/view/10302/24590&#34;&gt;https://www.jair.org/index.php/jair/article/view/10302/24590&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SMOTE: Synthetic Minority Over-sampling Technique&lt;/td&gt;
+&lt;td&gt;Using SMOTE method as described in the paper is another alternative of getting around the skewness problem.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;3-research-on-available-solutions&#34;&gt;3. Research on available solutions:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Airbnb&lt;/strong&gt;
+&lt;a href=&#34;https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60&#34;&gt;https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ways to mitigate potential bad actors to carry out different types of attacks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Product changes: 2FA, email verification, etc etc&lt;/li&gt;
+&lt;li&gt;Anomaly detection: Scripted attacks that can cause anomaly&lt;/li&gt;
+&lt;li&gt;heuristics/machine learning model based on different factors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Framework&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fast and robust&lt;/li&gt;
+&lt;li&gt;Agile (catch up game)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PMML: Predictive model markup language
+Openscoring: encodes several common types of machine learning models&lt;/p&gt;
+&lt;p&gt;They do not provide fraud detection as a service.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paypal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/&#34;&gt;https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paypal recently acquired Simility for fraud detection.&lt;/p&gt;
+&lt;p&gt;Simility looks at various session, device, and behavioral bio-metrics and builds a profile for what constitutes “normal” user login behavior; if an anomaly is spotted, it can act to prevent the action.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0&#34;&gt;https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stripe&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stripe.com/us/radar&#34;&gt;https://stripe.com/us/radar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Even if a card is new to your business, there’s an 89% chance it’s been seen before on the Stripe network.&lt;/p&gt;
+&lt;h2 id=&#34;4-machine-learning&#34;&gt;4. Machine Learning&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Supervised learning was applied to the PCA data set discussed in the data sets section.&lt;/li&gt;
+&lt;li&gt;Different ensemble machine learning algorithms were tested, rather than using one particular algorithm for modelling.&lt;/li&gt;
+&lt;li&gt;Metrics like Precision, Recall, F1 score were used to evaluate the model and get a better understanding of True Positives, True Negatives, False Positive and False Negatives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ayushsubedi/fraud_detection/blob/master/PCA_applied_dataset.ipynb&#34;&gt;Link to complete notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Random Forest&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Random Forest : 0.9538461538461539
+Precision score Random Forest : 0.98
+Recall score Random Forest : 0.9245283018867925
+F1 score Random Forest : 0.9514563106796116
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bagging&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Bagging : 0.963076923076923
+Precision score Bagging : 0.9867549668874173
+Recall score Bagging : 0.9371069182389937
+F1 score Bagging : 0.9612903225806452
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;AdaBoost&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Ada Boost Classifier : 0.9446153846153846
+Precision score Ada Boost Classifier : 0.9795918367346939
+Recall score Ada Boost Classifier : 0.9056603773584906
+F1 score Ada Boost Classifier : 0.9411764705882353
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;False Positives vs False Negatives&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uc29b242eafa0323079c59de5fc0.previews.dropboxusercontent.com/p/thumb/AA6wvSlgpVw_UCQieCOAFCnCY7-pM3DqJHXKMIImW212qOFwUAphNe5k_qajpfHMLtsf6neHowUSn7aMPUrwwhlgxD3j9AfUAD7CsTD961sQ6gaht6kn2wfdJYm46GwQwW8DncIuzVtzwh8q169uEdp7Fw_0uBaBxCNJbQoqt-YVRI1f8nskTqVx_NrLJyVybhA5lW_dc02Iqhrql5kbv35sLLsCN_B9D0CdV3Dxdup3twa-YtsUF1xBqwXki83c3dtM4dnkbsNMiwk3w6MHXlu6T-Yyn-VuPVFOnNRWYapLlpWZMz-Q9F7TMz1ISka9udXN4jDlJF-gucN_RAECXwB0wpP5XZI35aWjvtyhXrPhubrOFzBHDQN_51eiGbuAvpceW6J8UKBaGzOZgsLl5jwK/p.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
