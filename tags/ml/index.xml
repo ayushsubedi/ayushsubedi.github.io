@@ -18,18 +18,21 @@
       
       <guid>https://subedi.ml/posts/fraud_detection/</guid>
       <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
-&lt;h2 id=&#34;research-items&#34;&gt;Research Items&lt;/h2&gt;
-&lt;ol&gt;
+&lt;h4 id=&#34;research-items&#34;&gt;Research Items&lt;/h4&gt;
+&lt;ul&gt;
 &lt;li&gt;Data Sets&lt;/li&gt;
 &lt;li&gt;Relevant Papers&lt;/li&gt;
 &lt;li&gt;Available Solutions&lt;/li&gt;
-&lt;li&gt;Machine learning&lt;/li&gt;
+&lt;li&gt;Machine learning
+&lt;ul&gt;
 &lt;li&gt;Pre-processing&lt;/li&gt;
 &lt;li&gt;Features analysis&lt;/li&gt;
 &lt;li&gt;Modelling&lt;/li&gt;
 &lt;li&gt;Evaluation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Suggested Solution&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;1-data-sets&#34;&gt;1. Data Sets&lt;/h2&gt;
 &lt;p&gt;The first step is to find fraud data sets for modeling purposes. Unfortunately, fraud data sets are really difficult to find publicly because of the confidential information that they contain. Listed below are some of the data sets found and notes on them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Real world data set from Kaggle (ULB)&lt;/strong&gt;&lt;/p&gt;

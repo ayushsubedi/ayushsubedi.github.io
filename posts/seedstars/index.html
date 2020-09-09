@@ -105,7 +105,10 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/'></a>
+		href='/tags/viz'>viz</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/python'>python</a>
 	
 	
 	
@@ -122,7 +125,323 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<h2 id="finding-answers-after-tootle">Finding answers after Tootle</h2>
+<p>In 2017, I went to Thailand to participate in the Seedstars summit. The platform provides funding to startups in emerging markets. The diversity of project ideas made me curious enough to scrape data from the Seedstars website. After leaving Tootle, I was interested in researching the NEXT product to invest my time in. The data scraped would allow me to create a one stop place for every startup that had applied to Seedstars (there were plenty).</p>
+<h3 id="a-small-chunk-of-fintech-startups-that-applied-to-seedstars">A small chunk of fintech startups that applied to Seedstars</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>problem</th>
+<th>solution</th>
+<th>stage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pymlo Pte. Ltd.</td>
+<td>Traditional accounting in SMEs are expensive, inefficient, and error-prone due to a lot of manual processes.</td>
+<td>Pymlo accounting platform helps non-accountant users in SMEs to manage accounting themselves easily at lower cost.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>QuickCash</td>
+<td>Long &amp; costly processing time, collateral requirement for working capital, no predictive data analytics platform for small business loans.</td>
+<td>QuickCash Platform analyzes business activity through innovative online scoring platform in minutes, providing working capital in one click</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Afrikwity</td>
+<td>SME?s are playing a key role in africa positive trend (they represent 33% of GDP &amp; 90% of private firms). 70% of SME are facing financing pb</td>
+<td>Afrikwity offers investors in the north opportunity to invest part of their savings in the capital of african innovative startups &amp; SMEs.</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>S-Cash Payment</td>
+<td>4 out of 5 people in developing countries are excluded from traditional financial services</td>
+<td>Offer the first digital financial service to savings, credit and payment that you can dedicate to your smartphone.</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>DIRECT SOLUTION SARL</td>
+<td>Trop de temps pour connaitre le prix de son assurance et souscrire. D&rsquo;où un taux trop faible en Afrique.</td>
+<td>Mettre en place un chatbot qui permettre au client d&rsquo;avoir son assurance en moins de 2mn.</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>Kibubu Limited</td>
+<td>Unplanned expenditures habits\r\r\r\r\n - Withdraw money as one wishes not as needs.\r\r\r\r\n - Involved in unplanned purchases.</td>
+<td>An application/A Platform to transform the traditional Kibubu (moneybox/piggy bank) into electronic one.</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>A-Trader Brokerage &amp; Securities</td>
+<td>82% of adults with savings but as of 2013, only 13.9% with access to formal banking, financial products, and savings and investment options.</td>
+<td>Web and app based platform providing investment options to any of 40 million mobile phone users in Tanzania, and 23 million internet users.</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>MaxiCash</td>
+<td>Financial Support in Africa through remittance agencies is inconvenient and costly; while Payment collection is complex and rudimentary.</td>
+<td>MaxiCash is a revolutionary way to enable Financial Support and Payment Collection in Africa with Cash Vouchers System using a Mobile App.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Riovic</td>
+<td>High capital costs in insurance are borne by consumers who end up paying high premiums and receive less value from their insurers.</td>
+<td>An online marketplace that provides companies in insurance with cost-efficient access to capital for various needs.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>MamboPay Limited</td>
+<td>Most financially excluded people do not have access to a mobile phone and this puts them at a disadvantage and can not use mobile money.</td>
+<td>Our technology allows card holders (National ID card or MamboPay Card) to be able to make mobile money transactions using Card Numbers.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>ytibcapital</td>
+<td>problem of growing cottage industry to a quality producing plant</td>
+<td>solution is to enable easy access to quality machinary andexpart knowladge through payment inkind to suppliers</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>DusuPay Ltd</td>
+<td>Lack of a proper payment gateway to Africa</td>
+<td>Creating an ubiquitous platform that works effectively with local modes of payment in various parts of the world to make payments possible</td>
+<td>Expansion Stage</td>
+</tr>
+<tr>
+<td>Fintech</td>
+<td>60% of Nigerians still unbanked, &lsquo;change&rsquo; problem plaguing the street, low accountability and transparency on revenue</td>
+<td>Revenue assurance, getting the unbanked into the system,solving balance (&lsquo;change&rsquo;) problem,</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Rafode ltd</td>
+<td>Rafode Addreses the problem of access to credit by rural poor to purchase solar lamps and energy savings cook stove and repay while using.</td>
+<td>Rafode provide solar lamps and energy savings cookstoves to rural poor on credit and repay the loan on instalments for a period of time</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Flexitech Group Limited</td>
+<td>Tradition layaway method is tedious to manage and inconvenient for both the customer and the merchant.</td>
+<td>An automated layby system for both Merchants and their customers for the purchase of goods and services.\r\r\r\r\n\r\r\r\r\n</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Bdrates Holdings Limited</td>
+<td>There are too many banks offering too many products. Offline comparison is tedious and inefficient.</td>
+<td>An online financial comparison and application can make the retail lending market more efficient for both borrowers and lenders.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>FYPTO</td>
+<td>Leftover currencies: non exchangeable for small amount. Foreign travelers normally dump it at home or unwillingly spend it at airports.</td>
+<td>Deposit your leftover currencies easily to many FYPTO agents around you and use via FYPTO App in many ways that brings the value of it.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Imaginary Pay</td>
+<td>1) Lack of Interaction between Financial Institutions&rsquo; System. \r\r\r\r\n2) There is no 24 by 7 model. \r\r\r\r\n3) Data Access Restriction.</td>
+<td>Money Transfer and Payment Platform, which interact seamlessly within an ecosystem via API.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>MyCash Online</td>
+<td>Currently, there is around 3.3 million* migrants, here in Malaysia. Most of them do not have access to any banks or credit cards.</td>
+<td>We are an online market place specially designed for the migrants, where they can purchase services online &amp; pay using MyCash Coupons.</td>
+<td>Expansion Stage</td>
+</tr>
+<tr>
+<td>WHO&rsquo;s GOOD</td>
+<td>Acquiring reliable environmental, social and governance (ESG) data to measure sustainability performance is time consuming and expensive</td>
+<td>WHO&rsquo;S GOOD is an easy to use AI based platform that analyzes, compares and evaluates companies&rsquo; ESG performance time and cost-effectively.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Smartly</td>
+<td>Getting started with investing in 2018 is still too complicated.</td>
+<td>Fully digital platform that teaches and allows everyday people to start investing and saving.</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>ZigWay</td>
+<td>Irregular incomes force poor families to take out expensive informal loans to meet daily needs like food, keeping them in a debt trap.</td>
+<td>We help people access quick automated Nano Loans ($5-50) to meet daily needs and smooth expenses in a cheaper, more flexible and safer way.</td>
+<td>Idea Stage</td>
+</tr>
+<tr>
+<td>Oncoinsurance</td>
+<td>Imperfect system of treating cancer in the country</td>
+<td>Getting better treatment in the case of insurance</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Simple Invest</td>
+<td>Broker services are for traders and professionals. Retail investors has no suitable product to use for investing their money.</td>
+<td>Simple mobile app with brokerage account with AI roboadvisor</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Mesfix</td>
+<td>The hard time that MSME´s face to find financial products with the traditional banking system</td>
+<td>Online platform that connects MSME´s in financial need with a community of people interested on investing from small amounts and high yield</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Innovafunding</td>
+<td>lack of financing for small size companies</td>
+<td>An online platform that connects investors and small companies and help both to find finnancing and investment</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>Operadora SuSu SAPI de CV</td>
+<td>Companies offer employee&rsquo;s savings fund, however these are a pain to manage and often lead to fraud when operated internally.</td>
+<td>After registering in the app employees can see their employee savings fund in real time and request a loan directly in the App.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Vest Wealth Management</td>
+<td>In Emerging Markets, the middle class doesn?t have access to the financial services like Investing because they are seen as &ldquo;elite&rdquo;.</td>
+<td>Vest is a digital investment advisor that target the middle class in emerging markets.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Payit</td>
+<td>Cash is expensive in time and money, and risky and that&rsquo;s why we want to get rid of it!</td>
+<td>Mobile platform that makes it easy for users to pay everything digitally starting by:\r\r\r\r\n- Our Friends\r\r\r\r\n- Informal Market \r\r\r\r\n- Services</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>Lefort</td>
+<td>More than 72% of SMEs in Mexico don&rsquo;t have access to financing products. Current processes are manual and consume a lot time and resources.</td>
+<td>Replace a manual, complex and resource consuming process with a fully automatic service, 10 times cheaper 200 times faster.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Mutual</td>
+<td>People can&rsquo;t do loans to another person or company legally in Brazil, just Banks.</td>
+<td>Mutual is the first Lending P2P Market Place enabling individuals to make and control their Loans each other with 100% autonomy 100% legal.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Facturedo</td>
+<td>Expensive and bad user experience (lack of transparency, pricing subject to bias) from existing traditional players.</td>
+<td>Platform with transparent and cheap pricing, plus great user experience.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>RedCapital</td>
+<td>Small businesses have a little credit line on banks. So, they have higher rates in other financial institutions.</td>
+<td>On the RedCapital Website, SMEs request money and investors can choose the loans or the invoices that they would like to invest in.</td>
+<td>Expansion Stage</td>
+</tr>
+<tr>
+<td>Goodticket Tecnologia de Pagamentos</td>
+<td>Today the benefits market offers a bureaucratic and non malleable model, which ultimately makes the experience at the time of hiring a slow</td>
+<td>We offer a practical WEB platform for the company to manage simply by adding credits. For the beneficiaries, we are a quick app platform.</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>EASYCRÉDITO</td>
+<td>Credit is always the last eatapa buying process happens after the emotional experience and causes frustration when denied.</td>
+<td>Our solution enables you to transfer all the credit hire experience to a multi-channel online platform through applications or websites.</td>
+<td>Expansion Stage</td>
+</tr>
+<tr>
+<td>Neotic</td>
+<td>Large amount of info a stock trader has to deal with every day</td>
+<td>Providing a personnalisable robot that can crunch tons of data and learn from historical data.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>2nate</td>
+<td>Lack of money for fighting against poverty, cultural problems, social anomalies.</td>
+<td>Crowdfunding and micro-donations, What our fathers used to do.</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>Drupz</td>
+<td>Saving money is necessary for most of us, but we cannot do it effectively. It&rsquo;s a complex, multi-faceted problem that is very hard to solve.</td>
+<td>Drupz&rsquo;s novel machine learning algorithms analyze your financial behavior and automatically and seamlessly saves money for your goals.</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>AbantuCard ( Isogong pty ltd )</td>
+<td>Its difficult to make better choice to make debit and credit card payments and to get cheaper and better interest on borrowings and savings</td>
+<td>Debit Card, Credit Card and Investment Account in ONE, automated, based on person to person network.</td>
+<td>Pre-Revenue Stage</td>
+</tr>
+<tr>
+<td>Democrance</td>
+<td>More than 350 million people in MENA do not have access to insurance- but are the ones that need insurance and protection the most.</td>
+<td>A FinTech platform that makes insurance affordable and accessible to the lower-income population and adds value to insurers and distributors</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>Finkee</td>
+<td>People usually know their income, but don&rsquo;t know how to make their money work for them and to control where it is actually going.</td>
+<td>The best solution is to analyse your expenses and get personalized recommendations to achieve your goals with the help of our system.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Bloomzed (Rocket-A Lab)</td>
+<td>To make simple daily transactions a consumer needs to think about lots of stuff beforehand (withdraw money, change money, send money, etc.)</td>
+<td>Simplify, fasten and make more secure daily consumption and payment transactions via smartphone.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Expediente Azul</td>
+<td>Whenever a business customer asks for a loan, he has to send many documents, 5 to 20 on average, by email or on paper. Followup is a mess.</td>
+<td>A tool to easily capture, receive, analyze automatically and store the many documents sent by a particular customer that requests a loan.</td>
+<td>Revenue Stage</td>
+</tr>
+<tr>
+<td>Credytag</td>
+<td>The only credit card payment system in the market are card reader or a dongle. Both have allot of expensive and complicated requirements.</td>
+<td>Making the payment system work with just a QR Code and a phone that recibes SMS for the business and a mobile app for the consumer.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Kintos</td>
+<td>The limitation of income and credit cards access as well as financial education for young people.</td>
+<td>Loans and investments tuned just right for the necessities of young people, complemented with engaging financial education.</td>
+<td>Beta Testing Stage</td>
+</tr>
+<tr>
+<td>Companion Business Solutions</td>
+<td>There are more than 800k taxpayers in Azerbaijan and they have to use 3 web sites and softwares for sending reports and to the government.</td>
+<td>Using only one app we can simpler do all works in these portals, even in our phones and pads.</td>
+<td>Idea Stage</td>
+</tr>
+<tr>
+<td>FlutterPay</td>
+<td>Leverages a distributed ledger system to reduce costs associated with payments and increase speed.</td>
+<td>Leverages a distributed ledger system to reduce costs associated with payments and increase speed.</td>
+<td>Development Stage</td>
+</tr>
+<tr>
+<td>Fondify</td>
+<td>In Mexico there is a lack of option to get resources, traditional channels such as banks or government entities aren`t an option for creators | We develop a Crowdfunding Platform inspired in the LATAM culture. With global funds for the creators from people who love their project                      | Pre-Revenue Stage  |</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dinerio</td>
+<td>People don´t save money due to a lack of knowledge and financial planning. There are no tools for people to track their expenses easily.</td>
+<td>Dinerio extracts transactions&rsquo; information from online banking, categorizes everything and keeps track of budgets, automatically.</td>
+<td>Beta Testing Stage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distribution-and-count-by-sectors">Distribution and Count by sectors</h3>
+<div><div id="bf7217ab-84c3-44a9-9e89-4d772686f543" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("bf7217ab-84c3-44a9-9e89-4d772686f543", [{"x": ["Advertising and Marketing", "Aerospace", "AgriTech", "Audio and Media", "Consumer Products", "Consumer Services", "EdTech", "Enterprise Products", "Enterprise Services", "FinTech", "Food and Beverage", "Gaming / Entertainment", "HR, Recruitment and Jobs", "HealthTech / Wellness", "HighTech / NanoTech /Materials", "Industrial / Energy / Clean Tech", "MedTech / BioTech", "Other", "Real Estate", "Security", "Social Networking and Collaboration", "Sports", "Telecommunications", "Travel and Transport"], "y": [303, 20, 252, 62, 277, 386, 543, 179, 383, 540, 197, 128, 158, 420, 145, 264, 98, 661, 117, 47, 225, 43, 61, 363], "type": "bar", "uid": "a06e8a76-c1e4-4f0b-9281-33419189420e"}], {}, {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly"})</script><script type="text/javascript">window.addEventListener("resize", function(){Plotly.Plots.resize(document.getElementById("bf7217ab-84c3-44a9-9e89-4d772686f543"));});</script></div>
+<h3 id="stages-of-startups">Stages of startups</h3>
+<div><div id="b6f997c0-826c-4764-9da1-fe052bbafedd" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("b6f997c0-826c-4764-9da1-fe052bbafedd", [{"x": ["Acquired", "Beta Testing Stage", "Dead", "Development Stage", "Expansion Stage", "Idea Stage", "Pre-Revenue Stage", "Revenue Stage"], "y": [6, 1089, 22, 1229, 407, 296, 1423, 1400], "type": "bar", "uid": "d550e5a1-bea3-4d9d-8fb7-dac97d8e94d8"}], {}, {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly"})</script><script type="text/javascript">window.addEventListener("resize", function(){Plotly.Plots.resize(document.getElementById("b6f997c0-826c-4764-9da1-fe052bbafedd"));});</script></div>
+<h3 id="startup-countries">Startup countries</h3>
+<div><div id="70304702-58c0-4d8d-af9a-2db6bff6c63c" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("70304702-58c0-4d8d-af9a-2db6bff6c63c", [{"x": ["Afghanistan", "Algeria", "Angola", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Benin", "Bolivia (Plurinational State of)", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Cambodia", "Cameroon", "Canada", "Chile", "China", "Colombia", "Congo (the Democratic Republic of the)", "Costa Rica", "Croatia", "Cyprus", "Czech Republic", "C\u00f4te d'Ivoire", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Guinea-Bissau", "Hong Kong", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Korea (the Republic of)", "Kuwait", "Kyrgyzstan", "Lebanon", "Lesotho", "Liberia", "Libya", "Malawi", "Malaysia", "Mali", "Mauritius", "Mexico", "Moldova (the Republic of)", "Mongolia", "Morocco", "Mozambique", "Myanmar", "Nepal", "Netherlands", "New Zealand", "Nigeria", "Oman", "Pakistan", "Palestine, State of", "Panama", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russian Federation", "Rwanda", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Swaziland", "Switzerland", "Syrian Arab Republic", "Taiwan (Province of China)", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tunisia", "Turkey", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom of Great Britain and Northern Ireland", "United States of America", "Uruguay", "Uzbekistan", "Viet Nam", "Zambia", "Zimbabwe", "\u00c5land Islands"], "y": [3, 14, 49, 104, 71, 7, 3, 37, 40, 191, 1, 4, 2, 83, 38, 232, 1, 1, 13, 60, 9, 178, 36, 158, 80, 42, 6, 1, 45, 42, 1, 65, 61, 95, 9, 21, 1, 13, 1, 1, 59, 8, 132, 8, 58, 127, 176, 160, 6, 5, 2, 2, 35, 1, 87, 90, 97, 33, 25, 2, 61, 2, 1, 39, 1, 124, 15, 1, 122, 21, 44, 69, 76, 26, 74, 13, 1, 295, 9, 40, 5, 10, 133, 77, 5, 6, 2, 2, 78, 73, 212, 51, 4, 94, 1, 1, 1, 217, 1, 46, 1, 1, 21, 1, 4, 1, 65, 70, 2, 66, 95, 99, 104, 67, 30, 69, 29, 35, 44, 7, 75, 1], "type": "bar", "uid": "b061e95a-3e62-40e7-a4d0-0f4bcc762d19"}], {}, {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly"})</script><script type="text/javascript">window.addEventListener("resize", function(){Plotly.Plots.resize(document.getElementById("70304702-58c0-4d8d-af9a-2db6bff6c63c"));});</script></div>
+</div>
 	</section>
 
 
@@ -252,7 +571,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 0 words in this page.
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 2574 words in this page.
 	</div>
 </div>
 
@@ -283,6 +602,19 @@ onload='renderMathInElement(document.body);'></script>
 <div >
 
 
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/diffie_hellman/">Diffie-Hellman key exchange (and AES-256)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/rsa_encryption/">RSA encryption</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/fractal_plots/">Fractal Plots</a>
+		
+</span>
+</div>
 
 </div>
 <hr />

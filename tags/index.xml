@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>python</title>
+      <link>https://subedi.ml/tags/python/</link>
+      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>bayes</title>
       <link>https://subedi.ml/tags/bayes/</link>
       <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
@@ -57,11 +66,20 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://subedi.ml/tags/python/</link>
-      <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
+      <title>sentiment-analysis</title>
+      <link>https://subedi.ml/tags/sentiment-analysis/</link>
+      <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
       
-      <guid>https://subedi.ml/tags/python/</guid>
+      <guid>https://subedi.ml/tags/sentiment-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>voronoi</title>
+      <link>https://subedi.ml/tags/voronoi/</link>
+      <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/voronoi/</guid>
       <description></description>
     </item>
     

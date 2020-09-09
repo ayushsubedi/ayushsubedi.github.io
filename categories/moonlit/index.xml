@@ -64,18 +64,21 @@
       
       <guid>https://subedi.ml/posts/fraud_detection/</guid>
       <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
-&lt;h2 id=&#34;research-items&#34;&gt;Research Items&lt;/h2&gt;
-&lt;ol&gt;
+&lt;h4 id=&#34;research-items&#34;&gt;Research Items&lt;/h4&gt;
+&lt;ul&gt;
 &lt;li&gt;Data Sets&lt;/li&gt;
 &lt;li&gt;Relevant Papers&lt;/li&gt;
 &lt;li&gt;Available Solutions&lt;/li&gt;
-&lt;li&gt;Machine learning&lt;/li&gt;
+&lt;li&gt;Machine learning
+&lt;ul&gt;
 &lt;li&gt;Pre-processing&lt;/li&gt;
 &lt;li&gt;Features analysis&lt;/li&gt;
 &lt;li&gt;Modelling&lt;/li&gt;
 &lt;li&gt;Evaluation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Suggested Solution&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;1-data-sets&#34;&gt;1. Data Sets&lt;/h2&gt;
 &lt;p&gt;The first step is to find fraud data sets for modeling purposes. Unfortunately, fraud data sets are really difficult to find publicly because of the confidential information that they contain. Listed below are some of the data sets found and notes on them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Real world data set from Kaggle (ULB)&lt;/strong&gt;&lt;/p&gt;
@@ -175,11 +178,18 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     
     <item>
       <title>Feasibility study with sentiment analysis and voronoi</title>
-      <link>https://subedi.ml/posts/feasibility_study/</link>
+      <link>https://subedi.ml/posts/feasibility_study_vs/</link>
       <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/feasibility_study/</guid>
-      <description></description>
+      <guid>https://subedi.ml/posts/feasibility_study_vs/</guid>
+      <description>&lt;h2 id=&#34;voronoi-analysis-and-sentiment-analysis-in-business-feasibility-study&#34;&gt;Voronoi analysis and Sentiment Analysis in Business Feasibility study&lt;/h2&gt;
+&lt;p&gt;Apart from the conventional research methodology (convenience sampling, likert questionnaire, interview questions, swot analysis for competitions etc.) we tested two unconventional paradigms when a client approached us for feasibility of a business in Kathmandu.&lt;/p&gt;
+&lt;p&gt;First of all, we looked into finding an ideal place for the business using voronoi diagrams. This was useful to avoid areas where competitions were prominent, and also to tap into neighbourhoods where demands were not met. Of course, factors such as population density, and similar business tending to sprout in close proximity needed to be considered, but voronoi diagrams was only used as a small piece in a very large puzzle.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/kbar.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Secondly, we tried to understand people&amp;rsquo;s sentiment on the value the business was trying to sell, and also on current value providers. For this we used Twitter API to collect business relevant tweets from Kathmandu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/sentiment.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Apart from an aggregated view of the sentiments, we were able to gain insights on what was and was not working with services provided by current market players. This would allow our client to position their services by converting the weakness of their competition as their strength.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
