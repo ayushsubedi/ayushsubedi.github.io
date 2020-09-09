@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Inclusive Newspaper</title>
+      <title>Inclusive Nepal</title>
       <link>https://subedi.ml/posts/inclusive_newspaper/</link>
       <pubDate>Wed, 08 Aug 2018 08:06:19 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/inclusive_newspaper/</guid>
-      <description>&lt;h2 id=&#34;concept-notebook-on-inclusive-nepal&#34;&gt;Concept Notebook on Inclusive Nepal&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;concept-note-on-inclusive-nepal-wip-and-analysis-of-usage-of-alt-text-in-nepali-newspapers&#34;&gt;Concept Note on Inclusive Nepal (WIP) and Analysis of usage of Alt text in Nepali newspapers&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;This is a work in progress&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This notebook compiles statistics, resources and insights on:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1. Status of Disability in Nepal
 2. Nepali Mobile Apps and Web App penetration
@@ -283,7 +284,8 @@ Name: features, Length: 75, dtype: object
                      zoom&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;
                     )
 viz&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;iframe id=&#34;map&#34;, srcdoc=&#34;&lt;!DOCTYPE html&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;percentage-and-population-of-disabled-in-each-district-of-nepal&#34;&gt;Percentage and Population of disabled in each district of Nepal&lt;/h3&gt;
+&lt;iframe id=&#34;map&#34;, srcdoc=&#34;&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;mapboxgl-jupyter viz&lt;/title&gt;

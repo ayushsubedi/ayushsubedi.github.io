@@ -317,12 +317,29 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     </item>
     
     <item>
-      <title>Spirathon 2019</title>
+      <title>Spirathon AI Conference 2019</title>
       <link>https://subedi.ml/posts/spirathon/</link>
       <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/spirathon/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;journey-to-spam-detection&#34;&gt;Journey to Spam Detection&lt;/h2&gt;
+&lt;p&gt;Spiralogics is hosting a first of it&amp;rsquo;s kind, AI Conference in Nepal this February - a platform for AI veterans and students to come together and network.
+This year, Spiralogics is focused on exploring and explaining the ways how AI can create positive impact on different aspects of our life. It is a platform which will act as a driving force in encouraging the implementation of AI (especially in the Nepalese environment). Their purpose is to bring together professionals and students under one roof to rediscover the possibilities that AI can create in our day to day lives.&lt;/p&gt;
+&lt;h3 id=&#34;how-was-i-involved&#34;&gt;How was I involved?&lt;/h3&gt;
+&lt;p&gt;I was asked to teach a 5 hour session to introduce the students to a concept of AI. I decided to conduct a workshop based session on Naive Bayes Classifier to detect spam.&lt;/p&gt;
+&lt;h2 id=&#34;topics-covered&#34;&gt;Topics covered&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Probability Primer:&lt;/strong&gt; We look into some few probability problems and Monte Carlo Simulations to get a basic primer on probability and Python.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conditional Probability&lt;/strong&gt;: We look into few examples on conditional probability.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bayes Theorem:&lt;/strong&gt; We connect Conditional Probability with Bayes Theorem.  We move from what we know to what we can infer and connect the dots.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sensitivity, Specificity and Confusion matrix:&lt;/strong&gt; We look into concepts of Sensitivity, Specificity, TP, TN, FP and FN. We also look into Type I and Type II errors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy, Precision and Recall:&lt;/strong&gt; We look into different ways to evaluate our models and realize when one is more important than the other. We also study F1 score which combines Precision and Recall.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Naive Bayes:&lt;/strong&gt; We move from Bayes Theorem to Naive Bayes and define what Naive means.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NB Spam detection classifier&lt;/strong&gt;: We build a binary classifier using Scikit learn and publicly available SMS datasets. We also evaluate our model’s performance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NB vs Bagging, Random Forest and Adaboost&lt;/strong&gt;: We will not spend much time here. This notebook basically compares Naive bayes with other algorithmns for the same dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Link to the &lt;a href=&#34;https://github.com/ayushsubedi/naivebayes_spirathon2019&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -783,12 +800,13 @@ check_chain(blockchain)
     </item>
     
     <item>
-      <title>Inclusive Newspaper</title>
+      <title>Inclusive Nepal</title>
       <link>https://subedi.ml/posts/inclusive_newspaper/</link>
       <pubDate>Wed, 08 Aug 2018 08:06:19 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/inclusive_newspaper/</guid>
-      <description>&lt;h2 id=&#34;concept-notebook-on-inclusive-nepal&#34;&gt;Concept Notebook on Inclusive Nepal&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;concept-note-on-inclusive-nepal-wip-and-analysis-of-usage-of-alt-text-in-nepali-newspapers&#34;&gt;Concept Note on Inclusive Nepal (WIP) and Analysis of usage of Alt text in Nepali newspapers&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;This is a work in progress&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This notebook compiles statistics, resources and insights on:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1. Status of Disability in Nepal
 2. Nepali Mobile Apps and Web App penetration
@@ -1054,7 +1072,8 @@ Name: features, Length: 75, dtype: object
                      zoom&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;
                     )
 viz&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;iframe id=&#34;map&#34;, srcdoc=&#34;&lt;!DOCTYPE html&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;percentage-and-population-of-disabled-in-each-district-of-nepal&#34;&gt;Percentage and Population of disabled in each district of Nepal&lt;/h3&gt;
+&lt;iframe id=&#34;map&#34;, srcdoc=&#34;&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;mapboxgl-jupyter viz&lt;/title&gt;
