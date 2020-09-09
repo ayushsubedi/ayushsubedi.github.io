@@ -105,7 +105,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/'></a>
+		href='/tags/ml-python-pytorch'>ML, python, pytorch</a>
 	
 	
 	
@@ -122,7 +122,41 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="heading"></h1>
+<p><img src="https://4.bp.blogspot.com/-VRnyjR8-1FQ/W5EZ4WhvRpI/AAAAAAAAOPM/rNiNP_X9haIqqSt4692inhEUiucUuILewCLcBGAs/s400/001109.jpg" alt=""></p>
+<p><strong>Introduction</strong><br>
+I have been experimenting with Deep Learning models in <a href="https://pytorch.org/">PyTorch</a> for a couple of weeks now. PyTorch is an open source python package that provides Tensor computation (similar to numpy) with GPU support. The dataset used for this particular blog post does no justice to the real-life usage of PyTorch for image classification. However, it serves as a general idea of how Transfer Learning can be used for more complicated image classification. Transfer learning, in a nutshell, is reusing a model developed for some other classification task, for your classification purposes. The dataset was created by scraping images from google image search.</p>
+<p><strong>Creating the dataset</strong><br>
+For our dataset, we need images of birds, planes, and Superman. We will be using the <a href="https://github.com/hellock/icrawler">icrawler</a> package to download the images from google image search.</p>
+<p>We repeat the same for birds and Superman. Once all the files have been downloaded, we will restructure the folders to contain our training, testing and validating samples. I am allocating 70% for training, 20% for validating and 10% for testing.</p>
+<p><img src="https://1.bp.blogspot.com/--JBHptSr22k/W5EhKG9S0FI/AAAAAAAAOPY/b1JuDndQ6qAbXSgomBTZUZkjPRNEK-N-ACLcBGAs/s320/Capture.PNG" alt=""></p>
+<p><strong>Loading the data</strong><br>
+PyTorch uses generators to read the data. Since datasets are usually large, it makes sense to not load everything in memory. Let&rsquo;s import useful libraries that we will be using for classification.</p>
+<p>Now that we have imported useful libraries, we need to augment and normalize the images. Torchvision transforms is used to augment the training data with random scaling, rotations, mirroring and cropping. We do not need to rotate or flip our testing and validating sets. The data for each set will also be loaded with Torchivision&rsquo;s DataLoader and ImageFolder.</p>
+<p>Let us visualize a few training images to understand the data augmentation.</p>
+<p><img src="https://3.bp.blogspot.com/-LNJ3iv_C5Zs/W5Elb_VXgmI/AAAAAAAAOPk/ThiNb-NKIUU5fFx-2oEaO4FzRcMTBvuwgCLcBGAs/s640/download%2B%25281%2529.png" alt=""></p>
+<p><strong>Loading a pre-trained model</strong>
+We will be using Densenet for our purposes.</p>
+<p>The pre-trained model&rsquo;s classifier takes 1920 features as input. We need to be consistent with that. However, the output feature for our case is 3 (bird, plane, and Superman).</p>
+<p>Now, let&rsquo;s create our classifier and replace the model&rsquo;s classifier.</p>
+<p>We are using ReLU activation function with random dropouts with a probability of 20% in the hidden layers. For the output layer, we are using LogSoftmax.</p>
+<p><strong>Training Criterion, Optimizer, and Decay</strong><br>
+<strong>Model Training and Testing</strong><br>
+Let us calculate the accuracy of the model without training it first.</p>
+<p><img src="https://4.bp.blogspot.com/-heWEFxARMek/W5E49Y_TsPI/AAAAAAAAOPw/ha1h5ZBOs8ApPT0t5RcDsRWfvOXHwcnWACLcBGAs/s640/Capture.PNG" alt=""></p>
+<p>The accuracy is pretty low at this time, which is expected. The <em>cuda</em> parameter here is the boolean object passed for the availability of GPU hardware in the machine.</p>
+<p>Let us train the model.</p>
+<p><img src="https://4.bp.blogspot.com/-InDGqH9w1co/W5E520-6ANI/AAAAAAAAOP4/QJ_tiogtGmcdNkHB33ieKWk-UJ2AHfQqwCLcBGAs/s640/Capture.PNG" alt=""></p>
+<p>Since GPU is supported, the training took around 10 mins. The validation accuracy is almost 99%. Let us check the accuracy over training data again.</p>
+<p><img src="https://3.bp.blogspot.com/-TwYWdmXYGyI/W5E7v95GTiI/AAAAAAAAOQE/FCIpQ7MPr4wXEFY_YqxsCl46ZdZlebg1ACLcBGAs/s640/Capture.PNG" alt=""></p>
+<p><strong>Image Preprocessing</strong>
+We declare a few functions to preprocess images and pass on the trained model.</p>
+<p><img src="https://3.bp.blogspot.com/-q3hQVfCnDmE/W5E9S5vSizI/AAAAAAAAOQQ/r1hP9xV1Tw4eoh6E5MzGbFGh7haNkn3BQCLcBGAs/s640/Untitled-1.jpg" alt=""></p>
+<p><strong>Predicting by passing an image</strong><br>
+Since our model is ready and we have built functions that allows us to visualize, let us try it out on one of the sample images.</p>
+<p><img src="https://3.bp.blogspot.com/-mv2wuvBJIcA/W5E_R-qFjZI/AAAAAAAAOQk/HDEZYXgYYM8kYGVvg5w5Y3KNHkUZs8KJQCLcBGAs/s640/Capture.PNG" alt=""></p>
+<p>So, that is it.</p>
+</div>
 	</section>
 
 
@@ -252,7 +286,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 0 words in this page.
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 486 words in this page.
 	</div>
 </div>
 
