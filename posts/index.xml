@@ -331,7 +331,446 @@ F1 score Ada Boost Classifier : 0.9411764705882353
       <pubDate>Sun, 28 Oct 2018 01:10:00 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/torpe/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;torpe-blockchain-तरप-बलककचन&#34;&gt;Torpe Blockchain (तोर्पे ब्लोक्कचैन)&lt;/h1&gt;
+&lt;h3 id=&#34;a-minimal-blockchain-data-structure-to-understand-the-blockchain-basics-like-hashing-nonce-states-genesis-blocks-etc&#34;&gt;A minimal blockchain data structure to understand the blockchain basics like hashing, nonce, states, genesis blocks etc.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/blockchain.jpg&#34; alt=&#34;blockchain&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;hash-function&#34;&gt;Hash Function&lt;/h3&gt;
+&lt;p&gt;A hash function is any function that can be used to map data of arbitrary size to data of a fixed size. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; hashlib
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash_sha256&lt;/span&gt;(raw):
+    raw &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest() 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchain&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;e5367197a1f12480ec761306f2fa9d15b494d5a80e5a806713df9e60943f4faf&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchain&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;e5367197a1f12480ec761306f2fa9d15b494d5a80e5a806713df9e60943f4faf&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchaiN&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;71fe90af906a9afa507ee54287595df6d7267df05428b3f91429371ebd27cb3e&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hashes for the same text are the same as seen above.  Even when one character of the string is changed, the hash generated as a result seems to be completely random.&lt;/p&gt;
+&lt;p&gt;SHA-256 collisions have not been found yet.&lt;/p&gt;
+&lt;h3 id=&#34;nonce&#34;&gt;Nonce&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Number that can only be used once&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;An arbitrary numer used in cryptography to ensure uniqueness and prevent the rerunning of transactions (known as replay attack).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash_sha256_nonce&lt;/span&gt;(raw):
+    raw_bytes &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
+    hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(raw_bytes)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest() 
+    nonce &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (hashed[:&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;00000&amp;#39;&lt;/span&gt;):
+        nonce &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nonce&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+        raw&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;update({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: nonce})
+        raw_bytes &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
+        hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(raw_bytes)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest() 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; raw, hashed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (hash_sha256_nonce({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;proof_of_work&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;({&#39;hello&#39;: &#39;proof_of_work&#39;, &#39;nonce&#39;: 623228}, &#39;00000a9d45728c6f4d1eff383dab4d96b753495c8b312ecb5d1858116885ee55&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;proof-of-work&#34;&gt;Proof of work&lt;/h3&gt;
+&lt;p&gt;The proof of work for this case will be to generate hashes with five leading zeros (by incrementing the nonce). This is the &amp;ldquo;mining&amp;rdquo; part.&lt;/p&gt;
+&lt;h2 id=&#34;block&#34;&gt;Block&lt;/h2&gt;
+&lt;p&gt;Blocks hold batches of valid transactions that are hashed and encoded into a Merkle tree Each block includes the cryptographic hash of the prior block in the blockchain, linking the two. The linked blocks form a chain. This iterative process confirms the integrity of the previous block, all the way back to the original genesis block.&lt;/p&gt;
+&lt;h3 id=&#34;genesis-block&#34;&gt;Genesis Block&lt;/h3&gt;
+&lt;p&gt;A genesis block or block0 is the first block of a block chain. The genesis block is almost always hardcoded into the software of the applications that utilize its block chain. It is a special case in that it does not reference a previous block&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Lets assume 5 person were given 100 coins each&lt;/span&gt;
+state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_1&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_2&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_3&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_4&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_5&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;block0_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;: datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;now(),
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;previous&amp;#39;&lt;/span&gt;: None,
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transactions&amp;#39;&lt;/span&gt;: [state], 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+}
+
+raw, hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hash_sha256_nonce(block0_data)
+block0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;: hashed,
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;: raw,
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;block0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;hash&#39;: &#39;0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e&#39;,
+ &#39;data&#39;: {&#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
+  &#39;index&#39;: 0,
+  &#39;previous&#39;: None,
+  &#39;transactions&#39;: [{&#39;Person_1&#39;: 100,
+    &#39;Person_2&#39;: 100,
+    &#39;Person_3&#39;: 100,
+    &#39;Person_4&#39;: 100,
+    &#39;Person_5&#39;: 100}],
+  &#39;nonce&#39;: 2700821}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is the genesis block or block 0 here.&lt;/p&gt;
+&lt;h3 id=&#34;transactions&#34;&gt;Transactions&lt;/h3&gt;
+&lt;p&gt;Lets create some random transactions. The transactions for the demo purpose follow +x, -x semantic. See the examples below.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;random_transaction&lt;/span&gt;(state):
+    temp_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list(state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;keys())
+    random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;shuffle(temp_list)
+    &lt;span style=&#34;color:#75715e&#34;&gt;# randomly select two persons&lt;/span&gt;
+    first_person &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; temp_list&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pop()
+    second_person &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; temp_list&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pop()
+    receive &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randint(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+    give &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;receive
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; {
+        first_person:receive, 
+        second_person:give
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test_transactions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [random_transaction(state) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test_transactions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[{&#39;Person_3&#39;: 5, &#39;Person_5&#39;: -5},
+ {&#39;Person_3&#39;: 7, &#39;Person_5&#39;: -7},
+ {&#39;Person_4&#39;: 1, &#39;Person_1&#39;: -1},
+ {&#39;Person_2&#39;: 4, &#39;Person_1&#39;: -4},
+ {&#39;Person_4&#39;: 4, &#39;Person_5&#39;: -4}]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;updating-state&#34;&gt;Updating State&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;update_state&lt;/span&gt;(transaction, state):
+    state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;copy()
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; key &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; transaction:
+        state[key] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(key, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; transaction[key]
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; state
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_transactions:
+    state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; update_state(transaction, state)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;state
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;Person_1&#39;: 95,
+ &#39;Person_2&#39;: 104,
+ &#39;Person_3&#39;: 112,
+ &#39;Person_4&#39;: 105,
+ &#39;Person_5&#39;: 84}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;valid-transactions&#34;&gt;Valid Transactions&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;check_transaction_validity&lt;/span&gt;(transaction, state):
+    &lt;span style=&#34;color:#75715e&#34;&gt;# check neg vs pos&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; sum(transaction&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;values()) &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; False
+    &lt;span style=&#34;color:#75715e&#34;&gt;# check if amount in wallet to give&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; key &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; transaction&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;keys():
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(key, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; transaction[key] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; False
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_transactions:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (check_transaction_validity(transaction, state))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;True
+True
+True
+True
+True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# No balance&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (check_transaction_validity({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Bad transaction&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (check_transaction_validity({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;}))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;initial-state&#34;&gt;Initial State&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Let us reset&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Lets assume 5 person were given 100 coins each&lt;/span&gt;
+state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_1&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_2&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_3&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_4&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_5&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+}
+
+blockchain &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Adding the genesis block&lt;/span&gt;
+blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block0)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;blockchain
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[{&#39;hash&#39;: &#39;0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e&#39;,
+  &#39;data&#39;: {&#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
+   &#39;index&#39;: 0,
+   &#39;previous&#39;: None,
+   &#39;transactions&#39;: [{&#39;Person_1&#39;: 100,
+     &#39;Person_2&#39;: 100,
+     &#39;Person_3&#39;: 100,
+     &#39;Person_4&#39;: 100,
+     &#39;Person_5&#39;: 100}],
+   &#39;nonce&#39;: 2700821}}]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;non-genesis-block--new-block&#34;&gt;Non-genesis block / New block&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;new_block&lt;/span&gt;(transactions, blockchain):
+    previous_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; blockchain[&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+    data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;: datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;now(),
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;: previous_block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;previous&amp;#39;&lt;/span&gt;: previous_block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;],
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transactions&amp;#39;&lt;/span&gt;: transactions,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        }
+    
+    raw, hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hash_sha256_nonce(data)
+    block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;: hashed, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;: raw}
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; block
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sample_transactions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [random_transaction(state) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sample_transactions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[{&#39;Person_5&#39;: 5, &#39;Person_1&#39;: -5},
+ {&#39;Person_3&#39;: 10, &#39;Person_1&#39;: -10},
+ {&#39;Person_2&#39;: 5, &#39;Person_4&#39;: -5},
+ {&#39;Person_5&#39;: 9, &#39;Person_3&#39;: -9},
+ {&#39;Person_3&#39;: 1, &#39;Person_2&#39;: -1},
+ {&#39;Person_1&#39;: 9, &#39;Person_3&#39;: -9},
+ {&#39;Person_1&#39;: 7, &#39;Person_3&#39;: -7},
+ {&#39;Person_5&#39;: 4, &#39;Person_3&#39;: -4},
+ {&#39;Person_5&#39;: 2, &#39;Person_4&#39;: -2},
+ {&#39;Person_2&#39;: 4, &#39;Person_3&#39;: -4},
+ {&#39;Person_3&#39;: 5, &#39;Person_5&#39;: -5},
+ {&#39;Person_5&#39;: 1, &#39;Person_1&#39;: -1},
+ {&#39;Person_1&#39;: 1, &#39;Person_2&#39;: -1},
+ {&#39;Person_2&#39;: 7, &#39;Person_1&#39;: -7},
+ {&#39;Person_2&#39;: 7, &#39;Person_5&#39;: -7},
+ {&#39;Person_3&#39;: 2, &#39;Person_1&#39;: -2},
+ {&#39;Person_3&#39;: 3, &#39;Person_1&#39;: -3},
+ {&#39;Person_3&#39;: 3, &#39;Person_2&#39;: -3},
+ {&#39;Person_3&#39;: 6, &#39;Person_1&#39;: -6},
+ {&#39;Person_1&#39;: 5, &#39;Person_3&#39;: -5},
+ {&#39;Person_2&#39;: 4, &#39;Person_3&#39;: -4},
+ {&#39;Person_2&#39;: 1, &#39;Person_5&#39;: -1},
+ {&#39;Person_1&#39;: 3, &#39;Person_2&#39;: -3},
+ {&#39;Person_1&#39;: 10, &#39;Person_2&#39;: -10},
+ {&#39;Person_3&#39;: 9, &#39;Person_5&#39;: -9},
+ {&#39;Person_1&#39;: 3, &#39;Person_4&#39;: -3},
+ {&#39;Person_4&#39;: 2, &#39;Person_3&#39;: -2},
+ {&#39;Person_5&#39;: 6, &#39;Person_3&#39;: -6},
+ {&#39;Person_2&#39;: 9, &#39;Person_1&#39;: -9},
+ {&#39;Person_3&#39;: 3, &#39;Person_4&#39;: -3},
+ {&#39;Person_3&#39;: 10, &#39;Person_4&#39;: -10},
+ {&#39;Person_1&#39;: 9, &#39;Person_4&#39;: -9},
+ {&#39;Person_2&#39;: 3, &#39;Person_1&#39;: -3},
+ {&#39;Person_2&#39;: 6, &#39;Person_3&#39;: -6},
+ {&#39;Person_4&#39;: 4, &#39;Person_1&#39;: -4},
+ {&#39;Person_3&#39;: 7, &#39;Person_1&#39;: -7},
+ {&#39;Person_3&#39;: 7, &#39;Person_1&#39;: -7},
+ {&#39;Person_3&#39;: 5, &#39;Person_2&#39;: -5},
+ {&#39;Person_3&#39;: 10, &#39;Person_2&#39;: -10},
+ {&#39;Person_2&#39;: 1, &#39;Person_1&#39;: -1},
+ {&#39;Person_1&#39;: 3, &#39;Person_5&#39;: -3},
+ {&#39;Person_4&#39;: 4, &#39;Person_5&#39;: -4},
+ {&#39;Person_1&#39;: 3, &#39;Person_2&#39;: -3},
+ {&#39;Person_4&#39;: 1, &#39;Person_1&#39;: -1},
+ {&#39;Person_5&#39;: 1, &#39;Person_4&#39;: -1},
+ {&#39;Person_3&#39;: 5, &#39;Person_2&#39;: -5},
+ {&#39;Person_1&#39;: 8, &#39;Person_4&#39;: -8},
+ {&#39;Person_3&#39;: 8, &#39;Person_4&#39;: -8},
+ {&#39;Person_3&#39;: 7, &#39;Person_4&#39;: -7},
+ {&#39;Person_2&#39;: 1, &#39;Person_1&#39;: -1}]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;transactions-per-block&#34;&gt;Transactions per block&lt;/h3&gt;
+&lt;p&gt;Bitcoin blocks used to contain fewer than 200 transactions and the largest number of transactions in a block was 1,976 at the time this answer was originally written (May 2013). In meanwhile (November 2017) the average number of transaction per block is well above 1500 with peaks above 2200.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Assume block size is 5&lt;/span&gt;
+transactions_per_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+transaction_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; sample_transactions:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; check_transaction_validity(transaction, state):
+        state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; update_state(transaction, state)
+        transaction_block&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(transaction)
+        
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(transaction_block) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; transactions_per_block:
+            blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(new_block(transaction_block, blockchain))
+            transaction_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pprint
+pp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pprint&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;PrettyPrinter()
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; block &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; blockchain:
+    pp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pprint(block)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;************************************************************************************&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;data&#39;: {&#39;index&#39;: 0,
+          &#39;nonce&#39;: 2700821,
+          &#39;previous&#39;: None,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: 100,
+                            &#39;Person_2&#39;: 100,
+                            &#39;Person_3&#39;: 100,
+                            &#39;Person_4&#39;: 100,
+                            &#39;Person_5&#39;: 100}]},
+ &#39;hash&#39;: &#39;0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 1,
+          &#39;nonce&#39;: 2395688,
+          &#39;previous&#39;: &#39;0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 37, 58, 781195),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: -5, &#39;Person_5&#39;: 5},
+                           {&#39;Person_1&#39;: -10, &#39;Person_3&#39;: 10},
+                           {&#39;Person_2&#39;: 5, &#39;Person_4&#39;: -5},
+                           {&#39;Person_3&#39;: -9, &#39;Person_5&#39;: 9},
+                           {&#39;Person_2&#39;: -1, &#39;Person_3&#39;: 1}]},
+ &#39;hash&#39;: &#39;00000303c468fe76fe73dfc089b856af02eda615c296ddde95c0c60999561048&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 2,
+          &#39;nonce&#39;: 2475862,
+          &#39;previous&#39;: &#39;00000303c468fe76fe73dfc089b856af02eda615c296ddde95c0c60999561048&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 38, 16, 454296),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: 9, &#39;Person_3&#39;: -9},
+                           {&#39;Person_1&#39;: 7, &#39;Person_3&#39;: -7},
+                           {&#39;Person_3&#39;: -4, &#39;Person_5&#39;: 4},
+                           {&#39;Person_4&#39;: -2, &#39;Person_5&#39;: 2},
+                           {&#39;Person_2&#39;: 4, &#39;Person_3&#39;: -4}]},
+ &#39;hash&#39;: &#39;00000804a078686673c26bd3d391649da822c27a9eb87c2a86f07be5be7667c0&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 3,
+          &#39;nonce&#39;: 843595,
+          &#39;previous&#39;: &#39;00000804a078686673c26bd3d391649da822c27a9eb87c2a86f07be5be7667c0&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 38, 34, 360082),
+          &#39;transactions&#39;: [{&#39;Person_3&#39;: 5, &#39;Person_5&#39;: -5},
+                           {&#39;Person_1&#39;: -1, &#39;Person_5&#39;: 1},
+                           {&#39;Person_1&#39;: 1, &#39;Person_2&#39;: -1},
+                           {&#39;Person_1&#39;: -7, &#39;Person_2&#39;: 7},
+                           {&#39;Person_2&#39;: 7, &#39;Person_5&#39;: -7}]},
+ &#39;hash&#39;: &#39;0000004fdf3bc704c17b3f38c8bcb0306443e24db0c5971c7494cea67e618fcd&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 4,
+          &#39;nonce&#39;: 456491,
+          &#39;previous&#39;: &#39;0000004fdf3bc704c17b3f38c8bcb0306443e24db0c5971c7494cea67e618fcd&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 38, 40, 443823),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: -2, &#39;Person_3&#39;: 2},
+                           {&#39;Person_1&#39;: -3, &#39;Person_3&#39;: 3},
+                           {&#39;Person_2&#39;: -3, &#39;Person_3&#39;: 3},
+                           {&#39;Person_1&#39;: -6, &#39;Person_3&#39;: 6},
+                           {&#39;Person_1&#39;: 5, &#39;Person_3&#39;: -5}]},
+ &#39;hash&#39;: &#39;000001ea0d5ee3360f087e8fe25e643a8e749af6b42bf8c3045303a3e4dc80a5&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 5,
+          &#39;nonce&#39;: 1793595,
+          &#39;previous&#39;: &#39;000001ea0d5ee3360f087e8fe25e643a8e749af6b42bf8c3045303a3e4dc80a5&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 38, 43, 617133),
+          &#39;transactions&#39;: [{&#39;Person_2&#39;: 4, &#39;Person_3&#39;: -4},
+                           {&#39;Person_2&#39;: 1, &#39;Person_5&#39;: -1},
+                           {&#39;Person_1&#39;: 3, &#39;Person_2&#39;: -3},
+                           {&#39;Person_1&#39;: 10, &#39;Person_2&#39;: -10},
+                           {&#39;Person_3&#39;: 9, &#39;Person_5&#39;: -9}]},
+ &#39;hash&#39;: &#39;00000101ed3a68b2340f553e1a373e7a590823fb34ee1e2f3c2e4ed44b647c2a&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 6,
+          &#39;nonce&#39;: 618433,
+          &#39;previous&#39;: &#39;00000101ed3a68b2340f553e1a373e7a590823fb34ee1e2f3c2e4ed44b647c2a&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 38, 56, 256050),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: 3, &#39;Person_4&#39;: -3},
+                           {&#39;Person_3&#39;: -2, &#39;Person_4&#39;: 2},
+                           {&#39;Person_3&#39;: -6, &#39;Person_5&#39;: 6},
+                           {&#39;Person_1&#39;: -9, &#39;Person_2&#39;: 9},
+                           {&#39;Person_3&#39;: 3, &#39;Person_4&#39;: -3}]},
+ &#39;hash&#39;: &#39;00000b2395e1efb034610e89196aafe9407417bbac1cd60f300adccea3cd880d&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 7,
+          &#39;nonce&#39;: 4087255,
+          &#39;previous&#39;: &#39;00000b2395e1efb034610e89196aafe9407417bbac1cd60f300adccea3cd880d&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 39, 0, 705135),
+          &#39;transactions&#39;: [{&#39;Person_3&#39;: 10, &#39;Person_4&#39;: -10},
+                           {&#39;Person_1&#39;: 9, &#39;Person_4&#39;: -9},
+                           {&#39;Person_1&#39;: -3, &#39;Person_2&#39;: 3},
+                           {&#39;Person_2&#39;: 6, &#39;Person_3&#39;: -6},
+                           {&#39;Person_1&#39;: -4, &#39;Person_4&#39;: 4}]},
+ &#39;hash&#39;: &#39;00000ef1b9a090a4b6636f86fa3d264dbcab13f5cf87d994637e656b6ec4abad&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 8,
+          &#39;nonce&#39;: 991443,
+          &#39;previous&#39;: &#39;00000ef1b9a090a4b6636f86fa3d264dbcab13f5cf87d994637e656b6ec4abad&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 39, 29, 983211),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: -7, &#39;Person_3&#39;: 7},
+                           {&#39;Person_1&#39;: -7, &#39;Person_3&#39;: 7},
+                           {&#39;Person_2&#39;: -5, &#39;Person_3&#39;: 5},
+                           {&#39;Person_2&#39;: -10, &#39;Person_3&#39;: 10},
+                           {&#39;Person_1&#39;: -1, &#39;Person_2&#39;: 1}]},
+ &#39;hash&#39;: &#39;0000021d8da5dab8b274a0146db6ddd6b1c12f34d751f84e9755fae1ed6a42b3&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 9,
+          &#39;nonce&#39;: 24885,
+          &#39;previous&#39;: &#39;0000021d8da5dab8b274a0146db6ddd6b1c12f34d751f84e9755fae1ed6a42b3&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 39, 37, 55377),
+          &#39;transactions&#39;: [{&#39;Person_1&#39;: 3, &#39;Person_5&#39;: -3},
+                           {&#39;Person_4&#39;: 4, &#39;Person_5&#39;: -4},
+                           {&#39;Person_1&#39;: 3, &#39;Person_2&#39;: -3},
+                           {&#39;Person_1&#39;: -1, &#39;Person_4&#39;: 1},
+                           {&#39;Person_4&#39;: -1, &#39;Person_5&#39;: 1}]},
+ &#39;hash&#39;: &#39;000002090602b338740f28ac66dfdc2f9949c8c40303574e0be08ad7033550bb&#39;}
+
+************************************************************************************
+
+{&#39;data&#39;: {&#39;index&#39;: 10,
+          &#39;nonce&#39;: 545615,
+          &#39;previous&#39;: &#39;000002090602b338740f28ac66dfdc2f9949c8c40303574e0be08ad7033550bb&#39;,
+          &#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 39, 37, 232552),
+          &#39;transactions&#39;: [{&#39;Person_2&#39;: -5, &#39;Person_3&#39;: 5},
+                           {&#39;Person_1&#39;: 8, &#39;Person_4&#39;: -8},
+                           {&#39;Person_3&#39;: 8, &#39;Person_4&#39;: -8},
+                           {&#39;Person_3&#39;: 7, &#39;Person_4&#39;: -7},
+                           {&#39;Person_1&#39;: -1, &#39;Person_2&#39;: 1}]},
+ &#39;hash&#39;: &#39;00000d59159d699830d454d68d2077ed40da8ae060ec67c19be0814d35a61e6f&#39;}
+
+************************************************************************************
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;the-current-state&#34;&gt;The current state&lt;/h3&gt;
+&lt;h4 id=&#34;syncing-for-the-first-time&#34;&gt;Syncing for the first time&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;validate_block&lt;/span&gt;(block, parent, state):    
+    error_msg &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Error in &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;]
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# check block hash&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; hash_sha256(block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;]), error_msg
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# check block indices&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; parent[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, error_msg
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# check previous hash&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;previous&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; parent[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;], error_msg
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# validate all transactions&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transactions&amp;#39;&lt;/span&gt;]:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; check_transaction_validity(transaction, state), error_msg
+        state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; update_state(transaction, state)
+        
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; state
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;check_chain&lt;/span&gt;(blockchain):
+    state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {}
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; blockchain[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transactions&amp;#39;&lt;/span&gt;]:
+        state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; update_state(transaction, state)
+
+    parent &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; blockchain[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+    
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; block &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; blockchain[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:]:
+        state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; validate_block(block, parent, state)
+        parent &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; block
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; state
+
+check_chain(blockchain)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;Person_1&#39;: 94,
+ &#39;Person_2&#39;: 107,
+ &#39;Person_3&#39;: 145,
+ &#39;Person_4&#39;: 55,
+ &#39;Person_5&#39;: 99}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
@@ -371,12 +810,232 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     </item>
     
     <item>
-      <title>Basics of Encryption</title>
-      <link>https://subedi.ml/posts/encryption/</link>
+      <title>Diffie-Hellman key exchange (and AES-256)</title>
+      <link>https://subedi.ml/posts/diffie_hellman/</link>
       <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/encryption/</guid>
-      <description></description>
+      <guid>https://subedi.ml/posts/diffie_hellman/</guid>
+      <description>&lt;h1 id=&#34;diffie-hellman-key-exchange&#34;&gt;Diffie-Hellman key exchange&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;(The introductory content is from wikipedia)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Diffie–Hellman key exchange is a method of securely exchanging cryptographic keys over a public channel and was one of the first public-key protocols as originally conceptualized by Ralph Merkle and named after Whitfield Diffie and Martin Hellman. DH is one of the earliest practical examples of public key exchange implemented within the field of cryptography.&lt;/p&gt;
+&lt;p&gt;Diffie-Hellman is a way of generating a shared secret between two people in such a way that the secret can&amp;rsquo;t be seen by observing the communication. That&amp;rsquo;s an important distinction: You&amp;rsquo;re not sharing information during the key exchange, you&amp;rsquo;re creating a key together.&lt;/p&gt;
+&lt;p&gt;This is particularly useful because you can use this technique to create an encryption key with someone, and then start encrypting your traffic with that key. And even if the traffic is recorded and later analyzed, there&amp;rsquo;s absolutely no way to figure out what the key was, even though the exchanges that created it may have been visible. This is where perfect forward secrecy comes from. Nobody analyzing the traffic at a later date can break in because the key was never saved, never transmitted, and never made visible anywhere.&lt;/p&gt;
+&lt;p&gt;The way it works is reasonably simple. A lot of the math is the same as you see in public key crypto in that a trapdoor function is used. And while the discrete logarithm problem is traditionally used (the xy mod p business), the general process can be modified to use elliptic curve cryptography as well.&lt;/p&gt;
+&lt;p&gt;But even though it uses the same underlying principles as public key cryptography, this is not asymmetric cryptography because nothing is ever encrypted or decrypted during the exchange. It is, however, an essential building-block, and was in fact the base upon which asymmetric crypto was later built.&lt;/p&gt;
+&lt;h3 id=&#34;cryptographic-explanation&#34;&gt;Cryptographic explanation&lt;/h3&gt;
+&lt;p&gt;The simplest and the original implementation of the protocol uses the multiplicative group of integers modulo p, where p is prime, and g is a primitive root modulo p. These two values are chosen in this way to ensure that the resulting shared secret can take on any value from 1 to p–1. Here is an example of the protocol, with non-secret values in blue, and secret values in red.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.wonderhowto.com/img/26/30/63643739148390/0/generate-private-encryption-keys-with-diffie-hellman-key-exchange.w1456.jpg&#34; alt=&#34;title&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; base64
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; primesieve &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; nth_prime
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; random &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; randint
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Cipher &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; AES
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;key-sharing&#34;&gt;Key Sharing&lt;/h2&gt;
+&lt;h3 id=&#34;public-numbers&#34;&gt;Public numbers&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# small prime number&lt;/span&gt;
+g &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nth_prime(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;229
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# large prime number&lt;/span&gt;
+p &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nth_prime(&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;7919
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;alice-and-bob&#34;&gt;Alice and Bob&lt;/h3&gt;
+&lt;h3 id=&#34;private-number&#34;&gt;Private number&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nth_prime(randint(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, p&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nth_prime(randint(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, p&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;49019
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;70639
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;public-message-transfer&#34;&gt;Public Message Transfer&lt;/h3&gt;
+&lt;h4 id=&#34;alice-sends-bob-publicly&#34;&gt;Alice sends Bob publicly&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;alice_sends &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; g&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;bob-sends-alice-publicly&#34;&gt;Bob sends Alice publicly&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;bob_sends &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; g&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;b &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;shared-secret-key&#34;&gt;Shared Secret key&lt;/h3&gt;
+&lt;h4 id=&#34;alice&#34;&gt;Alice&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;shared_secret_key_alice &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; bob_sends&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;shared_secret_key_alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;7065
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;bob&#34;&gt;Bob&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;shared_secret_key_bob &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; alice_sends&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;b &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; p 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;shared_secret_key_bob
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;7065
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assert&lt;/span&gt; shared_secret_key_alice&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;shared_secret_key_bob
+shared_secret_key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;  shared_secret_key_alice
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Both Alica and Bob now have the secret key, without compromising their private keys.&lt;/p&gt;
+&lt;p&gt;DH is public key/asymmetric crypto but not encryption. For the demo, AES 256 (takes 32 bytes)&lt;/p&gt;
+&lt;h2 id=&#34;encryption-and-decryption&#34;&gt;Encryption and Decryption&lt;/h2&gt;
+&lt;p&gt;Changing the key to 32 byte (a bad hacky way)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(shared_secret_key)
+key_bytes &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(key&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zfill(&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# The message should be a multiple of the byte size&lt;/span&gt;
+alice_to_bob_original &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello world how are you&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zfill(&lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt;))
+cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(key_bytes, AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_ECB)
+cipher_msg &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encrypt(alice_to_bob_original)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;cipher_msg is sent to the server, bob reads the cipher_msg and uses the secret key to decipher&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(key_bytes, AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_ECB)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(decipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(cipher_msg))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;b&#39;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000hello world how are you&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;dh-is-prone-to-man-in-the-middle-attacks&#34;&gt;DH is prone to man-in-the-middle attacks&lt;/h2&gt;
+&lt;p&gt;The Diffie-Hellman Scheme does not provide authentication of any kind. It only allow 2 anonymous parties to share a common secret. But for all Alice knows, she could be shaking hands with the devil (instead of Bob). This is why we need at least one party to be authenticated.&lt;/p&gt;
+&lt;p&gt;For example: SSL (https), the webserver is authenticated using PKI (Public Key Infrastructure), and then a secure connection is established (D-H) between the website and the client. Since the website has been authenticated, the client can trust the website, but the website cannot trust the client. It is now safe for the client to provide his own authentication details on the webpage.&lt;/p&gt;
+&lt;p&gt;For a practical answer if you are configuring your SSL/TLS server: you should use a modulus of at least 2048-bit, and a generator g such that the order of g is a prime q of at least 256 bits; alternatively, you may use a modulus p which is a &amp;ldquo;safe prime&amp;rdquo; (the order of g will then be either a very big prime, or twice a very big prime, which is almost as good). Some people feel safer when they generate their DH parameters &amp;ldquo;themselves&amp;rdquo;(*) instead of reusing existing values; if that&amp;rsquo;s what it takes to allow you to sleep at night, then do it.&lt;/p&gt;
+&lt;p&gt;Elliptic Curve replaces primes with elliptic curve. The benefit is efficiency.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RSA encryption</title>
+      <link>https://subedi.ml/posts/rsa_encryption/</link>
+      <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/rsa_encryption/</guid>
+      <description>&lt;h2 id=&#34;rsa&#34;&gt;RSA&lt;/h2&gt;
+&lt;p&gt;RSA (Rivest–Shamir–Adleman) is one of the first public-key cryptosystems and is widely used for secure data transmission. In such a cryptosystem, the encryption key is public and it is different from the decryption key which is kept secret (private). In RSA, this asymmetry is based on the practical difficulty of the factorization of the product of two large prime numbers, the &amp;ldquo;factoring problem&amp;rdquo;. The acronym RSA is made of the initial letters of the surnames of Ron Rivest, Adi Shamir, and Leonard Adleman, who first publicly described the algorithm in 1978. Clifford Cocks, an English mathematician working for the British intelligence agency Government Communications Headquarters (GCHQ), had developed an equivalent system in 1973, but this was not declassified until 1997&lt;/p&gt;
+&lt;p&gt;A user of RSA creates and then publishes a public key based on two large prime numbers, along with an auxiliary value. The prime numbers must be kept secret. Anyone can use the public key to encrypt a message, but with currently published methods, and if the public key is large enough, only someone with knowledge of the prime numbers can decode the message feasibly. Breaking RSA encryption is known as the RSA problem. Whether it is as difficult as the factoring problem remains an open question.&lt;/p&gt;
+&lt;p&gt;RSA is a relatively slow algorithm, and because of this, it is less commonly used to directly encrypt user data. More often, RSA passes encrypted shared keys for symmetric key cryptography which in turn can perform bulk encryption-decryption operations at much higher speed.&lt;/p&gt;
+&lt;h3 id=&#34;imports&#34;&gt;Imports&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; primesieve &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; nth_prime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rsa-algorithm&#34;&gt;RSA Algorithm&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Take two distinct, large primes p and q (Ideally these have a similar byte-length)&lt;/li&gt;
+&lt;li&gt;Multiply p and q and store the result in n&lt;/li&gt;
+&lt;li&gt;Find the totient for n using the formula φ(n)=(p−1)(q−1)&lt;/li&gt;
+&lt;li&gt;Take an e coprime that is greater, than 1 and less than n&lt;/li&gt;
+&lt;li&gt;Find d using the formula d⋅e≡1modφ(n)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;At this point, the pair (e, n) is the public key and the private key (d, n) is the private key.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;p &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nth_prime(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+q &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nth_prime(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; p&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;q
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (p,q,n)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;29 47 1363
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;totient &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (p&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;(q&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (totient)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;1288
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;totient&#34;&gt;Totient&lt;/h4&gt;
+&lt;p&gt;In number theory, Euler&amp;rsquo;s totient function counts the positive integers up to a given integer n that are relatively prime to n. It is written using the Greek letter phi as φ(n) or ϕ(n), and may also be called Euler&amp;rsquo;s phi function. It can be defined more formally as the number of integers k in the range 1 ≤ k ≤ n for which the greatest common divisor gcd(n, k) is equal to 1. The integers k of this form are sometimes referred to as totatives of n.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/9/9b/EulerPhi.svg&#34; alt=&#34;title&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The line on the top represents distribution of prime numbers. The phi of a prime number is simply the (n-1)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Phi function is multiplicative (for relatively prime numbers).&lt;/li&gt;
+&lt;li&gt;Therefore, phi of A times B where A and B are prime is (A-1) times (B-1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;coprime&#34;&gt;Coprime&lt;/h4&gt;
+&lt;p&gt;In number theory, two integers a and b are said to be relatively prime, mutually prime, or coprime (also written co-prime) if the only positive integer (factor) that divides both of them is 1. Consequently, any prime number that divides one does not divide the other. This is equivalent to their greatest common divisor (gcd) being 1&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; math &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; gcd
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;modinv&lt;/span&gt;(a, m):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, m):
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (a &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; x
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; None
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;coprimes&lt;/span&gt;(a):
+    l &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, a):
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; gcd(a, x) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; modinv(x,a) &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; None:
+            l&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(x)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; l:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; modinv(x,a):
+            l&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;remove(x)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; l
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;coprime_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; coprimes(totient)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;secure_random &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;SystemRandom()
+e &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; secure_random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choice(coprime_list)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;d &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; modinv(e, totient)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;685
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;private-and-public-key-pairs&#34;&gt;Private and Public key pairs&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Public key pair:&amp;#39;&lt;/span&gt;, e, n)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Public key pair: 1021 1363
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Private key pair:&amp;#39;&lt;/span&gt;, d, n)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Private key pair: 685 1363
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;test&#34;&gt;Test&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;e &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;1029
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;d &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;encryption-and-decryption&#34;&gt;Encryption and Decryption&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;encrypt&lt;/span&gt;(msg, pub, pri, mod):
+    chars &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ord(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; list(msg)]
+    cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; char &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; chars:
+        cipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(chr(char&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;pub&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;mod))
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(cipher)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;decrypt&lt;/span&gt;(msg, pub, pri, mod):
+    chars &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ord(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; list(msg)]
+    cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; char &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; chars:
+        cipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(chr(char&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;pri&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;mod))
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(cipher)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; encrypt(msg &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;, pub&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;e, pri&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;d, mod&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decrypt(cipher, pub&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;e, pri&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;d, mod&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;hello&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;python-library&#34;&gt;Python library&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bob generates a keypair, and gives the public key to Alice. This is done such that Alice knows for sure that the key is really Bob’s (for example by handing over a USB stick that contains the key).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;(bob_pub, bob_priv) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;newkeys(&lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;)
+(alice_pub, alice_priv) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;newkeys(&lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alice writes a message, and encodes it in UTF-8. The RSA module only operates on bytes, and not on strings, so this step is necessary.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello Bob!&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alice encrypts the message using Bob’s public key, and sends the encrypted message&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encrypt(message, bob_pub)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bob receives the message, and decrypts it with his private key.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decrypt_cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(cipher, bob_priv)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (decrypt_cipher)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;b&#39;hello Bob!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since Bob kept his private key private, Alice can be sure that he is the only one who can read the message. Bob does not know for sure that it was Alice that sent the message, since she didn’t sign it.&lt;/p&gt;
+&lt;h3 id=&#34;signature&#34;&gt;Signature&lt;/h3&gt;
+&lt;p&gt;Suppose Alice uses Bob&amp;rsquo;s public key to send him an encrypted message. In the message, she can claim to be Alice but Bob has no way of verifying that the message was actually from Alice since anyone can use Bob&amp;rsquo;s public key to send him encrypted messages. In order to verify the origin of a message, RSA can also be used to sign a message.&lt;/p&gt;
+&lt;p&gt;Suppose Alice wishes to send a signed message to Bob. She can use her own private key to do so. She produces a hash value of the message, raises it to the power of d (modulo n) (as she does when decrypting a message), and attaches it as a &amp;ldquo;signature&amp;rdquo; to the message. When Bob receives the signed message, he uses the same hash algorithm in conjunction with Alice&amp;rsquo;s public key. He raises the signature to the power of e (modulo n) (as he does when encrypting a message), and compares the resulting hash value with the message&amp;rsquo;s actual hash value. If the two agree, he knows that the author of the message was in possession of Alice&amp;rsquo;s private key, and that the message has not been tampered with since.&lt;/p&gt;
+&lt;p&gt;This works because multiplication is commutative so {\displaystyle h=hash(m);(h^{e})^{d}=h^{ed}=h^{de}=(h^{d})^{e}\equiv h{\pmod {n}}} {\displaystyle h=hash(m);(h^{e})^{d}=h^{ed}=h^{de}=(h^{d})^{e}\equiv h{\pmod {n}}} Thus, the keys may be swapped without loss of generality, that is a private key of a key pair may be used either to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;signature &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sign(message, alice_priv, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;SHA-1&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;verify(message, signature, alice_pub)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;SHA-1&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;complete&#34;&gt;Complete&lt;/h3&gt;
+&lt;p&gt;Bob and Alice generate a keypair and share public keys.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;(bob_pub, bob_priv) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;newkeys(&lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;)
+(alice_pub, alice_priv) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;newkeys(&lt;span style=&#34;color:#ae81ff&#34;&gt;512&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alice writes a message.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hey Bob!&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alice signs the message with private key&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;signature &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sign(message, alice_priv, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;SHA-1&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alice encrypts the message using Bob’s public key, and sends the encrypted message&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encrypt(message, bob_pub)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bob receives the message and checks for authenticity using alice&amp;rsquo;s public key&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;verify(message, signature, alice_pub)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;SHA-1&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bob decrypts the message using his private key&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decrypt_cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rsa&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(cipher, bob_priv)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (decrypt_cipher)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;b&#39;hey Bob!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;signature
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;b&#39;\x07Of\xabW^\x0b\xaeFh\x01L\xf3\x11\xe0\xe9\\\x99r\xc9\x1c\x044\x11\xfc{5\xa3_ \xeb\xba\xf8\x84b\x1e\xb7\xadK)\xdf\x9b\x8f|\xc4&amp;gt;\x89\x9d\xdf\x98OI\xc1\x87\xc2\xdd\xf3\xf6\x16\xae2`my&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

@@ -105,7 +105,10 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/blockchain%C3%9F'>Blockchainß</a>
+		href='/tags/blockchain'>blockchain</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/python'>python</a>
 	
 	
 	
@@ -122,7 +125,446 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="torpe-blockchain-तरप-बलककचन">Torpe Blockchain (तोर्पे ब्लोक्कचैन)</h1>
+<h3 id="a-minimal-blockchain-data-structure-to-understand-the-blockchain-basics-like-hashing-nonce-states-genesis-blocks-etc">A minimal blockchain data structure to understand the blockchain basics like hashing, nonce, states, genesis blocks etc.</h3>
+<p><img src="/img/blockchain.jpg" alt="blockchain"></p>
+<h3 id="hash-function">Hash Function</h3>
+<p>A hash function is any function that can be used to map data of arbitrary size to data of a fixed size. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hashlib
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hash_sha256</span>(raw):
+    raw <span style="color:#f92672">=</span> str(raw)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+    <span style="color:#66d9ef">return</span> hashlib<span style="color:#f92672">.</span>sha256(raw)<span style="color:#f92672">.</span>hexdigest() 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hash_sha256(<span style="color:#e6db74">&#39;torpe_blockchain&#39;</span>)
+</code></pre></div><pre><code>'e5367197a1f12480ec761306f2fa9d15b494d5a80e5a806713df9e60943f4faf'
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hash_sha256(<span style="color:#e6db74">&#39;torpe_blockchain&#39;</span>)
+</code></pre></div><pre><code>'e5367197a1f12480ec761306f2fa9d15b494d5a80e5a806713df9e60943f4faf'
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hash_sha256(<span style="color:#e6db74">&#39;torpe_blockchaiN&#39;</span>)
+</code></pre></div><pre><code>'71fe90af906a9afa507ee54287595df6d7267df05428b3f91429371ebd27cb3e'
+</code></pre>
+<p>Hashes for the same text are the same as seen above.  Even when one character of the string is changed, the hash generated as a result seems to be completely random.</p>
+<p>SHA-256 collisions have not been found yet.</p>
+<h3 id="nonce">Nonce</h3>
+<blockquote>
+<p>Number that can only be used once</p>
+</blockquote>
+<p>An arbitrary numer used in cryptography to ensure uniqueness and prevent the rerunning of transactions (known as replay attack).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hash_sha256_nonce</span>(raw):
+    raw_bytes <span style="color:#f92672">=</span> str(raw)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+    hashed <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>sha256(raw_bytes)<span style="color:#f92672">.</span>hexdigest() 
+    nonce <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">while</span> (hashed[:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;00000&#39;</span>):
+        nonce <span style="color:#f92672">=</span> nonce<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+        raw<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#39;nonce&#39;</span>: nonce})
+        raw_bytes <span style="color:#f92672">=</span> str(raw)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+        hashed <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>sha256(raw_bytes)<span style="color:#f92672">.</span>hexdigest() 
+    <span style="color:#66d9ef">return</span> raw, hashed
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> (hash_sha256_nonce({<span style="color:#e6db74">&#39;hello&#39;</span>: <span style="color:#e6db74">&#39;proof_of_work&#39;</span>, <span style="color:#e6db74">&#39;nonce&#39;</span>: <span style="color:#ae81ff">0</span>}))
+</code></pre></div><pre><code>({'hello': 'proof_of_work', 'nonce': 623228}, '00000a9d45728c6f4d1eff383dab4d96b753495c8b312ecb5d1858116885ee55')
+</code></pre>
+<h3 id="proof-of-work">Proof of work</h3>
+<p>The proof of work for this case will be to generate hashes with five leading zeros (by incrementing the nonce). This is the &ldquo;mining&rdquo; part.</p>
+<h2 id="block">Block</h2>
+<p>Blocks hold batches of valid transactions that are hashed and encoded into a Merkle tree Each block includes the cryptographic hash of the prior block in the blockchain, linking the two. The linked blocks form a chain. This iterative process confirms the integrity of the previous block, all the way back to the original genesis block.</p>
+<h3 id="genesis-block">Genesis Block</h3>
+<p>A genesis block or block0 is the first block of a block chain. The genesis block is almost always hardcoded into the software of the applications that utilize its block chain. It is a special case in that it does not reference a previous block</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> datetime
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Lets assume 5 person were given 100 coins each</span>
+state <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;Person_1&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_2&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_3&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_4&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_5&#39;</span>: <span style="color:#ae81ff">100</span>
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">block0_data <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;timestamp&#39;</span>: datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now(),
+    <span style="color:#e6db74">&#39;index&#39;</span>: <span style="color:#ae81ff">0</span>,
+    <span style="color:#e6db74">&#39;previous&#39;</span>: None,
+    <span style="color:#e6db74">&#39;transactions&#39;</span>: [state], 
+    <span style="color:#e6db74">&#39;nonce&#39;</span>: <span style="color:#ae81ff">0</span>
+}
+
+raw, hashed <span style="color:#f92672">=</span> hash_sha256_nonce(block0_data)
+block0 <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;hash&#39;</span>: hashed,
+    <span style="color:#e6db74">&#39;data&#39;</span>: raw,
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">block0
+</code></pre></div><pre><code>{'hash': '0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e',
+ 'data': {'timestamp': datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
+  'index': 0,
+  'previous': None,
+  'transactions': [{'Person_1': 100,
+    'Person_2': 100,
+    'Person_3': 100,
+    'Person_4': 100,
+    'Person_5': 100}],
+  'nonce': 2700821}}
+</code></pre>
+<p>This is the genesis block or block 0 here.</p>
+<h3 id="transactions">Transactions</h3>
+<p>Lets create some random transactions. The transactions for the demo purpose follow +x, -x semantic. See the examples below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> random
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">random_transaction</span>(state):
+    temp_list <span style="color:#f92672">=</span> list(state<span style="color:#f92672">.</span>keys())
+    random<span style="color:#f92672">.</span>shuffle(temp_list)
+    <span style="color:#75715e"># randomly select two persons</span>
+    first_person <span style="color:#f92672">=</span> temp_list<span style="color:#f92672">.</span>pop()
+    second_person <span style="color:#f92672">=</span> temp_list<span style="color:#f92672">.</span>pop()
+    receive <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
+    give <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>receive
+    <span style="color:#66d9ef">return</span> {
+        first_person:receive, 
+        second_person:give
+    }
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test_transactions <span style="color:#f92672">=</span> [random_transaction(state) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test_transactions
+</code></pre></div><pre><code>[{'Person_3': 5, 'Person_5': -5},
+ {'Person_3': 7, 'Person_5': -7},
+ {'Person_4': 1, 'Person_1': -1},
+ {'Person_2': 4, 'Person_1': -4},
+ {'Person_4': 4, 'Person_5': -4}]
+</code></pre>
+<h3 id="updating-state">Updating State</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_state</span>(transaction, state):
+    state <span style="color:#f92672">=</span> state<span style="color:#f92672">.</span>copy()
+    <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> transaction:
+        state[key] <span style="color:#f92672">=</span> state<span style="color:#f92672">.</span>get(key, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> transaction[key]
+    <span style="color:#66d9ef">return</span> state
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> transaction <span style="color:#f92672">in</span> test_transactions:
+    state <span style="color:#f92672">=</span> update_state(transaction, state)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">state
+</code></pre></div><pre><code>{'Person_1': 95,
+ 'Person_2': 104,
+ 'Person_3': 112,
+ 'Person_4': 105,
+ 'Person_5': 84}
+</code></pre>
+<h3 id="valid-transactions">Valid Transactions</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_transaction_validity</span>(transaction, state):
+    <span style="color:#75715e"># check neg vs pos</span>
+    <span style="color:#66d9ef">if</span> sum(transaction<span style="color:#f92672">.</span>values()) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">return</span> False
+    <span style="color:#75715e"># check if amount in wallet to give</span>
+    <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> transaction<span style="color:#f92672">.</span>keys():
+        <span style="color:#66d9ef">if</span> state<span style="color:#f92672">.</span>get(key, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> transaction[key] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+            <span style="color:#66d9ef">return</span> False
+    <span style="color:#66d9ef">return</span> True
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> transaction <span style="color:#f92672">in</span> test_transactions:
+    <span style="color:#66d9ef">print</span> (check_transaction_validity(transaction, state))
+</code></pre></div><pre><code>True
+True
+True
+True
+True
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># No balance</span>
+<span style="color:#66d9ef">print</span> (check_transaction_validity({<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>}, {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">0</span>}))
+</code></pre></div><pre><code>False
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Bad transaction</span>
+<span style="color:#66d9ef">print</span> (check_transaction_validity({<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">5</span>}, {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">50</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">50</span>}))
+</code></pre></div><pre><code>False
+</code></pre>
+<h3 id="initial-state">Initial State</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Let us reset</span>
+<span style="color:#75715e"># Lets assume 5 person were given 100 coins each</span>
+state <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;Person_1&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_2&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_3&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_4&#39;</span>: <span style="color:#ae81ff">100</span>, 
+    <span style="color:#e6db74">&#39;Person_5&#39;</span>: <span style="color:#ae81ff">100</span>
+}
+
+blockchain <span style="color:#f92672">=</span> []
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Adding the genesis block</span>
+blockchain<span style="color:#f92672">.</span>append(block0)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">blockchain
+</code></pre></div><pre><code>[{'hash': '0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e',
+  'data': {'timestamp': datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
+   'index': 0,
+   'previous': None,
+   'transactions': [{'Person_1': 100,
+     'Person_2': 100,
+     'Person_3': 100,
+     'Person_4': 100,
+     'Person_5': 100}],
+   'nonce': 2700821}}]
+</code></pre>
+<h3 id="non-genesis-block--new-block">Non-genesis block / New block</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">new_block</span>(transactions, blockchain):
+    previous_block <span style="color:#f92672">=</span> blockchain[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+    data <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;timestamp&#39;</span>: datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now(),
+        <span style="color:#e6db74">&#39;index&#39;</span>: previous_block[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;index&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+        <span style="color:#e6db74">&#39;previous&#39;</span>: previous_block[<span style="color:#e6db74">&#39;hash&#39;</span>],
+        <span style="color:#e6db74">&#39;transactions&#39;</span>: transactions,
+        <span style="color:#e6db74">&#39;nonce&#39;</span>: <span style="color:#ae81ff">0</span>
+        }
+    
+    raw, hashed <span style="color:#f92672">=</span> hash_sha256_nonce(data)
+    block <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;hash&#39;</span>: hashed, <span style="color:#e6db74">&#39;data&#39;</span>: raw}
+    <span style="color:#66d9ef">return</span> block
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sample_transactions <span style="color:#f92672">=</span> [random_transaction(state) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">50</span>)]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sample_transactions
+</code></pre></div><pre><code>[{'Person_5': 5, 'Person_1': -5},
+ {'Person_3': 10, 'Person_1': -10},
+ {'Person_2': 5, 'Person_4': -5},
+ {'Person_5': 9, 'Person_3': -9},
+ {'Person_3': 1, 'Person_2': -1},
+ {'Person_1': 9, 'Person_3': -9},
+ {'Person_1': 7, 'Person_3': -7},
+ {'Person_5': 4, 'Person_3': -4},
+ {'Person_5': 2, 'Person_4': -2},
+ {'Person_2': 4, 'Person_3': -4},
+ {'Person_3': 5, 'Person_5': -5},
+ {'Person_5': 1, 'Person_1': -1},
+ {'Person_1': 1, 'Person_2': -1},
+ {'Person_2': 7, 'Person_1': -7},
+ {'Person_2': 7, 'Person_5': -7},
+ {'Person_3': 2, 'Person_1': -2},
+ {'Person_3': 3, 'Person_1': -3},
+ {'Person_3': 3, 'Person_2': -3},
+ {'Person_3': 6, 'Person_1': -6},
+ {'Person_1': 5, 'Person_3': -5},
+ {'Person_2': 4, 'Person_3': -4},
+ {'Person_2': 1, 'Person_5': -1},
+ {'Person_1': 3, 'Person_2': -3},
+ {'Person_1': 10, 'Person_2': -10},
+ {'Person_3': 9, 'Person_5': -9},
+ {'Person_1': 3, 'Person_4': -3},
+ {'Person_4': 2, 'Person_3': -2},
+ {'Person_5': 6, 'Person_3': -6},
+ {'Person_2': 9, 'Person_1': -9},
+ {'Person_3': 3, 'Person_4': -3},
+ {'Person_3': 10, 'Person_4': -10},
+ {'Person_1': 9, 'Person_4': -9},
+ {'Person_2': 3, 'Person_1': -3},
+ {'Person_2': 6, 'Person_3': -6},
+ {'Person_4': 4, 'Person_1': -4},
+ {'Person_3': 7, 'Person_1': -7},
+ {'Person_3': 7, 'Person_1': -7},
+ {'Person_3': 5, 'Person_2': -5},
+ {'Person_3': 10, 'Person_2': -10},
+ {'Person_2': 1, 'Person_1': -1},
+ {'Person_1': 3, 'Person_5': -3},
+ {'Person_4': 4, 'Person_5': -4},
+ {'Person_1': 3, 'Person_2': -3},
+ {'Person_4': 1, 'Person_1': -1},
+ {'Person_5': 1, 'Person_4': -1},
+ {'Person_3': 5, 'Person_2': -5},
+ {'Person_1': 8, 'Person_4': -8},
+ {'Person_3': 8, 'Person_4': -8},
+ {'Person_3': 7, 'Person_4': -7},
+ {'Person_2': 1, 'Person_1': -1}]
+</code></pre>
+<h3 id="transactions-per-block">Transactions per block</h3>
+<p>Bitcoin blocks used to contain fewer than 200 transactions and the largest number of transactions in a block was 1,976 at the time this answer was originally written (May 2013). In meanwhile (November 2017) the average number of transaction per block is well above 1500 with peaks above 2200.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Assume block size is 5</span>
+transactions_per_block <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+transaction_block <span style="color:#f92672">=</span> []
+
+<span style="color:#66d9ef">for</span> transaction <span style="color:#f92672">in</span> sample_transactions:
+    <span style="color:#66d9ef">if</span> check_transaction_validity(transaction, state):
+        state <span style="color:#f92672">=</span> update_state(transaction, state)
+        transaction_block<span style="color:#f92672">.</span>append(transaction)
+        
+        <span style="color:#66d9ef">if</span> len(transaction_block) <span style="color:#f92672">&gt;=</span> transactions_per_block:
+            blockchain<span style="color:#f92672">.</span>append(new_block(transaction_block, blockchain))
+            transaction_block <span style="color:#f92672">=</span> []
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pprint
+pp <span style="color:#f92672">=</span> pprint<span style="color:#f92672">.</span>PrettyPrinter()
+<span style="color:#66d9ef">for</span> block <span style="color:#f92672">in</span> blockchain:
+    pp<span style="color:#f92672">.</span>pprint(block)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">************************************************************************************</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><pre><code>{'data': {'index': 0,
+          'nonce': 2700821,
+          'previous': None,
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
+          'transactions': [{'Person_1': 100,
+                            'Person_2': 100,
+                            'Person_3': 100,
+                            'Person_4': 100,
+                            'Person_5': 100}]},
+ 'hash': '0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e'}
+
+************************************************************************************
+
+{'data': {'index': 1,
+          'nonce': 2395688,
+          'previous': '0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 37, 58, 781195),
+          'transactions': [{'Person_1': -5, 'Person_5': 5},
+                           {'Person_1': -10, 'Person_3': 10},
+                           {'Person_2': 5, 'Person_4': -5},
+                           {'Person_3': -9, 'Person_5': 9},
+                           {'Person_2': -1, 'Person_3': 1}]},
+ 'hash': '00000303c468fe76fe73dfc089b856af02eda615c296ddde95c0c60999561048'}
+
+************************************************************************************
+
+{'data': {'index': 2,
+          'nonce': 2475862,
+          'previous': '00000303c468fe76fe73dfc089b856af02eda615c296ddde95c0c60999561048',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 38, 16, 454296),
+          'transactions': [{'Person_1': 9, 'Person_3': -9},
+                           {'Person_1': 7, 'Person_3': -7},
+                           {'Person_3': -4, 'Person_5': 4},
+                           {'Person_4': -2, 'Person_5': 2},
+                           {'Person_2': 4, 'Person_3': -4}]},
+ 'hash': '00000804a078686673c26bd3d391649da822c27a9eb87c2a86f07be5be7667c0'}
+
+************************************************************************************
+
+{'data': {'index': 3,
+          'nonce': 843595,
+          'previous': '00000804a078686673c26bd3d391649da822c27a9eb87c2a86f07be5be7667c0',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 38, 34, 360082),
+          'transactions': [{'Person_3': 5, 'Person_5': -5},
+                           {'Person_1': -1, 'Person_5': 1},
+                           {'Person_1': 1, 'Person_2': -1},
+                           {'Person_1': -7, 'Person_2': 7},
+                           {'Person_2': 7, 'Person_5': -7}]},
+ 'hash': '0000004fdf3bc704c17b3f38c8bcb0306443e24db0c5971c7494cea67e618fcd'}
+
+************************************************************************************
+
+{'data': {'index': 4,
+          'nonce': 456491,
+          'previous': '0000004fdf3bc704c17b3f38c8bcb0306443e24db0c5971c7494cea67e618fcd',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 38, 40, 443823),
+          'transactions': [{'Person_1': -2, 'Person_3': 2},
+                           {'Person_1': -3, 'Person_3': 3},
+                           {'Person_2': -3, 'Person_3': 3},
+                           {'Person_1': -6, 'Person_3': 6},
+                           {'Person_1': 5, 'Person_3': -5}]},
+ 'hash': '000001ea0d5ee3360f087e8fe25e643a8e749af6b42bf8c3045303a3e4dc80a5'}
+
+************************************************************************************
+
+{'data': {'index': 5,
+          'nonce': 1793595,
+          'previous': '000001ea0d5ee3360f087e8fe25e643a8e749af6b42bf8c3045303a3e4dc80a5',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 38, 43, 617133),
+          'transactions': [{'Person_2': 4, 'Person_3': -4},
+                           {'Person_2': 1, 'Person_5': -1},
+                           {'Person_1': 3, 'Person_2': -3},
+                           {'Person_1': 10, 'Person_2': -10},
+                           {'Person_3': 9, 'Person_5': -9}]},
+ 'hash': '00000101ed3a68b2340f553e1a373e7a590823fb34ee1e2f3c2e4ed44b647c2a'}
+
+************************************************************************************
+
+{'data': {'index': 6,
+          'nonce': 618433,
+          'previous': '00000101ed3a68b2340f553e1a373e7a590823fb34ee1e2f3c2e4ed44b647c2a',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 38, 56, 256050),
+          'transactions': [{'Person_1': 3, 'Person_4': -3},
+                           {'Person_3': -2, 'Person_4': 2},
+                           {'Person_3': -6, 'Person_5': 6},
+                           {'Person_1': -9, 'Person_2': 9},
+                           {'Person_3': 3, 'Person_4': -3}]},
+ 'hash': '00000b2395e1efb034610e89196aafe9407417bbac1cd60f300adccea3cd880d'}
+
+************************************************************************************
+
+{'data': {'index': 7,
+          'nonce': 4087255,
+          'previous': '00000b2395e1efb034610e89196aafe9407417bbac1cd60f300adccea3cd880d',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 39, 0, 705135),
+          'transactions': [{'Person_3': 10, 'Person_4': -10},
+                           {'Person_1': 9, 'Person_4': -9},
+                           {'Person_1': -3, 'Person_2': 3},
+                           {'Person_2': 6, 'Person_3': -6},
+                           {'Person_1': -4, 'Person_4': 4}]},
+ 'hash': '00000ef1b9a090a4b6636f86fa3d264dbcab13f5cf87d994637e656b6ec4abad'}
+
+************************************************************************************
+
+{'data': {'index': 8,
+          'nonce': 991443,
+          'previous': '00000ef1b9a090a4b6636f86fa3d264dbcab13f5cf87d994637e656b6ec4abad',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 39, 29, 983211),
+          'transactions': [{'Person_1': -7, 'Person_3': 7},
+                           {'Person_1': -7, 'Person_3': 7},
+                           {'Person_2': -5, 'Person_3': 5},
+                           {'Person_2': -10, 'Person_3': 10},
+                           {'Person_1': -1, 'Person_2': 1}]},
+ 'hash': '0000021d8da5dab8b274a0146db6ddd6b1c12f34d751f84e9755fae1ed6a42b3'}
+
+************************************************************************************
+
+{'data': {'index': 9,
+          'nonce': 24885,
+          'previous': '0000021d8da5dab8b274a0146db6ddd6b1c12f34d751f84e9755fae1ed6a42b3',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 39, 37, 55377),
+          'transactions': [{'Person_1': 3, 'Person_5': -3},
+                           {'Person_4': 4, 'Person_5': -4},
+                           {'Person_1': 3, 'Person_2': -3},
+                           {'Person_1': -1, 'Person_4': 1},
+                           {'Person_4': -1, 'Person_5': 1}]},
+ 'hash': '000002090602b338740f28ac66dfdc2f9949c8c40303574e0be08ad7033550bb'}
+
+************************************************************************************
+
+{'data': {'index': 10,
+          'nonce': 545615,
+          'previous': '000002090602b338740f28ac66dfdc2f9949c8c40303574e0be08ad7033550bb',
+          'timestamp': datetime.datetime(2020, 9, 9, 7, 39, 37, 232552),
+          'transactions': [{'Person_2': -5, 'Person_3': 5},
+                           {'Person_1': 8, 'Person_4': -8},
+                           {'Person_3': 8, 'Person_4': -8},
+                           {'Person_3': 7, 'Person_4': -7},
+                           {'Person_1': -1, 'Person_2': 1}]},
+ 'hash': '00000d59159d699830d454d68d2077ed40da8ae060ec67c19be0814d35a61e6f'}
+
+************************************************************************************
+</code></pre>
+<h3 id="the-current-state">The current state</h3>
+<h4 id="syncing-for-the-first-time">Syncing for the first time</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">validate_block</span>(block, parent, state):    
+    error_msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Error in </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> block[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;index&#39;</span>]
+
+    <span style="color:#75715e"># check block hash</span>
+    <span style="color:#66d9ef">assert</span> block[<span style="color:#e6db74">&#39;hash&#39;</span>] <span style="color:#f92672">==</span> hash_sha256(block[<span style="color:#e6db74">&#39;data&#39;</span>]), error_msg
+
+    <span style="color:#75715e"># check block indices</span>
+    <span style="color:#66d9ef">assert</span> block[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;index&#39;</span>] <span style="color:#f92672">==</span> parent[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;index&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, error_msg
+
+    <span style="color:#75715e"># check previous hash</span>
+    <span style="color:#66d9ef">assert</span> block[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;previous&#39;</span>] <span style="color:#f92672">==</span> parent[<span style="color:#e6db74">&#39;hash&#39;</span>], error_msg
+    
+    <span style="color:#75715e"># validate all transactions</span>
+    <span style="color:#66d9ef">for</span> transaction <span style="color:#f92672">in</span> block[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;transactions&#39;</span>]:
+        <span style="color:#66d9ef">assert</span> check_transaction_validity(transaction, state), error_msg
+        state <span style="color:#f92672">=</span> update_state(transaction, state)
+        
+    <span style="color:#66d9ef">return</span> state
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_chain</span>(blockchain):
+    state <span style="color:#f92672">=</span> {}
+
+    <span style="color:#66d9ef">for</span> transaction <span style="color:#f92672">in</span> blockchain[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;transactions&#39;</span>]:
+        state <span style="color:#f92672">=</span> update_state(transaction, state)
+
+    parent <span style="color:#f92672">=</span> blockchain[<span style="color:#ae81ff">0</span>]
+    
+    <span style="color:#66d9ef">for</span> block <span style="color:#f92672">in</span> blockchain[<span style="color:#ae81ff">1</span>:]:
+        state <span style="color:#f92672">=</span> validate_block(block, parent, state)
+        parent <span style="color:#f92672">=</span> block
+
+    <span style="color:#66d9ef">return</span> state
+
+check_chain(blockchain)
+</code></pre></div><pre><code>{'Person_1': 94,
+ 'Person_2': 107,
+ 'Person_3': 145,
+ 'Person_4': 55,
+ 'Person_5': 99}
+</code></pre>
+</div>
 	</section>
 
 
@@ -252,7 +694,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 0 words in this page.
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 1536 words in this page.
 	</div>
 </div>
 
@@ -283,6 +725,17 @@ onload='renderMathInElement(document.body);'></script>
 <div >
 
 
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/diffie_hellman/">Diffie-Hellman key exchange (and AES-256)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/rsa_encryption/">RSA encryption</a>
+		
+</span>
+</div>
 
 </div>
 <hr />
