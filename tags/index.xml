@@ -30,18 +30,27 @@
     </item>
     
     <item>
-      <title>blockchain</title>
-      <link>https://subedi.ml/tags/blockchain/</link>
-      <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
+      <title>analysis</title>
+      <link>https://subedi.ml/tags/analysis/</link>
+      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
       
-      <guid>https://subedi.ml/tags/blockchain/</guid>
+      <guid>https://subedi.ml/tags/analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ARIMA</title>
+      <link>https://subedi.ml/tags/arima/</link>
+      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/arima/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ML</title>
       <link>https://subedi.ml/tags/ml/</link>
-      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
       
       <guid>https://subedi.ml/tags/ml/</guid>
       <description></description>
@@ -50,9 +59,18 @@
     <item>
       <title>python</title>
       <link>https://subedi.ml/tags/python/</link>
-      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
       
       <guid>https://subedi.ml/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blockchain</title>
+      <link>https://subedi.ml/tags/blockchain/</link>
+      <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
+      
+      <guid>https://subedi.ml/tags/blockchain/</guid>
       <description></description>
     </item>
     
