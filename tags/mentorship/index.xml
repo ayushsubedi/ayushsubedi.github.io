@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mentorship on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/mentorship/</link>
+    <description>Recent content in mentorship on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Dec 2019 09:09:55 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/mentorship/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Solveathon Nepal 2019</title>
+      <link>https://subedi.ml/posts/solveathon_nepal/</link>
+      <pubDate>Thu, 05 Dec 2019 09:09:55 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/solveathon_nepal/</guid>
+      <description>&lt;h2 id=&#34;what-is-a-solve-a-thon&#34;&gt;What is a Solve-a-thon?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://dataliteracy.github.io/images/main_feature.jpg&#34; alt=&#34;solveathon_feature&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A two-day Solveathon, the first of its kind, was organized by the World Bank and The Asia Foundation with support from UKAID at the Kathmandu University School of Management on 14-15 December. The event brought together data scientists, programmers, developers, researchers, and professionals with diverse backgrounds and provided them a platform to work collaboratively on data-driven projects to tackle developmental challenges.&lt;/p&gt;
+&lt;p&gt;During the event, the participating teams worked with mentors and respective domain experts to come up with solutions, refine them and devise various prototypes. The participants worked on nine different projects – three culminated from the 100-hour Nepal Data Literacy Program organized by the World Bank, three proposed by the participants, and three selected by the team based on the pertinent developmental issues and availability of data. The Solveathon will award a total amount of 10,000 USD, divided among two to five projects, to further develop their prototypes. In this phase, the awardees will assess and validate the feasibility of proposed prototype– assumptions in the theory of change, analyze user needs, develop sustainability and action plan–, identify potential partners, and analyze whether similar projects are existent or being planned in the market. Implementation and Review Phase: Under this phase, the awardees will implement their idea or prototype, evaluate its success and demonstrate plans for sustainability of impact.&lt;/p&gt;
+&lt;p&gt;I was part of the planning and execution committee, and a technical mentor to the participating team. Additionally, once the projects were submitted, I also was part of the team that judged the team based on various criteria such as complexity, sustainability, cost and team members. Three of the projects from the event have started taking good shape at the present.&lt;/p&gt;
+&lt;p&gt;I was also responsible for creating the event website which you can find &lt;a href=&#34;https://dataliteracy.github.io/solveathon/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.worldbank.org/content/dam/photos/780x439/2019/dec-2/solvathon.png&#34; alt=&#34;event&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
