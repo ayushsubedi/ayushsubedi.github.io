@@ -242,7 +242,89 @@ SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/s
       <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/trove_summary/</guid>
-      <description>&lt;h1 id=&#34;the-extention-to-trove&#34;&gt;The extention to Trove&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;the-extension-to-trove&#34;&gt;The extension to Trove&lt;/h1&gt;
+&lt;p&gt;Trove Summary is a web app (React) that generates summary of a web article (from its URL) and allows users to securely store them. Technically speaking, it follows the same philosophy of Trove (build in Blockstack and Gaia), and therefore inherits, decentralization, anonymity and encryption.&lt;/p&gt;
+&lt;p&gt;However, the other aspect of Trove Summary is its backend that uses abstractive and extractive summarization models to generate reliable summary.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/trove_summary.png&#34; alt=&#34;Trove&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Request&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/api/get_content?url=abc.xyz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Result&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;authors&amp;quot;: [
+    
+  ],
+  &amp;quot;code_content&amp;quot;: 200,
+  &amp;quot;description&amp;quot;: &amp;quot;Alphabet Inc. is a holding company that gives ambitious projects the resources, freedom, and focus to make their ideas happen — and will be the parent company of Google, Nest, and other ventures. Alphabet supports and develops companies applying technology to the world’s biggest challenges.&amp;quot;,
+  &amp;quot;keywords&amp;quot;: [
+    
+  ],
+  &amp;quot;movies&amp;quot;: [
+    
+  ],
+  &amp;quot;publish_date&amp;quot;: null,
+  &amp;quot;summary&amp;quot;: &amp;quot;We’ve long believed that over time companies tend to get comfortable doing the same thing, just making incremental changes.\nI am really excited to be running Alphabet as CEO with help from my capable partner, Sergey, as President.\nThis newer Google is a bit slimmed down, with the companies that are pretty far afield of our main internet products contained in Alphabet instead.\nIn addition, with this new structure we plan to implement segment reporting for our Q4 results, where Google financials will be provided separately than those for the rest of Alphabet businesses as a whole.\nSundar has been saying the things I would have said (and sometimes better!) for quite some time now, and I’ve been tremendously enjoying our work together.\nSergey and I are seriously in the business of starting new things.\nFor Sergey and me this is a very exciting new chapter in the life of Google—the birth of Alphabet.&amp;quot;,
+  &amp;quot;summary_flag&amp;quot;: 1,
+  &amp;quot;text&amp;quot;: &amp;quot;&amp;quot;,
+  &amp;quot;title&amp;quot;: &amp;quot;Alphabet&amp;quot;,
+  &amp;quot;top_image&amp;quot;: &amp;quot;https://abc.xyz/favicon-194x194.png&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;Website&amp;quot;,
+  &amp;quot;url&amp;quot;: &amp;quot;https://abc.xyz/&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Request&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/api/get_content?url=bbc.com/news/world-europe-43841194
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Result&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;authors&amp;quot;: [
+    
+  ],
+  &amp;quot;code_content&amp;quot;: 200,
+  &amp;quot;description&amp;quot;: &amp;quot;One of the world&#39;s biggest dance music stars dies in Oman, with no cause of death announced.&amp;quot;,
+  &amp;quot;keywords&amp;quot;: [
+    
+  ],
+  &amp;quot;movies&amp;quot;: [
+    
+  ],
+  &amp;quot;publish_date&amp;quot;: null,
+  &amp;quot;summary&amp;quot;: &amp;quot;Avicii, top electronic dance music artist, found dead at 28 Published duration 21 April 2018\nSwedish DJ Avicii, one of the world&#39;s biggest dance music stars, has died in Oman at the age of 28.\nThe electronic dance music (EDM) star, who reportedly made $250,000 (£180,000) a night on tour, had struggled with some health issues in the past, having his gall bladder and appendix removed in 2014\n\&amp;quot;I know I am blessed to be able to travel all around the world and perform, but I have too little left for the life of a real person behind the artist,\&amp;quot; he said at the time.\nAs well as working with the likes of Aloe Blacc and Rita Ora, Avicii collaborated with artists including Madonna and Coldplay.\nFormer Radio 1 DJ Judge Jules, who often performed alongside him, said his biggest achievement was being the first electronic dance star to break America.&amp;quot;,
+  &amp;quot;summary_flag&amp;quot;: 1,
+  &amp;quot;text&amp;quot;: &amp;quot;&amp;quot;,
+  &amp;quot;title&amp;quot;: &amp;quot;Avicii, top electronic dance music artist, found dead at 28&amp;quot;,
+  &amp;quot;top_image&amp;quot;: &amp;quot;https://ichef.bbci.co.uk/news/1024/branded_news/54F2/production/_100964712_mediaitem100964710.jpg&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;Article&amp;quot;,
+  &amp;quot;url&amp;quot;: &amp;quot;https://www.bbc.com/news/world-europe-43841194&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Request&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/api/get_content?url=medium.com/@trovenow/the-underlying-architecture-of-trove-cbfa4ba18581
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Result&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;authors&amp;quot;: [
+    
+  ],
+  &amp;quot;code_content&amp;quot;: 200,
+  &amp;quot;description&amp;quot;: &amp;quot;After releasing Trove, our inboxes and DMs flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the Blockstack…&amp;quot;,
+  &amp;quot;keywords&amp;quot;: [
+    
+  ],
+  &amp;quot;movies&amp;quot;: [
+    
+  ],
+  &amp;quot;publish_date&amp;quot;: &amp;quot;Sun, 30 Jun 2019 16:21:44 GMT&amp;quot;,
+  &amp;quot;summary&amp;quot;: &amp;quot;After releasing Trove, our inboxes and DMs flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the Blockstack platform.\nWe quickly put together a decentralized app that allowed users to save their favorite words.\nThe primary purpose of Gaia is to store any relevant data for the apps that the user uses in the Blockstack ecosystem.\nHowever, Blockstack also allows users to choose their own Gaia hub and to configure the back-end provider to store data with.\nThe data for an app is stored in one or many text format files (JSON) within the app’s hub in Gaia.\nThere is no possible way for the makers of an app to have all of the data of all of the users in a centralized repository.\nEvery Trove user has three files associated with their Gaia hub to store bookmark, collections and archived objects.&amp;quot;,
+  &amp;quot;summary_flag&amp;quot;: 1,
+  &amp;quot;text&amp;quot;: &amp;quot;&amp;quot;,
+  &amp;quot;title&amp;quot;: &amp;quot;The Underlying Architecture of Trove&amp;quot;,
+  &amp;quot;top_image&amp;quot;: &amp;quot;https://miro.medium.com/max/1200/0*CUrk-zRTYflhc_Ja.jpeg&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;Article&amp;quot;,
+  &amp;quot;url&amp;quot;: &amp;quot;https://medium.com/@trovenow/the-underlying-architecture-of-trove-cbfa4ba18581&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
