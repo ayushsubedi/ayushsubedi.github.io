@@ -6,19 +6,10 @@
     <description>Recent content in Moonlit on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2020 06:18:16 +0545</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2020 10:09:16 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/categories/moonlit/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Synthetic Data Generation</title>
-      <link>https://subedi.ml/posts/synthetic_data_harvesting/</link>
-      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
-      
-      <guid>https://subedi.ml/posts/synthetic_data_harvesting/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>You vs Bezos - Weber Fencher law</title>
@@ -28,15 +19,6 @@
       <guid>https://subedi.ml/posts/bezos/</guid>
       <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
 &lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1599480108593&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;https:&amp;#47;&amp;#47;moonlitplayground.ml&amp;#47;bezos&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;WIPbezos&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en&#39; /&gt;&lt;param name=&#39;filter&#39; value=&#39;publish=yes&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1599480108593&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;750px&#39;;vizElement.style.height=&#39;904px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;</description>
-    </item>
-    
-    <item>
-      <title>Devs in Nepal</title>
-      <link>https://subedi.ml/posts/devs_in_nepal/</link>
-      <pubDate>Mon, 01 Jun 2020 12:12:12 +0545</pubDate>
-      
-      <guid>https://subedi.ml/posts/devs_in_nepal/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -75,15 +57,6 @@
 &lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/754/1*io2zk4HVTX8764K_fJAerw.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The exploratory data analysis and forecasts generated went through various levels of quality assurance to validate the correctness. Unfortunately, the COVID-19 epidemic and subsequent lockdowns was going to affect the business. The model created wasBAU (Business As Usual). It did not forecast out of the world scenarios like COVID-19 (a Black Swan event). However, it will create a benchmark for measuring the effects of COVID-19 in the future. The forecasting can still be used to understand the impact of COVID-19 on the business. The exploratory data on the other hand, provides significant insights for the hospital&amp;rsquo;s strategy development.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Melting Glaciers of Nepal</title>
-      <link>https://subedi.ml/posts/melting_glaciers/</link>
-      <pubDate>Tue, 05 Nov 2019 07:36:19 +0545</pubDate>
-      
-      <guid>https://subedi.ml/posts/melting_glaciers/</guid>
-      <description></description>
     </item>
     
     <item>

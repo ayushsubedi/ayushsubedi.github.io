@@ -8,38 +8,23 @@
   </url>
   
   <url>
-    <loc>https://subedi.ml/posts/ames_housing/</loc>
-    <lastmod>2020-07-11T10:02:00+05:45</lastmod>
-  </url>
-  
-  <url>
     <loc>https://subedi.ml/</loc>
-    <lastmod>2020-07-11T10:02:00+05:45</lastmod>
+    <lastmod>2020-07-01T10:09:16+05:45</lastmod>
   </url>
   
   <url>
     <loc>https://subedi.ml/categories/</loc>
-    <lastmod>2020-07-11T10:02:00+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/posts/</loc>
-    <lastmod>2020-07-11T10:02:00+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/categories/teaching-materials/</loc>
-    <lastmod>2020-07-11T10:02:00+05:45</lastmod>
+    <lastmod>2020-07-01T10:09:16+05:45</lastmod>
   </url>
   
   <url>
     <loc>https://subedi.ml/categories/moonlit/</loc>
-    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+    <lastmod>2020-07-01T10:09:16+05:45</lastmod>
   </url>
   
   <url>
-    <loc>https://subedi.ml/posts/synthetic_data_harvesting/</loc>
-    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+    <loc>https://subedi.ml/posts/</loc>
+    <lastmod>2020-07-01T10:09:16+05:45</lastmod>
   </url>
   
   <url>
@@ -75,11 +60,6 @@
   <url>
     <loc>https://subedi.ml/categories/papers/</loc>
     <lastmod>2020-06-10T09:16:00+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/posts/devs_in_nepal/</loc>
-    <lastmod>2020-06-01T12:12:12+05:45</lastmod>
   </url>
   
   <url>
@@ -178,11 +158,6 @@
   </url>
   
   <url>
-    <loc>https://subedi.ml/posts/melting_glaciers/</loc>
-    <lastmod>2019-11-05T07:36:19+05:45</lastmod>
-  </url>
-  
-  <url>
     <loc>https://subedi.ml/tags/blockchain/</loc>
     <lastmod>2019-09-01T09:16:00+05:45</lastmod>
   </url>
@@ -218,16 +193,6 @@
   </url>
   
   <url>
-    <loc>https://subedi.ml/categories/pet-projects/</loc>
-    <lastmod>2018-12-31T10:10:11+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/posts/shabda_kathmandu/</loc>
-    <lastmod>2018-12-31T10:10:11+05:45</lastmod>
-  </url>
-  
-  <url>
     <loc>https://subedi.ml/tags/bayes/</loc>
     <lastmod>2018-12-20T10:11:01+05:45</lastmod>
   </url>
@@ -235,6 +200,11 @@
   <url>
     <loc>https://subedi.ml/posts/spirathon/</loc>
     <lastmod>2018-12-20T10:11:01+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/categories/teaching-materials/</loc>
+    <lastmod>2018-10-28T01:10:00+05:45</lastmod>
   </url>
   
   <url>
@@ -264,6 +234,11 @@
   
   <url>
     <loc>https://subedi.ml/tags/maps/</loc>
+    <lastmod>2018-08-08T08:06:19+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/categories/pet-projects/</loc>
     <lastmod>2018-08-08T08:06:19+05:45</lastmod>
   </url>
   
