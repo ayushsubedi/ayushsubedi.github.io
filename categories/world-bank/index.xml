@@ -17,7 +17,26 @@
       <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/data_in_news/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;data-in-news&#34;&gt;Data in News&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://datainnews.ml/&#34;&gt;Link to the website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/datainnews.png&#34; alt=&#34;feature&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. The report team, in partnership with the Society of Economic Journalists-Nepal (SEJON), organized a roundtable with 38 economic journalists, editors, and bureau chiefs in Nepal to discuss data use in news organizations. The team also administered an online questionnaire to 28 media professionals (see appendix A for the questionnaire and appendix B for the results). To complement these findings, the World Bank team developed an indicator model to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. The results show that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.&lt;/p&gt;
+&lt;p&gt;More than 4,100 articles were analyzed to assess the use of data in media. The data was collected between 9th December 2019 to 9th February 2020. The data source for the model was Nepali news portals that support RSS feeds and are published in English. The news portals that meet these criteria are the &lt;em&gt;Himalayan Times&lt;/em&gt;, &lt;em&gt;Onlinekhabar&lt;/em&gt;, the &lt;em&gt;Nepali Times,&lt;/em&gt; the &lt;em&gt;Telegraph Nepal,&lt;/em&gt; the &lt;em&gt;Kathmandu Tribune&lt;/em&gt;, and &lt;em&gt;Lokaantar&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The results of the analysis are as follows:&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Level 1 analysis&lt;/strong&gt;: The team analyzed whether articles indicated the presence of a data source, a statistical/development indicator, or keywords from papers on statistical capacity–building projects. Examples of keywords included &lt;em&gt;household survey, population census, geospatial data, GDP, GNP, pay gap, trade balance,&lt;/em&gt; and &lt;em&gt;unemployment rate.&lt;/em&gt; The keywords for data sources are comprised of word sequences of length two and scraped from &lt;a href=&#34;https://klein.uk/literacy.html&#34;&gt;https://klein.uk/literacy.html&lt;/a&gt;. The share of news articles that included at least one keyword that indicated “consistent non-critical” &lt;a href=&#34;https://worldbankgroup-my.sharepoint.com/personal/rkumar17_worldbankgroup_org/Documents/PKPS/Open%20Data%204%20Business%20(OD4B)/New%20OD4B/OD4B/DRAFT/Ravi/Feb%2010/EADU%20Feb%2011%202020%20-%20DRAFT.docx#_ftn3&#34;&gt;&lt;/a&gt;use of data averaged 7.6 percent (scores ranged from 2 percent to 12 percent).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Level 2 analysis&lt;/strong&gt;: This level of analysis assessed whether an article critically engaged with topics of data or statistics or made arguments by using mathematical concepts. Examples of keywords included &lt;em&gt;ambiguous, error, bias, fake, impartial, precise, scientific,&lt;/em&gt; and &lt;em&gt;unreliable&lt;/em&gt; &lt;a href=&#34;https://worldbankgroup-my.sharepoint.com/personal/rkumar17_worldbankgroup_org/Documents/PKPS/Open%20Data%204%20Business%20(OD4B)/New%20OD4B/OD4B/DRAFT/Ravi/Feb%2010/EADU%20Feb%2011%202020%20-%20DRAFT.docx#_ftn4&#34;&gt;&lt;/a&gt;Seventeen percent of the more than 4,100 articles studied directly referenced data, records, research, statistics, or studies. Two-thirds of those articles included keywords.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Level 3 analysis&lt;/strong&gt;: “Critical mathematical” use of data occurs when an article indicates questioning or interpreting of data and statistics. Examples of keywords included &lt;em&gt;data manipulation, lead question, report bias, sample select,&lt;/em&gt; and &lt;em&gt;sample size&lt;/em&gt;.  No article met this criterion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/4l8DF1hdD_KNRaL33Ege3cpggTooX_M55IrWVo18k3xAdu7kI58cZsW_yanAkh0fuDr_gqCWXHNKP-Oj11lSB0oei94cHMi0bOeGYQeNH5FC29vzpOK8zncuOKaiLF18pozMmiTj&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -26,7 +45,34 @@
       <pubDate>Tue, 31 Dec 2019 08:00:10 +0545</pubDate>
       
       <guid>https://subedi.ml/posts/nepal_data_literacy/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;nepal-data-literacy-program&#34;&gt;Nepal Data Literacy Program&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://dataliteracy.github.io/images/header3.jpg&#34; alt=&#34;header&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Nepal Data Literacy Program is designed to catalyze stronger data-driven decision-making by government and non-government actors (mass media, civil society, and academia) through targeted Data Literacy Workshop to help Nepal achieve its development goals.&lt;/p&gt;
+&lt;p&gt;The program comprises a 100 hour modular, customizable pedagogy to support both technical skills-building and efforts to enhance a ‘culture of data use’ among Nepalis.&lt;/p&gt;
+&lt;p&gt;For the event, my responsibilities were to develop course materials for Python and Machine Learning. Additionally, I was also tasked with reviewing course materials for other modules (Tableau, Statistics, Survey Methodologies etc.).&lt;/p&gt;
+&lt;p&gt;Similarly, I also developed the Nepal Data Literacy website that hosts the entire curriculum, instructor&amp;rsquo;s note, student&amp;rsquo;s workbook, analysis notebooks, datasets, participants projects, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/dataliteracy.png&#34; alt=&#34;website&#34;&gt;&lt;/p&gt;
+&lt;p&gt;During the event, I instructed Python and Machine Learning, including topics of Regression and Classification to industry experts on different fields (Academics, CSO, Media, Entrepreneurs, Managers, NGOs). This was exciting because two of my teachers who taught me in grade 8 were my students in this event. They were proud.&lt;/p&gt;
+&lt;h3 id=&#34;the-content-created-for-unit-7&#34;&gt;The content created for Unit 7&lt;/h3&gt;
+&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTlceRpdtN_42Fq1d0YxgOIIZJl6HdGP6GwrbZaAS2-Oaf0N1lYjS63u-Dm1XTjgezb7LCTrgPRevE3/embed?start=false&amp;loop=false&amp;delayms=3000&#34;frameborder=&#34;0&#34; width=&#34;720&#34; height=&#34;400&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
+&lt;h3 id=&#34;supplement-materials&#34;&gt;Supplement Materials&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/open?id=1clLQ1O9hqLyWTi5oEnO2kghgDR6MMAB0_IuYUu0vCrY&#34;&gt;Student Workbook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/open?id=1rVQSjYNJ6tdilA4wiLxRVPp21cNpSSEyPcSHneUu6_Q&#34;&gt;Instructor Note&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/open?id=165ALf-XnC9ZHSkuVpSdYhiOdi4NZtG_v_fbbnb8kMfw&#34;&gt;Downloadable Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;google-colab-files&#34;&gt;Google Colab Files&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1ywtKMeaXitdIMbBF0n3vz_cvrbMOMwSp&#34;&gt;Python Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1X43SiE3bvWErQnrDeC1rUpQ4RDae3Gmc&#34;&gt;Python Basics (Solutions)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1O4bEoAq2xPV5h1s7AG0cM3h8GoM0uxxg&#34;&gt;Probabilities in Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1LygekNV9va00iRF2wMNIVHEQYTMx2YyW&#34;&gt;Probabilities in Python (Solutions)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1LPP7Kvso-zgS2CLYgG70UvEl2A4WSTmk&#34;&gt;Introduction to Seaborn for visualization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1A2nRZaMkhmhdAAoE3x7Xbr78DEKq4ErF&#34;&gt;Introduction to Pandas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1Mn9DzyXtlkn-PIqgyMdv6IECWdJFDyIB&#34;&gt;Linear Regression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1LeqK14vDQIpNFVrmk_8x-CY0Rr9atT2w&#34;&gt;Logistic Regression&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -43,15 +89,6 @@
 &lt;p&gt;I was also responsible for creating the event website which you can find &lt;a href=&#34;https://dataliteracy.github.io/solveathon/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.worldbank.org/content/dam/photos/780x439/2019/dec-2/solvathon.png&#34; alt=&#34;event&#34;&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Evidence for better policy</title>
-      <link>https://subedi.ml/posts/evidence_better_policy/</link>
-      <pubDate>Sun, 01 Dec 2019 08:06:19 +0545</pubDate>
-      
-      <guid>https://subedi.ml/posts/evidence_better_policy/</guid>
-      <description></description>
     </item>
     
   </channel>

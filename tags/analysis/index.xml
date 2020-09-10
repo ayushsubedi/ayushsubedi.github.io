@@ -49,5 +49,33 @@
 </description>
     </item>
     
+    <item>
+      <title>Data in News</title>
+      <link>https://subedi.ml/posts/data_in_news/</link>
+      <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/data_in_news/</guid>
+      <description>&lt;h2 id=&#34;data-in-news&#34;&gt;Data in News&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://datainnews.ml/&#34;&gt;Link to the website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/datainnews.png&#34; alt=&#34;feature&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. The report team, in partnership with the Society of Economic Journalists-Nepal (SEJON), organized a roundtable with 38 economic journalists, editors, and bureau chiefs in Nepal to discuss data use in news organizations. The team also administered an online questionnaire to 28 media professionals (see appendix A for the questionnaire and appendix B for the results). To complement these findings, the World Bank team developed an indicator model to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. The results show that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.&lt;/p&gt;
+&lt;p&gt;More than 4,100 articles were analyzed to assess the use of data in media. The data was collected between 9th December 2019 to 9th February 2020. The data source for the model was Nepali news portals that support RSS feeds and are published in English. The news portals that meet these criteria are the &lt;em&gt;Himalayan Times&lt;/em&gt;, &lt;em&gt;Onlinekhabar&lt;/em&gt;, the &lt;em&gt;Nepali Times,&lt;/em&gt; the &lt;em&gt;Telegraph Nepal,&lt;/em&gt; the &lt;em&gt;Kathmandu Tribune&lt;/em&gt;, and &lt;em&gt;Lokaantar&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The results of the analysis are as follows:&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Level 1 analysis&lt;/strong&gt;: The team analyzed whether articles indicated the presence of a data source, a statistical/development indicator, or keywords from papers on statistical capacity–building projects. Examples of keywords included &lt;em&gt;household survey, population census, geospatial data, GDP, GNP, pay gap, trade balance,&lt;/em&gt; and &lt;em&gt;unemployment rate.&lt;/em&gt; The keywords for data sources are comprised of word sequences of length two and scraped from &lt;a href=&#34;https://klein.uk/literacy.html&#34;&gt;https://klein.uk/literacy.html&lt;/a&gt;. The share of news articles that included at least one keyword that indicated “consistent non-critical” &lt;a href=&#34;https://worldbankgroup-my.sharepoint.com/personal/rkumar17_worldbankgroup_org/Documents/PKPS/Open%20Data%204%20Business%20(OD4B)/New%20OD4B/OD4B/DRAFT/Ravi/Feb%2010/EADU%20Feb%2011%202020%20-%20DRAFT.docx#_ftn3&#34;&gt;&lt;/a&gt;use of data averaged 7.6 percent (scores ranged from 2 percent to 12 percent).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Level 2 analysis&lt;/strong&gt;: This level of analysis assessed whether an article critically engaged with topics of data or statistics or made arguments by using mathematical concepts. Examples of keywords included &lt;em&gt;ambiguous, error, bias, fake, impartial, precise, scientific,&lt;/em&gt; and &lt;em&gt;unreliable&lt;/em&gt; &lt;a href=&#34;https://worldbankgroup-my.sharepoint.com/personal/rkumar17_worldbankgroup_org/Documents/PKPS/Open%20Data%204%20Business%20(OD4B)/New%20OD4B/OD4B/DRAFT/Ravi/Feb%2010/EADU%20Feb%2011%202020%20-%20DRAFT.docx#_ftn4&#34;&gt;&lt;/a&gt;Seventeen percent of the more than 4,100 articles studied directly referenced data, records, research, statistics, or studies. Two-thirds of those articles included keywords.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Level 3 analysis&lt;/strong&gt;: “Critical mathematical” use of data occurs when an article indicates questioning or interpreting of data and statistics. Examples of keywords included &lt;em&gt;data manipulation, lead question, report bias, sample select,&lt;/em&gt; and &lt;em&gt;sample size&lt;/em&gt;.  No article met this criterion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh6.googleusercontent.com/4l8DF1hdD_KNRaL33Ege3cpggTooX_M55IrWVo18k3xAdu7kI58cZsW_yanAkh0fuDr_gqCWXHNKP-Oj11lSB0oei94cHMi0bOeGYQeNH5FC29vzpOK8zncuOKaiLF18pozMmiTj&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

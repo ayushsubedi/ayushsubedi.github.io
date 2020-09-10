@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>teaching materials on Ayush Subedi</title>
+    <link>https://subedi.ml/tags/teaching-materials/</link>
+    <description>Recent content in teaching materials on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Dec 2019 08:00:10 +0545</lastBuildDate>
+    
+	<atom:link href="https://subedi.ml/tags/teaching-materials/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nepal Data Literacy Program</title>
+      <link>https://subedi.ml/posts/nepal_data_literacy/</link>
+      <pubDate>Tue, 31 Dec 2019 08:00:10 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/nepal_data_literacy/</guid>
+      <description>&lt;h2 id=&#34;nepal-data-literacy-program&#34;&gt;Nepal Data Literacy Program&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://dataliteracy.github.io/images/header3.jpg&#34; alt=&#34;header&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Nepal Data Literacy Program is designed to catalyze stronger data-driven decision-making by government and non-government actors (mass media, civil society, and academia) through targeted Data Literacy Workshop to help Nepal achieve its development goals.&lt;/p&gt;
+&lt;p&gt;The program comprises a 100 hour modular, customizable pedagogy to support both technical skills-building and efforts to enhance a ‘culture of data use’ among Nepalis.&lt;/p&gt;
+&lt;p&gt;For the event, my responsibilities were to develop course materials for Python and Machine Learning. Additionally, I was also tasked with reviewing course materials for other modules (Tableau, Statistics, Survey Methodologies etc.).&lt;/p&gt;
+&lt;p&gt;Similarly, I also developed the Nepal Data Literacy website that hosts the entire curriculum, instructor&amp;rsquo;s note, student&amp;rsquo;s workbook, analysis notebooks, datasets, participants projects, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/dataliteracy.png&#34; alt=&#34;website&#34;&gt;&lt;/p&gt;
+&lt;p&gt;During the event, I instructed Python and Machine Learning, including topics of Regression and Classification to industry experts on different fields (Academics, CSO, Media, Entrepreneurs, Managers, NGOs). This was exciting because two of my teachers who taught me in grade 8 were my students in this event. They were proud.&lt;/p&gt;
+&lt;h3 id=&#34;the-content-created-for-unit-7&#34;&gt;The content created for Unit 7&lt;/h3&gt;
+&lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTlceRpdtN_42Fq1d0YxgOIIZJl6HdGP6GwrbZaAS2-Oaf0N1lYjS63u-Dm1XTjgezb7LCTrgPRevE3/embed?start=false&amp;loop=false&amp;delayms=3000&#34;frameborder=&#34;0&#34; width=&#34;720&#34; height=&#34;400&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
+&lt;h3 id=&#34;supplement-materials&#34;&gt;Supplement Materials&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/open?id=1clLQ1O9hqLyWTi5oEnO2kghgDR6MMAB0_IuYUu0vCrY&#34;&gt;Student Workbook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/open?id=1rVQSjYNJ6tdilA4wiLxRVPp21cNpSSEyPcSHneUu6_Q&#34;&gt;Instructor Note&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://drive.google.com/open?id=165ALf-XnC9ZHSkuVpSdYhiOdi4NZtG_v_fbbnb8kMfw&#34;&gt;Downloadable Slide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;google-colab-files&#34;&gt;Google Colab Files&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1ywtKMeaXitdIMbBF0n3vz_cvrbMOMwSp&#34;&gt;Python Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1X43SiE3bvWErQnrDeC1rUpQ4RDae3Gmc&#34;&gt;Python Basics (Solutions)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1O4bEoAq2xPV5h1s7AG0cM3h8GoM0uxxg&#34;&gt;Probabilities in Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1LygekNV9va00iRF2wMNIVHEQYTMx2YyW&#34;&gt;Probabilities in Python (Solutions)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1LPP7Kvso-zgS2CLYgG70UvEl2A4WSTmk&#34;&gt;Introduction to Seaborn for visualization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1A2nRZaMkhmhdAAoE3x7Xbr78DEKq4ErF&#34;&gt;Introduction to Pandas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1Mn9DzyXtlkn-PIqgyMdv6IECWdJFDyIB&#34;&gt;Linear Regression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://colab.research.google.com/drive/1LeqK14vDQIpNFVrmk_8x-CY0Rr9atT2w&#34;&gt;Logistic Regression&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
