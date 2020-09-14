@@ -85,6 +85,8 @@ onload='renderMathInElement(document.body);'></script>
 </div>
 <h1 class="pt-2">Synthetic Data Generation</h1>
 
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.</h3>
+
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
 	
@@ -105,7 +107,13 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/'></a>
+		href='/tags/python'>python</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/pareto'>pareto</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/synthetic'>synthetic</a>
 	
 	
 	
@@ -122,7 +130,1065 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="e-commerce-synthetic-data">E-Commerce Synthetic Data</h1>
+<p>Nowadays, the phrase &ldquo;data is the new oil&rdquo; seems a little cliche. However, it is true. The demand for data has grown significantly, as people and businesses have realized the possibilities of leveraging data for informed decision making. Often, it is not possible to get data to our specific needs. As a ML teacher, I have heard my students claim that it is really challenging for them to find data to their specifications for several of the projects that they want to pursue (in this case for learning data science or for school projects). In other cases, where confidentiality is crucial, the possibility of open data is minimal (anonamized data is there but that is another difficult avenue). Synthetic data can help solve these issues. Synthetic data is &ldquo;any production data applicable to a given situation that are not obtained by direct measurement&rdquo; according to the McGraw-Hill Dictionary of Scientific and Technical Terms. However, synthetic does not imply random. The patterns in synthetic data should mimic real world patterns. This is a priliminary exercise.</p>
+<p><img src="https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg" alt="Pareto"></p>
+<h3 id="creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price">Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.</h3>
+<h2 id="imports">Imports</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np<span style="color:#f92672">,</span> numpy.random
+<span style="color:#f92672">import</span> random
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+</code></pre></div><h1 id="brute-force-solution">Brute Force Solution</h1>
+<p>Brute Force Assumption: All ticket size the same, Customers only purchase once.</p>
+<h3 id="create-a-naive-list-for-users">Create a naive list for users</h3>
+<p>This will be modified to look real soon. In real world case, this can be thought of user/client table with incremental id.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># variables</span>
+final_dataframe_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#75715e"># in this case, these are the 1000 customers who have bought something.</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Generate users</span>
+users <span style="color:#f92672">=</span> [x <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">10000</span>)]
+users[:<span style="color:#ae81ff">10</span>]
+</code></pre></div><pre><code>[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009]
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># shuffle the original list</span>
+random<span style="color:#f92672">.</span>shuffle(users)
+users[:<span style="color:#ae81ff">10</span>]
+</code></pre></div><pre><code>[8815, 2924, 6563, 3568, 3604, 6821, 1466, 9813, 3153, 6637]
+</code></pre>
+<h4 id="sampling-random-1000-users-who-have-transacted-this-is-because-of-the-assumption-that-not-every-user-will-have-transacted">Sampling random 1000 users who have transacted. This is because of the assumption that not every user will have transacted.</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tran_users <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(users, final_dataframe_size)
+<span style="color:#66d9ef">print</span> (len(tran_users))
+<span style="color:#66d9ef">print</span> (tran_users[:<span style="color:#ae81ff">10</span>])
+</code></pre></div><pre><code>1000
+[6113, 5352, 4711, 2600, 5643, 3009, 7765, 7301, 1399, 2336]
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pareto_tran_users <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(tran_users, int(<span style="color:#f92672">.</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> final_dataframe_size))
+len(pareto_tran_users)
+</code></pre></div><pre><code>200
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;user&#39;</span>: tran_users})
+df<span style="color:#f92672">.</span>head()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6113</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5352</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4711</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2600</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5643</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>If the sum of all transactions is 100000,</p>
+<p>pareto users = 0.8*100000 = 80000 to be divided into 200 users, each user gets = 400</p>
+<p>non pareto users = .2*100000 = 20000 to be divided into 800 users, each user gets = 25</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">assign_amount</span>(val):
+    <span style="color:#66d9ef">if</span> val <span style="color:#f92672">in</span> pareto_tran_users:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">400</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">25</span>
+     
+df[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>apply(assign_amount)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># validate pareto</span>
+df<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;transaction&#39;</span>, ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(int(<span style="color:#f92672">.</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> final_dataframe_size))<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>sum()
+</code></pre></div><pre><code>user           0.20033
+transaction    0.80000
+dtype: float64
+</code></pre>
+<p>Here we see 20 percen generating 80 percent of the revenue.</p>
+<h2 id="improvement-1">Improvement 1</h2>
+<h3 id="make-the-sales-figure--more-dynamic-instead-of-25-and-400">Make the sales figure  more dynamic (instead of 25 and 400)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_to_x</span>(n, x):
+    values <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, x] <span style="color:#f92672">+</span> list(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(low<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>,high<span style="color:#f92672">=</span>x,size<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+    values<span style="color:#f92672">.</span>sort()
+    <span style="color:#66d9ef">return</span> [values[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> values[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n)]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2 <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>copy()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2_p <span style="color:#f92672">=</span> df2[df2<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>isin(pareto_tran_users)]
+df2_p_n <span style="color:#f92672">=</span> df2[<span style="color:#f92672">~</span>df2<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>isin(pareto_tran_users)]
+<span style="color:#75715e"># .apply(sum_to_x(20000, 80000))</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2_p[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> sum_to_x(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">80000</span>)
+df2_p_n[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> sum_to_x(<span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">20000</span>)
+df2 <span style="color:#f92672">=</span> df2_p<span style="color:#f92672">.</span>append(df2_p_n)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user</th>
+      <th>transaction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>5643</td>
+      <td>271.252382</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1403</td>
+      <td>64.145236</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2671</td>
+      <td>150.894671</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1881</td>
+      <td>3.295457</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>4574</td>
+      <td>129.600777</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>991</th>
+      <td>7792</td>
+      <td>58.155219</td>
+    </tr>
+    <tr>
+      <th>992</th>
+      <td>4682</td>
+      <td>18.239724</td>
+    </tr>
+    <tr>
+      <th>994</th>
+      <td>5986</td>
+      <td>4.711870</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>8145</td>
+      <td>0.914484</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>4102</td>
+      <td>20.064127</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 2 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2<span style="color:#f92672">.</span>sum()
+</code></pre></div><pre><code>user           5553121.0
+transaction     100000.0
+dtype: float64
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># validate pareto</span>
+df2<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;transaction&#39;</span>, ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> x)
+</code></pre></div><pre><code>user           1136745.000
+transaction      82287.864
+dtype: object
+</code></pre>
+<h2 id="upload-some-data">Upload some data</h2>
+<h4 id="to-make-the-data-more-realistic-we-can-add-more-features-in-this-case-mockaroo-was-used-to-create-the-features">To make the data more realistic, we can add more features. In this case, mockaroo was used to create the features.</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_users <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;synthetic_users.csv&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_users<span style="color:#f92672">.</span>head()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Gage</td>
+      <td>Opdenorth</td>
+      <td>gopdenorth1@hugedomains.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Raquel</td>
+      <td>Gabriel</td>
+      <td>rgabriel2@studiopress.com</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Matti</td>
+      <td>Sullly</td>
+      <td>msullly3@soundcloud.com</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Zita</td>
+      <td>Doggart</td>
+      <td>zdoggart4@ftc.gov</td>
+      <td>Female</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="the-client-table-seems-complete-let-us-create-an-item-table-which-follows-normal-distribution">The client table seems complete. Let us create an item table which follows normal distribution.</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;synthetic_items_catalog.csv&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items<span style="color:#f92672">.</span>drop_duplicates(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;product&#39;</span>], keep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;first&#39;</span>, inplace<span style="color:#f92672">=</span>True)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">=</span> df_items[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1000</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>product</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1001</td>
+      <td>Bread Ww Cluster</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1002</td>
+      <td>Glove - Cutting</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1003</td>
+      <td>Ice Cream - Super Sandwich</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1004</td>
+      <td>Wine - Chateau Bonnet</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1005</td>
+      <td>Ecolab - Ster Bac</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>992</th>
+      <td>1993</td>
+      <td>Table Cloth 53x53 White</td>
+    </tr>
+    <tr>
+      <th>993</th>
+      <td>1994</td>
+      <td>Durian Fruit</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>1996</td>
+      <td>Chinese Foods - Plain Fried Rice</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>1997</td>
+      <td>Wine - White, Ej Gallo</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>1999</td>
+      <td>Sugar - Fine</td>
+    </tr>
+  </tbody>
+</table>
+<p>836 rows × 2 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prices <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">836</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> prices
+df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>where(df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">2.0</span>, df_items[<span style="color:#e6db74">&#39;prices&#39;</span>])
+df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> round(df_items[<span style="color:#e6db74">&#39;prices&#39;</span>])
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items<span style="color:#f92672">.</span>describe()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>prices</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>836.000000</td>
+      <td>836.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1469.366029</td>
+      <td>50.340909</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>285.036373</td>
+      <td>20.400653</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1001.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1220.500000</td>
+      <td>36.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1460.500000</td>
+      <td>50.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1710.250000</td>
+      <td>64.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1999.000000</td>
+      <td>120.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Now we have users and product table. The product table consists of items that are uniformly distributed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
+</code></pre></div><pre><code>array([ 0.7365823 ,  0.18626006, -0.10850225, -0.8307533 ,  0.18490917,
+        0.51846682, -1.20012347,  0.31953487, -0.12546108,  0.75146225])
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Could not figure out how to generate normal distribution frame, </span>
+<span style="color:#75715e">## so opting out for uniform distribution</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># weights_users = np.random.normal(1000, 1000, len(df_users.id))</span>
+weights_items <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>, len(df_items<span style="color:#f92672">.</span>id))
+
+tran_user <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choices(random<span style="color:#f92672">.</span>sample(list(df_users<span style="color:#f92672">.</span>id), <span style="color:#ae81ff">268</span>), k<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+tran_items <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choices(list(df_items<span style="color:#f92672">.</span>id), weights <span style="color:#f92672">=</span> weights_items, k<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame<span style="color:#f92672">.</span>from_dict({<span style="color:#e6db74">&#39;user_id&#39;</span>: tran_user, <span style="color:#e6db74">&#39;item_id&#39;</span>: tran_items})\
+<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;item_id&#39;</span>)\
+<span style="color:#f92672">.</span>join(df_items<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>))
+
+
+df_ <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;user_id&#39;</span>)[[<span style="color:#e6db74">&#39;prices&#39;</span>]]<span style="color:#f92672">.</span>sum()
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_<span style="color:#f92672">.</span>describe()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>prices</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>268.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1889.985075</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>343.707196</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1161.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1649.750000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1896.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2114.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2860.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># validate pareto</span>
+<span style="color:#75715e"># regardless of transaction table, hamro users 200 jana</span>
+df_<span style="color:#f92672">.</span>reset_index(inplace<span style="color:#f92672">=</span>True)
+(df_<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;prices&#39;</span>, ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum())<span style="color:#f92672">/</span>df_<span style="color:#f92672">.</span>sum()
+</code></pre></div><pre><code>user_id    0.732714
+prices     0.803493
+dtype: float64
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>reset_index()\
+<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;user_id&#39;</span>)\
+<span style="color:#f92672">.</span>join(df_users<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>), how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outer&#39;</span>)\
+<span style="color:#f92672">.</span>reset_index()\
+<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;index&#39;</span>:<span style="color:#e6db74">&#39;product_id&#39;</span>, <span style="color:#e6db74">&#39;level_0&#39;</span>: <span style="color:#e6db74">&#39;user_id&#39;</span>})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>product_id</th>
+      <th>product</th>
+      <th>prices</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1013.0</td>
+      <td>Shrimp - Black Tiger 13/15</td>
+      <td>78.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1025.0</td>
+      <td>Longos - Lasagna Veg</td>
+      <td>48.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1032.0</td>
+      <td>Wine - Pinot Grigio Collavini</td>
+      <td>54.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1067.0</td>
+      <td>Shiro Miso</td>
+      <td>85.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1073.0</td>
+      <td>Pea - Snow</td>
+      <td>69.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10727</th>
+      <td>1000</td>
+      <td>1866.0</td>
+      <td>Figs</td>
+      <td>56.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10728</th>
+      <td>1000</td>
+      <td>1902.0</td>
+      <td>Wine - Harrow Estates, Vidal</td>
+      <td>62.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10729</th>
+      <td>1000</td>
+      <td>1924.0</td>
+      <td>Pancetta</td>
+      <td>25.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10730</th>
+      <td>1000</td>
+      <td>1933.0</td>
+      <td>Vodka - Smirnoff</td>
+      <td>23.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10731</th>
+      <td>1000</td>
+      <td>1994.0</td>
+      <td>Durian Fruit</td>
+      <td>51.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>
+<p>10732 rows × 8 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;user_id&#39;</span>)[[<span style="color:#e6db74">&#39;prices&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;prices&#39;</span>, ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>merged[<span style="color:#e6db74">&#39;prices&#39;</span>]<span style="color:#f92672">.</span>sum()
+</code></pre></div><pre><code>prices    0.803493
+dtype: float64
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;merged.csv&#39;</span>, index<span style="color:#f92672">=</span>False)
+df_users<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;users.csv&#39;</span>, index<span style="color:#f92672">=</span>False)
+df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;items.csv&#39;</span>, index<span style="color:#f92672">=</span>False)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user_id</th>
+      <th>product_id</th>
+      <th>product</th>
+      <th>prices</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1013.0</td>
+      <td>Shrimp - Black Tiger 13/15</td>
+      <td>78.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1025.0</td>
+      <td>Longos - Lasagna Veg</td>
+      <td>48.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1032.0</td>
+      <td>Wine - Pinot Grigio Collavini</td>
+      <td>54.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1067.0</td>
+      <td>Shiro Miso</td>
+      <td>85.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1073.0</td>
+      <td>Pea - Snow</td>
+      <td>69.0</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10727</th>
+      <td>1000</td>
+      <td>1866.0</td>
+      <td>Figs</td>
+      <td>56.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10728</th>
+      <td>1000</td>
+      <td>1902.0</td>
+      <td>Wine - Harrow Estates, Vidal</td>
+      <td>62.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10729</th>
+      <td>1000</td>
+      <td>1924.0</td>
+      <td>Pancetta</td>
+      <td>25.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10730</th>
+      <td>1000</td>
+      <td>1933.0</td>
+      <td>Vodka - Smirnoff</td>
+      <td>23.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>10731</th>
+      <td>1000</td>
+      <td>1994.0</td>
+      <td>Durian Fruit</td>
+      <td>51.0</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>
+<p>10732 rows × 8 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_users
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Pierette</td>
+      <td>Deners</td>
+      <td>pdeners0@1und1.de</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Gage</td>
+      <td>Opdenorth</td>
+      <td>gopdenorth1@hugedomains.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Raquel</td>
+      <td>Gabriel</td>
+      <td>rgabriel2@studiopress.com</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Matti</td>
+      <td>Sullly</td>
+      <td>msullly3@soundcloud.com</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Zita</td>
+      <td>Doggart</td>
+      <td>zdoggart4@ftc.gov</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>996</td>
+      <td>Web</td>
+      <td>Beauly</td>
+      <td>wbeaulyrn@drupal.org</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>997</td>
+      <td>Joachim</td>
+      <td>Silber</td>
+      <td>jsilberro@cam.ac.uk</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>998</td>
+      <td>Kearney</td>
+      <td>Huntly</td>
+      <td>khuntlyrp@hud.gov</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>999</td>
+      <td>Robb</td>
+      <td>Eads</td>
+      <td>readsrq@sfgate.com</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>1000</td>
+      <td>Hillery</td>
+      <td>Dickings</td>
+      <td>hdickingsrr@gizmodo.com</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 5 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>product</th>
+      <th>prices</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1001</td>
+      <td>Bread Ww Cluster</td>
+      <td>55.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1002</td>
+      <td>Glove - Cutting</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1003</td>
+      <td>Ice Cream - Super Sandwich</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1004</td>
+      <td>Wine - Chateau Bonnet</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1005</td>
+      <td>Ecolab - Ster Bac</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>992</th>
+      <td>1993</td>
+      <td>Table Cloth 53x53 White</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>993</th>
+      <td>1994</td>
+      <td>Durian Fruit</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>1996</td>
+      <td>Chinese Foods - Plain Fried Rice</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>1997</td>
+      <td>Wine - White, Ej Gallo</td>
+      <td>57.0</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>1999</td>
+      <td>Sugar - Fine</td>
+      <td>84.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>836 rows × 3 columns</p>
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+</code></pre></div></div>
 	</section>
 
 
@@ -252,7 +1318,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		0 words in this page.
+		1590 words in this page.
 	</div>
 </div>
 
@@ -272,8 +1338,8 @@ onload='renderMathInElement(document.body);'></script>
     </a>
     
     
-    <a class="flex-grow-0" href="/posts/ames_housing/">
-        Ames Housing
+    <a class="flex-grow-0" href="/posts/musigma/">
+        MuSigma and the art of problem solving (WIP)
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -288,11 +1354,23 @@ onload='renderMathInElement(document.body);'></script>
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
 		
-			<a href="/posts/devs_in_nepal/">Devs in Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+			<a href="/posts/cheers_analysis/">Cheers Hospital Analysis</a>&nbsp;&nbsp;&#47;&nbsp;
 		
-			<a href="/posts/melting_glaciers/">Melting Glaciers of Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+			<a href="/posts/fraud_detection/">Fraud Detection</a>&nbsp;&nbsp;&#47;&nbsp;
 		
-			<a href="/posts/shabda_kathmandu/">Shabda Kathmandu</a>
+			<a href="/posts/spirathon/">Spirathon AI Conference 2019</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/torpe/">Torpe Blockchain</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/inclusive_newspaper/">Inclusive Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/seedstars/">Startup analysis using Seedstars data</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/diffie_hellman/">Diffie-Hellman key exchange (and AES-256)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/rsa_encryption/">RSA encryption</a>
 		
 </span>
 </div>

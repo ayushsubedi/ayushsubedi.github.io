@@ -44,7 +44,27 @@
   
   <url>
     <loc>https://subedi.ml/categories/moonlit/</loc>
-    <lastmod>2020-07-01T10:09:16+05:45</lastmod>
+    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/pareto/</loc>
+    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/python/</loc>
+    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/synthetic/</loc>
+    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/posts/synthetic_data_harvesting/</loc>
+    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
   </url>
   
   <url>
@@ -79,11 +99,6 @@
   
   <url>
     <loc>https://subedi.ml/tags/ml/</loc>
-    <lastmod>2020-03-01T04:09:44+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/tags/python/</loc>
     <lastmod>2020-03-01T04:09:44+05:45</lastmod>
   </url>
   
