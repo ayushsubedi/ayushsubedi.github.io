@@ -6,7 +6,7 @@
     <description>Recent content on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jul 2020 09:16:00 +0545</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2020 10:02:00 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/index.xml" rel="self" type="application/rss+xml" />
     
@@ -61,6 +61,20 @@ August 2013&lt;/p&gt;
 &lt;h2 id=&#34;publications&#34;&gt;Publications&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Use of ICT in Classrooms in Nepal; A study of Student-Centered Learning using ICT&lt;/strong&gt;&lt;br&gt;
 SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7399981&#34;&gt;(Publication link)&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>K-Shaped recovery</title>
+      <link>https://subedi.ml/posts/k_shaped_recovery/</link>
+      <pubDate>Wed, 15 Jul 2020 10:02:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/k_shaped_recovery/</guid>
+      <description>&lt;h2 id=&#34;k-shaped-recovery&#34;&gt;K-Shaped recovery&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/k.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A K-shaped recovery encapsulates the idea that some industries in the economy will recover (or actually prevail in the context of Nepal), while others will decline or fail to recover nearly as quickly.&lt;/p&gt;
+&lt;p&gt;One example of the former includes the software service sector (outsourcing, e-commerce, delivery, etc.). On the unfortunate side, an example would be the hospitality/tourism sector.&lt;/p&gt;
+&lt;p&gt;The challenge for time series analysts is to figure out ways to fit this into their model depending on the COVID elasticity for their sectors. COVID, a &amp;ldquo;black swan event&amp;rdquo; has screwed up the Business As Usual.&lt;/p&gt;
 </description>
     </item>
     

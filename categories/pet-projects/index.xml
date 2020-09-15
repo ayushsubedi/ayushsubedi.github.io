@@ -6,10 +6,24 @@
     <description>Recent content in Pet Projects on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Aug 2018 08:06:19 +0545</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2020 10:02:00 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/categories/pet-projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>K-Shaped recovery</title>
+      <link>https://subedi.ml/posts/k_shaped_recovery/</link>
+      <pubDate>Wed, 15 Jul 2020 10:02:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/k_shaped_recovery/</guid>
+      <description>&lt;h2 id=&#34;k-shaped-recovery&#34;&gt;K-Shaped recovery&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/k.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A K-shaped recovery encapsulates the idea that some industries in the economy will recover (or actually prevail in the context of Nepal), while others will decline or fail to recover nearly as quickly.&lt;/p&gt;
+&lt;p&gt;One example of the former includes the software service sector (outsourcing, e-commerce, delivery, etc.). On the unfortunate side, an example would be the hospitality/tourism sector.&lt;/p&gt;
+&lt;p&gt;The challenge for time series analysts is to figure out ways to fit this into their model depending on the COVID elasticity for their sectors. COVID, a &amp;ldquo;black swan event&amp;rdquo; has screwed up the Business As Usual.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Inclusive Nepal</title>
