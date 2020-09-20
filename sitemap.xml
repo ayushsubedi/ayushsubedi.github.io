@@ -8,13 +8,43 @@
   </url>
   
   <url>
+    <loc>https://subedi.ml/posts/ames_housing/</loc>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
+  </url>
+  
+  <url>
     <loc>https://subedi.ml/</loc>
-    <lastmod>2020-07-15T10:02:00+05:45</lastmod>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
   </url>
   
   <url>
     <loc>https://subedi.ml/categories/</loc>
-    <lastmod>2020-07-15T10:02:00+05:45</lastmod>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/kaggle/</loc>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/ml/</loc>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/posts/</loc>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/tags/</loc>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://subedi.ml/categories/teaching-materials/</loc>
+    <lastmod>2020-07-20T08:16:00+05:45</lastmod>
   </url>
   
   <url>
@@ -24,16 +54,6 @@
   
   <url>
     <loc>https://subedi.ml/categories/pet-projects/</loc>
-    <lastmod>2020-07-15T10:02:00+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/posts/</loc>
-    <lastmod>2020-07-15T10:02:00+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/tags/</loc>
     <lastmod>2020-07-15T10:02:00+05:45</lastmod>
   </url>
   
@@ -104,11 +124,6 @@
   
   <url>
     <loc>https://subedi.ml/posts/cheers_analysis/</loc>
-    <lastmod>2020-03-01T04:09:44+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/tags/ml/</loc>
     <lastmod>2020-03-01T04:09:44+05:45</lastmod>
   </url>
   
@@ -225,11 +240,6 @@
   <url>
     <loc>https://subedi.ml/posts/spirathon/</loc>
     <lastmod>2018-12-20T10:11:01+05:45</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://subedi.ml/categories/teaching-materials/</loc>
-    <lastmod>2018-10-28T01:10:00+05:45</lastmod>
   </url>
   
   <url>
