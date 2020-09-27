@@ -6,7 +6,7 @@
     <description>Recent content on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jul 2020 08:16:00 +0545</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 07:20:00 +0545</lastBuildDate>
     
 	<atom:link href="https://subedi.ml/index.xml" rel="self" type="application/rss+xml" />
     
@@ -61,6 +61,166 @@ August 2013&lt;/p&gt;
 &lt;h2 id=&#34;publications&#34;&gt;Publications&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Use of ICT in Classrooms in Nepal; A study of Student-Centered Learning using ICT&lt;/strong&gt;&lt;br&gt;
 SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7399981&#34;&gt;(Publication link)&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Affirmations with Flutter</title>
+      <link>https://subedi.ml/posts/affirmations_dev/</link>
+      <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
+      
+      <guid>https://subedi.ml/posts/affirmations_dev/</guid>
+      <description>&lt;h2 id=&#34;a-project-that-motivates-to-learn-with-positive-reinforcement&#34;&gt;A project that motivates to learn with positive reinforcement&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/flutter.png&#34; alt=&#34;Affirmations with flutter&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It had been a while since I (subconsciously or not so subconsciously) pivoted my career from app development to data science. Man, I did not miss Android Studio clogging my base model laptop’s memory. However, my little cousin (who just ventured into app development) wanted help with one of the issues he was having. But, as someone who had not used semicolons and braces for almost couple of years, Dart was almost nauseating upon first glance.  I promised him I would  get around answering his queries, but after I built something simple first.&lt;/p&gt;
+&lt;p&gt;Affirmations.dev provides quotes that are motivating to the devs. So, as a newbie in Flutter, it good to get all the positive reinforcement especially when Android Studio and the virtual device doesn’t leave much space for many Stackoverflow tabs.&lt;/p&gt;
+&lt;h3 id=&#34;few-examples-of-what-affirmationsdev-returns&#34;&gt;Few examples of what affirmations.dev returns:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;// 20200927192236
+// https://www.affirmations.dev/
+
+{
+  &amp;quot;affirmation&amp;quot;: &amp;quot;Your life is already a miracle of chance waiting for you to shape its destiny&amp;quot;
+}
+
+
+
+// 20200927194030
+// https://www.affirmations.dev/
+
+{
+  &amp;quot;affirmation&amp;quot;: &amp;quot;It is not a sprint, it is a marathon. One step at a time&amp;quot;
+}
+
+
+// 20200927194048
+// https://www.affirmations.dev/
+
+{
+  &amp;quot;affirmation&amp;quot;: &amp;quot;You are learning valuable lessons from yourself every day&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;complete-app&#34;&gt;Complete App&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;import &#39;dart:convert&#39;;
+
+import &#39;package:flutter/material.dart&#39;;
+import &#39;package:http/http.dart&#39; as http;
+
+class AffirmationsModel{
+  final String affirmation;
+  AffirmationsModel({this.affirmation});
+
+  factory AffirmationsModel.fromJson(final json){
+    return AffirmationsModel(
+      affirmation : json[&amp;quot;affirmation&amp;quot;]
+    );
+  }
+}
+
+Future&amp;lt;AffirmationsModel&amp;gt; fetchAffirmations() async {
+  final response = await http.get(&#39;https://www.affirmations.dev/&#39;);
+  if (response.statusCode == 200) {
+    final jsonAffirmations = jsonDecode(response.body);
+    return AffirmationsModel.fromJson(jsonAffirmations);
+  } else {
+    throw Exception(&#39;Failed&#39;);
+  }
+}
+
+void main() {
+  runApp(AffirmationsApp());
+}
+
+class AffirmationsApp extends StatefulWidget {
+  AffirmationsApp({Key key}) : super(key: key);
+
+  @override
+  _AffirmationsAppState createState() {
+    return _AffirmationsAppState();
+  }
+}
+
+class _AffirmationsAppState extends State&amp;lt;AffirmationsApp&amp;gt; {
+  Future&amp;lt;AffirmationsModel&amp;gt; _futureAffirmationsModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _futureAffirmationsModel = fetchAffirmations();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: &#39;Affirmations&#39;,
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          backgroundColor: Colors.deepPurpleAccent,
+          appBar: AppBar(
+            title: Text(&#39;Affirmations&#39;),
+            centerTitle: true,
+          ),
+          body: Column(children: &amp;lt;Widget&amp;gt;[
+            Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.lightBlueAccent,
+              ),
+              // width: 300,
+              height: 300,
+              padding: EdgeInsets.all(20.0),
+              margin: EdgeInsets.all(80.0),
+              child: FutureBuilder&amp;lt;AffirmationsModel&amp;gt;(
+                future: _futureAffirmationsModel,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done &amp;amp;&amp;amp;
+                      snapshot.hasData) {
+                    return Text(snapshot.data.affirmation,
+                        textAlign: TextAlign.center,
+                        textScaleFactor: 1.4,
+                        style: TextStyle(color: Colors.white));
+                  } else if (snapshot.hasError) {
+                    return Text(&amp;quot;${snapshot.error}&amp;quot;);
+                  }
+                  return CircularProgressIndicator();
+                },
+              ),
+            ),
+            Divider(),
+            Container(
+              child: RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    _futureAffirmationsModel = fetchAffirmations();
+                  });
+                },
+                textColor: Colors.white,
+                padding: const EdgeInsets.all(0.0),
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: &amp;lt;Color&amp;gt;[
+                        Color(0xEEFF1461),
+                        Color(0xDDFF1483),
+                        Color(0xFFFF1493),
+                      ],
+                    ),
+                  ),
+                  padding: const EdgeInsets.all(30.0),
+                  child:
+                  const Text(&#39;INSPIRE ME&#39;, style: TextStyle(fontSize: 15)),
+                ),
+              ),
+            )
+          ])),
+    );
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
