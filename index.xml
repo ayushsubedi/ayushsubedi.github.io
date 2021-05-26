@@ -14,16 +14,16 @@
     <item>
       <title>Resume</title>
       <link>https://subedi.ml/about/</link>
-      <pubDate>Sat, 05 Sep 2020 17:12:41 +0545</pubDate>
+      <pubDate>Tue, 25 May 2021 17:12:41 +0545</pubDate>
       
       <guid>https://subedi.ml/about/</guid>
-      <description>&lt;h1 id=&#34;data-scientist-rd-and-mathematician&#34;&gt;Data Scientist, R&amp;amp;D and Mathematician&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;data-scientist-rd&#34;&gt;Data Scientist, R&amp;amp;D&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;mailto:ayushsubedi@gmail.com&#34;&gt;ayush.subedi@test.com&lt;/a&gt; |
+&lt;p&gt;&lt;a href=&#34;mailto:ayushsubedi@gmail.com&#34;&gt;ayush.subedi@gmail.com&lt;/a&gt; |
 &lt;a href=&#34;tel:+9779860909101&#34;&gt;9860909101&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;Eight years experience in R&amp;amp;D and data science&lt;/li&gt;
+&lt;li&gt;Nine years experience in R&amp;amp;D and data science&lt;/li&gt;
 &lt;li&gt;A penchant for solving unstructured and non-standard mathematical problems&lt;/li&gt;
 &lt;li&gt;Researcher, architect, and developer with a product and user mindset&lt;/li&gt;
 &lt;li&gt;Passionate about mentoring junior team members&lt;/li&gt;
@@ -32,24 +32,29 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;skills--tools&#34;&gt;Skills / Tools&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Languages – Python, Java, R, JavaScript, Bash&lt;/li&gt;
-&lt;li&gt;Databases – MySQL, SQLite, MongoDB, PostgreSQL, Firebase, Realm&lt;/li&gt;
+&lt;li&gt;Languages – Python, Java, R, Rust&lt;/li&gt;
+&lt;li&gt;Databases – MySQL, SQLite, MongoDB, PostgreSQL, Firebase, Realm, Snowflake&lt;/li&gt;
 &lt;li&gt;Data Viz – D3.js, Tableau, Google Data Studio, Plotly, Highcharts, Seaborn, Bokeh&lt;/li&gt;
 &lt;li&gt;Data Analysis – Python data analysis stack (numpy, pandas, matplotlib)&lt;/li&gt;
 &lt;li&gt;Machine Learning – Scikit-learn, FB Prophet, Keras, Tensorflow, PyTorch&lt;/li&gt;
-&lt;li&gt;Framework – Flask, Fast API&lt;/li&gt;
+&lt;li&gt;Framework – Flask, Fast API, Django, Streamlit&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Georgia Tech, Atlanta-GA, USA&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;MSc. in Analytics&lt;/em&gt;&lt;br&gt;
+Graduating 2023&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Loras College, Dubuque-IA, USA&lt;/strong&gt;&lt;br&gt;
 &lt;em&gt;B.S. in Computer Science&lt;/em&gt;&lt;br&gt;
 &lt;em&gt;B.S. in Mathematics&lt;/em&gt;&lt;br&gt;
 Cumulative GPA: 3.8402&lt;br&gt;
 August 2013&lt;/p&gt;
 &lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Moonlit Solutions, Nepal&lt;/strong&gt;&lt;br&gt;
-&lt;em&gt;Data Scientist, Tech Lead, Cofounder, June 2019 – Present&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;World Bank, Nepal&lt;/strong&gt;&lt;br&gt;
 &lt;em&gt;Data Science Consultant, June 2019 – Present&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CHEERS HOSPITAL, Nepal&lt;/strong&gt;
+&lt;em&gt;AI Research Scientist, Mar 2021 – May 2021&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Moonlit Solutions, Nepal&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;Data Scientist, Tech Lead, Cofounder, June 2019 – Present&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;British College, Nepal&lt;/strong&gt;&lt;br&gt;
 &lt;em&gt;Visiting Lecturer, Data Science, Sept 2019 – Present&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ISMT College, Nepal&lt;/strong&gt;&lt;br&gt;
@@ -61,6 +66,8 @@ August 2013&lt;/p&gt;
 &lt;h2 id=&#34;publications&#34;&gt;Publications&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Use of ICT in Classrooms in Nepal; A study of Student-Centered Learning using ICT&lt;/strong&gt;&lt;br&gt;
 SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7399981&#34;&gt;(Publication link)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Use of Data in the Private Sector of Nepal : The Current State and Opportunities in Finance, Education, and the Media (English).&lt;/strong&gt;
+Washington, D.C. : World Bank Group, 2020 &lt;a href=&#34;http://documents.worldbank.org/curated/en/805261601023506163/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media&#34;&gt;(Publication link)&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
