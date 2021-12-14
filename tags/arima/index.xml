@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ARIMA on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/arima/</link>
+    <link>https://ayushsubedi.github.io/tags/arima/</link>
     <description>Recent content in ARIMA on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Mar 2020 04:09:44 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/arima/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/arima/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cheers Hospital Analysis</title>
-      <link>https://subedi.ml/posts/cheers_analysis/</link>
+      <link>https://ayushsubedi.github.io/posts/cheers_analysis/</link>
       <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/cheers_analysis/</guid>
+      <guid>https://ayushsubedi.github.io/posts/cheers_analysis/</guid>
       <description>&lt;h1 id=&#34;data-analysis-of-cheers-hospital&#34;&gt;Data analysis of Cheers hospital&lt;/h1&gt;
 &lt;p&gt;Since it’s inception, Hospital for Children Eye ENT and Rehabilitation Service (CHEERS) has amassed data from various sources such as all the software used in daily operations, research department and the finance department. With priority in budgeting which is always a significant factor, CHEERS wanted Moonlit Solutions to analyze the data from different sectors within the hospital and create forecasting models to help with their operational efficiency.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/cheers.jpg&#34; alt=&#34;Cheers&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cheers.jpg&#34; alt=&#34;Cheers&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;scope-of-work&#34;&gt;Scope of work&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Data curation from different sectors of the hospital (but only limited to their Hospital Management Information System)&lt;/li&gt;

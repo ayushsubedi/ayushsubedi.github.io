@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mandelbrot on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/mandelbrot/</link>
+    <link>https://ayushsubedi.github.io/tags/mandelbrot/</link>
     <description>Recent content in mandelbrot on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 15 Apr 2014 17:12:41 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/mandelbrot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/mandelbrot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fractal Plots</title>
-      <link>https://subedi.ml/posts/fractal_plots/</link>
+      <link>https://ayushsubedi.github.io/posts/fractal_plots/</link>
       <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/fractal_plots/</guid>
+      <guid>https://ayushsubedi.github.io/posts/fractal_plots/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
 &lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Mby3dBcaRKo/U0zGR29ZF9I/AAAAAAAACm4/qjEeUPPlBsU/s1600/Rplot03.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -198,10 +198,10 @@ points(plot.result,pch = 46)
     
     <item>
       <title>Area of the Mandelbrot Set</title>
-      <link>https://subedi.ml/posts/mandelbrot_area/</link>
+      <link>https://ayushsubedi.github.io/posts/mandelbrot_area/</link>
       <pubDate>Wed, 02 Jan 2013 10:01:09 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/mandelbrot_area/</guid>
+      <guid>https://ayushsubedi.github.io/posts/mandelbrot_area/</guid>
       <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;
 &lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-ofFkTWEt7kw/U0evleXzgRI/AAAAAAAACl8/zg4_1dxmg7w/s1600/800px-Mandel_zoom_08_satellite_antenna.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;

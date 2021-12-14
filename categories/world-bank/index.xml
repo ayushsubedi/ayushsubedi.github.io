@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>World Bank on Ayush Subedi</title>
-    <link>https://subedi.ml/categories/world-bank/</link>
+    <link>https://ayushsubedi.github.io/categories/world-bank/</link>
     <description>Recent content in World Bank on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 03 Jan 2020 09:45:16 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/categories/world-bank/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/categories/world-bank/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data in News</title>
-      <link>https://subedi.ml/posts/data_in_news/</link>
+      <link>https://ayushsubedi.github.io/posts/data_in_news/</link>
       <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/data_in_news/</guid>
+      <guid>https://ayushsubedi.github.io/posts/data_in_news/</guid>
       <description>&lt;h2 id=&#34;data-in-news&#34;&gt;Data in News&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://datainnews.ml/&#34;&gt;Link to the website&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/datainnews.png&#34; alt=&#34;feature&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/datainnews.png&#34; alt=&#34;feature&#34;&gt;&lt;/p&gt;
 &lt;p&gt;How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. The report team, in partnership with the Society of Economic Journalists-Nepal (SEJON), organized a roundtable with 38 economic journalists, editors, and bureau chiefs in Nepal to discuss data use in news organizations. The team also administered an online questionnaire to 28 media professionals (see appendix A for the questionnaire and appendix B for the results). To complement these findings, the World Bank team developed an indicator model to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. The results show that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.&lt;/p&gt;
 &lt;p&gt;More than 4,100 articles were analyzed to assess the use of data in media. The data was collected between 9th December 2019 to 9th February 2020. The data source for the model was Nepali news portals that support RSS feeds and are published in English. The news portals that meet these criteria are the &lt;em&gt;Himalayan Times&lt;/em&gt;, &lt;em&gt;Onlinekhabar&lt;/em&gt;, the &lt;em&gt;Nepali Times,&lt;/em&gt; the &lt;em&gt;Telegraph Nepal,&lt;/em&gt; the &lt;em&gt;Kathmandu Tribune&lt;/em&gt;, and &lt;em&gt;Lokaantar&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;The results of the analysis are as follows:&lt;/p&gt;
@@ -41,17 +41,17 @@
     
     <item>
       <title>Nepal Data Literacy Program</title>
-      <link>https://subedi.ml/posts/nepal_data_literacy/</link>
+      <link>https://ayushsubedi.github.io/posts/nepal_data_literacy/</link>
       <pubDate>Tue, 31 Dec 2019 08:00:10 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/nepal_data_literacy/</guid>
+      <guid>https://ayushsubedi.github.io/posts/nepal_data_literacy/</guid>
       <description>&lt;h2 id=&#34;nepal-data-literacy-program&#34;&gt;Nepal Data Literacy Program&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://dataliteracy.github.io/images/header3.jpg&#34; alt=&#34;header&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Nepal Data Literacy Program is designed to catalyze stronger data-driven decision-making by government and non-government actors (mass media, civil society, and academia) through targeted Data Literacy Workshop to help Nepal achieve its development goals.&lt;/p&gt;
 &lt;p&gt;The program comprises a 100 hour modular, customizable pedagogy to support both technical skills-building and efforts to enhance a ‘culture of data use’ among Nepalis.&lt;/p&gt;
 &lt;p&gt;For the event, my responsibilities were to develop course materials for Python and Machine Learning. Additionally, I was also tasked with reviewing course materials for other modules (Tableau, Statistics, Survey Methodologies etc.).&lt;/p&gt;
 &lt;p&gt;Similarly, I also developed the Nepal Data Literacy website that hosts the entire curriculum, instructor&amp;rsquo;s note, student&amp;rsquo;s workbook, analysis notebooks, datasets, participants projects, etc.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/dataliteracy.png&#34; alt=&#34;website&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/dataliteracy.png&#34; alt=&#34;website&#34;&gt;&lt;/p&gt;
 &lt;p&gt;During the event, I instructed Python and Machine Learning, including topics of Regression and Classification to industry experts on different fields (Academics, CSO, Media, Entrepreneurs, Managers, NGOs). This was exciting because two of my teachers who taught me in grade 8 were my students in this event. They were proud.&lt;/p&gt;
 &lt;h3 id=&#34;the-content-created-for-unit-7&#34;&gt;The content created for Unit 7&lt;/h3&gt;
 &lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTlceRpdtN_42Fq1d0YxgOIIZJl6HdGP6GwrbZaAS2-Oaf0N1lYjS63u-Dm1XTjgezb7LCTrgPRevE3/embed?start=false&amp;loop=false&amp;delayms=3000&#34;frameborder=&#34;0&#34; width=&#34;720&#34; height=&#34;400&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
@@ -77,10 +77,10 @@
     
     <item>
       <title>Solveathon Nepal 2019</title>
-      <link>https://subedi.ml/posts/solveathon_nepal/</link>
+      <link>https://ayushsubedi.github.io/posts/solveathon_nepal/</link>
       <pubDate>Thu, 05 Dec 2019 09:09:55 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/solveathon_nepal/</guid>
+      <guid>https://ayushsubedi.github.io/posts/solveathon_nepal/</guid>
       <description>&lt;h2 id=&#34;what-is-a-solve-a-thon&#34;&gt;What is a Solve-a-thon?&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://dataliteracy.github.io/images/main_feature.jpg&#34; alt=&#34;solveathon_feature&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A two-day Solveathon, the first of its kind, was organized by the World Bank and The Asia Foundation with support from UKAID at the Kathmandu University School of Management on 14-15 December. The event brought together data scientists, programmers, developers, researchers, and professionals with diverse backgrounds and provided them a platform to work collaboratively on data-driven projects to tackle developmental challenges.&lt;/p&gt;

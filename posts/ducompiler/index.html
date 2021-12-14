@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | Compiler from Scratch</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.80.0" />
+	<meta name="generator" content="Hugo 0.90.1" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -65,13 +65,13 @@ if (!doNotTrack) {
 
 
 
-<link rel="stylesheet" href='https://subedi.ml/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
 
-<script defer src='https://subedi.ml/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
 
 
-<script defer src='https://subedi.ml/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
 crossorigin="anonymous"
 onload='renderMathInElement(document.body);'></script>
 
@@ -99,7 +99,7 @@ onload='renderMathInElement(document.body);'></script>
 				
 <div>
 	<h2>
-		<a href="https://subedi.ml" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
 <h1 class="pt-2">Compiler from Scratch</h1>
@@ -154,11 +154,11 @@ onload='renderMathInElement(document.body);'></script>
 <p>Since this project belongs to two other people also, I won&rsquo;t be posting any source code. This post will just have some example code for Du-Compiler.</p>
 <p>Finally, for anyone looking for a reasonably challenging senior projects, I would strongly encourage building a compiler. I say this for couple of reasons. First of all, it changes the way we look at code. It gives a better understanding of what exactly happens when the compile button is hit. In another words, it makes you aware of what is going on internally. Secondly, it involves learning/relearning several Computer Science topics such as regular expressions, hash table, data-structures, tree traversals, assembly level programming etc. It also involves A LOT of coding. When it all pans out, you are going to love what you have in your skill set.</p>
 <h4 id="examples">Examples</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Hello World
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Hello World
 duhawk helloworld{
   duPrint(%Hello World%);
 }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Simple Addition
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Simple Addition
 duhawk simpleAdd{ 
   int a;
   a=5;
@@ -167,7 +167,7 @@ duhawk simpleAdd{
   duPrint b;  
 }
 //Result: 10
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Simple Pattern
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">//Simple Pattern
 duhawk test{ 
   int i;
   i=1;
@@ -197,7 +197,7 @@ Result
 *********
 **********
 */
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">duhawk test{ 
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">duhawk test{ 
 int c;  
 int d;     
 duPrint (%Multiplication table of: %);  

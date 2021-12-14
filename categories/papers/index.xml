@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Papers on Ayush Subedi</title>
-    <link>https://subedi.ml/categories/papers/</link>
+    <link>https://ayushsubedi.github.io/categories/papers/</link>
     <description>Recent content in Papers on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Jul 2020 09:16:00 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/categories/papers/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/categories/papers/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MuSigma and the art of problem solving (WIP)</title>
-      <link>https://subedi.ml/posts/musigma/</link>
+      <link>https://ayushsubedi.github.io/posts/musigma/</link>
       <pubDate>Fri, 10 Jul 2020 09:16:00 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/musigma/</guid>
+      <guid>https://ayushsubedi.github.io/posts/musigma/</guid>
       <description>&lt;h1 id=&#34;musigma-the-art-of-problem-solving&#34;&gt;MuSigma the art of problem solving&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://cdn2.hubspot.net/hubfs/1736059/offers/co-ebook-the-art-of-problem-solving-aops-july-2016.pdf&#34;&gt;Link to the original paper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;MuSigma defines the paper as &lt;strong&gt;&amp;ldquo;A guide for your Decision Sciences journey.&amp;quot;&lt;/strong&gt;&lt;/p&gt;

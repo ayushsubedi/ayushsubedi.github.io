@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>community on Ayush Subedi</title>
-    <link>https://subedi.ml/categories/community/</link>
+    <link>https://ayushsubedi.github.io/categories/community/</link>
     <description>Recent content in community on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 05 Nov 2019 08:05:11 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/categories/community/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/categories/community/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>British College AI Conference</title>
-      <link>https://subedi.ml/posts/british_ai_conference/</link>
+      <link>https://ayushsubedi.github.io/posts/british_ai_conference/</link>
       <pubDate>Tue, 05 Nov 2019 08:05:11 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/british_ai_conference/</guid>
+      <guid>https://ayushsubedi.github.io/posts/british_ai_conference/</guid>
       <description>&lt;h2 id=&#34;nepal-students-and-ai&#34;&gt;Nepal, students and AI&lt;/h2&gt;
 &lt;p&gt;The conference titled “Artificial Intelligence for Transforming Business and Society (AITB2019)”, brought together more than 100 international and national academics, industry experts, researchers, policy makers and students under one roof to share their research findings, experience, and expertise in the field of AI.&lt;/p&gt;
 &lt;p&gt;According to the AITB2019 Organizing Committee, the topic of Artificial Intelligence(AI) was chosen to discuss the relevance of AI revolution happening all over the world and in the context of Nepal. It was also intended to bring the national and international intellect to share their ideas through their research and experience in the field of AI. The initiation of discussion about the importance for Nepal to keep up with the AI revolution and to make sure that the human resources are prepared for the future skills was the main aim of the conference.&lt;/p&gt;
@@ -30,7 +30,7 @@
 &lt;li&gt;There is a debate about jobs when AI will really come in effect? What is your stand in this debate? will there be more jobs or fewer jobs?&lt;/li&gt;
 &lt;li&gt;Final question, do we need to fear AI? will we be taken over by machines? or will we all be cyborgs that will be completely in sync with the machines?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/british_ai.png&#34; alt=&#34;Panelists&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/british_ai.png&#34; alt=&#34;Panelists&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The press release for the program concluded the following regarding our panel discussion.&lt;/p&gt;
 &lt;p&gt;“The second panel moderated by Mr. Amod Niroula, Co-founder and Project Manager at ACT360, brought industry practitioners, entrepreneurs and academics together to discuss the need for developing AI strategies for tomorrow. Panelist Dr Bal Krishna Bal, Head of Department, Computer Science at Kathmandu University emphasized the crucial role of academia in providing the needed talent as well as the need for adaptation and updating of curriculum. Mr. Ayush Subedi, Co-founder/CTO of Moonlit Solutions stressed the need to first increase access to disaggregated data to be able to adopt AI. Mr. Ravi Bajracharya, Co- founder of Wiseyak shared his own experiences about adopting AI in the field of healthcare for increased access to rural Nepal. Chief Technology Architect of Makura Creations, Mr. Chandan Gupta shared his views about not taking the AI revolution as a threat to jobs but instead a need to be aware of the changing nature of jobs.”&lt;/p&gt;
 </description>
@@ -38,14 +38,14 @@
     
     <item>
       <title>Spirathon AI Conference 2019</title>
-      <link>https://subedi.ml/posts/spirathon/</link>
+      <link>https://ayushsubedi.github.io/posts/spirathon/</link>
       <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/spirathon/</guid>
+      <guid>https://ayushsubedi.github.io/posts/spirathon/</guid>
       <description>&lt;h2 id=&#34;journey-to-spam-detection&#34;&gt;Journey to Spam Detection&lt;/h2&gt;
 &lt;p&gt;Spiralogics is hosting a first of it&amp;rsquo;s kind, AI Conference in Nepal this February - a platform for AI veterans and students to come together and network.
 This year, Spiralogics is focused on exploring and explaining the ways how AI can create positive impact on different aspects of our life. It is a platform which will act as a driving force in encouraging the implementation of AI (especially in the Nepalese environment). Their purpose is to bring together professionals and students under one roof to rediscover the possibilities that AI can create in our day to day lives.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/spirathon.jpg&#34; alt=&#34;Spirathon&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/spirathon.jpg&#34; alt=&#34;Spirathon&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;how-was-i-involved&#34;&gt;How was I involved?&lt;/h3&gt;
 &lt;p&gt;I was asked to teach a 5 hour session to introduce the students to a concept of AI. I decided to conduct a workshop based session on Naive Bayes Classifier to detect spam.&lt;/p&gt;
 &lt;h2 id=&#34;topics-covered&#34;&gt;Topics covered&lt;/h2&gt;

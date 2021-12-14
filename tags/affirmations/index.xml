@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>affirmations on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/affirmations/</link>
+    <link>https://ayushsubedi.github.io/tags/affirmations/</link>
     <description>Recent content in affirmations on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 27 Jul 2020 07:20:00 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/affirmations/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/affirmations/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Affirmations with Flutter</title>
-      <link>https://subedi.ml/posts/affirmations_dev/</link>
+      <link>https://ayushsubedi.github.io/posts/affirmations_dev/</link>
       <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/affirmations_dev/</guid>
+      <guid>https://ayushsubedi.github.io/posts/affirmations_dev/</guid>
       <description>&lt;h2 id=&#34;a-project-that-motivates-to-learn-with-positive-reinforcement&#34;&gt;A project that motivates to learn with positive reinforcement&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/flutter.png&#34; alt=&#34;Affirmations with flutter&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/flutter.png&#34; alt=&#34;Affirmations with flutter&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It had been a while since I (subconsciously or not so subconsciously) pivoted my career from app development to data science. Man, I did not miss Android Studio clogging my base model laptop’s memory. However, my little cousin (who just ventured into app development) wanted help with one of the issues he was having. But, as someone who had not used semicolons and braces for almost couple of years, Dart was almost nauseating upon first glance.  I promised him I would  get around answering his queries, but after I built something simple first.&lt;/p&gt;
 &lt;p&gt;Affirmations.dev provides quotes that are motivating to the devs. So, as a newbie in Flutter, it good to get all the positive reinforcement especially when Android Studio and the virtual device doesn’t leave much space for many Stackoverflow tabs.&lt;/p&gt;
 &lt;h3 id=&#34;few-examples-of-what-affirmationsdev-returns&#34;&gt;Few examples of what affirmations.dev returns:&lt;/h3&gt;

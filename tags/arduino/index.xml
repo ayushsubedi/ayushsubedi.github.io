@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>arduino on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/arduino/</link>
+    <link>https://ayushsubedi.github.io/tags/arduino/</link>
     <description>Recent content in arduino on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 31 Jan 2014 11:03:13 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android&#43;Arduino RC Car</title>
-      <link>https://subedi.ml/posts/rc_car/</link>
+      <link>https://ayushsubedi.github.io/posts/rc_car/</link>
       <pubDate>Fri, 31 Jan 2014 11:03:13 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/rc_car/</guid>
+      <guid>https://ayushsubedi.github.io/posts/rc_car/</guid>
       <description>&lt;h3 id=&#34;androidarduino-rc-car&#34;&gt;Android+Arduino RC Car&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-_8RnAwamLOM/UuxigwOv4HI/AAAAAAAACW4/mW5MxPQ7HdY/s1600/DSC_0027.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;http://www.ayushsubedi.com/2013/07/androidrccar.html&#34;&gt;previous attempt&lt;/a&gt; was in shambles due to the lack of proper products. This time, I got myself a Sainsmart L293D motor driver (actually a cloned version of the ever so popular Adafruit L293D driver) and a handy four wheel drive chassis. Hereupon, the only adjustment  required was the use of analog pins as digital pins. This is the consequence of the motor driver using up all the digital pins and leaving no pins for the Bluetooth shield. I also hooked up the Arduino to a USB power bank.&lt;/p&gt;

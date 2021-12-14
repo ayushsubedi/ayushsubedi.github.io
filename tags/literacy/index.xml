@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>literacy on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/literacy/</link>
+    <link>https://ayushsubedi.github.io/tags/literacy/</link>
     <description>Recent content in literacy on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 31 Dec 2019 08:00:10 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/literacy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/literacy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nepal Data Literacy Program</title>
-      <link>https://subedi.ml/posts/nepal_data_literacy/</link>
+      <link>https://ayushsubedi.github.io/posts/nepal_data_literacy/</link>
       <pubDate>Tue, 31 Dec 2019 08:00:10 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/nepal_data_literacy/</guid>
+      <guid>https://ayushsubedi.github.io/posts/nepal_data_literacy/</guid>
       <description>&lt;h2 id=&#34;nepal-data-literacy-program&#34;&gt;Nepal Data Literacy Program&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://dataliteracy.github.io/images/header3.jpg&#34; alt=&#34;header&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Nepal Data Literacy Program is designed to catalyze stronger data-driven decision-making by government and non-government actors (mass media, civil society, and academia) through targeted Data Literacy Workshop to help Nepal achieve its development goals.&lt;/p&gt;
 &lt;p&gt;The program comprises a 100 hour modular, customizable pedagogy to support both technical skills-building and efforts to enhance a ‘culture of data use’ among Nepalis.&lt;/p&gt;
 &lt;p&gt;For the event, my responsibilities were to develop course materials for Python and Machine Learning. Additionally, I was also tasked with reviewing course materials for other modules (Tableau, Statistics, Survey Methodologies etc.).&lt;/p&gt;
 &lt;p&gt;Similarly, I also developed the Nepal Data Literacy website that hosts the entire curriculum, instructor&amp;rsquo;s note, student&amp;rsquo;s workbook, analysis notebooks, datasets, participants projects, etc.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/dataliteracy.png&#34; alt=&#34;website&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/dataliteracy.png&#34; alt=&#34;website&#34;&gt;&lt;/p&gt;
 &lt;p&gt;During the event, I instructed Python and Machine Learning, including topics of Regression and Classification to industry experts on different fields (Academics, CSO, Media, Entrepreneurs, Managers, NGOs). This was exciting because two of my teachers who taught me in grade 8 were my students in this event. They were proud.&lt;/p&gt;
 &lt;h3 id=&#34;the-content-created-for-unit-7&#34;&gt;The content created for Unit 7&lt;/h3&gt;
 &lt;iframe src=&#34;https://docs.google.com/presentation/d/e/2PACX-1vTlceRpdtN_42Fq1d0YxgOIIZJl6HdGP6GwrbZaAS2-Oaf0N1lYjS63u-Dm1XTjgezb7LCTrgPRevE3/embed?start=false&amp;loop=false&amp;delayms=3000&#34;frameborder=&#34;0&#34; width=&#34;720&#34; height=&#34;400&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;

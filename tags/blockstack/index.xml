@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blockstack on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/blockstack/</link>
+    <link>https://ayushsubedi.github.io/tags/blockstack/</link>
     <description>Recent content in Blockstack on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Sep 2019 09:16:00 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/blockstack/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/blockstack/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Trove Summary</title>
-      <link>https://subedi.ml/posts/trove_summary/</link>
+      <link>https://ayushsubedi.github.io/posts/trove_summary/</link>
       <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/trove_summary/</guid>
+      <guid>https://ayushsubedi.github.io/posts/trove_summary/</guid>
       <description>&lt;h1 id=&#34;the-extension-to-trove&#34;&gt;The extension to Trove&lt;/h1&gt;
 &lt;p&gt;Trove Summary is a web app (React) that generates summary of a web article (from its URL) and allows users to securely store them. Technically speaking, it follows the same philosophy of Trove (build in Blockstack and Gaia), and therefore inherits, decentralization, anonymity and encryption.&lt;/p&gt;
 &lt;p&gt;However, the other aspect of Trove Summary is its backend that uses abstractive and extractive summarization models to generate reliable summary.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/trove_summary.png&#34; alt=&#34;Trove&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/trove_summary.png&#34; alt=&#34;Trove&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Request&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;/api/get_content?url=abc.xyz
@@ -105,10 +105,10 @@
     
     <item>
       <title>Underlying Architecture of Trove</title>
-      <link>https://subedi.ml/posts/trove_architecture/</link>
+      <link>https://ayushsubedi.github.io/posts/trove_architecture/</link>
       <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/trove_architecture/</guid>
+      <guid>https://ayushsubedi.github.io/posts/trove_architecture/</guid>
       <description>&lt;p&gt;After &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;releasing&lt;/a&gt; &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;Trove&lt;/a&gt;, our inboxes and &lt;a href=&#34;https://twitter.com/Trovenow&#34;&gt;DMs&lt;/a&gt; flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the &lt;a href=&#34;https://blockstack.org/&#34;&gt;Blockstack&lt;/a&gt; platform. &lt;strong&gt;The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.&lt;/strong&gt;  &lt;br&gt;
 The engineers @Trove have strong understanding and experience of centralized applications. We followed the decentralized space, and also built small prototypes in Blockstack and Ethereum platforms. But, Trove is our first endeavour to create a full end-to-end Decentralized Application from scratch. We had questions.
 Actually, a lot of them.&lt;/p&gt;

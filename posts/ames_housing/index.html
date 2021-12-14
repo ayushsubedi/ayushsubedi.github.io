@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | Ames Housing Prediction</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.80.0" />
+	<meta name="generator" content="Hugo 0.90.1" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -65,13 +65,13 @@ if (!doNotTrack) {
 
 
 
-<link rel="stylesheet" href='https://subedi.ml/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
 
-<script defer src='https://subedi.ml/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
 
 
-<script defer src='https://subedi.ml/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
 crossorigin="anonymous"
 onload='renderMathInElement(document.body);'></script>
 
@@ -99,7 +99,7 @@ onload='renderMathInElement(document.body);'></script>
 				
 <div>
 	<h2>
-		<a href="https://subedi.ml" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
 <h1 class="pt-2">Ames Housing Prediction</h1>
@@ -152,8 +152,8 @@ onload='renderMathInElement(document.body);'></script>
 <h3 id="base-model">Base Model</h3>
 <p><img src="https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png" alt=""></p>
 <h4 id="imports">Imports</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np 
-<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np 
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd 
 <span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestRegressor
 <span style="color:#f92672">from</span> xgboost <span style="color:#f92672">import</span> XGBRegressor
 <span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_val_score
@@ -164,9 +164,9 @@ onload='renderMathInElement(document.body);'></script>
 <span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> LabelEncoder
 <span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> mean_absolute_error
 </code></pre></div><h4 id="read-the-training-dataset-and-list-its-shape-and-column-names">Read the training dataset and list its shape and column names</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/AmesHousing/train.csv&#39;</span>)
-<span style="color:#66d9ef">print</span> (df<span style="color:#f92672">.</span>shape)
-<span style="color:#66d9ef">print</span> (df<span style="color:#f92672">.</span>columns)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/AmesHousing/train.csv&#39;</span>)
+print (df<span style="color:#f92672">.</span>shape)
+print (df<span style="color:#f92672">.</span>columns)
 </code></pre></div><pre><code>(1460, 81)
 Index(['Id', 'MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street',
        'Alley', 'LotShape', 'LandContour', 'Utilities', 'LotConfig',
@@ -188,7 +188,7 @@ Index(['Id', 'MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street',
       dtype='object')
 </code></pre>
 <h4 id="generate-few-first-rows">Generate few first rows</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
 </code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -356,7 +356,7 @@ Index(['Id', 'MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street',
 <p>5 rows × 81 columns</p>
 </div>
 <h4 id="missing-vals-count-in-each-column">Missing vals count in each column</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
 </code></pre></div><pre><code>PoolQC          1453
 MiscFeature     1406
 Alley           1369
@@ -380,8 +380,8 @@ Utilities          0
 dtype: int64
 </code></pre>
 <h4 id="generate-columns-that-have-more-than-20-percent-missing-vals">Generate Columns that have more than 20 percent missing vals</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">threshold_20 <span style="color:#f92672">=</span> (df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
-threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span>False)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">threshold_20 <span style="color:#f92672">=</span> (df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </code></pre></div><pre><code>PoolQC         99.520548
 MiscFeature    96.301370
 Alley          93.767123
@@ -389,32 +389,32 @@ Fence          80.753425
 FireplaceQu    47.260274
 dtype: float64
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dtypes<span style="color:#f92672">.</span>value_counts()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dtypes<span style="color:#f92672">.</span>value_counts()
 </code></pre></div><pre><code>object     43
 int64      35
 float64     3
 dtype: int64
 </code></pre>
 <p>Drop cols with more than 20 percent missing vals</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cols_to_drop <span style="color:#f92672">=</span> threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>to_list()
-df<span style="color:#f92672">.</span>drop(cols_to_drop, inplace<span style="color:#f92672">=</span>True, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cols_to_drop <span style="color:#f92672">=</span> threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>to_list()
+df<span style="color:#f92672">.</span>drop(cols_to_drop, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 </code></pre></div><h4 id="also-drop-id-this-would-not-have-been-necessary-if-this-was-set-as-index-column-when-data-was-first-read">Also drop Id, this would not have been necessary if this was set as index column when data was first read</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;Id&#39;</span>], inplace<span style="color:#f92672">=</span>True, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;Id&#39;</span>], inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 </code></pre></div><h4 id="categorical-features-and-numeric-features">Categorical features and numeric features</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">categorical_features <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>select_dtypes(include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;object&#34;</span>)<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>to_list()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">categorical_features <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>select_dtypes(include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;object&#34;</span>)<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>to_list()
 </code></pre></div><h4 id="what-were-the-columns">What were the columns?</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># MiscFeature: Miscellaneous feature not covered in other categories</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># MiscFeature: Miscellaneous feature not covered in other categories</span>
 <span style="color:#75715e"># PoolQC: Pool quality</span>
 <span style="color:#75715e"># Alley: Type of alley access to property</span>
 <span style="color:#75715e"># Fence: Fence quality</span>
 <span style="color:#75715e"># FireplaceQu: Fireplace quality</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#39;Categorical Features&#39;</span>)
-<span style="color:#66d9ef">print</span> (categorical_features)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (<span style="color:#e6db74">&#39;Categorical Features&#39;</span>)
+print (categorical_features)
 </code></pre></div><pre><code>Categorical Features
 ['MSZoning', 'Street', 'LotShape', 'LandContour', 'Utilities', 'LotConfig', 'LandSlope', 'Neighborhood', 'Condition1', 'Condition2', 'BldgType', 'HouseStyle', 'RoofStyle', 'RoofMatl', 'Exterior1st', 'Exterior2nd', 'MasVnrType', 'ExterQual', 'ExterCond', 'Foundation', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'Heating', 'HeatingQC', 'CentralAir', 'Electrical', 'KitchenQual', 'Functional', 'GarageType', 'GarageFinish', 'GarageQual', 'GarageCond', 'PavedDrive', 'SaleType', 'SaleCondition']
 </code></pre>
 <h4 id="cardinality">Cardinality</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[categorical_features]<span style="color:#f92672">.</span>nunique()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[categorical_features]<span style="color:#f92672">.</span>nunique()
 </code></pre></div><pre><code>MSZoning          5
 Street            2
 LotShape          4
@@ -456,10 +456,10 @@ SaleCondition     6
 dtype: int64
 </code></pre>
 <h4 id="baseline-model">Baseline model</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 y <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;SalePrice&#39;</span>]
 
-X_train_, X_val_, y_train, y_val <span style="color:#f92672">=</span> train_test_split(X, y, test_size <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">6174</span>)
+X_train_, X_val_, y_train, y_val <span style="color:#f92672">=</span> train_test_split(X, y, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">6174</span>)
 
 
 <span style="color:#75715e"># Columns that can be safely label encoded</span>
@@ -475,8 +475,8 @@ X_train <span style="color:#f92672">=</span> X_train_<span style="color:#f92672"
 X_val <span style="color:#f92672">=</span> X_val_<span style="color:#f92672">.</span>copy()
 
 <span style="color:#75715e"># Drop categorical columns that will not be encoded</span>
-X_train<span style="color:#f92672">.</span>drop(bad_label_cols, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, inplace<span style="color:#f92672">=</span>True)
-X_val<span style="color:#f92672">.</span>drop(bad_label_cols, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, inplace<span style="color:#f92672">=</span>True)
+X_train<span style="color:#f92672">.</span>drop(bad_label_cols, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+X_val<span style="color:#f92672">.</span>drop(bad_label_cols, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 
 
 <span style="color:#75715e"># Works here but there might be instances where datetime might be here as well</span>
@@ -495,33 +495,33 @@ label_encoder <span style="color:#f92672">=</span> LabelEncoder()
     X_train[col] <span style="color:#f92672">=</span> label_encoder<span style="color:#f92672">.</span>fit_transform(X_train[col])
     X_val[col] <span style="color:#f92672">=</span> label_encoder<span style="color:#f92672">.</span>transform(X_val[col])
 </code></pre></div><h4 id="randomforestregressor-as-our-baseline-model">RandomForestRegressor as our baseline model</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> RandomForestRegressor(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">6174</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> RandomForestRegressor(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">6174</span>)
 model<span style="color:#f92672">.</span>fit(X_train, y_train)
 preds <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(X_val)
 </code></pre></div><h4 id="calculate-mae">Calculate MAE</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">score <span style="color:#f92672">=</span> mean_absolute_error(y_val, preds)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;MAE RandomForestRegressor:&#39;</span>, score)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">score <span style="color:#f92672">=</span> mean_absolute_error(y_val, preds)
+print(<span style="color:#e6db74">&#39;MAE RandomForestRegressor:&#39;</span>, score)
 </code></pre></div><pre><code>MAE RandomForestRegressor: 16926.070136986298
 </code></pre>
 <h4 id="test-xgbregressor">Test XGBRegressor</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model2 <span style="color:#f92672">=</span> XGBRegressor(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>, n_jobs<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model2 <span style="color:#f92672">=</span> XGBRegressor(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>, n_jobs<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
 model2<span style="color:#f92672">.</span>fit(X_train, y_train, 
              early_stopping_rounds<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
              eval_set<span style="color:#f92672">=</span>[(X_val, y_val)], 
-             verbose<span style="color:#f92672">=</span>False)
+             verbose<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 preds2 <span style="color:#f92672">=</span> model2<span style="color:#f92672">.</span>predict(X_val)
 </code></pre></div><pre><code>[13:44:57] WARNING: src/objective/regression_obj.cu:152: reg:linear is now deprecated in favor of reg:squarederror.
 </code></pre>
 <p>Calculate MAE</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">score2 <span style="color:#f92672">=</span> mean_absolute_error(y_val, preds2)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;MAE XGBoost:&#39;</span>, score2)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">score2 <span style="color:#f92672">=</span> mean_absolute_error(y_val, preds2)
+print(<span style="color:#e6db74">&#39;MAE XGBoost:&#39;</span>, score2)
 </code></pre></div><pre><code>MAE XGBoost: 17124.455559717466
 </code></pre>
 <p>Looking at the leaderboard, this is not a good score. But, this model is useful because now we can look into ways to impove it.</p>
 <h2 id="updating-model-with-pipeline-and-a-bit-of-improvement-in-between">Updating model with pipeline (and a bit of improvement in between)</h2>
 <h4 id="imports-1">Imports</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np 
-<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np 
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd 
 <span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestRegressor
 <span style="color:#f92672">from</span> xgboost <span style="color:#f92672">import</span> XGBRegressor
 <span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_val_score
@@ -532,9 +532,9 @@ preds2 <span style="color:#f92672">=</span> model2<span style="color:#f92672">.<
 <span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> OneHotEncoder
 <span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> mean_absolute_error
 </code></pre></div><h4 id="read-the-training-dataset-and-list-its-shape-and-column-names-1">Read the training dataset and list its shape and column names</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/AmesHousing/train.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>)
-<span style="color:#66d9ef">print</span> (df<span style="color:#f92672">.</span>shape)
-<span style="color:#66d9ef">print</span> (df<span style="color:#f92672">.</span>columns)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/AmesHousing/train.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>)
+print (df<span style="color:#f92672">.</span>shape)
+print (df<span style="color:#f92672">.</span>columns)
 </code></pre></div><pre><code>(1460, 80)
 Index(['MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
        'LotShape', 'LandContour', 'Utilities', 'LotConfig', 'LandSlope',
@@ -555,7 +555,7 @@ Index(['MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
       dtype='object')
 </code></pre>
 <h4 id="generate-few-first-rows-1">Generate few first rows</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
 </code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -747,7 +747,7 @@ Index(['MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
 <p>5 rows × 80 columns</p>
 </div>
 <h4 id="missing-vals-count-in-each-column-1">Missing vals count in each column</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
 </code></pre></div><pre><code>PoolQC          1453
 MiscFeature     1406
 Alley           1369
@@ -771,8 +771,8 @@ RoofMatl           0
 dtype: int64
 </code></pre>
 <h4 id="generate-columns-that-have-more-than-20-percent-missing-vals-1">Generate Columns that have more than 20 percent missing vals</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">threshold_20 <span style="color:#f92672">=</span> (df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
-threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span>False)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">threshold_20 <span style="color:#f92672">=</span> (df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </code></pre></div><pre><code>PoolQC         99.520548
 MiscFeature    96.301370
 Alley          93.767123
@@ -780,32 +780,32 @@ Fence          80.753425
 FireplaceQu    47.260274
 dtype: float64
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dtypes<span style="color:#f92672">.</span>value_counts()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dtypes<span style="color:#f92672">.</span>value_counts()
 </code></pre></div><pre><code>object     43
 int64      34
 float64     3
 dtype: int64
 </code></pre>
 <p>Drop cols with more than 20 percent missing vals</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cols_to_drop <span style="color:#f92672">=</span> threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>to_list()
-df<span style="color:#f92672">.</span>drop(cols_to_drop, inplace<span style="color:#f92672">=</span>True, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cols_to_drop <span style="color:#f92672">=</span> threshold_20[threshold_20<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>to_list()
+df<span style="color:#f92672">.</span>drop(cols_to_drop, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 </code></pre></div><h4 id="categorical-features-and-numeric-features-1">Categorical features and numeric features</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">categorical_features <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>select_dtypes(include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;object&#34;</span>)<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>to_list()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">categorical_features <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>select_dtypes(include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;object&#34;</span>)<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>to_list()
 </code></pre></div><h4 id="what-were-the-columns-1">What were the columns?</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 
 <span style="color:#75715e"># MiscFeature: Miscellaneous feature not covered in other categories</span>
 <span style="color:#75715e"># PoolQC: Pool quality</span>
 <span style="color:#75715e"># Alley: Type of alley access to property</span>
 <span style="color:#75715e"># Fence: Fence quality</span>
 <span style="color:#75715e"># FireplaceQu: Fireplace quality</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> (<span style="color:#e6db74">&#39;Categorical Features&#39;</span>)
-<span style="color:#66d9ef">print</span> (categorical_features)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (<span style="color:#e6db74">&#39;Categorical Features&#39;</span>)
+print (categorical_features)
 </code></pre></div><pre><code>Categorical Features
 ['MSZoning', 'Street', 'LotShape', 'LandContour', 'Utilities', 'LotConfig', 'LandSlope', 'Neighborhood', 'Condition1', 'Condition2', 'BldgType', 'HouseStyle', 'RoofStyle', 'RoofMatl', 'Exterior1st', 'Exterior2nd', 'MasVnrType', 'ExterQual', 'ExterCond', 'Foundation', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'Heating', 'HeatingQC', 'CentralAir', 'Electrical', 'KitchenQual', 'Functional', 'GarageType', 'GarageFinish', 'GarageQual', 'GarageCond', 'PavedDrive', 'SaleType', 'SaleCondition']
 </code></pre>
 <h4 id="cardinality-1">Cardinality</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[categorical_features]<span style="color:#f92672">.</span>nunique()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[categorical_features]<span style="color:#f92672">.</span>nunique()
 </code></pre></div><pre><code>MSZoning          5
 Street            2
 LotShape          4
@@ -847,10 +847,10 @@ SaleCondition     6
 dtype: int64
 </code></pre>
 <h4 id="baseline-model-with-pipelines-and-onehotencoder">Baseline model with pipelines and OneHotEncoder</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 y <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;SalePrice&#39;</span>]
 
-X_train_, X_val_, y_train, y_val <span style="color:#f92672">=</span> train_test_split(X, y, test_size <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">6174</span>)
+X_train_, X_val_, y_train, y_val <span style="color:#f92672">=</span> train_test_split(X, y, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">6174</span>)
 
 
 <span style="color:#75715e"># Columns that can be safely label encoded</span>
@@ -865,7 +865,7 @@ bad_label_cols <span style="color:#f92672">=</span> list(set(categorical_feature
 X_train <span style="color:#f92672">=</span> X_train_<span style="color:#f92672">.</span>copy()
 X_val <span style="color:#f92672">=</span> X_val_<span style="color:#f92672">.</span>copy()
 </code></pre></div><h4 id="pipepline">Pipepline</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># pipeline</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># pipeline</span>
 
 numeric_features <span style="color:#f92672">=</span> X_train<span style="color:#f92672">.</span>select_dtypes(exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;object&#34;</span>)<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>to_list()
 numerical_transformer <span style="color:#f92672">=</span> SimpleImputer(strategy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;median&#39;</span>)
@@ -883,12 +883,12 @@ preprocessor <span style="color:#f92672">=</span> ColumnTransformer(
         (<span style="color:#e6db74">&#39;cat&#39;</span>, categorical_transformer, good_label_cols)
     ])
 </code></pre></div><h4 id="randomforestregressor-as-our-baseline-model-1">RandomForestRegressor as our baseline model</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> RandomForestRegressor(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">6174</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#### Complete Pipeline</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_pipeline <span style="color:#f92672">=</span> Pipeline(steps<span style="color:#f92672">=</span>[(<span style="color:#e6db74">&#39;preprocessor&#39;</span>, preprocessor),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> RandomForestRegressor(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">6174</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#### Complete Pipeline</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_pipeline <span style="color:#f92672">=</span> Pipeline(steps<span style="color:#f92672">=</span>[(<span style="color:#e6db74">&#39;preprocessor&#39;</span>, preprocessor),
                               (<span style="color:#e6db74">&#39;model&#39;</span>, model)
                              ])
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_pipeline<span style="color:#f92672">.</span>fit(X_train, y_train)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_pipeline<span style="color:#f92672">.</span>fit(X_train, y_train)
 </code></pre></div><pre><code>Pipeline(memory=None,
          steps=[('preprocessor',
                  ColumnTransformer(n_jobs=None, remainder='drop',
@@ -919,16 +919,16 @@ preprocessor <span style="color:#f92672">=</span> ColumnTransformer(
          verbose=False)
 </code></pre>
 <p>Calculate MAE</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">preds <span style="color:#f92672">=</span> my_pipeline<span style="color:#f92672">.</span>predict(X_val)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">preds <span style="color:#f92672">=</span> my_pipeline<span style="color:#f92672">.</span>predict(X_val)
 score <span style="color:#f92672">=</span> mean_absolute_error(y_val, preds)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;MAE:&#39;</span>, score)
+print(<span style="color:#e6db74">&#39;MAE:&#39;</span>, score)
 </code></pre></div><pre><code>MAE: 16905.403253424658
 </code></pre>
 <h2 id="eda-to-improve-the-model-further">EDA to improve the model further</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
-<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
 sns<span style="color:#f92672">.</span>axes_style(<span style="color:#e6db74">&#34;darkgrid&#34;</span>)
 <span style="color:#f92672">from</span> xgboost <span style="color:#f92672">import</span> XGBRegressor
 
@@ -941,9 +941,9 @@ sns<span style="color:#f92672">.</span>axes_style(<span style="color:#e6db74">&#
 <span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> OneHotEncoder
 <span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> mean_absolute_error
 <span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_val_score
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/AmesHousing/train.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>)
-<span style="color:#66d9ef">print</span> (df<span style="color:#f92672">.</span>shape)
-<span style="color:#66d9ef">print</span> (df<span style="color:#f92672">.</span>columns)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/AmesHousing/train.csv&#39;</span>, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Id&#39;</span>)
+print (df<span style="color:#f92672">.</span>shape)
+print (df<span style="color:#f92672">.</span>columns)
 </code></pre></div><pre><code>(1460, 80)
 Index(['MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
        'LotShape', 'LandContour', 'Utilities', 'LotConfig', 'LandSlope',
@@ -963,9 +963,9 @@ Index(['MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
        'MoSold', 'YrSold', 'SaleType', 'SaleCondition', 'SalePrice'],
       dtype='object')
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X, y <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], df[<span style="color:#e6db74">&#39;SalePrice&#39;</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X, y <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], df[<span style="color:#e6db74">&#39;SalePrice&#39;</span>]
 y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>log(y)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y
 </code></pre></div><pre><code>Id
 1       12.247694
 2       12.109011
@@ -982,7 +982,7 @@ Name: SalePrice, Length: 1460, dtype: float64
 </code></pre>
 <h3 id="understanding-data">Understanding Data</h3>
 <h4 id="missing-vals">Missing vals</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span>False)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </code></pre></div><pre><code>PoolQC           1453
 MiscFeature      1406
 Alley            1369
@@ -996,7 +996,7 @@ TotalBsmtSF         0
 MSSubClass          0
 Length: 80, dtype: int64
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">na_per <span style="color:#f92672">=</span> (df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">na_per <span style="color:#f92672">=</span> (df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
 na_per
 </code></pre></div><pre><code>PoolQC          99.520548
 MiscFeature     96.301370
@@ -1020,30 +1020,30 @@ Electrical       0.068493
 RoofMatl         0.000000
 dtype: float64
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">high_missing_features <span style="color:#f92672">=</span> na_per[na_per<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>to_list()
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">high_missing_features
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">high_missing_features <span style="color:#f92672">=</span> na_per[na_per<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>]<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>to_list()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">high_missing_features
 </code></pre></div><pre><code>['PoolQC', 'MiscFeature', 'Alley', 'Fence', 'FireplaceQu']
 </code></pre>
 <h3 id="data-types">Data Types</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dtypes<span style="color:#f92672">.</span>value_counts()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dtypes<span style="color:#f92672">.</span>value_counts()
 </code></pre></div><pre><code>object     43
 int64      34
 float64     3
 dtype: int64
 </code></pre>
 <h4 id="categorical-features">Categorical Features</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">categorical_features <span style="color:#f92672">=</span> list(df<span style="color:#f92672">.</span>select_dtypes(include <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;object&#39;</span>]))
-<span style="color:#66d9ef">print</span> (categorical_features)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">categorical_features <span style="color:#f92672">=</span> list(df<span style="color:#f92672">.</span>select_dtypes(include <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;object&#39;</span>]))
+print (categorical_features)
 </code></pre></div><pre><code>['MSZoning', 'Street', 'Alley', 'LotShape', 'LandContour', 'Utilities', 'LotConfig', 'LandSlope', 'Neighborhood', 'Condition1', 'Condition2', 'BldgType', 'HouseStyle', 'RoofStyle', 'RoofMatl', 'Exterior1st', 'Exterior2nd', 'MasVnrType', 'ExterQual', 'ExterCond', 'Foundation', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'Heating', 'HeatingQC', 'CentralAir', 'Electrical', 'KitchenQual', 'Functional', 'FireplaceQu', 'GarageType', 'GarageFinish', 'GarageQual', 'GarageCond', 'PavedDrive', 'PoolQC', 'Fence', 'MiscFeature', 'SaleType', 'SaleCondition']
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">40</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">40</span>))
 <span style="color:#66d9ef">for</span> index, col <span style="color:#f92672">in</span> enumerate(categorical_features):
     plt<span style="color:#f92672">.</span>subplot(len(categorical_features)<span style="color:#f92672">//</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> , <span style="color:#ae81ff">4</span>, index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
     sns<span style="color:#f92672">.</span>countplot(x <span style="color:#f92672">=</span> col, data <span style="color:#f92672">=</span> X)
 fig<span style="color:#f92672">.</span>tight_layout(pad<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>)
 </code></pre></div><p><img src="/img/output_14_0.png" alt="png"></p>
 <p>Missing vals</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>close(fig)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>close(fig)
 fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">40</span>))
 <span style="color:#66d9ef">for</span> index, col <span style="color:#f92672">in</span> enumerate(categorical_features):
     plt<span style="color:#f92672">.</span>subplot(len(categorical_features)<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> , <span style="color:#ae81ff">3</span>, index<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
@@ -1057,17 +1057,17 @@ fig<span style="color:#f92672">.</span>tight_layout(pad<span style="color:#f9267
 <li>Add MSSubClass from numeric to categorical feature</li>
 </ol>
 <h3 id="numerical-features">Numerical Features</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numerical_features <span style="color:#f92672">=</span> list(X<span style="color:#f92672">.</span>select_dtypes(exclude <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;object&#39;</span>]))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numerical_features <span style="color:#f92672">=</span> list(X<span style="color:#f92672">.</span>select_dtypes(exclude <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;object&#39;</span>]))
 numerical_features<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;MSSubClass&#39;</span>)
 categorical_features<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;MSSubClass&#39;</span>)
-<span style="color:#66d9ef">print</span> (numerical_features)
+print (numerical_features)
 </code></pre></div><pre><code>['LotFrontage', 'LotArea', 'OverallQual', 'OverallCond', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'BsmtFullBath', 'BsmtHalfBath', 'FullBath', 'HalfBath', 'BedroomAbvGr', 'KitchenAbvGr', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt', 'GarageCars', 'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 'PoolArea', 'MiscVal', 'MoSold', 'YrSold']
 </code></pre>
 <h3 id="findings-1">Findings</h3>
 <ol>
 <li>Features to remove [&ldquo;MiscVal&rdquo;, &ldquo;PoolArea&rdquo;, &ldquo;ScreenPorch&rdquo;, &ldquo;3SsnPorch&rdquo;, &ldquo;EnclosedPorch&rdquo;, &ldquo;BsmtHalfBath&rdquo;, &ldquo;LowQualityFinSF&rdquo;, &ldquo;BsmtFinSF2&rdquo;]</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">12</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">12</span>))
 correlation <span style="color:#f92672">=</span> X[numerical_features]<span style="color:#f92672">.</span>corr()
 sns<span style="color:#f92672">.</span>heatmap(correlation, mask <span style="color:#f92672">=</span> correlation <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.8</span>, linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Blues&#39;</span>)
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fa33299e4d0&gt;
@@ -1077,7 +1077,7 @@ sns<span style="color:#f92672">.</span>heatmap(correlation, mask <span style="co
 <ol>
 <li>Remove [&ldquo;GarageYrBlt&rdquo;, &ldquo;TotalBsmtSF&rdquo;, &ldquo;TotRmsAbvGrd&rdquo;, &ldquo;GarageCars&rdquo;]</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Features to remove:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Features to remove:</span>
 
 remove_highly_correlated <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;GarageYrBlt&#34;</span>, <span style="color:#e6db74">&#34;TotRmsAbvGrd&#34;</span>, <span style="color:#e6db74">&#34;TotalBsmtSF&#34;</span>, <span style="color:#e6db74">&#34;GarageCars&#34;</span>]
 
@@ -1086,7 +1086,7 @@ remove_numeric <span style="color:#f92672">=</span> [<span style="color:#e6db74"
 remove_categorical <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Street&#34;</span>, <span style="color:#e6db74">&#34;Utilities&#34;</span>, <span style="color:#e6db74">&#34;RoofMatl&#34;</span>, <span style="color:#e6db74">&#34;Heating&#34;</span>, <span style="color:#e6db74">&#34;Condition2&#34;</span>] 
 
 remove_features <span style="color:#f92672">=</span>  list(set(remove_highly_correlated<span style="color:#f92672">+</span>remove_numeric<span style="color:#f92672">+</span>remove_categorical))
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">remove_features
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">remove_features
 </code></pre></div><pre><code>['TotalBsmtSF',
  'GarageCars',
  'TotRmsAbvGrd',
@@ -1105,8 +1105,8 @@ remove_features <span style="color:#f92672">=</span>  list(set(remove_highly_cor
  'Utilities',
  'EnclosedPorch']
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X<span style="color:#f92672">.</span>drop(remove_features, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, inplace <span style="color:#f92672">=</span> True)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X<span style="color:#f92672">.</span>drop(remove_features, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, inplace <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X
 </code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1441,11 +1441,11 @@ remove_features <span style="color:#f92672">=</span>  list(set(remove_highly_cor
 </table>
 <p>1460 rows × 62 columns</p>
 </div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">6</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">6</span>))
 plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Before transformation of SalePrice&#34;</span>)
-dist <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>distplot(df[<span style="color:#e6db74">&#39;SalePrice&#39;</span>],norm_hist<span style="color:#f92672">=</span>False)
+dist <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>distplot(df[<span style="color:#e6db74">&#39;SalePrice&#39;</span>],norm_hist<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </code></pre></div><p><img src="/img/output_28_0.png" alt="png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 </code></pre></div><p>The findings can be encorporated to the model (remove features, engineer features, remove outliers etc.) to improve the model. This part is left the the students.</p>
 </div>
 	</section>

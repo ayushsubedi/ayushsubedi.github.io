@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tootle on Ayush Subedi</title>
-    <link>https://subedi.ml/categories/tootle/</link>
+    <link>https://ayushsubedi.github.io/categories/tootle/</link>
     <description>Recent content in Tootle on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Oct 2017 11:02:11 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/categories/tootle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/categories/tootle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A brief history of Tootle</title>
-      <link>https://subedi.ml/posts/tootle_history/</link>
+      <link>https://ayushsubedi.github.io/posts/tootle_history/</link>
       <pubDate>Sun, 01 Oct 2017 11:02:11 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/tootle_history/</guid>
+      <guid>https://ayushsubedi.github.io/posts/tootle_history/</guid>
       <description>&lt;h3 id=&#34;a-brief-history-of-tootle&#34;&gt;A brief history of Tootle&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-PdO1BY4SST8/WP6x0XBJKPI/AAAAAAAAHqc/UaCecAEMDYoe4D414rhzbgupbpk4n5XDwCLcB/s320/change-copy.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Hello World,
@@ -36,10 +36,10 @@ From our experience, we have realized that market drives technology and not the 
     
     <item>
       <title>Learnings from Tootle</title>
-      <link>https://subedi.ml/posts/tootle_learnings/</link>
+      <link>https://ayushsubedi.github.io/posts/tootle_learnings/</link>
       <pubDate>Sat, 28 Jan 2017 13:12:41 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/tootle_learnings/</guid>
+      <guid>https://ayushsubedi.github.io/posts/tootle_learnings/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-xoX-IvzEIrQ/WABs5p6To1I/AAAAAAAAFrs/IWVJmZ1RCtMsuxGVD9tBO_he__--YMo-QCLcB/s320/client%2Bcopy%2Bcopy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://tootle.today/&#34;&gt;Link to Tootle Website&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Tootle is a ride sharing service that matches bike riders and commuters. While the concept is not new, there are several contextualization factors that makes it unique. As research and development engineer and lead software developer, this was my biggest challenge to date and I learnt a lot of things. However, since we worked in a very small team, I occasionally came across problems related to branding, client relationship, marketing and overall B2C business model. This blog post will dive into those learnings rather than focus on technological implementations. To summarize the entire post, it is about my journey from a single dimensional software developer to a software developer who also understands project management, human resources, market, competition, branding and plethora of other factors that a software developer whose long term goal is to become a tech entrepreneur needs in their arsenal.&lt;br&gt;

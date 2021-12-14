@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>markov chains on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/markov-chains/</link>
+    <link>https://ayushsubedi.github.io/tags/markov-chains/</link>
     <description>Recent content in markov chains on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 02 Dec 2013 10:09:32 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/markov-chains/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/markov-chains/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Snakes and Ladders</title>
-      <link>https://subedi.ml/posts/snakesandladders/</link>
+      <link>https://ayushsubedi.github.io/posts/snakesandladders/</link>
       <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/snakesandladders/</guid>
+      <guid>https://ayushsubedi.github.io/posts/snakesandladders/</guid>
       <description>&lt;h3 id=&#34;snakes-and-ladders&#34;&gt;Snakes and Ladders&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-tefYwsHiebo/UrrjwTMNHvI/AAAAAAAACTM/CqzL6R9QJTo/s320/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This game needs no introduction. Although there are several variations of this game (mainly on position of the snakes and ladders), the rules are generally the same. Some of the rules, (which are part of my algorithm) are mentioned below. Also, this game requires no skill as it solely depends on luck/probability. This allows several mathematical questions relating to this game be answered using Monte Carlo simulation. However, for this post, I will only be investigating from an analytic/subjective stand point. That is, I will be using Markov Chain to answer those questions.

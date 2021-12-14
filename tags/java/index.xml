@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/java/</link>
+    <link>https://ayushsubedi.github.io/tags/java/</link>
     <description>Recent content in java on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 02 Dec 2013 10:09:32 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Snakes and Ladders</title>
-      <link>https://subedi.ml/posts/snakesandladders/</link>
+      <link>https://ayushsubedi.github.io/posts/snakesandladders/</link>
       <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/snakesandladders/</guid>
+      <guid>https://ayushsubedi.github.io/posts/snakesandladders/</guid>
       <description>&lt;h3 id=&#34;snakes-and-ladders&#34;&gt;Snakes and Ladders&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-tefYwsHiebo/UrrjwTMNHvI/AAAAAAAACTM/CqzL6R9QJTo/s320/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This game needs no introduction. Although there are several variations of this game (mainly on position of the snakes and ladders), the rules are generally the same. Some of the rules, (which are part of my algorithm) are mentioned below. Also, this game requires no skill as it solely depends on luck/probability. This allows several mathematical questions relating to this game be answered using Monte Carlo simulation. However, for this post, I will only be investigating from an analytic/subjective stand point. That is, I will be using Markov Chain to answer those questions.
@@ -233,20 +233,20 @@ Let &lt;em&gt;subStochasticMatrix&lt;/em&gt; be the &lt;em&gt;100 by 100&lt;/em&
     
     <item>
       <title>Compiler from Scratch</title>
-      <link>https://subedi.ml/posts/ducompiler/</link>
+      <link>https://ayushsubedi.github.io/posts/ducompiler/</link>
       <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/ducompiler/</guid>
+      <guid>https://ayushsubedi.github.io/posts/ducompiler/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
 &lt;p&gt;For our Computer Science capstone project, we take on the beast - building a compiler from scratch. We had about three months to do it but we really had no clue of what we were doing for the first month and a half. Although we knew plenty of what there was to know about compilers in theory, we soon realized that building one from scratch was not going to be easy. We started with baby steps, and by the time the project was due, we were taking giant leaps (we had no other option). In the end, it turned out to be a reasonably fine compiler and an excellent experience. During these three months, I had the best and the worst experiences of my academic life. Therefore, this project is really special.&lt;/p&gt;
 &lt;p&gt;Since this project belongs to two other people also, I won&amp;rsquo;t be posting any source code. This post will just have some example code for Du-Compiler.&lt;/p&gt;
 &lt;p&gt;Finally, for anyone looking for a reasonably challenging senior projects, I would strongly encourage building a compiler. I say this for couple of reasons. First of all, it changes the way we look at code. It gives a better understanding of what exactly happens when the compile button is hit. In another words, it makes you aware of what is going on internally. Secondly, it involves learning/relearning several Computer Science topics such as regular expressions, hash table, data-structures, tree traversals, assembly level programming etc. It also involves A LOT of coding. When it all pans out, you are going to love what you have in your skill set.&lt;/p&gt;
 &lt;h4 id=&#34;examples&#34;&gt;Examples&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Hello World
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Hello World
 duhawk helloworld{
   duPrint(%Hello World%);
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Addition
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Addition
 duhawk simpleAdd{ 
   int a;
   a=5;
@@ -255,7 +255,7 @@ duhawk simpleAdd{
   duPrint b;  
 }
 //Result: 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Pattern
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;//Simple Pattern
 duhawk test{ 
   int i;
   i=1;
@@ -285,7 +285,7 @@ Result
 *********
 **********
 */
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;duhawk test{ 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;duhawk test{ 
 int c;  
 int d;     
 duPrint (%Multiplication table of: %);  
@@ -330,10 +330,10 @@ upto: 15
     
     <item>
       <title>Area of the Mandelbrot Set</title>
-      <link>https://subedi.ml/posts/mandelbrot_area/</link>
+      <link>https://ayushsubedi.github.io/posts/mandelbrot_area/</link>
       <pubDate>Wed, 02 Jan 2013 10:01:09 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/mandelbrot_area/</guid>
+      <guid>https://ayushsubedi.github.io/posts/mandelbrot_area/</guid>
       <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;
 &lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-ofFkTWEt7kw/U0evleXzgRI/AAAAAAAACl8/zg4_1dxmg7w/s1600/800px-Mandel_zoom_08_satellite_antenna.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -469,10 +469,10 @@ inmandelbrotset &amp;lt;- function(c)
     
     <item>
       <title>The Faro Shuffle</title>
-      <link>https://subedi.ml/posts/faro_shuffle/</link>
+      <link>https://ayushsubedi.github.io/posts/faro_shuffle/</link>
       <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/faro_shuffle/</guid>
+      <guid>https://ayushsubedi.github.io/posts/faro_shuffle/</guid>
       <description>&lt;h3 id=&#34;the-faro-shuffle&#34;&gt;The Faro Shuffle:&lt;/h3&gt;
 &lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/proxy/HmByI7lf5sUIht42g1AmRxOmq0INAaxCGyZ52ojil8Q7lOjqRT0T3fXCUZs_YfG-emi-W5zXYcIuUY7VYuOT_ChzIXTNFjBqc03axiORyFZNoUQ-RsH8eNWJpqbFHoW33lwq14cZoVAJ6g=s0-d&#34; alt=&#34;&#34;&gt;&lt;/p&gt;

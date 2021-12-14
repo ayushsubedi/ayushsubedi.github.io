@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blockchain on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/blockchain/</link>
+    <link>https://ayushsubedi.github.io/tags/blockchain/</link>
     <description>Recent content in blockchain on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 01 Sep 2019 09:16:00 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Trove Summary</title>
-      <link>https://subedi.ml/posts/trove_summary/</link>
+      <link>https://ayushsubedi.github.io/posts/trove_summary/</link>
       <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/trove_summary/</guid>
+      <guid>https://ayushsubedi.github.io/posts/trove_summary/</guid>
       <description>&lt;h1 id=&#34;the-extension-to-trove&#34;&gt;The extension to Trove&lt;/h1&gt;
 &lt;p&gt;Trove Summary is a web app (React) that generates summary of a web article (from its URL) and allows users to securely store them. Technically speaking, it follows the same philosophy of Trove (build in Blockstack and Gaia), and therefore inherits, decentralization, anonymity and encryption.&lt;/p&gt;
 &lt;p&gt;However, the other aspect of Trove Summary is its backend that uses abstractive and extractive summarization models to generate reliable summary.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/trove_summary.png&#34; alt=&#34;Trove&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/trove_summary.png&#34; alt=&#34;Trove&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Request&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;/api/get_content?url=abc.xyz
@@ -105,10 +105,10 @@
     
     <item>
       <title>Underlying Architecture of Trove</title>
-      <link>https://subedi.ml/posts/trove_architecture/</link>
+      <link>https://ayushsubedi.github.io/posts/trove_architecture/</link>
       <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/trove_architecture/</guid>
+      <guid>https://ayushsubedi.github.io/posts/trove_architecture/</guid>
       <description>&lt;p&gt;After &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;releasing&lt;/a&gt; &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;Trove&lt;/a&gt;, our inboxes and &lt;a href=&#34;https://twitter.com/Trovenow&#34;&gt;DMs&lt;/a&gt; flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the &lt;a href=&#34;https://blockstack.org/&#34;&gt;Blockstack&lt;/a&gt; platform. &lt;strong&gt;The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.&lt;/strong&gt;  &lt;br&gt;
 The engineers @Trove have strong understanding and experience of centralized applications. We followed the decentralized space, and also built small prototypes in Blockstack and Ethereum platforms. But, Trove is our first endeavour to create a full end-to-end Decentralized Application from scratch. We had questions.
 Actually, a lot of them.&lt;/p&gt;
@@ -176,26 +176,26 @@ Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/
     
     <item>
       <title>Torpe Blockchain</title>
-      <link>https://subedi.ml/posts/torpe/</link>
+      <link>https://ayushsubedi.github.io/posts/torpe/</link>
       <pubDate>Sun, 28 Oct 2018 01:10:00 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/torpe/</guid>
+      <guid>https://ayushsubedi.github.io/posts/torpe/</guid>
       <description>&lt;h1 id=&#34;torpe-blockchain-तरप-बलककचन&#34;&gt;Torpe Blockchain (तोर्पे ब्लोक्कचैन)&lt;/h1&gt;
 &lt;h3 id=&#34;a-minimal-blockchain-data-structure-to-understand-the-blockchain-basics-like-hashing-nonce-states-genesis-blocks-etc&#34;&gt;A minimal blockchain data structure to understand the blockchain basics like hashing, nonce, states, genesis blocks etc.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/blockchain.jpg&#34; alt=&#34;blockchain&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/blockchain.jpg&#34; alt=&#34;blockchain&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;hash-function&#34;&gt;Hash Function&lt;/h3&gt;
 &lt;p&gt;A hash function is any function that can be used to map data of arbitrary size to data of a fixed size. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; hashlib
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; hashlib
 &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash_sha256&lt;/span&gt;(raw):
     raw &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest() 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchain&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchain&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;e5367197a1f12480ec761306f2fa9d15b494d5a80e5a806713df9e60943f4faf&#39;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchain&amp;#39;&lt;/span&gt;)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchain&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;e5367197a1f12480ec761306f2fa9d15b494d5a80e5a806713df9e60943f4faf&#39;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchaiN&amp;#39;&lt;/span&gt;)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;hash_sha256(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;torpe_blockchaiN&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&#39;71fe90af906a9afa507ee54287595df6d7267df05428b3f91429371ebd27cb3e&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Hashes for the same text are the same as seen above.  Even when one character of the string is changed, the hash generated as a result seems to be completely random.&lt;/p&gt;
@@ -205,7 +205,7 @@ Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/
 &lt;p&gt;Number that can only be used once&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;An arbitrary numer used in cryptography to ensure uniqueness and prevent the rerunning of transactions (known as replay attack).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash_sha256_nonce&lt;/span&gt;(raw):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hash_sha256_nonce&lt;/span&gt;(raw):
     raw_bytes &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
     hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(raw_bytes)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest() 
     nonce &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
@@ -215,7 +215,7 @@ Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/
         raw_bytes &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; str(raw)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;)
         hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sha256(raw_bytes)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest() 
     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; raw, hashed
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (hash_sha256_nonce({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;proof_of_work&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;print (hash_sha256_nonce({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;proof_of_work&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;({&#39;hello&#39;: &#39;proof_of_work&#39;, &#39;nonce&#39;: 623228}, &#39;00000a9d45728c6f4d1eff383dab4d96b753495c8b312ecb5d1858116885ee55&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;proof-of-work&#34;&gt;Proof of work&lt;/h3&gt;
@@ -224,8 +224,8 @@ Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/
 &lt;p&gt;Blocks hold batches of valid transactions that are hashed and encoded into a Merkle tree Each block includes the cryptographic hash of the prior block in the blockchain, linking the two. The linked blocks form a chain. This iterative process confirms the integrity of the previous block, all the way back to the original genesis block.&lt;/p&gt;
 &lt;h3 id=&#34;genesis-block&#34;&gt;Genesis Block&lt;/h3&gt;
 &lt;p&gt;A genesis block or block0 is the first block of a block chain. The genesis block is almost always hardcoded into the software of the applications that utilize its block chain. It is a special case in that it does not reference a previous block&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Lets assume 5 person were given 100 coins each&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; datetime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Lets assume 5 person were given 100 coins each&lt;/span&gt;
 state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_1&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_2&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
@@ -233,10 +233,10 @@ state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_4&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_5&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;block0_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;block0_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;: datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;now(),
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;previous&amp;#39;&lt;/span&gt;: None,
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;previous&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;,
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transactions&amp;#39;&lt;/span&gt;: [state], 
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;nonce&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
 }
@@ -246,7 +246,7 @@ block0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;: hashed,
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;: raw,
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;block0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;block0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;hash&#39;: &#39;0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e&#39;,
  &#39;data&#39;: {&#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
   &#39;index&#39;: 0,
@@ -261,7 +261,7 @@ block0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
 &lt;p&gt;This is the genesis block or block 0 here.&lt;/p&gt;
 &lt;h3 id=&#34;transactions&#34;&gt;Transactions&lt;/h3&gt;
 &lt;p&gt;Lets create some random transactions. The transactions for the demo purpose follow +x, -x semantic. See the examples below.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
 &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;random_transaction&lt;/span&gt;(state):
     temp_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list(state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;keys())
     random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;shuffle(temp_list)
@@ -274,8 +274,8 @@ block0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
         first_person:receive, 
         second_person:give
     }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test_transactions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [random_transaction(state) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test_transactions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test_transactions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [random_transaction(state) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;test_transactions
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[{&#39;Person_3&#39;: 5, &#39;Person_5&#39;: -5},
  {&#39;Person_3&#39;: 7, &#39;Person_5&#39;: -7},
  {&#39;Person_4&#39;: 1, &#39;Person_1&#39;: -1},
@@ -283,14 +283,14 @@ block0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
  {&#39;Person_4&#39;: 4, &#39;Person_5&#39;: -4}]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;updating-state&#34;&gt;Updating State&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;update_state&lt;/span&gt;(transaction, state):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;update_state&lt;/span&gt;(transaction, state):
     state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;copy()
     &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; key &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; transaction:
         state[key] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(key, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; transaction[key]
     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; state
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_transactions:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_transactions:
     state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; update_state(transaction, state)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;state
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;state
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;Person_1&#39;: 95,
  &#39;Person_2&#39;: 104,
  &#39;Person_3&#39;: 112,
@@ -298,33 +298,33 @@ block0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
  &#39;Person_5&#39;: 84}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;valid-transactions&#34;&gt;Valid Transactions&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;check_transaction_validity&lt;/span&gt;(transaction, state):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;check_transaction_validity&lt;/span&gt;(transaction, state):
     &lt;span style=&#34;color:#75715e&#34;&gt;# check neg vs pos&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; sum(transaction&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;values()) &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; False
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;
     &lt;span style=&#34;color:#75715e&#34;&gt;# check if amount in wallet to give&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; key &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; transaction&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;keys():
         &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(key, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; transaction[key] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
-            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; False
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; True
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_transactions:
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (check_transaction_validity(transaction, state))
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_transactions:
+    print (check_transaction_validity(transaction, state))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;True
 True
 True
 True
 True
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# No balance&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (check_transaction_validity({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}))
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# No balance&lt;/span&gt;
+print (check_transaction_validity({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;}))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;False
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Bad transaction&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (check_transaction_validity({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;}))
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Bad transaction&lt;/span&gt;
+print (check_transaction_validity({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;}))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;False
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;initial-state&#34;&gt;Initial State&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Let us reset&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Let us reset&lt;/span&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;# Lets assume 5 person were given 100 coins each&lt;/span&gt;
 state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Person_1&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, 
@@ -335,9 +335,9 @@ state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
 }
 
 blockchain &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Adding the genesis block&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Adding the genesis block&lt;/span&gt;
 blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block0)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;blockchain
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;blockchain
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[{&#39;hash&#39;: &#39;0000044b11859efa71c555a87a68090f1f602cf8bcd35bb5446c3c5532f5ad5e&#39;,
   &#39;data&#39;: {&#39;timestamp&#39;: datetime.datetime(2020, 9, 9, 7, 37, 44, 877080),
    &#39;index&#39;: 0,
@@ -350,7 +350,7 @@ blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block0)
    &#39;nonce&#39;: 2700821}}]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;non-genesis-block--new-block&#34;&gt;Non-genesis block / New block&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;new_block&lt;/span&gt;(transactions, blockchain):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;new_block&lt;/span&gt;(transactions, blockchain):
     previous_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; blockchain[&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
     data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;: datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;now(),
@@ -363,8 +363,8 @@ blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block0)
     raw, hashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hash_sha256_nonce(data)
     block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hash&amp;#39;&lt;/span&gt;: hashed, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;: raw}
     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; block
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sample_transactions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [random_transaction(state) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sample_transactions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sample_transactions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [random_transaction(state) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sample_transactions
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[{&#39;Person_5&#39;: 5, &#39;Person_1&#39;: -5},
  {&#39;Person_3&#39;: 10, &#39;Person_1&#39;: -10},
  {&#39;Person_2&#39;: 5, &#39;Person_4&#39;: -5},
@@ -418,7 +418,7 @@ blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block0)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;transactions-per-block&#34;&gt;Transactions per block&lt;/h3&gt;
 &lt;p&gt;Bitcoin blocks used to contain fewer than 200 transactions and the largest number of transactions in a block was 1,976 at the time this answer was originally written (May 2013). In meanwhile (November 2017) the average number of transaction per block is well above 1500 with peaks above 2200.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Assume block size is 5&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Assume block size is 5&lt;/span&gt;
 transactions_per_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
 transaction_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
 
@@ -430,11 +430,11 @@ transaction_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
         &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(transaction_block) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; transactions_per_block:
             blockchain&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(new_block(transaction_block, blockchain))
             transaction_block &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pprint
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pprint
 pp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pprint&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;PrettyPrinter()
 &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; block &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; blockchain:
     pp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;pprint(block)
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;************************************************************************************&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;************************************************************************************&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;data&#39;: {&#39;index&#39;: 0,
           &#39;nonce&#39;: 2700821,
           &#39;previous&#39;: None,
@@ -580,7 +580,7 @@ pp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pprint&lt;span style
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;the-current-state&#34;&gt;The current state&lt;/h3&gt;
 &lt;h4 id=&#34;syncing-for-the-first-time&#34;&gt;Syncing for the first time&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;validate_block&lt;/span&gt;(block, parent, state):    
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;validate_block&lt;/span&gt;(block, parent, state):    
     error_msg &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Error in &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%d&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; block[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;]
 
     &lt;span style=&#34;color:#75715e&#34;&gt;# check block hash&lt;/span&gt;
@@ -598,7 +598,7 @@ pp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pprint&lt;span style
         state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; update_state(transaction, state)
         
     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; state
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;check_chain&lt;/span&gt;(blockchain):
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;check_chain&lt;/span&gt;(blockchain):
     state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {}
 
     &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; transaction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; blockchain[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transactions&amp;#39;&lt;/span&gt;]:

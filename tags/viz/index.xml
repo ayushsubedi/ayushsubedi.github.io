@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>viz on Ayush Subedi</title>
-    <link>https://subedi.ml/tags/viz/</link>
+    <link>https://ayushsubedi.github.io/tags/viz/</link>
     <description>Recent content in viz on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 15 Jul 2020 10:02:00 +0545</lastBuildDate>
     
-	<atom:link href="https://subedi.ml/tags/viz/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/tags/viz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>K-Shaped recovery</title>
-      <link>https://subedi.ml/posts/k_shaped_recovery/</link>
+      <link>https://ayushsubedi.github.io/posts/k_shaped_recovery/</link>
       <pubDate>Wed, 15 Jul 2020 10:02:00 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/k_shaped_recovery/</guid>
+      <guid>https://ayushsubedi.github.io/posts/k_shaped_recovery/</guid>
       <description>&lt;h2 id=&#34;k-shaped-recovery&#34;&gt;K-Shaped recovery&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/k.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/k.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A K-shaped recovery encapsulates the idea that some industries in the economy will recover (or actually prevail in the context of Nepal), while others will decline or fail to recover nearly as quickly.&lt;/p&gt;
 &lt;p&gt;One example of the former includes the software service sector (outsourcing, e-commerce, delivery, etc.). On the unfortunate side, an example would be the hospitality/tourism sector.&lt;/p&gt;
 &lt;p&gt;The challenge for time series analysts is to figure out ways to fit this into their model depending on the COVID elasticity for their sectors. COVID, a &amp;ldquo;black swan event&amp;rdquo; has screwed up the Business As Usual.&lt;/p&gt;
@@ -27,36 +27,36 @@
     
     <item>
       <title>You vs Bezos - Weber Fencher law</title>
-      <link>https://subedi.ml/posts/bezos/</link>
+      <link>https://ayushsubedi.github.io/posts/bezos/</link>
       <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/bezos/</guid>
+      <guid>https://ayushsubedi.github.io/posts/bezos/</guid>
       <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
 &lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1599480108593&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;https:&amp;#47;&amp;#47;moonlitplayground.ml&amp;#47;bezos&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;WIPbezos&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en&#39; /&gt;&lt;param name=&#39;filter&#39; value=&#39;publish=yes&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1599480108593&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;750px&#39;;vizElement.style.height=&#39;904px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;</description>
     </item>
     
     <item>
       <title>Feasibility study with sentiment analysis and voronoi</title>
-      <link>https://subedi.ml/posts/feasibility_study_vs/</link>
+      <link>https://ayushsubedi.github.io/posts/feasibility_study_vs/</link>
       <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/feasibility_study_vs/</guid>
+      <guid>https://ayushsubedi.github.io/posts/feasibility_study_vs/</guid>
       <description>&lt;h2 id=&#34;voronoi-analysis-and-sentiment-analysis-in-business-feasibility-study&#34;&gt;Voronoi analysis and Sentiment Analysis in Business Feasibility study&lt;/h2&gt;
 &lt;p&gt;Apart from the conventional research methodology (convenience sampling, likert questionnaire, interview questions, swot analysis for competitions etc.) we tested two unconventional paradigms when a client approached us for feasibility of a business in Kathmandu.&lt;/p&gt;
 &lt;p&gt;First of all, we looked into finding an ideal place for the business using voronoi diagrams. This was useful to avoid areas where competitions were prominent, and also to tap into neighbourhoods where demands were not met. Of course, factors such as population density, and similar business tending to sprout in close proximity needed to be considered, but voronoi diagrams was only used as a small piece in a very large puzzle.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/kbar.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kbar.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Secondly, we tried to understand people&amp;rsquo;s sentiment on the value the business was trying to sell, and also on current value providers. For this we used Twitter API to collect business relevant tweets from Kathmandu.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/sentiment.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sentiment.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Apart from an aggregated view of the sentiments, we were able to gain insights on what was and was not working with services provided by current market players. This would allow our client to position their services by converting the weakness of their competition as their strength.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Inclusive Nepal</title>
-      <link>https://subedi.ml/posts/inclusive_newspaper/</link>
+      <link>https://ayushsubedi.github.io/posts/inclusive_newspaper/</link>
       <pubDate>Wed, 08 Aug 2018 08:06:19 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/inclusive_newspaper/</guid>
+      <guid>https://ayushsubedi.github.io/posts/inclusive_newspaper/</guid>
       <description>&lt;h2 id=&#34;concept-note-on-inclusive-nepal-wip-and-analysis-of-usage-of-alt-text-in-nepali-newspapers&#34;&gt;Concept Note on Inclusive Nepal (WIP) and Analysis of usage of Alt text in Nepali newspapers&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;This is a work in progress&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This notebook compiles statistics, resources and insights on:&lt;/p&gt;
@@ -69,10 +69,10 @@
 6. Prototype and Tools suggestions for Accessibility
 7. Published work regarding similar research
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/in_header.jpg&#34; alt=&#34;alt text&#34; title=&#34;Header Image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/in_header.jpg&#34; alt=&#34;alt text&#34; title=&#34;Header Image&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;imports&#34;&gt;Imports&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Pandas&lt;/span&gt;
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; pd
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Pandas&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
 &lt;span style=&#34;color:#75715e&#34;&gt;#Mapbox&lt;/span&gt;
 &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; mapboxgl.utils &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
 &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; mapboxgl.viz &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
@@ -92,8 +92,8 @@ require([&#39;plotly&#39;], function(Plotly) {
 }
 &lt;/script&gt;
 &lt;h3 id=&#34;status-of-disability-in-nepal&#34;&gt;Status of Disability in Nepal&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data_sources/disability_2011.csv&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data_sources/disability_2011.csv&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -163,7 +163,7 @@ require([&#39;plotly&#39;], function(Plotly) {
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -233,8 +233,8 @@ require([&#39;plotly&#39;], function(Plotly) {
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_geojson &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_json(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data_sources/map.geojson&amp;#39;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_geojson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_geojson &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_json(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data_sources/map.geojson&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_geojson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -286,15 +286,15 @@ require([&#39;plotly&#39;], function(Plotly) {
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;District&amp;#34;&lt;/span&gt;, inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;add_data&lt;/span&gt;(features):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;District&amp;#34;&lt;/span&gt;, inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;add_data&lt;/span&gt;(features):
     name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; features&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;properties&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;)
     &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (name &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index):
         percentage &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;loc[name][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Percentage of PWDs&amp;#39;&lt;/span&gt;]
         population &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;loc[name][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Population with Disability&amp;#39;&lt;/span&gt;]
         features[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;properties&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;: name, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;percentage&amp;#39;&lt;/span&gt;: percentage, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;population&amp;#39;&lt;/span&gt;:population}
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; features
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_geojson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;features&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(add_data)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_geojson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;features&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(add_data)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0     {&#39;properties&#39;: {&#39;name&#39;: &#39;Humla&#39;, &#39;percentage&#39;:...
 1     {&#39;properties&#39;: {&#39;name&#39;: &#39;Darchula&#39;, &#39;percentag...
 2     {&#39;properties&#39;: {&#39;name&#39;: &#39;Bajhang&#39;, &#39;percentage...
@@ -308,10 +308,10 @@ require([&#39;plotly&#39;], function(Plotly) {
 74    {&#39;properties&#39;: {&#39;name&#39;: &#39;Jhapa&#39;, &#39;percentage&#39;:...
 Name: features, Length: 75, dtype: object
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;features &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_geojson[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;features&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;values&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tolist()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;my_dict &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FeatureCollection&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;features&amp;#34;&lt;/span&gt;:features}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;token  &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pk................................................................&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;viz &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ChoroplethViz(my_dict, 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;features &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_geojson[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;features&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;values&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tolist()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;my_dict &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FeatureCollection&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;features&amp;#34;&lt;/span&gt;:features}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;token  &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pk................................................................&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;viz &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ChoroplethViz(my_dict, 
                      access_token&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;token,
                      color_property&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;population&amp;#39;&lt;/span&gt;,
                      color_stops&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;create_color_stops([&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2500&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5000&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;7500&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;12500&lt;/span&gt;], colors&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;YlOrRd&amp;#39;&lt;/span&gt;),
@@ -892,7 +892,7 @@ function generatePropertyExpression(expressionType, propertyValue, stops, defaul
 &lt;!-- add capability to export map or legend to image file --&gt;
 &lt;/body&gt;
 &lt;/html&gt;&#34; style=&#34;width: 100%; height: 500px;&#34;&gt;&lt;/iframe&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;viz &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ChoroplethViz(my_dict, 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;viz &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ChoroplethViz(my_dict, 
                      access_token&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;token,
                      color_property&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;percentage&amp;#39;&lt;/span&gt;,
                      color_stops&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;create_color_stops([&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;], colors&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;YlOrRd&amp;#39;&lt;/span&gt;),
@@ -1473,7 +1473,7 @@ function generatePropertyExpression(expressionType, propertyValue, stops, defaul
 &lt;/body&gt;
 &lt;/html&gt;&#34; style=&#34;width: 100%; height: 500px;&#34;&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;districts-with-most-number-of-disability-sorted-5&#34;&gt;Districts with most number of Disability (Sorted 5)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Population with Disability&amp;#39;&lt;/span&gt;], ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;False)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Population with Disability&amp;#39;&lt;/span&gt;], ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -1544,32 +1544,32 @@ function generatePropertyExpression(expressionType, propertyValue, stops, defaul
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; pd
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
 &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; bs4 &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; BeautifulSoup
 &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; urllib.request &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; Request, urlopen
-&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; seaborn &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; sns
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;site &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://www.onlinekhabar.com/&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; seaborn &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; sns
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;site &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://www.onlinekhabar.com/&amp;#34;&lt;/span&gt;
 hdr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Mozilla/5.0&amp;#39;&lt;/span&gt;}
 req &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Request(site,headers&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;hdr)
 page &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; urlopen(req)
 soup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; BeautifulSoup(page, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;lxml&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;image_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;image_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
 alt_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; 
 collection &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; soup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;findAll(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt;)
 &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; img &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; collection:
     image_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; image_count &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;alt&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; img&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;attrs:
         alt_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; alt_count &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;image_count&amp;#34;&lt;/span&gt;, image_count) 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;alt_count&amp;#34;&lt;/span&gt;, alt_count) 
-&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;alt_count_percent&amp;#34;&lt;/span&gt;, alt_count&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;image_count&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
+print (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;image_count&amp;#34;&lt;/span&gt;, image_count) 
+print (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;alt_count&amp;#34;&lt;/span&gt;, alt_count) 
+print (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;alt_count_percent&amp;#34;&lt;/span&gt;, alt_count&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;image_count&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;image_count 154
 alt_count 1
 alt_count_percent 0.6493506493506493
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data_sources/news_portals.csv&amp;#39;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;data_sources/news_portals.csv&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -1636,7 +1636,7 @@ alt_count_percent 0.6493506493506493
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;alt_counter&lt;/span&gt;(site):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;alt_counter&lt;/span&gt;(site):
     &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
         hdr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;User-Agent&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Mozilla/5.0&amp;#39;&lt;/span&gt;}
         req &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Request(site, headers&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;hdr)
@@ -1651,9 +1651,9 @@ alt_count_percent 0.6493506493506493
                 alt_count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; alt_count &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (alt_count, image_count)
     &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt;:
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (None, None)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;alt_count&amp;#39;&lt;/span&gt;],df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;image_count&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;zip(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Link&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(alt_counter))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;alt_count&amp;#39;&lt;/span&gt;],df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;image_count&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;zip(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Link&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(alt_counter))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -1738,8 +1738,8 @@ alt_count_percent 0.6493506493506493
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;percent&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;alt_count&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;image_count&amp;#39;&lt;/span&gt;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;percent&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;alt_count&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;image_count&amp;#39;&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -1833,17 +1833,17 @@ alt_count_percent 0.6493506493506493
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;barplot(y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Portal&amp;#39;&lt;/span&gt;, x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;percent&amp;#39;&lt;/span&gt;, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://subedi.ml/img/output_10_1.png&#34; alt=&#34;output image&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;barplot(y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Portal&amp;#39;&lt;/span&gt;, x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;percent&amp;#39;&lt;/span&gt;, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_10_1.png&#34; alt=&#34;output image&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Startup analysis using Seedstars data</title>
-      <link>https://subedi.ml/posts/seedstars/</link>
+      <link>https://ayushsubedi.github.io/posts/seedstars/</link>
       <pubDate>Sat, 03 Mar 2018 06:16:55 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/seedstars/</guid>
+      <guid>https://ayushsubedi.github.io/posts/seedstars/</guid>
       <description>&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
 &lt;h2 id=&#34;finding-answers-after-tootle&#34;&gt;Finding answers after Tootle&lt;/h2&gt;
 &lt;p&gt;In 2017, I went to Thailand to participate in the Seedstars summit. The platform provides funding to startups in emerging markets. The diversity of project ideas made me curious enough to scrape data from the Seedstars website. After leaving Tootle, I was interested in researching the NEXT product to invest my time in. The data scraped would allow me to create a one stop place for every startup that had applied to Seedstars (there were plenty).&lt;/p&gt;
@@ -2142,9 +2142,9 @@ alt_count_percent 0.6493506493506493
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Fondify&lt;/td&gt;
-&lt;td&gt;In Mexico there is a lack of option to get resources, traditional channels such as banks or government entities aren`t an option for creators | We develop a Crowdfunding Platform inspired in the LATAM culture. With global funds for the creators from people who love their project                      | Pre-Revenue Stage  |&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;In Mexico there is a lack of option to get resources, traditional channels such as banks or government entities aren`t an option for creators&lt;/td&gt;
+&lt;td&gt;We develop a Crowdfunding Platform inspired in the LATAM culture. With global funds for the creators from people who love their project&lt;/td&gt;
+&lt;td&gt;Pre-Revenue Stage&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Dinerio&lt;/td&gt;
@@ -2165,10 +2165,10 @@ alt_count_percent 0.6493506493506493
     
     <item>
       <title>Fractal Plots</title>
-      <link>https://subedi.ml/posts/fractal_plots/</link>
+      <link>https://ayushsubedi.github.io/posts/fractal_plots/</link>
       <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
       
-      <guid>https://subedi.ml/posts/fractal_plots/</guid>
+      <guid>https://ayushsubedi.github.io/posts/fractal_plots/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
 &lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Mby3dBcaRKo/U0zGR29ZF9I/AAAAAAAACm4/qjEeUPPlBsU/s1600/Rplot03.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
