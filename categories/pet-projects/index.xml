@@ -6,10 +6,19 @@
     <description>Recent content in Pet Projects on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Jul 2020 10:02:00 +0545</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jul 2021 10:09:16 +0545</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/pet-projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Emojis of Kathmandu</title>
+      <link>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</link>
+      <pubDate>Thu, 01 Jul 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>K-Shaped recovery</title>
@@ -23,6 +32,15 @@
 &lt;p&gt;One example of the former includes the software service sector (outsourcing, e-commerce, delivery, etc.). On the unfortunate side, an example would be the hospitality/tourism sector.&lt;/p&gt;
 &lt;p&gt;The challenge for time series analysts is to figure out ways to fit this into their model depending on the COVID elasticity for their sectors. COVID, a &amp;ldquo;black swan event&amp;rdquo; has screwed up the Business As Usual.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Shabda Kathmandu</title>
+      <link>https://ayushsubedi.github.io/posts/shabda_kathmandu/</link>
+      <pubDate>Mon, 31 Dec 2018 10:10:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/shabda_kathmandu/</guid>
+      <description></description>
     </item>
     
     <item>

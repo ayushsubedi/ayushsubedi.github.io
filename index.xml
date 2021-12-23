@@ -6,13 +6,40 @@
     <description>Recent content on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Dec 2021 12:09:16 +0545</lastBuildDate>
+    <lastBuildDate>Thu, 23 Dec 2021 05:02:24 +0545</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ride Sharing Analytics</title>
+      <title>Solidity</title>
+      <link>https://ayushsubedi.github.io/posts/solidity/</link>
+      <pubDate>Thu, 23 Dec 2021 05:02:24 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/solidity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code For Nepal Data Fellowship</title>
+      <link>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship/</link>
+      <pubDate>Wed, 22 Dec 2021 11:19:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IoU</title>
+      <link>https://ayushsubedi.github.io/posts/iou/</link>
+      <pubDate>Sun, 19 Dec 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/iou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ride Hailing Analytics</title>
       <link>https://ayushsubedi.github.io/posts/ride_sharing_analytics/</link>
       <pubDate>Thu, 02 Dec 2021 12:09:16 +0545</pubDate>
       
@@ -320,6 +347,177 @@
     </item>
     
     <item>
+      <title>Closed Form Solution</title>
+      <link>https://ayushsubedi.github.io/posts/closed_form_solution/</link>
+      <pubDate>Wed, 01 Dec 2021 06:20:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/closed_form_solution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multi Arm Bandits</title>
+      <link>https://ayushsubedi.github.io/posts/multi_arm_bandits/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/multi_arm_bandits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Louvian Algorithm</title>
+      <link>https://ayushsubedi.github.io/posts/louvian_algorithm/</link>
+      <pubDate>Tue, 23 Nov 2021 11:11:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/louvian_algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimization</title>
+      <link>https://ayushsubedi.github.io/posts/optimization/</link>
+      <pubDate>Mon, 22 Nov 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parametric vs Non Parametric</title>
+      <link>https://ayushsubedi.github.io/posts/parametric_non_parametric/</link>
+      <pubDate>Mon, 22 Nov 2021 00:19:10 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/parametric_non_parametric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exponential Smoothing, ARIMA, GARCH</title>
+      <link>https://ayushsubedi.github.io/posts/exponential_smoothing_garch_arima/</link>
+      <pubDate>Tue, 16 Nov 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/exponential_smoothing_garch_arima/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA in noise</title>
+      <link>https://ayushsubedi.github.io/posts/pca-in-noise/</link>
+      <pubDate>Mon, 15 Nov 2021 01:29:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/pca-in-noise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA, Eigenvalue and Eigenvector</title>
+      <link>https://ayushsubedi.github.io/posts/pca_eigenvalue_eigenvector/</link>
+      <pubDate>Mon, 15 Nov 2021 01:29:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/pca_eigenvalue_eigenvector/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Weibull vs Geometric</title>
+      <link>https://ayushsubedi.github.io/posts/weibull_vs_geometric/</link>
+      <pubDate>Fri, 12 Nov 2021 06:20:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/weibull_vs_geometric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The math behind clustering algorithm</title>
+      <link>https://ayushsubedi.github.io/posts/clustering/</link>
+      <pubDate>Tue, 02 Nov 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information Criteria</title>
+      <link>https://ayushsubedi.github.io/posts/information_criteria/</link>
+      <pubDate>Sun, 17 Oct 2021 00:12:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/information_criteria/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The math behind logistic regression</title>
+      <link>https://ayushsubedi.github.io/posts/logistic_regression/</link>
+      <pubDate>Mon, 11 Oct 2021 16:23:20 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/logistic_regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The math behind linear regression</title>
+      <link>https://ayushsubedi.github.io/posts/linear_regression/</link>
+      <pubDate>Sun, 10 Oct 2021 16:23:20 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/linear_regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transformation vs information</title>
+      <link>https://ayushsubedi.github.io/posts/transformation_vs_interaction/</link>
+      <pubDate>Fri, 01 Oct 2021 06:20:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/transformation_vs_interaction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthetic Data Generation</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_generation/</link>
+      <pubDate>Sun, 12 Sep 2021 13:04:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QQ plots</title>
+      <link>https://ayushsubedi.github.io/posts/qq_plots/</link>
+      <pubDate>Sat, 11 Sep 2021 06:20:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/qq_plots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sentiment Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/sentiment_analysis/</link>
+      <pubDate>Wed, 11 Aug 2021 06:20:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/sentiment_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nepal Vaccine Progress Twitter Bot</title>
+      <link>https://ayushsubedi.github.io/posts/vaccine_progress/</link>
+      <pubDate>Tue, 20 Jul 2021 16:10:17 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/vaccine_progress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Emojis of Kathmandu</title>
+      <link>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</link>
+      <pubDate>Thu, 01 Jul 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Glossary</title>
       <link>https://ayushsubedi.github.io/glossary/</link>
       <pubDate>Tue, 25 May 2021 17:12:41 +0545</pubDate>
@@ -386,6 +584,60 @@ SKIMA 2015  December 16, 2015 &lt;a href=&#34;http://ieeexplore.ieee.org/stamp/s
 &lt;p&gt;&lt;strong&gt;Use of Data in the Private Sector of Nepal : The Current State and Opportunities in Finance, Education, and the Media (English).&lt;/strong&gt;
 Washington, D.C. : World Bank Group, 2020 &lt;a href=&#34;http://documents.worldbank.org/curated/en/805261601023506163/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media&#34;&gt;(Publication link)&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Diabetic Retinopathy and Glaucoma Detection</title>
+      <link>https://ayushsubedi.github.io/posts/cheers_ai/</link>
+      <pubDate>Sun, 04 Apr 2021 00:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/cheers_ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kohokoho</title>
+      <link>https://ayushsubedi.github.io/posts/kohokoho/</link>
+      <pubDate>Wed, 03 Feb 2021 10:10:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/kohokoho/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Choto</title>
+      <link>https://ayushsubedi.github.io/posts/choto/</link>
+      <pubDate>Tue, 02 Feb 2021 11:19:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/choto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devs in Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/devs_in_nepal/</link>
+      <pubDate>Tue, 01 Dec 2020 12:12:12 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/devs_in_nepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AP Monitoring</title>
+      <link>https://ayushsubedi.github.io/posts/ap_monitoring/</link>
+      <pubDate>Thu, 19 Nov 2020 10:23:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ap_monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FCGO</title>
+      <link>https://ayushsubedi.github.io/posts/fcgo/</link>
+      <pubDate>Sun, 30 Aug 2020 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/fcgo/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -3415,6 +3667,15 @@ F1 score Ada Boost Classifier : 0.9411764705882353
 &lt;p&gt;&lt;strong&gt;False Positives vs False Negatives&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://uc29b242eafa0323079c59de5fc0.previews.dropboxusercontent.com/p/thumb/AA6wvSlgpVw_UCQieCOAFCnCY7-pM3DqJHXKMIImW212qOFwUAphNe5k_qajpfHMLtsf6neHowUSn7aMPUrwwhlgxD3j9AfUAD7CsTD961sQ6gaht6kn2wfdJYm46GwQwW8DncIuzVtzwh8q169uEdp7Fw_0uBaBxCNJbQoqt-YVRI1f8nskTqVx_NrLJyVybhA5lW_dc02Iqhrql5kbv35sLLsCN_B9D0CdV3Dxdup3twa-YtsUF1xBqwXki83c3dtM4dnkbsNMiwk3w6MHXlu6T-Yyn-VuPVFOnNRWYapLlpWZMz-Q9F7TMz1ISka9udXN4jDlJF-gucN_RAECXwB0wpP5XZI35aWjvtyhXrPhubrOFzBHDQN_51eiGbuAvpceW6J8UKBaGzOZgsLl5jwK/p.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Shabda Kathmandu</title>
+      <link>https://ayushsubedi.github.io/posts/shabda_kathmandu/</link>
+      <pubDate>Mon, 31 Dec 2018 10:10:11 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/shabda_kathmandu/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -7674,6 +7935,15 @@ In an out-Faro shuffle, the top card from first half of the deck always remains 
 &lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-65LUDQXD348/Uq3ICctaxPI/AAAAAAAACLo/WYRQ_r6GCvM/s640/Untitled-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://4.bp.blogspot.com/-65LUDQXD348/Uq3ICctaxPI/AAAAAAAACLo/WYRQ_r6GCvM/s1600/Untitled-2.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Simpy</title>
+      <link>https://ayushsubedi.github.io/posts/simpy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/simpy/</guid>
+      <description></description>
     </item>
     
   </channel>
