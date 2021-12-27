@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ayushsubedi.github.io/resume/</loc>
+    <lastmod>2021-12-25T17:12:41+05:45</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
     <lastmod>2021-12-23T05:02:24+05:45</lastmod>
   </url><url>
@@ -159,9 +162,6 @@
     <lastmod>2021-07-01T10:09:16+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/glossary/</loc>
-    <lastmod>2021-05-25T17:12:41+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/about/</loc>
     <lastmod>2021-05-25T17:12:41+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/cheers_ai/</loc>
