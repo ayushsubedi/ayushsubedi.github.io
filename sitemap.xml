@@ -5,25 +5,13 @@
     <loc>https://ayushsubedi.github.io/resume/</loc>
     <lastmod>2021-12-25T17:12:41+05:45</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2021-12-23T05:02:24+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2021-12-23T05:02:24+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/solidity/</loc>
-    <lastmod>2021-12-23T05:02:24+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship/</loc>
-    <lastmod>2021-12-22T11:19:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/iou/</loc>
-    <lastmod>2021-12-19T10:09:16+05:45</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/analytics/</loc>
     <lastmod>2021-12-02T12:09:16+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/analytics-in-ride-sharing/</loc>
+    <lastmod>2021-12-02T12:09:16+05:45</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/</loc>
     <lastmod>2021-12-02T12:09:16+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/capstone-projects/</loc>
@@ -47,6 +35,9 @@
     <loc>https://ayushsubedi.github.io/tags/optimization/</loc>
     <lastmod>2021-12-02T12:09:16+05:45</lastmod>
   </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2021-12-02T12:09:16+05:45</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/tags/regression/</loc>
     <lastmod>2021-12-02T12:09:16+05:45</lastmod>
   </url><url>
@@ -68,122 +59,8 @@
     <loc>https://ayushsubedi.github.io/categories/tootle/</loc>
     <lastmod>2021-12-02T12:09:16+05:45</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/posts/closed_form_solution/</loc>
-    <lastmod>2021-12-01T06:20:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/multi_arm_bandits/</loc>
-    <lastmod>2021-12-01T00:00:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/algorithm/</loc>
-    <lastmod>2021-11-23T11:11:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/conceptual/</loc>
-    <lastmod>2021-11-23T11:11:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/louvian/</loc>
-    <lastmod>2021-11-23T11:11:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/louvian_algorithm/</loc>
-    <lastmod>2021-11-23T11:11:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/optimization/</loc>
-    <lastmod>2021-11-22T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/distribution/</loc>
-    <lastmod>2021-11-22T00:19:10+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/non-parametric/</loc>
-    <lastmod>2021-11-22T00:19:10+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/parametric/</loc>
-    <lastmod>2021-11-22T00:19:10+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/parametric_non_parametric/</loc>
-    <lastmod>2021-11-22T00:19:10+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/exponential_smoothing_garch_arima/</loc>
-    <lastmod>2021-11-16T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/pca-in-noise/</loc>
-    <lastmod>2021-11-15T01:29:11+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/pca_eigenvalue_eigenvector/</loc>
-    <lastmod>2021-11-15T01:29:11+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/weibull_vs_geometric/</loc>
-    <lastmod>2021-11-12T06:20:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/clustering/</loc>
-    <lastmod>2021-11-02T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/clustering/</loc>
-    <lastmod>2021-11-02T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/information_criteria/</loc>
-    <lastmod>2021-10-17T00:12:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/logistic-regression/</loc>
-    <lastmod>2021-10-11T16:23:20+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/logistic_regression/</loc>
-    <lastmod>2021-10-11T16:23:20+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/linear-regression/</loc>
-    <lastmod>2021-10-10T16:23:20+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/linear_regression/</loc>
-    <lastmod>2021-10-10T16:23:20+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/transformation_vs_interaction/</loc>
-    <lastmod>2021-10-01T06:20:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/synthetic_data_generation/</loc>
-    <lastmod>2021-09-12T13:04:11+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/qq_plots/</loc>
-    <lastmod>2021-09-11T06:20:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/sentiment_analysis/</loc>
-    <lastmod>2021-08-11T06:20:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/vaccine_progress/</loc>
-    <lastmod>2021-07-20T16:10:17+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/pet-projects/</loc>
-    <lastmod>2021-07-01T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/tableau/</loc>
-    <lastmod>2021-07-01T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</loc>
-    <lastmod>2021-07-01T10:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/viz/</loc>
-    <lastmod>2021-07-01T10:09:16+05:45</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/glossary/</loc>
     <lastmod>2021-05-25T17:12:41+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/cheers_ai/</loc>
-    <lastmod>2021-04-04T00:09:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/kohokoho/</loc>
-    <lastmod>2021-02-03T10:10:11+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/choto/</loc>
-    <lastmod>2021-02-02T11:19:11+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/devs_in_nepal/</loc>
-    <lastmod>2020-12-01T12:12:12+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/moonlit/</loc>
-    <lastmod>2020-12-01T12:12:12+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/ap_monitoring/</loc>
-    <lastmod>2020-11-19T10:23:16+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/fcgo/</loc>
-    <lastmod>2020-08-30T10:09:16+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/affirmations/</loc>
     <lastmod>2020-07-27T07:20:00+05:45</lastmod>
@@ -209,6 +86,12 @@
     <loc>https://ayushsubedi.github.io/posts/k_shaped_recovery/</loc>
     <lastmod>2020-07-15T10:02:00+05:45</lastmod>
   </url><url>
+    <loc>https://ayushsubedi.github.io/categories/pet-projects/</loc>
+    <lastmod>2020-07-15T10:02:00+05:45</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/viz/</loc>
+    <lastmod>2020-07-15T10:02:00+05:45</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/tags/learning/</loc>
     <lastmod>2020-07-10T09:16:00+05:45</lastmod>
   </url><url>
@@ -217,6 +100,9 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/papers/</loc>
     <lastmod>2020-07-10T09:16:00+05:45</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/moonlit/</loc>
+    <lastmod>2020-07-03T06:18:16+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/pareto/</loc>
     <lastmod>2020-07-03T06:18:16+05:45</lastmod>
@@ -229,6 +115,9 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</loc>
     <lastmod>2020-07-03T06:18:16+05:45</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/tableau/</loc>
+    <lastmod>2020-07-01T10:09:16+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/bezos/</loc>
     <lastmod>2020-07-01T10:09:16+05:45</lastmod>
@@ -304,9 +193,6 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/fraud_detection/</loc>
     <lastmod>2019-01-01T08:06:19+05:45</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/shabda_kathmandu/</loc>
-    <lastmod>2018-12-31T10:10:11+05:45</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/bayes/</loc>
     <lastmod>2018-12-20T10:11:01+05:45</lastmod>
@@ -443,12 +329,6 @@
     <loc>https://ayushsubedi.github.io/posts/faro_shuffle/</loc>
     <lastmod>2012-12-05T17:12:41+05:45</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/categories/python/</loc>
-  </url><url>
     <loc>https://ayushsubedi.github.io/series/</loc>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/simpy/</loc>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/simulation/</loc>
   </url>
 </urlset>

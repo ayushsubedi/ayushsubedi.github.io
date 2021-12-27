@@ -39,33 +39,6 @@
     </item>
     
     <item>
-      <title>Conceptual</title>
-      <link>https://ayushsubedi.github.io/categories/conceptual/</link>
-      <pubDate>Tue, 23 Nov 2021 11:11:16 +0545</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/conceptual/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pet Projects</title>
-      <link>https://ayushsubedi.github.io/categories/pet-projects/</link>
-      <pubDate>Thu, 01 Jul 2021 10:09:16 +0545</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/pet-projects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Moonlit</title>
-      <link>https://ayushsubedi.github.io/categories/moonlit/</link>
-      <pubDate>Tue, 01 Dec 2020 12:12:12 +0545</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/moonlit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Teaching Materials</title>
       <link>https://ayushsubedi.github.io/categories/teaching-materials/</link>
       <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
@@ -75,11 +48,29 @@
     </item>
     
     <item>
+      <title>Pet Projects</title>
+      <link>https://ayushsubedi.github.io/categories/pet-projects/</link>
+      <pubDate>Wed, 15 Jul 2020 10:02:00 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/pet-projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Papers</title>
       <link>https://ayushsubedi.github.io/categories/papers/</link>
       <pubDate>Fri, 10 Jul 2020 09:16:00 +0545</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/papers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Moonlit</title>
+      <link>https://ayushsubedi.github.io/categories/moonlit/</link>
+      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/moonlit/</guid>
       <description></description>
     </item>
     
@@ -116,15 +107,6 @@
       <pubDate>Sat, 22 Oct 2016 04:01:02 +0545</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/three60/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://ayushsubedi.github.io/categories/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/python/</guid>
       <description></description>
     </item>
     
