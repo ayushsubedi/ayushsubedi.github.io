@@ -104,6 +104,8 @@ onload='renderMathInElement(document.body);'></script>
 </div>
 <h1 class="pt-2">The Emojis of Kathmandu</h1>
 
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">What emoji is popular in Kathmandu? Has it changed recently? Have we become more empathetic? 50K tweets between 2012 to 2021 (containing emojis, and geocoded to Kathmandu) were analyzed to study our affinity towards emojis.</h3>
+
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
 	
@@ -150,7 +152,378 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="the-emojis-of-kathmandu">The Emojis of Kathmandu</h1>
+<p>50K tweets between 2012 to 2021 (containing emojis, and geocoded to Kathmandu) show that we really love 😂</p>
+<p>Recently though, we have been 😂   less and 🙏 more, 😁  less and ❤️  more.
+Just goes to show Kathmandu is healing from Covid.</p>
+<p><img src="https://raw.githubusercontent.com/ayushsubedi/emojan/main/assets/final.png" alt=""></p>
+<p>Github repo: <a href="https://github.com/ayushsubedi/emojan">https://github.com/ayushsubedi/emojan</a></p>
+<h1 id="create-the-dataset-using-twint">Create the dataset using twint</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> twint
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<span style="color:#f92672">import</span> nest_asyncio
+nest_asyncio<span style="color:#f92672">.</span>apply()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">emoji_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;😁&#39;</span>,
+ <span style="color:#e6db74">&#39;😒&#39;</span>,
+ <span style="color:#e6db74">&#39;😊&#39;</span>,
+ <span style="color:#e6db74">&#39;😈&#39;</span>,
+ <span style="color:#e6db74">&#39;🇳🇵&#39;</span>,
+ <span style="color:#e6db74">&#39;😌&#39;</span>,
+ <span style="color:#e6db74">&#39;☕&#39;</span>,
+ <span style="color:#e6db74">&#39;👶&#39;</span>,
+ <span style="color:#e6db74">&#39;👍&#39;</span>,
+ <span style="color:#e6db74">&#39;😷&#39;</span>,
+ <span style="color:#e6db74">&#39;👌&#39;</span>,
+ <span style="color:#e6db74">&#39;🌞&#39;</span>,
+ <span style="color:#e6db74">&#39;😑&#39;</span>,
+ <span style="color:#e6db74">&#39;😉&#39;</span>,
+ <span style="color:#e6db74">&#39;😍&#39;</span>,
+ <span style="color:#e6db74">&#39;☺️&#39;</span>,
+ <span style="color:#e6db74">&#39;😴&#39;</span>,
+ <span style="color:#e6db74">&#39;😱&#39;</span>,
+ <span style="color:#e6db74">&#39;🙏&#39;</span>,
+ <span style="color:#e6db74">&#39;😘&#39;</span>,
+ <span style="color:#e6db74">&#39;🙌&#39;</span>,
+ <span style="color:#e6db74">&#39;😔&#39;</span>,
+ <span style="color:#e6db74">&#39;😋&#39;</span>,
+ <span style="color:#e6db74">&#39;😂&#39;</span>,
+ <span style="color:#e6db74">&#39;😩&#39;</span>,
+ <span style="color:#e6db74">&#39;💕&#39;</span>,
+ <span style="color:#e6db74">&#39;😎&#39;</span>,
+ <span style="color:#e6db74">&#39;😭&#39;</span>,
+ <span style="color:#e6db74">&#39;😳&#39;</span>,
+ <span style="color:#e6db74">&#39;😇&#39;</span>,
+ <span style="color:#e6db74">&#39;😏&#39;</span>,
+ <span style="color:#e6db74">&#39;😜&#39;</span>,
+ <span style="color:#e6db74">&#39;☕️&#39;</span>,
+ <span style="color:#e6db74">&#39;✌️&#39;</span>,
+ <span style="color:#e6db74">&#39;🙈&#39;</span>,
+ <span style="color:#e6db74">&#39;❤️&#39;</span>,
+ <span style="color:#e6db74">&#39;😄&#39;</span>,
+ <span style="color:#e6db74">&#39;💞&#39;</span>]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> emoji <span style="color:#f92672">in</span> emoji_list:
+    c <span style="color:#f92672">=</span> twint<span style="color:#f92672">.</span>Config()
+    c<span style="color:#f92672">.</span>Search <span style="color:#f92672">=</span> emoji
+    c<span style="color:#f92672">.</span>Pandas <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+    c<span style="color:#f92672">.</span>Store_csv <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+    c<span style="color:#f92672">.</span>Output <span style="color:#f92672">=</span> emoji
+    c<span style="color:#f92672">.</span>Hide_output<span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+    c<span style="color:#f92672">.</span>Near<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;kathmandu&#34;</span>
+    c<span style="color:#f92672">.</span>Since<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2010-01-01&#34;</span>
+    c<span style="color:#f92672">.</span>Until <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2021-05-31&#34;</span>
+    twint<span style="color:#f92672">.</span>run<span style="color:#f92672">.</span>Search(c)
+</code></pre></div><h1 id="perform-analysis">Perform analysis</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;../datasets/merged.csv&#34;</span>, lineterminator<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, parse_dates<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;date&#39;</span>])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(df)
+</code></pre></div><pre><code>['id', 'emoji', 'date', 'username', 'tweet', 'likes_count', 'place']
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>username<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
+</code></pre></div><pre><code>ms_madhur          1433
+sristee44          1121
+beingsamikshya      871
+anuskashresthax     618
+nepalplanettrek     594
+scousergirl         572
+dreamingdr          569
+nepaligentleman     476
+itsme_shivangi      433
+iamnabinraj75       410
+sim_shrestha        402
+milan_pu1           353
+raunakbasnet1       332
+thulokanxo          325
+chetan_karki        302
+saampokhrel         301
+mongolianheartk     300
+tenzintsetenbhu     290
+rana1997rohit       275
+fatyangri           256
+Name: username, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>emoji<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">20</span>)
+</code></pre></div><pre><code>😂     7576
+😊     4016
+😍     3781
+😁     3482
+🇳🇵    2785
+😎     2270
+❤️    2233
+🙏     2122
+😉     2000
+😜     1463
+😘     1432
+😋     1241
+💕     1173
+😄     1095
+👍     1001
+👌      730
+😭      637
+😏      554
+✌️     505
+😒      483
+Name: emoji, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>min()
+</code></pre></div><pre><code>Timestamp('2012-01-28 00:00:00')
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>count()
+</code></pre></div><pre><code>date
+2012-01-31      2
+2012-02-29     16
+2012-03-31     13
+2012-04-30      3
+2012-05-31     11
+             ... 
+2021-01-31    212
+2021-02-28    134
+2021-03-31    183
+2021-04-30    160
+2021-05-31    119
+Freq: M, Name: id, Length: 113, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>count()<span style="color:#f92672">.</span>plot()
+</code></pre></div><pre><code>&lt;AxesSubplot:xlabel='date'&gt;
+</code></pre>
+<p><img src="output_7_1.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[df<span style="color:#f92672">.</span>emoji<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;❤️&#34;</span>]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>count()<span style="color:#f92672">.</span>plot()
+</code></pre></div><pre><code>&lt;AxesSubplot:xlabel='date'&gt;
+</code></pre>
+<p><img src="/img/output_8_1.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[df<span style="color:#f92672">.</span>emoji<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;😷&#34;</span>]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>count()<span style="color:#f92672">.</span>plot()
+</code></pre></div><pre><code>&lt;AxesSubplot:xlabel='date'&gt;
+</code></pre>
+<p><img src="/img/output_9_1.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[df<span style="color:#f92672">.</span>emoji<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;🇳🇵&#34;</span>]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>count()<span style="color:#f92672">.</span>plot()
+</code></pre></div><pre><code>&lt;AxesSubplot:xlabel='date'&gt;
+</code></pre>
+<p><img src="/img/output_10_11.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[df<span style="color:#f92672">.</span>emoji<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;😂&#34;</span>]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;date&#39;</span>)<span style="color:#f92672">.</span>resample(<span style="color:#e6db74">&#39;M&#39;</span>)[<span style="color:#e6db74">&#39;id&#39;</span>]<span style="color:#f92672">.</span>count()<span style="color:#f92672">.</span>plot()
+</code></pre></div><pre><code>&lt;AxesSubplot:xlabel='date'&gt;
+</code></pre>
+<p><img src="/img/output_11_1.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_tweet <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>dropna(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;place&#39;</span>])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> math
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getlatlon</span>(row):
+    place <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span>place
+    place <span style="color:#f92672">=</span> place<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">&#34;</span>)
+    place <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(place)
+    lat <span style="color:#f92672">=</span> place[<span style="color:#e6db74">&#39;coordinates&#39;</span>][<span style="color:#ae81ff">0</span>]
+    lon <span style="color:#f92672">=</span> place[<span style="color:#e6db74">&#39;coordinates&#39;</span>][<span style="color:#ae81ff">1</span>]
+    <span style="color:#66d9ef">return</span> pd<span style="color:#f92672">.</span>Series([lat, lon],index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;lat&#39;</span>,<span style="color:#e6db74">&#39;lon&#39;</span>])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>join(location_tweet<span style="color:#f92672">.</span>apply(getlatlon, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, result_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;expand&#34;</span>))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;location.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>emoji</th>
+      <th>date</th>
+      <th>username</th>
+      <th>tweet</th>
+      <th>likes_count</th>
+      <th>place</th>
+      <th>lat</th>
+      <th>lon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1398437418768818176</td>
+      <td>👌</td>
+      <td>2021-05-29</td>
+      <td>dendikapan</td>
+      <td>शुभ बिहानी ☕️☕️ शुभदिनकाे कामना🙏😷👌🇳🇵💞 Hopefull...</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1397792077149216769</td>
+      <td>👌</td>
+      <td>2021-05-27</td>
+      <td>dendikapan</td>
+      <td>@damanbro66 Yes I like it 👌so much your post  ...</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1397341721566990336</td>
+      <td>👌</td>
+      <td>2021-05-26</td>
+      <td>dendikapan</td>
+      <td>@KiranCh77 Really nice 👌thanks for sharing 👌  ...</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1394863068035813379</td>
+      <td>👌</td>
+      <td>2021-05-19</td>
+      <td>iammuhnaj</td>
+      <td>It's still Bull season👌 @ 𝙃𝙊𝙈𝙀  https://t.co/O...</td>
+      <td>1</td>
+      <td>{'type': 'Point', 'coordinates': [27.713776, 8...</td>
+      <td>27.713776</td>
+      <td>85.310244</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1393821979032133635</td>
+      <td>👌</td>
+      <td>2021-05-16</td>
+      <td>chetan_karki</td>
+      <td>#just #fun with #baby #myrahsofkarki 😊❤️ looki...</td>
+      <td>0</td>
+      <td>{'type': 'Point', 'coordinates': [27.67733347,...</td>
+      <td>27.677333</td>
+      <td>85.307636</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>45362</th>
+      <td>389751359874289664</td>
+      <td>❤️</td>
+      <td>2013-10-14</td>
+      <td>ashmoo_moo</td>
+      <td>#littleone #cuteness #dashain #tika #sister #c...</td>
+      <td>0</td>
+      <td>{'type': 'Point', 'coordinates': [27.73048071,...</td>
+      <td>27.730481</td>
+      <td>85.330964</td>
+    </tr>
+    <tr>
+      <th>45363</th>
+      <td>389704517815902208</td>
+      <td>❤️</td>
+      <td>2013-10-14</td>
+      <td>ashmoo_moo</td>
+      <td>Baba. Prajjwal Dai. ❤️ #dashain #tika #family ...</td>
+      <td>0</td>
+      <td>{'type': 'Point', 'coordinates': [27.73855019,...</td>
+      <td>27.738550</td>
+      <td>85.338760</td>
+    </tr>
+    <tr>
+      <th>45364</th>
+      <td>387917234490048512</td>
+      <td>❤️</td>
+      <td>2013-10-09</td>
+      <td>ashmoo_moo</td>
+      <td>#brother #cousins #mamaghar #nagpokhari #morni...</td>
+      <td>0</td>
+      <td>{'type': 'Point', 'coordinates': [27.71356987,...</td>
+      <td>27.713570</td>
+      <td>85.324463</td>
+    </tr>
+    <tr>
+      <th>45365</th>
+      <td>387542385145954304</td>
+      <td>❤️</td>
+      <td>2013-10-08</td>
+      <td>ashmoo_moo</td>
+      <td>#cuteness #babysister #cousins #smile ❤️😘💋 @ M...</td>
+      <td>0</td>
+      <td>{'type': 'Point', 'coordinates': [27.7090305, ...</td>
+      <td>27.709031</td>
+      <td>85.326469</td>
+    </tr>
+    <tr>
+      <th>45366</th>
+      <td>386357639460179968</td>
+      <td>❤️</td>
+      <td>2013-10-05</td>
+      <td>ashmoo_moo</td>
+      <td>on our way back homeeeeee.... ❤️😘 #lastnight #...</td>
+      <td>0</td>
+      <td>{'type': 'Point', 'coordinates': [27.73868383,...</td>
+      <td>27.738684</td>
+      <td>85.338705</td>
+    </tr>
+  </tbody>
+</table>
+<p>45367 rows × 9 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>emoji<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>😂     7576
+😊     4016
+😍     3781
+😁     3482
+🇳🇵    2785
+😎     2270
+❤️    2233
+🙏     2122
+😉     2000
+😜     1463
+😘     1432
+😋     1241
+💕     1173
+😄     1095
+👍     1001
+👌      730
+😭      637
+😏      554
+✌️     505
+😒      483
+💞      461
+😇      432
+🙌      423
+☺️     375
+😔      373
+😌      332
+😱      314
+😑      296
+😈      292
+🙈      291
+☕      277
+🌞      213
+😳      185
+😩      181
+😴      163
+😷      135
+👶       45
+Name: emoji, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+</code></pre></div></div>
 	</section>
 
 </article>
@@ -279,7 +652,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		0 words in this page.
+		631 words in this page.
 	</div>
 </div>
 
@@ -314,6 +687,8 @@ onload='renderMathInElement(document.body);'></script>
 <div class="font-serif pb-2 flex align-start leading-loose">
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
+		
+			<a href="/posts/devs_in_nepal/">Devs in Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
 		
 			<a href="/posts/bezos/">You vs Bezos - Weber Fencher law</a>&nbsp;&nbsp;&#47;&nbsp;
 		

@@ -12,12 +12,587 @@
     
     
     <item>
-      <title>Sentiment Analysis</title>
+      <title>Sentiment Analysis starter code</title>
       <link>https://ayushsubedi.github.io/posts/sentiment_analysis/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/sentiment_analysis/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;twitter-sentiment-analysis&#34;&gt;Twitter Sentiment Analysis&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.vox-cdn.com/thumbor/yeUcycrGq8vtOYotz9pjUZZn21o=/0x0:4096x1900/1200x800/filters:focal(1721x623:2375x1277)/cdn.vox-cdn.com/uploads/chorus_image/image/69613645/E613I_0WEAQh4r0.0.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;getting-data-from-twitter&#34;&gt;Getting data from twitter&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Using Tweepy (uses official twitter API)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;easy&lt;/li&gt;
+&lt;li&gt;several limitations&lt;/li&gt;
+&lt;li&gt;check &lt;a href=&#34;https://developer.twitter.com/en/docs/rate-limits&#34;&gt;https://developer.twitter.com/en/docs/rate-limits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Using Twint (unofficial)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;a little difficult&lt;/li&gt;
+&lt;li&gt;less limitation&lt;/li&gt;
+&lt;li&gt;amazing for large volume&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;analysis&#34;&gt;Analysis&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vader sentiment using python package &lt;a href=&#34;https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664&#34;&gt;https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Naive bayes for sentiment analysis (a little of DIY) &lt;a href=&#34;https://www.datacamp.com/community/tutorials/simplifying-sentiment-analysis-python&#34;&gt;https://www.datacamp.com/community/tutorials/simplifying-sentiment-analysis-python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spacy package&lt;/li&gt;
+&lt;li&gt;Gensim package&lt;/li&gt;
+&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
+&lt;h4 id=&#34;clone-the-repo&#34;&gt;Clone the repo&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/cloudfactory/sentiment_analysis_twitter_starter_code&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;python -m venv env&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;source env/bin/activate&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;oper-jupyter-lab-session&#34;&gt;Oper jupyter lab session&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;jupyter-lab&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;a-simple-twitter-sentiment-analysis-poc&#34;&gt;A simple twitter sentiment analysis poc&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; tweepy
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; json
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; tweepy &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; OAuthHandler
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Full documentation here: &lt;a href=&#34;https://docs.tweepy.org/en/stable/client.html#tweets&#34;&gt;https://docs.tweepy.org/en/stable/client.html#tweets&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;access-keys&#34;&gt;Access keys&lt;/h3&gt;
+&lt;h4 id=&#34;apply-at-twitter-developer-and-receive-these&#34;&gt;Apply at twitter developer and receive these:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;API_SECRET_KEY &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fill this in&amp;#34;&lt;/span&gt;
+API_KEY &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fill this in&amp;#34;&lt;/span&gt;
+ACCESS_TOKEN &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fill this in&amp;#34;&lt;/span&gt;
+ACCESS_TOKEN_SECRET &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fill this in&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;TwitterClient&lt;/span&gt;(object):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    Twitter Client
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self):
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        Class constructor or initialization method.
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# read keys from the secret credentials file&lt;/span&gt;
+        api_key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; API_KEY
+        api_secret &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;API_SECRET_KEY
+        access_token &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ACCESS_TOKEN
+        access_token_secret &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ACCESS_TOKEN_SECRET
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+            self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;auth &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; OAuthHandler(api_key, api_secret)
+            self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;auth&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_access_token(access_token,
+                                       access_token_secret)
+            self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;api &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tweepy&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;API(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;auth)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt;:
+            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Error: Authentication error&amp;#39;&lt;/span&gt;)
+
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_tweets&lt;/span&gt;(self):
+        tweet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;api&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;user_timeline(screen_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kathmandupost&amp;#39;&lt;/span&gt;, count&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; tweet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;raw &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; TwitterClient()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_tweets()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;json_normalize([r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;_json &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; r &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; raw])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;created_at&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;id_str&lt;/th&gt;
+      &lt;th&gt;text&lt;/th&gt;
+      &lt;th&gt;truncated&lt;/th&gt;
+      &lt;th&gt;source&lt;/th&gt;
+      &lt;th&gt;in_reply_to_status_id&lt;/th&gt;
+      &lt;th&gt;in_reply_to_status_id_str&lt;/th&gt;
+      &lt;th&gt;in_reply_to_user_id&lt;/th&gt;
+      &lt;th&gt;in_reply_to_user_id_str&lt;/th&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;th&gt;user.profile_text_color&lt;/th&gt;
+      &lt;th&gt;user.profile_use_background_image&lt;/th&gt;
+      &lt;th&gt;user.has_extended_profile&lt;/th&gt;
+      &lt;th&gt;user.default_profile&lt;/th&gt;
+      &lt;th&gt;user.default_profile_image&lt;/th&gt;
+      &lt;th&gt;user.following&lt;/th&gt;
+      &lt;th&gt;user.follow_request_sent&lt;/th&gt;
+      &lt;th&gt;user.notifications&lt;/th&gt;
+      &lt;th&gt;user.translator_type&lt;/th&gt;
+      &lt;th&gt;user.withheld_in_countries&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Tue Oct 26 01:20:38 +0000 2021&lt;/td&gt;
+      &lt;td&gt;1452807348309868564&lt;/td&gt;
+      &lt;td&gt;1452807348309868564&lt;/td&gt;
+      &lt;td&gt;EDITORIAL: Protect paddy farmers\n\nEase of ac...&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;&amp;lt;a href=&#34;https://about.twitter.com/products/tw...&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;333333&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;none&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Tue Oct 26 00:45:00 +0000 2021&lt;/td&gt;
+      &lt;td&gt;1452798380527161348&lt;/td&gt;
+      &lt;td&gt;1452798380527161348&lt;/td&gt;
+      &lt;td&gt;Despite some opposition, Oli appears to have p...&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;&amp;lt;a href=&#34;https://about.twitter.com/products/tw...&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;333333&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;none&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Mon Oct 25 23:15:00 +0000 2021&lt;/td&gt;
+      &lt;td&gt;1452775731050782726&lt;/td&gt;
+      &lt;td&gt;1452775731050782726&lt;/td&gt;
+      &lt;td&gt;Over 100,000 doses of Pfizer-BioNtech vaccine ...&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;&amp;lt;a href=&#34;https://about.twitter.com/products/tw...&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;333333&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;none&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Mon Oct 25 21:45:00 +0000 2021&lt;/td&gt;
+      &lt;td&gt;1452753082111209475&lt;/td&gt;
+      &lt;td&gt;1452753082111209475&lt;/td&gt;
+      &lt;td&gt;Congress may appoint deputy Speaker, leaving s...&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;&amp;lt;a href=&#34;https://about.twitter.com/products/tw...&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;333333&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;none&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Mon Oct 25 20:15:00 +0000 2021&lt;/td&gt;
+      &lt;td&gt;1452730433033015296&lt;/td&gt;
+      &lt;td&gt;1452730433033015296&lt;/td&gt;
+      &lt;td&gt;Everything you need to know about the Covid-19...&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;&amp;lt;a href=&#34;https://about.twitter.com/products/tw...&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;333333&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;none&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 70 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0     EDITORIAL: Protect paddy farmers\n\nEase of ac...
+1     Despite some opposition, Oli appears to have p...
+2     Over 100,000 doses of Pfizer-BioNtech vaccine ...
+3     Congress may appoint deputy Speaker, leaving s...
+4     Everything you need to know about the Covid-19...
+5     United States to provide 100,620 doses of Pfiz...
+6     Paddy damage by freak rains estimated at Rs8.2...
+7     Dalit representatives complain of social discr...
+8     Consult Delhi for census in Kalapani, census b...
+9     Supreme Court justices to boycott full court m...
+10    London expands vehicle levy to improve air qua...
+11    ‘Children are going to die’, UN agency warns a...
+12    EDITORIAL: Railblock ahead\n\nDelay in operati...
+13    Nepal reports 673 new Covid-19 cases, 13 death...
+14    Whether it’s supply or demand, oil era heads f...
+15    Justices to decide their further step after me...
+16    Climate change: what are the economic stakes?\...
+17    Oslo opens museum to “The Scream” painter Munc...
+18    Everything you need to know about the Covid-19...
+19    Fauci says vaccines for kids between 5-11 like...
+Name: text, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;sentiment-analysis&#34;&gt;Sentiment analysis&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; vaderSentiment.vaderSentiment &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; SentimentIntensityAnalyzer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sentiment_scores&lt;/span&gt;(sentence):
+    sid_obj &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SentimentIntensityAnalyzer()
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; sid_obj&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;polarity_scores(sentence)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;sentiment_scores&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(sentiment_scores)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;sentiment_scores&amp;#39;&lt;/span&gt;]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;text&lt;/th&gt;
+      &lt;th&gt;sentiment_scores&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;EDITORIAL: Protect paddy farmers\n\nEase of ac...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 0.779, &#39;pos&#39;: 0.221, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Despite some opposition, Oli appears to have p...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Over 100,000 doses of Pfizer-BioNtech vaccine ...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 0.872, &#39;pos&#39;: 0.128, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Congress may appoint deputy Speaker, leaving s...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Everything you need to know about the Covid-19...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;United States to provide 100,620 doses of Pfiz...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 0.865, &#39;pos&#39;: 0.135, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;Paddy damage by freak rains estimated at Rs8.2...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.276, &#39;neu&#39;: 0.724, &#39;pos&#39;: 0.0, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;Dalit representatives complain of social discr...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.134, &#39;neu&#39;: 0.753, &#39;pos&#39;: 0.113, &#39;co...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;Consult Delhi for census in Kalapani, census b...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;Supreme Court justices to boycott full court m...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.164, &#39;neu&#39;: 0.582, &#39;pos&#39;: 0.255, &#39;co...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;London expands vehicle levy to improve air qua...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.145, &#39;neu&#39;: 0.683, &#39;pos&#39;: 0.173, &#39;co...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;td&gt;‘Children are going to die’, UN agency warns a...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.277, &#39;neu&#39;: 0.723, &#39;pos&#39;: 0.0, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;td&gt;EDITORIAL: Railblock ahead\n\nDelay in operati...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.113, &#39;neu&#39;: 0.887, &#39;pos&#39;: 0.0, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;Nepal reports 673 new Covid-19 cases, 13 death...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.17, &#39;neu&#39;: 0.83, &#39;pos&#39;: 0.0, &#39;compou...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;14&lt;/th&gt;
+      &lt;td&gt;Whether it’s supply or demand, oil era heads f...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.061, &#39;neu&#39;: 0.939, &#39;pos&#39;: 0.0, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;15&lt;/th&gt;
+      &lt;td&gt;Justices to decide their further step after me...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.076, &#39;neu&#39;: 0.762, &#39;pos&#39;: 0.162, &#39;co...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;Climate change: what are the economic stakes?\...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 0.901, &#39;pos&#39;: 0.099, &#39;comp...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;17&lt;/th&gt;
+      &lt;td&gt;Oslo opens museum to “The Scream” painter Munc...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;Everything you need to know about the Covid-19...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;19&lt;/th&gt;
+      &lt;td&gt;Fauci says vaccines for kids between 5-11 like...&lt;/td&gt;
+      &lt;td&gt;{&#39;neg&#39;: 0.0, &#39;neu&#39;: 1.0, &#39;pos&#39;: 0.0, &#39;compound...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sentiments &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;concat([df, df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sentiment_scores&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Series)], axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;neg&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;neu&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;pos&amp;#39;&lt;/span&gt;]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;sentiments
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;text&lt;/th&gt;
+      &lt;th&gt;neg&lt;/th&gt;
+      &lt;th&gt;neu&lt;/th&gt;
+      &lt;th&gt;pos&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;EDITORIAL: Protect paddy farmers\n\nEase of ac...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;0.779&lt;/td&gt;
+      &lt;td&gt;0.221&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Despite some opposition, Oli appears to have p...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Over 100,000 doses of Pfizer-BioNtech vaccine ...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;0.872&lt;/td&gt;
+      &lt;td&gt;0.128&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Congress may appoint deputy Speaker, leaving s...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Everything you need to know about the Covid-19...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;United States to provide 100,620 doses of Pfiz...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;0.865&lt;/td&gt;
+      &lt;td&gt;0.135&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;Paddy damage by freak rains estimated at Rs8.2...&lt;/td&gt;
+      &lt;td&gt;0.276&lt;/td&gt;
+      &lt;td&gt;0.724&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;Dalit representatives complain of social discr...&lt;/td&gt;
+      &lt;td&gt;0.134&lt;/td&gt;
+      &lt;td&gt;0.753&lt;/td&gt;
+      &lt;td&gt;0.113&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;Consult Delhi for census in Kalapani, census b...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;Supreme Court justices to boycott full court m...&lt;/td&gt;
+      &lt;td&gt;0.164&lt;/td&gt;
+      &lt;td&gt;0.582&lt;/td&gt;
+      &lt;td&gt;0.255&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;London expands vehicle levy to improve air qua...&lt;/td&gt;
+      &lt;td&gt;0.145&lt;/td&gt;
+      &lt;td&gt;0.683&lt;/td&gt;
+      &lt;td&gt;0.173&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;td&gt;‘Children are going to die’, UN agency warns a...&lt;/td&gt;
+      &lt;td&gt;0.277&lt;/td&gt;
+      &lt;td&gt;0.723&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;td&gt;EDITORIAL: Railblock ahead\n\nDelay in operati...&lt;/td&gt;
+      &lt;td&gt;0.113&lt;/td&gt;
+      &lt;td&gt;0.887&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;Nepal reports 673 new Covid-19 cases, 13 death...&lt;/td&gt;
+      &lt;td&gt;0.170&lt;/td&gt;
+      &lt;td&gt;0.830&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;14&lt;/th&gt;
+      &lt;td&gt;Whether it’s supply or demand, oil era heads f...&lt;/td&gt;
+      &lt;td&gt;0.061&lt;/td&gt;
+      &lt;td&gt;0.939&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;15&lt;/th&gt;
+      &lt;td&gt;Justices to decide their further step after me...&lt;/td&gt;
+      &lt;td&gt;0.076&lt;/td&gt;
+      &lt;td&gt;0.762&lt;/td&gt;
+      &lt;td&gt;0.162&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;Climate change: what are the economic stakes?\...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;0.901&lt;/td&gt;
+      &lt;td&gt;0.099&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;17&lt;/th&gt;
+      &lt;td&gt;Oslo opens museum to “The Scream” painter Munc...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;Everything you need to know about the Covid-19...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;19&lt;/th&gt;
+      &lt;td&gt;Fauci says vaccines for kids between 5-11 like...&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+      &lt;td&gt;1.000&lt;/td&gt;
+      &lt;td&gt;0.000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;depending-on-the-threshold-you-create-you-can-also-label-something-as-positive-or-negative-sentiment-now&#34;&gt;Depending on the threshold you create, you can also label something as positive or negative sentiment now&lt;/h1&gt;
+</description>
     </item>
     
     <item>
@@ -26,7 +601,31 @@
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/vaccine_progress/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;nepal-vaccine-progress-twitter-bot&#34;&gt;Nepal Vaccine Progress Twitter Bot&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/NepalVaccine&#34;&gt;https://twitter.com/NepalVaccine&lt;/a&gt; &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Data Source: &lt;a href=&#34;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&#34;&gt;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/vaccine_progress_bot/raw/main/display.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is a Twitter bot that shows progress on covid vaccination (full and partial) in Nepal.&lt;/p&gt;
+&lt;h1 id=&#34;installation-for-contribution&#34;&gt;Installation for contribution&lt;/h1&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://github.com/ayushsubedi/vaccine_progress_bot_nepal/
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python -m venv env
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv-windows&#34;&gt;Enable virtualenv (windows)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app&#34;&gt;Run flask app&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;source FLASK_APP=&amp;quot;app.py&amp;quot;
+flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app-windows&#34;&gt;Run flask app (windows)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$env:FLASK_APP=&amp;quot;app.py&amp;quot;
+flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;env&#34;&gt;.env&lt;/h1&gt;
+&lt;p&gt;Add Twitter keys and BasicAuth keys to the .env_sample file. Once complete rename it to .env&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -35,7 +634,36 @@
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/kohokoho/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;kohokoho-क-ह-क-ह-&#34;&gt;kohokoho (को हो को हो !)&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kohokoho.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Are you an aspiring data analyst? Do clients hesitate to give you their data because of all the sensitive information in it?&lt;/p&gt;
+&lt;p&gt;Or, are you an entrepreneur hesitant to hire a data consultant due to the nature of your data?&lt;/p&gt;
+&lt;p&gt;Mask your data using kohokoho (को हो को हो !)&lt;/p&gt;
+&lt;p&gt;Kohokoho (को हो को हो) is a python package that anonymizes a dataset. Currently, it is still in its infancy and only supports a select few data types.&lt;/p&gt;
+&lt;p&gt;Feel free to contribute with code (it&amp;rsquo;s all open source), or by giving it a better name :D&lt;/p&gt;
+&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;pip install kohokoho&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/EQtBLYwDtucQ1qB1GK09adkjk&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/EQtBLYwDtucQ1qB1GK09adkjk.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;installation-from-source&#34;&gt;Installation (from source)&lt;/h3&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/ayushsubedi/kohokoho&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;python -m venv env&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;p&gt;Windows&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.\env\Scripts\activate&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Mac/Linux&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;source env/bin/activate&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-the-app&#34;&gt;Run the app&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;python kohokoho.py --csv={location of csv file}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Package link: &lt;a href=&#34;https://pypi.org/project/kohokoho/&#34;&gt;https://pypi.org/project/kohokoho/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;test-it-here&#34;&gt;Test it here&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kohokoho.herokuapp.com/&#34;&gt;https://kohokoho.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;version-o-demo&#34;&gt;Version-O Demo&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kohokoho_demo.png&#34; alt=&#34;demo&#34;&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -44,7 +672,29 @@
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/choto/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;choto&#34;&gt;Choto&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;pip install choto&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/r203CswsNWHaThJmHLKgpVl60&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/r203CswsNWHaThJmHLKgpVl60.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you spend most of your time on the terminal, and you need to update yourself on the news, use &amp;ldquo;choto&amp;rdquo;. Choto will summarize the news for you.&lt;/p&gt;
+&lt;p&gt;Python package: &lt;a href=&#34;https://pypi.org/project/choto/&#34;&gt;https://pypi.org/project/choto/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;installation-from-source&#34;&gt;Installation (from source)&lt;/h3&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/ayushsubedi/choto&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;python -m venv env&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.\env\Scripts\activate&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-the-app&#34;&gt;Run the app&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;python choto.py --url=https://abc.xyz --ratio=0.5 --algorithm=bert&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Usage: choto.py [OPTIONS]&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Options:
+--url TEXT                      Enter a valid URL
+--ratio FLOAT                   Ratio to summarize to.
+--algorithm [gensim|spacy|bert] Algorithm to use
+--help                          Show this message and exit.
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>

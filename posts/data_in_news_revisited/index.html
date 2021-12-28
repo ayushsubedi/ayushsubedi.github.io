@@ -104,7 +104,7 @@ onload='renderMathInElement(document.body);'></script>
 </div>
 <h1 class="pt-2">Data in News Revisited</h1>
 
-<h3 class="text-java-700 font-normal leading-relaxed pt-2">A proxy based indicator model to assess statistical literacy of a country.</h3>
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">A proxy based indicator model to assess statistical literacy of a country. 101060 articles were analyzed to assess the use of data in media. The news articles are scraped from article URLs posted by the official news portal&#39;s account on twitter. The news portals that use twitter to post articles regularly are The Himalayan Times, Onlinekhabar, The Nepali Times, myRepublica, and The Kathmandu Post.</h3>
 
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
@@ -152,7 +152,53 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="data-in-news-revisited">Data in News Revisited</h1>
+<p><a href="https://github.com/ayushsubedi/">Ayush Subedi</a> developed this dashboard with the guidance from <a href="https://twitter.com/ravinepal">Ravi Kumar</a>. The dashboard is based on the methodology proposed by Klein, Galdin, and Mohamedou in 2016. This dashboard was initiated to assess the use of data in media in Nepal to provide an input to a World Bank report titled <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/805261601023506163/use-of-data-in-the-private-sector-of-nepal-the-current-state-and-opportunities-in-finance-education-and-the-media">&ldquo;Use of Data in the Private Sector of Nepal : The Current State and Opportunities in Finance, Education, and the Media&rdquo;.</a> This publication was funded by the Trust Fund for Statistical Capacity Building, a global grant facility administered by the Development Data Group of the World Bank on behalf of the contributing donors, and the Partnership for Knowledge-Based Poverty Reduction and Shared Prosperity, a World Bank project with support from the UK&rsquo;s Foreign, Commonwealth and Development Office (FCDO) to increase the production and usage of data and statistics in Nepal.</p>
+<h1 id="introduction">Introduction</h1>
+<p>How journalists use data in their reporting or in their writing can be viewed as a reflection of the country&rsquo;s demand for statistics and data. The World Bank team developed an indicator model to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. As of 07 Jun 2021, the results show that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.</p>
+<p>101060 articles were analyzed to assess the use of data in media. In the <a href="http://datainnews.us-west-1.elasticbeanstalk.com/">previous implementation</a> of this project, the source of data was RSS feeds from Nepali news portal. Unfortunately, due to most of the Nepali news portals deprecating their RSS feature, for this implementation, the news articles are scraped from article URLs posted by the official news portal&rsquo;s account on twitter. The news portals that use twitter to post articles regularly are The Himalayan Times, Onlinekhabar, The Nepali Times, myRepublica, and The Kathmandu Post.</p>
+<h1 id="implementation">Implementation</h1>
+<p><a href="http://datainnews.herokuapp.com/">Data in NEWS portal</a>
+<img src="https://github.com/ayushsubedi/datainnews_V2/blob/main/datainnews_v2/static/img/showcase.png?raw=true" alt=""></p>
+<p>The results from the project was used in the research article published at <a href="http://documents1.worldbank.org/curated/en/805261601023506163/pdf/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media.pdf">http://documents1.worldbank.org/curated/en/805261601023506163/pdf/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media.pdf</a></p>
+<p>As of 9th February 2020, the results showed that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.</p>
+<p>Unfortunately, the data collection process was halted because we ran out of our AWS Activate for Startups credits.</p>
+<p><img src="https://github.com/ayushsubedi/datainnews_V2/blob/main/dataflow.png?raw=true" alt=""></p>
+<h2 id="todos">TODOS</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> create a simple architecture diagram</li>
+<li><input checked="" disabled="" type="checkbox"> curate a list of twitter handles of Nepali newspapers that put URL to their newspapers</li>
+<li><input checked="" disabled="" type="checkbox"> use twint to create datasets (historic)</li>
+<li><input checked="" disabled="" type="checkbox"> check if url is present, url does not 404, and url belongs to the publisher</li>
+<li><input checked="" disabled="" type="checkbox"> use Newspaper to collect important information (author, etc) and complete the dataset</li>
+<li><input checked="" disabled="" type="checkbox"> research dash, swifter and pandarallel</li>
+<li><input checked="" disabled="" type="checkbox"> optimize regular expression functions (if possible this should be performed during scraping)</li>
+<li><input checked="" disabled="" type="checkbox"> create a sqlite database to hold access information (and design schema around other meta) or find and alternative</li>
+<li><input checked="" disabled="" type="checkbox"> add checkpoints (using twint resume or build it manually)</li>
+</ul>
+<h2 id="poc">POC</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> create a full working version of the product</li>
+<li><input checked="" disabled="" type="checkbox"> research downloading twint as pandas to merge with previous data</li>
+</ul>
+<h2 id="twitter-handles">Twitter handles</h2>
+<ul>
+<li>@kathmandupost</li>
+<li>@thehimalayan</li>
+<li>@NepaliTimes</li>
+<li>@OnlineKhabar_En</li>
+<li>@RepublicaNepal</li>
+</ul>
+<h1 id="the-frugal-way">The Frugal way</h1>
+<ul>
+<li>This project leverages on Github Actions for scheduling and scraping purposes.</li>
+<li>This project is hosted on Heroku free tier (free ssl)</li>
+<li>Uses amazing open source projects, primariliy (Twint, Newspaper) etc</li>
+</ul>
+<h1 id="previous-iteration">Previous iteration</h1>
+<p>Find the previous iteration here:
+<a href="https://ayushsubedi.github.io/posts/data_in_news/">https://ayushsubedi.github.io/posts/data_in_news/</a></p>
+</div>
 	</section>
 
 </article>
@@ -281,7 +327,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		0 words in this page.
+		565 words in this page.
 	</div>
 </div>
 
@@ -318,6 +364,8 @@ onload='renderMathInElement(document.body);'></script>
 	<span >
 		
 			<a href="/posts/data_in_news/">Data in News</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/devs_in_nepal/">Devs in Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
 		
 			<a href="/posts/cheers_analysis/">Cheers Hospital Analysis</a>
 		

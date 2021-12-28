@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stackoverflow on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/stackoverflow/</link>
+    <description>Recent content in stackoverflow on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/stackoverflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Devs in Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/devs_in_nepal/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/devs_in_nepal/</guid>
+      <description>&lt;h1 id=&#34;developers-in-nepal-vs-the-world&#34;&gt;Developers in Nepal vs the world&lt;/h1&gt;
+&lt;p&gt;Link to the dashboard: &lt;a href=&#34;https://devsinnepal.github.io/&#34;&gt;https://devsinnepal.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This dashboard facilitates a comparative study of the coding landscape in Nepal with the rest of the world. This tool will help visualize and understand developers, their demographic and geographic profile, motivation, education, coding preference and several other factors.&lt;/p&gt;
+&lt;p&gt;The survey data has been utilized from &lt;a href=&#34;https://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt;. For almost a decade, StackOverflow&amp;rsquo;s annual Developer Survey has been the largest survey of people who code around the world. The survey is taken by nearly 65,000 people in 2020. 242 people participated from Nepal.&lt;/p&gt;
+&lt;p&gt;While Stackoverflow also publishes its analysis on the survey annually, it primarily has a wide focus on aggregated global trends.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/devsinnepal.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;insights&#34;&gt;Insights&lt;/h2&gt;
+&lt;h2 id=&#34;nepal-is-one-of-the-top-destination-to-outsource-technology&#34;&gt;Nepal is one of the top destination to outsource technology.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/median_compensation.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As we can see in the chart below, the annual median developer remuneration is the lowest in Nepal ($6300). It is still more than 6 times the&lt;a href=&#34;https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx&#34;&gt; median per capita income in Nepal&lt;/a&gt;. Even with fairly low remuneration, productivity is &lt;a href=&#34;https://archive.nepalitimes.com/article/Nepali-Times-Buzz/it-is-all-about-it-in-nepal,3887&#34;&gt;notably high&lt;/a&gt;. In the last 20 yrs, the quality of technology services these pool of talents can/have built is very close to the international standards.&lt;/p&gt;
+&lt;p&gt;The annual median remuneration in the US is USD. 115,000.
+Broken into hourly pay (40 hours in a week, 52 weeks in a year), a Nepali developer makes USD. 3.03 an hour whereas a developer in the US makes USD 55.30 an hour. There is a stark difference in the pay between the developers in US vs. Nepal which suggests that there is a great value for employers in outsourcing technology in Nepal. It&amp;rsquo;s a win-win for both, promotes high-paying growth-oriented jobs for talented Nepali developers and quality service at a lower cost for employers.&lt;/p&gt;
+&lt;p&gt;Similar to other countries as well.&lt;/p&gt;
+&lt;h2 id=&#34;the-trend-of-developers-participating-in-stackoverflow-survey-from-nepal-has-increased-over-the-years&#34;&gt;The trend of developers participating in StackOverflow Survey from Nepal has increased over the years.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/nep_devs.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This implies growing popularity of Stackoverflow among the developers and a possibility of more inclusive and accurate results.&lt;/p&gt;
+&lt;p&gt;In the trend below, a certain spike is seen during 2018. However, the number is not largely deviated. Considering, 2018 as an outlier, we can see a growing trend.&lt;/p&gt;
+&lt;h2 id=&#34;javascript-and-python-are-the-two-most-desired-language-among-developers-of-nepal&#34;&gt;JavaScript and Python are the two most desired language among developers of Nepal.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/desired.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CURRENTLY USED LANGUAGE&lt;/th&gt;
+&lt;th&gt;DESIRED LANGUAGE&lt;/th&gt;
+&lt;th&gt;NUMBER OF DEVELOPERS&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML/CSS&lt;/td&gt;
+&lt;td&gt;JavaScript&lt;/td&gt;
+&lt;td&gt;86&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JavaScript&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;83&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML/CSS&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;82&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQL&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;62&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This analysis also shows that most of the developers are currently familiar with HTML/CSS . However, most developers desire to learn JavaScript in future.&lt;/p&gt;
+&lt;p&gt;Furthermore, most developers who have worked with JavaScript and HTML/CSS desire to learn Python indicating its popularity amongst the community too.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

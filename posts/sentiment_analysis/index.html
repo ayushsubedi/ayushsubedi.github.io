@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | Sentiment Analysis</title>
+	<title>Ayush Subedi  | Sentiment Analysis starter code</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.90.1" />
 	
@@ -102,7 +102,9 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">Sentiment Analysis</h1>
+<h1 class="pt-2">Sentiment Analysis starter code</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">This is a starter code for Twitter sentiment analysis. Not to be used in prod.</h3>
 
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
@@ -129,6 +131,17 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/twitter'>twitter</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/sentiment'>sentiment</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/python'>python</a>
+	
+	
+	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
 		datetime="2021-08-11">2021-08-11</time>
 </div>
@@ -142,7 +155,582 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="twitter-sentiment-analysis">Twitter Sentiment Analysis</h1>
+<p><img src="https://cdn.vox-cdn.com/thumbor/yeUcycrGq8vtOYotz9pjUZZn21o=/0x0:4096x1900/1200x800/filters:focal(1721x623:2375x1277)/cdn.vox-cdn.com/uploads/chorus_image/image/69613645/E613I_0WEAQh4r0.0.jpeg" alt=""></p>
+<h3 id="getting-data-from-twitter">Getting data from twitter</h3>
+<ol>
+<li>Using Tweepy (uses official twitter API)</li>
+</ol>
+<ul>
+<li>easy</li>
+<li>several limitations</li>
+<li>check <a href="https://developer.twitter.com/en/docs/rate-limits">https://developer.twitter.com/en/docs/rate-limits</a></li>
+</ul>
+<ol start="2">
+<li>Using Twint (unofficial)</li>
+</ol>
+<ul>
+<li>a little difficult</li>
+<li>less limitation</li>
+<li>amazing for large volume</li>
+</ul>
+<hr>
+<h3 id="analysis">Analysis</h3>
+<ul>
+<li>Vader sentiment using python package <a href="https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664">https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664</a></li>
+<li>Naive bayes for sentiment analysis (a little of DIY) <a href="https://www.datacamp.com/community/tutorials/simplifying-sentiment-analysis-python">https://www.datacamp.com/community/tutorials/simplifying-sentiment-analysis-python</a></li>
+<li>Spacy package</li>
+<li>Gensim package</li>
+<li>etc.</li>
+</ul>
+<hr>
+<h1 id="installation">Installation</h1>
+<h4 id="clone-the-repo">Clone the repo</h4>
+<p><code>git clone https://github.com/cloudfactory/sentiment_analysis_twitter_starter_code</code></p>
+<h4 id="cd-into-the-cloned-directory-and-create-a-virtualenv">CD into the cloned directory and create a virtualenv</h4>
+<p><code>python -m venv env</code></p>
+<h3 id="enable-virtualenv">Enable virtualenv</h3>
+<p><code>source env/bin/activate</code></p>
+<h3 id="install-dependency-packages-from-requirementstxt">Install dependency packages from requirements.txt</h3>
+<p><code>pip install -r requirements.txt</code></p>
+<h3 id="oper-jupyter-lab-session">Oper jupyter lab session</h3>
+<p><code>jupyter-lab</code></p>
+<h1 id="a-simple-twitter-sentiment-analysis-poc">A simple twitter sentiment analysis poc</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tweepy
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">from</span> tweepy <span style="color:#f92672">import</span> OAuthHandler
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</code></pre></div><p>Full documentation here: <a href="https://docs.tweepy.org/en/stable/client.html#tweets">https://docs.tweepy.org/en/stable/client.html#tweets</a></p>
+<h3 id="access-keys">Access keys</h3>
+<h4 id="apply-at-twitter-developer-and-receive-these">Apply at twitter developer and receive these:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">API_SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fill this in&#34;</span>
+API_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fill this in&#34;</span>
+ACCESS_TOKEN <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fill this in&#34;</span>
+ACCESS_TOKEN_SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fill this in&#34;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TwitterClient</span>(object):
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    Twitter Client
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+
+    <span style="color:#66d9ef">def</span> __init__(self):
+        <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">        Class constructor or initialization method.
+</span><span style="color:#e6db74">        &#39;&#39;&#39;</span>
+        <span style="color:#75715e"># read keys from the secret credentials file</span>
+        api_key <span style="color:#f92672">=</span> API_KEY
+        api_secret <span style="color:#f92672">=</span>API_SECRET_KEY
+        access_token <span style="color:#f92672">=</span> ACCESS_TOKEN
+        access_token_secret <span style="color:#f92672">=</span> ACCESS_TOKEN_SECRET
+
+        <span style="color:#66d9ef">try</span>:
+            self<span style="color:#f92672">.</span>auth <span style="color:#f92672">=</span> OAuthHandler(api_key, api_secret)
+            self<span style="color:#f92672">.</span>auth<span style="color:#f92672">.</span>set_access_token(access_token,
+                                       access_token_secret)
+            self<span style="color:#f92672">.</span>api <span style="color:#f92672">=</span> tweepy<span style="color:#f92672">.</span>API(self<span style="color:#f92672">.</span>auth)
+        <span style="color:#66d9ef">except</span>:
+            print(<span style="color:#e6db74">&#39;Error: Authentication error&#39;</span>)
+
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_tweets</span>(self):
+        tweet <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>api<span style="color:#f92672">.</span>user_timeline(screen_name <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;kathmandupost&#39;</span>, count<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)
+        <span style="color:#66d9ef">return</span> tweet
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">raw <span style="color:#f92672">=</span> TwitterClient()<span style="color:#f92672">.</span>get_tweets()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>json_normalize([r<span style="color:#f92672">.</span>_json <span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> raw])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>created_at</th>
+      <th>id</th>
+      <th>id_str</th>
+      <th>text</th>
+      <th>truncated</th>
+      <th>source</th>
+      <th>in_reply_to_status_id</th>
+      <th>in_reply_to_status_id_str</th>
+      <th>in_reply_to_user_id</th>
+      <th>in_reply_to_user_id_str</th>
+      <th>...</th>
+      <th>user.profile_text_color</th>
+      <th>user.profile_use_background_image</th>
+      <th>user.has_extended_profile</th>
+      <th>user.default_profile</th>
+      <th>user.default_profile_image</th>
+      <th>user.following</th>
+      <th>user.follow_request_sent</th>
+      <th>user.notifications</th>
+      <th>user.translator_type</th>
+      <th>user.withheld_in_countries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Tue Oct 26 01:20:38 +0000 2021</td>
+      <td>1452807348309868564</td>
+      <td>1452807348309868564</td>
+      <td>EDITORIAL: Protect paddy farmers\n\nEase of ac...</td>
+      <td>True</td>
+      <td>&lt;a href="https://about.twitter.com/products/tw...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>333333</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>none</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tue Oct 26 00:45:00 +0000 2021</td>
+      <td>1452798380527161348</td>
+      <td>1452798380527161348</td>
+      <td>Despite some opposition, Oli appears to have p...</td>
+      <td>True</td>
+      <td>&lt;a href="https://about.twitter.com/products/tw...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>333333</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>none</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mon Oct 25 23:15:00 +0000 2021</td>
+      <td>1452775731050782726</td>
+      <td>1452775731050782726</td>
+      <td>Over 100,000 doses of Pfizer-BioNtech vaccine ...</td>
+      <td>True</td>
+      <td>&lt;a href="https://about.twitter.com/products/tw...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>333333</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>none</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Mon Oct 25 21:45:00 +0000 2021</td>
+      <td>1452753082111209475</td>
+      <td>1452753082111209475</td>
+      <td>Congress may appoint deputy Speaker, leaving s...</td>
+      <td>True</td>
+      <td>&lt;a href="https://about.twitter.com/products/tw...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>333333</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>none</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mon Oct 25 20:15:00 +0000 2021</td>
+      <td>1452730433033015296</td>
+      <td>1452730433033015296</td>
+      <td>Everything you need to know about the Covid-19...</td>
+      <td>True</td>
+      <td>&lt;a href="https://about.twitter.com/products/tw...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>333333</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>none</td>
+      <td>[]</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 70 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>text
+</code></pre></div><pre><code>0     EDITORIAL: Protect paddy farmers\n\nEase of ac...
+1     Despite some opposition, Oli appears to have p...
+2     Over 100,000 doses of Pfizer-BioNtech vaccine ...
+3     Congress may appoint deputy Speaker, leaving s...
+4     Everything you need to know about the Covid-19...
+5     United States to provide 100,620 doses of Pfiz...
+6     Paddy damage by freak rains estimated at Rs8.2...
+7     Dalit representatives complain of social discr...
+8     Consult Delhi for census in Kalapani, census b...
+9     Supreme Court justices to boycott full court m...
+10    London expands vehicle levy to improve air qua...
+11    ‘Children are going to die’, UN agency warns a...
+12    EDITORIAL: Railblock ahead\n\nDelay in operati...
+13    Nepal reports 673 new Covid-19 cases, 13 death...
+14    Whether it’s supply or demand, oil era heads f...
+15    Justices to decide their further step after me...
+16    Climate change: what are the economic stakes?\...
+17    Oslo opens museum to “The Scream” painter Munc...
+18    Everything you need to know about the Covid-19...
+19    Fauci says vaccines for kids between 5-11 like...
+Name: text, dtype: object
+</code></pre>
+<h2 id="sentiment-analysis">Sentiment analysis</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> vaderSentiment.vaderSentiment <span style="color:#f92672">import</span> SentimentIntensityAnalyzer
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sentiment_scores</span>(sentence):
+    sid_obj <span style="color:#f92672">=</span> SentimentIntensityAnalyzer()
+    <span style="color:#66d9ef">return</span> sid_obj<span style="color:#f92672">.</span>polarity_scores(sentence)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;sentiment_scores&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>apply(sentiment_scores)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[[<span style="color:#e6db74">&#39;text&#39;</span>, <span style="color:#e6db74">&#39;sentiment_scores&#39;</span>]]
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>text</th>
+      <th>sentiment_scores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EDITORIAL: Protect paddy farmers\n\nEase of ac...</td>
+      <td>{'neg': 0.0, 'neu': 0.779, 'pos': 0.221, 'comp...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Despite some opposition, Oli appears to have p...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Over 100,000 doses of Pfizer-BioNtech vaccine ...</td>
+      <td>{'neg': 0.0, 'neu': 0.872, 'pos': 0.128, 'comp...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Congress may appoint deputy Speaker, leaving s...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Everything you need to know about the Covid-19...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United States to provide 100,620 doses of Pfiz...</td>
+      <td>{'neg': 0.0, 'neu': 0.865, 'pos': 0.135, 'comp...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Paddy damage by freak rains estimated at Rs8.2...</td>
+      <td>{'neg': 0.276, 'neu': 0.724, 'pos': 0.0, 'comp...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Dalit representatives complain of social discr...</td>
+      <td>{'neg': 0.134, 'neu': 0.753, 'pos': 0.113, 'co...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Consult Delhi for census in Kalapani, census b...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Supreme Court justices to boycott full court m...</td>
+      <td>{'neg': 0.164, 'neu': 0.582, 'pos': 0.255, 'co...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>London expands vehicle levy to improve air qua...</td>
+      <td>{'neg': 0.145, 'neu': 0.683, 'pos': 0.173, 'co...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>‘Children are going to die’, UN agency warns a...</td>
+      <td>{'neg': 0.277, 'neu': 0.723, 'pos': 0.0, 'comp...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>EDITORIAL: Railblock ahead\n\nDelay in operati...</td>
+      <td>{'neg': 0.113, 'neu': 0.887, 'pos': 0.0, 'comp...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Nepal reports 673 new Covid-19 cases, 13 death...</td>
+      <td>{'neg': 0.17, 'neu': 0.83, 'pos': 0.0, 'compou...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Whether it’s supply or demand, oil era heads f...</td>
+      <td>{'neg': 0.061, 'neu': 0.939, 'pos': 0.0, 'comp...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Justices to decide their further step after me...</td>
+      <td>{'neg': 0.076, 'neu': 0.762, 'pos': 0.162, 'co...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Climate change: what are the economic stakes?\...</td>
+      <td>{'neg': 0.0, 'neu': 0.901, 'pos': 0.099, 'comp...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Oslo opens museum to “The Scream” painter Munc...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Everything you need to know about the Covid-19...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Fauci says vaccines for kids between 5-11 like...</td>
+      <td>{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sentiments <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df, df<span style="color:#f92672">.</span>sentiment_scores<span style="color:#f92672">.</span>apply(pd<span style="color:#f92672">.</span>Series)], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)[[<span style="color:#e6db74">&#39;text&#39;</span>, <span style="color:#e6db74">&#39;neg&#39;</span>, <span style="color:#e6db74">&#39;neu&#39;</span>, <span style="color:#e6db74">&#39;pos&#39;</span>]]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sentiments
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>text</th>
+      <th>neg</th>
+      <th>neu</th>
+      <th>pos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EDITORIAL: Protect paddy farmers\n\nEase of ac...</td>
+      <td>0.000</td>
+      <td>0.779</td>
+      <td>0.221</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Despite some opposition, Oli appears to have p...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Over 100,000 doses of Pfizer-BioNtech vaccine ...</td>
+      <td>0.000</td>
+      <td>0.872</td>
+      <td>0.128</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Congress may appoint deputy Speaker, leaving s...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Everything you need to know about the Covid-19...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United States to provide 100,620 doses of Pfiz...</td>
+      <td>0.000</td>
+      <td>0.865</td>
+      <td>0.135</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Paddy damage by freak rains estimated at Rs8.2...</td>
+      <td>0.276</td>
+      <td>0.724</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Dalit representatives complain of social discr...</td>
+      <td>0.134</td>
+      <td>0.753</td>
+      <td>0.113</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Consult Delhi for census in Kalapani, census b...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Supreme Court justices to boycott full court m...</td>
+      <td>0.164</td>
+      <td>0.582</td>
+      <td>0.255</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>London expands vehicle levy to improve air qua...</td>
+      <td>0.145</td>
+      <td>0.683</td>
+      <td>0.173</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>‘Children are going to die’, UN agency warns a...</td>
+      <td>0.277</td>
+      <td>0.723</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>EDITORIAL: Railblock ahead\n\nDelay in operati...</td>
+      <td>0.113</td>
+      <td>0.887</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Nepal reports 673 new Covid-19 cases, 13 death...</td>
+      <td>0.170</td>
+      <td>0.830</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Whether it’s supply or demand, oil era heads f...</td>
+      <td>0.061</td>
+      <td>0.939</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Justices to decide their further step after me...</td>
+      <td>0.076</td>
+      <td>0.762</td>
+      <td>0.162</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Climate change: what are the economic stakes?\...</td>
+      <td>0.000</td>
+      <td>0.901</td>
+      <td>0.099</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Oslo opens museum to “The Scream” painter Munc...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Everything you need to know about the Covid-19...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Fauci says vaccines for kids between 5-11 like...</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h1 id="depending-on-the-threshold-you-create-you-can-also-label-something-as-positive-or-negative-sentiment-now">Depending on the threshold you create, you can also label something as positive or negative sentiment now</h1>
+</div>
 	</section>
 
 </article>
@@ -271,7 +859,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		0 words in this page.
+		1246 words in this page.
 	</div>
 </div>
 
@@ -292,7 +880,7 @@ onload='renderMathInElement(document.body);'></script>
     
     
     <a class="flex-grow-0" href="/posts/synthetic_data_generation/">
-        Synthetic Data Generation
+        Synthetic Data Generation: eHamroPasalmandu.com
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -302,6 +890,41 @@ onload='renderMathInElement(document.body);'></script>
 <div >
 
 
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/vaccine_progress/">Nepal Vaccine Progress Twitter Bot</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/cheers_ai/">Diabetic Retinopathy and Glaucoma Detection</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/kohokoho/">Kohokoho</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/choto/">Choto</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/synthetic_data_pareto/">Synthetic data based on pareto principle</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/cheers_analysis/">Cheers Hospital Analysis</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/spirathon/">Spirathon AI Conference 2019</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/fraud_detection/">Fraud Detection</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/torpe/">Torpe Blockchain</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/inclusive_newspaper/">Inclusive Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/seedstars/">Startup analysis using Seedstars data</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/diffie_hellman/">Diffie-Hellman key exchange (and AES-256)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/rsa_encryption/">RSA encryption</a>
+		
+</span>
+</div>
 
 </div>
 <hr />

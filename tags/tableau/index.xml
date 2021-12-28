@@ -17,7 +17,439 @@
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;the-emojis-of-kathmandu&#34;&gt;The Emojis of Kathmandu&lt;/h1&gt;
+&lt;p&gt;50K tweets between 2012 to 2021 (containing emojis, and geocoded to Kathmandu) show that we really love 😂&lt;/p&gt;
+&lt;p&gt;Recently though, we have been 😂   less and 🙏 more, 😁  less and ❤️  more.
+Just goes to show Kathmandu is healing from Covid.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ayushsubedi/emojan/main/assets/final.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Github repo: &lt;a href=&#34;https://github.com/ayushsubedi/emojan&#34;&gt;https://github.com/ayushsubedi/emojan&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;create-the-dataset-using-twint&#34;&gt;Create the dataset using twint&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; twint
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; nest_asyncio
+nest_asyncio&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;emoji_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😁&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😒&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😊&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😈&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;🇳🇵&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😌&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;☕&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;👶&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;👍&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😷&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;👌&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;🌞&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😑&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😉&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😍&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;☺️&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😴&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😱&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;🙏&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😘&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;🙌&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😔&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😋&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😂&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😩&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;💕&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😎&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😭&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😳&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😇&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😏&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😜&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;☕️&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;✌️&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;🙈&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;❤️&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;😄&amp;#39;&lt;/span&gt;,
+ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;💞&amp;#39;&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; emoji &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; emoji_list:
+    c &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; twint&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Config()
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Search &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; emoji
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Pandas &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Store_csv &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; emoji
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Hide_output&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Near&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;kathmandu&amp;#34;&lt;/span&gt;
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Since&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2010-01-01&amp;#34;&lt;/span&gt;
+    c&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Until &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2021-05-31&amp;#34;&lt;/span&gt;
+    twint&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;run&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Search(c)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;perform-analysis&#34;&gt;Perform analysis&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;../datasets/merged.csv&amp;#34;&lt;/span&gt;, lineterminator&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;, parse_dates&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;list(df)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[&#39;id&#39;, &#39;emoji&#39;, &#39;date&#39;, &#39;username&#39;, &#39;tweet&#39;, &#39;likes_count&#39;, &#39;place&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;username&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;ms_madhur          1433
+sristee44          1121
+beingsamikshya      871
+anuskashresthax     618
+nepalplanettrek     594
+scousergirl         572
+dreamingdr          569
+nepaligentleman     476
+itsme_shivangi      433
+iamnabinraj75       410
+sim_shrestha        402
+milan_pu1           353
+raunakbasnet1       332
+thulokanxo          325
+chetan_karki        302
+saampokhrel         301
+mongolianheartk     300
+tenzintsetenbhu     290
+rana1997rohit       275
+fatyangri           256
+Name: username, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;emoji&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;😂     7576
+😊     4016
+😍     3781
+😁     3482
+🇳🇵    2785
+😎     2270
+❤️    2233
+🙏     2122
+😉     2000
+😜     1463
+😘     1432
+😋     1241
+💕     1173
+😄     1095
+👍     1001
+👌      730
+😭      637
+😏      554
+✌️     505
+😒      483
+Name: emoji, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;date&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;min()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Timestamp(&#39;2012-01-28 00:00:00&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resample(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;M&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;date
+2012-01-31      2
+2012-02-29     16
+2012-03-31     13
+2012-04-30      3
+2012-05-31     11
+             ... 
+2021-01-31    212
+2021-02-28    134
+2021-03-31    183
+2021-04-30    160
+2021-05-31    119
+Freq: M, Name: id, Length: 113, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resample(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;M&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;AxesSubplot:xlabel=&#39;date&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_7_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;emoji&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;❤️&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resample(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;M&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;AxesSubplot:xlabel=&#39;date&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_8_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;emoji&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;😷&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resample(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;M&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;AxesSubplot:xlabel=&#39;date&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_9_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;emoji&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;🇳🇵&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resample(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;M&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;AxesSubplot:xlabel=&#39;date&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_10_11.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;emoji&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;😂&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resample(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;M&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;AxesSubplot:xlabel=&#39;date&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_11_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;location_tweet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dropna(subset&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;place&amp;#39;&lt;/span&gt;])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; json
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; math
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getlatlon&lt;/span&gt;(row):
+    place &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; row&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;place
+    place &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; place&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+    place &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; json&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;loads(place)
+    lat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; place[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;coordinates&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+    lon &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; place[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;coordinates&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Series([lat, lon],index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;lat&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;lon&amp;#39;&lt;/span&gt;])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(location_tweet&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(getlatlon, axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, result_type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;expand&amp;#34;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;location.csv&amp;#39;&lt;/span&gt;, index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;emoji&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;username&lt;/th&gt;
+      &lt;th&gt;tweet&lt;/th&gt;
+      &lt;th&gt;likes_count&lt;/th&gt;
+      &lt;th&gt;place&lt;/th&gt;
+      &lt;th&gt;lat&lt;/th&gt;
+      &lt;th&gt;lon&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1398437418768818176&lt;/td&gt;
+      &lt;td&gt;👌&lt;/td&gt;
+      &lt;td&gt;2021-05-29&lt;/td&gt;
+      &lt;td&gt;dendikapan&lt;/td&gt;
+      &lt;td&gt;शुभ बिहानी ☕️☕️ शुभदिनकाे कामना🙏😷👌🇳🇵💞 Hopefull...&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1397792077149216769&lt;/td&gt;
+      &lt;td&gt;👌&lt;/td&gt;
+      &lt;td&gt;2021-05-27&lt;/td&gt;
+      &lt;td&gt;dendikapan&lt;/td&gt;
+      &lt;td&gt;@damanbro66 Yes I like it 👌so much your post  ...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1397341721566990336&lt;/td&gt;
+      &lt;td&gt;👌&lt;/td&gt;
+      &lt;td&gt;2021-05-26&lt;/td&gt;
+      &lt;td&gt;dendikapan&lt;/td&gt;
+      &lt;td&gt;@KiranCh77 Really nice 👌thanks for sharing 👌  ...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1394863068035813379&lt;/td&gt;
+      &lt;td&gt;👌&lt;/td&gt;
+      &lt;td&gt;2021-05-19&lt;/td&gt;
+      &lt;td&gt;iammuhnaj&lt;/td&gt;
+      &lt;td&gt;It&#39;s still Bull season👌 @ 𝙃𝙊𝙈𝙀  https://t.co/O...&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.713776, 8...&lt;/td&gt;
+      &lt;td&gt;27.713776&lt;/td&gt;
+      &lt;td&gt;85.310244&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1393821979032133635&lt;/td&gt;
+      &lt;td&gt;👌&lt;/td&gt;
+      &lt;td&gt;2021-05-16&lt;/td&gt;
+      &lt;td&gt;chetan_karki&lt;/td&gt;
+      &lt;td&gt;#just #fun with #baby #myrahsofkarki 😊❤️ looki...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.67733347,...&lt;/td&gt;
+      &lt;td&gt;27.677333&lt;/td&gt;
+      &lt;td&gt;85.307636&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45362&lt;/th&gt;
+      &lt;td&gt;389751359874289664&lt;/td&gt;
+      &lt;td&gt;❤️&lt;/td&gt;
+      &lt;td&gt;2013-10-14&lt;/td&gt;
+      &lt;td&gt;ashmoo_moo&lt;/td&gt;
+      &lt;td&gt;#littleone #cuteness #dashain #tika #sister #c...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.73048071,...&lt;/td&gt;
+      &lt;td&gt;27.730481&lt;/td&gt;
+      &lt;td&gt;85.330964&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45363&lt;/th&gt;
+      &lt;td&gt;389704517815902208&lt;/td&gt;
+      &lt;td&gt;❤️&lt;/td&gt;
+      &lt;td&gt;2013-10-14&lt;/td&gt;
+      &lt;td&gt;ashmoo_moo&lt;/td&gt;
+      &lt;td&gt;Baba. Prajjwal Dai. ❤️ #dashain #tika #family ...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.73855019,...&lt;/td&gt;
+      &lt;td&gt;27.738550&lt;/td&gt;
+      &lt;td&gt;85.338760&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45364&lt;/th&gt;
+      &lt;td&gt;387917234490048512&lt;/td&gt;
+      &lt;td&gt;❤️&lt;/td&gt;
+      &lt;td&gt;2013-10-09&lt;/td&gt;
+      &lt;td&gt;ashmoo_moo&lt;/td&gt;
+      &lt;td&gt;#brother #cousins #mamaghar #nagpokhari #morni...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.71356987,...&lt;/td&gt;
+      &lt;td&gt;27.713570&lt;/td&gt;
+      &lt;td&gt;85.324463&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45365&lt;/th&gt;
+      &lt;td&gt;387542385145954304&lt;/td&gt;
+      &lt;td&gt;❤️&lt;/td&gt;
+      &lt;td&gt;2013-10-08&lt;/td&gt;
+      &lt;td&gt;ashmoo_moo&lt;/td&gt;
+      &lt;td&gt;#cuteness #babysister #cousins #smile ❤️😘💋 @ M...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.7090305, ...&lt;/td&gt;
+      &lt;td&gt;27.709031&lt;/td&gt;
+      &lt;td&gt;85.326469&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45366&lt;/th&gt;
+      &lt;td&gt;386357639460179968&lt;/td&gt;
+      &lt;td&gt;❤️&lt;/td&gt;
+      &lt;td&gt;2013-10-05&lt;/td&gt;
+      &lt;td&gt;ashmoo_moo&lt;/td&gt;
+      &lt;td&gt;on our way back homeeeeee.... ❤️😘 #lastnight #...&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [27.73868383,...&lt;/td&gt;
+      &lt;td&gt;27.738684&lt;/td&gt;
+      &lt;td&gt;85.338705&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;45367 rows × 9 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;emoji&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;😂     7576
+😊     4016
+😍     3781
+😁     3482
+🇳🇵    2785
+😎     2270
+❤️    2233
+🙏     2122
+😉     2000
+😜     1463
+😘     1432
+😋     1241
+💕     1173
+😄     1095
+👍     1001
+👌      730
+😭      637
+😏      554
+✌️     505
+😒      483
+💞      461
+😇      432
+🙌      423
+☺️     375
+😔      373
+😌      332
+😱      314
+😑      296
+😈      292
+🙈      291
+☕      277
+🌞      213
+😳      185
+😩      181
+😴      163
+😷      135
+👶       45
+Name: emoji, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Devs in Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/devs_in_nepal/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/devs_in_nepal/</guid>
+      <description>&lt;h1 id=&#34;developers-in-nepal-vs-the-world&#34;&gt;Developers in Nepal vs the world&lt;/h1&gt;
+&lt;p&gt;Link to the dashboard: &lt;a href=&#34;https://devsinnepal.github.io/&#34;&gt;https://devsinnepal.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This dashboard facilitates a comparative study of the coding landscape in Nepal with the rest of the world. This tool will help visualize and understand developers, their demographic and geographic profile, motivation, education, coding preference and several other factors.&lt;/p&gt;
+&lt;p&gt;The survey data has been utilized from &lt;a href=&#34;https://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt;. For almost a decade, StackOverflow&amp;rsquo;s annual Developer Survey has been the largest survey of people who code around the world. The survey is taken by nearly 65,000 people in 2020. 242 people participated from Nepal.&lt;/p&gt;
+&lt;p&gt;While Stackoverflow also publishes its analysis on the survey annually, it primarily has a wide focus on aggregated global trends.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/devsinnepal.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;insights&#34;&gt;Insights&lt;/h2&gt;
+&lt;h2 id=&#34;nepal-is-one-of-the-top-destination-to-outsource-technology&#34;&gt;Nepal is one of the top destination to outsource technology.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/median_compensation.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As we can see in the chart below, the annual median developer remuneration is the lowest in Nepal ($6300). It is still more than 6 times the&lt;a href=&#34;https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx&#34;&gt; median per capita income in Nepal&lt;/a&gt;. Even with fairly low remuneration, productivity is &lt;a href=&#34;https://archive.nepalitimes.com/article/Nepali-Times-Buzz/it-is-all-about-it-in-nepal,3887&#34;&gt;notably high&lt;/a&gt;. In the last 20 yrs, the quality of technology services these pool of talents can/have built is very close to the international standards.&lt;/p&gt;
+&lt;p&gt;The annual median remuneration in the US is USD. 115,000.
+Broken into hourly pay (40 hours in a week, 52 weeks in a year), a Nepali developer makes USD. 3.03 an hour whereas a developer in the US makes USD 55.30 an hour. There is a stark difference in the pay between the developers in US vs. Nepal which suggests that there is a great value for employers in outsourcing technology in Nepal. It&amp;rsquo;s a win-win for both, promotes high-paying growth-oriented jobs for talented Nepali developers and quality service at a lower cost for employers.&lt;/p&gt;
+&lt;p&gt;Similar to other countries as well.&lt;/p&gt;
+&lt;h2 id=&#34;the-trend-of-developers-participating-in-stackoverflow-survey-from-nepal-has-increased-over-the-years&#34;&gt;The trend of developers participating in StackOverflow Survey from Nepal has increased over the years.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/nep_devs.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This implies growing popularity of Stackoverflow among the developers and a possibility of more inclusive and accurate results.&lt;/p&gt;
+&lt;p&gt;In the trend below, a certain spike is seen during 2018. However, the number is not largely deviated. Considering, 2018 as an outlier, we can see a growing trend.&lt;/p&gt;
+&lt;h2 id=&#34;javascript-and-python-are-the-two-most-desired-language-among-developers-of-nepal&#34;&gt;JavaScript and Python are the two most desired language among developers of Nepal.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/desired.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CURRENTLY USED LANGUAGE&lt;/th&gt;
+&lt;th&gt;DESIRED LANGUAGE&lt;/th&gt;
+&lt;th&gt;NUMBER OF DEVELOPERS&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML/CSS&lt;/td&gt;
+&lt;td&gt;JavaScript&lt;/td&gt;
+&lt;td&gt;86&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JavaScript&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;83&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML/CSS&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;82&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQL&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;62&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This analysis also shows that most of the developers are currently familiar with HTML/CSS . However, most developers desire to learn JavaScript in future.&lt;/p&gt;
+&lt;p&gt;Furthermore, most developers who have worked with JavaScript and HTML/CSS desire to learn Python indicating its popularity amongst the community too.&lt;/p&gt;
+</description>
     </item>
     
     <item>

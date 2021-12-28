@@ -138,6 +138,60 @@
     </item>
     
     <item>
+      <title>python</title>
+      <link>https://ayushsubedi.github.io/tags/python/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>synthetic</title>
+      <link>https://ayushsubedi.github.io/tags/synthetic/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/synthetic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sentiment</title>
+      <link>https://ayushsubedi.github.io/tags/sentiment/</link>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sentiment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>twitter</title>
+      <link>https://ayushsubedi.github.io/tags/twitter/</link>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bot</title>
+      <link>https://ayushsubedi.github.io/tags/bot/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flask</title>
+      <link>https://ayushsubedi.github.io/tags/flask/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>tableau</title>
       <link>https://ayushsubedi.github.io/tags/tableau/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
@@ -156,6 +210,24 @@
     </item>
     
     <item>
+      <title>ai</title>
+      <link>https://ayushsubedi.github.io/tags/ai/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ml</title>
+      <link>https://ayushsubedi.github.io/tags/ml/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>analysis</title>
       <link>https://ayushsubedi.github.io/tags/analysis/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
@@ -170,6 +242,33 @@
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://ayushsubedi.github.io/tags/cli/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web app</title>
+      <link>https://ayushsubedi.github.io/tags/web-app/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/web-app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stackoverflow</title>
+      <link>https://ayushsubedi.github.io/tags/stackoverflow/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/stackoverflow/</guid>
       <description></description>
     </item>
     
@@ -210,15 +309,6 @@
     </item>
     
     <item>
-      <title>ml</title>
-      <link>https://ayushsubedi.github.io/tags/ml/</link>
-      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/ml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>data viz</title>
       <link>https://ayushsubedi.github.io/tags/data-viz/</link>
       <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
@@ -233,24 +323,6 @@
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/pareto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://ayushsubedi.github.io/tags/python/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>synthetic</title>
-      <link>https://ayushsubedi.github.io/tags/synthetic/</link>
-      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/synthetic/</guid>
       <description></description>
     </item>
     

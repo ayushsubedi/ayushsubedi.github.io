@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bot on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/bot/</link>
+    <description>Recent content in bot on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/bot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nepal Vaccine Progress Twitter Bot</title>
+      <link>https://ayushsubedi.github.io/posts/vaccine_progress/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/vaccine_progress/</guid>
+      <description>&lt;h1 id=&#34;nepal-vaccine-progress-twitter-bot&#34;&gt;Nepal Vaccine Progress Twitter Bot&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/NepalVaccine&#34;&gt;https://twitter.com/NepalVaccine&lt;/a&gt; &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Data Source: &lt;a href=&#34;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&#34;&gt;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/vaccine_progress_bot/raw/main/display.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is a Twitter bot that shows progress on covid vaccination (full and partial) in Nepal.&lt;/p&gt;
+&lt;h1 id=&#34;installation-for-contribution&#34;&gt;Installation for contribution&lt;/h1&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://github.com/ayushsubedi/vaccine_progress_bot_nepal/
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python -m venv env
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv-windows&#34;&gt;Enable virtualenv (windows)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app&#34;&gt;Run flask app&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;source FLASK_APP=&amp;quot;app.py&amp;quot;
+flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app-windows&#34;&gt;Run flask app (windows)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$env:FLASK_APP=&amp;quot;app.py&amp;quot;
+flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;env&#34;&gt;.env&lt;/h1&gt;
+&lt;p&gt;Add Twitter keys and BasicAuth keys to the .env_sample file. Once complete rename it to .env&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

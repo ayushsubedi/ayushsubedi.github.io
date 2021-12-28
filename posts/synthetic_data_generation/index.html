@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | Synthetic Data Generation</title>
+	<title>Ayush Subedi  | Synthetic Data Generation: eHamroPasalmandu.com</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.90.1" />
 	
@@ -102,7 +102,9 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">Synthetic Data Generation</h1>
+<h1 class="pt-2">Synthetic Data Generation: eHamroPasalmandu.com</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">eHamroPasalmandu is a fictional eCommerse based in Nepal. If it were operating for a year, this is what the data would look like (kind of, sort of).</h3>
 
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
@@ -126,6 +128,14 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/synthetic'>synthetic</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/python'>python</a>
+	
+	
+	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
 		datetime="2021-09-12">2021-09-12</time>
 </div>
@@ -139,7 +149,1950 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="ehamropasalmanducom">eHamroPasalmandu.com</h1>
+<p>eHamroPasalmandu is a <strong>fictional</strong> eCommerse based in Nepal. If it were operating for a year, this is what the data would look like (kind of, sort of).</p>
+<p><img src="https://habrastorage.org/webt/lz/5v/zl/lz5vzlarugx3uv9fhs1oyu5n3em.jpeg" alt=""></p>
+<h2 id="some-real-world-patterns-here">Some &ldquo;real world&rdquo; patterns here:</h2>
+<ul>
+<li>Upward Trend</li>
+<li>Weekly seasonality</li>
+<li>Holiday</li>
+<li>System shutdowns</li>
+<li>Pirate metrics</li>
+<li>Pattens usually visible in Nepali startups (demography and distributions)</li>
+<li>Customer Churn</li>
+<li>others</li>
+</ul>
+<h3 id="raw-sources">Raw sources</h3>
+<ul>
+<li><a href="http://www.studentsoftheworld.info/penpals/stats.php?Pays=NEP">http://www.studentsoftheworld.info/penpals/stats.php?Pays=NEP</a></li>
+<li><a href="https://raw.githubusercontent.com/amitness/Thar/master/surnames_en.csv">https://raw.githubusercontent.com/amitness/Thar/master/surnames_en.csv</a></li>
+<li><a href="https://www.gadgetbytenepal.com/">https://www.gadgetbytenepal.com/</a></li>
+</ul>
+<h1 id="clients-table">Clients table</h1>
+<p>For rest of the data generation, go to <a href="https://github.com/ayushsubedi/eHamroPasalmandu">https://github.com/ayushsubedi/eHamroPasalmandu</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> faker <span style="color:#f92672">import</span> Faker
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<span style="color:#f92672">import</span> random
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+<span style="color:#f92672">import</span> datetime
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../datasets/nepali_first_name_gender.csv&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../datasets/lastnames.txt&#39;</span>
+<span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> f:
+    content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+content <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>strip()[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> content] 
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">last_names <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> content] 
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">first_name_male <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(df[df<span style="color:#f92672">.</span>gender<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;M&#39;</span>]<span style="color:#f92672">.</span>first_name)] 
+first_name_female <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(df[df<span style="color:#f92672">.</span>gender<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;F&#39;</span>]<span style="color:#f92672">.</span>first_name)]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[random<span style="color:#f92672">.</span>choice(first_name_male) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+</code></pre></div><pre><code>['Anjan Bhul',
+ 'Ayus Kaliraj',
+ 'Manish Praveen',
+ 'Yubaraj Kareem',
+ 'Bhakta Bagala',
+ 'Sabin Rajbansi',
+ 'Susshanzt Tinkari',
+ 'Sajit Rasaili',
+ 'Dipak Kahrel',
+ 'Sam Remimagar']
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">total_customer <span style="color:#f92672">=</span> <span style="color:#ae81ff">30000</span>
+male_percent <span style="color:#f92672">=</span> <span style="color:#ae81ff">58</span>
+
+male <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: [random<span style="color:#f92672">.</span>choice(first_name_male) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(int(total_customer<span style="color:#f92672">*</span>male_percent<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>))]}
+female <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: [random<span style="color:#f92672">.</span>choice(first_name_female) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(int(total_customer<span style="color:#f92672">*</span>(<span style="color:#ae81ff">100</span><span style="color:#f92672">-</span>male_percent)<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>))]}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_male <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>male)
+df_male[<span style="color:#e6db74">&#39;gender&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Male&#39;</span>
+df_female <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>female)
+df_female[<span style="color:#e6db74">&#39;gender&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Female&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df_male<span style="color:#f92672">.</span>append(df_female)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.04</span>)<span style="color:#f92672">.</span>index,
+    <span style="color:#e6db74">&#39;gender&#39;</span>
+] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Other&#39;</span>
+
+df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.02</span>)<span style="color:#f92672">.</span>index,
+    <span style="color:#e6db74">&#39;gender&#39;</span>
+] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Prefer not to say&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>gender<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>Male                 15670
+Female               11145
+Other                 2091
+Prefer not to say     1094
+Name: gender, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">email_gen</span>(name):
+    name <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span>lower()
+    <span style="color:#66d9ef">return</span> (name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">+</span>name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;@fakeemail.com&#39;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;email&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>apply(email_gen)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Suman Chyhetri</td>
+      <td>Male</td>
+      <td>suman.chyhetri@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Susshanzt Achrya</td>
+      <td>Male</td>
+      <td>susshanzt.achrya@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asutosh Awal</td>
+      <td>Male</td>
+      <td>asutosh.awal@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Aditya Madwari</td>
+      <td>Male</td>
+      <td>aditya.madwari@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Pradeep raj nepal Lamichahne</td>
+      <td>Male</td>
+      <td>pradeep.raj@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12595</th>
+      <td>Prati Bhatt</td>
+      <td>Other</td>
+      <td>prati.bhatt@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>12596</th>
+      <td>Sneha Jyakhwo</td>
+      <td>Female</td>
+      <td>sneha.jyakhwo@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>12597</th>
+      <td>Shambhav Shai</td>
+      <td>Female</td>
+      <td>shambhav.shai@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>12598</th>
+      <td>Soneeya Vonjon</td>
+      <td>Female</td>
+      <td>soneeya.vonjon@fakeemail.com</td>
+    </tr>
+    <tr>
+      <th>12599</th>
+      <td>Yahnaa Bishwas</td>
+      <td>Female</td>
+      <td>yahnaa.bishwas@fakeemail.com</td>
+    </tr>
+  </tbody>
+</table>
+<p>30000 rows × 3 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;phone&#39;</span>] <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">9841000000</span>, <span style="color:#ae81ff">9842000000</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Suman Chyhetri</td>
+      <td>Male</td>
+      <td>suman.chyhetri@fakeemail.com</td>
+      <td>9841137209</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Susshanzt Achrya</td>
+      <td>Male</td>
+      <td>susshanzt.achrya@fakeemail.com</td>
+      <td>9841064824</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asutosh Awal</td>
+      <td>Male</td>
+      <td>asutosh.awal@fakeemail.com</td>
+      <td>9841162884</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Aditya Madwari</td>
+      <td>Male</td>
+      <td>aditya.madwari@fakeemail.com</td>
+      <td>9841298742</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Pradeep raj nepal Lamichahne</td>
+      <td>Male</td>
+      <td>pradeep.raj@fakeemail.com</td>
+      <td>9841204451</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12595</th>
+      <td>Prati Bhatt</td>
+      <td>Other</td>
+      <td>prati.bhatt@fakeemail.com</td>
+      <td>9841152214</td>
+    </tr>
+    <tr>
+      <th>12596</th>
+      <td>Sneha Jyakhwo</td>
+      <td>Female</td>
+      <td>sneha.jyakhwo@fakeemail.com</td>
+      <td>9841550701</td>
+    </tr>
+    <tr>
+      <th>12597</th>
+      <td>Shambhav Shai</td>
+      <td>Female</td>
+      <td>shambhav.shai@fakeemail.com</td>
+      <td>9841067695</td>
+    </tr>
+    <tr>
+      <th>12598</th>
+      <td>Soneeya Vonjon</td>
+      <td>Female</td>
+      <td>soneeya.vonjon@fakeemail.com</td>
+      <td>9841045051</td>
+    </tr>
+    <tr>
+      <th>12599</th>
+      <td>Yahnaa Bishwas</td>
+      <td>Female</td>
+      <td>yahnaa.bishwas@fakeemail.com</td>
+      <td>9841352244</td>
+    </tr>
+  </tbody>
+</table>
+<p>30000 rows × 4 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;channel&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Word of Mouth&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.5</span>)<span style="color:#f92672">.</span>index,
+    <span style="color:#e6db74">&#39;channel&#39;</span>
+] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Facebook/Ads&#39;</span>
+
+df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.2</span>)<span style="color:#f92672">.</span>index,
+    <span style="color:#e6db74">&#39;channel&#39;</span>
+] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Google Search&#39;</span>
+
+df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.1</span>)<span style="color:#f92672">.</span>index,
+    <span style="color:#e6db74">&#39;channel&#39;</span>
+] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Other&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Suman Chyhetri</td>
+      <td>Male</td>
+      <td>suman.chyhetri@fakeemail.com</td>
+      <td>9841137209</td>
+      <td>Facebook/Ads</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Susshanzt Achrya</td>
+      <td>Male</td>
+      <td>susshanzt.achrya@fakeemail.com</td>
+      <td>9841064824</td>
+      <td>Google Search</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asutosh Awal</td>
+      <td>Male</td>
+      <td>asutosh.awal@fakeemail.com</td>
+      <td>9841162884</td>
+      <td>Facebook/Ads</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Aditya Madwari</td>
+      <td>Male</td>
+      <td>aditya.madwari@fakeemail.com</td>
+      <td>9841298742</td>
+      <td>Facebook/Ads</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Pradeep raj nepal Lamichahne</td>
+      <td>Male</td>
+      <td>pradeep.raj@fakeemail.com</td>
+      <td>9841204451</td>
+      <td>Other</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12595</th>
+      <td>Prati Bhatt</td>
+      <td>Other</td>
+      <td>prati.bhatt@fakeemail.com</td>
+      <td>9841152214</td>
+      <td>Word of Mouth</td>
+    </tr>
+    <tr>
+      <th>12596</th>
+      <td>Sneha Jyakhwo</td>
+      <td>Female</td>
+      <td>sneha.jyakhwo@fakeemail.com</td>
+      <td>9841550701</td>
+      <td>Facebook/Ads</td>
+    </tr>
+    <tr>
+      <th>12597</th>
+      <td>Shambhav Shai</td>
+      <td>Female</td>
+      <td>shambhav.shai@fakeemail.com</td>
+      <td>9841067695</td>
+      <td>Facebook/Ads</td>
+    </tr>
+    <tr>
+      <th>12598</th>
+      <td>Soneeya Vonjon</td>
+      <td>Female</td>
+      <td>soneeya.vonjon@fakeemail.com</td>
+      <td>9841045051</td>
+      <td>Facebook/Ads</td>
+    </tr>
+    <tr>
+      <th>12599</th>
+      <td>Yahnaa Bishwas</td>
+      <td>Female</td>
+      <td>yahnaa.bishwas@fakeemail.com</td>
+      <td>9841352244</td>
+      <td>Facebook/Ads</td>
+    </tr>
+  </tbody>
+</table>
+<p>30000 rows × 5 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>Facebook/Ads     11414
+Google Search     8131
+Other             5318
+Word of Mouth     5137
+Name: channel, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;first_contact&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;app&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.676</span>)<span style="color:#f92672">.</span>index,
+    <span style="color:#e6db74">&#39;first_contact&#39;</span>
+] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;browser&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Suman Chyhetri</td>
+      <td>Male</td>
+      <td>suman.chyhetri@fakeemail.com</td>
+      <td>9841137209</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Susshanzt Achrya</td>
+      <td>Male</td>
+      <td>susshanzt.achrya@fakeemail.com</td>
+      <td>9841064824</td>
+      <td>Google Search</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asutosh Awal</td>
+      <td>Male</td>
+      <td>asutosh.awal@fakeemail.com</td>
+      <td>9841162884</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Aditya Madwari</td>
+      <td>Male</td>
+      <td>aditya.madwari@fakeemail.com</td>
+      <td>9841298742</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Pradeep raj nepal Lamichahne</td>
+      <td>Male</td>
+      <td>pradeep.raj@fakeemail.com</td>
+      <td>9841204451</td>
+      <td>Other</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12595</th>
+      <td>Prati Bhatt</td>
+      <td>Other</td>
+      <td>prati.bhatt@fakeemail.com</td>
+      <td>9841152214</td>
+      <td>Word of Mouth</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>12596</th>
+      <td>Sneha Jyakhwo</td>
+      <td>Female</td>
+      <td>sneha.jyakhwo@fakeemail.com</td>
+      <td>9841550701</td>
+      <td>Facebook/Ads</td>
+      <td>app</td>
+    </tr>
+    <tr>
+      <th>12597</th>
+      <td>Shambhav Shai</td>
+      <td>Female</td>
+      <td>shambhav.shai@fakeemail.com</td>
+      <td>9841067695</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>12598</th>
+      <td>Soneeya Vonjon</td>
+      <td>Female</td>
+      <td>soneeya.vonjon@fakeemail.com</td>
+      <td>9841045051</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>12599</th>
+      <td>Yahnaa Bishwas</td>
+      <td>Female</td>
+      <td>yahnaa.bishwas@fakeemail.com</td>
+      <td>9841352244</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+  </tbody>
+</table>
+<p>30000 rows × 6 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;first_contact&#39;</span>]<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>browser    25780
+app         4220
+Name: first_contact, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>8250</th>
+      <td>Kaushal Bashyal</td>
+      <td>Male</td>
+      <td>kaushal.bashyal@fakeemail.com</td>
+      <td>9841791565</td>
+      <td>Google Search</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>10606</th>
+      <td>Sona Hayanju</td>
+      <td>Female</td>
+      <td>sona.hayanju@fakeemail.com</td>
+      <td>9841685812</td>
+      <td>Other</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>5076</th>
+      <td>Suman Pokherel</td>
+      <td>Male</td>
+      <td>suman.pokherel@fakeemail.com</td>
+      <td>9841526187</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>1824</th>
+      <td>Samita Yogol</td>
+      <td>Female</td>
+      <td>samita.yogol@fakeemail.com</td>
+      <td>9841131562</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>6878</th>
+      <td>Mahima Marasaini</td>
+      <td>Female</td>
+      <td>mahima.marasaini@fakeemail.com</td>
+      <td>9841859344</td>
+      <td>Other</td>
+      <td>app</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9653</th>
+      <td>Ansu Adhikary</td>
+      <td>Female</td>
+      <td>ansu.adhikary@fakeemail.com</td>
+      <td>9841430787</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>3735</th>
+      <td>Lune Bisht</td>
+      <td>Female</td>
+      <td>lune.bisht@fakeemail.com</td>
+      <td>9841969651</td>
+      <td>Other</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>1387</th>
+      <td>Rohit Gajurel</td>
+      <td>Other</td>
+      <td>rohit.gajurel@fakeemail.com</td>
+      <td>9841940773</td>
+      <td>Google Search</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>2197</th>
+      <td>Kusum J.b.rana</td>
+      <td>Female</td>
+      <td>kusum.j.b.rana@fakeemail.com</td>
+      <td>9841904502</td>
+      <td>Google Search</td>
+      <td>browser</td>
+    </tr>
+    <tr>
+      <th>14831</th>
+      <td>Satish Rangata</td>
+      <td>Male</td>
+      <td>satish.rangata@fakeemail.com</td>
+      <td>9841982263</td>
+      <td>Word of Mouth</td>
+      <td>app</td>
+    </tr>
+  </tbody>
+</table>
+<p>30000 rows × 6 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> timeseries_generator <span style="color:#f92672">import</span> LinearTrend, Generator, WhiteNoise, RandomFeatureFactor, WeekdayFactor
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+
+start<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;09-01-2020&#34;</span>
+end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;08-31-2021&#34;</span>
+
+
+<span style="color:#75715e"># setting up a linear tren</span>
+lt <span style="color:#f92672">=</span> LinearTrend(coef<span style="color:#f92672">=</span><span style="color:#ae81ff">5.0</span>, offset<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, col_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my_linear_trend&#34;</span>)
+
+weekday_factor <span style="color:#f92672">=</span> WeekdayFactor(
+    col_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weekend_boost_factor&#34;</span>,
+    factor_values<span style="color:#f92672">=</span>{<span style="color:#ae81ff">4</span>: <span style="color:#ae81ff">1.1</span>, <span style="color:#ae81ff">5</span>: <span style="color:#ae81ff">1.2</span>, <span style="color:#ae81ff">6</span>: <span style="color:#ae81ff">1.2</span>}  <span style="color:#75715e"># Here we assign a factor of 1.1 to Friday, and 1.2 to Sat/Sun </span>
+)
+
+<span style="color:#75715e"># weekday_factor.plot(start_date=start, end_date=end)</span>
+
+g <span style="color:#f92672">=</span> Generator(factors<span style="color:#f92672">=</span>{lt, weekday_factor}, features<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, date_range<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>date_range(start<span style="color:#f92672">=</span>start, end<span style="color:#f92672">=</span>end))
+g<span style="color:#f92672">.</span>generate()
+
+<span style="color:#75715e"># update by adding some white noise to the generator</span>
+wn <span style="color:#f92672">=</span> WhiteNoise(stdev_factor<span style="color:#f92672">=</span><span style="color:#ae81ff">0.06</span>)
+g<span style="color:#f92672">.</span>update_factor(wn)
+g<span style="color:#f92672">.</span>generate()
+g<span style="color:#f92672">.</span>plot()
+</code></pre></div><p><img src="/img/output_26_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>generate()
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data[<span style="color:#e6db74">&#39;rows&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>data<span style="color:#f92672">.</span>value)<span style="color:#f92672">.</span>astype(int)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data<span style="color:#f92672">.</span>rows<span style="color:#f92672">.</span>sum()
+</code></pre></div><pre><code>17326
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>base_amount</th>
+      <th>my_linear_trend</th>
+      <th>white_noise</th>
+      <th>weekend_boost_factor</th>
+      <th>total_factor</th>
+      <th>value</th>
+      <th>rows</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-09-01</td>
+      <td>1.0</td>
+      <td>2.000000</td>
+      <td>1.033445</td>
+      <td>1.0</td>
+      <td>2.066891</td>
+      <td>2.066891</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-09-02</td>
+      <td>1.0</td>
+      <td>2.013699</td>
+      <td>0.956114</td>
+      <td>1.0</td>
+      <td>1.925326</td>
+      <td>1.925326</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-09-03</td>
+      <td>1.0</td>
+      <td>2.027397</td>
+      <td>0.906669</td>
+      <td>1.0</td>
+      <td>1.838179</td>
+      <td>1.838179</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-09-04</td>
+      <td>1.0</td>
+      <td>2.041096</td>
+      <td>0.957273</td>
+      <td>1.1</td>
+      <td>2.149275</td>
+      <td>2.149275</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-09-05</td>
+      <td>1.0</td>
+      <td>2.054795</td>
+      <td>0.962236</td>
+      <td>1.2</td>
+      <td>2.372637</td>
+      <td>2.372637</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>360</th>
+      <td>2021-08-27</td>
+      <td>1.0</td>
+      <td>6.931507</td>
+      <td>0.986548</td>
+      <td>1.1</td>
+      <td>7.522090</td>
+      <td>7.522090</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>2021-08-28</td>
+      <td>1.0</td>
+      <td>6.945205</td>
+      <td>0.981777</td>
+      <td>1.2</td>
+      <td>8.182375</td>
+      <td>8.182375</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>2021-08-29</td>
+      <td>1.0</td>
+      <td>6.958904</td>
+      <td>1.021142</td>
+      <td>1.2</td>
+      <td>8.527237</td>
+      <td>8.527237</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>363</th>
+      <td>2021-08-30</td>
+      <td>1.0</td>
+      <td>6.972603</td>
+      <td>1.005213</td>
+      <td>1.0</td>
+      <td>7.008952</td>
+      <td>7.008952</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>364</th>
+      <td>2021-08-31</td>
+      <td>1.0</td>
+      <td>6.986301</td>
+      <td>1.063856</td>
+      <td>1.0</td>
+      <td>7.432417</td>
+      <td>7.432417</td>
+      <td>74</td>
+    </tr>
+  </tbody>
+</table>
+<p>365 rows × 8 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nepali_holiday</span>(row):
+    date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(str(row<span style="color:#f92672">.</span>date), <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>)
+    num <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span>rows
+    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">16</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">25</span>):
+        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.2</span>)
+    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">24</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>):
+        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.4</span>)
+    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>):
+        num <span style="color:#f92672">=</span> num <span style="color:#f92672">-</span> num
+    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">13</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">15</span>):
+        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.4</span>)
+    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">1</span>):
+        num <span style="color:#f92672">=</span> int(num <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> num
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data[<span style="color:#e6db74">&#39;rows&#39;</span>] <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>apply(nepali_holiday, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># [&#34;2020-09-01&#34;]*100 + [&#34;2020-09-02&#34;] * 200</span>
+<span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime <span style="color:#66d9ef">as</span> dt
+<span style="color:#f92672">import</span> datetime
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_list</span>(row):
+    <span style="color:#66d9ef">return</span> [str(row<span style="color:#f92672">.</span>date)]<span style="color:#f92672">*</span>row<span style="color:#f92672">.</span>rows
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">final_dates <span style="color:#f92672">=</span> (data<span style="color:#f92672">.</span>apply(create_list, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>sum())
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>head(len(final_dates))
+clients<span style="color:#f92672">.</span>reset_index(inplace <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;created_at&#39;</span>] <span style="color:#f92672">=</span> final_dates
+
+clients
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+      <th>created_at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kaushal Bashyal</td>
+      <td>Male</td>
+      <td>kaushal.bashyal@fakeemail.com</td>
+      <td>9841791565</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2020-09-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sona Hayanju</td>
+      <td>Female</td>
+      <td>sona.hayanju@fakeemail.com</td>
+      <td>9841685812</td>
+      <td>Other</td>
+      <td>browser</td>
+      <td>2020-09-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Suman Pokherel</td>
+      <td>Male</td>
+      <td>suman.pokherel@fakeemail.com</td>
+      <td>9841526187</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Samita Yogol</td>
+      <td>Female</td>
+      <td>samita.yogol@fakeemail.com</td>
+      <td>9841131562</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mahima Marasaini</td>
+      <td>Female</td>
+      <td>mahima.marasaini@fakeemail.com</td>
+      <td>9841859344</td>
+      <td>Other</td>
+      <td>app</td>
+      <td>2020-09-01 00:00:00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>Bibek Barakoti</td>
+      <td>Male</td>
+      <td>bibek.barakoti@fakeemail.com</td>
+      <td>9841288299</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 00:00:00</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>Ansu Huzdar</td>
+      <td>Female</td>
+      <td>ansu.huzdar@fakeemail.com</td>
+      <td>9841694532</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 00:00:00</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>Sumit Sanjel</td>
+      <td>Male</td>
+      <td>sumit.sanjel@fakeemail.com</td>
+      <td>9841638790</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 00:00:00</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>Prapti Mushyakhow</td>
+      <td>Female</td>
+      <td>prapti.mushyakhow@fakeemail.com</td>
+      <td>9841359950</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 00:00:00</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>Prazol Swarnakar</td>
+      <td>Male</td>
+      <td>prazol.swarnakar@fakeemail.com</td>
+      <td>9841429598</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 00:00:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 7 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients<span style="color:#f92672">.</span>gender<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>Male                 11306
+Female                8040
+Other                 1500
+Prefer not to say      797
+Name: gender, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>Facebook/Ads     8247
+Google Search    5849
+Other            3827
+Word of Mouth    3720
+Name: channel, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;first_contact&#39;</span>]<span style="color:#f92672">.</span>value_counts()
+</code></pre></div><pre><code>browser    18601
+app         3042
+Name: first_contact, dtype: int64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">random_times</span>(input_time):
+    random_hour <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">23</span>)
+    <span style="color:#66d9ef">return</span> dt<span style="color:#f92672">.</span>strptime(input_time, <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>) <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(hours<span style="color:#f92672">=</span>random_hour)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;created_at&#39;</span>] <span style="color:#f92672">=</span> clients[<span style="color:#e6db74">&#39;created_at&#39;</span>]<span style="color:#f92672">.</span>apply(random_times)
+
+clients<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;created_at&#39;</span>)<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;client_id&#39;</span>] <span style="color:#f92672">=</span> clients<span style="color:#f92672">.</span>index <span style="color:#f92672">+</span> <span style="color:#ae81ff">100000000</span>
+
+clients
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+      <th>created_at</th>
+      <th>client_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kaushal Bashyal</td>
+      <td>Male</td>
+      <td>kaushal.bashyal@fakeemail.com</td>
+      <td>9841791565</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2020-09-01 10:48:09.763278</td>
+      <td>100000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sona Hayanju</td>
+      <td>Female</td>
+      <td>sona.hayanju@fakeemail.com</td>
+      <td>9841685812</td>
+      <td>Other</td>
+      <td>browser</td>
+      <td>2020-09-01 11:46:03.489814</td>
+      <td>100000001</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Suman Pokherel</td>
+      <td>Male</td>
+      <td>suman.pokherel@fakeemail.com</td>
+      <td>9841526187</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 14:05:06.316626</td>
+      <td>100000002</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Samita Yogol</td>
+      <td>Female</td>
+      <td>samita.yogol@fakeemail.com</td>
+      <td>9841131562</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 20:56:28.775488</td>
+      <td>100000003</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mahima Marasaini</td>
+      <td>Female</td>
+      <td>mahima.marasaini@fakeemail.com</td>
+      <td>9841859344</td>
+      <td>Other</td>
+      <td>app</td>
+      <td>2020-09-01 16:06:58.593803</td>
+      <td>100000004</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>Bibek Barakoti</td>
+      <td>Male</td>
+      <td>bibek.barakoti@fakeemail.com</td>
+      <td>9841288299</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 21:01:37.440162</td>
+      <td>100021638</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>Ansu Huzdar</td>
+      <td>Female</td>
+      <td>ansu.huzdar@fakeemail.com</td>
+      <td>9841694532</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 01:11:26.657379</td>
+      <td>100021639</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>Sumit Sanjel</td>
+      <td>Male</td>
+      <td>sumit.sanjel@fakeemail.com</td>
+      <td>9841638790</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 20:41:11.488311</td>
+      <td>100021640</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>Prapti Mushyakhow</td>
+      <td>Female</td>
+      <td>prapti.mushyakhow@fakeemail.com</td>
+      <td>9841359950</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 18:17:39.263566</td>
+      <td>100021641</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>Prazol Swarnakar</td>
+      <td>Male</td>
+      <td>prazol.swarnakar@fakeemail.com</td>
+      <td>9841429598</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 02:46:50.362896</td>
+      <td>100021642</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 8 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">date_gen</span>(start, end):
+    start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date(start, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+    end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date(end, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>)
+    time_between_dates <span style="color:#f92672">=</span> end_date <span style="color:#f92672">-</span> start_date
+    days_between_dates <span style="color:#f92672">=</span> time_between_dates<span style="color:#f92672">.</span>days
+    random_number_of_days <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randrange(days_between_dates)
+    random_date <span style="color:#f92672">=</span> start_date <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span>random_number_of_days)
+    <span style="color:#66d9ef">return</span> str(random_date)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dob <span style="color:#f92672">=</span> [date_gen(<span style="color:#ae81ff">1975</span>, <span style="color:#ae81ff">1990</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)] <span style="color:#f92672">+</span> \
+[date_gen(<span style="color:#ae81ff">1991</span>, <span style="color:#ae81ff">1995</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)] <span style="color:#f92672">+</span> \
+[date_gen(<span style="color:#ae81ff">1996</span>, <span style="color:#ae81ff">2000</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)] <span style="color:#f92672">+</span> \
+[date_gen(<span style="color:#ae81ff">2001</span>, <span style="color:#ae81ff">2005</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)] <span style="color:#f92672">+</span> \
+[date_gen(<span style="color:#ae81ff">2006</span>, <span style="color:#ae81ff">2008</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">random<span style="color:#f92672">.</span>shuffle(dob)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;dob&#39;</span>] <span style="color:#f92672">=</span> dob[:clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]]
+
+clients
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+      <th>created_at</th>
+      <th>client_id</th>
+      <th>dob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kaushal Bashyal</td>
+      <td>Male</td>
+      <td>kaushal.bashyal@fakeemail.com</td>
+      <td>9841791565</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2020-09-01 10:48:09.763278</td>
+      <td>100000000</td>
+      <td>2003-03-14</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sona Hayanju</td>
+      <td>Female</td>
+      <td>sona.hayanju@fakeemail.com</td>
+      <td>9841685812</td>
+      <td>Other</td>
+      <td>browser</td>
+      <td>2020-09-01 11:46:03.489814</td>
+      <td>100000001</td>
+      <td>1996-07-03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Suman Pokherel</td>
+      <td>Male</td>
+      <td>suman.pokherel@fakeemail.com</td>
+      <td>9841526187</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 14:05:06.316626</td>
+      <td>100000002</td>
+      <td>2005-08-04</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Samita Yogol</td>
+      <td>Female</td>
+      <td>samita.yogol@fakeemail.com</td>
+      <td>9841131562</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 20:56:28.775488</td>
+      <td>100000003</td>
+      <td>2001-08-22</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mahima Marasaini</td>
+      <td>Female</td>
+      <td>mahima.marasaini@fakeemail.com</td>
+      <td>9841859344</td>
+      <td>Other</td>
+      <td>app</td>
+      <td>2020-09-01 16:06:58.593803</td>
+      <td>100000004</td>
+      <td>1985-03-20</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>Bibek Barakoti</td>
+      <td>Male</td>
+      <td>bibek.barakoti@fakeemail.com</td>
+      <td>9841288299</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 21:01:37.440162</td>
+      <td>100021638</td>
+      <td>1999-10-05</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>Ansu Huzdar</td>
+      <td>Female</td>
+      <td>ansu.huzdar@fakeemail.com</td>
+      <td>9841694532</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 01:11:26.657379</td>
+      <td>100021639</td>
+      <td>2004-03-30</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>Sumit Sanjel</td>
+      <td>Male</td>
+      <td>sumit.sanjel@fakeemail.com</td>
+      <td>9841638790</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 20:41:11.488311</td>
+      <td>100021640</td>
+      <td>1997-07-11</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>Prapti Mushyakhow</td>
+      <td>Female</td>
+      <td>prapti.mushyakhow@fakeemail.com</td>
+      <td>9841359950</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 18:17:39.263566</td>
+      <td>100021641</td>
+      <td>2006-05-08</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>Prazol Swarnakar</td>
+      <td>Male</td>
+      <td>prazol.swarnakar@fakeemail.com</td>
+      <td>9841429598</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 02:46:50.362896</td>
+      <td>100021642</td>
+      <td>1975-05-24</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 9 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+      <th>created_at</th>
+      <th>client_id</th>
+      <th>dob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kaushal Bashyal</td>
+      <td>Male</td>
+      <td>kaushal.bashyal@fakeemail.com</td>
+      <td>9841791565</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2020-09-01 10:48:09.763278</td>
+      <td>100000000</td>
+      <td>2003-03-14</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sona Hayanju</td>
+      <td>Female</td>
+      <td>sona.hayanju@fakeemail.com</td>
+      <td>9841685812</td>
+      <td>Other</td>
+      <td>browser</td>
+      <td>2020-09-01 11:46:03.489814</td>
+      <td>100000001</td>
+      <td>1996-07-03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Suman Pokherel</td>
+      <td>Male</td>
+      <td>suman.pokherel@fakeemail.com</td>
+      <td>9841526187</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 14:05:06.316626</td>
+      <td>100000002</td>
+      <td>2005-08-04</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Samita Yogol</td>
+      <td>Female</td>
+      <td>samita.yogol@fakeemail.com</td>
+      <td>9841131562</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 20:56:28.775488</td>
+      <td>100000003</td>
+      <td>2001-08-22</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mahima Marasaini</td>
+      <td>Female</td>
+      <td>mahima.marasaini@fakeemail.com</td>
+      <td>9841859344</td>
+      <td>Other</td>
+      <td>app</td>
+      <td>2020-09-01 16:06:58.593803</td>
+      <td>100000004</td>
+      <td>1985-03-20</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>Bibek Barakoti</td>
+      <td>Male</td>
+      <td>bibek.barakoti@fakeemail.com</td>
+      <td>9841288299</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 21:01:37.440162</td>
+      <td>100021638</td>
+      <td>1999-10-05</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>Ansu Huzdar</td>
+      <td>Female</td>
+      <td>ansu.huzdar@fakeemail.com</td>
+      <td>9841694532</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 01:11:26.657379</td>
+      <td>100021639</td>
+      <td>2004-03-30</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>Sumit Sanjel</td>
+      <td>Male</td>
+      <td>sumit.sanjel@fakeemail.com</td>
+      <td>9841638790</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 20:41:11.488311</td>
+      <td>100021640</td>
+      <td>1997-07-11</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>Prapti Mushyakhow</td>
+      <td>Female</td>
+      <td>prapti.mushyakhow@fakeemail.com</td>
+      <td>9841359950</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 18:17:39.263566</td>
+      <td>100021641</td>
+      <td>2006-05-08</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>Prazol Swarnakar</td>
+      <td>Male</td>
+      <td>prazol.swarnakar@fakeemail.com</td>
+      <td>9841429598</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 02:46:50.362896</td>
+      <td>100021642</td>
+      <td>1975-05-24</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 9 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;../datasets/location.csv&#34;</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location <span style="color:#f92672">=</span> location[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>]]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_list <span style="color:#f92672">=</span>  [location<span style="color:#f92672">.</span>sample()<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(location_list)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>[27.7768, 85.3622, Golfutar Main Rd]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>[27.6954, 85.3447, ACE Institute Of Management]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>[27.659, 85.368, Changathali Rd]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[27.7126, 85.283, Ring Road]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>[27.7137, 85.3245, Bhagawati Marg]</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>[27.6787, 85.3103, Jhamsikhel Marg]</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>[27.7305, 85.3405, Banshidhar Marg]</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>[27.7206, 85.3194, Kumari Mai Marg]</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>[27.7351, 85.3056, Gongabu New Buspark]</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>[27.6962, 85.3393, BanaGanga Marga]</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 1 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>,<span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(location_df[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>tolist(), index<span style="color:#f92672">=</span> location_df<span style="color:#f92672">.</span>index)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]]
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>location_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>27.7768</td>
+      <td>85.3622</td>
+      <td>Golfutar Main Rd</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>27.6954</td>
+      <td>85.3447</td>
+      <td>ACE Institute Of Management</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>27.6590</td>
+      <td>85.3680</td>
+      <td>Changathali Rd</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>27.7126</td>
+      <td>85.2830</td>
+      <td>Ring Road</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>27.7137</td>
+      <td>85.3245</td>
+      <td>Bhagawati Marg</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>27.6787</td>
+      <td>85.3103</td>
+      <td>Jhamsikhel Marg</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>27.7305</td>
+      <td>85.3405</td>
+      <td>Banshidhar Marg</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>27.7206</td>
+      <td>85.3194</td>
+      <td>Kumari Mai Marg</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>27.7351</td>
+      <td>85.3056</td>
+      <td>Gongabu New Buspark</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>27.6962</td>
+      <td>85.3393</td>
+      <td>BanaGanga Marga</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 3 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>gender</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>channel</th>
+      <th>first_contact</th>
+      <th>created_at</th>
+      <th>client_id</th>
+      <th>dob</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kaushal Bashyal</td>
+      <td>Male</td>
+      <td>kaushal.bashyal@fakeemail.com</td>
+      <td>9841791565</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2020-09-01 10:48:09.763278</td>
+      <td>100000000</td>
+      <td>2003-03-14</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sona Hayanju</td>
+      <td>Female</td>
+      <td>sona.hayanju@fakeemail.com</td>
+      <td>9841685812</td>
+      <td>Other</td>
+      <td>browser</td>
+      <td>2020-09-01 11:46:03.489814</td>
+      <td>100000001</td>
+      <td>1996-07-03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Suman Pokherel</td>
+      <td>Male</td>
+      <td>suman.pokherel@fakeemail.com</td>
+      <td>9841526187</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 14:05:06.316626</td>
+      <td>100000002</td>
+      <td>2005-08-04</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Samita Yogol</td>
+      <td>Female</td>
+      <td>samita.yogol@fakeemail.com</td>
+      <td>9841131562</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2020-09-01 20:56:28.775488</td>
+      <td>100000003</td>
+      <td>2001-08-22</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mahima Marasaini</td>
+      <td>Female</td>
+      <td>mahima.marasaini@fakeemail.com</td>
+      <td>9841859344</td>
+      <td>Other</td>
+      <td>app</td>
+      <td>2020-09-01 16:06:58.593803</td>
+      <td>100000004</td>
+      <td>1985-03-20</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>21638</th>
+      <td>Bibek Barakoti</td>
+      <td>Male</td>
+      <td>bibek.barakoti@fakeemail.com</td>
+      <td>9841288299</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 21:01:37.440162</td>
+      <td>100021638</td>
+      <td>1999-10-05</td>
+    </tr>
+    <tr>
+      <th>21639</th>
+      <td>Ansu Huzdar</td>
+      <td>Female</td>
+      <td>ansu.huzdar@fakeemail.com</td>
+      <td>9841694532</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 01:11:26.657379</td>
+      <td>100021639</td>
+      <td>2004-03-30</td>
+    </tr>
+    <tr>
+      <th>21640</th>
+      <td>Sumit Sanjel</td>
+      <td>Male</td>
+      <td>sumit.sanjel@fakeemail.com</td>
+      <td>9841638790</td>
+      <td>Google Search</td>
+      <td>browser</td>
+      <td>2021-08-31 20:41:11.488311</td>
+      <td>100021640</td>
+      <td>1997-07-11</td>
+    </tr>
+    <tr>
+      <th>21641</th>
+      <td>Prapti Mushyakhow</td>
+      <td>Female</td>
+      <td>prapti.mushyakhow@fakeemail.com</td>
+      <td>9841359950</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 18:17:39.263566</td>
+      <td>100021641</td>
+      <td>2006-05-08</td>
+    </tr>
+    <tr>
+      <th>21642</th>
+      <td>Prazol Swarnakar</td>
+      <td>Male</td>
+      <td>prazol.swarnakar@fakeemail.com</td>
+      <td>9841429598</td>
+      <td>Facebook/Ads</td>
+      <td>browser</td>
+      <td>2021-08-31 02:46:50.362896</td>
+      <td>100021642</td>
+      <td>1975-05-24</td>
+    </tr>
+  </tbody>
+</table>
+<p>21643 rows × 9 columns</p>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([clients, location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]]], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(clients)
+</code></pre></div><pre><code>['name',
+ 'gender',
+ 'email',
+ 'phone',
+ 'channel',
+ 'first_contact',
+ 'created_at',
+ 'client_id',
+ 'dob',
+ 'lat',
+ 'lon',
+ 'location_name']
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[
+[<span style="color:#e6db74">&#39;client_id&#39;</span>,
+ <span style="color:#e6db74">&#39;name&#39;</span>,
+ <span style="color:#e6db74">&#39;gender&#39;</span>,
+ <span style="color:#e6db74">&#39;dob&#39;</span>,
+ <span style="color:#e6db74">&#39;email&#39;</span>,
+ <span style="color:#e6db74">&#39;phone&#39;</span>,
+ <span style="color:#e6db74">&#39;channel&#39;</span>,
+ <span style="color:#e6db74">&#39;first_contact&#39;</span>,
+  <span style="color:#e6db74">&#39;lat&#39;</span>,
+ <span style="color:#e6db74">&#39;lon&#39;</span>,
+ <span style="color:#e6db74">&#39;location_name&#39;</span>,
+ <span style="color:#e6db74">&#39;created_at&#39;</span>]
+]<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;../datasets/clients.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</code></pre></div><p>Find  the analysis notebooks here: <a href="https://github.com/ayushsubedi/eHamroPasalmandu">https://github.com/ayushsubedi/eHamroPasalmandu</a></p>
+</div>
 	</section>
 
 </article>
@@ -268,7 +2221,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		0 words in this page.
+		2394 words in this page.
 	</div>
 </div>
 
@@ -284,7 +2237,7 @@ onload='renderMathInElement(document.body);'></script>
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        Sentiment Analysis
+        Sentiment Analysis starter code
     </a>
     
     
@@ -299,6 +2252,43 @@ onload='renderMathInElement(document.body);'></script>
 <div >
 
 
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/synthetic_data_pareto/">Synthetic data based on pareto principle</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/sentiment_analysis/">Sentiment Analysis starter code</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/vaccine_progress/">Nepal Vaccine Progress Twitter Bot</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/cheers_ai/">Diabetic Retinopathy and Glaucoma Detection</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/kohokoho/">Kohokoho</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/choto/">Choto</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/cheers_analysis/">Cheers Hospital Analysis</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/spirathon/">Spirathon AI Conference 2019</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/fraud_detection/">Fraud Detection</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/torpe/">Torpe Blockchain</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/inclusive_newspaper/">Inclusive Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/seedstars/">Startup analysis using Seedstars data</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/diffie_hellman/">Diffie-Hellman key exchange (and AES-256)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/rsa_encryption/">RSA encryption</a>
+		
+</span>
+</div>
 
 </div>
 <hr />

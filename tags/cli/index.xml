@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cli on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/cli/</link>
+    <description>Recent content in cli on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kohokoho</title>
+      <link>https://ayushsubedi.github.io/posts/kohokoho/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/kohokoho/</guid>
+      <description>&lt;h1 id=&#34;kohokoho-क-ह-क-ह-&#34;&gt;kohokoho (को हो को हो !)&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kohokoho.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Are you an aspiring data analyst? Do clients hesitate to give you their data because of all the sensitive information in it?&lt;/p&gt;
+&lt;p&gt;Or, are you an entrepreneur hesitant to hire a data consultant due to the nature of your data?&lt;/p&gt;
+&lt;p&gt;Mask your data using kohokoho (को हो को हो !)&lt;/p&gt;
+&lt;p&gt;Kohokoho (को हो को हो) is a python package that anonymizes a dataset. Currently, it is still in its infancy and only supports a select few data types.&lt;/p&gt;
+&lt;p&gt;Feel free to contribute with code (it&amp;rsquo;s all open source), or by giving it a better name :D&lt;/p&gt;
+&lt;h4 id=&#34;installation&#34;&gt;Installation&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;pip install kohokoho&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/EQtBLYwDtucQ1qB1GK09adkjk&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/EQtBLYwDtucQ1qB1GK09adkjk.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;installation-from-source&#34;&gt;Installation (from source)&lt;/h3&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/ayushsubedi/kohokoho&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;python -m venv env&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;p&gt;Windows&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.\env\Scripts\activate&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Mac/Linux&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;source env/bin/activate&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-the-app&#34;&gt;Run the app&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;python kohokoho.py --csv={location of csv file}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Package link: &lt;a href=&#34;https://pypi.org/project/kohokoho/&#34;&gt;https://pypi.org/project/kohokoho/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;test-it-here&#34;&gt;Test it here&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://kohokoho.herokuapp.com/&#34;&gt;https://kohokoho.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;version-o-demo&#34;&gt;Version-O Demo&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kohokoho_demo.png&#34; alt=&#34;demo&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Choto</title>
+      <link>https://ayushsubedi.github.io/posts/choto/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/choto/</guid>
+      <description>&lt;h1 id=&#34;choto&#34;&gt;Choto&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;pip install choto&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/r203CswsNWHaThJmHLKgpVl60&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/r203CswsNWHaThJmHLKgpVl60.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you spend most of your time on the terminal, and you need to update yourself on the news, use &amp;ldquo;choto&amp;rdquo;. Choto will summarize the news for you.&lt;/p&gt;
+&lt;p&gt;Python package: &lt;a href=&#34;https://pypi.org/project/choto/&#34;&gt;https://pypi.org/project/choto/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;installation-from-source&#34;&gt;Installation (from source)&lt;/h3&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/ayushsubedi/choto&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;python -m venv env&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.\env\Scripts\activate&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-the-app&#34;&gt;Run the app&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;python choto.py --url=https://abc.xyz --ratio=0.5 --algorithm=bert&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Usage: choto.py [OPTIONS]&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Options:
+--url TEXT                      Enter a valid URL
+--ratio FLOAT                   Ratio to summarize to.
+--algorithm [gensim|spacy|bert] Algorithm to use
+--help                          Show this message and exit.
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

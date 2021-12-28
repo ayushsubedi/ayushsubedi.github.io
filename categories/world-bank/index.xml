@@ -17,7 +17,53 @@
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/data_in_news_revisited/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;data-in-news-revisited&#34;&gt;Data in News Revisited&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ayushsubedi/&#34;&gt;Ayush Subedi&lt;/a&gt; developed this dashboard with the guidance from &lt;a href=&#34;https://twitter.com/ravinepal&#34;&gt;Ravi Kumar&lt;/a&gt;. The dashboard is based on the methodology proposed by Klein, Galdin, and Mohamedou in 2016. This dashboard was initiated to assess the use of data in media in Nepal to provide an input to a World Bank report titled &lt;a href=&#34;https://documents.worldbank.org/en/publication/documents-reports/documentdetail/805261601023506163/use-of-data-in-the-private-sector-of-nepal-the-current-state-and-opportunities-in-finance-education-and-the-media&#34;&gt;&amp;ldquo;Use of Data in the Private Sector of Nepal : The Current State and Opportunities in Finance, Education, and the Media&amp;rdquo;.&lt;/a&gt; This publication was funded by the Trust Fund for Statistical Capacity Building, a global grant facility administered by the Development Data Group of the World Bank on behalf of the contributing donors, and the Partnership for Knowledge-Based Poverty Reduction and Shared Prosperity, a World Bank project with support from the UK&amp;rsquo;s Foreign, Commonwealth and Development Office (FCDO) to increase the production and usage of data and statistics in Nepal.&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;How journalists use data in their reporting or in their writing can be viewed as a reflection of the country&amp;rsquo;s demand for statistics and data. The World Bank team developed an indicator model to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. As of 07 Jun 2021, the results show that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.&lt;/p&gt;
+&lt;p&gt;101060 articles were analyzed to assess the use of data in media. In the &lt;a href=&#34;http://datainnews.us-west-1.elasticbeanstalk.com/&#34;&gt;previous implementation&lt;/a&gt; of this project, the source of data was RSS feeds from Nepali news portal. Unfortunately, due to most of the Nepali news portals deprecating their RSS feature, for this implementation, the news articles are scraped from article URLs posted by the official news portal&amp;rsquo;s account on twitter. The news portals that use twitter to post articles regularly are The Himalayan Times, Onlinekhabar, The Nepali Times, myRepublica, and The Kathmandu Post.&lt;/p&gt;
+&lt;h1 id=&#34;implementation&#34;&gt;Implementation&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://datainnews.herokuapp.com/&#34;&gt;Data in NEWS portal&lt;/a&gt;
+&lt;img src=&#34;https://github.com/ayushsubedi/datainnews_V2/blob/main/datainnews_v2/static/img/showcase.png?raw=true&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The results from the project was used in the research article published at &lt;a href=&#34;http://documents1.worldbank.org/curated/en/805261601023506163/pdf/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media.pdf&#34;&gt;http://documents1.worldbank.org/curated/en/805261601023506163/pdf/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As of 9th February 2020, the results showed that very few news articles indicate the source of data or mention development indicators. However, articles that discuss data, reports, research, statistics, and related topics do critically engage with these ideas.&lt;/p&gt;
+&lt;p&gt;Unfortunately, the data collection process was halted because we ran out of our AWS Activate for Startups credits.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/datainnews_V2/blob/main/dataflow.png?raw=true&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;todos&#34;&gt;TODOS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; create a simple architecture diagram&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; curate a list of twitter handles of Nepali newspapers that put URL to their newspapers&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; use twint to create datasets (historic)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; check if url is present, url does not 404, and url belongs to the publisher&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; use Newspaper to collect important information (author, etc) and complete the dataset&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; research dash, swifter and pandarallel&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; optimize regular expression functions (if possible this should be performed during scraping)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; create a sqlite database to hold access information (and design schema around other meta) or find and alternative&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; add checkpoints (using twint resume or build it manually)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;poc&#34;&gt;POC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; create a full working version of the product&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; research downloading twint as pandas to merge with previous data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;twitter-handles&#34;&gt;Twitter handles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;@kathmandupost&lt;/li&gt;
+&lt;li&gt;@thehimalayan&lt;/li&gt;
+&lt;li&gt;@NepaliTimes&lt;/li&gt;
+&lt;li&gt;@OnlineKhabar_En&lt;/li&gt;
+&lt;li&gt;@RepublicaNepal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;the-frugal-way&#34;&gt;The Frugal way&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;This project leverages on Github Actions for scheduling and scraping purposes.&lt;/li&gt;
+&lt;li&gt;This project is hosted on Heroku free tier (free ssl)&lt;/li&gt;
+&lt;li&gt;Uses amazing open source projects, primariliy (Twint, Newspaper) etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;previous-iteration&#34;&gt;Previous iteration&lt;/h1&gt;
+&lt;p&gt;Find the previous iteration here:
+&lt;a href=&#34;https://ayushsubedi.github.io/posts/data_in_news/&#34;&gt;https://ayushsubedi.github.io/posts/data_in_news/&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
