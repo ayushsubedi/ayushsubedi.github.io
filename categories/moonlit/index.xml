@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Moonlit on Ayush Subedi</title>
+    <title>moonlit on Ayush Subedi</title>
     <link>https://ayushsubedi.github.io/categories/moonlit/</link>
-    <description>Recent content in Moonlit on Ayush Subedi</description>
+    <description>Recent content in moonlit on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2020 06:18:16 +0545</lastBuildDate>
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/moonlit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Synthetic Data Generation</title>
-      <link>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</link>
-      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
+      <title>Devs in Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/devs_in_nepal/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</guid>
-      <description>&lt;h1 id=&#34;e-commerce-synthetic-data&#34;&gt;E-Commerce Synthetic Data&lt;/h1&gt;
+      <guid>https://ayushsubedi.github.io/posts/devs_in_nepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AP Monitoring</title>
+      <link>https://ayushsubedi.github.io/posts/ap_monitoring/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ap_monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthetic data based on pareto principle</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</guid>
+      <description>&lt;h1 id=&#34;synthetic-data-based-on-pareto-principle&#34;&gt;Synthetic data based on pareto principle&lt;/h1&gt;
 &lt;p&gt;Nowadays, the phrase &amp;ldquo;data is the new oil&amp;rdquo; seems a little cliche. However, it is true. The demand for data has grown significantly, as people and businesses have realized the possibilities of leveraging data for informed decision making. Often, it is not possible to get data to our specific needs. As a ML teacher, I have heard my students claim that it is really challenging for them to find data to their specifications for several of the projects that they want to pursue (in this case for learning data science or for school projects). In other cases, where confidentiality is crucial, the possibility of open data is minimal (anonamized data is there but that is another difficult avenue). Synthetic data can help solve these issues. Synthetic data is &amp;ldquo;any production data applicable to a given situation that are not obtained by direct measurement&amp;rdquo; according to the McGraw-Hill Dictionary of Scientific and Technical Terms. However, synthetic does not imply random. The patterns in synthetic data should mimic real world patterns. This is a priliminary exercise.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg&#34; alt=&#34;Pareto&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price&#34;&gt;Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.&lt;/h3&gt;
@@ -1081,7 +1099,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>You vs Bezos - Weber Fencher law</title>
       <link>https://ayushsubedi.github.io/posts/bezos/</link>
-      <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/bezos/</guid>
       <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
@@ -1089,47 +1107,9 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     </item>
     
     <item>
-      <title>Cheers Hospital Analysis</title>
-      <link>https://ayushsubedi.github.io/posts/cheers_analysis/</link>
-      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/cheers_analysis/</guid>
-      <description>&lt;h1 id=&#34;data-analysis-of-cheers-hospital&#34;&gt;Data analysis of Cheers hospital&lt;/h1&gt;
-&lt;p&gt;Since it’s inception, Hospital for Children Eye ENT and Rehabilitation Service (CHEERS) has amassed data from various sources such as all the software used in daily operations, research department and the finance department. With priority in budgeting which is always a significant factor, CHEERS wanted Moonlit Solutions to analyze the data from different sectors within the hospital and create forecasting models to help with their operational efficiency.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cheers.jpg&#34; alt=&#34;Cheers&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;scope-of-work&#34;&gt;Scope of work&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Data curation from different sectors of the hospital (but only limited to their Hospital Management Information System)&lt;/li&gt;
-&lt;li&gt;Data wrangling and principal component analysis&lt;/li&gt;
-&lt;li&gt;Exploratory data analysis&lt;/li&gt;
-&lt;li&gt;Creation and validation of different forecasting models&lt;/li&gt;
-&lt;li&gt;Assist in the creation of the forecasting section in the hospital master plan that is currently being developed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/13403428/38305927-fc5e91f6-380e-11e8-9e20-7bd866a034a5.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;After the acquisition stage, all analysis presented in notebooks followed the following methodology:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Gaining domain expertise&lt;/li&gt;
-&lt;li&gt;Data wrangling and cleaning (a lot of imputing using the domain knowledge and meeting stakeholders)&lt;/li&gt;
-&lt;li&gt;Exploratory Data Analysis&lt;/li&gt;
-&lt;li&gt;Forecasting with multiple models (AR, MA, ARIMA, SARIMA, Bayesian, Deep Learning)and different KPIs (Daily sales, Daily patient visits)&lt;/li&gt;
-&lt;li&gt;Optimization (Parameter tuning)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;outputs&#34;&gt;Outputs&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Robust forecasting models predicting future sales&lt;/li&gt;
-&lt;li&gt;A report document&lt;/li&gt;
-&lt;li&gt;Dashboard showcasing interactive charts and tables (and all analysis notebooks for research reproducibility)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/754/1*io2zk4HVTX8764K_fJAerw.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The exploratory data analysis and forecasts generated went through various levels of quality assurance to validate the correctness. Unfortunately, the COVID-19 epidemic and subsequent lockdowns was going to affect the business. The model created wasBAU (Business As Usual). It did not forecast out of the world scenarios like COVID-19 (a Black Swan event). However, it will create a benchmark for measuring the effects of COVID-19 in the future. The forecasting can still be used to understand the impact of COVID-19 on the business. The exploratory data on the other hand, provides significant insights for the hospital&amp;rsquo;s strategy development.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Fraud Detection</title>
       <link>https://ayushsubedi.github.io/posts/fraud_detection/</link>
-      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/fraud_detection/</guid>
       <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
@@ -1248,7 +1228,7 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     <item>
       <title>Feasibility study with sentiment analysis and voronoi</title>
       <link>https://ayushsubedi.github.io/posts/feasibility_study_vs/</link>
-      <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/feasibility_study_vs/</guid>
       <description>&lt;h2 id=&#34;voronoi-analysis-and-sentiment-analysis-in-business-feasibility-study&#34;&gt;Voronoi analysis and Sentiment Analysis in Business Feasibility study&lt;/h2&gt;

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Trove on Ayush Subedi</title>
+    <title>trove on Ayush Subedi</title>
     <link>https://ayushsubedi.github.io/categories/trove/</link>
-    <description>Recent content in Trove on Ayush Subedi</description>
+    <description>Recent content in trove on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Sep 2019 09:16:00 +0545</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/trove/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Trove Summary</title>
       <link>https://ayushsubedi.github.io/posts/trove_summary/</link>
-      <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/trove_summary/</guid>
       <description>&lt;h1 id=&#34;the-extension-to-trove&#34;&gt;The extension to Trove&lt;/h1&gt;
@@ -106,7 +106,7 @@
     <item>
       <title>Underlying Architecture of Trove</title>
       <link>https://ayushsubedi.github.io/posts/trove_architecture/</link>
-      <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/trove_architecture/</guid>
       <description>&lt;p&gt;After &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;releasing&lt;/a&gt; &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;Trove&lt;/a&gt;, our inboxes and &lt;a href=&#34;https://twitter.com/Trovenow&#34;&gt;DMs&lt;/a&gt; flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the &lt;a href=&#34;https://blockstack.org/&#34;&gt;Blockstack&lt;/a&gt; platform. &lt;strong&gt;The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.&lt;/strong&gt;  &lt;br&gt;

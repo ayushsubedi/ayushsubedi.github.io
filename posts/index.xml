@@ -6,21 +6,38 @@
     <description>Recent content in Posts on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Dec 2021 12:09:16 +0545</lastBuildDate>
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ride Hailing Analytics</title>
-      <link>https://ayushsubedi.github.io/posts/ride_sharing_analytics/</link>
-      <pubDate>Thu, 02 Dec 2021 12:09:16 +0545</pubDate>
+      <title>Code For Nepal Data Fellowship</title>
+      <link>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/ride_sharing_analytics/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+      <guid>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Beginner&#39;s Trap in analytics</title>
+      <link>https://ayushsubedi.github.io/posts/beginners_trap/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/beginners_trap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ride Hailing Analytics</title>
+      <link>https://ayushsubedi.github.io/posts/ride_hailing_analytics/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ride_hailing_analytics/</guid>
+      <description>&lt;h2 id=&#34;ride-hailing-analytics&#34;&gt;Ride Hailing Analytics&lt;/h2&gt;
 &lt;h3 id=&#34;introduction-to-ride-hailing&#34;&gt;Introduction to Ride Hailing&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Uber_taxi_in_Moscow.jpg/640px-Uber_taxi_in_Moscow.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Credit: Wikimedia.org&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.sanity.io/images/6xsct86j/production/e8fc0f789129b17cc8ae2e05b91e93d0752bef67-3840x2160.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;At present, it is pretty common to hail a ride to get from one place to the other at a tap of a button. Almost all major cities in the world have some sort of ride-hailing service. Uber, Lyft, Didi, Ola, Gojek, etc. are some examples of service providers that come to mind. Additionally, the service is also proliferating to smaller cities and has become commonplace in many parts of the world. Analytics is a key component in making sure the service is provided efficiently. All of the aforementioned companies invest heavily in data science and analytics to be competitive and to provide better services.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;For the course project, I will focus on Ride-Hailing services (not Ride Sharing services). See the difference &lt;a href=&#34;https://www.ecolane.com/blog/ride-hailing-vs.-ride-sharing-the-key-difference-and-why-it-matters&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -30,7 +47,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;For the course project, &amp;ldquo;passengers&amp;rdquo; are referred to as service requesters/receivers and &amp;ldquo;drivers&amp;rdquo; are referred to as service providers.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;components-of-the-problem&#34;&gt;Components of the problem&lt;/h3&gt;
+&lt;h2 id=&#34;components-of-the-problem&#34;&gt;Components of the problem&lt;/h2&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;balancing-act-supply-and-demand-and-chicken-and-egg-problem&#34;&gt;Balancing act: Supply and Demand, and Chicken and Egg Problem&lt;/h3&gt;
 &lt;p&gt;There is a balancing act that all of these ride-sharing platforms need to perform to be efficient. A healthy ratio between driver and passenger (to go more granular, for a segment of geographic area at a given time) is very important.  The balancing act is even crucial when a ride-hailing service decides to introduce itself to a new city (especially one that is new to ride-hailing).&lt;/p&gt;
@@ -307,25 +324,623 @@
 &lt;li&gt;Queuing models can also be here to identify correct values for the dispatching system (waiting time, dynamic geographic grid, etc.). However, there is a need to check the distribution of different events (booking created, booking accepted, waiting time, etc.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;It seems analytics is extremely relevant in all aspects of ride-hailing. In this project, I merely covered a few use cases, with one or two relevant models. Even with this brief exploration, I can conclude that analytics can lead to better outcomes for both drivers and passengers. In the article that was used as a reference for the course project, Didi looks into using analytics to solve some of the aforementioned problems. While there approch will be more sophisticated, the above models can also serve as a baseline.&lt;/p&gt;
-&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.remix.com/blog/ride-hailing-vs-ride-sharing-the-difference-explained&#34;&gt;https://www.remix.com/blog/ride-hailing-vs-ride-sharing-the-difference-explained&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.uber.com/&#34;&gt;https://www.uber.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.lyft.com/&#34;&gt;https://www.lyft.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.didiglobal.com/&#34;&gt;https://www.didiglobal.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.informs.org/Impact/O.R.-Analytics-Success-Stories/Increasing-ride-share-efficiency-Better-outcomes-for-drivers-and-passengers&#34;&gt;https://www.informs.org/Impact/O.R.-Analytics-Success-Stories/Increasing-ride-share-efficiency-Better-outcomes-for-drivers-and-passengers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;It seems analytics is extremely relevant in all aspects of ride-hailing. In this project, I merely covered a few use cases, with one or two relevant models. Even with this brief exploration, I can conclude that analytics can lead to better outcomes for both drivers and passengers.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Business Intelligence for Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/british_bi/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/british_bi/</guid>
+      <description>&lt;h1 id=&#34;business-intelligence-british-college-2021-fall&#34;&gt;Business Intelligence (British College, 2021 Fall)&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/bi/raw/main/assets/venn.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;objectives&#34;&gt;Objectives&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;To ensure students understand the concepts of business analytics and data visualization&lt;/li&gt;
+&lt;li&gt;To develop students&#39; knowledge, understanding. and skills in the real life scenario tackling real world business problems using data&lt;/li&gt;
+&lt;li&gt;To ensure students learn practical skills leveraging few essential tools&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;outcomes&#34;&gt;Outcomes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Understand the essentials of business intelligence, statistics and the corresponding terminologies.&lt;/li&gt;
+&lt;li&gt;Be able to create data visualizations using spreadsheets/tableau.&lt;/li&gt;
+&lt;li&gt;Be able to interpret real world problems using data.&lt;/li&gt;
+&lt;li&gt;Be familiar with the steps involved in the BI process.&lt;/li&gt;
+&lt;li&gt;Be able to interact competently on the topic of BI.&lt;/li&gt;
+&lt;li&gt;Have had some hands-on experience in using BI techniques.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Sheets/Excel,&lt;/li&gt;
+&lt;li&gt;Tableau&lt;/li&gt;
+&lt;li&gt;Github&lt;/li&gt;
+&lt;li&gt;Basic Python and Pandas (if participants want)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;weekly-breakdown&#34;&gt;Weekly Breakdown&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Week #&lt;/th&gt;
+&lt;th&gt;Topics Covered&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 1&lt;/td&gt;
+&lt;td&gt;Introduction to BI (Definition, Context, Process, Use Cases)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 2&lt;/td&gt;
+&lt;td&gt;Decision Making and Decision Support Systems&lt;br&gt;Discuss the decision making challenges faced by different managers&lt;br&gt;Discuss various DSS and its evolution&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 3&lt;/td&gt;
+&lt;td&gt;Introduction to Business Metrics, KPIs&lt;br&gt;Become familiar with business metrics used by business analysts in the area of marketing, sales, growth, engagement, and financial analysis&lt;br&gt;Calculate and interpret key performance metrics&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 4&lt;/td&gt;
+&lt;td&gt;Business statistics&lt;br&gt;Basic statistics&lt;br&gt;Types of visualization&lt;br&gt;Interpreting visualization&lt;br&gt;Good visualization&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 5&lt;/td&gt;
+&lt;td&gt;Descriptive Analysis with Excel/Google Sheets&lt;br&gt;Fundamentals of data and statistics with use case&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 6&lt;/td&gt;
+&lt;td&gt;Descriptive Analysis with Excel/Google Sheets&lt;br&gt;Fundamentals of data and statistics with use case&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 7&lt;/td&gt;
+&lt;td&gt;Time Series Analysis, Simple Regression, Trends, Seasonality concepts with relevant instances&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 8&lt;/td&gt;
+&lt;td&gt;Design Principles&lt;br&gt;Tableau Basics&lt;br&gt;Telling stories with Tableau&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 9&lt;/td&gt;
+&lt;td&gt;Workshop on building Tableau Dashboard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Week 10&lt;/td&gt;
+&lt;td&gt;Current trends in BI, ending notes, complete projects, wrap up&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;potpourri-terminilogies-will-be-added-thoughout-the-course&#34;&gt;Potpourri Terminilogies (will be added thoughout the course)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; A/B testing&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ACID compliancy&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Ad Hoc&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Agile&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Anonymization&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; API&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; AWS Quicksight, Tableau, Power BI, Datastudio&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Backend&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Batch processing vs streaming&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Biases&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Big Data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bots&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Brand Awareness+Equity+Loyalty&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Call to action&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Channel&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Churn&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Cloud&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Columnar Database&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Competitive Analysis&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Conversion&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Correlation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CRO (Conversion Rate Optimization)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Customer Lifetime Value&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Dashboard&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Engineering&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Lake&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Mart&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Pipeline (Luigi, Apache airflow)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Scraping&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Storytelling&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Warehouse&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Wrangling&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Data Cleansing, Referential integrity, Domain integrity, Entity integrity&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Database&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Demand Generation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Demography&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Denormalization&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DevOps&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Dimensions and measures&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Discrete, Continious, Categorical, Ordinal Data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Domain knowledge&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ETL&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; EDA&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Forecasting&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Funnels&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Git&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Goals&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Grant funding&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Hadoop, Spark etc&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Heuristics&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Impressions&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; In-Memory BI&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Infographic&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Joins&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; KPIs&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Leads&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Lookalike audiences&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Metadata&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Metrics&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Mission&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Near Real Time&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Normal distribution&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Normalization&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Net Promoter Score&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; OKRs&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; OLAP&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; OLTP&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; outlier&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pandas, Tidyverse, PySpark&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pareto&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pirate Metrics&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Qualatitive data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Quantitative data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Real Time&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RDBMS&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Roadmap&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ROI&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Runway period&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SaaS&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Schema&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Seasonality&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Single source of truth&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Semi structured data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Structured data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Spreadsheets&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Snapshot&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SQL&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Surveys&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Synthetic Data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Trend&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Unstructured data&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Unique Value Preposition&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Valuation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; View&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Vision&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Volume&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Velocity&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Variety&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Veracity&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Variability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dont-worry-some-of-the-acronyms-confuse-everyone&#34;&gt;Don&amp;rsquo;t worry, some of the acronyms confuse everyone&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/bi/raw/main/assets/merkel.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt;&lt;sup&gt;Source: &lt;a href=&#34;https://www.perdoo.com/resources/merkel-asks-what-does-okr-mean/&#34;&gt;https://www.perdoo.com/resources/merkel-asks-what-does-okr-mean/&lt;/a&gt;&lt;/sup&gt;&lt;/sub&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dataset&#34;&gt;Dataset&lt;/h2&gt;
+&lt;h2 id=&#34;ehamropasalmanducom-we-will-be-using-a-fake-dataset-for-this-fake-ecommerce-startup-in-nepal-see-the-datasets-folder&#34;&gt;eHamroPasalmandu.com (we will be using a fake dataset for this fake ecommerce startup in nepal, see the datasets folder)&lt;/h2&gt;
+&lt;h1 id=&#34;tables&#34;&gt;Tables&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;clients table&lt;/li&gt;
+&lt;li&gt;items table&lt;/li&gt;
+&lt;li&gt;transactions table&lt;/li&gt;
+&lt;li&gt;merged (complete transactions table)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;clients-table-sample&#34;&gt;clients table sample&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;client_id&lt;/th&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;gender&lt;/th&gt;
+&lt;th&gt;dob&lt;/th&gt;
+&lt;th&gt;email&lt;/th&gt;
+&lt;th&gt;phone&lt;/th&gt;
+&lt;th&gt;channel&lt;/th&gt;
+&lt;th&gt;first_contact&lt;/th&gt;
+&lt;th&gt;lat&lt;/th&gt;
+&lt;th&gt;lon&lt;/th&gt;
+&lt;th&gt;location_name&lt;/th&gt;
+&lt;th&gt;created_at&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;100000000&lt;/td&gt;
+&lt;td&gt;Kaushal Bashyal&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;14/03/2003&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:kaushal.bashyal@fakeemail.com&#34;&gt;kaushal.bashyal@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841791565&lt;/td&gt;
+&lt;td&gt;Google Search&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.7768&lt;/td&gt;
+&lt;td&gt;85.3622&lt;/td&gt;
+&lt;td&gt;Golfutar Main Rd&lt;/td&gt;
+&lt;td&gt;48:09.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100000001&lt;/td&gt;
+&lt;td&gt;Sona Hayanju&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;03/07/1996&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:sona.hayanju@fakeemail.com&#34;&gt;sona.hayanju@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841685812&lt;/td&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.6954&lt;/td&gt;
+&lt;td&gt;85.3447&lt;/td&gt;
+&lt;td&gt;ACE Institute Of Management&lt;/td&gt;
+&lt;td&gt;46:03.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100000002&lt;/td&gt;
+&lt;td&gt;Suman Pokherel&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;04/08/2005&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:suman.pokherel@fakeemail.com&#34;&gt;suman.pokherel@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841526187&lt;/td&gt;
+&lt;td&gt;Facebook/Ads&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.659&lt;/td&gt;
+&lt;td&gt;85.368&lt;/td&gt;
+&lt;td&gt;Changathali Rd&lt;/td&gt;
+&lt;td&gt;05:06.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100000003&lt;/td&gt;
+&lt;td&gt;Samita Yogol&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;22/08/2001&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:samita.yogol@fakeemail.com&#34;&gt;samita.yogol@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841131562&lt;/td&gt;
+&lt;td&gt;Facebook/Ads&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.7126&lt;/td&gt;
+&lt;td&gt;85.283&lt;/td&gt;
+&lt;td&gt;Ring Road&lt;/td&gt;
+&lt;td&gt;56:28.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100000004&lt;/td&gt;
+&lt;td&gt;Mahima Marasaini&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;20/03/1985&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:mahima.marasaini@fakeemail.com&#34;&gt;mahima.marasaini@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841859344&lt;/td&gt;
+&lt;td&gt;Other&lt;/td&gt;
+&lt;td&gt;app&lt;/td&gt;
+&lt;td&gt;27.7137&lt;/td&gt;
+&lt;td&gt;85.3245&lt;/td&gt;
+&lt;td&gt;Bhagawati Marg&lt;/td&gt;
+&lt;td&gt;06:58.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;items-table-sample&#34;&gt;items table sample&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;item_id&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;item_name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;price&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;inventory&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10000&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;iPhone 12 (256GB)&lt;/td&gt;
+&lt;td&gt;152900&lt;/td&gt;
+&lt;td&gt;Phone&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=iPhone+12+(256GB)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=iPhone+12+(256GB)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10001&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;VivoBook 14 X415JA (14” FHD, Intel i7-1065G7, Intel UHD, 8GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;115000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14%E2%80%9D+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14”+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10002&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Helios 300 2020 (15.6″ FHD 144Hz, Core i7-10750H, GTX 1660 Ti, 16GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;190000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=Helios+300+2020+(15.6%E2%80%B3+FHD+144Hz,+Core+i7-10750H,+GTX+1660+Ti,+16GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=Helios+300+2020+(15.6″+FHD+144Hz,+Core+i7-10750H,+GTX+1660+Ti,+16GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10003&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Sony Alpha A6500 (With 18-135mm zoom lens)&lt;/td&gt;
+&lt;td&gt;245000&lt;/td&gt;
+&lt;td&gt;Camera&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=Sony+Alpha+A6500+(With+18-135mm+zoom+lens)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=Sony+Alpha+A6500+(With+18-135mm+zoom+lens)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;71&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10004&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;iPhone SE 2 (256GB)&lt;/td&gt;
+&lt;td&gt;96000&lt;/td&gt;
+&lt;td&gt;Phone&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=iPhone+SE+2+(256GB)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=iPhone+SE+2+(256GB)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;transactions-table-sample&#34;&gt;transactions table sample&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;created_at&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;item_id&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2020-09-01 09:49:12.285421&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10142&lt;/td&gt;
+&lt;td&gt;100000015&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2020-09-01 16:44:09.888896&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10113&lt;/td&gt;
+&lt;td&gt;100000010&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2020-09-01 22:40:07.678792&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10105&lt;/td&gt;
+&lt;td&gt;100000010&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2020-09-02 18:48:22.620671&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10177&lt;/td&gt;
+&lt;td&gt;100000022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2020-09-02 11:04:38.703035&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;10039&lt;/td&gt;
+&lt;td&gt;100000019&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;merged-table-sample&#34;&gt;merged table sample&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;item_id&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;created_at&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;gender&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;dob&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;phone&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;channel&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;first_contact&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;lat&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;lon&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;location_name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;created_at_client&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;item_name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;price&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;inventory&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10001&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;100000127&lt;/td&gt;
+&lt;td&gt;2020-09-06 16:03:41.236993&lt;/td&gt;
+&lt;td&gt;Pralhad Biskiwakarma&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;2002-05-25&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:pralhad.biskiwakarma@fakeemail.com&#34;&gt;pralhad.biskiwakarma@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841968059&lt;/td&gt;
+&lt;td&gt;Word of Mouth&lt;/td&gt;
+&lt;td&gt;app&lt;/td&gt;
+&lt;td&gt;27.712&lt;/td&gt;
+&lt;td&gt;85.322&lt;/td&gt;
+&lt;td&gt;Hattisar Sadak&lt;/td&gt;
+&lt;td&gt;2020-09-06 04:41:23.065429&lt;/td&gt;
+&lt;td&gt;VivoBook 14 X415JA (14” FHD, Intel i7-1065G7, Intel UHD, 8GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;115000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14%E2%80%9D+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14”+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10001&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;100000262&lt;/td&gt;
+&lt;td&gt;2021-03-03 04:08:21.342722&lt;/td&gt;
+&lt;td&gt;Prazol Harlalka&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;1999-08-22&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:prazol.harlalka@fakeemail.com&#34;&gt;prazol.harlalka@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841213863&lt;/td&gt;
+&lt;td&gt;Word of Mouth&lt;/td&gt;
+&lt;td&gt;app&lt;/td&gt;
+&lt;td&gt;27.7415&lt;/td&gt;
+&lt;td&gt;85.3127&lt;/td&gt;
+&lt;td&gt;G4 Futsal&lt;/td&gt;
+&lt;td&gt;2020-09-13 21:25:24.950483&lt;/td&gt;
+&lt;td&gt;VivoBook 14 X415JA (14” FHD, Intel i7-1065G7, Intel UHD, 8GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;115000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14%E2%80%9D+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14”+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10001&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;100000901&lt;/td&gt;
+&lt;td&gt;2020-11-03 06:43:52.725155&lt;/td&gt;
+&lt;td&gt;Pramod Shapakota&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;1979-09-14&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:pramod.shapakota@fakeemail.com&#34;&gt;pramod.shapakota@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841852187&lt;/td&gt;
+&lt;td&gt;Google Search&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.7244&lt;/td&gt;
+&lt;td&gt;85.322&lt;/td&gt;
+&lt;td&gt;Lazimpat Rd 1079&lt;/td&gt;
+&lt;td&gt;2020-10-09 13:10:51.153269&lt;/td&gt;
+&lt;td&gt;VivoBook 14 X415JA (14” FHD, Intel i7-1065G7, Intel UHD, 8GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;115000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14%E2%80%9D+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14”+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10001&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;100002190&lt;/td&gt;
+&lt;td&gt;2020-11-25 08:56:35.801396&lt;/td&gt;
+&lt;td&gt;Samita Panjiyar&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;1987-10-20&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:samita.panjiyar@fakeemail.com&#34;&gt;samita.panjiyar@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841003522&lt;/td&gt;
+&lt;td&gt;Word of Mouth&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.7057&lt;/td&gt;
+&lt;td&gt;85.3337&lt;/td&gt;
+&lt;td&gt;Maiti Devi Marg&lt;/td&gt;
+&lt;td&gt;2020-11-20 05:14:59.540079&lt;/td&gt;
+&lt;td&gt;VivoBook 14 X415JA (14” FHD, Intel i7-1065G7, Intel UHD, 8GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;115000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14%E2%80%9D+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14”+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;10001&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;100002773&lt;/td&gt;
+&lt;td&gt;2021-04-29 08:08:06.426326&lt;/td&gt;
+&lt;td&gt;Kusum Katiwada&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;2003-03-01&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:kusum.katiwada@fakeemail.com&#34;&gt;kusum.katiwada@fakeemail.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;9841201400&lt;/td&gt;
+&lt;td&gt;Google Search&lt;/td&gt;
+&lt;td&gt;browser&lt;/td&gt;
+&lt;td&gt;27.7224&lt;/td&gt;
+&lt;td&gt;85.3101&lt;/td&gt;
+&lt;td&gt;Rayamajhi Marga&lt;/td&gt;
+&lt;td&gt;2020-12-07 01:10:09.243962&lt;/td&gt;
+&lt;td&gt;VivoBook 14 X415JA (14” FHD, Intel i7-1065G7, Intel UHD, 8GB, 512GB SSD)&lt;/td&gt;
+&lt;td&gt;115000&lt;/td&gt;
+&lt;td&gt;Laptop&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14%E2%80%9D+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&#34;&gt;https://dummyimage.com/600x400/000/fff&amp;amp;text=VivoBook+14+X415JA+(14”+FHD,+Intel+i7-1065G7,+Intel+UHD,+8GB,+512GB+SSD)&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Find the complete course here: &lt;a href=&#34;https://github.com/ayushsubedi/bi&#34;&gt;https://github.com/ayushsubedi/bi&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Synthetic Data Generation</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_generation/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sentiment Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/sentiment_analysis/</link>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/sentiment_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nepal Vaccine Progress Twitter Bot</title>
+      <link>https://ayushsubedi.github.io/posts/vaccine_progress/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/vaccine_progress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Emojis of Kathmandu</title>
+      <link>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/emojis_of_kathmandu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diabetic Retinopathy and Glaucoma Detection</title>
+      <link>https://ayushsubedi.github.io/posts/cheers_ai/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/cheers_ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data in News Revisited</title>
+      <link>https://ayushsubedi.github.io/posts/data_in_news_revisited/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/data_in_news_revisited/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kohokoho</title>
+      <link>https://ayushsubedi.github.io/posts/kohokoho/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/kohokoho/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Choto</title>
+      <link>https://ayushsubedi.github.io/posts/choto/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/choto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devs in Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/devs_in_nepal/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/devs_in_nepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AP Monitoring</title>
+      <link>https://ayushsubedi.github.io/posts/ap_monitoring/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ap_monitoring/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>Affirmations with Flutter</title>
       <link>https://ayushsubedi.github.io/posts/affirmations_dev/</link>
-      <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/affirmations_dev/</guid>
-      <description>&lt;h2 id=&#34;a-project-that-motivates-to-learn-with-positive-reinforcement&#34;&gt;A project that motivates to learn with positive reinforcement&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;affirmations-with-flutter&#34;&gt;Affirmations with flutter&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/flutter.png&#34; alt=&#34;Affirmations with flutter&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It had been a while since I (subconsciously or not so subconsciously) pivoted my career from app development to data science. Man, I did not miss Android Studio clogging my base model laptop’s memory. However, my little cousin (who just ventured into app development) wanted help with one of the issues he was having. But, as someone who had not used semicolons and braces for almost couple of years, Dart was almost nauseating upon first glance.  I promised him I would  get around answering his queries, but after I built something simple first.&lt;/p&gt;
 &lt;p&gt;Affirmations.dev provides quotes that are motivating to the devs. So, as a newbie in Flutter, it good to get all the positive reinforcement especially when Android Studio and the virtual device doesn’t leave much space for many Stackoverflow tabs.&lt;/p&gt;
@@ -482,7 +1097,7 @@ class _AffirmationsAppState extends State&amp;lt;AffirmationsApp&amp;gt; {
     <item>
       <title>Ames Housing Prediction</title>
       <link>https://ayushsubedi.github.io/posts/ames_housing/</link>
-      <pubDate>Mon, 20 Jul 2020 08:16:00 +0545</pubDate>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/ames_housing/</guid>
       <description>&lt;h2 id=&#34;housing-prices-competition&#34;&gt;Housing Prices Competition&lt;/h2&gt;
@@ -1792,7 +2407,7 @@ dist &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=
     <item>
       <title>K-Shaped recovery</title>
       <link>https://ayushsubedi.github.io/posts/k_shaped_recovery/</link>
-      <pubDate>Wed, 15 Jul 2020 10:02:00 +0545</pubDate>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/k_shaped_recovery/</guid>
       <description>&lt;h2 id=&#34;k-shaped-recovery&#34;&gt;K-Shaped recovery&lt;/h2&gt;
@@ -1804,55 +2419,12 @@ dist &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=
     </item>
     
     <item>
-      <title>MuSigma and the art of problem solving (WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/musigma/</link>
-      <pubDate>Fri, 10 Jul 2020 09:16:00 +0545</pubDate>
+      <title>Synthetic data based on pareto principle</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/musigma/</guid>
-      <description>&lt;h1 id=&#34;musigma-the-art-of-problem-solving&#34;&gt;MuSigma the art of problem solving&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://cdn2.hubspot.net/hubfs/1736059/offers/co-ebook-the-art-of-problem-solving-aops-july-2016.pdf&#34;&gt;Link to the original paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;MuSigma defines the paper as &lt;strong&gt;&amp;ldquo;A guide for your Decision Sciences journey.&amp;quot;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;instill approaches that help decision making not just to match today’s pace of change, but to help capitalize also&lt;/li&gt;
-&lt;li&gt;where do you concentrate your problem solving efforts in light of change&lt;/li&gt;
-&lt;li&gt;businesses must learn to capitalize on change&lt;/li&gt;
-&lt;li&gt;Big data (4 V) volume, velocity, variety and volatility of data&lt;/li&gt;
-&lt;li&gt;big data is not the issue, its change&lt;/li&gt;
-&lt;li&gt;all industries are young, all business models will continue to evolve rapidly.&lt;/li&gt;
-&lt;li&gt;It took 100 years for modern flights to evolve into an industry with 2.3 billion passengers. It took a college dropout 10 years to build a social network that generates 22 billion minutes of online interaction every single day.&lt;/li&gt;
-&lt;li&gt;The river of reasonable return: Decision supply chains now trump physical supply chains in terms of importance, and data is not the new oil. Where does one focus?&lt;/li&gt;
-&lt;li&gt;The frequency at which the problems arise and the impact of solving the problems&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594092566828_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Most problems occupy the middle of the graph, and that is also where the richest opportunity lie. Why is fraud on the rise in this particular customer segment? Why is my discounting strategy not affecting sales? Why was only one channel effective for our most recent campaign? Why are my West coast stores less profitable?&lt;/li&gt;
-&lt;li&gt;Think of problem density and myriad of interactions these problems have with each other&lt;/li&gt;
-&lt;li&gt;not man+machine but man machine (integrated blend of math and business insights)&lt;/li&gt;
-&lt;li&gt;Learning over knowing&lt;/li&gt;
-&lt;li&gt;extreme experimentation&lt;/li&gt;
-&lt;li&gt;the new ip&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594093404357_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594094231336_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Goldilocks state&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Descriptive analysis: what happened in the business&lt;/li&gt;
-&lt;li&gt;inquisitive analysis: why is something happening in the business&lt;/li&gt;
-&lt;li&gt;predictive analysis: what is likely to happen in the future?&lt;/li&gt;
-&lt;li&gt;prescriptive analysis: so what? now what?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594094937782_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Synthetic Data Generation</title>
-      <link>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</link>
-      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</guid>
-      <description>&lt;h1 id=&#34;e-commerce-synthetic-data&#34;&gt;E-Commerce Synthetic Data&lt;/h1&gt;
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</guid>
+      <description>&lt;h1 id=&#34;synthetic-data-based-on-pareto-principle&#34;&gt;Synthetic data based on pareto principle&lt;/h1&gt;
 &lt;p&gt;Nowadays, the phrase &amp;ldquo;data is the new oil&amp;rdquo; seems a little cliche. However, it is true. The demand for data has grown significantly, as people and businesses have realized the possibilities of leveraging data for informed decision making. Often, it is not possible to get data to our specific needs. As a ML teacher, I have heard my students claim that it is really challenging for them to find data to their specifications for several of the projects that they want to pursue (in this case for learning data science or for school projects). In other cases, where confidentiality is crucial, the possibility of open data is minimal (anonamized data is there but that is another difficult avenue). Synthetic data can help solve these issues. Synthetic data is &amp;ldquo;any production data applicable to a given situation that are not obtained by direct measurement&amp;rdquo; according to the McGraw-Hill Dictionary of Scientific and Technical Terms. However, synthetic does not imply random. The patterns in synthetic data should mimic real world patterns. This is a priliminary exercise.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg&#34; alt=&#34;Pareto&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price&#34;&gt;Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.&lt;/h3&gt;
@@ -2916,7 +3488,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>You vs Bezos - Weber Fencher law</title>
       <link>https://ayushsubedi.github.io/posts/bezos/</link>
-      <pubDate>Wed, 01 Jul 2020 10:09:16 +0545</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/bezos/</guid>
       <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
@@ -2926,7 +3498,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>Cheers Hospital Analysis</title>
       <link>https://ayushsubedi.github.io/posts/cheers_analysis/</link>
-      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/cheers_analysis/</guid>
       <description>&lt;h1 id=&#34;data-analysis-of-cheers-hospital&#34;&gt;Data analysis of Cheers hospital&lt;/h1&gt;
@@ -2964,7 +3536,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>Data in News</title>
       <link>https://ayushsubedi.github.io/posts/data_in_news/</link>
-      <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/data_in_news/</guid>
       <description>&lt;h2 id=&#34;data-in-news&#34;&gt;Data in News&lt;/h2&gt;
@@ -2992,7 +3564,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>Nepal Data Literacy Program</title>
       <link>https://ayushsubedi.github.io/posts/nepal_data_literacy/</link>
-      <pubDate>Tue, 31 Dec 2019 08:00:10 +0545</pubDate>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/nepal_data_literacy/</guid>
       <description>&lt;h2 id=&#34;nepal-data-literacy-program&#34;&gt;Nepal Data Literacy Program&lt;/h2&gt;
@@ -3026,9 +3598,36 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     </item>
     
     <item>
+      <title>Spirathon AI Conference 2019</title>
+      <link>https://ayushsubedi.github.io/posts/spirathon/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/spirathon/</guid>
+      <description>&lt;h2 id=&#34;journey-to-spam-detection&#34;&gt;Journey to Spam Detection&lt;/h2&gt;
+&lt;p&gt;Spiralogics is hosting a first of it&amp;rsquo;s kind, AI Conference in Nepal this February - a platform for AI veterans and students to come together and network.
+This year, Spiralogics is focused on exploring and explaining the ways how AI can create positive impact on different aspects of our life. It is a platform which will act as a driving force in encouraging the implementation of AI (especially in the Nepalese environment). Their purpose is to bring together professionals and students under one roof to rediscover the possibilities that AI can create in our day to day lives.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/spirathon.jpg&#34; alt=&#34;Spirathon&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;how-was-i-involved&#34;&gt;How was I involved?&lt;/h3&gt;
+&lt;p&gt;I was asked to teach a 5 hour session to introduce the students to a concept of AI. I decided to conduct a workshop based session on Naive Bayes Classifier to detect spam.&lt;/p&gt;
+&lt;h2 id=&#34;topics-covered&#34;&gt;Topics covered&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Probability Primer:&lt;/strong&gt; We look into some few probability problems and Monte Carlo Simulations to get a basic primer on probability and Python.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conditional Probability&lt;/strong&gt;: We look into few examples on conditional probability.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bayes Theorem:&lt;/strong&gt; We connect Conditional Probability with Bayes Theorem.  We move from what we know to what we can infer and connect the dots.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sensitivity, Specificity and Confusion matrix:&lt;/strong&gt; We look into concepts of Sensitivity, Specificity, TP, TN, FP and FN. We also look into Type I and Type II errors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy, Precision and Recall:&lt;/strong&gt; We look into different ways to evaluate our models and realize when one is more important than the other. We also study F1 score which combines Precision and Recall.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Naive Bayes:&lt;/strong&gt; We move from Bayes Theorem to Naive Bayes and define what Naive means.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NB Spam detection classifier&lt;/strong&gt;: We build a binary classifier using Scikit learn and publicly available SMS datasets. We also evaluate our model’s performance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NB vs Bagging, Random Forest and Adaboost&lt;/strong&gt;: We will not spend much time here. This notebook basically compares Naive bayes with other algorithmns for the same dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Link to the &lt;a href=&#34;https://github.com/ayushsubedi/naivebayes_spirathon2019&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Solveathon Nepal 2019</title>
       <link>https://ayushsubedi.github.io/posts/solveathon_nepal/</link>
-      <pubDate>Thu, 05 Dec 2019 09:09:55 +0545</pubDate>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/solveathon_nepal/</guid>
       <description>&lt;h2 id=&#34;what-is-a-solve-a-thon&#34;&gt;What is a Solve-a-thon?&lt;/h2&gt;
@@ -3044,7 +3643,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>British College AI Conference</title>
       <link>https://ayushsubedi.github.io/posts/british_ai_conference/</link>
-      <pubDate>Tue, 05 Nov 2019 08:05:11 +0545</pubDate>
+      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/british_ai_conference/</guid>
       <description>&lt;h2 id=&#34;nepal-students-and-ai&#34;&gt;Nepal, students and AI&lt;/h2&gt;
@@ -3069,7 +3668,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>Trove Summary</title>
       <link>https://ayushsubedi.github.io/posts/trove_summary/</link>
-      <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/trove_summary/</guid>
       <description>&lt;h1 id=&#34;the-extension-to-trove&#34;&gt;The extension to Trove&lt;/h1&gt;
@@ -3161,7 +3760,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>Underlying Architecture of Trove</title>
       <link>https://ayushsubedi.github.io/posts/trove_architecture/</link>
-      <pubDate>Sun, 30 Jun 2019 08:06:19 +0545</pubDate>
+      <pubDate>Sun, 30 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/trove_architecture/</guid>
       <description>&lt;p&gt;After &lt;a href=&#34;https://www.producthunt.com/posts/trove-9149602d-c028-40ef-9c2d-55303953986d&#34;&gt;releasing&lt;/a&gt; &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;Trove&lt;/a&gt;, our inboxes and &lt;a href=&#34;https://twitter.com/Trovenow&#34;&gt;DMs&lt;/a&gt; flooded with questions pertaining to the underlying architecture of Trove, and most importantly, about DAaps (Decentralized Apps) and the &lt;a href=&#34;https://blockstack.org/&#34;&gt;Blockstack&lt;/a&gt; platform. &lt;strong&gt;The purpose of this post is to answer those burning questions and to take you on a journey of figuring all of this out ourselves.&lt;/strong&gt;  &lt;br&gt;
@@ -3232,7 +3831,7 @@ Use the &lt;a href=&#34;https://app.trovenow.com/&#34;&gt;&lt;strong&gt;app&lt;/
     <item>
       <title>Fraud Detection</title>
       <link>https://ayushsubedi.github.io/posts/fraud_detection/</link>
-      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/fraud_detection/</guid>
       <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
@@ -3349,36 +3948,18 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     </item>
     
     <item>
-      <title>Spirathon AI Conference 2019</title>
-      <link>https://ayushsubedi.github.io/posts/spirathon/</link>
-      <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
+      <title>Shabda Kathmandu</title>
+      <link>https://ayushsubedi.github.io/posts/shabda_kathmandu/</link>
+      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/spirathon/</guid>
-      <description>&lt;h2 id=&#34;journey-to-spam-detection&#34;&gt;Journey to Spam Detection&lt;/h2&gt;
-&lt;p&gt;Spiralogics is hosting a first of it&amp;rsquo;s kind, AI Conference in Nepal this February - a platform for AI veterans and students to come together and network.
-This year, Spiralogics is focused on exploring and explaining the ways how AI can create positive impact on different aspects of our life. It is a platform which will act as a driving force in encouraging the implementation of AI (especially in the Nepalese environment). Their purpose is to bring together professionals and students under one roof to rediscover the possibilities that AI can create in our day to day lives.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/spirathon.jpg&#34; alt=&#34;Spirathon&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;how-was-i-involved&#34;&gt;How was I involved?&lt;/h3&gt;
-&lt;p&gt;I was asked to teach a 5 hour session to introduce the students to a concept of AI. I decided to conduct a workshop based session on Naive Bayes Classifier to detect spam.&lt;/p&gt;
-&lt;h2 id=&#34;topics-covered&#34;&gt;Topics covered&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Probability Primer:&lt;/strong&gt; We look into some few probability problems and Monte Carlo Simulations to get a basic primer on probability and Python.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Conditional Probability&lt;/strong&gt;: We look into few examples on conditional probability.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bayes Theorem:&lt;/strong&gt; We connect Conditional Probability with Bayes Theorem.  We move from what we know to what we can infer and connect the dots.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sensitivity, Specificity and Confusion matrix:&lt;/strong&gt; We look into concepts of Sensitivity, Specificity, TP, TN, FP and FN. We also look into Type I and Type II errors.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Accuracy, Precision and Recall:&lt;/strong&gt; We look into different ways to evaluate our models and realize when one is more important than the other. We also study F1 score which combines Precision and Recall.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Naive Bayes:&lt;/strong&gt; We move from Bayes Theorem to Naive Bayes and define what Naive means.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NB Spam detection classifier&lt;/strong&gt;: We build a binary classifier using Scikit learn and publicly available SMS datasets. We also evaluate our model’s performance.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NB vs Bagging, Random Forest and Adaboost&lt;/strong&gt;: We will not spend much time here. This notebook basically compares Naive bayes with other algorithmns for the same dataset.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Link to the &lt;a href=&#34;https://github.com/ayushsubedi/naivebayes_spirathon2019&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <guid>https://ayushsubedi.github.io/posts/shabda_kathmandu/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>Torpe Blockchain</title>
       <link>https://ayushsubedi.github.io/posts/torpe/</link>
-      <pubDate>Sun, 28 Oct 2018 01:10:00 +0545</pubDate>
+      <pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/torpe/</guid>
       <description>&lt;h1 id=&#34;torpe-blockchain-तरप-बलककचन&#34;&gt;Torpe Blockchain (तोर्पे ब्लोक्कचैन)&lt;/h1&gt;
@@ -3826,7 +4407,7 @@ check_chain(blockchain)
     <item>
       <title>Feasibility study with sentiment analysis and voronoi</title>
       <link>https://ayushsubedi.github.io/posts/feasibility_study_vs/</link>
-      <pubDate>Mon, 01 Oct 2018 06:10:01 +0545</pubDate>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/feasibility_study_vs/</guid>
       <description>&lt;h2 id=&#34;voronoi-analysis-and-sentiment-analysis-in-business-feasibility-study&#34;&gt;Voronoi analysis and Sentiment Analysis in Business Feasibility study&lt;/h2&gt;
@@ -3842,7 +4423,7 @@ check_chain(blockchain)
     <item>
       <title>Inclusive Nepal</title>
       <link>https://ayushsubedi.github.io/posts/inclusive_newspaper/</link>
-      <pubDate>Wed, 08 Aug 2018 08:06:19 +0545</pubDate>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/inclusive_newspaper/</guid>
       <description>&lt;h2 id=&#34;concept-note-on-inclusive-nepal-wip-and-analysis-of-usage-of-alt-text-in-nepali-newspapers&#34;&gt;Concept Note on Inclusive Nepal (WIP) and Analysis of usage of Alt text in Nepali newspapers&lt;/h2&gt;
@@ -5629,7 +6210,7 @@ alt_count_percent 0.6493506493506493
     <item>
       <title>Startup analysis using Seedstars data</title>
       <link>https://ayushsubedi.github.io/posts/seedstars/</link>
-      <pubDate>Sat, 03 Mar 2018 06:16:55 +0545</pubDate>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/seedstars/</guid>
       <description>&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
@@ -5954,7 +6535,7 @@ alt_count_percent 0.6493506493506493
     <item>
       <title>Birds, Plane, Superman</title>
       <link>https://ayushsubedi.github.io/posts/bird_plane_superman/</link>
-      <pubDate>Fri, 02 Feb 2018 10:09:16 +0545</pubDate>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/bird_plane_superman/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -5997,7 +6578,7 @@ Since our model is ready and we have built functions that allows us to visualize
     <item>
       <title>Diffie-Hellman key exchange (and AES-256)</title>
       <link>https://ayushsubedi.github.io/posts/diffie_hellman/</link>
-      <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/diffie_hellman/</guid>
       <description>&lt;h1 id=&#34;diffie-hellman-key-exchange&#34;&gt;Diffie-Hellman key exchange&lt;/h1&gt;
@@ -6081,7 +6662,7 @@ print(decipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(ci
     <item>
       <title>RSA encryption</title>
       <link>https://ayushsubedi.github.io/posts/rsa_encryption/</link>
-      <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/rsa_encryption/</guid>
       <description>&lt;h2 id=&#34;rsa&#34;&gt;RSA&lt;/h2&gt;
@@ -6226,7 +6807,7 @@ e &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; secure_random&lt;span
     <item>
       <title>A brief history of Tootle</title>
       <link>https://ayushsubedi.github.io/posts/tootle_history/</link>
-      <pubDate>Sun, 01 Oct 2017 11:02:11 +0545</pubDate>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/tootle_history/</guid>
       <description>&lt;h3 id=&#34;a-brief-history-of-tootle&#34;&gt;A brief history of Tootle&lt;/h3&gt;
@@ -6249,7 +6830,7 @@ From our experience, we have realized that market drives technology and not the 
     <item>
       <title>Learnings from Tootle</title>
       <link>https://ayushsubedi.github.io/posts/tootle_learnings/</link>
-      <pubDate>Sat, 28 Jan 2017 13:12:41 +0545</pubDate>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/tootle_learnings/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-xoX-IvzEIrQ/WABs5p6To1I/AAAAAAAAFrs/IWVJmZ1RCtMsuxGVD9tBO_he__--YMo-QCLcB/s320/client%2Bcopy%2Bcopy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -6303,7 +6884,7 @@ Do not be a &lt;strong&gt;mercenary&lt;/strong&gt; since dedication in craft, pa
     <item>
       <title>Edquake</title>
       <link>https://ayushsubedi.github.io/posts/edquake/</link>
-      <pubDate>Sat, 22 Oct 2016 04:01:02 +0545</pubDate>
+      <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/edquake/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -6364,7 +6945,7 @@ Do not be a &lt;strong&gt;mercenary&lt;/strong&gt; since dedication in craft, pa
     <item>
       <title>Edcrayon</title>
       <link>https://ayushsubedi.github.io/posts/edcrayon/</link>
-      <pubDate>Mon, 01 Feb 2016 02:21:02 +0545</pubDate>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/edcrayon/</guid>
       <description>&lt;p&gt;Edcrayon’s &lt;strong&gt;Universal Deployment Model&lt;/strong&gt;, converts tablets or phones to a smart, self-paced, predictive learning environment. It packages the following features:&lt;/p&gt;
@@ -6431,7 +7012,7 @@ Do not be a &lt;strong&gt;mercenary&lt;/strong&gt; since dedication in craft, pa
     <item>
       <title>Etymology and Ngram</title>
       <link>https://ayushsubedi.github.io/posts/etymology/</link>
-      <pubDate>Fri, 01 Jan 2016 03:11:02 +0545</pubDate>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/etymology/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-27bPJS8zz2U/VoYeWiH1_KI/AAAAAAAADls/jICpVOc5TgI/s640/device-2016-01-01-120842.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -6450,7 +7031,7 @@ Do not be a &lt;strong&gt;mercenary&lt;/strong&gt; since dedication in craft, pa
     <item>
       <title>Neo-literacy app concept</title>
       <link>https://ayushsubedi.github.io/posts/neoliteracy/</link>
-      <pubDate>Thu, 01 Oct 2015 05:14:01 +0545</pubDate>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/neoliteracy/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-EBh3SlPn8Aw/V_SzssccFZI/AAAAAAAAFbM/BsJ4tg8gw_8a54Xo2ZIlJ7gNjqoZEoa0QCLcB/s320/a.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -6505,7 +7086,7 @@ Do not be a &lt;strong&gt;mercenary&lt;/strong&gt; since dedication in craft, pa
     <item>
       <title>Net Promoter Scale (NPS)</title>
       <link>https://ayushsubedi.github.io/posts/nps/</link>
-      <pubDate>Sat, 04 Apr 2015 04:01:02 +0545</pubDate>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/nps/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-TYuOQ1UJLzE/V_PgIfgdzfI/AAAAAAAAFaQ/Z-fVeyyIQm4gG386D_AeGtlePk5LsJCBACLcB/s320/nps.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -6527,7 +7108,7 @@ The pith of NPS lies in the question:&lt;/p&gt;
     <item>
       <title>Swahili Phonics App with Stanford University</title>
       <link>https://ayushsubedi.github.io/posts/swahili/</link>
-      <pubDate>Mon, 02 Feb 2015 04:04:01 +0545</pubDate>
+      <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/swahili/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -6577,7 +7158,7 @@ If Player A starts the game, and in Level 1 he/she successfully recognizes phone
     <item>
       <title>Republic of Zorgania</title>
       <link>https://ayushsubedi.github.io/posts/zorgania/</link>
-      <pubDate>Fri, 18 Apr 2014 09:13:12 +0545</pubDate>
+      <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/zorgania/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -6619,7 +7200,7 @@ For C5: {G}&lt;/p&gt;
     <item>
       <title>Fractal Plots</title>
       <link>https://ayushsubedi.github.io/posts/fractal_plots/</link>
-      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/fractal_plots/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
@@ -6804,7 +7385,7 @@ points(plot.result,pch = 46)
     <item>
       <title>The Lost Brothers</title>
       <link>https://ayushsubedi.github.io/posts/thelostbrothers/</link>
-      <pubDate>Mon, 31 Mar 2014 12:11:45 +0545</pubDate>
+      <pubDate>Mon, 31 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/thelostbrothers/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-jB1157xl870/UznA7_yh_qI/AAAAAAAACfc/rioorJr5fhQ/s1600/Bdc6oaRT9.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -6903,7 +7484,7 @@ onCreate&lt;/p&gt;
     <item>
       <title>Android&#43;Arduino RC Car</title>
       <link>https://ayushsubedi.github.io/posts/rc_car/</link>
-      <pubDate>Fri, 31 Jan 2014 11:03:13 +0545</pubDate>
+      <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/rc_car/</guid>
       <description>&lt;h3 id=&#34;androidarduino-rc-car&#34;&gt;Android+Arduino RC Car&lt;/h3&gt;
@@ -7017,7 +7598,7 @@ Right: 4&lt;/p&gt;
     <item>
       <title>Snakes and Ladders</title>
       <link>https://ayushsubedi.github.io/posts/snakesandladders/</link>
-      <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
+      <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/snakesandladders/</guid>
       <description>&lt;h3 id=&#34;snakes-and-ladders&#34;&gt;Snakes and Ladders&lt;/h3&gt;
@@ -7237,7 +7818,7 @@ Let &lt;em&gt;subStochasticMatrix&lt;/em&gt; be the &lt;em&gt;100 by 100&lt;/em&
     <item>
       <title>Compiler from Scratch</title>
       <link>https://ayushsubedi.github.io/posts/ducompiler/</link>
-      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/ducompiler/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
@@ -7334,7 +7915,7 @@ upto: 15
     <item>
       <title>Area of the Mandelbrot Set</title>
       <link>https://ayushsubedi.github.io/posts/mandelbrot_area/</link>
-      <pubDate>Wed, 02 Jan 2013 10:01:09 +0545</pubDate>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/mandelbrot_area/</guid>
       <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;
@@ -7473,7 +8054,7 @@ inmandelbrotset &amp;lt;- function(c)
     <item>
       <title>The Faro Shuffle</title>
       <link>https://ayushsubedi.github.io/posts/faro_shuffle/</link>
-      <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
+      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/faro_shuffle/</guid>
       <description>&lt;h3 id=&#34;the-faro-shuffle&#34;&gt;The Faro Shuffle:&lt;/h3&gt;

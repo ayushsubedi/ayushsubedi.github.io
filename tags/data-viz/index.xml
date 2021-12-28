@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data viz on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/data-viz/</link>
+    <description>Recent content in data viz on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/data-viz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>K-Shaped recovery</title>
+      <link>https://ayushsubedi.github.io/posts/k_shaped_recovery/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/k_shaped_recovery/</guid>
+      <description>&lt;h2 id=&#34;k-shaped-recovery&#34;&gt;K-Shaped recovery&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/k.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A K-shaped recovery encapsulates the idea that some industries in the economy will recover (or actually prevail in the context of Nepal), while others will decline or fail to recover nearly as quickly.&lt;/p&gt;
+&lt;p&gt;One example of the former includes the software service sector (outsourcing, e-commerce, delivery, etc.). On the unfortunate side, an example would be the hospitality/tourism sector.&lt;/p&gt;
+&lt;p&gt;The challenge for time series analysts is to figure out ways to fit this into their model depending on the COVID elasticity for their sectors. COVID, a &amp;ldquo;black swan event&amp;rdquo; has screwed up the Business As Usual.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>You vs Bezos - Weber Fencher law</title>
+      <link>https://ayushsubedi.github.io/posts/bezos/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/bezos/</guid>
+      <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
+&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1599480108593&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;https:&amp;#47;&amp;#47;moonlitplayground.ml&amp;#47;bezos&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;WIPbezos&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en&#39; /&gt;&lt;param name=&#39;filter&#39; value=&#39;publish=yes&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1599480108593&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;750px&#39;;vizElement.style.height=&#39;904px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>Feasibility study with sentiment analysis and voronoi</title>
+      <link>https://ayushsubedi.github.io/posts/feasibility_study_vs/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/feasibility_study_vs/</guid>
+      <description>&lt;h2 id=&#34;voronoi-analysis-and-sentiment-analysis-in-business-feasibility-study&#34;&gt;Voronoi analysis and Sentiment Analysis in Business Feasibility study&lt;/h2&gt;
+&lt;p&gt;Apart from the conventional research methodology (convenience sampling, likert questionnaire, interview questions, swot analysis for competitions etc.) we tested two unconventional paradigms when a client approached us for feasibility of a business in Kathmandu.&lt;/p&gt;
+&lt;p&gt;First of all, we looked into finding an ideal place for the business using voronoi diagrams. This was useful to avoid areas where competitions were prominent, and also to tap into neighbourhoods where demands were not met. Of course, factors such as population density, and similar business tending to sprout in close proximity needed to be considered, but voronoi diagrams was only used as a small piece in a very large puzzle.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kbar.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Secondly, we tried to understand people&amp;rsquo;s sentiment on the value the business was trying to sell, and also on current value providers. For this we used Twitter API to collect business relevant tweets from Kathmandu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sentiment.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Apart from an aggregated view of the sentiments, we were able to gain insights on what was and was not working with services provided by current market players. This would allow our client to position their services by converting the weakness of their competition as their strength.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fractal Plots</title>
+      <link>https://ayushsubedi.github.io/posts/fractal_plots/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/fractal_plots/</guid>
+      <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-Mby3dBcaRKo/U0zGR29ZF9I/AAAAAAAACm4/qjEeUPPlBsU/s1600/Rplot03.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is the naive/brute-force implementation of the Mandelbrot Set plotting. I just followed the algorithm.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Plotting the Mandelbrot Set 
+
+# length of sequence for real and imaginary parts of complex numbers
+length &amp;lt;- 1000
+
+# sequences for real and imaginary parts
+real = seq(-1.8,0.6, len=length)
+imaginary = seq(-1.2,1.2, len=length)
+
+
+result &amp;lt;- matrix(nrow = length, ncol = length)
+
+for (i in 1:length)
+{
+  for (j in 1:length)
+  {
+    result[i,j]=inmandelbrotset(complex(real = real[i], imaginary = imaginary[j]))       
+  }
+}
+
+image(result, axes=FALSE)
+
+
+
+# function that checks if a point E mandelbrot set
+inmandelbrotset &amp;lt;- function(c)
+{
+  dwell.limit &amp;lt;- 2048
+  z &amp;lt;- 0  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-Iqm_BdgidJU/U0qOV5YyfsI/AAAAAAAACmM/FXeCXs-kNkM/s1600/output_fSU8xz.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding colors:&lt;/strong&gt;
+We now have a Boolean matrix that records if a point is in the Mandelbrot Set. Since the matrix can only have two values : true or false, thus far, we have only been able to plot read and white images. The next step is to add colors such that we get more information on when a particular point escapes the radius of 2. Again, this is the naive/brute force way of doing it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Mandelbrot Plotting with colors 
+length &amp;lt;- 1000
+real = seq(-2.0,2.0, len=length)
+imaginary = seq(-2.0,2.0, len=length)
+result &amp;lt;- matrix(nrow = length, ncol = length)
+dwell.limit &amp;lt;- 512
+
+for (i in 1:length)
+{
+  for (j in 1:length)
+  {  
+    z &amp;lt;- 0
+    c &amp;lt;-complex(real = real[i], imaginary = imaginary[j])
+    for (k in 1:dwell.limit)
+    { 
+      
+      z &amp;lt;- z ** 2 + c
+      if (Mod(z) &amp;gt; 2)
+      {      
+        result[i,j]=k
+        break
+      }
+    }     
+    
+  }
+}
+set.seed(2)
+image(result,breaks=0:dwell.limit
+      ,col=c(1,sample(terrain.colors
+                      (dwell.limit-1,alpha = .8))),asp=1,ax=F)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-gxswS7fcV5k/U0zNhDoPqcI/AAAAAAAACnE/za9JUEmkQ3M/s1600/Rplot06.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-hNco2zVAeSs/U0z4XWixrUI/AAAAAAAACoU/dFvirhQFLvQ/s1600/Rplot14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and, just for the heck of it..&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-XkuSH0dAMF8/U0z6YBmVmKI/AAAAAAAACok/0DfUTNEMYpc/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ASCII Mandelbrot Set using R (naive)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s &amp;lt;- seq(-1.7,1.2, by =.1)
+a &amp;lt;- &amp;quot;&amp;quot;
+for (i in 1:length(s))
+{  
+  for (j in 1:length(s))
+  {
+   a&amp;lt;-cat(a,inmandelbrotset(complex(r = s[j], i = s[i])))     
+  }  
+  a &amp;lt;- cat(a,&amp;quot;\n&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-SqMXDu-orPE/U1YH-90-fQI/AAAAAAAACqs/lydpeihbFMk/s1600/Untitled-1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Achieved by returning a &amp;quot; &amp;quot; or &amp;ldquo;#&amp;rdquo; instead of FALSE or TRUE from function &amp;ldquo;inmandelbrotset&amp;rdquo;.
+&lt;strong&gt;A better algorithm&lt;/strong&gt;
+Utilizing R&amp;rsquo;s easy to use lists in implementation:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-13I74YsZA3Q/U00ph_v2sqI/AAAAAAAACos/0BwTZdK1xtg/s1600/Untitled1.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# more efficient algorithm to plot the Mandelbrot set 
+
+sequence &amp;lt;- seq(-2,2,len=1000)
+dwell.limit &amp;lt;- 200
+
+# matrix of points to be iterated 
+complex.matrix &amp;lt;- t((sapply(sequence,function(x)x+1i*sequence)))
+in.mandelbrot.index &amp;lt;- 1:length(complex.matrix)
+iter=z=array(0,dim(complex.matrix)) 
+           
+for(i in 1:dwell.limit){ 
+  # complex quadratic polynomial function for all points
+  z[in.mandelbrot.index]=complex.matrix[in.mandelbrot.index]+z[in.mandelbrot.index]^2 
+  # boolean matrix
+  result=Mod(z[in.mandelbrot.index])&amp;lt;=2  
+  # if result is false, store the iteration 
+  iter[in.mandelbrot.index[!result]]=i
+  # save all the index where points are still in the mandelbrot
+  in.mandelbrot.index=in.mandelbrot.index[result]
+}
+set.seed(19)
+image(iter,main=paste(&amp;quot;Iterations: &amp;quot;, i, sep=&amp;quot; &amp;quot;), breaks=0:dwell.limit
+      ,col=c(1,sample(rainbow
+                      (dwell.limit-1,alpha = .8))),ax=F, asp=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Plotting the Julia set&lt;/strong&gt;
+A little modification to the code above (red and white Mandelbrot) produces Julia Sets. The idea here is to set a constant C and send Z to the function instead of C.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c &amp;lt;- complex(real=-0.1,imaginary=0.651) 
+label &amp;lt;- toString(c)
+injulia &amp;lt;- function(z)
+{
+  dwell.limit &amp;lt;- 128
+  
+  for (i in 1:dwell.limit)
+  { 
+    z &amp;lt;- z ** 2 + c
+    if (Mod(z) &amp;gt; 2)
+    {
+      return(FALSE)
+    }
+  }  
+  return(TRUE)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-q4rNT8vd-4o/U0tP_jGwdpI/AAAAAAAACmc/GjVN5c_lWNw/s1600/output_i4d2h6.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding colors:&lt;/strong&gt;
+This is achieved by following the same process as above.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-U9PdaivxB30/U0zZeEfcLOI/AAAAAAAACnQ/WbgnqUuE1Ww/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-F3PRK6CQCPA/U0zZweXvhFI/AAAAAAAACnY/moDHQIhBi1E/s1600/Rplot10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-AxtVIdnIOOo/U0za42jqSHI/AAAAAAAACng/lanOjpzFeOE/s1600/Rplot13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sierpinski Gasket using Chaos game&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#### Chaos game for generation of Sierpinski Gasket
+# 1. Take 3 points in a plane to form a triangle, you need not draw it.
+# 2. Randomly select any point inside the triangle and consider that your current position.
+# 3. Randomly select any one of the 3 vertex points.
+# 4. Move half the distance from your current position to the selected vertex.
+# 5. Plot the current position.
+# 6. Repeat from step 3
+
+plot.new()
+iterations &amp;lt;- 2000
+vertices &amp;lt;- matrix(c(0,0,0.5,1,1,0),3,2, byrow=T)
+current.point &amp;lt;- c(0.5,0.5)
+random.vertex &amp;lt;- sample(1:3,iterations,replace=T)
+plot.result = matrix(nrow=iterations,ncol=2)
+for (i in 1:iterations){
+ current.point &amp;lt;- (current.point+vertices[random.vertex[i],])/2
+ plot.result[i,] &amp;lt;- current.point
+}
+points(plot.result,pch = 46)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-gzjEuswLUvg/U1IpGu-W6wI/AAAAAAAACpo/EUR7t3Pyrgo/s1600/output_CRtwqO.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Adding colors:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;points(plot.result,pch = 46,col=c(13,3,41)[random.vertex])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-Kog9tekKz5A/U1IqRVeK99I/AAAAAAAACp0/0uOMoFOJxds/s1600/Rplot26.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-5dN5kmWtLD0/U1J4WJPWDiI/AAAAAAAACqc/PoeEYiO4esg/s1600/Untitled-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

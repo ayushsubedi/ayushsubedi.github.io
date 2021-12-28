@@ -6,7 +6,7 @@
     <description>Recent content in flutter on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2020 07:20:00 +0545</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>Affirmations with Flutter</title>
       <link>https://ayushsubedi.github.io/posts/affirmations_dev/</link>
-      <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/affirmations_dev/</guid>
-      <description>&lt;h2 id=&#34;a-project-that-motivates-to-learn-with-positive-reinforcement&#34;&gt;A project that motivates to learn with positive reinforcement&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;affirmations-with-flutter&#34;&gt;Affirmations with flutter&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/flutter.png&#34; alt=&#34;Affirmations with flutter&#34;&gt;&lt;/p&gt;
 &lt;p&gt;It had been a while since I (subconsciously or not so subconsciously) pivoted my career from app development to data science. Man, I did not miss Android Studio clogging my base model laptop’s memory. However, my little cousin (who just ventured into app development) wanted help with one of the issues he was having. But, as someone who had not used semicolons and braces for almost couple of years, Dart was almost nauseating upon first glance.  I promised him I would  get around answering his queries, but after I built something simple first.&lt;/p&gt;
 &lt;p&gt;Affirmations.dev provides quotes that are motivating to the devs. So, as a newbie in Flutter, it good to get all the positive reinforcement especially when Android Studio and the virtual device doesn’t leave much space for many Stackoverflow tabs.&lt;/p&gt;

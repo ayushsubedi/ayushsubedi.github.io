@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ML on Ayush Subedi</title>
+    <title>ml on Ayush Subedi</title>
     <link>https://ayushsubedi.github.io/tags/ml/</link>
-    <description>Recent content in ML on Ayush Subedi</description>
+    <description>Recent content in ml on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jul 2020 08:16:00 +0545</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Ames Housing Prediction</title>
       <link>https://ayushsubedi.github.io/posts/ames_housing/</link>
-      <pubDate>Mon, 20 Jul 2020 08:16:00 +0545</pubDate>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/ames_housing/</guid>
       <description>&lt;h2 id=&#34;housing-prices-competition&#34;&gt;Housing Prices Competition&lt;/h2&gt;
@@ -1324,7 +1324,7 @@ dist &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=
     <item>
       <title>Cheers Hospital Analysis</title>
       <link>https://ayushsubedi.github.io/posts/cheers_analysis/</link>
-      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/cheers_analysis/</guid>
       <description>&lt;h1 id=&#34;data-analysis-of-cheers-hospital&#34;&gt;Data analysis of Cheers hospital&lt;/h1&gt;
@@ -1362,7 +1362,7 @@ dist &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=
     <item>
       <title>Fraud Detection</title>
       <link>https://ayushsubedi.github.io/posts/fraud_detection/</link>
-      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/fraud_detection/</guid>
       <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
@@ -1481,7 +1481,7 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     <item>
       <title>Birds, Plane, Superman</title>
       <link>https://ayushsubedi.github.io/posts/bird_plane_superman/</link>
-      <pubDate>Fri, 02 Feb 2018 10:09:16 +0545</pubDate>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/bird_plane_superman/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;

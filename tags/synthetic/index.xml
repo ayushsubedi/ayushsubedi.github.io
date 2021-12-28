@@ -6,18 +6,18 @@
     <description>Recent content in synthetic on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2020 06:18:16 +0545</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/synthetic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Synthetic Data Generation</title>
-      <link>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</link>
-      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
+      <title>Synthetic data based on pareto principle</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</guid>
-      <description>&lt;h1 id=&#34;e-commerce-synthetic-data&#34;&gt;E-Commerce Synthetic Data&lt;/h1&gt;
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</guid>
+      <description>&lt;h1 id=&#34;synthetic-data-based-on-pareto-principle&#34;&gt;Synthetic data based on pareto principle&lt;/h1&gt;
 &lt;p&gt;Nowadays, the phrase &amp;ldquo;data is the new oil&amp;rdquo; seems a little cliche. However, it is true. The demand for data has grown significantly, as people and businesses have realized the possibilities of leveraging data for informed decision making. Often, it is not possible to get data to our specific needs. As a ML teacher, I have heard my students claim that it is really challenging for them to find data to their specifications for several of the projects that they want to pursue (in this case for learning data science or for school projects). In other cases, where confidentiality is crucial, the possibility of open data is minimal (anonamized data is there but that is another difficult avenue). Synthetic data can help solve these issues. Synthetic data is &amp;ldquo;any production data applicable to a given situation that are not obtained by direct measurement&amp;rdquo; according to the McGraw-Hill Dictionary of Scientific and Technical Terms. However, synthetic does not imply random. The patterns in synthetic data should mimic real world patterns. This is a priliminary exercise.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg&#34; alt=&#34;Pareto&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price&#34;&gt;Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.&lt;/h3&gt;

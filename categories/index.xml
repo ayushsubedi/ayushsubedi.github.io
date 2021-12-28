@@ -6,24 +6,51 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Dec 2021 12:09:16 +0545</lastBuildDate>
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Capstone Projects</title>
-      <link>https://ayushsubedi.github.io/categories/capstone-projects/</link>
-      <pubDate>Thu, 02 Dec 2021 12:09:16 +0545</pubDate>
+      <title>code for nepal</title>
+      <link>https://ayushsubedi.github.io/categories/code-for-nepal/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/capstone-projects/</guid>
+      <guid>https://ayushsubedi.github.io/categories/code-for-nepal/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>georgia-tech</title>
+      <title>community</title>
+      <link>https://ayushsubedi.github.io/categories/community/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>analytics</title>
+      <link>https://ayushsubedi.github.io/categories/analytics/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data viz</title>
+      <link>https://ayushsubedi.github.io/categories/data-viz/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/data-viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>georgia tech</title>
       <link>https://ayushsubedi.github.io/categories/georgia-tech/</link>
-      <pubDate>Thu, 02 Dec 2021 12:09:16 +0545</pubDate>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/georgia-tech/</guid>
       <description></description>
@@ -32,90 +59,108 @@
     <item>
       <title>tootle</title>
       <link>https://ayushsubedi.github.io/categories/tootle/</link>
-      <pubDate>Thu, 02 Dec 2021 12:09:16 +0545</pubDate>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/tootle/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>proof of concept</title>
-      <link>https://ayushsubedi.github.io/categories/proof-of-concept/</link>
-      <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
+      <title>british college</title>
+      <link>https://ayushsubedi.github.io/categories/british-college/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/proof-of-concept/</guid>
+      <guid>https://ayushsubedi.github.io/categories/british-college/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>teaching materials</title>
-      <link>https://ayushsubedi.github.io/categories/teaching-materials/</link>
-      <pubDate>Mon, 27 Jul 2020 07:20:00 +0545</pubDate>
+      <title>open source</title>
+      <link>https://ayushsubedi.github.io/categories/open-source/</link>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/teaching-materials/</guid>
+      <guid>https://ayushsubedi.github.io/categories/open-source/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Pet Projects</title>
+      <title>pet projects</title>
       <link>https://ayushsubedi.github.io/categories/pet-projects/</link>
-      <pubDate>Wed, 15 Jul 2020 10:02:00 +0545</pubDate>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/pet-projects/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Papers</title>
-      <link>https://ayushsubedi.github.io/categories/papers/</link>
-      <pubDate>Fri, 10 Jul 2020 09:16:00 +0545</pubDate>
+      <title>proof of concept</title>
+      <link>https://ayushsubedi.github.io/categories/proof-of-concept/</link>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/papers/</guid>
+      <guid>https://ayushsubedi.github.io/categories/proof-of-concept/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Moonlit</title>
-      <link>https://ayushsubedi.github.io/categories/moonlit/</link>
-      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
+      <title>cheers hospital</title>
+      <link>https://ayushsubedi.github.io/categories/cheers-hospital/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/moonlit/</guid>
+      <guid>https://ayushsubedi.github.io/categories/cheers-hospital/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>World Bank</title>
+      <title>world bank</title>
       <link>https://ayushsubedi.github.io/categories/world-bank/</link>
-      <pubDate>Fri, 03 Jan 2020 09:45:16 +0545</pubDate>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/world-bank/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>community</title>
-      <link>https://ayushsubedi.github.io/categories/community/</link>
-      <pubDate>Tue, 05 Nov 2019 08:05:11 +0545</pubDate>
+      <title>moonlit</title>
+      <link>https://ayushsubedi.github.io/categories/moonlit/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/community/</guid>
+      <guid>https://ayushsubedi.github.io/categories/moonlit/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Trove</title>
+      <title>trove</title>
       <link>https://ayushsubedi.github.io/categories/trove/</link>
-      <pubDate>Sun, 01 Sep 2019 09:16:00 +0545</pubDate>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/trove/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Three60</title>
+      <title>conceptual</title>
+      <link>https://ayushsubedi.github.io/categories/conceptual/</link>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/conceptual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>three60</title>
       <link>https://ayushsubedi.github.io/categories/three60/</link>
-      <pubDate>Sat, 22 Oct 2016 04:01:02 +0545</pubDate>
+      <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/three60/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>capstone project</title>
+      <link>https://ayushsubedi.github.io/categories/capstone-project/</link>
+      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/capstone-project/</guid>
       <description></description>
     </item>
     

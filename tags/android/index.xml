@@ -6,15 +6,175 @@
     <description>Recent content in android on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Oct 2016 04:01:02 +0545</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Affirmations with Flutter</title>
+      <link>https://ayushsubedi.github.io/posts/affirmations_dev/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/affirmations_dev/</guid>
+      <description>&lt;h2 id=&#34;affirmations-with-flutter&#34;&gt;Affirmations with flutter&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/flutter.png&#34; alt=&#34;Affirmations with flutter&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It had been a while since I (subconsciously or not so subconsciously) pivoted my career from app development to data science. Man, I did not miss Android Studio clogging my base model laptop’s memory. However, my little cousin (who just ventured into app development) wanted help with one of the issues he was having. But, as someone who had not used semicolons and braces for almost couple of years, Dart was almost nauseating upon first glance.  I promised him I would  get around answering his queries, but after I built something simple first.&lt;/p&gt;
+&lt;p&gt;Affirmations.dev provides quotes that are motivating to the devs. So, as a newbie in Flutter, it good to get all the positive reinforcement especially when Android Studio and the virtual device doesn’t leave much space for many Stackoverflow tabs.&lt;/p&gt;
+&lt;h3 id=&#34;few-examples-of-what-affirmationsdev-returns&#34;&gt;Few examples of what affirmations.dev returns:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;// 20200927192236
+// https://www.affirmations.dev/
+
+{
+  &amp;quot;affirmation&amp;quot;: &amp;quot;Your life is already a miracle of chance waiting for you to shape its destiny&amp;quot;
+}
+
+
+
+// 20200927194030
+// https://www.affirmations.dev/
+
+{
+  &amp;quot;affirmation&amp;quot;: &amp;quot;It is not a sprint, it is a marathon. One step at a time&amp;quot;
+}
+
+
+// 20200927194048
+// https://www.affirmations.dev/
+
+{
+  &amp;quot;affirmation&amp;quot;: &amp;quot;You are learning valuable lessons from yourself every day&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;complete-app&#34;&gt;Complete App&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;import &#39;dart:convert&#39;;
+
+import &#39;package:flutter/material.dart&#39;;
+import &#39;package:http/http.dart&#39; as http;
+
+class AffirmationsModel{
+  final String affirmation;
+  AffirmationsModel({this.affirmation});
+
+  factory AffirmationsModel.fromJson(final json){
+    return AffirmationsModel(
+      affirmation : json[&amp;quot;affirmation&amp;quot;]
+    );
+  }
+}
+
+Future&amp;lt;AffirmationsModel&amp;gt; fetchAffirmations() async {
+  final response = await http.get(&#39;https://www.affirmations.dev/&#39;);
+  if (response.statusCode == 200) {
+    final jsonAffirmations = jsonDecode(response.body);
+    return AffirmationsModel.fromJson(jsonAffirmations);
+  } else {
+    throw Exception(&#39;Failed&#39;);
+  }
+}
+
+void main() {
+  runApp(AffirmationsApp());
+}
+
+class AffirmationsApp extends StatefulWidget {
+  AffirmationsApp({Key key}) : super(key: key);
+
+  @override
+  _AffirmationsAppState createState() {
+    return _AffirmationsAppState();
+  }
+}
+
+class _AffirmationsAppState extends State&amp;lt;AffirmationsApp&amp;gt; {
+  Future&amp;lt;AffirmationsModel&amp;gt; _futureAffirmationsModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _futureAffirmationsModel = fetchAffirmations();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: &#39;Affirmations&#39;,
+      theme: ThemeData(
+        primarySwatch: Colors.pink,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          backgroundColor: Colors.deepPurpleAccent,
+          appBar: AppBar(
+            title: Text(&#39;Affirmations&#39;),
+            centerTitle: true,
+          ),
+          body: Column(children: &amp;lt;Widget&amp;gt;[
+            Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.lightBlueAccent,
+              ),
+              // width: 300,
+              height: 300,
+              padding: EdgeInsets.all(20.0),
+              margin: EdgeInsets.all(80.0),
+              child: FutureBuilder&amp;lt;AffirmationsModel&amp;gt;(
+                future: _futureAffirmationsModel,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done &amp;amp;&amp;amp;
+                      snapshot.hasData) {
+                    return Text(snapshot.data.affirmation,
+                        textAlign: TextAlign.center,
+                        textScaleFactor: 1.4,
+                        style: TextStyle(color: Colors.white));
+                  } else if (snapshot.hasError) {
+                    return Text(&amp;quot;${snapshot.error}&amp;quot;);
+                  }
+                  return CircularProgressIndicator();
+                },
+              ),
+            ),
+            Divider(),
+            Container(
+              child: RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    _futureAffirmationsModel = fetchAffirmations();
+                  });
+                },
+                textColor: Colors.white,
+                padding: const EdgeInsets.all(0.0),
+                child: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: &amp;lt;Color&amp;gt;[
+                        Color(0xEEFF1461),
+                        Color(0xDDFF1483),
+                        Color(0xFFFF1493),
+                      ],
+                    ),
+                  ),
+                  padding: const EdgeInsets.all(30.0),
+                  child:
+                  const Text(&#39;INSPIRE ME&#39;, style: TextStyle(fontSize: 15)),
+                ),
+              ),
+            )
+          ])),
+    );
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Edquake</title>
       <link>https://ayushsubedi.github.io/posts/edquake/</link>
-      <pubDate>Sat, 22 Oct 2016 04:01:02 +0545</pubDate>
+      <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/edquake/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -75,7 +235,7 @@
     <item>
       <title>Edcrayon</title>
       <link>https://ayushsubedi.github.io/posts/edcrayon/</link>
-      <pubDate>Mon, 01 Feb 2016 02:21:02 +0545</pubDate>
+      <pubDate>Mon, 01 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/edcrayon/</guid>
       <description>&lt;p&gt;Edcrayon’s &lt;strong&gt;Universal Deployment Model&lt;/strong&gt;, converts tablets or phones to a smart, self-paced, predictive learning environment. It packages the following features:&lt;/p&gt;
@@ -142,7 +302,7 @@
     <item>
       <title>Etymology and Ngram</title>
       <link>https://ayushsubedi.github.io/posts/etymology/</link>
-      <pubDate>Fri, 01 Jan 2016 03:11:02 +0545</pubDate>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/etymology/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-27bPJS8zz2U/VoYeWiH1_KI/AAAAAAAADls/jICpVOc5TgI/s640/device-2016-01-01-120842.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -161,7 +321,7 @@
     <item>
       <title>Neo-literacy app concept</title>
       <link>https://ayushsubedi.github.io/posts/neoliteracy/</link>
-      <pubDate>Thu, 01 Oct 2015 05:14:01 +0545</pubDate>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/neoliteracy/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-EBh3SlPn8Aw/V_SzssccFZI/AAAAAAAAFbM/BsJ4tg8gw_8a54Xo2ZIlJ7gNjqoZEoa0QCLcB/s320/a.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -216,7 +376,7 @@
     <item>
       <title>Net Promoter Scale (NPS)</title>
       <link>https://ayushsubedi.github.io/posts/nps/</link>
-      <pubDate>Sat, 04 Apr 2015 04:01:02 +0545</pubDate>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/nps/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-TYuOQ1UJLzE/V_PgIfgdzfI/AAAAAAAAFaQ/Z-fVeyyIQm4gG386D_AeGtlePk5LsJCBACLcB/s320/nps.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -238,7 +398,7 @@ The pith of NPS lies in the question:&lt;/p&gt;
     <item>
       <title>Swahili Phonics App with Stanford University</title>
       <link>https://ayushsubedi.github.io/posts/swahili/</link>
-      <pubDate>Mon, 02 Feb 2015 04:04:01 +0545</pubDate>
+      <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/swahili/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -288,7 +448,7 @@ If Player A starts the game, and in Level 1 he/she successfully recognizes phone
     <item>
       <title>The Lost Brothers</title>
       <link>https://ayushsubedi.github.io/posts/thelostbrothers/</link>
-      <pubDate>Mon, 31 Mar 2014 12:11:45 +0545</pubDate>
+      <pubDate>Mon, 31 Mar 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/thelostbrothers/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-jB1157xl870/UznA7_yh_qI/AAAAAAAACfc/rioorJr5fhQ/s1600/Bdc6oaRT9.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -387,7 +547,7 @@ onCreate&lt;/p&gt;
     <item>
       <title>Android&#43;Arduino RC Car</title>
       <link>https://ayushsubedi.github.io/posts/rc_car/</link>
-      <pubDate>Fri, 31 Jan 2014 11:03:13 +0545</pubDate>
+      <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/rc_car/</guid>
       <description>&lt;h3 id=&#34;androidarduino-rc-car&#34;&gt;Android+Arduino RC Car&lt;/h3&gt;

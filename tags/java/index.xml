@@ -6,7 +6,7 @@
     <description>Recent content in java on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Dec 2013 10:09:32 +0545</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Snakes and Ladders</title>
       <link>https://ayushsubedi.github.io/posts/snakesandladders/</link>
-      <pubDate>Mon, 02 Dec 2013 10:09:32 +0545</pubDate>
+      <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/snakesandladders/</guid>
       <description>&lt;h3 id=&#34;snakes-and-ladders&#34;&gt;Snakes and Ladders&lt;/h3&gt;
@@ -234,7 +234,7 @@ Let &lt;em&gt;subStochasticMatrix&lt;/em&gt; be the &lt;em&gt;100 by 100&lt;/em&
     <item>
       <title>Compiler from Scratch</title>
       <link>https://ayushsubedi.github.io/posts/ducompiler/</link>
-      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/ducompiler/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
@@ -331,7 +331,7 @@ upto: 15
     <item>
       <title>Area of the Mandelbrot Set</title>
       <link>https://ayushsubedi.github.io/posts/mandelbrot_area/</link>
-      <pubDate>Wed, 02 Jan 2013 10:01:09 +0545</pubDate>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/mandelbrot_area/</guid>
       <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;
@@ -470,7 +470,7 @@ inmandelbrotset &amp;lt;- function(c)
     <item>
       <title>The Faro Shuffle</title>
       <link>https://ayushsubedi.github.io/posts/faro_shuffle/</link>
-      <pubDate>Wed, 05 Dec 2012 17:12:41 +0545</pubDate>
+      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/faro_shuffle/</guid>
       <description>&lt;h3 id=&#34;the-faro-shuffle&#34;&gt;The Faro Shuffle:&lt;/h3&gt;

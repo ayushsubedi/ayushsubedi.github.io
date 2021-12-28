@@ -6,18 +6,18 @@
     <description>Recent content in python on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2020 06:18:16 +0545</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Synthetic Data Generation</title>
-      <link>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</link>
-      <pubDate>Fri, 03 Jul 2020 06:18:16 +0545</pubDate>
+      <title>Synthetic data based on pareto principle</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/synthetic_data_harvesting/</guid>
-      <description>&lt;h1 id=&#34;e-commerce-synthetic-data&#34;&gt;E-Commerce Synthetic Data&lt;/h1&gt;
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</guid>
+      <description>&lt;h1 id=&#34;synthetic-data-based-on-pareto-principle&#34;&gt;Synthetic data based on pareto principle&lt;/h1&gt;
 &lt;p&gt;Nowadays, the phrase &amp;ldquo;data is the new oil&amp;rdquo; seems a little cliche. However, it is true. The demand for data has grown significantly, as people and businesses have realized the possibilities of leveraging data for informed decision making. Often, it is not possible to get data to our specific needs. As a ML teacher, I have heard my students claim that it is really challenging for them to find data to their specifications for several of the projects that they want to pursue (in this case for learning data science or for school projects). In other cases, where confidentiality is crucial, the possibility of open data is minimal (anonamized data is there but that is another difficult avenue). Synthetic data can help solve these issues. Synthetic data is &amp;ldquo;any production data applicable to a given situation that are not obtained by direct measurement&amp;rdquo; according to the McGraw-Hill Dictionary of Scientific and Technical Terms. However, synthetic does not imply random. The patterns in synthetic data should mimic real world patterns. This is a priliminary exercise.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg&#34; alt=&#34;Pareto&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price&#34;&gt;Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.&lt;/h3&gt;
@@ -1081,7 +1081,7 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     <item>
       <title>Cheers Hospital Analysis</title>
       <link>https://ayushsubedi.github.io/posts/cheers_analysis/</link>
-      <pubDate>Sun, 01 Mar 2020 04:09:44 +0545</pubDate>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/cheers_analysis/</guid>
       <description>&lt;h1 id=&#34;data-analysis-of-cheers-hospital&#34;&gt;Data analysis of Cheers hospital&lt;/h1&gt;
@@ -1117,9 +1117,36 @@ df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span 
     </item>
     
     <item>
+      <title>Spirathon AI Conference 2019</title>
+      <link>https://ayushsubedi.github.io/posts/spirathon/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/spirathon/</guid>
+      <description>&lt;h2 id=&#34;journey-to-spam-detection&#34;&gt;Journey to Spam Detection&lt;/h2&gt;
+&lt;p&gt;Spiralogics is hosting a first of it&amp;rsquo;s kind, AI Conference in Nepal this February - a platform for AI veterans and students to come together and network.
+This year, Spiralogics is focused on exploring and explaining the ways how AI can create positive impact on different aspects of our life. It is a platform which will act as a driving force in encouraging the implementation of AI (especially in the Nepalese environment). Their purpose is to bring together professionals and students under one roof to rediscover the possibilities that AI can create in our day to day lives.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/spirathon.jpg&#34; alt=&#34;Spirathon&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;how-was-i-involved&#34;&gt;How was I involved?&lt;/h3&gt;
+&lt;p&gt;I was asked to teach a 5 hour session to introduce the students to a concept of AI. I decided to conduct a workshop based session on Naive Bayes Classifier to detect spam.&lt;/p&gt;
+&lt;h2 id=&#34;topics-covered&#34;&gt;Topics covered&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Probability Primer:&lt;/strong&gt; We look into some few probability problems and Monte Carlo Simulations to get a basic primer on probability and Python.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conditional Probability&lt;/strong&gt;: We look into few examples on conditional probability.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bayes Theorem:&lt;/strong&gt; We connect Conditional Probability with Bayes Theorem.  We move from what we know to what we can infer and connect the dots.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sensitivity, Specificity and Confusion matrix:&lt;/strong&gt; We look into concepts of Sensitivity, Specificity, TP, TN, FP and FN. We also look into Type I and Type II errors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy, Precision and Recall:&lt;/strong&gt; We look into different ways to evaluate our models and realize when one is more important than the other. We also study F1 score which combines Precision and Recall.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Naive Bayes:&lt;/strong&gt; We move from Bayes Theorem to Naive Bayes and define what Naive means.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NB Spam detection classifier&lt;/strong&gt;: We build a binary classifier using Scikit learn and publicly available SMS datasets. We also evaluate our model’s performance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NB vs Bagging, Random Forest and Adaboost&lt;/strong&gt;: We will not spend much time here. This notebook basically compares Naive bayes with other algorithmns for the same dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Link to the &lt;a href=&#34;https://github.com/ayushsubedi/naivebayes_spirathon2019&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Fraud Detection</title>
       <link>https://ayushsubedi.github.io/posts/fraud_detection/</link>
-      <pubDate>Tue, 01 Jan 2019 08:06:19 +0545</pubDate>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/fraud_detection/</guid>
       <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
@@ -1236,36 +1263,9 @@ F1 score Ada Boost Classifier : 0.9411764705882353
     </item>
     
     <item>
-      <title>Spirathon AI Conference 2019</title>
-      <link>https://ayushsubedi.github.io/posts/spirathon/</link>
-      <pubDate>Thu, 20 Dec 2018 10:11:01 +0545</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/spirathon/</guid>
-      <description>&lt;h2 id=&#34;journey-to-spam-detection&#34;&gt;Journey to Spam Detection&lt;/h2&gt;
-&lt;p&gt;Spiralogics is hosting a first of it&amp;rsquo;s kind, AI Conference in Nepal this February - a platform for AI veterans and students to come together and network.
-This year, Spiralogics is focused on exploring and explaining the ways how AI can create positive impact on different aspects of our life. It is a platform which will act as a driving force in encouraging the implementation of AI (especially in the Nepalese environment). Their purpose is to bring together professionals and students under one roof to rediscover the possibilities that AI can create in our day to day lives.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/spirathon.jpg&#34; alt=&#34;Spirathon&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;how-was-i-involved&#34;&gt;How was I involved?&lt;/h3&gt;
-&lt;p&gt;I was asked to teach a 5 hour session to introduce the students to a concept of AI. I decided to conduct a workshop based session on Naive Bayes Classifier to detect spam.&lt;/p&gt;
-&lt;h2 id=&#34;topics-covered&#34;&gt;Topics covered&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Probability Primer:&lt;/strong&gt; We look into some few probability problems and Monte Carlo Simulations to get a basic primer on probability and Python.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Conditional Probability&lt;/strong&gt;: We look into few examples on conditional probability.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bayes Theorem:&lt;/strong&gt; We connect Conditional Probability with Bayes Theorem.  We move from what we know to what we can infer and connect the dots.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sensitivity, Specificity and Confusion matrix:&lt;/strong&gt; We look into concepts of Sensitivity, Specificity, TP, TN, FP and FN. We also look into Type I and Type II errors.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Accuracy, Precision and Recall:&lt;/strong&gt; We look into different ways to evaluate our models and realize when one is more important than the other. We also study F1 score which combines Precision and Recall.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Naive Bayes:&lt;/strong&gt; We move from Bayes Theorem to Naive Bayes and define what Naive means.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NB Spam detection classifier&lt;/strong&gt;: We build a binary classifier using Scikit learn and publicly available SMS datasets. We also evaluate our model’s performance.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NB vs Bagging, Random Forest and Adaboost&lt;/strong&gt;: We will not spend much time here. This notebook basically compares Naive bayes with other algorithmns for the same dataset.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Link to the &lt;a href=&#34;https://github.com/ayushsubedi/naivebayes_spirathon2019&#34;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Torpe Blockchain</title>
       <link>https://ayushsubedi.github.io/posts/torpe/</link>
-      <pubDate>Sun, 28 Oct 2018 01:10:00 +0545</pubDate>
+      <pubDate>Sun, 28 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/torpe/</guid>
       <description>&lt;h1 id=&#34;torpe-blockchain-तरप-बलककचन&#34;&gt;Torpe Blockchain (तोर्पे ब्लोक्कचैन)&lt;/h1&gt;
@@ -1713,7 +1713,7 @@ check_chain(blockchain)
     <item>
       <title>Inclusive Nepal</title>
       <link>https://ayushsubedi.github.io/posts/inclusive_newspaper/</link>
-      <pubDate>Wed, 08 Aug 2018 08:06:19 +0545</pubDate>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/inclusive_newspaper/</guid>
       <description>&lt;h2 id=&#34;concept-note-on-inclusive-nepal-wip-and-analysis-of-usage-of-alt-text-in-nepali-newspapers&#34;&gt;Concept Note on Inclusive Nepal (WIP) and Analysis of usage of Alt text in Nepali newspapers&lt;/h2&gt;
@@ -3500,7 +3500,7 @@ alt_count_percent 0.6493506493506493
     <item>
       <title>Startup analysis using Seedstars data</title>
       <link>https://ayushsubedi.github.io/posts/seedstars/</link>
-      <pubDate>Sat, 03 Mar 2018 06:16:55 +0545</pubDate>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/seedstars/</guid>
       <description>&lt;script src=&#34;https://cdn.plot.ly/plotly-latest.min.js&#34;&gt;&lt;/script&gt;
@@ -3825,7 +3825,7 @@ alt_count_percent 0.6493506493506493
     <item>
       <title>Birds, Plane, Superman</title>
       <link>https://ayushsubedi.github.io/posts/bird_plane_superman/</link>
-      <pubDate>Fri, 02 Feb 2018 10:09:16 +0545</pubDate>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/bird_plane_superman/</guid>
       <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
@@ -3868,7 +3868,7 @@ Since our model is ready and we have built functions that allows us to visualize
     <item>
       <title>Diffie-Hellman key exchange (and AES-256)</title>
       <link>https://ayushsubedi.github.io/posts/diffie_hellman/</link>
-      <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/diffie_hellman/</guid>
       <description>&lt;h1 id=&#34;diffie-hellman-key-exchange&#34;&gt;Diffie-Hellman key exchange&lt;/h1&gt;
@@ -3952,7 +3952,7 @@ print(decipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(ci
     <item>
       <title>RSA encryption</title>
       <link>https://ayushsubedi.github.io/posts/rsa_encryption/</link>
-      <pubDate>Fri, 12 Jan 2018 10:10:30 +0545</pubDate>
+      <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/rsa_encryption/</guid>
       <description>&lt;h2 id=&#34;rsa&#34;&gt;RSA&lt;/h2&gt;

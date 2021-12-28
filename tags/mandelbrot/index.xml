@@ -6,7 +6,7 @@
     <description>Recent content in mandelbrot on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Apr 2014 17:12:41 +0545</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/mandelbrot/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Fractal Plots</title>
       <link>https://ayushsubedi.github.io/posts/fractal_plots/</link>
-      <pubDate>Tue, 15 Apr 2014 17:12:41 +0545</pubDate>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/fractal_plots/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;
@@ -199,7 +199,7 @@ points(plot.result,pch = 46)
     <item>
       <title>Area of the Mandelbrot Set</title>
       <link>https://ayushsubedi.github.io/posts/mandelbrot_area/</link>
-      <pubDate>Wed, 02 Jan 2013 10:01:09 +0545</pubDate>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/mandelbrot_area/</guid>
       <description>&lt;h3 id=&#34;area-of-the-mandelbrot-set&#34;&gt;Area of the Mandelbrot Set:&lt;/h3&gt;

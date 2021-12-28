@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stanford on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/stanford/</link>
+    <description>Recent content in stanford on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 02 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/stanford/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swahili Phonics App with Stanford University</title>
+      <link>https://ayushsubedi.github.io/posts/swahili/</link>
+      <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/swahili/</guid>
+      <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-y96E-gUxTHg/V_OyFH5pvzI/AAAAAAAAFZQ/sJq-MsOyTbMDMekRrCQdvIo92hp5-zVXACLcB/s320/icon_big_green%2Bcopy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I had contributed as a debugger on Seeds of Empowerment&amp;rsquo;s Swahili Phonics application a while back. This blog post lists various test cases for Swahili Phonics Learning Application for identification of completed requirements and current issues. Thereafter, it also lists the problems that were solved.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. User interface and interaction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The application has great user interface. Since the majority of targeted users are young children, it is important to make learning fun. This application successfully does that. The only issue with the user interface is that it does not adapt to the full screen width.&lt;/p&gt;
+&lt;p&gt;Expected screen:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-8v7fiTclh7k/V_OsRCdboeI/AAAAAAAAFYg/paCxr6YP5h4uCDdQKB-yphAjnPGJTKRQACLcB/s400/Picture1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Current screen:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;file://localhost/Users/mac/Library/Group%20Containers/UBF8T346G9.Office/msoclip1/01/clip_image004.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-5Tm4YQ-9JPc/V_OtD3a8yGI/AAAAAAAAFYk/2FX6DxQChkwdmO-SkZyxQUJAgs4CFib5QCLcB/s400/Picture2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Data collection&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The application collects all sorts of data from the players and stores it locally in the user&amp;rsquo;s device. The players can re-login using their user-name and password and the application allows continuation from where they left before. The application also stores every hits and misses of a user. Although not currently implemented, the data can be used for analysis purposes to identify things like what set of phonetic sound players mostly struggle with.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. Algorithm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Although the application provides a great framework for scalability, localization in different languages, and analytics there are few issues that we feel need some attention. We have been able to identify the following problems. We were not really sure if these problems were known since the realization came from analysis of the code rather than from the use of application. Therefore, we decided to list these problems with screen-shots so that it becomes more easier to understand.&lt;/p&gt;
+&lt;p&gt;I) random number generation problem&lt;/p&gt;
+&lt;p&gt;In the current implementation, random numbers help generation of correct and incorrect answer. However, correct answer is always selected from the current level the player is at but incorrect answer set is generated from level 1 through current level. Because of this, although the options will have certain phoneme that are from previous level, they will never be the correct answer.&lt;/p&gt;
+&lt;p&gt;Some examples:&lt;/p&gt;
+&lt;p&gt;If a user is at level 2, the correct option will never be from level 1. To generalize, if the user is at level n, the possible set of answers will only be from the phonemes allocated for that particular level n and not from any levels less than n.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://4.bp.blogspot.com/-4kZPZ1Oj9FA/V_OtXaQ9McI/AAAAAAAAFYo/U7_EF5zVbDguuw2qmWANgcJpuZtRyr18gCLcB/s400/Picture3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this case, the answer only be “bo”, “be” or “bi”.
+With progression of levels, it becomes more noticeable:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/-gQxkkHxsUBs/V_OtuSpMGwI/AAAAAAAAFYw/77qh7ilu6fEv2LYTKy0Zbo7GRN0lW7uqgCLcB/s400/Picture4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here the possible answer is only one (ie. 4). Also, with the progression of levels, the answers will most likely be the option that the user has not seen before. The game will not chose any phonemes as correct that were part of the option set in previous levels.&lt;/p&gt;
+&lt;p&gt;II) the phonemes are always chosen from a statically defined list&lt;/p&gt;
+&lt;p&gt;Since the game always refers to a single static list of phoneme for selecting correct and incorrect options, it does not adapt to re-test previous misses of a user.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://2.bp.blogspot.com/--6Mit95kxAA/V_Ot573LoHI/AAAAAAAAFY4/3brgLpqUxqAXuvQzmRibKeHkR4aoe4bUwCLcB/s400/Picture5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;III) chances of missing some phonetics because of dynamic array creation&lt;/p&gt;
+&lt;p&gt;The application generates a list during application runtime to check if all phonemes for a particular level have been tested. If a phoneme is tested twice in a level and the player chose the correct answer again, the stars are not increased because the generated list already has the phoneme. It was added to the list when the player answered correctly the first time around. This is a great implementation. However, there is also a small issue with this. Since the list is generated during runtime but the number of stars a player has in a particular level is stored and retrieved when the player re-logins, chances are, some phonemes are never tested.&lt;/p&gt;
+&lt;p&gt;An example,
+If Player A starts the game, and in Level 1 he/she successfully recognizes phonemes for {a, e, o, u}, the screen-shot would look something like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://3.bp.blogspot.com/-_67WBXDDGLU/V_OuqlQsQ6I/AAAAAAAAFZA/lM1zxuLjOH8KToIth35dLJXmQZ0XyLtQACLcB/s400/Picture6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When the player is playing the game, the game initializes an array and stores all the successful hits exactly once. The list has “a”, “e”, “o”, and “u” at this point. The player is promoted to another level when he/she has five stars.&lt;/p&gt;
+&lt;p&gt;The stars are increased if a phoneme can be added to a list (the condition being it does not already exist in the list). In this case, the stars will only be increased if the phonetic for “i” is tested and the player successfully answers that.&lt;/p&gt;
+&lt;p&gt;But, if the player decides to leave the game at this point to continue at another time, the array that stored all previous successful hits will be reset. Although he/she will still have 4 stars, now all it takes to move to another level is to identify the first phoneme put by the game. Because of this issue, the might progress to next level without having to identify phoneme for “i”.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. Adaptability&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This feature is currently missing because it depends on algorithm design. Once the issues are resolved in that part, the next step would be to work on adapting the levels to test users on previously missed phonetics.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. Report Generation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Although the application successfully collects useful data, the data is currently not being utilized for analysis.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Identified solutions for aforementioned bugs:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The solutions have already been implemented in the application. Currently, only algorithm specific problems have been solved. The application still needs additional design and game elements to make it more interactive.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://1.bp.blogspot.com/-HA7bVCjvbCs/V_O1Tkgyh_I/AAAAAAAAFZg/44LqPGP445EhEaZ29KfxdmTresDLnmWwACLcB/s640/Screen%2BShot%2B2016-10-04%2Bat%2B7.41.39%2BPM.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,7 @@
     <description>Recent content in capstone on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Sep 2013 17:12:41 +0545</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/capstone/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Compiler from Scratch</title>
       <link>https://ayushsubedi.github.io/posts/ducompiler/</link>
-      <pubDate>Thu, 05 Sep 2013 17:12:41 +0545</pubDate>
+      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/ducompiler/</guid>
       <description>&lt;h3 id=&#34;the-du-compiler&#34;&gt;The Du Compiler:&lt;/h3&gt;

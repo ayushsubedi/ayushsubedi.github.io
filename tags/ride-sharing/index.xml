@@ -6,21 +6,20 @@
     <description>Recent content in ride sharing on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Dec 2021 12:09:16 +0545</lastBuildDate>
+    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/ride-sharing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ride Hailing Analytics</title>
-      <link>https://ayushsubedi.github.io/posts/ride_sharing_analytics/</link>
-      <pubDate>Thu, 02 Dec 2021 12:09:16 +0545</pubDate>
+      <link>https://ayushsubedi.github.io/posts/ride_hailing_analytics/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/ride_sharing_analytics/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+      <guid>https://ayushsubedi.github.io/posts/ride_hailing_analytics/</guid>
+      <description>&lt;h2 id=&#34;ride-hailing-analytics&#34;&gt;Ride Hailing Analytics&lt;/h2&gt;
 &lt;h3 id=&#34;introduction-to-ride-hailing&#34;&gt;Introduction to Ride Hailing&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Uber_taxi_in_Moscow.jpg/640px-Uber_taxi_in_Moscow.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Credit: Wikimedia.org&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.sanity.io/images/6xsct86j/production/e8fc0f789129b17cc8ae2e05b91e93d0752bef67-3840x2160.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;At present, it is pretty common to hail a ride to get from one place to the other at a tap of a button. Almost all major cities in the world have some sort of ride-hailing service. Uber, Lyft, Didi, Ola, Gojek, etc. are some examples of service providers that come to mind. Additionally, the service is also proliferating to smaller cities and has become commonplace in many parts of the world. Analytics is a key component in making sure the service is provided efficiently. All of the aforementioned companies invest heavily in data science and analytics to be competitive and to provide better services.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;For the course project, I will focus on Ride-Hailing services (not Ride Sharing services). See the difference &lt;a href=&#34;https://www.ecolane.com/blog/ride-hailing-vs.-ride-sharing-the-key-difference-and-why-it-matters&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -30,7 +29,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;For the course project, &amp;ldquo;passengers&amp;rdquo; are referred to as service requesters/receivers and &amp;ldquo;drivers&amp;rdquo; are referred to as service providers.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;components-of-the-problem&#34;&gt;Components of the problem&lt;/h3&gt;
+&lt;h2 id=&#34;components-of-the-problem&#34;&gt;Components of the problem&lt;/h2&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;balancing-act-supply-and-demand-and-chicken-and-egg-problem&#34;&gt;Balancing act: Supply and Demand, and Chicken and Egg Problem&lt;/h3&gt;
 &lt;p&gt;There is a balancing act that all of these ride-sharing platforms need to perform to be efficient. A healthy ratio between driver and passenger (to go more granular, for a segment of geographic area at a given time) is very important.  The balancing act is even crucial when a ride-hailing service decides to introduce itself to a new city (especially one that is new to ride-hailing).&lt;/p&gt;
@@ -307,15 +306,7 @@
 &lt;li&gt;Queuing models can also be here to identify correct values for the dispatching system (waiting time, dynamic geographic grid, etc.). However, there is a need to check the distribution of different events (booking created, booking accepted, waiting time, etc.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;It seems analytics is extremely relevant in all aspects of ride-hailing. In this project, I merely covered a few use cases, with one or two relevant models. Even with this brief exploration, I can conclude that analytics can lead to better outcomes for both drivers and passengers. In the article that was used as a reference for the course project, Didi looks into using analytics to solve some of the aforementioned problems. While there approch will be more sophisticated, the above models can also serve as a baseline.&lt;/p&gt;
-&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.remix.com/blog/ride-hailing-vs-ride-sharing-the-difference-explained&#34;&gt;https://www.remix.com/blog/ride-hailing-vs-ride-sharing-the-difference-explained&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.uber.com/&#34;&gt;https://www.uber.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.lyft.com/&#34;&gt;https://www.lyft.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.didiglobal.com/&#34;&gt;https://www.didiglobal.com/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.informs.org/Impact/O.R.-Analytics-Success-Stories/Increasing-ride-share-efficiency-Better-outcomes-for-drivers-and-passengers&#34;&gt;https://www.informs.org/Impact/O.R.-Analytics-Success-Stories/Increasing-ride-share-efficiency-Better-outcomes-for-drivers-and-passengers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;It seems analytics is extremely relevant in all aspects of ride-hailing. In this project, I merely covered a few use cases, with one or two relevant models. Even with this brief exploration, I can conclude that analytics can lead to better outcomes for both drivers and passengers.&lt;/p&gt;
 </description>
     </item>
     
