@@ -17,7 +17,1448 @@
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/beginners_trap/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;the-beginners-trap&#34;&gt;The Beginner&amp;rsquo;s Trap&lt;/h1&gt;
+&lt;p&gt;The stages in the analytics process is filled with moments of success and failures. There are some instant gratifications during the process, where a begginer like myself might construe a non success as success, due to some kind of judgement error.&lt;/p&gt;
+&lt;p&gt;This project will go through one of those instances and discuss some of the things I need to keep in mind so that I (and people new to analytics) do not make these mistakes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The dataset is from &lt;a href=&#34;https://www.kaggle.com/sanjeetsinghnaik/most-expensive-footballers-2021&#34;&gt;https://www.kaggle.com/sanjeetsinghnaik/most-expensive-footballers-2021&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since learning is a never ending process, I will be updating the notebook (or creating a variation of it) as I discover more best practices. So, consider this to be an excerise on SOTA (State of the art) POC (proof of concept).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps involved:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol start=&#34;0&#34;&gt;
+&lt;li&gt;Introduction&lt;/li&gt;
+&lt;li&gt;Exploratory Data Analysis&lt;/li&gt;
+&lt;li&gt;Feature Engineering&lt;/li&gt;
+&lt;li&gt;Linear Regression&lt;/li&gt;
+&lt;li&gt;Decision Tree Regression&lt;/li&gt;
+&lt;li&gt;Validation&lt;/li&gt;
+&lt;li&gt;Conclusion&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h1&gt;
+&lt;p&gt;The description of the dataset from Kaggle:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This file consists of data of Top 500 Most Expensive Footballer In 2021. The data is according to the prices listed in transfer market along with data like goals, assists, matches, age, etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The question we are trying to answer is:&lt;/p&gt;
+&lt;p&gt;** Based on different predictors (goals, assists, matches, age etc.) is it possible to predict the market value of footballers? **&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://storage.googleapis.com/kaggle-datasets-images/1766439/2883660/34d0db3584c1cff0b7695a9bc1fd9f0f/dataset-cover.png?t=2021-12-03-20-35-30&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The source of the image above is the Kaggle repository hosting the dataset.&lt;/p&gt;
+&lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; plt
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; seaborn &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; sns
+sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(rc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;figure.figsize&amp;#39;&lt;/span&gt;:(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;)})
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; matplotlib.ticker &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; MaxNLocator
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.linear_model &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; LinearRegression
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.tree &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; DecisionTreeRegressor
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.model_selection &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cross_val_score
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The dataset is in the file players_data.csv&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;players_data.csv&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let us take a look at the columns. We have a few ways of doing this but I always found using &lt;code&gt;list&lt;/code&gt; easy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;list(df)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[&#39;Name&#39;,
+ &#39;Position&#39;,
+ &#39;Age&#39;,
+ &#39;Markey Value In Millions(£)&#39;,
+ &#39;Country&#39;,
+ &#39;Club&#39;,
+ &#39;Matches&#39;,
+ &#39;Goals&#39;,
+ &#39;Own Goals&#39;,
+ &#39;Assists&#39;,
+ &#39;Yellow Cards&#39;,
+ &#39;Second Yellow Cards&#39;,
+ &#39;Red Cards&#39;,
+ &#39;Number Of Substitute In&#39;,
+ &#39;Number Of Substitute Out&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since we know the dataset is a ranking of 500 highest paid footballers, the expected rows should be 500. And the number of columns is 15&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;shape
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;(500, 15)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the first few rows.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Position&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Club&lt;/th&gt;
+      &lt;th&gt;Matches&lt;/th&gt;
+      &lt;th&gt;Goals&lt;/th&gt;
+      &lt;th&gt;Own Goals&lt;/th&gt;
+      &lt;th&gt;Assists&lt;/th&gt;
+      &lt;th&gt;Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Second Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Red Cards&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute In&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute Out&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Kylian Mbappé&lt;/td&gt;
+      &lt;td&gt;Centre-Forward&lt;/td&gt;
+      &lt;td&gt;22&lt;/td&gt;
+      &lt;td&gt;144.0&lt;/td&gt;
+      &lt;td&gt;France&lt;/td&gt;
+      &lt;td&gt;Paris Saint-Germain&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Erling Haaland&lt;/td&gt;
+      &lt;td&gt;Centre-Forward&lt;/td&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;135.0&lt;/td&gt;
+      &lt;td&gt;Norway&lt;/td&gt;
+      &lt;td&gt;Borussia Dortmund&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Harry Kane&lt;/td&gt;
+      &lt;td&gt;Centre-Forward&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;108.0&lt;/td&gt;
+      &lt;td&gt;England&lt;/td&gt;
+      &lt;td&gt;Tottenham Hotspur&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Jack Grealish&lt;/td&gt;
+      &lt;td&gt;Left Winger&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;90.0&lt;/td&gt;
+      &lt;td&gt;England&lt;/td&gt;
+      &lt;td&gt;Manchester City&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Mohamed Salah&lt;/td&gt;
+      &lt;td&gt;Right Winger&lt;/td&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;90.0&lt;/td&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;Liverpool FC&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the last few rows.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tail()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Position&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Club&lt;/th&gt;
+      &lt;th&gt;Matches&lt;/th&gt;
+      &lt;th&gt;Goals&lt;/th&gt;
+      &lt;th&gt;Own Goals&lt;/th&gt;
+      &lt;th&gt;Assists&lt;/th&gt;
+      &lt;th&gt;Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Second Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Red Cards&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute In&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute Out&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;495&lt;/th&gt;
+      &lt;td&gt;Giorgian de Arrascaeta&lt;/td&gt;
+      &lt;td&gt;Attacking Midfield&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Uruguay&lt;/td&gt;
+      &lt;td&gt;Clube de Regatas do Flamengo&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;496&lt;/th&gt;
+      &lt;td&gt;Ayoze Pérez&lt;/td&gt;
+      &lt;td&gt;Second Striker&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Spain&lt;/td&gt;
+      &lt;td&gt;Leicester City&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;497&lt;/th&gt;
+      &lt;td&gt;Alex Meret&lt;/td&gt;
+      &lt;td&gt;Goalkeeper&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Italy&lt;/td&gt;
+      &lt;td&gt;SSC Napoli&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;498&lt;/th&gt;
+      &lt;td&gt;Duje Caleta-Car&lt;/td&gt;
+      &lt;td&gt;Centre-Back&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Croatia&lt;/td&gt;
+      &lt;td&gt;Olympique Marseille&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;499&lt;/th&gt;
+      &lt;td&gt;Aritz Elustondo&lt;/td&gt;
+      &lt;td&gt;Centre-Back&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Spain&lt;/td&gt;
+      &lt;td&gt;Real Sociedad&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;2-exploratory-data-analysis&#34;&gt;2. Exploratory Data Analysis&lt;/h1&gt;
+&lt;p&gt;Let&amp;rsquo;s use Pandas built in function to generate descriptive statistics&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;describe()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+      &lt;th&gt;Matches&lt;/th&gt;
+      &lt;th&gt;Goals&lt;/th&gt;
+      &lt;th&gt;Own Goals&lt;/th&gt;
+      &lt;th&gt;Assists&lt;/th&gt;
+      &lt;th&gt;Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Second Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Red Cards&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute In&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute Out&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;count&lt;/th&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.00000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+      &lt;td&gt;500.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;mean&lt;/th&gt;
+      &lt;td&gt;24.968000&lt;/td&gt;
+      &lt;td&gt;31.537800&lt;/td&gt;
+      &lt;td&gt;12.396000&lt;/td&gt;
+      &lt;td&gt;2.160000&lt;/td&gt;
+      &lt;td&gt;0.030000&lt;/td&gt;
+      &lt;td&gt;1.51200&lt;/td&gt;
+      &lt;td&gt;1.592000&lt;/td&gt;
+      &lt;td&gt;0.036000&lt;/td&gt;
+      &lt;td&gt;0.046000&lt;/td&gt;
+      &lt;td&gt;2.394000&lt;/td&gt;
+      &lt;td&gt;3.744000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;std&lt;/th&gt;
+      &lt;td&gt;3.165916&lt;/td&gt;
+      &lt;td&gt;17.577697&lt;/td&gt;
+      &lt;td&gt;4.342453&lt;/td&gt;
+      &lt;td&gt;2.880102&lt;/td&gt;
+      &lt;td&gt;0.170758&lt;/td&gt;
+      &lt;td&gt;1.85276&lt;/td&gt;
+      &lt;td&gt;1.445585&lt;/td&gt;
+      &lt;td&gt;0.186477&lt;/td&gt;
+      &lt;td&gt;0.209695&lt;/td&gt;
+      &lt;td&gt;2.517825&lt;/td&gt;
+      &lt;td&gt;3.293046&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;min&lt;/th&gt;
+      &lt;td&gt;16.000000&lt;/td&gt;
+      &lt;td&gt;16.200000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.00000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25%&lt;/th&gt;
+      &lt;td&gt;23.000000&lt;/td&gt;
+      &lt;td&gt;19.800000&lt;/td&gt;
+      &lt;td&gt;10.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.00000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;50%&lt;/th&gt;
+      &lt;td&gt;25.000000&lt;/td&gt;
+      &lt;td&gt;25.200000&lt;/td&gt;
+      &lt;td&gt;13.000000&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;1.00000&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;2.000000&lt;/td&gt;
+      &lt;td&gt;3.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;75%&lt;/th&gt;
+      &lt;td&gt;27.000000&lt;/td&gt;
+      &lt;td&gt;36.000000&lt;/td&gt;
+      &lt;td&gt;16.000000&lt;/td&gt;
+      &lt;td&gt;3.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;2.00000&lt;/td&gt;
+      &lt;td&gt;2.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;3.250000&lt;/td&gt;
+      &lt;td&gt;6.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;max&lt;/th&gt;
+      &lt;td&gt;36.000000&lt;/td&gt;
+      &lt;td&gt;144.000000&lt;/td&gt;
+      &lt;td&gt;24.000000&lt;/td&gt;
+      &lt;td&gt;23.000000&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;12.00000&lt;/td&gt;
+      &lt;td&gt;7.000000&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;13.000000&lt;/td&gt;
+      &lt;td&gt;20.000000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Let us look into the data types for each of the columns&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;info()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;pandas.core.frame.DataFrame&#39;&amp;gt;
+RangeIndex: 500 entries, 0 to 499
+Data columns (total 15 columns):
+ #   Column                       Non-Null Count  Dtype  
+---  ------                       --------------  -----  
+ 0   Name                         500 non-null    object 
+ 1   Position                     500 non-null    object 
+ 2   Age                          500 non-null    int64  
+ 3   Markey Value In Millions(£)  500 non-null    float64
+ 4   Country                      500 non-null    object 
+ 5   Club                         500 non-null    object 
+ 6   Matches                      500 non-null    int64  
+ 7   Goals                        500 non-null    int64  
+ 8   Own Goals                    500 non-null    int64  
+ 9   Assists                      500 non-null    int64  
+ 10  Yellow Cards                 500 non-null    int64  
+ 11  Second Yellow Cards          500 non-null    int64  
+ 12  Red Cards                    500 non-null    int64  
+ 13  Number Of Substitute In      500 non-null    int64  
+ 14  Number Of Substitute Out     500 non-null    int64  
+dtypes: float64(1), int64(10), object(4)
+memory usage: 58.7+ KB
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Count of missing values&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isna()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Name                           0
+Position                       0
+Age                            0
+Markey Value In Millions(£)    0
+Country                        0
+Club                           0
+Matches                        0
+Goals                          0
+Own Goals                      0
+Assists                        0
+Yellow Cards                   0
+Second Yellow Cards            0
+Red Cards                      0
+Number Of Substitute In        0
+Number Of Substitute Out       0
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isna()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We do not have any values missing from the dataset.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Club&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Club
+Manchester United      19
+Manchester City        18
+Chelsea FC             16
+Tottenham Hotspur      16
+Real Madrid            16
+Paris Saint-Germain    16
+RB Leipzig             15
+Arsenal FC             15
+Liverpool FC           15
+Atlético de Madrid     15
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;countplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Club&amp;#39;&lt;/span&gt;, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df, order&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Club&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;yaxis&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_major_locator(MaxNLocator(integer&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;))
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Club&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Count of players&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Clubs based on player representation (count)&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_29_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;club_grouped &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Club&amp;#39;&lt;/span&gt;])[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(by&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+club_grouped
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Club&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Manchester City&lt;/th&gt;
+      &lt;td&gt;940.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Paris Saint-Germain&lt;/th&gt;
+      &lt;td&gt;775.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Manchester United&lt;/th&gt;
+      &lt;td&gt;760.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Chelsea FC&lt;/th&gt;
+      &lt;td&gt;709.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Bayern Munich&lt;/th&gt;
+      &lt;td&gt;685.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Liverpool FC&lt;/th&gt;
+      &lt;td&gt;681.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Atlético de Madrid&lt;/th&gt;
+      &lt;td&gt;616.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Real Madrid&lt;/th&gt;
+      &lt;td&gt;594.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tottenham Hotspur&lt;/th&gt;
+      &lt;td&gt;536.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Juventus FC&lt;/th&gt;
+      &lt;td&gt;450.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;barplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;club_grouped&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index, y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;club_grouped[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Club&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Clubs based on total market value&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_31_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Country
+England        67
+France         58
+Spain          52
+Brazil         41
+Germany        29
+Portugal       26
+Italy          26
+Argentina      22
+Netherlands    17
+Belgium        14
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;countplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df, order&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Country&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;yaxis&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_major_locator(MaxNLocator(integer&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;))
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Count of players&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Country based on player representation (count)&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_33_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;country_grouped &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;])[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(by&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+country_grouped
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;England&lt;/th&gt;
+      &lt;td&gt;2248.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;France&lt;/th&gt;
+      &lt;td&gt;1895.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Spain&lt;/th&gt;
+      &lt;td&gt;1565.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Brazil&lt;/th&gt;
+      &lt;td&gt;1275.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Germany&lt;/th&gt;
+      &lt;td&gt;1005.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Portugal&lt;/th&gt;
+      &lt;td&gt;890.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Italy&lt;/th&gt;
+      &lt;td&gt;854.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina&lt;/th&gt;
+      &lt;td&gt;650.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Netherlands&lt;/th&gt;
+      &lt;td&gt;571.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Belgium&lt;/th&gt;
+      &lt;td&gt;522.9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;barplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;country_grouped&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index, y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;country_grouped[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Country&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Country based on total market value&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_35_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Position
+Centre-Back           87
+Central Midfield      74
+Centre-Forward        70
+Right Winger          48
+Left Winger           46
+Attacking Midfield    41
+Defensive Midfield    41
+Right-Back            30
+Left-Back             23
+Goalkeeper            19
+Left Midfield          8
+Second Striker         8
+Right Midfield         5
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;countplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df, order&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Position&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;yaxis&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_major_locator(MaxNLocator(integer&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;))
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Count of players&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Position based on player representation (count)&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_37_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;position_grouped &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;])[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(by&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+position_grouped
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Position&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Centre-Back&lt;/th&gt;
+      &lt;td&gt;2583.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Central Midfield&lt;/th&gt;
+      &lt;td&gt;2421.9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Centre-Forward&lt;/th&gt;
+      &lt;td&gt;2369.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Left Winger&lt;/th&gt;
+      &lt;td&gt;1647.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Right Winger&lt;/th&gt;
+      &lt;td&gt;1461.6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Attacking Midfield&lt;/th&gt;
+      &lt;td&gt;1332.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Defensive Midfield&lt;/th&gt;
+      &lt;td&gt;1275.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Right-Back&lt;/th&gt;
+      &lt;td&gt;784.8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Left-Back&lt;/th&gt;
+      &lt;td&gt;704.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Goalkeeper&lt;/th&gt;
+      &lt;td&gt;585.9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;barplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;position_grouped&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index, y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;position_grouped[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Position based on total market value&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_39_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-feature-engineering&#34;&gt;3. Feature Engineering&lt;/h1&gt;
+&lt;p&gt;Since we only have 500 rows of data, 10 different positions, let us aggregate some of these positions together.&lt;/p&gt;
+&lt;p&gt;I created a simple position mapping and transformed it so that it was possible to use &lt;code&gt;map&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;position_mapping &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;forward&amp;#34;&lt;/span&gt; : [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Centre-Forward&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Second Striker&amp;#39;&lt;/span&gt;], 
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;midfield&amp;#34;&lt;/span&gt; : [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Central Midfield&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Attacking Midfield&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Defensive Midfield&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Left Midfield&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Right Midfield&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Right Winger&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Left Winger&amp;#39;&lt;/span&gt;],
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;back&amp;#34;&lt;/span&gt; : [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Centre-Back&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Right-Back&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Left-Back&amp;#39;&lt;/span&gt;]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The only position we have not mapped here is &lt;code&gt;Goalkeeper&lt;/code&gt;, which we will remove later on.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;mapping_dict &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {}
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; key &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; position_mapping:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; item &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; position_mapping[key]:
+        mapping_dict[item] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;mapping_dict
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;{&#39;Centre-Forward&#39;: &#39;forward&#39;,
+ &#39;Second Striker&#39;: &#39;forward&#39;,
+ &#39;Central Midfield&#39;: &#39;midfield&#39;,
+ &#39;Attacking Midfield&#39;: &#39;midfield&#39;,
+ &#39;Defensive Midfield&#39;: &#39;midfield&#39;,
+ &#39;Left Midfield&#39;: &#39;midfield&#39;,
+ &#39;Right Midfield&#39;: &#39;midfield&#39;,
+ &#39;Right Winger&#39;: &#39;midfield&#39;,
+ &#39;Left Winger&#39;: &#39;midfield&#39;,
+ &#39;Centre-Back&#39;: &#39;back&#39;,
+ &#39;Right-Back&#39;: &#39;back&#39;,
+ &#39;Left-Back&#39;: &#39;back&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I could have just typed in the mapping_dict directly but this felt more natural.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position_Agg&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Position&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;map(mapping_dict) 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Position&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Club&lt;/th&gt;
+      &lt;th&gt;Matches&lt;/th&gt;
+      &lt;th&gt;Goals&lt;/th&gt;
+      &lt;th&gt;Own Goals&lt;/th&gt;
+      &lt;th&gt;Assists&lt;/th&gt;
+      &lt;th&gt;Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Second Yellow Cards&lt;/th&gt;
+      &lt;th&gt;Red Cards&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute In&lt;/th&gt;
+      &lt;th&gt;Number Of Substitute Out&lt;/th&gt;
+      &lt;th&gt;Position_Agg&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Kylian Mbappé&lt;/td&gt;
+      &lt;td&gt;Centre-Forward&lt;/td&gt;
+      &lt;td&gt;22&lt;/td&gt;
+      &lt;td&gt;144.0&lt;/td&gt;
+      &lt;td&gt;France&lt;/td&gt;
+      &lt;td&gt;Paris Saint-Germain&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;forward&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Erling Haaland&lt;/td&gt;
+      &lt;td&gt;Centre-Forward&lt;/td&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;135.0&lt;/td&gt;
+      &lt;td&gt;Norway&lt;/td&gt;
+      &lt;td&gt;Borussia Dortmund&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;forward&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Harry Kane&lt;/td&gt;
+      &lt;td&gt;Centre-Forward&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;108.0&lt;/td&gt;
+      &lt;td&gt;England&lt;/td&gt;
+      &lt;td&gt;Tottenham Hotspur&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;forward&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Jack Grealish&lt;/td&gt;
+      &lt;td&gt;Left Winger&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;90.0&lt;/td&gt;
+      &lt;td&gt;England&lt;/td&gt;
+      &lt;td&gt;Manchester City&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;midfield&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Mohamed Salah&lt;/td&gt;
+      &lt;td&gt;Right Winger&lt;/td&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;90.0&lt;/td&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;Liverpool FC&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;midfield&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;495&lt;/th&gt;
+      &lt;td&gt;Giorgian de Arrascaeta&lt;/td&gt;
+      &lt;td&gt;Attacking Midfield&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Uruguay&lt;/td&gt;
+      &lt;td&gt;Clube de Regatas do Flamengo&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;midfield&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;496&lt;/th&gt;
+      &lt;td&gt;Ayoze Pérez&lt;/td&gt;
+      &lt;td&gt;Second Striker&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Spain&lt;/td&gt;
+      &lt;td&gt;Leicester City&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;forward&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;497&lt;/th&gt;
+      &lt;td&gt;Alex Meret&lt;/td&gt;
+      &lt;td&gt;Goalkeeper&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Italy&lt;/td&gt;
+      &lt;td&gt;SSC Napoli&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;498&lt;/th&gt;
+      &lt;td&gt;Duje Caleta-Car&lt;/td&gt;
+      &lt;td&gt;Centre-Back&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Croatia&lt;/td&gt;
+      &lt;td&gt;Olympique Marseille&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;back&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;499&lt;/th&gt;
+      &lt;td&gt;Aritz Elustondo&lt;/td&gt;
+      &lt;td&gt;Centre-Back&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;16.2&lt;/td&gt;
+      &lt;td&gt;Spain&lt;/td&gt;
+      &lt;td&gt;Real Sociedad&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;back&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;500 rows × 16 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Now we can remove goalkeepers (which are NaNs because of missing mapping)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dropna(inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s create similar charts for the new column as well&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position_Agg&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Position_Agg
+midfield    263
+back        140
+forward      78
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;countplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position_Agg&amp;#39;&lt;/span&gt;, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df, order&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Position_Agg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;value_counts()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;yaxis&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_major_locator(MaxNLocator(integer&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;))
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Count of players&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Position based on player representation&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_54_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;position_agg_grouped &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position_Agg&amp;#39;&lt;/span&gt;])[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(by&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+position_agg_grouped
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Position_Agg&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;midfield&lt;/th&gt;
+      &lt;td&gt;8460.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;back&lt;/th&gt;
+      &lt;td&gt;4073.4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;forward&lt;/th&gt;
+      &lt;td&gt;2649.6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;ax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sns&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;barplot(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;position_agg_grouped&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;index, y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;position_agg_grouped[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]) 
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tick_params(axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, rotation&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;45&lt;/span&gt;)
+ax&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set(xlabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Position&amp;#39;&lt;/span&gt;, ylabel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Top 10 Position based on total market value&amp;#34;&lt;/span&gt;)
+plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/output_56_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;4-linear-regression&#34;&gt;4. Linear Regression&lt;/h1&gt;
+&lt;p&gt;First of all, let us only focus on the midfield players. Midfield is the largest group of players we have, and it might make more sense to use regression the same group of players.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_mid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df[df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Position_Agg&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;midfield&amp;#39;&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_mid&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;reset_index(drop&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;, inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;list(df_mid)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[&#39;Name&#39;,
+ &#39;Position&#39;,
+ &#39;Age&#39;,
+ &#39;Markey Value In Millions(£)&#39;,
+ &#39;Country&#39;,
+ &#39;Club&#39;,
+ &#39;Matches&#39;,
+ &#39;Goals&#39;,
+ &#39;Own Goals&#39;,
+ &#39;Assists&#39;,
+ &#39;Yellow Cards&#39;,
+ &#39;Second Yellow Cards&#39;,
+ &#39;Red Cards&#39;,
+ &#39;Number Of Substitute In&#39;,
+ &#39;Number Of Substitute Out&#39;,
+ &#39;Position_Agg&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_mid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Age&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Goals&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Assists&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Markey Value In Millions(£)&amp;#39;&lt;/span&gt;]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_mid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;max(), axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;df_mid
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Goals&lt;/th&gt;
+      &lt;th&gt;Assists&lt;/th&gt;
+      &lt;th&gt;Markey Value In Millions(£)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;0.764706&lt;/td&gt;
+      &lt;td&gt;0.133333&lt;/td&gt;
+      &lt;td&gt;0.3&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;0.852941&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;0.6&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;0.882353&lt;/td&gt;
+      &lt;td&gt;0.200000&lt;/td&gt;
+      &lt;td&gt;0.1&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;0.852941&lt;/td&gt;
+      &lt;td&gt;0.200000&lt;/td&gt;
+      &lt;td&gt;0.3&lt;/td&gt;
+      &lt;td&gt;1.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;0.617647&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;258&lt;/th&gt;
+      &lt;td&gt;0.676471&lt;/td&gt;
+      &lt;td&gt;0.066667&lt;/td&gt;
+      &lt;td&gt;0.1&lt;/td&gt;
+      &lt;td&gt;0.18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;259&lt;/th&gt;
+      &lt;td&gt;0.764706&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;260&lt;/th&gt;
+      &lt;td&gt;0.823529&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.1&lt;/td&gt;
+      &lt;td&gt;0.18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;261&lt;/th&gt;
+      &lt;td&gt;0.764706&lt;/td&gt;
+      &lt;td&gt;0.200000&lt;/td&gt;
+      &lt;td&gt;0.1&lt;/td&gt;
+      &lt;td&gt;0.18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;262&lt;/th&gt;
+      &lt;td&gt;0.794118&lt;/td&gt;
+      &lt;td&gt;0.000000&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.18&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;263 rows × 4 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:, :&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;linear_regressor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; LinearRegression()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fit(X, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;linear_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score(X, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0.06775382996413992
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;linear_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(X)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;array([0.37728587, 0.61138884, 0.3870485 , 0.40721923, 0.28447775,
+       0.326131  , 0.4879743 , 0.40387802, 0.36451519, 0.34205403,
+       0.4380145 , 0.42209148, 0.26836585, 0.40466779, 0.3113309 ,
+       0.39576034, 0.35685413, 0.39922502, 0.36962481, 0.31978173,
+       0.3962891 , 0.36759539, 0.3706756 , 0.41769948, 0.37093661,
+       0.47298534, 0.36451519, 0.34021348, 0.45451087, 0.33229141,
+       0.30798969, 0.39103519, 0.34179302, 0.30058964, 0.34866431,
+       0.5442388 , 0.41146694, 0.34021348, 0.31415009, 0.32823257,
+       0.38036608, 0.34637388, 0.34663489, 0.3274428 , 0.37473444,
+       0.34716365, 0.33871282, 0.49826569, 0.30904047, 0.32718179,
+       0.30798969, 0.30058964, 0.38370729, 0.45300347, 0.54202051,
+       0.32823257, 0.38573671, 0.408009  , 0.39110734, 0.45484402,
+       0.39549933, 0.38167787, 0.39437641, 0.31415009, 0.42385989,
+       0.35174451, 0.3144111 , 0.4689265 , 0.32921121, 0.39523832,
+       0.33255242, 0.37296602, 0.31644052, 0.3422429 , 0.33589363,
+       0.36451519, 0.35174451, 0.36680562, 0.32410158, 0.37525645,
+       0.40616845, 0.39136835, 0.32181115, 0.36248577, 0.28447775,
+       0.32076037, 0.42183047, 0.31106989, 0.31212067, 0.31952073,
+       0.36222476, 0.38986769, 0.33995247, 0.30596027, 0.36346441,
+       0.32718179, 0.30058964, 0.36019534, 0.35711514, 0.3484033 ,
+       0.4241209 , 0.30032863, 0.41567006, 0.36969696, 0.32384057,
+       0.36556597, 0.37525645, 0.36988582, 0.31670153, 0.40669721,
+       0.31741916, 0.36444305, 0.34401131, 0.33890169, 0.40590744,
+       0.31336032, 0.36654461, 0.32947222, 0.31336032, 0.34637388,
+       0.36248577, 0.30596027, 0.35711514, 0.35711514, 0.32410158,
+       0.36346441, 0.40079782, 0.38265651, 0.34761353, 0.37859767,
+       0.35200552, 0.29829921, 0.39294789, 0.30261906, 0.30058964,
+       0.3144111 , 0.38573671, 0.35050486, 0.40151545, 0.34100325,
+       0.31336032, 0.37735802, 0.27373649, 0.3144111 , 0.330523  ,
+       0.27576591, 0.26836585, 0.29521901, 0.41638769, 0.4781671 ,
+       0.40571857, 0.43238286, 0.31873095, 0.39726774, 0.34637388,
+       0.42288125, 0.3113309 , 0.42175832, 0.32286194, 0.35050486,
+       0.32286194, 0.30596027, 0.43257173, 0.30058964, 0.45052417,
+       0.35174451, 0.39313676, 0.38802714, 0.34126426, 0.40079782,
+       0.3678564 , 0.40721923, 0.34558411, 0.34558411, 0.36222476,
+       0.3366834 , 0.47095592, 0.38900577, 0.38960668, 0.3706756 ,
+       0.4166487 , 0.34663489, 0.30569926, 0.29724843, 0.35482471,
+       0.36962481, 0.48876408, 0.29829921, 0.33255242, 0.3422429 ,
+       0.28984838, 0.30904047, 0.34408345, 0.40590744, 0.30904047,
+       0.31336032, 0.34637388, 0.33589363, 0.31670153, 0.36248577,
+       0.34558411, 0.3274428 , 0.33897383, 0.3854757 , 0.47167354,
+       0.28650717, 0.28447775, 0.3484033 , 0.29521901, 0.30261906,
+       0.30366984, 0.35685413, 0.32384057, 0.32718179, 0.40676935,
+       0.38678749, 0.33995247, 0.28984838, 0.3144111 , 0.29521901,
+       0.30596027, 0.31873095, 0.31336032, 0.3113309 , 0.30798969,
+       0.31873095, 0.33484285, 0.33890169, 0.35174451, 0.39005656,
+       0.37191524, 0.31670153, 0.41893913, 0.3113309 , 0.40827001,
+       0.40086996, 0.34021348, 0.35940557, 0.37525645, 0.34126426,
+       0.38494693, 0.39136835, 0.41488029, 0.35606436, 0.31415009,
+       0.36943595, 0.31846994, 0.38141686, 0.36864618, 0.28447775,
+       0.31538974, 0.29521901, 0.36969696, 0.30904047, 0.330523  ,
+       0.39850739, 0.31336032, 0.30596027, 0.32181115, 0.3113309 ,
+       0.33484285, 0.36556597, 0.31670153])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;5-decision-tree-regressor&#34;&gt;5. Decision Tree Regressor&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DecisionTreeRegressor(random_state&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;42&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fit(X, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;DecisionTreeRegressor(random_state=42)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(X)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;array([1.        , 1.        , 1.        , 0.625     , 0.4075    ,
+       0.9       , 0.9       , 0.9       , 0.66666667, 0.85      ,
+       0.85      , 0.85      , 0.525     , 0.8       , 0.326     ,
+       0.8       , 0.475     , 0.7       , 0.46      , 0.7       ,
+       0.7       , 0.7       , 0.465     , 0.7       , 0.7       ,
+       0.7       , 0.66666667, 0.5       , 0.65      , 0.65      ,
+       0.45      , 0.65      , 0.6       , 0.396     , 0.6       ,
+       0.6       , 0.6       , 0.5       , 0.38333333, 0.5       ,
+       0.55      , 0.33      , 0.39      , 0.385     , 0.5       ,
+       0.5       , 0.5       , 0.5       , 0.28      , 0.35      ,
+       0.45      , 0.396     , 0.5       , 0.48      , 0.47      ,
+       0.5       , 0.365     , 0.45      , 0.45      , 0.45      ,
+       0.45      , 0.45      , 0.45      , 0.38333333, 0.42      ,
+       0.3175    , 0.29      , 0.42      , 0.4       , 0.4       ,
+       0.31      , 0.4       , 0.4       , 0.31      , 0.31      ,
+       0.66666667, 0.3175    , 0.4       , 0.35      , 0.30666667,
+       0.4       , 0.3       , 0.28      , 0.3       , 0.4075    ,
+       0.35      , 0.35      , 0.35      , 0.35      , 0.35      ,
+       0.295     , 0.35      , 0.275     , 0.256     , 0.325     ,
+       0.35      , 0.396     , 0.35      , 0.31666667, 0.275     ,
+       0.35      , 0.33      , 0.33      , 0.25      , 0.26      ,
+       0.25      , 0.30666667, 0.32      , 0.23      , 0.3       ,
+       0.3       , 0.3       , 0.3       , 0.25      , 0.26      ,
+       0.245     , 0.3       , 0.3       , 0.245     , 0.33      ,
+       0.3       , 0.256     , 0.31666667, 0.31666667, 0.35      ,
+       0.325     , 0.275     , 0.3       , 0.3       , 0.3       ,
+       0.3       , 0.25      , 0.28      , 0.24      , 0.396     ,
+       0.29      , 0.365     , 0.26      , 0.27      , 0.27      ,
+       0.245     , 0.27      , 0.26      , 0.29      , 0.22      ,
+       0.25      , 0.525     , 0.2075    , 0.25      , 0.25      ,
+       0.25      , 0.25      , 0.21666667, 0.25      , 0.33      ,
+       0.25      , 0.326     , 0.25      , 0.25      , 0.26      ,
+       0.25      , 0.256     , 0.25      , 0.396     , 0.25      ,
+       0.3175    , 0.25      , 0.25      , 0.225     , 0.275     ,
+       0.25      , 0.625     , 0.24      , 0.24      , 0.295     ,
+       0.24      , 0.24      , 0.24      , 0.23      , 0.465     ,
+       0.23      , 0.39      , 0.22      , 0.22      , 0.22      ,
+       0.46      , 0.22      , 0.25      , 0.31      , 0.31      ,
+       0.21      , 0.28      , 0.22      , 0.26      , 0.28      ,
+       0.245     , 0.33      , 0.31      , 0.23      , 0.3       ,
+       0.24      , 0.385     , 0.21      , 0.2       , 0.2       ,
+       0.2       , 0.4075    , 0.275     , 0.2075    , 0.24      ,
+       0.2       , 0.475     , 0.26      , 0.35      , 0.2       ,
+       0.2       , 0.275     , 0.21      , 0.29      , 0.2075    ,
+       0.256     , 0.21666667, 0.245     , 0.326     , 0.45      ,
+       0.21666667, 0.19      , 0.25      , 0.3175    , 0.2       ,
+       0.2       , 0.23      , 0.2       , 0.326     , 0.2       ,
+       0.2       , 0.5       , 0.2       , 0.30666667, 0.225     ,
+       0.2       , 0.3       , 0.2       , 0.19      , 0.38333333,
+       0.18      , 0.18      , 0.18      , 0.18      , 0.4075    ,
+       0.18      , 0.2075    , 0.25      , 0.28      , 0.22      ,
+       0.18      , 0.245     , 0.256     , 0.28      , 0.326     ,
+       0.19      , 0.25      , 0.23      ])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score(X, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0.7410570792901311
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;6-validation&#34;&gt;6. Validation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; sklearn.model_selection &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; train_test_split
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;X_train, X_test, y_train, y_test &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; train_test_split(X, y, test_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.1&lt;/span&gt;, random_state&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;42&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DecisionTreeRegressor(random_state&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;42&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fit(X_train, y_train)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;DecisionTreeRegressor(random_state=42)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score(X_train, y_train)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;0.7325965837309238
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;decision_tree_regressor&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;score(X_test, y_test)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;-1.0994712392955237
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;7-conclusion&#34;&gt;7. Conclusion&lt;/h1&gt;
+&lt;h3 id=&#34;the-trap&#34;&gt;The Trap&lt;/h3&gt;
+&lt;p&gt;The trap here is using same data for training and validation. As a beginner, it is common to look into a few models (here we looked into Linear Regression and Decision Tree Regressor), and concluded one is better than the other because the latter had a good determination coefficient score.&lt;/p&gt;
+&lt;p&gt;However, after validation we realize that the Decision Tree Regressor is up to no good.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor.score&#34;&gt;https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor.score&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The score is negative, and based on the documentation above:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is just a very basic example of misjudgement on my side. As a peer reviewer, you might feel like this is something very trivial. Finally, I just demonstrated one example here. There are pleanty of these in analytics.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
