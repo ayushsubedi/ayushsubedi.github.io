@@ -1472,12 +1472,12 @@ y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=
 &lt;p&gt;&lt;img src=&#34;https://cdn.sanity.io/images/6xsct86j/production/e8fc0f789129b17cc8ae2e05b91e93d0752bef67-3840x2160.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;At present, it is pretty common to hail a ride to get from one place to the other at a tap of a button. Almost all major cities in the world have some sort of ride-hailing service. Uber, Lyft, Didi, Ola, Gojek, etc. are some examples of service providers that come to mind. Additionally, the service is also proliferating to smaller cities and has become commonplace in many parts of the world. Analytics is a key component in making sure the service is provided efficiently. All of the aforementioned companies invest heavily in data science and analytics to be competitive and to provide better services.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;For the course project, I will focus on Ride-Hailing services (not Ride Sharing services). See the difference &lt;a href=&#34;https://www.ecolane.com/blog/ride-hailing-vs.-ride-sharing-the-key-difference-and-why-it-matters&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For this post, I will focus on Ride-Hailing services (not Ride Sharing services). See the difference &lt;a href=&#34;https://www.ecolane.com/blog/ride-hailing-vs.-ride-sharing-the-key-difference-and-why-it-matters&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Predominantly, ride-hailing functions as a &lt;em&gt;Gig Economy&lt;/em&gt;. The drivers (sometimes referred to as partners, captains, etc.) are mostly independent contractors who bring their own vehicle and work at their own time and are paid based on their time commitment. This variability requires monitoring, sophisticated algorithms, good incentives, competitive pricing to passengers, etc. which is also common in other gig economy jobs. In most cases, the analytics models that will be built for one gig economy can be tweaked to fit another one as well.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s look at a few components of Ride-hailing that will be relevant for how we frame our models and the data we use.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;For the course project, &amp;ldquo;passengers&amp;rdquo; are referred to as service requesters/receivers and &amp;ldquo;drivers&amp;rdquo; are referred to as service providers.&lt;/p&gt;
+&lt;p&gt;For this post, &amp;ldquo;passengers&amp;rdquo; are referred to as service requesters/receivers and &amp;ldquo;drivers&amp;rdquo; are referred to as service providers.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;components-of-the-problem&#34;&gt;Components of the problem&lt;/h2&gt;
 &lt;hr&gt;
@@ -1676,7 +1676,7 @@ y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Given&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;Voronoi clustering for geographic indexing based on geographic hotspots (other indexing methods are more efficient like h3 developed by Uber, but Voronoi can be used to build something similar as well. I wanted to use the topics covered in this class)&lt;/li&gt;
+&lt;li&gt;Voronoi clustering for geographic indexing based on geographic hotspots (other indexing methods are more efficient like h3 developed by Uber, but Voronoi can be used to build something similar as well.)&lt;/li&gt;
 &lt;li&gt;rides data (requested, canceled, completed)&lt;/li&gt;
 &lt;li&gt;passenger data (raw data and data after descriptive analysis performed: Pirate metrics etc.)&lt;/li&gt;
 &lt;li&gt;driver data&lt;/li&gt;
