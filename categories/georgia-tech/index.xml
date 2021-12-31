@@ -1462,14 +1462,14 @@ y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=
     </item>
     
     <item>
-      <title>Ride Hailing Analytics</title>
+      <title>Analytics for Ride Hailing Services</title>
       <link>https://ayushsubedi.github.io/posts/ride_hailing_analytics/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/ride_hailing_analytics/</guid>
-      <description>&lt;h2 id=&#34;ride-hailing-analytics&#34;&gt;Ride Hailing Analytics&lt;/h2&gt;
-&lt;h3 id=&#34;introduction-to-ride-hailing&#34;&gt;Introduction to Ride Hailing&lt;/h3&gt;
+      <description>&lt;h2 id=&#34;analytics-for-ride-hailing-services&#34;&gt;Analytics for Ride Hailing Services&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.sanity.io/images/6xsct86j/production/e8fc0f789129b17cc8ae2e05b91e93d0752bef67-3840x2160.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction-to-ride-hailing&#34;&gt;Introduction to Ride Hailing&lt;/h2&gt;
 &lt;p&gt;At present, it is pretty common to hail a ride to get from one place to the other at a tap of a button. Almost all major cities in the world have some sort of ride-hailing service. Uber, Lyft, Didi, Ola, Gojek, etc. are some examples of service providers that come to mind. Additionally, the service is also proliferating to smaller cities and has become commonplace in many parts of the world. Analytics is a key component in making sure the service is provided efficiently. All of the aforementioned companies invest heavily in data science and analytics to be competitive and to provide better services.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;For this post, I will focus on Ride-Hailing services (not Ride Sharing services). See the difference &lt;a href=&#34;https://www.ecolane.com/blog/ride-hailing-vs.-ride-sharing-the-key-difference-and-why-it-matters&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1516,6 +1516,8 @@ y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fblogs-images.forbes.com%2Fliyanchen%2Ffiles%2F2015%2F09%2F0908_uber-map2_2000-1940x1487.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Credit: Forbes&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;descriptive-analysis&#34;&gt;Descriptive analysis&lt;/h2&gt;
 &lt;p&gt;Before we build complex models, it is essential to understand how the business/service is performing. These descriptive analyses will lay the foundation for us when we build complex and combined models later on.&lt;/p&gt;
 &lt;h3 id=&#34;ride-completioncancellation-rate&#34;&gt;Ride Completion/Cancellation rate&lt;/h3&gt;
@@ -1621,6 +1623,8 @@ y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;predictive-analysis&#34;&gt;Predictive analysis&lt;/h2&gt;
 &lt;p&gt;If we are looking to make the system more efficient, it is also very important to understand what the future holds.&lt;/p&gt;
 &lt;h3 id=&#34;growth-in-rides&#34;&gt;Growth in rides&lt;/h3&gt;
@@ -1668,6 +1672,8 @@ y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_mid&lt;span style=
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;prescriptive-analysis&#34;&gt;Prescriptive analysis&lt;/h2&gt;
 &lt;p&gt;Descriptive and Predictive analysis will help us move towards prescriptive analysis, especially for optimization models. These models will help the service provider in decision making, especially with regards to an increase in efficiency for drivers and passengers.&lt;/p&gt;
 &lt;hr&gt;
