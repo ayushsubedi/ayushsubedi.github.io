@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | Synthetic Data Generation: eHamroPasalmandu.com</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.102.3" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -171,21 +171,21 @@ onload='renderMathInElement(document.body);'></script>
 </ul>
 <h1 id="clients-table">Clients table</h1>
 <p>For rest of the data generation, go to <a href="https://github.com/ayushsubedi/eHamroPasalmandu">https://github.com/ayushsubedi/eHamroPasalmandu</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> faker <span style="color:#f92672">import</span> Faker
-<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-<span style="color:#f92672">import</span> random
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-<span style="color:#f92672">import</span> datetime
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../datasets/nepali_first_name_gender.csv&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../datasets/lastnames.txt&#39;</span>
-<span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> f:
-    content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
-content <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>strip()[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> content] 
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">last_names <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> content] 
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">first_name_male <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(df[df<span style="color:#f92672">.</span>gender<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;M&#39;</span>]<span style="color:#f92672">.</span>first_name)] 
-first_name_female <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(df[df<span style="color:#f92672">.</span>gender<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;F&#39;</span>]<span style="color:#f92672">.</span>first_name)]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[random<span style="color:#f92672">.</span>choice(first_name_male) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-</code></pre></div><pre><code>['Anjan Bhul',
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> faker <span style="color:#f92672">import</span> Faker
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../datasets/nepali_first_name_gender.csv&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../datasets/lastnames.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+</span></span><span style="display:flex;"><span>content <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>strip()[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> content] 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>last_names <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> content] 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>first_name_male <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(df[df<span style="color:#f92672">.</span>gender<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;M&#39;</span>]<span style="color:#f92672">.</span>first_name)] 
+</span></span><span style="display:flex;"><span>first_name_female <span style="color:#f92672">=</span> [x<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(df[df<span style="color:#f92672">.</span>gender<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;F&#39;</span>]<span style="color:#f92672">.</span>first_name)]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[random<span style="color:#f92672">.</span>choice(first_name_male) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+</span></span></code></pre></div><pre><code>['Anjan Bhul',
  'Ayus Kaliraj',
  'Manish Praveen',
  'Yubaraj Kareem',
@@ -196,36 +196,36 @@ first_name_female <span style="color:#f92672">=</span> [x<span style="color:#f92
  'Dipak Kahrel',
  'Sam Remimagar']
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">total_customer <span style="color:#f92672">=</span> <span style="color:#ae81ff">30000</span>
-male_percent <span style="color:#f92672">=</span> <span style="color:#ae81ff">58</span>
-
-male <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: [random<span style="color:#f92672">.</span>choice(first_name_male) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(int(total_customer<span style="color:#f92672">*</span>male_percent<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>))]}
-female <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: [random<span style="color:#f92672">.</span>choice(first_name_female) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(int(total_customer<span style="color:#f92672">*</span>(<span style="color:#ae81ff">100</span><span style="color:#f92672">-</span>male_percent)<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>))]}
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_male <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>male)
-df_male[<span style="color:#e6db74">&#39;gender&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Male&#39;</span>
-df_female <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>female)
-df_female[<span style="color:#e6db74">&#39;gender&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Female&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df_male<span style="color:#f92672">.</span>append(df_female)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.04</span>)<span style="color:#f92672">.</span>index,
-    <span style="color:#e6db74">&#39;gender&#39;</span>
-] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Other&#39;</span>
-
-df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.02</span>)<span style="color:#f92672">.</span>index,
-    <span style="color:#e6db74">&#39;gender&#39;</span>
-] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Prefer not to say&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>gender<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><pre><code>Male                 15670
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>total_customer <span style="color:#f92672">=</span> <span style="color:#ae81ff">30000</span>
+</span></span><span style="display:flex;"><span>male_percent <span style="color:#f92672">=</span> <span style="color:#ae81ff">58</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>male <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: [random<span style="color:#f92672">.</span>choice(first_name_male) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(int(total_customer<span style="color:#f92672">*</span>male_percent<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>))]}
+</span></span><span style="display:flex;"><span>female <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: [random<span style="color:#f92672">.</span>choice(first_name_female) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> random<span style="color:#f92672">.</span>choice(last_names) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(int(total_customer<span style="color:#f92672">*</span>(<span style="color:#ae81ff">100</span><span style="color:#f92672">-</span>male_percent)<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>))]}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_male <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>male)
+</span></span><span style="display:flex;"><span>df_male[<span style="color:#e6db74">&#39;gender&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Male&#39;</span>
+</span></span><span style="display:flex;"><span>df_female <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>female)
+</span></span><span style="display:flex;"><span>df_female[<span style="color:#e6db74">&#39;gender&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Female&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df_male<span style="color:#f92672">.</span>append(df_female)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.04</span>)<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;gender&#39;</span>
+</span></span><span style="display:flex;"><span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Other&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.02</span>)<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;gender&#39;</span>
+</span></span><span style="display:flex;"><span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Prefer not to say&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>gender<span style="color:#f92672">.</span>value_counts()
+</span></span></code></pre></div><pre><code>Male                 15670
 Female               11145
 Other                 2091
 Prefer not to say     1094
 Name: gender, dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">email_gen</span>(name):
-    name <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span>lower()
-    <span style="color:#66d9ef">return</span> (name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">+</span>name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;@fakeemail.com&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;email&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>apply(email_gen)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">email_gen</span>(name):
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">+</span>name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;@fakeemail.com&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;email&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>apply(email_gen)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -319,9 +319,9 @@ Name: gender, dtype: int64
 </table>
 <p>30000 rows × 3 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;phone&#39;</span>] <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">9841000000</span>, <span style="color:#ae81ff">9842000000</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;phone&#39;</span>] <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">9841000000</span>, <span style="color:#ae81ff">9842000000</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(df<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -427,20 +427,20 @@ Name: gender, dtype: int64
 </table>
 <p>30000 rows × 4 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;channel&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Word of Mouth&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.5</span>)<span style="color:#f92672">.</span>index,
-    <span style="color:#e6db74">&#39;channel&#39;</span>
-] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Facebook/Ads&#39;</span>
-
-df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.2</span>)<span style="color:#f92672">.</span>index,
-    <span style="color:#e6db74">&#39;channel&#39;</span>
-] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Google Search&#39;</span>
-
-df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.1</span>)<span style="color:#f92672">.</span>index,
-    <span style="color:#e6db74">&#39;channel&#39;</span>
-] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Other&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;channel&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Word of Mouth&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.5</span>)<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;channel&#39;</span>
+</span></span><span style="display:flex;"><span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Facebook/Ads&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.2</span>)<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;channel&#39;</span>
+</span></span><span style="display:flex;"><span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Google Search&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.1</span>)<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;channel&#39;</span>
+</span></span><span style="display:flex;"><span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Other&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -558,19 +558,19 @@ df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>
 </table>
 <p>30000 rows × 5 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><pre><code>Facebook/Ads     11414
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>value_counts()
+</span></span></code></pre></div><pre><code>Facebook/Ads     11414
 Google Search     8131
 Other             5318
 Word of Mouth     5137
 Name: channel, dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;first_contact&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;app&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.676</span>)<span style="color:#f92672">.</span>index,
-    <span style="color:#e6db74">&#39;first_contact&#39;</span>
-] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;browser&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;first_contact&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;app&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">.676</span>)<span style="color:#f92672">.</span>index,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;first_contact&#39;</span>
+</span></span><span style="display:flex;"><span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;browser&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -700,14 +700,14 @@ Name: channel, dtype: int64
 </table>
 <p>30000 rows × 6 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;first_contact&#39;</span>]<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><pre><code>browser    25780
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;first_contact&#39;</span>]<span style="color:#f92672">.</span>value_counts()
+</span></span></code></pre></div><pre><code>browser    25780
 app         4220
 Name: first_contact, dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>sample(frac<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -837,39 +837,39 @@ Name: first_contact, dtype: int64
 </table>
 <p>30000 rows × 6 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> timeseries_generator <span style="color:#f92672">import</span> LinearTrend, Generator, WhiteNoise, RandomFeatureFactor, WeekdayFactor
-<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-
-start<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;09-01-2020&#34;</span>
-end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;08-31-2021&#34;</span>
-
-
-<span style="color:#75715e"># setting up a linear tren</span>
-lt <span style="color:#f92672">=</span> LinearTrend(coef<span style="color:#f92672">=</span><span style="color:#ae81ff">5.0</span>, offset<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, col_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my_linear_trend&#34;</span>)
-
-weekday_factor <span style="color:#f92672">=</span> WeekdayFactor(
-    col_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weekend_boost_factor&#34;</span>,
-    factor_values<span style="color:#f92672">=</span>{<span style="color:#ae81ff">4</span>: <span style="color:#ae81ff">1.1</span>, <span style="color:#ae81ff">5</span>: <span style="color:#ae81ff">1.2</span>, <span style="color:#ae81ff">6</span>: <span style="color:#ae81ff">1.2</span>}  <span style="color:#75715e"># Here we assign a factor of 1.1 to Friday, and 1.2 to Sat/Sun </span>
-)
-
-<span style="color:#75715e"># weekday_factor.plot(start_date=start, end_date=end)</span>
-
-g <span style="color:#f92672">=</span> Generator(factors<span style="color:#f92672">=</span>{lt, weekday_factor}, features<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, date_range<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>date_range(start<span style="color:#f92672">=</span>start, end<span style="color:#f92672">=</span>end))
-g<span style="color:#f92672">.</span>generate()
-
-<span style="color:#75715e"># update by adding some white noise to the generator</span>
-wn <span style="color:#f92672">=</span> WhiteNoise(stdev_factor<span style="color:#f92672">=</span><span style="color:#ae81ff">0.06</span>)
-g<span style="color:#f92672">.</span>update_factor(wn)
-g<span style="color:#f92672">.</span>generate()
-g<span style="color:#f92672">.</span>plot()
-</code></pre></div><p><img src="/img/output_26_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>generate()
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data[<span style="color:#e6db74">&#39;rows&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>data<span style="color:#f92672">.</span>value)<span style="color:#f92672">.</span>astype(int)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data<span style="color:#f92672">.</span>rows<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>17326
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> timeseries_generator <span style="color:#f92672">import</span> LinearTrend, Generator, WhiteNoise, RandomFeatureFactor, WeekdayFactor
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;09-01-2020&#34;</span>
+</span></span><span style="display:flex;"><span>end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;08-31-2021&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># setting up a linear tren</span>
+</span></span><span style="display:flex;"><span>lt <span style="color:#f92672">=</span> LinearTrend(coef<span style="color:#f92672">=</span><span style="color:#ae81ff">5.0</span>, offset<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, col_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my_linear_trend&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>weekday_factor <span style="color:#f92672">=</span> WeekdayFactor(
+</span></span><span style="display:flex;"><span>    col_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;weekend_boost_factor&#34;</span>,
+</span></span><span style="display:flex;"><span>    factor_values<span style="color:#f92672">=</span>{<span style="color:#ae81ff">4</span>: <span style="color:#ae81ff">1.1</span>, <span style="color:#ae81ff">5</span>: <span style="color:#ae81ff">1.2</span>, <span style="color:#ae81ff">6</span>: <span style="color:#ae81ff">1.2</span>}  <span style="color:#75715e"># Here we assign a factor of 1.1 to Friday, and 1.2 to Sat/Sun </span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># weekday_factor.plot(start_date=start, end_date=end)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> Generator(factors<span style="color:#f92672">=</span>{lt, weekday_factor}, features<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, date_range<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>date_range(start<span style="color:#f92672">=</span>start, end<span style="color:#f92672">=</span>end))
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>generate()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update by adding some white noise to the generator</span>
+</span></span><span style="display:flex;"><span>wn <span style="color:#f92672">=</span> WhiteNoise(stdev_factor<span style="color:#f92672">=</span><span style="color:#ae81ff">0.06</span>)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>update_factor(wn)
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>generate()
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>plot()
+</span></span></code></pre></div><p><img src="/img/output_26_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>generate()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data[<span style="color:#e6db74">&#39;rows&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>data<span style="color:#f92672">.</span>value)<span style="color:#f92672">.</span>astype(int)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data<span style="color:#f92672">.</span>rows<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>17326
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1023,34 +1023,34 @@ g<span style="color:#f92672">.</span>plot()
 </table>
 <p>365 rows × 8 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nepali_holiday</span>(row):
-    date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(str(row<span style="color:#f92672">.</span>date), <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>)
-    num <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span>rows
-    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">16</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">25</span>):
-        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.2</span>)
-    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">24</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>):
-        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.4</span>)
-    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>):
-        num <span style="color:#f92672">=</span> num <span style="color:#f92672">-</span> num
-    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">13</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">15</span>):
-        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.4</span>)
-    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">1</span>):
-        num <span style="color:#f92672">=</span> int(num <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
-    <span style="color:#66d9ef">return</span> num
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data[<span style="color:#e6db74">&#39;rows&#39;</span>] <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>apply(nepali_holiday, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># [&#34;2020-09-01&#34;]*100 + [&#34;2020-09-02&#34;] * 200</span>
-<span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime <span style="color:#66d9ef">as</span> dt
-<span style="color:#f92672">import</span> datetime
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_list</span>(row):
-    <span style="color:#66d9ef">return</span> [str(row<span style="color:#f92672">.</span>date)]<span style="color:#f92672">*</span>row<span style="color:#f92672">.</span>rows
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">final_dates <span style="color:#f92672">=</span> (data<span style="color:#f92672">.</span>apply(create_list, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>sum())
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>head(len(final_dates))
-clients<span style="color:#f92672">.</span>reset_index(inplace <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;created_at&#39;</span>] <span style="color:#f92672">=</span> final_dates
-
-clients
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nepali_holiday</span>(row):
+</span></span><span style="display:flex;"><span>    date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(str(row<span style="color:#f92672">.</span>date), <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>)
+</span></span><span style="display:flex;"><span>    num <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span>rows
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">16</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">25</span>):
+</span></span><span style="display:flex;"><span>        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">24</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.4</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>):
+</span></span><span style="display:flex;"><span>        num <span style="color:#f92672">=</span> num <span style="color:#f92672">-</span> num
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">13</span>) <span style="color:#f92672">and</span> date<span style="color:#f92672">&lt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">15</span>):
+</span></span><span style="display:flex;"><span>        num <span style="color:#f92672">=</span> int (num<span style="color:#f92672">*</span><span style="color:#ae81ff">1.4</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> date<span style="color:#f92672">&gt;</span>datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        num <span style="color:#f92672">=</span> int(num <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> num
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data[<span style="color:#e6db74">&#39;rows&#39;</span>] <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>apply(nepali_holiday, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># [&#34;2020-09-01&#34;]*100 + [&#34;2020-09-02&#34;] * 200</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime <span style="color:#66d9ef">as</span> dt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_list</span>(row):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [str(row<span style="color:#f92672">.</span>date)]<span style="color:#f92672">*</span>row<span style="color:#f92672">.</span>rows
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>final_dates <span style="color:#f92672">=</span> (data<span style="color:#f92672">.</span>apply(create_list, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>sum())
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>head(len(final_dates))
+</span></span><span style="display:flex;"><span>clients<span style="color:#f92672">.</span>reset_index(inplace <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients[<span style="color:#e6db74">&#39;created_at&#39;</span>] <span style="color:#f92672">=</span> final_dates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clients
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1192,35 +1192,35 @@ clients
 </table>
 <p>21643 rows × 7 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients<span style="color:#f92672">.</span>gender<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><pre><code>Male                 11306
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients<span style="color:#f92672">.</span>gender<span style="color:#f92672">.</span>value_counts()
+</span></span></code></pre></div><pre><code>Male                 11306
 Female                8040
 Other                 1500
 Prefer not to say      797
 Name: gender, dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><pre><code>Facebook/Ads     8247
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients<span style="color:#f92672">.</span>channel<span style="color:#f92672">.</span>value_counts()
+</span></span></code></pre></div><pre><code>Facebook/Ads     8247
 Google Search    5849
 Other            3827
 Word of Mouth    3720
 Name: channel, dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;first_contact&#39;</span>]<span style="color:#f92672">.</span>value_counts()
-</code></pre></div><pre><code>browser    18601
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients[<span style="color:#e6db74">&#39;first_contact&#39;</span>]<span style="color:#f92672">.</span>value_counts()
+</span></span></code></pre></div><pre><code>browser    18601
 app         3042
 Name: first_contact, dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">random_times</span>(input_time):
-    random_hour <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">23</span>)
-    <span style="color:#66d9ef">return</span> dt<span style="color:#f92672">.</span>strptime(input_time, <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>) <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(hours<span style="color:#f92672">=</span>random_hour)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;created_at&#39;</span>] <span style="color:#f92672">=</span> clients[<span style="color:#e6db74">&#39;created_at&#39;</span>]<span style="color:#f92672">.</span>apply(random_times)
-
-clients<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;created_at&#39;</span>)<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;client_id&#39;</span>] <span style="color:#f92672">=</span> clients<span style="color:#f92672">.</span>index <span style="color:#f92672">+</span> <span style="color:#ae81ff">100000000</span>
-
-clients
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">random_times</span>(input_time):
+</span></span><span style="display:flex;"><span>    random_hour <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">23</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> dt<span style="color:#f92672">.</span>strptime(input_time, <span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>) <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(hours<span style="color:#f92672">=</span>random_hour)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients[<span style="color:#e6db74">&#39;created_at&#39;</span>] <span style="color:#f92672">=</span> clients[<span style="color:#e6db74">&#39;created_at&#39;</span>]<span style="color:#f92672">.</span>apply(random_times)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clients<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;created_at&#39;</span>)<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients[<span style="color:#e6db74">&#39;client_id&#39;</span>] <span style="color:#f92672">=</span> clients<span style="color:#f92672">.</span>index <span style="color:#f92672">+</span> <span style="color:#ae81ff">100000000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clients
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1374,24 +1374,24 @@ clients
 </table>
 <p>21643 rows × 8 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">date_gen</span>(start, end):
-    start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date(start, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
-    end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date(end, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>)
-    time_between_dates <span style="color:#f92672">=</span> end_date <span style="color:#f92672">-</span> start_date
-    days_between_dates <span style="color:#f92672">=</span> time_between_dates<span style="color:#f92672">.</span>days
-    random_number_of_days <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randrange(days_between_dates)
-    random_date <span style="color:#f92672">=</span> start_date <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span>random_number_of_days)
-    <span style="color:#66d9ef">return</span> str(random_date)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dob <span style="color:#f92672">=</span> [date_gen(<span style="color:#ae81ff">1975</span>, <span style="color:#ae81ff">1990</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)] <span style="color:#f92672">+</span> \
-[date_gen(<span style="color:#ae81ff">1991</span>, <span style="color:#ae81ff">1995</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)] <span style="color:#f92672">+</span> \
-[date_gen(<span style="color:#ae81ff">1996</span>, <span style="color:#ae81ff">2000</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)] <span style="color:#f92672">+</span> \
-[date_gen(<span style="color:#ae81ff">2001</span>, <span style="color:#ae81ff">2005</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)] <span style="color:#f92672">+</span> \
-[date_gen(<span style="color:#ae81ff">2006</span>, <span style="color:#ae81ff">2008</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">random<span style="color:#f92672">.</span>shuffle(dob)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[<span style="color:#e6db74">&#39;dob&#39;</span>] <span style="color:#f92672">=</span> dob[:clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]]
-
-clients
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">date_gen</span>(start, end):
+</span></span><span style="display:flex;"><span>    start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date(start, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date(end, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>)
+</span></span><span style="display:flex;"><span>    time_between_dates <span style="color:#f92672">=</span> end_date <span style="color:#f92672">-</span> start_date
+</span></span><span style="display:flex;"><span>    days_between_dates <span style="color:#f92672">=</span> time_between_dates<span style="color:#f92672">.</span>days
+</span></span><span style="display:flex;"><span>    random_number_of_days <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randrange(days_between_dates)
+</span></span><span style="display:flex;"><span>    random_date <span style="color:#f92672">=</span> start_date <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span>random_number_of_days)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> str(random_date)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dob <span style="color:#f92672">=</span> [date_gen(<span style="color:#ae81ff">1975</span>, <span style="color:#ae81ff">1990</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)] <span style="color:#f92672">+</span> \
+</span></span><span style="display:flex;"><span>[date_gen(<span style="color:#ae81ff">1991</span>, <span style="color:#ae81ff">1995</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)] <span style="color:#f92672">+</span> \
+</span></span><span style="display:flex;"><span>[date_gen(<span style="color:#ae81ff">1996</span>, <span style="color:#ae81ff">2000</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)] <span style="color:#f92672">+</span> \
+</span></span><span style="display:flex;"><span>[date_gen(<span style="color:#ae81ff">2001</span>, <span style="color:#ae81ff">2005</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)] <span style="color:#f92672">+</span> \
+</span></span><span style="display:flex;"><span>[date_gen(<span style="color:#ae81ff">2006</span>, <span style="color:#ae81ff">2008</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">//</span><span style="color:#ae81ff">5</span>)]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>random<span style="color:#f92672">.</span>shuffle(dob)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients[<span style="color:#e6db74">&#39;dob&#39;</span>] <span style="color:#f92672">=</span> dob[:clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clients
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1557,8 +1557,8 @@ clients
 </table>
 <p>21643 rows × 9 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1724,12 +1724,12 @@ clients
 </table>
 <p>21643 rows × 9 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;../datasets/location.csv&#34;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location <span style="color:#f92672">=</span> location[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>]]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_list <span style="color:#f92672">=</span>  [location<span style="color:#f92672">.</span>sample()<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(location_list)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;../datasets/location.csv&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location <span style="color:#f92672">=</span> location[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location_list <span style="color:#f92672">=</span>  [location<span style="color:#f92672">.</span>sample()<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist() <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(clients<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(location_list)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location_df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1799,9 +1799,9 @@ clients
 </table>
 <p>21643 rows × 1 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>,<span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(location_df[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>tolist(), index<span style="color:#f92672">=</span> location_df<span style="color:#f92672">.</span>index)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]]
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>,<span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(location_df[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>tolist(), index<span style="color:#f92672">=</span> location_df<span style="color:#f92672">.</span>index)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]]
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1895,8 +1895,8 @@ clients
 </table>
 <p>21643 rows × 3 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2062,9 +2062,9 @@ clients
 </table>
 <p>21643 rows × 9 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([clients, location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]]], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(clients)
-</code></pre></div><pre><code>['name',
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([clients, location_df[[<span style="color:#e6db74">&#39;lat&#39;</span>, <span style="color:#e6db74">&#39;lon&#39;</span>, <span style="color:#e6db74">&#39;location_name&#39;</span>]]], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>list(clients)
+</span></span></code></pre></div><pre><code>['name',
  'gender',
  'email',
  'phone',
@@ -2077,21 +2077,21 @@ clients
  'lon',
  'location_name']
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">clients[
-[<span style="color:#e6db74">&#39;client_id&#39;</span>,
- <span style="color:#e6db74">&#39;name&#39;</span>,
- <span style="color:#e6db74">&#39;gender&#39;</span>,
- <span style="color:#e6db74">&#39;dob&#39;</span>,
- <span style="color:#e6db74">&#39;email&#39;</span>,
- <span style="color:#e6db74">&#39;phone&#39;</span>,
- <span style="color:#e6db74">&#39;channel&#39;</span>,
- <span style="color:#e6db74">&#39;first_contact&#39;</span>,
-  <span style="color:#e6db74">&#39;lat&#39;</span>,
- <span style="color:#e6db74">&#39;lon&#39;</span>,
- <span style="color:#e6db74">&#39;location_name&#39;</span>,
- <span style="color:#e6db74">&#39;created_at&#39;</span>]
-]<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;../datasets/clients.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</code></pre></div><p>Find  the analysis notebooks here: <a href="https://github.com/ayushsubedi/eHamroPasalmandu">https://github.com/ayushsubedi/eHamroPasalmandu</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>clients[
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;client_id&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;name&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;gender&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;dob&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;email&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;phone&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;channel&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;first_contact&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;lat&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;lon&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;location_name&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;created_at&#39;</span>]
+</span></span><span style="display:flex;"><span>]<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;../datasets/clients.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><p>Find  the analysis notebooks here: <a href="https://github.com/ayushsubedi/eHamroPasalmandu">https://github.com/ayushsubedi/eHamroPasalmandu</a></p>
 </div>
 	</section>
 
@@ -2227,7 +2227,7 @@ clients
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		2394 words in this page.
+		2097 words in this page.
 	</div>
 </div>
 

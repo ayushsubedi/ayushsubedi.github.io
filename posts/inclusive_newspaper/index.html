@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | Inclusive Nepal</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.102.3" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -169,12 +169,12 @@ onload='renderMathInElement(document.body);'></script>
 </code></pre>
 <p><img src="/img/in_header.jpg" alt="alt text" title="Header Image"></p>
 <h3 id="imports">Imports</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Pandas</span>
-<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-<span style="color:#75715e">#Mapbox</span>
-<span style="color:#f92672">from</span> mapboxgl.utils <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">from</span> mapboxgl.viz <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</code></pre></div><script type="text/javascript">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Pandas</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Mapbox</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> mapboxgl.utils <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> mapboxgl.viz <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span></code></pre></div><script type="text/javascript">
 window.PlotlyConfig = {MathJaxConfig: 'local'};
 if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
 if (typeof require !== 'undefined') {
@@ -190,9 +190,9 @@ require(['plotly'], function(Plotly) {
 }
 </script>
 <h3 id="status-of-disability-in-nepal">Status of Disability in Nepal</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;data_sources/disability_2011.csv&#34;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;data_sources/disability_2011.csv&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -261,8 +261,8 @@ require(['plotly'], function(Plotly) {
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -331,9 +331,9 @@ require(['plotly'], function(Plotly) {
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_geojson <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_json(<span style="color:#e6db74">&#39;data_sources/map.geojson&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_geojson<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_geojson <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_json(<span style="color:#e6db74">&#39;data_sources/map.geojson&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_geojson<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -384,16 +384,16 @@ require(['plotly'], function(Plotly) {
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#34;District&#34;</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_data</span>(features):
-    name <span style="color:#f92672">=</span> features<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;properties&#39;</span>)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;name&#39;</span>)
-    <span style="color:#66d9ef">if</span> (name <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>index):
-        percentage <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>loc[name][<span style="color:#e6db74">&#39;Percentage of PWDs&#39;</span>]
-        population <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>loc[name][<span style="color:#e6db74">&#39;Population with Disability&#39;</span>]
-        features[<span style="color:#e6db74">&#39;properties&#39;</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: name, <span style="color:#e6db74">&#39;percentage&#39;</span>: percentage, <span style="color:#e6db74">&#39;population&#39;</span>:population}
-        <span style="color:#66d9ef">return</span> features
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_geojson<span style="color:#f92672">.</span>features<span style="color:#f92672">.</span>apply(add_data)
-</code></pre></div><pre><code>0     {'properties': {'name': 'Humla', 'percentage':...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#34;District&#34;</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_data</span>(features):
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> features<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;properties&#39;</span>)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;name&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (name <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>index):
+</span></span><span style="display:flex;"><span>        percentage <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>loc[name][<span style="color:#e6db74">&#39;Percentage of PWDs&#39;</span>]
+</span></span><span style="display:flex;"><span>        population <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>loc[name][<span style="color:#e6db74">&#39;Population with Disability&#39;</span>]
+</span></span><span style="display:flex;"><span>        features[<span style="color:#e6db74">&#39;properties&#39;</span>] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span>: name, <span style="color:#e6db74">&#39;percentage&#39;</span>: percentage, <span style="color:#e6db74">&#39;population&#39;</span>:population}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> features
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_geojson<span style="color:#f92672">.</span>features<span style="color:#f92672">.</span>apply(add_data)
+</span></span></code></pre></div><pre><code>0     {'properties': {'name': 'Humla', 'percentage':...
 1     {'properties': {'name': 'Darchula', 'percentag...
 2     {'properties': {'name': 'Bajhang', 'percentage...
 3     {'properties': {'name': 'Mugu', 'percentage': ...
@@ -406,23 +406,23 @@ require(['plotly'], function(Plotly) {
 74    {'properties': {'name': 'Jhapa', 'percentage':...
 Name: features, Length: 75, dtype: object
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">features <span style="color:#f92672">=</span> df_geojson[<span style="color:#e6db74">&#39;features&#39;</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;FeatureCollection&#34;</span>, <span style="color:#e6db74">&#34;features&#34;</span>:features}
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">token  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pk................................................................&#34;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">viz <span style="color:#f92672">=</span> ChoroplethViz(my_dict, 
-                     access_token<span style="color:#f92672">=</span>token,
-                     color_property<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;population&#39;</span>,
-                     color_stops<span style="color:#f92672">=</span>create_color_stops([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">7500</span>, <span style="color:#ae81ff">10000</span>, <span style="color:#ae81ff">12500</span>], colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YlOrRd&#39;</span>),
-                     color_function_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;interpolate&#39;</span>,
-                     line_stroke<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>,
-                     line_color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rgb(128,0,38)&#39;</span>,
-                     line_width<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
-                     opacity<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>,
-                     center<span style="color:#f92672">=</span>(<span style="color:#ae81ff">84</span>, <span style="color:#ae81ff">28.5</span>), 
-                     zoom<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
-                    )
-viz<span style="color:#f92672">.</span>show()
-</code></pre></div><h3 id="percentage-and-population-of-disabled-in-each-district-of-nepal">Percentage and Population of disabled in each district of Nepal</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>features <span style="color:#f92672">=</span> df_geojson[<span style="color:#e6db74">&#39;features&#39;</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;type&#34;</span>:<span style="color:#e6db74">&#34;FeatureCollection&#34;</span>, <span style="color:#e6db74">&#34;features&#34;</span>:features}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>token  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pk................................................................&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>viz <span style="color:#f92672">=</span> ChoroplethViz(my_dict, 
+</span></span><span style="display:flex;"><span>                     access_token<span style="color:#f92672">=</span>token,
+</span></span><span style="display:flex;"><span>                     color_property<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;population&#39;</span>,
+</span></span><span style="display:flex;"><span>                     color_stops<span style="color:#f92672">=</span>create_color_stops([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2500</span>, <span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">7500</span>, <span style="color:#ae81ff">10000</span>, <span style="color:#ae81ff">12500</span>], colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YlOrRd&#39;</span>),
+</span></span><span style="display:flex;"><span>                     color_function_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;interpolate&#39;</span>,
+</span></span><span style="display:flex;"><span>                     line_stroke<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>,
+</span></span><span style="display:flex;"><span>                     line_color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rgb(128,0,38)&#39;</span>,
+</span></span><span style="display:flex;"><span>                     line_width<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                     opacity<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>,
+</span></span><span style="display:flex;"><span>                     center<span style="color:#f92672">=</span>(<span style="color:#ae81ff">84</span>, <span style="color:#ae81ff">28.5</span>), 
+</span></span><span style="display:flex;"><span>                     zoom<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>                    )
+</span></span><span style="display:flex;"><span>viz<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><h3 id="percentage-and-population-of-disabled-in-each-district-of-nepal">Percentage and Population of disabled in each district of Nepal</h3>
 <iframe id="map", srcdoc="<!DOCTYPE html>
 <html>
 <head>
@@ -990,20 +990,20 @@ function generatePropertyExpression(expressionType, propertyValue, stops, defaul
 <!-- add capability to export map or legend to image file -->
 </body>
 </html>" style="width: 100%; height: 500px;"></iframe>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">viz <span style="color:#f92672">=</span> ChoroplethViz(my_dict, 
-                     access_token<span style="color:#f92672">=</span>token,
-                     color_property<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;percentage&#39;</span>,
-                     color_stops<span style="color:#f92672">=</span>create_color_stops([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>], colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YlOrRd&#39;</span>),
-                     color_function_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;interpolate&#39;</span>,
-                     line_stroke<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>,
-                     line_color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rgb(128,0,38)&#39;</span>,
-                     line_width<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
-                     opacity<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>,
-                     center<span style="color:#f92672">=</span>(<span style="color:#ae81ff">84</span>, <span style="color:#ae81ff">28.5</span>), 
-                     zoom<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
-                    )
-viz<span style="color:#f92672">.</span>show()
-</code></pre></div><iframe id="map", srcdoc="<!DOCTYPE html>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>viz <span style="color:#f92672">=</span> ChoroplethViz(my_dict, 
+</span></span><span style="display:flex;"><span>                     access_token<span style="color:#f92672">=</span>token,
+</span></span><span style="display:flex;"><span>                     color_property<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;percentage&#39;</span>,
+</span></span><span style="display:flex;"><span>                     color_stops<span style="color:#f92672">=</span>create_color_stops([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>], colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YlOrRd&#39;</span>),
+</span></span><span style="display:flex;"><span>                     color_function_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;interpolate&#39;</span>,
+</span></span><span style="display:flex;"><span>                     line_stroke<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>,
+</span></span><span style="display:flex;"><span>                     line_color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rgb(128,0,38)&#39;</span>,
+</span></span><span style="display:flex;"><span>                     line_width<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                     opacity<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>,
+</span></span><span style="display:flex;"><span>                     center<span style="color:#f92672">=</span>(<span style="color:#ae81ff">84</span>, <span style="color:#ae81ff">28.5</span>), 
+</span></span><span style="display:flex;"><span>                     zoom<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>                    )
+</span></span><span style="display:flex;"><span>viz<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><iframe id="map", srcdoc="<!DOCTYPE html>
 <html>
 <head>
 <title>mapboxgl-jupyter viz</title>
@@ -1571,8 +1571,8 @@ function generatePropertyExpression(expressionType, propertyValue, stops, defaul
 </body>
 </html>" style="width: 100%; height: 500px;"></iframe>
 <h3 id="districts-with-most-number-of-disability-sorted-5">Districts with most number of Disability (Sorted 5)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>sort_values([<span style="color:#e6db74">&#39;Population with Disability&#39;</span>], ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_values([<span style="color:#e6db74">&#39;Population with Disability&#39;</span>], ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1642,33 +1642,32 @@ function generatePropertyExpression(expressionType, propertyValue, stops, defaul
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-<span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-<span style="color:#f92672">from</span> urllib.request <span style="color:#f92672">import</span> Request, urlopen
-<span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">site <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.onlinekhabar.com/&#34;</span>
-hdr <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0&#39;</span>}
-req <span style="color:#f92672">=</span> Request(site,headers<span style="color:#f92672">=</span>hdr)
-page <span style="color:#f92672">=</span> urlopen(req)
-soup <span style="color:#f92672">=</span> BeautifulSoup(page, <span style="color:#e6db74">&#34;lxml&#34;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">image_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-alt_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> 
-collection <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#34;img&#34;</span>)
-<span style="color:#66d9ef">for</span> img <span style="color:#f92672">in</span> collection:
-    image_count <span style="color:#f92672">=</span> image_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;alt&#39;</span> <span style="color:#f92672">in</span> img<span style="color:#f92672">.</span>attrs:
-        alt_count <span style="color:#f92672">=</span> alt_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-print (<span style="color:#e6db74">&#34;image_count&#34;</span>, image_count) 
-print (<span style="color:#e6db74">&#34;alt_count&#34;</span>, alt_count) 
-print (<span style="color:#e6db74">&#34;alt_count_percent&#34;</span>, alt_count<span style="color:#f92672">/</span>image_count<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
-</code></pre></div><pre><code>image_count 154
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> urllib.request <span style="color:#f92672">import</span> Request, urlopen
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>site <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.onlinekhabar.com/&#34;</span>
+</span></span><span style="display:flex;"><span>hdr <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0&#39;</span>}
+</span></span><span style="display:flex;"><span>req <span style="color:#f92672">=</span> Request(site,headers<span style="color:#f92672">=</span>hdr)
+</span></span><span style="display:flex;"><span>page <span style="color:#f92672">=</span> urlopen(req)
+</span></span><span style="display:flex;"><span>soup <span style="color:#f92672">=</span> BeautifulSoup(page, <span style="color:#e6db74">&#34;lxml&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>image_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>alt_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#34;img&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> img <span style="color:#f92672">in</span> collection:
+</span></span><span style="display:flex;"><span>    image_count <span style="color:#f92672">=</span> image_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;alt&#39;</span> <span style="color:#f92672">in</span> img<span style="color:#f92672">.</span>attrs:
+</span></span><span style="display:flex;"><span>        alt_count <span style="color:#f92672">=</span> alt_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>print (<span style="color:#e6db74">&#34;image_count&#34;</span>, image_count) 
+</span></span><span style="display:flex;"><span>print (<span style="color:#e6db74">&#34;alt_count&#34;</span>, alt_count) 
+</span></span><span style="display:flex;"><span>print (<span style="color:#e6db74">&#34;alt_count_percent&#34;</span>, alt_count<span style="color:#f92672">/</span>image_count<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
+</span></span></code></pre></div><pre><code>image_count 154
 alt_count 1
 alt_count_percent 0.6493506493506493
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data_sources/news_portals.csv&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;data_sources/news_portals.csv&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1734,25 +1733,25 @@ alt_count_percent 0.6493506493506493
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">alt_counter</span>(site):
-    <span style="color:#66d9ef">try</span>:
-        hdr <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0&#39;</span>}
-        req <span style="color:#f92672">=</span> Request(site, headers<span style="color:#f92672">=</span>hdr)
-        page <span style="color:#f92672">=</span> urlopen(req)
-        soup <span style="color:#f92672">=</span> BeautifulSoup(page, <span style="color:#e6db74">&#34;lxml&#34;</span>)
-        image_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-        alt_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> 
-        collection <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#34;img&#34;</span>)
-        <span style="color:#66d9ef">for</span> img <span style="color:#f92672">in</span> collection:
-            image_count <span style="color:#f92672">=</span> image_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;alt&#39;</span> <span style="color:#f92672">in</span> img<span style="color:#f92672">.</span>attrs:
-                alt_count <span style="color:#f92672">=</span> alt_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">return</span> (alt_count, image_count)
-    <span style="color:#66d9ef">except</span>:
-        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;alt_count&#39;</span>],df[<span style="color:#e6db74">&#39;image_count&#39;</span>]<span style="color:#f92672">=</span>zip(<span style="color:#f92672">*</span>df<span style="color:#f92672">.</span>Link<span style="color:#f92672">.</span>apply(alt_counter))
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">alt_counter</span>(site):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        hdr <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0&#39;</span>}
+</span></span><span style="display:flex;"><span>        req <span style="color:#f92672">=</span> Request(site, headers<span style="color:#f92672">=</span>hdr)
+</span></span><span style="display:flex;"><span>        page <span style="color:#f92672">=</span> urlopen(req)
+</span></span><span style="display:flex;"><span>        soup <span style="color:#f92672">=</span> BeautifulSoup(page, <span style="color:#e6db74">&#34;lxml&#34;</span>)
+</span></span><span style="display:flex;"><span>        image_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        alt_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span>        collection <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#34;img&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> img <span style="color:#f92672">in</span> collection:
+</span></span><span style="display:flex;"><span>            image_count <span style="color:#f92672">=</span> image_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;alt&#39;</span> <span style="color:#f92672">in</span> img<span style="color:#f92672">.</span>attrs:
+</span></span><span style="display:flex;"><span>                alt_count <span style="color:#f92672">=</span> alt_count <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (alt_count, image_count)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;alt_count&#39;</span>],df[<span style="color:#e6db74">&#39;image_count&#39;</span>]<span style="color:#f92672">=</span>zip(<span style="color:#f92672">*</span>df<span style="color:#f92672">.</span>Link<span style="color:#f92672">.</span>apply(alt_counter))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1836,9 +1835,9 @@ alt_count_percent 0.6493506493506493
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;percent&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span>df[<span style="color:#e6db74">&#39;alt_count&#39;</span>]<span style="color:#f92672">/</span>df[<span style="color:#e6db74">&#39;image_count&#39;</span>]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;percent&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span>df[<span style="color:#e6db74">&#39;alt_count&#39;</span>]<span style="color:#f92672">/</span>df[<span style="color:#e6db74">&#39;image_count&#39;</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1931,8 +1930,8 @@ alt_count_percent 0.6493506493506493
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>barplot(y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Portal&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;percent&#39;</span>, data<span style="color:#f92672">=</span>df)
-</code></pre></div><p><img src="/img/output_10_1.png" alt="output image"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>barplot(y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Portal&#39;</span>, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;percent&#39;</span>, data<span style="color:#f92672">=</span>df)
+</span></span></code></pre></div><p><img src="/img/output_10_1.png" alt="output image"></p>
 </div>
 	</section>
 
@@ -2068,7 +2067,7 @@ alt_count_percent 0.6493506493506493
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		225220 words in this page.
+		708 words in this page.
 	</div>
 </div>
 

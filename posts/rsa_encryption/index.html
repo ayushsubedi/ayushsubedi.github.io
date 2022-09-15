@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | RSA encryption</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.102.3" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -151,8 +151,8 @@ onload='renderMathInElement(document.body);'></script>
 <p>A user of RSA creates and then publishes a public key based on two large prime numbers, along with an auxiliary value. The prime numbers must be kept secret. Anyone can use the public key to encrypt a message, but with currently published methods, and if the public key is large enough, only someone with knowledge of the prime numbers can decode the message feasibly. Breaking RSA encryption is known as the RSA problem. Whether it is as difficult as the factoring problem remains an open question.</p>
 <p>RSA is a relatively slow algorithm, and because of this, it is less commonly used to directly encrypt user data. More often, RSA passes encrypted shared keys for symmetric key cryptography which in turn can perform bulk encryption-decryption operations at much higher speed.</p>
 <h3 id="imports">Imports</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> primesieve <span style="color:#f92672">import</span> nth_prime
-</code></pre></div><h3 id="rsa-algorithm">RSA Algorithm</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> primesieve <span style="color:#f92672">import</span> nth_prime
+</span></span></code></pre></div><h3 id="rsa-algorithm">RSA Algorithm</h3>
 <ol>
 <li>Take two distinct, large primes p and q (Ideally these have a similar byte-length)</li>
 <li>Multiply p and q and store the result in n</li>
@@ -161,15 +161,15 @@ onload='renderMathInElement(document.body);'></script>
 <li>Find d using the formula d⋅e≡1modφ(n)</li>
 </ol>
 <p>At this point, the pair (e, n) is the public key and the private key (d, n) is the private key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p <span style="color:#f92672">=</span> nth_prime(<span style="color:#ae81ff">10</span>)
-q <span style="color:#f92672">=</span> nth_prime(<span style="color:#ae81ff">15</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> p<span style="color:#f92672">*</span>q
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (p,q,n)
-</code></pre></div><pre><code>29 47 1363
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>p <span style="color:#f92672">=</span> nth_prime(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>q <span style="color:#f92672">=</span> nth_prime(<span style="color:#ae81ff">15</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n <span style="color:#f92672">=</span> p<span style="color:#f92672">*</span>q
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print (p,q,n)
+</span></span></code></pre></div><pre><code>29 47 1363
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">totient <span style="color:#f92672">=</span> (p<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>(q<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (totient)
-</code></pre></div><pre><code>1288
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>totient <span style="color:#f92672">=</span> (p<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>(q<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print (totient)
+</span></span></code></pre></div><pre><code>1288
 </code></pre>
 <h4 id="totient">Totient</h4>
 <p>In number theory, Euler&rsquo;s totient function counts the positive integers up to a given integer n that are relatively prime to n. It is written using the Greek letter phi as φ(n) or ϕ(n), and may also be called Euler&rsquo;s phi function. It can be defined more formally as the number of integers k in the range 1 ≤ k ≤ n for which the greatest common divisor gcd(n, k) is equal to 1. The integers k of this form are sometimes referred to as totatives of n.</p>
@@ -181,108 +181,107 @@ q <span style="color:#f92672">=</span> nth_prime(<span style="color:#ae81ff">15<
 </ul>
 <h4 id="coprime">Coprime</h4>
 <p>In number theory, two integers a and b are said to be relatively prime, mutually prime, or coprime (also written co-prime) if the only positive integer (factor) that divides both of them is 1. Consequently, any prime number that divides one does not divide the other. This is equivalent to their greatest common divisor (gcd) being 1</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> gcd
-<span style="color:#f92672">import</span> random
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">modinv</span>(a, m):
-    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, m):
-        <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">*</span> x) <span style="color:#f92672">%</span> m <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-            <span style="color:#66d9ef">return</span> x
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">coprimes</span>(a):
-    l <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, a):
-        <span style="color:#66d9ef">if</span> gcd(a, x) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> modinv(x,a) <span style="color:#f92672">!=</span> <span style="color:#66d9ef">None</span>:
-            l<span style="color:#f92672">.</span>append(x)
-    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> l:
-        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> modinv(x,a):
-            l<span style="color:#f92672">.</span>remove(x)
-    <span style="color:#66d9ef">return</span> l
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">coprime_list <span style="color:#f92672">=</span> coprimes(totient)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">secure_random <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>SystemRandom()
-e <span style="color:#f92672">=</span> secure_random<span style="color:#f92672">.</span>choice(coprime_list)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> modinv(e, totient)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d
-</code></pre></div><pre><code>685
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> gcd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">modinv</span>(a, m):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, m):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">*</span> x) <span style="color:#f92672">%</span> m <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">coprimes</span>(a):
+</span></span><span style="display:flex;"><span>    l <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, a):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> gcd(a, x) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> modinv(x,a) <span style="color:#f92672">!=</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            l<span style="color:#f92672">.</span>append(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> l:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> modinv(x,a):
+</span></span><span style="display:flex;"><span>            l<span style="color:#f92672">.</span>remove(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> l
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>coprime_list <span style="color:#f92672">=</span> coprimes(totient)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>secure_random <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>SystemRandom()
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> secure_random<span style="color:#f92672">.</span>choice(coprime_list)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> modinv(e, totient)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>d
+</span></span></code></pre></div><pre><code>685
 </code></pre>
 <h3 id="private-and-public-key-pairs">Private and Public key pairs</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (<span style="color:#e6db74">&#39;Public key pair:&#39;</span>, e, n)
-</code></pre></div><pre><code>Public key pair: 1021 1363
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print (<span style="color:#e6db74">&#39;Public key pair:&#39;</span>, e, n)
+</span></span></code></pre></div><pre><code>Public key pair: 1021 1363
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (<span style="color:#e6db74">&#39;Private key pair:&#39;</span>, d, n)
-</code></pre></div><pre><code>Private key pair: 685 1363
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print (<span style="color:#e6db74">&#39;Private key pair:&#39;</span>, d, n)
+</span></span></code></pre></div><pre><code>Private key pair: 685 1363
 </code></pre>
 <h3 id="test">Test</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>e <span style="color:#f92672">%</span> n
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test
-</code></pre></div><pre><code>1029
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>e <span style="color:#f92672">%</span> n
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test
+</span></span></code></pre></div><pre><code>1029
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">test<span style="color:#f92672">**</span>d <span style="color:#f92672">%</span> n
-</code></pre></div><pre><code>2
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>test<span style="color:#f92672">**</span>d <span style="color:#f92672">%</span> n
+</span></span></code></pre></div><pre><code>2
 </code></pre>
 <h3 id="encryption-and-decryption">Encryption and Decryption</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt</span>(msg, pub, pri, mod):
-    chars <span style="color:#f92672">=</span> [ord(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(msg)]
-    cipher <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> chars:
-        cipher<span style="color:#f92672">.</span>append(chr(char<span style="color:#f92672">**</span>pub<span style="color:#f92672">%</span>mod))
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(cipher)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decrypt</span>(msg, pub, pri, mod):
-    chars <span style="color:#f92672">=</span> [ord(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(msg)]
-    cipher <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> chars:
-        cipher<span style="color:#f92672">.</span>append(chr(char<span style="color:#f92672">**</span>pri<span style="color:#f92672">%</span>mod))
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(cipher)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cipher <span style="color:#f92672">=</span> encrypt(msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>, pub<span style="color:#f92672">=</span>e, pri<span style="color:#f92672">=</span>d, mod<span style="color:#f92672">=</span>n)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decrypt(cipher, pub<span style="color:#f92672">=</span>e, pri<span style="color:#f92672">=</span>d, mod<span style="color:#f92672">=</span>n)
-</code></pre></div><pre><code>'hello'
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt</span>(msg, pub, pri, mod):
+</span></span><span style="display:flex;"><span>    chars <span style="color:#f92672">=</span> [ord(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(msg)]
+</span></span><span style="display:flex;"><span>    cipher <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> chars:
+</span></span><span style="display:flex;"><span>        cipher<span style="color:#f92672">.</span>append(chr(char<span style="color:#f92672">**</span>pub<span style="color:#f92672">%</span>mod))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(cipher)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decrypt</span>(msg, pub, pri, mod):
+</span></span><span style="display:flex;"><span>    chars <span style="color:#f92672">=</span> [ord(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(msg)]
+</span></span><span style="display:flex;"><span>    cipher <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> chars:
+</span></span><span style="display:flex;"><span>        cipher<span style="color:#f92672">.</span>append(chr(char<span style="color:#f92672">**</span>pri<span style="color:#f92672">%</span>mod))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(cipher)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> encrypt(msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>, pub<span style="color:#f92672">=</span>e, pri<span style="color:#f92672">=</span>d, mod<span style="color:#f92672">=</span>n)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decrypt(cipher, pub<span style="color:#f92672">=</span>e, pri<span style="color:#f92672">=</span>d, mod<span style="color:#f92672">=</span>n)
+</span></span></code></pre></div><pre><code>'hello'
 </code></pre>
 <h3 id="python-library">Python library</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> rsa
-</code></pre></div><p>Bob generates a keypair, and gives the public key to Alice. This is done such that Alice knows for sure that the key is really Bob’s (for example by handing over a USB stick that contains the key).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(bob_pub, bob_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
-(alice_pub, alice_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
-</code></pre></div><p>Alice writes a message, and encodes it in UTF-8. The RSA module only operates on bytes, and not on strings, so this step is necessary.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello Bob!&#39;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf8&#39;</span>)
-</code></pre></div><p>Alice encrypts the message using Bob’s public key, and sends the encrypted message</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>encrypt(message, bob_pub)
-</code></pre></div><p>Bob receives the message, and decrypts it with his private key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decrypt_cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>decrypt(cipher, bob_priv)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (decrypt_cipher)
-</code></pre></div><pre><code>b'hello Bob!'
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> rsa
+</span></span></code></pre></div><p>Bob generates a keypair, and gives the public key to Alice. This is done such that Alice knows for sure that the key is really Bob’s (for example by handing over a USB stick that contains the key).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(bob_pub, bob_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
+</span></span><span style="display:flex;"><span>(alice_pub, alice_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
+</span></span></code></pre></div><p>Alice writes a message, and encodes it in UTF-8. The RSA module only operates on bytes, and not on strings, so this step is necessary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello Bob!&#39;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf8&#39;</span>)
+</span></span></code></pre></div><p>Alice encrypts the message using Bob’s public key, and sends the encrypted message</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>encrypt(message, bob_pub)
+</span></span></code></pre></div><p>Bob receives the message, and decrypts it with his private key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decrypt_cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>decrypt(cipher, bob_priv)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print (decrypt_cipher)
+</span></span></code></pre></div><pre><code>b'hello Bob!'
 </code></pre>
 <p>Since Bob kept his private key private, Alice can be sure that he is the only one who can read the message. Bob does not know for sure that it was Alice that sent the message, since she didn’t sign it.</p>
 <h3 id="signature">Signature</h3>
 <p>Suppose Alice uses Bob&rsquo;s public key to send him an encrypted message. In the message, she can claim to be Alice but Bob has no way of verifying that the message was actually from Alice since anyone can use Bob&rsquo;s public key to send him encrypted messages. In order to verify the origin of a message, RSA can also be used to sign a message.</p>
 <p>Suppose Alice wishes to send a signed message to Bob. She can use her own private key to do so. She produces a hash value of the message, raises it to the power of d (modulo n) (as she does when decrypting a message), and attaches it as a &ldquo;signature&rdquo; to the message. When Bob receives the signed message, he uses the same hash algorithm in conjunction with Alice&rsquo;s public key. He raises the signature to the power of e (modulo n) (as he does when encrypting a message), and compares the resulting hash value with the message&rsquo;s actual hash value. If the two agree, he knows that the author of the message was in possession of Alice&rsquo;s private key, and that the message has not been tampered with since.</p>
 <p>This works because multiplication is commutative so {\displaystyle h=hash(m);(h^{e})^{d}=h^{ed}=h^{de}=(h^{d})^{e}\equiv h{\pmod {n}}} {\displaystyle h=hash(m);(h^{e})^{d}=h^{ed}=h^{de}=(h^{d})^{e}\equiv h{\pmod {n}}} Thus, the keys may be swapped without loss of generality, that is a private key of a key pair may be used either to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">signature <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>sign(message, alice_priv, <span style="color:#e6db74">&#39;SHA-1&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rsa<span style="color:#f92672">.</span>verify(message, signature, alice_pub)
-</code></pre></div><pre><code>'SHA-1'
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>signature <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>sign(message, alice_priv, <span style="color:#e6db74">&#39;SHA-1&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rsa<span style="color:#f92672">.</span>verify(message, signature, alice_pub)
+</span></span></code></pre></div><pre><code>'SHA-1'
 </code></pre>
 <h3 id="complete">Complete</h3>
 <p>Bob and Alice generate a keypair and share public keys.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(bob_pub, bob_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
-(alice_pub, alice_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
-</code></pre></div><p>Alice writes a message.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hey Bob!&#39;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf8&#39;</span>)
-</code></pre></div><p>Alice signs the message with private key</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">signature <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>sign(message, alice_priv, <span style="color:#e6db74">&#39;SHA-1&#39;</span>)
-</code></pre></div><p>Alice encrypts the message using Bob’s public key, and sends the encrypted message</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>encrypt(message, bob_pub)
-</code></pre></div><p>Bob receives the message and checks for authenticity using alice&rsquo;s public key</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rsa<span style="color:#f92672">.</span>verify(message, signature, alice_pub)
-</code></pre></div><pre><code>'SHA-1'
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(bob_pub, bob_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
+</span></span><span style="display:flex;"><span>(alice_pub, alice_priv) <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>newkeys(<span style="color:#ae81ff">512</span>)
+</span></span></code></pre></div><p>Alice writes a message.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hey Bob!&#39;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf8&#39;</span>)
+</span></span></code></pre></div><p>Alice signs the message with private key</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>signature <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>sign(message, alice_priv, <span style="color:#e6db74">&#39;SHA-1&#39;</span>)
+</span></span></code></pre></div><p>Alice encrypts the message using Bob’s public key, and sends the encrypted message</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>encrypt(message, bob_pub)
+</span></span></code></pre></div><p>Bob receives the message and checks for authenticity using alice&rsquo;s public key</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rsa<span style="color:#f92672">.</span>verify(message, signature, alice_pub)
+</span></span></code></pre></div><pre><code>'SHA-1'
 </code></pre>
 <p>Bob decrypts the message using his private key</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decrypt_cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>decrypt(cipher, bob_priv)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print (decrypt_cipher)
-</code></pre></div><pre><code>b'hey Bob!'
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decrypt_cipher <span style="color:#f92672">=</span> rsa<span style="color:#f92672">.</span>decrypt(cipher, bob_priv)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print (decrypt_cipher)
+</span></span></code></pre></div><pre><code>b'hey Bob!'
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">signature
-</code></pre></div><pre><code>b'\x07Of\xabW^\x0b\xaeFh\x01L\xf3\x11\xe0\xe9\\\x99r\xc9\x1c\x044\x11\xfc{5\xa3_ \xeb\xba\xf8\x84b\x1e\xb7\xadK)\xdf\x9b\x8f|\xc4&gt;\x89\x9d\xdf\x98OI\xc1\x87\xc2\xdd\xf3\xf6\x16\xae2`my'
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>signature
+</span></span></code></pre></div><pre><code>b'\x07Of\xabW^\x0b\xaeFh\x01L\xf3\x11\xe0\xe9\\\x99r\xc9\x1c\x044\x11\xfc{5\xa3_ \xeb\xba\xf8\x84b\x1e\xb7\xadK)\xdf\x9b\x8f|\xc4&gt;\x89\x9d\xdf\x98OI\xc1\x87\xc2\xdd\xf3\xf6\x16\xae2`my'
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div></div>
 	</section>
 
 </article>

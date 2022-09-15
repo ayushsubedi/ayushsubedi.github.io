@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | The Beginner&#39;s Trap in analytics</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.102.3" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -182,20 +182,20 @@ onload='renderMathInElement(document.body);'></script>
 <p><img src="https://storage.googleapis.com/kaggle-datasets-images/1766439/2883660/34d0db3584c1cff0b7695a9bc1fd9f0f/dataset-cover.png?t=2021-12-03-20-35-30" alt=""></p>
 <p>The source of the image above is the Kaggle repository hosting the dataset.</p>
 <h2 id="imports">Imports</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-<span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
-sns<span style="color:#f92672">.</span>set(rc<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;figure.figsize&#39;</span>:(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">6</span>)})
-<span style="color:#f92672">from</span> matplotlib.ticker <span style="color:#f92672">import</span> MaxNLocator
-<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-<span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
-<span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeRegressor
-<span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_val_score
-</code></pre></div><p>The dataset is in the file players_data.csv</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;players_data.csv&#39;</span>)
-</code></pre></div><p>Let us take a look at the columns. We have a few ways of doing this but I always found using <code>list</code> easy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(df)
-</code></pre></div><pre><code>['Name',
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set(rc<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;figure.figsize&#39;</span>:(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">6</span>)})
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> matplotlib.ticker <span style="color:#f92672">import</span> MaxNLocator
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeRegressor
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> cross_val_score
+</span></span></code></pre></div><p>The dataset is in the file players_data.csv</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;players_data.csv&#39;</span>)
+</span></span></code></pre></div><p>Let us take a look at the columns. We have a few ways of doing this but I always found using <code>list</code> easy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>list(df)
+</span></span></code></pre></div><pre><code>['Name',
  'Position',
  'Age',
  'Markey Value In Millions(£)',
@@ -212,12 +212,12 @@ sns<span style="color:#f92672">.</span>set(rc<span style="color:#f92672">=</span
  'Number Of Substitute Out']
 </code></pre>
 <p>Since we know the dataset is a ranking of 500 highest paid footballers, the expected rows should be 500. And the number of columns is 15</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>shape
-</code></pre></div><pre><code>(500, 15)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>shape
+</span></span></code></pre></div><pre><code>(500, 15)
 </code></pre>
 <p>Let&rsquo;s look at the first few rows.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -347,8 +347,8 @@ sns<span style="color:#f92672">.</span>set(rc<span style="color:#f92672">=</span
 </table>
 </div>
 <p>Let&rsquo;s look at the last few rows.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>tail()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>tail()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -479,8 +479,8 @@ sns<span style="color:#f92672">.</span>set(rc<span style="color:#f92672">=</span
 </div>
 <h1 id="2-exploratory-data-analysis">2. Exploratory Data Analysis</h1>
 <p>Let&rsquo;s use Pandas built in function to generate descriptive statistics</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>describe()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>describe()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -628,8 +628,8 @@ sns<span style="color:#f92672">.</span>set(rc<span style="color:#f92672">=</span
 </table>
 </div>
 <p>Let us look into the data types for each of the columns</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>info()
-</code></pre></div><pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>info()
+</span></span></code></pre></div><pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 500 entries, 0 to 499
 Data columns (total 15 columns):
  #   Column                       Non-Null Count  Dtype  
@@ -653,8 +653,8 @@ dtypes: float64(1), int64(10), object(4)
 memory usage: 58.7+ KB
 </code></pre>
 <p>Count of missing values</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>Name                           0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>Name                           0
 Position                       0
 Age                            0
 Markey Value In Millions(£)    0
@@ -671,12 +671,12 @@ Number Of Substitute In        0
 Number Of Substitute Out       0
 dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>0
 </code></pre>
 <p>We do not have any values missing from the dataset.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Club&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-</code></pre></div><pre><code>Club
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Club&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><pre><code>Club
 Manchester United      19
 Manchester City        18
 Chelsea FC             16
@@ -689,16 +689,16 @@ Liverpool FC           15
 Atlético de Madrid     15
 dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Club&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Club<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Club&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Clubs based on player representation (count)&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_29_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">club_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Club&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-club_grouped
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Club&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Club<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Club&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Clubs based on player representation (count)&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_29_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>club_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Club&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>club_grouped
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -767,14 +767,14 @@ club_grouped
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>club_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>club_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Club&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Clubs based on total market value&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_31_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Country&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-</code></pre></div><pre><code>Country
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>club_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>club_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Club&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Clubs based on total market value&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_31_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Country&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><pre><code>Country
 England        67
 France         58
 Spain          52
@@ -787,16 +787,16 @@ Netherlands    17
 Belgium        14
 dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Country&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Country<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Country&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Country based on player representation (count)&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_33_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">country_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Country&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-country_grouped
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Country&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Country<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Country&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Country based on player representation (count)&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_33_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>country_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Country&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>country_grouped
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -865,14 +865,14 @@ country_grouped
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>country_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>country_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Country&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Country based on total market value&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_35_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Position&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</code></pre></div><pre><code>Position
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>country_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>country_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Country&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Country based on total market value&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_35_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Position&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><pre><code>Position
 Centre-Back           87
 Central Midfield      74
 Centre-Forward        70
@@ -888,16 +888,16 @@ Second Striker         8
 Right Midfield         5
 dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Position<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on player representation (count)&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_37_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">position_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Position&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-position_grouped
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Position<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on player representation (count)&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_37_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>position_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Position&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>position_grouped
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -966,27 +966,27 @@ position_grouped
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>position_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>position_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on total market value&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_39_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>position_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>position_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on total market value&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_39_0.png" alt="png"></p>
 <h1 id="3-feature-engineering">3. Feature Engineering</h1>
 <p>Since we only have 500 rows of data, 10 different positions, let us aggregate some of these positions together.</p>
 <p>I created a simple position mapping and transformed it so that it was possible to use <code>map</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">position_mapping <span style="color:#f92672">=</span> {
-<span style="color:#e6db74">&#34;forward&#34;</span> : [<span style="color:#e6db74">&#39;Centre-Forward&#39;</span>, <span style="color:#e6db74">&#39;Second Striker&#39;</span>], 
-<span style="color:#e6db74">&#34;midfield&#34;</span> : [<span style="color:#e6db74">&#39;Central Midfield&#39;</span>, <span style="color:#e6db74">&#39;Attacking Midfield&#39;</span>, <span style="color:#e6db74">&#39;Defensive Midfield&#39;</span>, <span style="color:#e6db74">&#39;Left Midfield&#39;</span>, <span style="color:#e6db74">&#39;Right Midfield&#39;</span>, <span style="color:#e6db74">&#39;Right Winger&#39;</span>, <span style="color:#e6db74">&#39;Left Winger&#39;</span>],
-<span style="color:#e6db74">&#34;back&#34;</span> : [<span style="color:#e6db74">&#39;Centre-Back&#39;</span>, <span style="color:#e6db74">&#39;Right-Back&#39;</span>, <span style="color:#e6db74">&#39;Left-Back&#39;</span>]
-}
-</code></pre></div><p>The only position we have not mapped here is <code>Goalkeeper</code>, which we will remove later on.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mapping_dict <span style="color:#f92672">=</span> {}
-<span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> position_mapping:
-    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> position_mapping[key]:
-        mapping_dict[item] <span style="color:#f92672">=</span> key
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mapping_dict
-</code></pre></div><pre><code>{'Centre-Forward': 'forward',
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>position_mapping <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;forward&#34;</span> : [<span style="color:#e6db74">&#39;Centre-Forward&#39;</span>, <span style="color:#e6db74">&#39;Second Striker&#39;</span>], 
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;midfield&#34;</span> : [<span style="color:#e6db74">&#39;Central Midfield&#39;</span>, <span style="color:#e6db74">&#39;Attacking Midfield&#39;</span>, <span style="color:#e6db74">&#39;Defensive Midfield&#39;</span>, <span style="color:#e6db74">&#39;Left Midfield&#39;</span>, <span style="color:#e6db74">&#39;Right Midfield&#39;</span>, <span style="color:#e6db74">&#39;Right Winger&#39;</span>, <span style="color:#e6db74">&#39;Left Winger&#39;</span>],
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;back&#34;</span> : [<span style="color:#e6db74">&#39;Centre-Back&#39;</span>, <span style="color:#e6db74">&#39;Right-Back&#39;</span>, <span style="color:#e6db74">&#39;Left-Back&#39;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The only position we have not mapped here is <code>Goalkeeper</code>, which we will remove later on.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mapping_dict <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> position_mapping:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> position_mapping[key]:
+</span></span><span style="display:flex;"><span>        mapping_dict[item] <span style="color:#f92672">=</span> key
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mapping_dict
+</span></span></code></pre></div><pre><code>{'Centre-Forward': 'forward',
  'Second Striker': 'forward',
  'Central Midfield': 'midfield',
  'Attacking Midfield': 'midfield',
@@ -1000,9 +1000,9 @@ plt<span style="color:#f92672">.</span>show()
  'Left-Back': 'back'}
 </code></pre>
 <p>I could have just typed in the mapping_dict directly but this felt more natural.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74">&#39;Position_Agg&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>Position<span style="color:#f92672">.</span>map(mapping_dict) 
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Position_Agg&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>Position<span style="color:#f92672">.</span>map(mapping_dict) 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1253,25 +1253,25 @@ plt<span style="color:#f92672">.</span>show()
 <p>500 rows × 16 columns</p>
 </div>
 <p>Now we can remove goalkeepers (which are NaNs because of missing mapping)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>dropna(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><p>Let&rsquo;s create similar charts for the new column as well</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Position_Agg&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</code></pre></div><pre><code>Position_Agg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>dropna(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Let&rsquo;s create similar charts for the new column as well</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;Position_Agg&#39;</span>)<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><pre><code>Position_Agg
 midfield    263
 back        140
 forward      78
 dtype: int64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position_Agg&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Position_Agg<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on player representation&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_54_0.png" alt="png"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">position_agg_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Position_Agg&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-position_agg_grouped
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>countplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position_Agg&#39;</span>, data<span style="color:#f92672">=</span>df, order<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>Position_Agg<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>iloc[:<span style="color:#ae81ff">10</span>]<span style="color:#f92672">.</span>index) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>yaxis<span style="color:#f92672">.</span>set_major_locator(MaxNLocator(integer<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Count of players&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on player representation&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_54_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>position_agg_grouped <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Position_Agg&#39;</span>])[[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>position_agg_grouped
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1312,18 +1312,18 @@ position_agg_grouped
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>position_agg_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>position_agg_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
-ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
-ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on total market value&#34;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/img/output_56_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>barplot(x<span style="color:#f92672">=</span>position_agg_grouped<span style="color:#f92672">.</span>index, y<span style="color:#f92672">=</span>position_agg_grouped[<span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]) 
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Position&#39;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Top 10 Position based on total market value&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img src="/img/output_56_0.png" alt="png"></p>
 <h1 id="4-linear-regression">4. Linear Regression</h1>
 <p>First of all, let us only focus on the midfield players. Midfield is the largest group of players we have, and it might make more sense to use regression the same group of players.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_mid <span style="color:#f92672">=</span> df[df<span style="color:#f92672">.</span>Position_Agg<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;midfield&#39;</span>]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_mid<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(df_mid)
-</code></pre></div><pre><code>['Name',
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_mid <span style="color:#f92672">=</span> df[df<span style="color:#f92672">.</span>Position_Agg<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;midfield&#39;</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_mid<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>list(df_mid)
+</span></span></code></pre></div><pre><code>['Name',
  'Position',
  'Age',
  'Markey Value In Millions(£)',
@@ -1340,10 +1340,10 @@ plt<span style="color:#f92672">.</span>show()
  'Number Of Substitute Out',
  'Position_Agg']
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_mid <span style="color:#f92672">=</span> df_mid[[<span style="color:#e6db74">&#39;Age&#39;</span>, <span style="color:#e6db74">&#39;Goals&#39;</span>, <span style="color:#e6db74">&#39;Assists&#39;</span>, <span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_mid <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">/</span>x<span style="color:#f92672">.</span>max(), axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_mid
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_mid <span style="color:#f92672">=</span> df_mid[[<span style="color:#e6db74">&#39;Age&#39;</span>, <span style="color:#e6db74">&#39;Goals&#39;</span>, <span style="color:#e6db74">&#39;Assists&#39;</span>, <span style="color:#e6db74">&#39;Markey Value In Millions(£)&#39;</span>]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_mid <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">/</span>x<span style="color:#f92672">.</span>max(), axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_mid
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1449,14 +1449,14 @@ plt<span style="color:#f92672">.</span>show()
 </table>
 <p>263 rows × 4 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-y <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span>iloc[:, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">linear_regressor <span style="color:#f92672">=</span> LinearRegression()<span style="color:#f92672">.</span>fit(X, y)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">linear_regressor<span style="color:#f92672">.</span>score(X, y)
-</code></pre></div><pre><code>0.06775382996413992
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>X <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span>iloc[:, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>linear_regressor <span style="color:#f92672">=</span> LinearRegression()<span style="color:#f92672">.</span>fit(X, y)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>linear_regressor<span style="color:#f92672">.</span>score(X, y)
+</span></span></code></pre></div><pre><code>0.06775382996413992
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">linear_regressor<span style="color:#f92672">.</span>predict(X)
-</code></pre></div><pre><code>array([0.37728587, 0.61138884, 0.3870485 , 0.40721923, 0.28447775,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>linear_regressor<span style="color:#f92672">.</span>predict(X)
+</span></span></code></pre></div><pre><code>array([0.37728587, 0.61138884, 0.3870485 , 0.40721923, 0.28447775,
        0.326131  , 0.4879743 , 0.40387802, 0.36451519, 0.34205403,
        0.4380145 , 0.42209148, 0.26836585, 0.40466779, 0.3113309 ,
        0.39576034, 0.35685413, 0.39922502, 0.36962481, 0.31978173,
@@ -1511,12 +1511,12 @@ y <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span
        0.33484285, 0.36556597, 0.31670153])
 </code></pre>
 <h1 id="5-decision-tree-regressor">5. Decision Tree Regressor</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor <span style="color:#f92672">=</span> DecisionTreeRegressor(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor<span style="color:#f92672">.</span>fit(X, y)
-</code></pre></div><pre><code>DecisionTreeRegressor(random_state=42)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor <span style="color:#f92672">=</span> DecisionTreeRegressor(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor<span style="color:#f92672">.</span>fit(X, y)
+</span></span></code></pre></div><pre><code>DecisionTreeRegressor(random_state=42)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor<span style="color:#f92672">.</span>predict(X)
-</code></pre></div><pre><code>array([1.        , 1.        , 1.        , 0.625     , 0.4075    ,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor<span style="color:#f92672">.</span>predict(X)
+</span></span></code></pre></div><pre><code>array([1.        , 1.        , 1.        , 0.625     , 0.4075    ,
        0.9       , 0.9       , 0.9       , 0.66666667, 0.85      ,
        0.85      , 0.85      , 0.525     , 0.8       , 0.326     ,
        0.8       , 0.475     , 0.7       , 0.46      , 0.7       ,
@@ -1570,21 +1570,21 @@ y <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span
        0.18      , 0.245     , 0.256     , 0.28      , 0.326     ,
        0.19      , 0.25      , 0.23      ])
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor<span style="color:#f92672">.</span>score(X, y)
-</code></pre></div><pre><code>0.7410570792901311
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor<span style="color:#f92672">.</span>score(X, y)
+</span></span></code></pre></div><pre><code>0.7410570792901311
 </code></pre>
 <h1 id="6-validation">6. Validation</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor <span style="color:#f92672">=</span> DecisionTreeRegressor(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor<span style="color:#f92672">.</span>fit(X_train, y_train)
-</code></pre></div><pre><code>DecisionTreeRegressor(random_state=42)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor <span style="color:#f92672">=</span> DecisionTreeRegressor(random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span></code></pre></div><pre><code>DecisionTreeRegressor(random_state=42)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor<span style="color:#f92672">.</span>score(X_train, y_train)
-</code></pre></div><pre><code>0.7325965837309238
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor<span style="color:#f92672">.</span>score(X_train, y_train)
+</span></span></code></pre></div><pre><code>0.7325965837309238
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">decision_tree_regressor<span style="color:#f92672">.</span>score(X_test, y_test)
-</code></pre></div><pre><code>-1.0994712392955237
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>decision_tree_regressor<span style="color:#f92672">.</span>score(X_test, y_test)
+</span></span></code></pre></div><pre><code>-1.0994712392955237
 </code></pre>
 <h1 id="7-conclusion">7. Conclusion</h1>
 <h3 id="the-trap">The Trap</h3>
@@ -1731,7 +1731,7 @@ y <span style="color:#f92672">=</span> df_mid<span style="color:#f92672">.</span
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		3159 words in this page.
+		2952 words in this page.
 	</div>
 </div>
 

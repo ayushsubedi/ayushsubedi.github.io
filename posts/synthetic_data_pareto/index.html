@@ -7,7 +7,7 @@
 	
 	<title>Ayush Subedi  | Synthetic data based on pareto principle</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
-	<meta name="generator" content="Hugo 0.90.1" />
+	<meta name="generator" content="Hugo 0.102.3" />
 	
 	
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -157,40 +157,40 @@ onload='renderMathInElement(document.body);'></script>
 <p><img src="https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg" alt="Pareto"></p>
 <h3 id="creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price">Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.</h3>
 <h2 id="imports">Imports</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np<span style="color:#f92672">,</span> numpy.random
-<span style="color:#f92672">import</span> random
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</code></pre></div><h1 id="brute-force-solution">Brute Force Solution</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np<span style="color:#f92672">,</span> numpy.random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><h1 id="brute-force-solution">Brute Force Solution</h1>
 <p>Brute Force Assumption: All ticket size the same, Customers only purchase once.</p>
 <h3 id="create-a-naive-list-for-users">Create a naive list for users</h3>
 <p>This will be modified to look real soon. In real world case, this can be thought of user/client table with incremental id.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># variables</span>
-final_dataframe_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#75715e"># in this case, these are the 1000 customers who have bought something.</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Generate users</span>
-users <span style="color:#f92672">=</span> [x <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">10000</span>)]
-users[:<span style="color:#ae81ff">10</span>]
-</code></pre></div><pre><code>[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># variables</span>
+</span></span><span style="display:flex;"><span>final_dataframe_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#75715e"># in this case, these are the 1000 customers who have bought something.</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Generate users</span>
+</span></span><span style="display:flex;"><span>users <span style="color:#f92672">=</span> [x <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">10000</span>)]
+</span></span><span style="display:flex;"><span>users[:<span style="color:#ae81ff">10</span>]
+</span></span></code></pre></div><pre><code>[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># shuffle the original list</span>
-random<span style="color:#f92672">.</span>shuffle(users)
-users[:<span style="color:#ae81ff">10</span>]
-</code></pre></div><pre><code>[8815, 2924, 6563, 3568, 3604, 6821, 1466, 9813, 3153, 6637]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># shuffle the original list</span>
+</span></span><span style="display:flex;"><span>random<span style="color:#f92672">.</span>shuffle(users)
+</span></span><span style="display:flex;"><span>users[:<span style="color:#ae81ff">10</span>]
+</span></span></code></pre></div><pre><code>[8815, 2924, 6563, 3568, 3604, 6821, 1466, 9813, 3153, 6637]
 </code></pre>
 <h4 id="sampling-random-1000-users-who-have-transacted-this-is-because-of-the-assumption-that-not-every-user-will-have-transacted">Sampling random 1000 users who have transacted. This is because of the assumption that not every user will have transacted.</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tran_users <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(users, final_dataframe_size)
-print (len(tran_users))
-print (tran_users[:<span style="color:#ae81ff">10</span>])
-</code></pre></div><pre><code>1000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tran_users <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(users, final_dataframe_size)
+</span></span><span style="display:flex;"><span>print (len(tran_users))
+</span></span><span style="display:flex;"><span>print (tran_users[:<span style="color:#ae81ff">10</span>])
+</span></span></code></pre></div><pre><code>1000
 [6113, 5352, 4711, 2600, 5643, 3009, 7765, 7301, 1399, 2336]
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pareto_tran_users <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(tran_users, int(<span style="color:#ae81ff">.2</span> <span style="color:#f92672">*</span> final_dataframe_size))
-len(pareto_tran_users)
-</code></pre></div><pre><code>200
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pareto_tran_users <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(tran_users, int(<span style="color:#ae81ff">.2</span> <span style="color:#f92672">*</span> final_dataframe_size))
+</span></span><span style="display:flex;"><span>len(pareto_tran_users)
+</span></span></code></pre></div><pre><code>200
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;user&#39;</span>: tran_users})
-df<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;user&#39;</span>: tran_users})
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -238,34 +238,34 @@ df<span style="color:#f92672">.</span>head()
 <p>If the sum of all transactions is 100000,</p>
 <p>pareto users = 0.8*100000 = 80000 to be divided into 200 users, each user gets = 400</p>
 <p>non pareto users = .2*100000 = 20000 to be divided into 800 users, each user gets = 25</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">assign_amount</span>(val):
-    <span style="color:#66d9ef">if</span> val <span style="color:#f92672">in</span> pareto_tran_users:
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">400</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">25</span>
-     
-df[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>apply(assign_amount)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># validate pareto</span>
-df<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;transaction&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(int(<span style="color:#ae81ff">.2</span> <span style="color:#f92672">*</span> final_dataframe_size))<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>user           0.20033
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">assign_amount</span>(val):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> val <span style="color:#f92672">in</span> pareto_tran_users:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">25</span>
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>apply(assign_amount)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># validate pareto</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;transaction&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(int(<span style="color:#ae81ff">.2</span> <span style="color:#f92672">*</span> final_dataframe_size))<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>df<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>user           0.20033
 transaction    0.80000
 dtype: float64
 </code></pre>
 <p>Here we see 20 percen generating 80 percent of the revenue.</p>
 <h2 id="improvement-1">Improvement 1</h2>
 <h3 id="make-the-sales-figure--more-dynamic-instead-of-25-and-400">Make the sales figure  more dynamic (instead of 25 and 400)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_to_x</span>(n, x):
-    values <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, x] <span style="color:#f92672">+</span> list(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(low<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>,high<span style="color:#f92672">=</span>x,size<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
-    values<span style="color:#f92672">.</span>sort()
-    <span style="color:#66d9ef">return</span> [values[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> values[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n)]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2 <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>copy()
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2_p <span style="color:#f92672">=</span> df2[df2<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>isin(pareto_tran_users)]
-df2_p_n <span style="color:#f92672">=</span> df2[<span style="color:#f92672">~</span>df2<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>isin(pareto_tran_users)]
-<span style="color:#75715e"># .apply(sum_to_x(20000, 80000))</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2_p[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> sum_to_x(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">80000</span>)
-df2_p_n[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> sum_to_x(<span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">20000</span>)
-df2 <span style="color:#f92672">=</span> df2_p<span style="color:#f92672">.</span>append(df2_p_n)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_to_x</span>(n, x):
+</span></span><span style="display:flex;"><span>    values <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, x] <span style="color:#f92672">+</span> list(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(low<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>,high<span style="color:#f92672">=</span>x,size<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>    values<span style="color:#f92672">.</span>sort()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [values[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> values[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n)]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df2 <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>copy()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df2_p <span style="color:#f92672">=</span> df2[df2<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>isin(pareto_tran_users)]
+</span></span><span style="display:flex;"><span>df2_p_n <span style="color:#f92672">=</span> df2[<span style="color:#f92672">~</span>df2<span style="color:#f92672">.</span>user<span style="color:#f92672">.</span>isin(pareto_tran_users)]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .apply(sum_to_x(20000, 80000))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df2_p[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> sum_to_x(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">80000</span>)
+</span></span><span style="display:flex;"><span>df2_p_n[<span style="color:#e6db74">&#39;transaction&#39;</span>] <span style="color:#f92672">=</span> sum_to_x(<span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">20000</span>)
+</span></span><span style="display:flex;"><span>df2 <span style="color:#f92672">=</span> df2_p<span style="color:#f92672">.</span>append(df2_p_n)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df2
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -347,22 +347,22 @@ df2 <span style="color:#f92672">=</span> df2_p<span style="color:#f92672">.</spa
 </table>
 <p>1000 rows × 2 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df2<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>user           5553121.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df2<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>user           5553121.0
 transaction     100000.0
 dtype: float64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># validate pareto</span>
-df2<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;transaction&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> x)
-</code></pre></div><pre><code>user           1136745.000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># validate pareto</span>
+</span></span><span style="display:flex;"><span>df2<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;transaction&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.3f</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> x)
+</span></span></code></pre></div><pre><code>user           1136745.000
 transaction      82287.864
 dtype: object
 </code></pre>
 <h2 id="upload-some-data">Upload some data</h2>
 <h4 id="to-make-the-data-more-realistic-we-can-add-more-features-in-this-case-mockaroo-was-used-to-create-the-features">To make the data more realistic, we can add more features. In this case, mockaroo was used to create the features.</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_users <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;synthetic_users.csv&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_users<span style="color:#f92672">.</span>head()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_users <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;synthetic_users.csv&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_users<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -432,11 +432,11 @@ dtype: object
 </table>
 </div>
 <h3 id="the-client-table-seems-complete-let-us-create-an-item-table-which-follows-normal-distribution">The client table seems complete. Let us create an item table which follows normal distribution.</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;synthetic_items_catalog.csv&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items<span style="color:#f92672">.</span>drop_duplicates(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;product&#39;</span>], keep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;first&#39;</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">=</span> df_items[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1000</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;synthetic_items_catalog.csv&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items<span style="color:#f92672">.</span>drop_duplicates(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;product&#39;</span>], keep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;first&#39;</span>, inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">=</span> df_items[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1000</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -518,12 +518,12 @@ dtype: object
 </table>
 <p>836 rows × 2 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prices <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">836</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> prices
-df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>where(df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">2.0</span>, df_items[<span style="color:#e6db74">&#39;prices&#39;</span>])
-df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> round(df_items[<span style="color:#e6db74">&#39;prices&#39;</span>])
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items<span style="color:#f92672">.</span>describe()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>prices <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">836</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> prices
+</span></span><span style="display:flex;"><span>df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>where(df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> , <span style="color:#ae81ff">2.0</span>, df_items[<span style="color:#e6db74">&#39;prices&#39;</span>])
+</span></span><span style="display:flex;"><span>df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color:#f92672">=</span> round(df_items[<span style="color:#e6db74">&#39;prices&#39;</span>])
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items<span style="color:#f92672">.</span>describe()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -590,25 +590,25 @@ df_items[<span style="color:#e6db74">&#39;prices&#39;</span>] <span style="color
 </table>
 </div>
 <p>Now we have users and product table. The product table consists of items that are uniformly distributed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
-</code></pre></div><pre><code>array([ 0.7365823 ,  0.18626006, -0.10850225, -0.8307533 ,  0.18490917,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><pre><code>array([ 0.7365823 ,  0.18626006, -0.10850225, -0.8307533 ,  0.18490917,
         0.51846682, -1.20012347,  0.31953487, -0.12546108,  0.75146225])
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## Could not figure out how to generate normal distribution frame, </span>
-<span style="color:#75715e">## so opting out for uniform distribution</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># weights_users = np.random.normal(1000, 1000, len(df_users.id))</span>
-weights_items <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>, len(df_items<span style="color:#f92672">.</span>id))
-
-tran_user <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choices(random<span style="color:#f92672">.</span>sample(list(df_users<span style="color:#f92672">.</span>id), <span style="color:#ae81ff">268</span>), k<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
-tran_items <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choices(list(df_items<span style="color:#f92672">.</span>id), weights <span style="color:#f92672">=</span> weights_items, k<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame<span style="color:#f92672">.</span>from_dict({<span style="color:#e6db74">&#39;user_id&#39;</span>: tran_user, <span style="color:#e6db74">&#39;item_id&#39;</span>: tran_items})\
-<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;item_id&#39;</span>)\
-<span style="color:#f92672">.</span>join(df_items<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>))
-
-
-df_ <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;user_id&#39;</span>)[[<span style="color:#e6db74">&#39;prices&#39;</span>]]<span style="color:#f92672">.</span>sum()
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_<span style="color:#f92672">.</span>describe()
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## Could not figure out how to generate normal distribution frame, </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## so opting out for uniform distribution</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># weights_users = np.random.normal(1000, 1000, len(df_users.id))</span>
+</span></span><span style="display:flex;"><span>weights_items <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">1000</span>, len(df_items<span style="color:#f92672">.</span>id))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tran_user <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choices(random<span style="color:#f92672">.</span>sample(list(df_users<span style="color:#f92672">.</span>id), <span style="color:#ae81ff">268</span>), k<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+</span></span><span style="display:flex;"><span>tran_items <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choices(list(df_items<span style="color:#f92672">.</span>id), weights <span style="color:#f92672">=</span> weights_items, k<span style="color:#f92672">=</span><span style="color:#ae81ff">10000</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame<span style="color:#f92672">.</span>from_dict({<span style="color:#e6db74">&#39;user_id&#39;</span>: tran_user, <span style="color:#e6db74">&#39;item_id&#39;</span>: tran_items})\
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;item_id&#39;</span>)\
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>join(df_items<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_ <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;user_id&#39;</span>)[[<span style="color:#e6db74">&#39;prices&#39;</span>]]<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_<span style="color:#f92672">.</span>describe()
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -665,21 +665,21 @@ df_ <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>g
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># validate pareto</span>
-<span style="color:#75715e"># regardless of transaction table, hamro users 200 jana</span>
-df_<span style="color:#f92672">.</span>reset_index(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-(df_<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;prices&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum())<span style="color:#f92672">/</span>df_<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>user_id    0.732714
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># validate pareto</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># regardless of transaction table, hamro users 200 jana</span>
+</span></span><span style="display:flex;"><span>df_<span style="color:#f92672">.</span>reset_index(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>(df_<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;prices&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum())<span style="color:#f92672">/</span>df_<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>user_id    0.732714
 prices     0.803493
 dtype: float64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>reset_index()\
-<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;user_id&#39;</span>)\
-<span style="color:#f92672">.</span>join(df_users<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>), how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outer&#39;</span>)\
-<span style="color:#f92672">.</span>reset_index()\
-<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;index&#39;</span>:<span style="color:#e6db74">&#39;product_id&#39;</span>, <span style="color:#e6db74">&#39;level_0&#39;</span>: <span style="color:#e6db74">&#39;user_id&#39;</span>})
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>merged <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>reset_index()\
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;user_id&#39;</span>)\
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>join(df_users<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;id&#39;</span>), how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outer&#39;</span>)\
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>reset_index()\
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;index&#39;</span>:<span style="color:#e6db74">&#39;product_id&#39;</span>, <span style="color:#e6db74">&#39;level_0&#39;</span>: <span style="color:#e6db74">&#39;user_id&#39;</span>})
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>merged
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -833,15 +833,15 @@ dtype: float64
 </table>
 <p>10732 rows × 8 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;user_id&#39;</span>)[[<span style="color:#e6db74">&#39;prices&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;prices&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>merged[<span style="color:#e6db74">&#39;prices&#39;</span>]<span style="color:#f92672">.</span>sum()
-</code></pre></div><pre><code>prices    0.803493
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>merged<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;user_id&#39;</span>)[[<span style="color:#e6db74">&#39;prices&#39;</span>]]<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;prices&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">200</span>)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">/</span>merged[<span style="color:#e6db74">&#39;prices&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><pre><code>prices    0.803493
 dtype: float64
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;merged.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-df_users<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;users.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;items.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">merged
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>merged<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;merged.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>df_users<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;users.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;items.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>merged
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -995,8 +995,8 @@ df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&
 </table>
 <p>10732 rows × 8 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_users
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_users
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1114,8 +1114,8 @@ df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&
 </table>
 <p>1000 rows × 5 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_items
-</code></pre></div><div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df_items
+</span></span></code></pre></div><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1209,8 +1209,7 @@ df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&
 </table>
 <p>836 rows × 3 columns</p>
 </div>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div></div>
 	</section>
 
 </article>
@@ -1345,7 +1344,7 @@ df_items<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1593 words in this page.
+		1363 words in this page.
 	</div>
 </div>
 
