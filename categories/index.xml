@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>analytics</title>
       <link>https://ayushsubedi.github.io/categories/analytics/</link>
-      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/analytics/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>capstone project</title>
+      <link>https://ayushsubedi.github.io/categories/capstone-project/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/capstone-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>data viz</title>
       <link>https://ayushsubedi.github.io/categories/data-viz/</link>
-      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/data-viz/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>georgia tech</title>
       <link>https://ayushsubedi.github.io/categories/georgia-tech/</link>
-      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/georgia-tech/</guid>
       <description></description>
@@ -143,15 +152,6 @@
       <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/three60/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>capstone project</title>
-      <link>https://ayushsubedi.github.io/categories/capstone-project/</link>
-      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/capstone-project/</guid>
       <description></description>
     </item>
     

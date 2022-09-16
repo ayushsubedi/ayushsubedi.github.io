@@ -6,52 +6,18 @@
     <description>Recent content in learning on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jul 2020 09:16:00 +0545</lastBuildDate>
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>MuSigma and the art of problem solving (WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/musigma/</link>
-      <pubDate>Fri, 10 Jul 2020 09:16:00 +0545</pubDate>
+      <title>Detecting the edibility of Mushrooms in the wild</title>
+      <link>https://ayushsubedi.github.io/posts/mushrooms/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/musigma/</guid>
-      <description>&lt;h1 id=&#34;musigma-the-art-of-problem-solving&#34;&gt;MuSigma the art of problem solving&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://cdn2.hubspot.net/hubfs/1736059/offers/co-ebook-the-art-of-problem-solving-aops-july-2016.pdf&#34;&gt;Link to the original paper&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;MuSigma defines the paper as &lt;strong&gt;&amp;ldquo;A guide for your Decision Sciences journey.&amp;quot;&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;instill approaches that help decision making not just to match today’s pace of change, but to help capitalize also&lt;/li&gt;
-&lt;li&gt;where do you concentrate your problem solving efforts in light of change&lt;/li&gt;
-&lt;li&gt;businesses must learn to capitalize on change&lt;/li&gt;
-&lt;li&gt;Big data (4 V) volume, velocity, variety and volatility of data&lt;/li&gt;
-&lt;li&gt;big data is not the issue, its change&lt;/li&gt;
-&lt;li&gt;all industries are young, all business models will continue to evolve rapidly.&lt;/li&gt;
-&lt;li&gt;It took 100 years for modern flights to evolve into an industry with 2.3 billion passengers. It took a college dropout 10 years to build a social network that generates 22 billion minutes of online interaction every single day.&lt;/li&gt;
-&lt;li&gt;The river of reasonable return: Decision supply chains now trump physical supply chains in terms of importance, and data is not the new oil. Where does one focus?&lt;/li&gt;
-&lt;li&gt;The frequency at which the problems arise and the impact of solving the problems&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594092566828_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Most problems occupy the middle of the graph, and that is also where the richest opportunity lie. Why is fraud on the rise in this particular customer segment? Why is my discounting strategy not affecting sales? Why was only one channel effective for our most recent campaign? Why are my West coast stores less profitable?&lt;/li&gt;
-&lt;li&gt;Think of problem density and myriad of interactions these problems have with each other&lt;/li&gt;
-&lt;li&gt;not man+machine but man machine (integrated blend of math and business insights)&lt;/li&gt;
-&lt;li&gt;Learning over knowing&lt;/li&gt;
-&lt;li&gt;extreme experimentation&lt;/li&gt;
-&lt;li&gt;the new ip&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594093404357_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594094231336_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Goldilocks state&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Descriptive analysis: what happened in the business&lt;/li&gt;
-&lt;li&gt;inquisitive analysis: why is something happening in the business&lt;/li&gt;
-&lt;li&gt;predictive analysis: what is likely to happen in the future?&lt;/li&gt;
-&lt;li&gt;prescriptive analysis: so what? now what?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://paper-attachments.dropbox.com/s_C1ACE424D17D85E513498C2FAE72218978EF846236DAA2789E114A5A80F79A86_1594094937782_image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
+      <guid>https://ayushsubedi.github.io/posts/mushrooms/</guid>
+      <description></description>
     </item>
     
   </channel>

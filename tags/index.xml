@@ -6,10 +6,91 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Contingency Table</title>
+      <link>https://ayushsubedi.github.io/tags/contingency-table/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/contingency-table/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>correlation</title>
+      <link>https://ayushsubedi.github.io/tags/correlation/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/correlation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Correspondence Analysis</title>
+      <link>https://ayushsubedi.github.io/tags/correspondence-analysis/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/correspondence-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cramers V</title>
+      <link>https://ayushsubedi.github.io/tags/cramers-v/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/cramers-v/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Decision Tree</title>
+      <link>https://ayushsubedi.github.io/tags/decision-tree/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/decision-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dimensionality reduction</title>
+      <link>https://ayushsubedi.github.io/tags/dimensionality-reduction/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/dimensionality-reduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MCA</title>
+      <link>https://ayushsubedi.github.io/tags/mca/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/mca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>https://ayushsubedi.github.io/tags/pca/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>t-SNE</title>
+      <link>https://ayushsubedi.github.io/tags/t-sne/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/t-sne/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>analytics</title>
