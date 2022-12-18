@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>certification on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/certification/</link>
+    <description>Recent content in certification on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/certification/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01)</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality/</link>
+      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality/</guid>
+      <description>&lt;h1 id=&#34;aws-certified-ml---specialty-exam-mls-c01&#34;&gt;AWS Certified ML - Specialty exam (MLS-C01)&lt;/h1&gt;
+&lt;h2 id=&#34;domain-1-data-engineering&#34;&gt;Domain 1: Data Engineering&lt;/h2&gt;
+&lt;p&gt;This domain requires understanding of creating data repositories for machine learning, identification and implementation of data ingestion solution, and
+identification and implementation of a data transformation solution.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
