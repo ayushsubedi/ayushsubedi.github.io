@@ -2,22 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ayushsubedi.github.io/tags/adaboost/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/categories/analytics/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/capstone-project/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/contingency-table/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/correlation/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/data-viz/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/deep-learning/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/dimensionality-reduction/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/airlines_delay/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/georgia-tech/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/group-project/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/machine-learning/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/pca/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/random-forest/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/random-forest/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/xgboost/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/xgboost/</loc>
+    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/contingency-table/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/correspondence-analysis/</loc>
@@ -26,34 +71,16 @@
     <loc>https://ayushsubedi.github.io/tags/cramers-v/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/categories/data-viz/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/decision-tree/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/mushrooms/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/dimensionality-reduction/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/georgia-tech/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/mca/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/pca/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/t-sne/</loc>
-    <lastmod>2022-04-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/certifications/</loc>
@@ -217,12 +244,6 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/flutter/</loc>
     <lastmod>2020-07-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/ames_housing/</loc>
-    <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/kaggle/</loc>
-    <lastmod>2020-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/data-viz/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>

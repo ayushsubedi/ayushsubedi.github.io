@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AdaBoost</title>
+      <link>https://ayushsubedi.github.io/tags/adaboost/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/adaboost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>correlation</title>
+      <link>https://ayushsubedi.github.io/tags/correlation/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/correlation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://ayushsubedi.github.io/tags/deep-learning/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dimensionality reduction</title>
+      <link>https://ayushsubedi.github.io/tags/dimensionality-reduction/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/dimensionality-reduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>https://ayushsubedi.github.io/tags/pca/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Forest</title>
+      <link>https://ayushsubedi.github.io/tags/random-forest/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/random-forest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XGBoost</title>
+      <link>https://ayushsubedi.github.io/tags/xgboost/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/xgboost/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Contingency Table</title>
@@ -17,15 +80,6 @@
       <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/contingency-table/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>correlation</title>
-      <link>https://ayushsubedi.github.io/tags/correlation/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/correlation/</guid>
       <description></description>
     </item>
     
@@ -57,29 +111,11 @@
     </item>
     
     <item>
-      <title>dimensionality reduction</title>
-      <link>https://ayushsubedi.github.io/tags/dimensionality-reduction/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/dimensionality-reduction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>MCA</title>
       <link>https://ayushsubedi.github.io/tags/mca/</link>
       <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/mca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PCA</title>
-      <link>https://ayushsubedi.github.io/tags/pca/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
       <description></description>
     </item>
     
@@ -377,15 +413,6 @@
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/flutter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kaggle</title>
-      <link>https://ayushsubedi.github.io/tags/kaggle/</link>
-      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/kaggle/</guid>
       <description></description>
     </item>
     

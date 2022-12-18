@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>random-forest on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/random-forest/</link>
+    <description>Recent content in random-forest on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/random-forest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flight delay prediction and exploration in the United States</title>
+      <link>https://ayushsubedi.github.io/posts/airlines_delay/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/airlines_delay/</guid>
+      <description>&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/cse6242_airlines.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,36 +14,72 @@
     <item>
       <title>analytics</title>
       <link>https://ayushsubedi.github.io/categories/analytics/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/analytics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>capstone project</title>
+      <title>capstone-project</title>
       <link>https://ayushsubedi.github.io/categories/capstone-project/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/capstone-project/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>data viz</title>
+      <title>data-viz</title>
       <link>https://ayushsubedi.github.io/categories/data-viz/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/data-viz/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>georgia tech</title>
+      <title>georgia-tech</title>
       <link>https://ayushsubedi.github.io/categories/georgia-tech/</link>
-      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/georgia-tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>group-project</title>
+      <link>https://ayushsubedi.github.io/categories/group-project/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/group-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://ayushsubedi.github.io/categories/machine-learning/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random-forest</title>
+      <link>https://ayushsubedi.github.io/categories/random-forest/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/random-forest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XGBoost</title>
+      <link>https://ayushsubedi.github.io/categories/xgboost/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/xgboost/</guid>
       <description></description>
     </item>
     
