@@ -6,7 +6,7 @@
     <description>Recent content in AWS Certified ML - Specialty exam (MLS-C01) on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,13 +14,194 @@
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01)</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality/</link>
-      <pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality/</guid>
       <description>&lt;h1 id=&#34;aws-certified-ml---specialty-exam-mls-c01&#34;&gt;AWS Certified ML - Specialty exam (MLS-C01)&lt;/h1&gt;
-&lt;h2 id=&#34;domain-1-data-engineering&#34;&gt;Domain 1: Data Engineering&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#data-engineering&#34;&gt;Data Engineering&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#s3&#34;&gt;S3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#efs&#34;&gt;EFS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ebs&#34;&gt;EBS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kinesis&#34;&gt;Kinesis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kinesis-analytics&#34;&gt;Kinesis Analytics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kinesis-firehose&#34;&gt;Kinesis Firehose&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#glue&#34;&gt;Glue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#job-scheduling&#34;&gt;Job Scheduling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#redshift&#34;&gt;Redshift&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rds&#34;&gt;RDS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#batch&#34;&gt;Batch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dms&#34;&gt;DMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#data-pipeline&#34;&gt;Data Pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#elasticache&#34;&gt;ElastiCache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#opensearch&#34;&gt;OpenSearch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#step-functions&#34;&gt;Step Functions&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#modeling&#34;&gt;Modeling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;data-engineering&#34;&gt;Data Engineering&lt;/h1&gt;
 &lt;p&gt;This domain requires understanding of creating data repositories for machine learning, identification and implementation of data ingestion solution, and
 identification and implementation of a data transformation solution.&lt;/p&gt;
+&lt;h2 id=&#34;s3&#34;&gt;S3&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;foundational for machine learning projects since it is a cost effective solution for datasets storage&lt;/li&gt;
+&lt;li&gt;object based storage, bucket name need to be globally unique, however they are unique to regions&lt;/li&gt;
+&lt;li&gt;key is the full path of the file and even though it looks like there is a folder based heirarchy, that is not how it works&lt;/li&gt;
+&lt;li&gt;you can have a very long file name, in the sense that the path (key) can be very long&lt;/li&gt;
+&lt;li&gt;max size is 5 TB&lt;/li&gt;
+&lt;li&gt;object tags can be added, helpful with classificaiton and security lifecycle, these are key value pairs&lt;/li&gt;
+&lt;li&gt;decoupling of compute and storage side&lt;/li&gt;
+&lt;li&gt;perfect use case of data lake, since it can store various formats of data (object storage)&lt;/li&gt;
+&lt;li&gt;it is possible to partition the storage, which is helpful (speedy) when querying via athena. Kinesis partitions the data automatically.&lt;/li&gt;
+&lt;li&gt;11 9&amp;rsquo;s durability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;storage-classes&#34;&gt;Storage classes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;S3, Standard or General Purpose: for frequently accessed data&lt;/li&gt;
+&lt;li&gt;S3, Infrequent Access: lower cost than standard, for data accessed monthly, and requires milliseconds retrival, but there is a cost associated with retrival&lt;/li&gt;
+&lt;li&gt;S3, Infrequent Access, One Zone, good for secondary copies of backup, or data that can be recreated, infrequent access for cost saving&lt;/li&gt;
+&lt;li&gt;S3, Glacier Instant Retrival, price per storage + price per retrival, can access within milliseconds, for low cost storage for long-lived data&lt;/li&gt;
+&lt;li&gt;S3, Glacier Flexible Retrival, expedited: 1-5 mins, standard: 3-5 hrs, bulk: 5-12 hrs (free), for long term low cost storage for backups and archives  with different retrival options&lt;/li&gt;
+&lt;li&gt;S3, Glacier Deep Archive: lowest cost, 180 days of minimum storage, for rarely accessed archive data&lt;/li&gt;
+&lt;li&gt;S3, Intelligent Tiering: move objects between tiers with monthly monitoring and auto-tiering fee&lt;/li&gt;
+&lt;li&gt;It is possible to move objects between these storage classes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://d1.awsstatic.com/reInvent/re21-pdp-tier1/s3/Amazon-S3-Storage-Classes.pdf&#34;&gt;more info&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;lifecycle-rules&#34;&gt;Lifecycle rules&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Transitioning objects between classes is possible&lt;/li&gt;
+&lt;li&gt;Transition Actions can be used to configure objects to transition to another storage class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;performance-chart&#34;&gt;Performance Chart&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 Standard&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 Intelligent-Tiering*&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 Standard-IA&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 One Zone-IA†&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 Glacier Instant Retrieval&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 Glacier Flexible Retrieval&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S3 Glacier Deep Archive&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Designed for durability&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.999999999% (11 9’s)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Designed for availability&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.99%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.90%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.90%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.50%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.90%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.99%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.99%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Availability SLA&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.90%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.90%&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;99.90%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Availability Zones&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≥3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≥3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≥3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≥3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≥3&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;≥3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Minimum capacity charge per object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;128 KB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;128 KB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;128 KB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;40 KB&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;40 KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Minimum storage duration charge&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;30 days&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;30 days&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;90 days&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;90 days&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;180 days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Retrieval charge&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;N/A&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;per GB retrieved&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;per GB retrieved&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;per GB retrieved&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;per GB retrieved&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;per GB retrieved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;First byte latency&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;milliseconds&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;milliseconds&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;milliseconds&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;milliseconds&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;milliseconds&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;minutes or hours&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;hours&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Storage type&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lifecycle transitions&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;encryption&#34;&gt;Encryption&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Can be Server Side encryption managed by AWS&lt;/li&gt;
+&lt;li&gt;Can be Server Side encryption managed by KMS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
+&lt;h1 id=&#34;modelin&#34;&gt;Modelin&lt;/h1&gt;
+&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
 </description>
     </item>
     

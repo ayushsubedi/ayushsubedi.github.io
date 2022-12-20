@@ -149,7 +149,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2022-12-18">2022-12-18</time>
+		datetime="2022-12-19">2022-12-19</time>
 </div>
 
 <hr />
@@ -162,9 +162,190 @@ onload='renderMathInElement(document.body);'></script>
 <article>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="aws-certified-ml---specialty-exam-mls-c01">AWS Certified ML - Specialty exam (MLS-C01)</h1>
-<h2 id="domain-1-data-engineering">Domain 1: Data Engineering</h2>
+<ol>
+<li><a href="#data-engineering">Data Engineering</a>
+<ol>
+<li><a href="#s3">S3</a></li>
+<li><a href="#efs">EFS</a></li>
+<li><a href="#ebs">EBS</a></li>
+<li><a href="#kinesis">Kinesis</a></li>
+<li><a href="#kinesis-analytics">Kinesis Analytics</a></li>
+<li><a href="#kinesis-firehose">Kinesis Firehose</a></li>
+<li><a href="#emr">EMR</a></li>
+<li><a href="#glue">Glue</a></li>
+<li><a href="#job-scheduling">Job Scheduling</a></li>
+<li><a href="#redshift">Redshift</a></li>
+<li><a href="#rds">RDS</a></li>
+<li><a href="#batch">Batch</a></li>
+<li><a href="#dms">DMS</a></li>
+<li><a href="#data-pipeline">Data Pipeline</a></li>
+<li><a href="#elasticache">ElastiCache</a></li>
+<li><a href="#opensearch">OpenSearch</a></li>
+<li><a href="#step-functions">Step Functions</a></li>
+</ol>
+</li>
+<li><a href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
+<li><a href="#modeling">Modeling</a></li>
+<li><a href="#machine-learning-implementation-and-operations">Machine Learning Implementation and Operations</a></li>
+</ol>
+<h1 id="data-engineering">Data Engineering</h1>
 <p>This domain requires understanding of creating data repositories for machine learning, identification and implementation of data ingestion solution, and
 identification and implementation of a data transformation solution.</p>
+<h2 id="s3">S3</h2>
+<ul>
+<li>foundational for machine learning projects since it is a cost effective solution for datasets storage</li>
+<li>object based storage, bucket name need to be globally unique, however they are unique to regions</li>
+<li>key is the full path of the file and even though it looks like there is a folder based heirarchy, that is not how it works</li>
+<li>you can have a very long file name, in the sense that the path (key) can be very long</li>
+<li>max size is 5 TB</li>
+<li>object tags can be added, helpful with classificaiton and security lifecycle, these are key value pairs</li>
+<li>decoupling of compute and storage side</li>
+<li>perfect use case of data lake, since it can store various formats of data (object storage)</li>
+<li>it is possible to partition the storage, which is helpful (speedy) when querying via athena. Kinesis partitions the data automatically.</li>
+<li>11 9&rsquo;s durability</li>
+</ul>
+<h3 id="storage-classes">Storage classes</h3>
+<ul>
+<li>S3, Standard or General Purpose: for frequently accessed data</li>
+<li>S3, Infrequent Access: lower cost than standard, for data accessed monthly, and requires milliseconds retrival, but there is a cost associated with retrival</li>
+<li>S3, Infrequent Access, One Zone, good for secondary copies of backup, or data that can be recreated, infrequent access for cost saving</li>
+<li>S3, Glacier Instant Retrival, price per storage + price per retrival, can access within milliseconds, for low cost storage for long-lived data</li>
+<li>S3, Glacier Flexible Retrival, expedited: 1-5 mins, standard: 3-5 hrs, bulk: 5-12 hrs (free), for long term low cost storage for backups and archives  with different retrival options</li>
+<li>S3, Glacier Deep Archive: lowest cost, 180 days of minimum storage, for rarely accessed archive data</li>
+<li>S3, Intelligent Tiering: move objects between tiers with monthly monitoring and auto-tiering fee</li>
+<li>It is possible to move objects between these storage classes</li>
+</ul>
+<p><a href="https://d1.awsstatic.com/reInvent/re21-pdp-tier1/s3/Amazon-S3-Storage-Classes.pdf">more info</a></p>
+<h3 id="lifecycle-rules">Lifecycle rules</h3>
+<ul>
+<li>Transitioning objects between classes is possible</li>
+<li>Transition Actions can be used to configure objects to transition to another storage class</li>
+</ul>
+<h3 id="performance-chart">Performance Chart</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">S3 Standard</th>
+<th style="text-align:center">S3 Intelligent-Tiering*</th>
+<th style="text-align:center">S3 Standard-IA</th>
+<th style="text-align:center">S3 One Zone-IA†</th>
+<th style="text-align:center">S3 Glacier Instant Retrieval</th>
+<th style="text-align:center">S3 Glacier Flexible Retrieval</th>
+<th style="text-align:center">S3 Glacier Deep Archive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Designed for durability</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+</tr>
+<tr>
+<td>Designed for availability</td>
+<td style="text-align:center">99.99%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.50%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.99%</td>
+<td style="text-align:center">99.99%</td>
+</tr>
+<tr>
+<td>Availability SLA</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.90%</td>
+</tr>
+<tr>
+<td>Availability Zones</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+</tr>
+<tr>
+<td>Minimum capacity charge per object</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">128 KB</td>
+<td style="text-align:center">128 KB</td>
+<td style="text-align:center">128 KB</td>
+<td style="text-align:center">40 KB</td>
+<td style="text-align:center">40 KB</td>
+</tr>
+<tr>
+<td>Minimum storage duration charge</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">30 days</td>
+<td style="text-align:center">30 days</td>
+<td style="text-align:center">90 days</td>
+<td style="text-align:center">90 days</td>
+<td style="text-align:center">180 days</td>
+</tr>
+<tr>
+<td>Retrieval charge</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+</tr>
+<tr>
+<td>First byte latency</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">minutes or hours</td>
+<td style="text-align:center">hours</td>
+</tr>
+<tr>
+<td>Storage type</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+</tr>
+<tr>
+<td>Lifecycle transitions</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="encryption">Encryption</h3>
+<ul>
+<li>Can be Server Side encryption managed by AWS</li>
+<li>Can be Server Side encryption managed by KMS</li>
+</ul>
+<h1 id="exploratory-data-analysis">Exploratory Data Analysis</h1>
+<h1 id="modelin">Modelin</h1>
+<h1 id="machine-learning-implementation-and-operations">Machine Learning Implementation and Operations</h1>
 </div>
 	</section>
 
@@ -306,7 +487,7 @@ identification and implementation of a data transformation solution.</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		38 words in this page.
+		564 words in this page.
 	</div>
 </div>
 
