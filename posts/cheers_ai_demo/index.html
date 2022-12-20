@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | Diabetic Retinopathy and Glaucoma Detection (Cheers AI Demo)</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.102.3" />
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+		
+	<title>Ayush Subedi</title>
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://subedi.ml/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://subedi.ml/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://subedi.ml/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://subedi.ml/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+	
+	
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-177424799-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+	
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">Diabetic Retinopathy and Glaucoma Detection (Cheers AI Demo)</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Demo for Cheers AI, an AI enabled tool for prediction of Diabetic Retinopathy and Glaucoma based on fundus images. This tool is being used by BP Koirala Eye Foundation (Hospital for Children, Eye, ENT and Rehabilitation Services or CHEERS) to detect blindness caused by diabetic retinopathy (which is preventable if detected early).</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/cheers-hospital'>cheers hospital</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/data-viz'>data viz</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/analytics'>analytics</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/python'>python</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/ml'>ml</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/ai'>ai</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/nepal'>nepal</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/flask'>flask</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2022-01-01">2022-01-01</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="cheers-ai-demo-for-diabetic-retinopathy-and-glaucoma-detection">Cheers AI Demo for Diabetic Retinopathy and Glaucoma Detection</h1>
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/TXy0J3wydnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="features">Features</h2>
+<h4 id="efficient-prediction-models">Efficient Prediction Models</h4>
+<ul>
+<li>Efficient models trained on Inception-v3, with weightage on recall.</li>
+<li>Powerful hospital-MIS to create and track patient, and patient&rsquo;s historical predictions.</li>
+<li>Inputs reviewed by opthalmologists and added to training.</li>
+</ul>
+<h3 id="diabetic-retinopathy">Diabetic Retinopathy</h3>
+<p>Diabetic Retinopathy is an eye illness caused by diabetes that may lead to vision impairment and even to blindness if it isn&rsquo;t identified and treated early. Of the estimated 422 million diabetics globally, more than 148 million have DR and 48 million have Vision Threating DR (VTDR).</p>
+<p>However, because of insufficient specialists and eye care health workers globally as well as locally to screen everyone at risk, the situation seems acute especially in developing countries like Nepal. Besides, Nepal has difficult geographical terrain and people living in remorse remote areas with limited or no access to clinics and screening facilities making the condition even worse.</p>
+<p><img src="https://camo.githubusercontent.com/a6b040d6eca19246121fb7a4e3fca782ed625c42af1889778c4edf14151198ef/68747470733a2f2f6761647364656e6579652e636f6d2f77702d636f6e74656e742f75706c6f6164732f64696162657469632d726574696e6f70617468792d766563746f722e6a7067" alt=""></p>
+<h3 id="glaucoma">Glaucoma</h3>
+<p>Glaucoma is a diverse group of disorders representing the second prominent cause of blindness. It has already affected 91 million individuals all over the world. It has multiple risk factors such as older age, elevated intraocular pressure (IOP), and thinner central corneal thickness etc. However, one or more of these risk factors may or may not develop glaucoma making it difficult for accurate prediction of the disease. Additionally, since glaucoma can be asymptomatic, its detection before significant vision loss is critical. Hence, automated methods for predicting glaucoma could have a significant impact.</p>
+<p><img src="https://camo.githubusercontent.com/71e24e233d0fc826e10230944b2a1cdfba81b4387862f899f1f7c400330b02c6/68747470733a2f2f7777772e696e6d6564706861726d612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30352f476c6175636f6d612d636f6d70617265642d746f2d6e6f726d616c2d766973696f6e2e706e67" alt=""></p>
+<h3 id="an-intuitive-app">An intuitive app</h3>
+<p>Easy to use, access managed platform, with the primary focus on providing assistance to our opthalmologists.</p>
+<p><img src="https://cheersai.ml/static/img/demo.png" alt=""></p>
+<h1 id="steps-involved-in-research-model-creation-and-deployment">Steps involved in Research, Model Creation, and Deployment</h1>
+<h1 id="glaucoma-prediction">Glaucoma Prediction</h1>
+<h2 id="what-worked-90-accuracy">What worked? (90% accuracy)</h2>
+<ol>
+<li>densenet sequential with ben on himanchu dataset, using NLLLoss criterion, Adam optimizer</li>
+</ol>
+<h2 id="limitation">Limitation</h2>
+<ol>
+<li>very much dependent on dataset</li>
+<li>disk extraction is good but is very subjective to the dataset</li>
+<li>trained on very small dataset</li>
+</ol>
+<h2 id="preliminary">Preliminary</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> understand the difference between possibility of glaucoma by classification (vs measurements)</li>
+</ul>
+<h2 id="preprocessing">Preprocessing</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> ben transformation</li>
+<li><input checked="" disabled="" type="checkbox"> extract disk from fundus images</li>
+<li><input checked="" disabled="" type="checkbox"> improve extraction algorithms</li>
+<li><input checked="" disabled="" type="checkbox"> perform EDA on disk image to find troubling images (cases where crop does not work)</li>
+<li><input checked="" disabled="" type="checkbox"> convert python function to extract disk to torch transform class (failed)</li>
+<li><input checked="" disabled="" type="checkbox"> transformation to disk during training failed. create a disk dataset before training the model.</li>
+<li><input checked="" disabled="" type="checkbox"> train on new dataset with and without ben transformation</li>
+<li><input checked="" disabled="" type="checkbox"> handle imbalanced class with class weighting</li>
+<li><input checked="" disabled="" type="checkbox"> convert Kaggle dataset to the format that we have templated our notebooks with</li>
+<li><input checked="" disabled="" type="checkbox"> for kaggle dataset get disks using new algorithm</li>
+</ul>
+<h2 id="obseverations-in-regards-to-disk-generation">Obseverations in regards to disk generation</h2>
+<ul>
+<li>extraction of disk does not help (too many vague areas left unfilled)</li>
+<li>however, cropping shows very good promise</li>
+<li>but, cropping requires somewhat similar of fundus images</li>
+</ul>
+<h2 id="datasets">Datasets</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> find datasets <a href="https://deepblue.lib.umich.edu/data/concern/data_sets/3b591905z">https://deepblue.lib.umich.edu/data/concern/data_sets/3b591905z</a>, <a href="https://www.kaggle.com/andrewmvd/ocular-disease-recognition-odir5k">https://www.kaggle.com/andrewmvd/ocular-disease-recognition-odir5k</a></li>
+<li><input checked="" disabled="" type="checkbox"> create a dataset from Magrabia</li>
+<li><input checked="" disabled="" type="checkbox"> create a dataset from Messidor</li>
+<li><input checked="" disabled="" type="checkbox"> create a dataset from Ocular Disease Recognition</li>
+<li><input checked="" disabled="" type="checkbox"> create EDA on non measurement dataset (Ocular Disease Recognition)</li>
+<li><input checked="" disabled="" type="checkbox"> create a dataset from ocular disease recognition to include normal and glaucoma images</li>
+<li><input checked="" disabled="" type="checkbox"> (Kaggle dataset, custom generated, filtered)https://www.kaggle.com/sshikamaru/glaucoma-detection?select=glaucoma.csv</li>
+<li><input checked="" disabled="" type="checkbox"> train on Kaggle dataset (without changing anything)</li>
+</ul>
+<h2 id="training">Training</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> inception v3 with and without ben on ocular, kaggle, and himanchu dataset</li>
+<li><input checked="" disabled="" type="checkbox"> inception v3 with ben on ocular, kaggle, and himanchu dataset (disk extracted, normal, and cropped dataset)</li>
+<li><input checked="" disabled="" type="checkbox"> densenet linear with ben on ocular, kaggle, and himanchu dataset</li>
+<li><input checked="" disabled="" type="checkbox"> densenet linear with ben on ocular, kaggle, and himanchu dataset (disk extracted, normal, and cropped dataset)</li>
+<li><input checked="" disabled="" type="checkbox"> densenet sequential with ben on ocular, kaggle, and himanchu dataset</li>
+<li><input checked="" disabled="" type="checkbox"> densenet sequential with ben on ocular, kaggle, and himanchu dataset (disk extracted, normal, and cropped dataset)</li>
+<li><input checked="" disabled="" type="checkbox"> add datasets from cheers for testing</li>
+<li><input checked="" disabled="" type="checkbox"> add datasets from cheers for training</li>
+</ul>
+<h1 id="diabetic-retinopathy-prediction">Diabetic Retinopathy Prediction</h1>
+<h2 id="what-worked-90-accuracy-1">What worked? (90% accuracy)</h2>
+<ol>
+<li>Large dataset from EyePACS (Kaggle competition used training (30%) and testing data (70%) from Kaggle. After the competition, the labels were published). Flipped the ratios for our use case.</li>
+<li>Remove out of focus images</li>
+<li>Remove too bright, and too dark images.</li>
+<li>Link to clean dataset <a href="https://www.kaggle.com/ayushsubedi/drunstratified">https://www.kaggle.com/ayushsubedi/drunstratified</a></li>
+<li>To handle class imbalanced issue, used weighted random samplers. Undersampling to match no of images in the least class (4) did not work. Pickled weights for future use.</li>
+<li>Ben Graham transformation and augmentations</li>
+<li>Inception v3 fine tuning, with aux logits trained (better results compared to other architecture)</li>
+<li>Perform EDA on inference to observe what images were causing issues</li>
+<li>Removed the images and created another dataset (Link to the new dataset <a href="https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy">https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy</a></li>
+<li>See 5, 6, and 7</li>
+</ol>
+<h3 id="datasets-1">Datasets</h3>
+<p>Binary Stratified (cleaned): <a href="https://drive.google.com/drive/folders/12-60Gm7c_TMu1rhnMhSZjrkSqqAuSsQf?usp=sharing">https://drive.google.com/drive/folders/12-60Gm7c_TMu1rhnMhSZjrkSqqAuSsQf?usp=sharing</a>
+Categorical Stratified (cleaned): <a href="https://drive.google.com/drive/folders/1-A_Mx9GdeUwCd03TUxUS3vwcutQHFFSM?usp=sharing">https://drive.google.com/drive/folders/1-A_Mx9GdeUwCd03TUxUS3vwcutQHFFSM?usp=sharing</a>
+Non Stratified (cleaned): <a href="https://www.kaggle.com/ayushsubedi/drunstratified">https://www.kaggle.com/ayushsubedi/drunstratified</a>
+Recleaned Non Stratified: <a href="https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy">https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy</a></p>
+<h4 id="priliminary">Priliminary</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://www.youtube.com/watch?v=VIrkurR446s&amp;ab_channel=khanacademymedicine">https://www.youtube.com/watch?v=VIrkurR446s&amp;ab_channel=khanacademymedicine</a> What is diabetic retinopathy?</li>
+<li><input checked="" disabled="" type="checkbox"> collect all previous analysis notebooks</li>
+<li><input checked="" disabled="" type="checkbox"> conduct preliminary EDA (for balanced dataset, missing images etc)</li>
+<li><input checked="" disabled="" type="checkbox"> create balanced test train split for DR (stratify)</li>
+<li><input checked="" disabled="" type="checkbox"> store the dataset in drive for colab</li>
+<li><input checked="" disabled="" type="checkbox"> identify a few research papers, create a file to store subsequently found research papers</li>
+<li><input checked="" disabled="" type="checkbox"> identify right technology stack to use (for ML, training, PM, model versioning, stage deployment, actual deployment)</li>
+<li><input checked="" disabled="" type="checkbox"> perform basic augmentation</li>
+<li><input checked="" disabled="" type="checkbox"> create a version 0 base model</li>
+<li><input checked="" disabled="" type="checkbox"> apply a random transfer learning model</li>
+<li><input checked="" disabled="" type="checkbox"> create a metric for evaluation</li>
+<li><input checked="" disabled="" type="checkbox"> store the model in zenodo, or find something for version control</li>
+<li><input checked="" disabled="" type="checkbox"> create a model that takes image as an input</li>
+<li><input checked="" disabled="" type="checkbox"> create a streamlit app that reads model</li>
+<li><input checked="" disabled="" type="checkbox"> streamlit app to upload and test prediction</li>
+<li><input checked="" disabled="" type="checkbox"> test deployment to free tier heroku</li>
+<li><input checked="" disabled="" type="checkbox"> identify gaps</li>
+<li><input checked="" disabled="" type="checkbox"> create priliminary test set</li>
+<li><input checked="" disabled="" type="checkbox"> create folder structures for saved model in the drive</li>
+<li><input checked="" disabled="" type="checkbox"> figure out a way to move files from kaggle to drive (without download/upload)</li>
+<li><input checked="" disabled="" type="checkbox"> research saving model (the frugal way)</li>
+<li><input checked="" disabled="" type="checkbox"> research saving model to google drive after each epoch so that during unforseen interuptions, the training of the model can be continued</li>
+</ul>
+<h3 id="resource">Resource</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> upgrade to 25GB RAM in Google Colab possibly w/ Tesla P100 GPU</li>
+<li><input checked="" disabled="" type="checkbox"> upgrade to Colab Pro</li>
+</ul>
+<h3 id="baseline">Baseline</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> medicmind grading (accuracy: 0.8)</li>
+<li><input checked="" disabled="" type="checkbox"> medicmind classification (0.47)</li>
+</ul>
+<h4 id="transfer-learning">Transfer Learning</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> resnet</li>
+<li><input checked="" disabled="" type="checkbox"> alexnet</li>
+<li><input checked="" disabled="" type="checkbox"> vgg</li>
+<li><input checked="" disabled="" type="checkbox"> squeezenet</li>
+<li><input checked="" disabled="" type="checkbox"> densenet</li>
+<li><input checked="" disabled="" type="checkbox"> inception</li>
+<li><input checked="" disabled="" type="checkbox"> efficient net</li>
+</ul>
+<h4 id="dataset-clean-images">Dataset clean images</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> create a backup of primary dataset (zip so that kaggle kernels can consume them too)</li>
+<li><input checked="" disabled="" type="checkbox"> find algorithms to detect black/out of focus images</li>
+<li><input checked="" disabled="" type="checkbox"> identify correct threshold for dark and out of focus images</li>
+<li><input checked="" disabled="" type="checkbox"> remove black images</li>
+<li><input checked="" disabled="" type="checkbox"> remove out of focus images</li>
+<li><input checked="" disabled="" type="checkbox"> create a stratified dataset with 2015 data only (convert train and test both to train and use), remove black images and out of focus images (also create test set)</li>
+<li><input checked="" disabled="" type="checkbox"> create non-stratified dataset with 2015 clean data only (train, test, valid) (upload in kaggle if google drive full)</li>
+<li><input checked="" disabled="" type="checkbox"> create a binary dataset (train, test, valid)</li>
+<li><input checked="" disabled="" type="checkbox"> create confusion matrices (train, test, valid) after clean up (dark and blurry)</li>
+<li><input checked="" disabled="" type="checkbox"> the model is confusing labels 0 and 1 as 2, is this due to disturbance in image in 0.</li>
+<li><input checked="" disabled="" type="checkbox"> concluded that the result is due to the model not capturing class 0 enough (due to undersampling)</li>
+</ul>
+<h4 id="inference">Inference</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> create a csv with preds probability and real label</li>
+<li><input checked="" disabled="" type="checkbox"> calculate recall, precision, accuracy, confusion matrix</li>
+<li><input checked="" disabled="" type="checkbox"> identify different prediction issues</li>
+<li><input checked="" disabled="" type="checkbox"> relationship between difference in preds and accuracy</li>
+<li><input checked="" disabled="" type="checkbox"> inference issue: labels 0 being predicted as 4</li>
+<li><input checked="" disabled="" type="checkbox"> inference issue: Check images from Grade 2, 3 being predicted as Grade 0</li>
+<li><input checked="" disabled="" type="checkbox"> inference issue: Check images from Grade 4 being predicted as Grade 0</li>
+<li><input checked="" disabled="" type="checkbox"> inference issue: Check images from Grade 0 being predicted as Grade 4</li>
+<li><input checked="" disabled="" type="checkbox"> inference issue: A significant Grade 2 is being predicted as Grade 0</li>
+<li><input checked="" disabled="" type="checkbox"> inference issue: More than 50% of Grade 1 is being predicted as Grade 0</li>
+<li><input checked="" disabled="" type="checkbox"> create a new dataset</li>
+</ul>
+<h4 id="model-improvement">Model Improvement</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> research kaggle winning augmentation for DR</li>
+<li><input checked="" disabled="" type="checkbox"> research appropriate augmentation: optical distortion, grid distortion, piecewise affine transform, horizontal flip, vertical flip, random rotation, random shift, random scale, a shift of RGB values, random brightness and contrast, additive Gaussian noise, blur, sharpening, embossing, random gamma, and cutout</li>
+<li><input checked="" disabled="" type="checkbox"> train on various pretrained models or research which is supposed to be ideal for this case <a href="https://pytorch.org/vision/stable/models.html">https://pytorch.org/vision/stable/models.html</a></li>
+<li><input checked="" disabled="" type="checkbox"> create several neural nets (test different layers)</li>
+<li><input checked="" disabled="" type="checkbox"> experiment with batch size</li>
+<li><input checked="" disabled="" type="checkbox"> Reducing lighting-condition effects</li>
+<li><input checked="" disabled="" type="checkbox"> Cropping uninformative area</li>
+<li><input checked="" disabled="" type="checkbox"> Create custom dataloader based on ben graham kaggle winning strategy</li>
+<li><input checked="" disabled="" type="checkbox"> finetune vs feature extract</li>
+<li><input checked="" disabled="" type="checkbox"> oversample</li>
+<li><input checked="" disabled="" type="checkbox"> undersample</li>
+<li><input checked="" disabled="" type="checkbox"> add specificity and sensitivity to indicators</li>
+<li><input checked="" disabled="" type="checkbox"> create train loss and valid loss charts</li>
+<li><input checked="" disabled="" type="checkbox"> test regression models (treat this as a grading problem)</li>
+<li><input checked="" disabled="" type="checkbox"> pickle weights</li>
+</ul>
+<h4 id="additional-models">Additional Models</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> check if left/right eye classification model is required</li>
+</ul>
+<h4 id="additional-datasets">Additional datasets</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> make datasets more extensive (add test dataset with recoverd labels to train dataset 2015)</li>
+<li><input checked="" disabled="" type="checkbox"> add APTOS dataset</li>
+<li><input checked="" disabled="" type="checkbox"> request labelled datasets from cheers</li>
+<li><input checked="" disabled="" type="checkbox"> add datasets from cheers for testing</li>
+<li><input checked="" disabled="" type="checkbox"> add datasets from cheers for training</li>
+</ul>
+<h4 id="test-datasets">Test datasets</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> find datasets for testing (dataset apart from APTOS and EyePACS)</li>
+<li><input checked="" disabled="" type="checkbox"> update folder structures to match our use case</li>
+<li><input checked="" disabled="" type="checkbox"> find dataset for testing after making sure old test datasets are not in vaid/train (4 will be empty)</li>
+</ul>
+<h4 id="conceptsresearch-papers">Concepts/Research Papers</h4>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> read reports from kaggle competition winning authors</li>
+<li><input checked="" disabled="" type="checkbox"> Deep Learning Approach to Diabetic Retinopathy Detection <a href="https://arxiv.org/pdf/2003.02261.pdf">https://arxiv.org/pdf/2003.02261.pdf</a></li>
+<li><input checked="" disabled="" type="checkbox"> Google research <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45732.pdf">https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45732.pdf</a></li>
+<li><input checked="" disabled="" type="checkbox"> Nature article <a href="https://www.nature.com/articles/s41746-019-0172-3">https://www.nature.com/articles/s41746-019-0172-3</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://deim.urv.cat/~itaka/itaka2/PDF/acabats/PhD_Thesis/TESI_doctoral_Jordi_De_la_Torre.pdf">https://deim.urv.cat/~itaka/itaka2/PDF/acabats/PhD_Thesis/TESI_doctoral_Jordi_De_la_Torre.pdf</a></li>
+<li><input checked="" disabled="" type="checkbox"> what can go wrong <a href="https://yerevann.github.io/2015/08/17/diabetic-retinopathy-detection-contest-what-we-did-wrong/">https://yerevann.github.io/2015/08/17/diabetic-retinopathy-detection-contest-what-we-did-wrong/</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://arxiv.org/pdf/1902.07208.pdf">https://arxiv.org/pdf/1902.07208.pdf</a></li>
+</ul>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		1433 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/beginners_trap/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        The Beginner&#39;s Trap in analytics
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/certifications/">
+        Certifications
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/vaccine_progress/">Nepal Vaccine Progress Twitter Bot</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/kohokoho/">Kohokoho</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/fraud_detection/">Fraud Detection</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/ride_hailing_analytics/">Analytics for Ride Hailing Services</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/synthetic_data_generation/">Synthetic Data Generation: eHamroPasalmandu.com</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/sentiment_analysis/">Sentiment Analysis starter code</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/choto/">Choto</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/synthetic_data_pareto/">Synthetic data based on pareto principle</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/cheers_analysis/">Cheers Hospital Analysis</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/spirathon/">Spirathon AI Conference 2019</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/torpe/">Torpe Blockchain</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/inclusive_newspaper/">Inclusive Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/seedstars/">Startup analysis using Seedstars data</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/diffie_hellman/">Diffie-Hellman key exchange (and AES-256)</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>

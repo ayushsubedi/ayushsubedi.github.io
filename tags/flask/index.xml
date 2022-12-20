@@ -6,61 +6,26 @@
     <description>Recent content in flask on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Nepal Vaccine Progress Twitter Bot</title>
-      <link>https://ayushsubedi.github.io/posts/vaccine_progress/</link>
-      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      <title>Diabetic Retinopathy and Glaucoma Detection (Cheers AI Demo)</title>
+      <link>https://ayushsubedi.github.io/posts/cheers_ai_demo/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/vaccine_progress/</guid>
-      <description>&lt;h1 id=&#34;nepal-vaccine-progress-twitter-bot&#34;&gt;Nepal Vaccine Progress Twitter Bot&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/NepalVaccine&#34;&gt;https://twitter.com/NepalVaccine&lt;/a&gt; &lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Data Source: &lt;a href=&#34;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&#34;&gt;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/vaccine_progress_bot/raw/main/display.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;This is a Twitter bot that shows progress on covid vaccination (full and partial) in Nepal.&lt;/p&gt;
-&lt;h1 id=&#34;installation-for-contribution&#34;&gt;Installation for contribution&lt;/h1&gt;
-&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://github.com/ayushsubedi/vaccine_progress_bot_nepal/
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python -m venv env
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv-windows&#34;&gt;Enable virtualenv (windows)&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install -r requirements.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app&#34;&gt;Run flask app&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;source FLASK_APP=&amp;#34;app.py&amp;#34;
-flask run
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app-windows&#34;&gt;Run flask app (windows)&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$env:FLASK_APP=&amp;#34;app.py&amp;#34;
-flask run
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;env&#34;&gt;.env&lt;/h1&gt;
-&lt;p&gt;Add Twitter keys and BasicAuth keys to the .env_sample file. Once complete rename it to .env&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Diabetic Retinopathy and Glaucoma Detection</title>
-      <link>https://ayushsubedi.github.io/posts/cheers_ai/</link>
-      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/cheers_ai/</guid>
-      <description>&lt;h1 id=&#34;cheers-ai&#34;&gt;Cheers AI&lt;/h1&gt;
-&lt;h1 id=&#34;diabetic-retinopathy-and-glaucoma-detection&#34;&gt;Diabetic Retinopathy and Glaucoma Detection&lt;/h1&gt;
+      <guid>https://ayushsubedi.github.io/posts/cheers_ai_demo/</guid>
+      <description>&lt;h1 id=&#34;cheers-ai-demo-for-diabetic-retinopathy-and-glaucoma-detection&#34;&gt;Cheers AI Demo for Diabetic Retinopathy and Glaucoma Detection&lt;/h1&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;420&#34; src=&#34;https://www.youtube.com/embed/TXy0J3wydnU&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
 &lt;h4 id=&#34;efficient-prediction-models&#34;&gt;Efficient Prediction Models&lt;/h4&gt;
-&lt;p&gt;Efficient models trained on Inception-v3, with weightage on recall.&lt;/p&gt;
-&lt;h4 id=&#34;patient-tracking&#34;&gt;Patient Tracking&lt;/h4&gt;
-&lt;p&gt;Powerful MIS to create and track patient, and patient&amp;rsquo;s historical predictions.&lt;/p&gt;
-&lt;h4 id=&#34;continuous-learning&#34;&gt;Continuous Learning&lt;/h4&gt;
-&lt;p&gt;Inputs reviewed by opthalmologists and added to training.&lt;/p&gt;
-&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
-&lt;h3 id=&#34;the-rationale-for-developing-countries&#34;&gt;The rationale for developing countries.&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficient models trained on Inception-v3, with weightage on recall.&lt;/li&gt;
+&lt;li&gt;Powerful hospital-MIS to create and track patient, and patient&amp;rsquo;s historical predictions.&lt;/li&gt;
+&lt;li&gt;Inputs reviewed by opthalmologists and added to training.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;diabetic-retinopathy&#34;&gt;Diabetic Retinopathy&lt;/h3&gt;
 &lt;p&gt;Diabetic Retinopathy is an eye illness caused by diabetes that may lead to vision impairment and even to blindness if it isn&amp;rsquo;t identified and treated early. Of the estimated 422 million diabetics globally, more than 148 million have DR and 48 million have Vision Threating DR (VTDR).&lt;/p&gt;
 &lt;p&gt;However, because of insufficient specialists and eye care health workers globally as well as locally to screen everyone at risk, the situation seems acute especially in developing countries like Nepal. Besides, Nepal has difficult geographical terrain and people living in remorse remote areas with limited or no access to clinics and screening facilities making the condition even worse.&lt;/p&gt;
@@ -71,7 +36,7 @@ flask run
 &lt;h3 id=&#34;an-intuitive-app&#34;&gt;An intuitive app&lt;/h3&gt;
 &lt;p&gt;Easy to use, access managed platform, with the primary focus on providing assistance to our opthalmologists.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cheersai.ml/static/img/demo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;process&#34;&gt;Process&lt;/h1&gt;
+&lt;h1 id=&#34;steps-involved-in-research-model-creation-and-deployment&#34;&gt;Steps involved in Research, Model Creation, and Deployment&lt;/h1&gt;
 &lt;h1 id=&#34;glaucoma-prediction&#34;&gt;Glaucoma Prediction&lt;/h1&gt;
 &lt;h2 id=&#34;what-worked-90-accuracy&#34;&gt;What worked? (90% accuracy)&lt;/h2&gt;
 &lt;ol&gt;
@@ -85,7 +50,6 @@ flask run
 &lt;/ol&gt;
 &lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; create a gmail account (&lt;a href=&#34;mailto:glaucomadetection@gmail.com&#34;&gt;glaucomadetection@gmail.com&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; understand the difference between possibility of glaucoma by classification (vs measurements)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;preprocessing&#34;&gt;Preprocessing&lt;/h2&gt;
@@ -143,7 +107,6 @@ flask run
 &lt;li&gt;Removed the images and created another dataset (Link to the new dataset &lt;a href=&#34;https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy&#34;&gt;https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;See 5, 6, and 7&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;todos&#34;&gt;TODOS&lt;/h3&gt;
 &lt;h3 id=&#34;datasets-1&#34;&gt;Datasets&lt;/h3&gt;
 &lt;p&gt;Binary Stratified (cleaned): &lt;a href=&#34;https://drive.google.com/drive/folders/12-60Gm7c_TMu1rhnMhSZjrkSqqAuSsQf?usp=sharing&#34;&gt;https://drive.google.com/drive/folders/12-60Gm7c_TMu1rhnMhSZjrkSqqAuSsQf?usp=sharing&lt;/a&gt;
 Categorical Stratified (cleaned): &lt;a href=&#34;https://drive.google.com/drive/folders/1-A_Mx9GdeUwCd03TUxUS3vwcutQHFFSM?usp=sharing&#34;&gt;https://drive.google.com/drive/folders/1-A_Mx9GdeUwCd03TUxUS3vwcutQHFFSM?usp=sharing&lt;/a&gt;
@@ -151,7 +114,6 @@ Non Stratified (cleaned): &lt;a href=&#34;https://www.kaggle.com/ayushsubedi/dru
 Recleaned Non Stratified: &lt;a href=&#34;https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy&#34;&gt;https://www.kaggle.com/ayushsubedi/cleannonstratifieddiabeticretinopathy&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;priliminary&#34;&gt;Priliminary&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; create a new gmail account to store datasets (&lt;a href=&#34;mailto:diabeticretinopathyglaucoma@gmail.com&#34;&gt;diabeticretinopathyglaucoma@gmail.com&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://www.youtube.com/watch?v=VIrkurR446s&amp;amp;ab_channel=khanacademymedicine&#34;&gt;https://www.youtube.com/watch?v=VIrkurR446s&amp;amp;ab_channel=khanacademymedicine&lt;/a&gt; What is diabetic retinopathy?&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; collect all previous analysis notebooks&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; conduct preliminary EDA (for balanced dataset, missing images etc)&lt;/li&gt;
@@ -265,12 +227,43 @@ Recleaned Non Stratified: &lt;a href=&#34;https://www.kaggle.com/ayushsubedi/cle
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Deep Learning Approach to Diabetic Retinopathy Detection &lt;a href=&#34;https://arxiv.org/pdf/2003.02261.pdf&#34;&gt;https://arxiv.org/pdf/2003.02261.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Google research &lt;a href=&#34;https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45732.pdf&#34;&gt;https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45732.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Nature article &lt;a href=&#34;https://www.nature.com/articles/s41746-019-0172-3&#34;&gt;https://www.nature.com/articles/s41746-019-0172-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; read ravi&amp;rsquo;s article&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://deim.urv.cat/~itaka/itaka2/PDF/acabats/PhD_Thesis/TESI_doctoral_Jordi_De_la_Torre.pdf&#34;&gt;https://deim.urv.cat/~itaka/itaka2/PDF/acabats/PhD_Thesis/TESI_doctoral_Jordi_De_la_Torre.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; what can go wrong &lt;a href=&#34;https://yerevann.github.io/2015/08/17/diabetic-retinopathy-detection-contest-what-we-did-wrong/&#34;&gt;https://yerevann.github.io/2015/08/17/diabetic-retinopathy-detection-contest-what-we-did-wrong/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://arxiv.org/pdf/1902.07208.pdf&#34;&gt;https://arxiv.org/pdf/1902.07208.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; identify more papers&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nepal Vaccine Progress Twitter Bot</title>
+      <link>https://ayushsubedi.github.io/posts/vaccine_progress/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/vaccine_progress/</guid>
+      <description>&lt;h1 id=&#34;nepal-vaccine-progress-twitter-bot&#34;&gt;Nepal Vaccine Progress Twitter Bot&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/NepalVaccine&#34;&gt;https://twitter.com/NepalVaccine&lt;/a&gt; &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Data Source: &lt;a href=&#34;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&#34;&gt;https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/ayushsubedi/vaccine_progress_bot/raw/main/display.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is a Twitter bot that shows progress on covid vaccination (full and partial) in Nepal.&lt;/p&gt;
+&lt;h1 id=&#34;installation-for-contribution&#34;&gt;Installation for contribution&lt;/h1&gt;
+&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://github.com/ayushsubedi/vaccine_progress_bot_nepal/
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python -m venv env
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;enable-virtualenv-windows&#34;&gt;Enable virtualenv (windows)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\env\Scripts\activate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app&#34;&gt;Run flask app&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;source FLASK_APP=&amp;#34;app.py&amp;#34;
+flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;run-flask-app-windows&#34;&gt;Run flask app (windows)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$env:FLASK_APP=&amp;#34;app.py&amp;#34;
+flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;env&#34;&gt;.env&lt;/h1&gt;
+&lt;p&gt;Add Twitter keys and BasicAuth keys to the .env_sample file. Once complete rename it to .env&lt;/p&gt;
 </description>
     </item>
     
