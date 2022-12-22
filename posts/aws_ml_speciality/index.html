@@ -166,13 +166,11 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#data-engineering">Data Engineering</a>
 <ol>
 <li><a href="#s3">S3</a></li>
+<li><a href="#kinesis">Kinesis</a></li>
+<li><a href="#glue">Glue</a></li>
 <li><a href="#efs">EFS</a></li>
 <li><a href="#ebs">EBS</a></li>
-<li><a href="#kinesis">Kinesis</a></li>
-<li><a href="#kinesis-analytics">Kinesis Analytics</a></li>
-<li><a href="#kinesis-firehose">Kinesis Firehose</a></li>
 <li><a href="#emr">EMR</a></li>
-<li><a href="#glue">Glue</a></li>
 <li><a href="#job-scheduling">Job Scheduling</a></li>
 <li><a href="#redshift">Redshift</a></li>
 <li><a href="#rds">RDS</a></li>
@@ -220,6 +218,9 @@ identification and implementation of a data transformation solution.</p>
 <ul>
 <li>Transitioning objects between classes is possible</li>
 <li>Transition Actions can be used to configure objects to transition to another storage class</li>
+<li>Transition Actions can also be used for expiration, incomplete multi part uploads etc.</li>
+<li>Rules can be applied to buckets, specific paths of the project or also to tags</li>
+<li>Amazon S3 analytics works exclusively on S3 standard, and S3 IA, and provides analytics on usage</li>
 </ul>
 <h3 id="performance-chart">Performance Chart</h3>
 <table>
@@ -340,12 +341,85 @@ identification and implementation of a data transformation solution.</p>
 </table>
 <h3 id="encryption">Encryption</h3>
 <ul>
-<li>Can be Server Side encryption managed by AWS</li>
-<li>Can be Server Side encryption managed by KMS</li>
+<li>Server Side encryption managed by AWS (AES 256)</li>
+<li>Server Side encryption managed by KMS</li>
+<li>Server Side encryption managed by Consumer (not relevant for ml exam)</li>
+<li>Client side encryption (not relevant for ml exam)</li>
 </ul>
-<h1 id="exploratory-data-analysis">Exploratory Data Analysis</h1>
-<h1 id="modelin">Modelin</h1>
-<h1 id="machine-learning-implementation-and-operations">Machine Learning Implementation and Operations</h1>
+<h3 id="security-policy">Security Policy</h3>
+<ul>
+<li>Identity based or resource based access</li>
+<li>default encryption is possible</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>VPC can be used to stay within private network</li>
+<li>logging audit is possible (can be sent to another S3 or using cloudtrail)</li>
+<li>Tags can be used for security</li>
+</ul>
+<h2 id="kinesis">Kinesis</h2>
+<ul>
+<li>Kinesis is a managed alternative to Kafka</li>
+<li>&ldquo;real time&rdquo; big data</li>
+<li>Data is replicated to at least 3 AZ</li>
+<li>Great for streaming processing frameworks</li>
+<li>Great for logs, metrics, events, IoT, clickstreams, etc</li>
+</ul>
+<h3 id="kinesis-streams">Kinesis Streams</h3>
+<ul>
+<li>low latency streaming ingest at scale</li>
+<li>streams are divided into shards and partitions</li>
+<li>data retention: 24 hours by default, data retention. it can go up to 365 days. This is useful for reprocessing/replaying data</li>
+<li>immuatble, 1 mb in size</li>
+<li>Provisioned mode: choose number of shards and scale manually or using an API</li>
+<li>each shard gets 1mb/s in, 2mb/s out</li>
+<li>on demand mode: each capacity provisioned is 4mb/s</li>
+<li>if you can plan capacity, use provisioned. however, use on demand if capacity is unknown</li>
+<li>real time streaming application, but you provision in advance</li>
+<li>custom code for producer or consumer is possible</li>
+<li>real time (200 ms latency, possible all the way up to 70ms)</li>
+<li>automatic scaling with on-demand mode</li>
+<li>multi consumers is possible from one source</li>
+</ul>
+<h3 id="kinesis-analytics">Kinesis Analytics</h3>
+<ul>
+<li>perform real-time analytics on streams using SQL or Apache Flink</li>
+<li>select columns, continious metric generation, responsive analytics, etc.</li>
+<li>serverless, scales automatically, pay for resouces consumed but expensive</li>
+<li>schema discovery</li>
+<li>lambda can be used for preprocessing</li>
+<li>Two machine learning algorithms</li>
+<li>Random cut forest for anomaly detection on numeric columns in a stream, uses recent data to compute the model</li>
+<li>hotspots, finds dense clusters, uses all data</li>
+</ul>
+<h3 id="kinesis-firehose">Kinesis Firehose</h3>
+<ul>
+<li>load streams into S3, Redshift, ElasticSearch, Splunk and several others</li>
+<li>store data in target application</li>
+<li>most common is firehose reading from kinesis streams</li>
+<li>near realtime service because it batch writes</li>
+<li>data desitination can be s3, redshift, elastisearch, splunk, new relic, or http endpoint</li>
+<li>firehose is a fully managed service</li>
+<li>60 seconds latency minimum for non full batches</li>
+<li>data ingestion into redshift, s3, elasticsearch, splunk</li>
+<li>automatic scaling</li>
+<li>conversions from csv/json to parquet and orc and requires the use of glue</li>
+<li>and transformation through lambda csv to json is possible</li>
+<li>compression is possible</li>
+<li>automates scaling</li>
+<li>no data storage</li>
+<li>no replay capability</li>
+<li>it is a serverless transformation tool</li>
+</ul>
+<h3 id="kinesis-video-streams">Kinesis Video Streams</h3>
+<ul>
+<li>meant for streaming video in real-time</li>
+<li>producers: security camera, body-worn cam, aws deeplens, radar data, camera</li>
+<li>one producer per video stream</li>
+<li>video playback capability</li>
+<li>Sagemaker, rekognition video, 1 hour to 10 years</li>
+<li>Checkpointing via dynamodb, frames to sagemaker for ml inference, publish to stream, lambda can be used for notification</li>
+</ul>
 </div>
 	</section>
 
@@ -487,7 +561,7 @@ identification and implementation of a data transformation solution.</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		564 words in this page.
+		1038 words in this page.
 	</div>
 </div>
 
