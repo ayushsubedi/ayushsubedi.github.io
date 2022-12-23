@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exploratory Data Analysis on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/exploratory-data-analysis/</link>
+    <description>Recent content in Exploratory Data Analysis on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/exploratory-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - Exploratory Data Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</guid>
+      <description>&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

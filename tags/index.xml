@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,27 +14,99 @@
     <item>
       <title>certification</title>
       <link>https://ayushsubedi.github.io/tags/certification/</link>
-      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/certification/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>data pipeline</title>
+      <link>https://ayushsubedi.github.io/tags/data-pipeline/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ebs</title>
+      <link>https://ayushsubedi.github.io/tags/ebs/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ebs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>efs</title>
+      <link>https://ayushsubedi.github.io/tags/efs/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/efs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://ayushsubedi.github.io/tags/elasticsearch/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>glue</title>
+      <link>https://ayushsubedi.github.io/tags/glue/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/glue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>kinesis</title>
       <link>https://ayushsubedi.github.io/tags/kinesis/</link>
-      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/kinesis/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>rds</title>
+      <link>https://ayushsubedi.github.io/tags/rds/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/rds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redshift</title>
+      <link>https://ayushsubedi.github.io/tags/redshift/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/redshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>s3</title>
       <link>https://ayushsubedi.github.io/tags/s3/</link>
-      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>step function</title>
+      <link>https://ayushsubedi.github.io/tags/step-function/</link>
+      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/step-function/</guid>
       <description></description>
     </item>
     

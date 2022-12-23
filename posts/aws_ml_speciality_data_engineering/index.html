@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.102.3" />
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+		
+	<title>Ayush Subedi</title>
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://subedi.ml/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://subedi.ml/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://subedi.ml/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://subedi.ml/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+	
+	
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-177424799-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+	
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">My notes on the &#34;Data Engineering&#34; domain</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/analytics'>analytics</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/machine-learning'>machine-learning</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/certification'>certification</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/aws'>AWS</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/aws-certified-ml-specialty-exam-mls-c01'>AWS Certified ML - Specialty exam (MLS-C01)</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/data-engineering'>Data Engineering</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/certification'>certification</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/s3'>s3</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/kinesis'>kinesis</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/glue'>glue</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/redshift'>redshift</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/rds'>rds</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/step-function'>step function</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/data-pipeline'>data pipeline</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/elasticsearch'>elasticsearch</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/efs'>efs</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/ebs'>ebs</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2022-12-21">2022-12-21</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="data-engineering">Data Engineering</h1>
+<ol>
+<li><a href="#s3">S3</a></li>
+<li><a href="#kinesis">Kinesis</a></li>
+<li><a href="#glue">Glue</a></li>
+<li><a href="#redshift">Redshift</a></li>
+<li><a href="#rds">RDS</a></li>
+<li><a href="#dynamodb">DynamoDB</a></li>
+<li><a href="#opensearch">OpenSearch</a></li>
+<li><a href="#aws-data-pipeline">AWS Data Pipeline</a></li>
+<li><a href="#aws-batch">AWS Batch</a></li>
+<li><a href="#aws-batch">AWS DMS</a></li>
+<li><a href="#step-functions">Step Functions</a></li>
+<li><a href="#misc">Misc</a></li>
+</ol>
+<p>This domain requires understanding of creating data repositories for machine learning, identification and implementation of data ingestion solution, and
+identification and implementation of a data transformation solution.</p>
+<h2 id="s3">S3</h2>
+<ul>
+<li>foundational for machine learning projects since it is a cost effective solution for datasets storage</li>
+<li>object based storage, bucket name need to be globally unique, however they are unique to regions</li>
+<li>key is the full path of the file and even though it looks like there is a folder based heirarchy, that is not how it works</li>
+<li>you can have a very long file name, in the sense that the path (key) can be very long</li>
+<li>max size is 5 TB</li>
+<li>object tags can be added, helpful with classificaiton and security lifecycle, these are key value pairs</li>
+<li>decoupling of compute and storage side</li>
+<li>perfect use case of data lake, since it can store various formats of data (object storage)</li>
+<li>it is possible to partition the storage, which is helpful (speedy) when querying via athena. Kinesis partitions the data automatically.</li>
+<li>11 9&rsquo;s durability</li>
+</ul>
+<h3 id="storage-classes">Storage classes</h3>
+<ul>
+<li>S3, Standard or General Purpose: for frequently accessed data</li>
+<li>S3, Infrequent Access: lower cost than standard, for data accessed monthly, and requires milliseconds retrival, but there is a cost associated with retrival</li>
+<li>S3, Infrequent Access, One Zone, good for secondary copies of backup, or data that can be recreated, infrequent access for cost saving</li>
+<li>S3, Glacier Instant Retrival, price per storage + price per retrival, can access within milliseconds, for low cost storage for long-lived data</li>
+<li>S3, Glacier Flexible Retrival, expedited: 1-5 mins, standard: 3-5 hrs, bulk: 5-12 hrs (free), for long term low cost storage for backups and archives  with different retrival options</li>
+<li>S3, Glacier Deep Archive: lowest cost, 180 days of minimum storage, for rarely accessed archive data</li>
+<li>S3, Intelligent Tiering: move objects between tiers with monthly monitoring and auto-tiering fee</li>
+<li>It is possible to move objects between these storage classes</li>
+</ul>
+<p><a href="https://d1.awsstatic.com/reInvent/re21-pdp-tier1/s3/Amazon-S3-Storage-Classes.pdf">more info</a></p>
+<h3 id="lifecycle-rules">Lifecycle rules</h3>
+<ul>
+<li>Transitioning objects between classes is possible</li>
+<li>Transition Actions can be used to configure objects to transition to another storage class</li>
+<li>Transition Actions can also be used for expiration, incomplete multi part uploads etc.</li>
+<li>Rules can be applied to buckets, specific paths of the project or also to tags</li>
+<li>Amazon S3 analytics works exclusively on S3 standard, and S3 IA, and provides analytics on usage</li>
+</ul>
+<h3 id="performance-chart">Performance Chart</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">S3 Standard</th>
+<th style="text-align:center">S3 Intelligent-Tiering*</th>
+<th style="text-align:center">S3 Standard-IA</th>
+<th style="text-align:center">S3 One Zone-IA†</th>
+<th style="text-align:center">S3 Glacier Instant Retrieval</th>
+<th style="text-align:center">S3 Glacier Flexible Retrieval</th>
+<th style="text-align:center">S3 Glacier Deep Archive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Designed for durability</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+<td style="text-align:center">99.999999999% (11 9’s)</td>
+</tr>
+<tr>
+<td>Designed for availability</td>
+<td style="text-align:center">99.99%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.50%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.99%</td>
+<td style="text-align:center">99.99%</td>
+</tr>
+<tr>
+<td>Availability SLA</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99.90%</td>
+<td style="text-align:center">99.90%</td>
+</tr>
+<tr>
+<td>Availability Zones</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+<td style="text-align:center">≥3</td>
+</tr>
+<tr>
+<td>Minimum capacity charge per object</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">128 KB</td>
+<td style="text-align:center">128 KB</td>
+<td style="text-align:center">128 KB</td>
+<td style="text-align:center">40 KB</td>
+<td style="text-align:center">40 KB</td>
+</tr>
+<tr>
+<td>Minimum storage duration charge</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">30 days</td>
+<td style="text-align:center">30 days</td>
+<td style="text-align:center">90 days</td>
+<td style="text-align:center">90 days</td>
+<td style="text-align:center">180 days</td>
+</tr>
+<tr>
+<td>Retrieval charge</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">N/A</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+<td style="text-align:center">per GB retrieved</td>
+</tr>
+<tr>
+<td>First byte latency</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">milliseconds</td>
+<td style="text-align:center">minutes or hours</td>
+<td style="text-align:center">hours</td>
+</tr>
+<tr>
+<td>Storage type</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">Object</td>
+</tr>
+<tr>
+<td>Lifecycle transitions</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="encryption">Encryption</h3>
+<ul>
+<li>Server Side encryption managed by AWS (AES 256)</li>
+<li>Server Side encryption managed by KMS</li>
+<li>Server Side encryption managed by Consumer (not relevant for ml exam)</li>
+<li>Client side encryption (not relevant for ml exam)</li>
+</ul>
+<h3 id="security-policy">Security Policy</h3>
+<ul>
+<li>Identity based or resource based access</li>
+<li>default encryption is possible</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>VPC can be used to stay within private network</li>
+<li>logging audit is possible (can be sent to another S3 or using cloudtrail)</li>
+<li>Tags can be used for security</li>
+</ul>
+<h2 id="kinesis">Kinesis</h2>
+<ul>
+<li>Kinesis is a managed alternative to Kafka</li>
+<li>&ldquo;real time&rdquo; big data</li>
+<li>Data is replicated to at least 3 AZ</li>
+<li>Great for streaming processing frameworks</li>
+<li>Great for logs, metrics, events, IoT, clickstreams, etc</li>
+</ul>
+<h3 id="kinesis-streams">Kinesis Streams</h3>
+<ul>
+<li>low latency streaming ingest at scale</li>
+<li>streams are divided into shards and partitions</li>
+<li>the maximum throughput of a single shard 1 mb/secondss or 1000 messages/seconds</li>
+<li>data retention: 24 hours by default, data retention. it can go up to 365 days. This is useful for reprocessing/replaying data</li>
+<li>immuatble, 1 mb in size</li>
+<li>Provisioned mode: choose number of shards and scale manually or using an API</li>
+<li>each shard gets 1mb/s in, 2mb/s out</li>
+<li>on demand mode: each capacity provisioned is 4mb/s</li>
+<li>if you can plan capacity, use provisioned. however, use on demand if capacity is unknown</li>
+<li>real time streaming application, but you provision in advance</li>
+<li>custom code for producer or consumer is possible</li>
+<li>real time (200 ms latency, possible all the way up to 70ms)</li>
+<li>automatic scaling with on-demand mode</li>
+<li>multi consumers is possible from one source</li>
+</ul>
+<h3 id="kinesis-analytics">Kinesis Analytics</h3>
+<ul>
+<li>perform real-time analytics on streams using SQL or Apache Flink</li>
+<li>select columns, continious metric generation, responsive analytics, etc.</li>
+<li>serverless, scales automatically, pay for resouces consumed but expensive</li>
+<li>schema discovery</li>
+<li>lambda can be used for preprocessing</li>
+<li>Two machine learning algorithms</li>
+<li>Random cut forest for anomaly detection on numeric columns in a stream, uses recent data to compute the model</li>
+<li>hotspots, finds dense clusters, uses all data</li>
+</ul>
+<h3 id="kinesis-firehose">Kinesis Firehose</h3>
+<ul>
+<li>load streams into S3, Redshift, ElasticSearch, Splunk and several others</li>
+<li>store data in target application</li>
+<li>most common is firehose reading from kinesis streams</li>
+<li>near realtime service because it batch writes</li>
+<li>data desitination can be s3, redshift, elastisearch, splunk, new relic, or http endpoint</li>
+<li>firehose is a fully managed service</li>
+<li>60 seconds latency minimum for non full batches</li>
+<li>data ingestion into redshift, s3, elasticsearch, splunk</li>
+<li>automatic scaling</li>
+<li>conversions from csv/json to parquet and orc and requires the use of glue</li>
+<li>and transformation through lambda csv to json is possible</li>
+<li>compression is possible</li>
+<li>automates scaling</li>
+<li>no data storage</li>
+<li>no replay capability</li>
+<li>it is a serverless transformation tool</li>
+</ul>
+<h3 id="kinesis-video-streams">Kinesis Video Streams</h3>
+<ul>
+<li>meant for streaming video in real-time</li>
+<li>producers: security camera, body-worn cam, aws deeplens, radar data, camera</li>
+<li>one producer per video stream</li>
+<li>video playback capability</li>
+<li>Sagemaker, rekognition video, 1 hour to 10 years</li>
+<li>Checkpointing via dynamodb, frames to sagemaker for ml inference, publish to stream, lambda can be used for notification</li>
+</ul>
+<h2 id="glue">Glue</h2>
+<h2 id="glue-data-catalog-and-glue-data-crawlers">Glue Data Catalog and Glue Data Crawlers</h2>
+<ul>
+<li>Automated Schema Inference</li>
+<li>Schemas are versioned</li>
+<li>integration with Athena and Redshift Spectrum</li>
+<li>Glue crawlers help build the Catalog</li>
+<li>crawlers can infer different data types</li>
+<li>and for different services S3, Redshift, RDS etc.</li>
+<li>Glue will also extract the partitions, this is helpful for query optimization</li>
+</ul>
+<h2 id="glue-etl">Glue ETL</h2>
+<ul>
+<li>Transform data, clean data, enrich data before doing analysis</li>
+<li>generate etl code in python or scala, you can modify the code</li>
+<li>can provide your own spark or pyspark scripts</li>
+<li>target can be s3, jdbc or in glue data catalog</li>
+<li>fully managed, cost effective, pay only for the resources consumed</li>
+<li>jobs are run on a serverless Spark platform</li>
+<li>glue scheduler to schedule the jobs</li>
+<li>glue triggers to automate job runs based on events</li>
+<li>transformations can be bundled (drop, filter, join, map)</li>
+<li>machine learning transformation (find matches, duplicates even when data do not match exactly, dedup with glue is possible)</li>
+<li>any apache spark transformation is possible, and changing in format is possible.</li>
+<li>multiple ways to create glue jobs including visual editors, python notebooks, python script, etc.</li>
+</ul>
+<h2 id="redshift">Redshift</h2>
+<ul>
+<li>OLAP</li>
+<li>uses SQL to analyze structured and semi-structured data across data warehouses, operational databases, and data lakes</li>
+<li>Spectrum can directly read from S3</li>
+<li>columner</li>
+</ul>
+<h2 id="rds">RDS</h2>
+<ul>
+<li>OLTP</li>
+<li>must provision servers in advance</li>
+</ul>
+<h2 id="dynamodb">DynamoDB</h2>
+<ul>
+<li>NoSQL</li>
+<li>serverless</li>
+<li>useful to store ml model (or checkpoints)</li>
+</ul>
+<h2 id="opensearch">OpenSearch</h2>
+<ul>
+<li>Previously ElasticSearch</li>
+<li>Indexing of data</li>
+<li>Search amongst data points</li>
+<li>Clickstrems analytics</li>
+</ul>
+<h2 id="aws-data-pipeline">AWS Data Pipeline</h2>
+<ul>
+<li>ETL service</li>
+<li>S3, RDS, DynamoDB, Redshift, EMR</li>
+<li>manages task dependencies</li>
+<li>data sources can be on premise</li>
+<li>runs on EC2 but managed by EC2</li>
+<li>Orchestration service</li>
+<li>Glue is managed, serverless, spark focused, etl focused, has catalog</li>
+<li>Data Pipeline is orchestation tool, and can do more</li>
+</ul>
+<h2 id="aws-batch">AWS Batch</h2>
+<ul>
+<li>Run batch jobs</li>
+<li>as Docker images</li>
+<li>fully serverless</li>
+<li>batch can be scheduled using cloudwatch, step functions</li>
+<li>not just for ETL but absolutely anything at all]</li>
+<li>EC2</li>
+<li>For any non-ETL batch is usually better than glue</li>
+</ul>
+<h2 id="aws-dms">AWS DMS</h2>
+<ul>
+<li>Data Migration Service</li>
+<li>Quickly and securely migrate databases to AWS</li>
+<li>Supports homogeneous migrations and heterogeneous migrations</li>
+<li>continuous data replication</li>
+</ul>
+<h2 id="step-functions">Step Functions</h2>
+<ul>
+<li>use to design workflow</li>
+<li>advanced error handling and retry mechanism</li>
+<li>audit of history of workflow</li>
+<li>wait for some time</li>
+<li>maximum execution time of 1 year</li>
+<li>can be used to train a ml model</li>
+<li>can also be used to tune a ml model</li>
+</ul>
+<h2 id="misc-1">Misc</h2>
+<ul>
+<li>AWS DataSync: for data migrations from on-premises to AWS storage services</li>
+<li>MQTT: IOT protocol, Standard messaging protocol</li>
+</ul>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		1430 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/airlines_delay/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Flight delay prediction and exploration in the United States
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/posts/aws_ml_speciality_eda/">
+        AWS Certified ML - Specialty exam (MLS-C01) - Exploratory Data Analysis
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
