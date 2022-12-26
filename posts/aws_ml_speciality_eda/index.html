@@ -141,12 +141,36 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/certification'>certification</a>
+		href='/tags/types-of-data'>types-of-data</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/data-distributions'>data-distributions</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/athena'>athena</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/quicksight'>quicksight</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/emr'>emr</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/apache-spark'>apache-spark</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/feature-engineering'>feature-engineering</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/unbalanced-data'>unbalanced-data</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/handling-outliers'>handling-outliers</a>
 	
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2022-12-22">2022-12-22</time>
+		datetime="2022-12-26">2022-12-26</time>
 </div>
 
 <hr />
@@ -159,6 +183,204 @@ onload='renderMathInElement(document.body);'></script>
 <article>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="exploratory-data-analysis">Exploratory Data Analysis</h1>
+<ol>
+<li><a href="#python-in-data-science-and-machine-learning">Python in data science and machine learning</a></li>
+<li><a href="#types-of-data">Types of Data</a></li>
+<li><a href="#data-distributions">Data Distributions</a></li>
+<li><a href="#trends-and-seasonality">Trends and seasonality</a></li>
+<li><a href="#athena">Athena</a></li>
+<li><a href="#quicksight">Quicksight</a></li>
+<li><a href="#types-of-visualization">Types of visualization</a></li>
+<li><a href="#emr">EMR</a></li>
+<li><a href="#apache-spark">Apache Spark</a></li>
+<li><a href="#emr-notebooks,-security-and-instance-types">EMR Notebooks, Security and Instance Types</a></li>
+<li><a href="#feature-engineering">Feature Engineering</a></li>
+<li><a href="#imputing-missing-data">Imputing Missing Data</a></li>
+<li><a href="#unbalanced-data">Unbalanced Data</a></li>
+<li><a href="#handling-outliers">Handling Outliers</a></li>
+<li><a href="#binning,-transoforming,-encoding,-saling,-and-shuffling">Binning, Transoforming, Encoding, Saling, and Shuffling</a></li>
+<li><a href="#amazing-sagemaker-ground-truth-and-label-generation">Amazing Sagemaker Ground Truth and Label Generation</a></li>
+</ol>
+<p>This section requires understanding of sanitizing and preparing data for modeling, performing feature engineering, and analyzing and visualizing data for machine learning.</p>
+<h2 id="python-in-data-science-and-machine-learning">Python in data science and machine learning</h2>
+<ul>
+<li>Python code will not be tested in the exam.</li>
+<li>Python is the industry leader at this point, however there are other alternatives such as R and Julia. Also, Java, Scala, PySpark (a python package, but requires java).</li>
+</ul>
+<h2 id="types-of-data">Types of Data</h2>
+<ul>
+<li>Numerical: quantitative, continious and discrete</li>
+<li>Categorical</li>
+<li>Ordinal</li>
+</ul>
+<h2 id="data-distributions">Data Distributions</h2>
+<ul>
+<li>Normal Distribution, probability density function</li>
+<li>Probability Mass function</li>
+<li>Poission</li>
+<li>Binomial</li>
+<li>Bernoulli</li>
+</ul>
+<h2 id="trends-and-seasonality">Trends and seasonality</h2>
+<ul>
+<li>Additive and Multiplicative</li>
+</ul>
+<h2 id="athena">Athena</h2>
+<ul>
+<li>Severless interactive queries of S3 data</li>
+<li>Presto under the hood</li>
+<li>Supports multiple formats</li>
+<li>Unstructured, semi structured or structured</li>
+<li>Ad hoc queries, querying data before loading to Redshift, analyze cloudtrail, integration with jupyter, zepplin, integration with quicksight, integration with odbc, jdbc</li>
+<li>AWS Glue datalog can extract the schema for Athena to use</li>
+<li>Pay as you go, inexpensive, converting to columner saves a lot of money, glue and s3 have their own charges</li>
+<li>IAM policies, excription is possible, TLS is possible</li>
+</ul>
+<h2 id="quicksight">Quicksight</h2>
+<ul>
+<li>Business analytics, cloud powered</li>
+<li>Build visualizations, perform ad-hoc analysis</li>
+<li>anytime on any device</li>
+<li>serverless</li>
+<li>can connect to wide variety of data sources, redshift, aurora, athena, ec2 hosted db, files, ETL</li>
+<li>can do calculated columns etc.</li>
+<li>SPICE: super fast parallel, in memory calculation engine 10 gb</li>
+<li>Quicksight is quick because of spice</li>
+<li>Quicksights machine learning insights: Anomaly detection using Random cut forest, Forecasting and auto narratives (not too mature).</li>
+<li>multifactor authentication</li>
+<li>works with vpc, row-level security</li>
+<li>users defined via iam or email signup</li>
+<li>AugoGraph feature selects the best graph for the respective data type</li>
+</ul>
+<h2 id="types-of-visualization">Types of visualization</h2>
+<ul>
+<li>bar charts:</li>
+<li>line</li>
+<li>scatter plot, heat map</li>
+<li>pie graph, tree graph</li>
+<li>pivot table</li>
+</ul>
+<h2 id="emr">EMR</h2>
+<ul>
+<li>managed hadoop framework that runs on EC2</li>
+<li>more than a hadoop cluster</li>
+<li>spark, hbase, hive, presto, flink, and more</li>
+<li>emr notebooks</li>
+<li>several integration points with AWS</li>
+<li>master nodes (manages the cluster), core node (holds hdfs data and run tasks), task node (only runs tasks)</li>
+<li>hdfs is epimerical</li>
+<li>transient cluster vs long running cluster</li>
+<li>EC2: nodes</li>
+<li>VPC: virtual network to launch instances</li>
+<li>S3: to store input/output</li>
+<li>Cloudwatch: monitor cluster performance</li>
+<li>IAM configure permissions</li>
+<li>CloudTrail: audit requests</li>
+<li>Data Pipeline: schedule and start clusters</li>
+<li>EMRFS: access s3 as if it were hdfs, uses dynamodb to track consistency</li>
+<li>local file system</li>
+<li>EBS for HDFS is also possible</li>
+</ul>
+<h2 id="hadoop">Hadoop</h2>
+<ul>
+<li>MapReduce: map/reduce, but Spark can sit here on top of yarn and hdfs</li>
+<li>Yarn: resource negotiater</li>
+<li>Hdfs: storage</li>
+</ul>
+<h2 id="apache-spark">Apache Spark</h2>
+<ul>
+<li>open source</li>
+<li>in memory caching, DAGs</li>
+<li>java, scala, python, R</li>
+<li>batch processing and real time analytics, graph processing, machine learning</li>
+<li>data transformation</li>
+<li>Spark context, cluster manager via spark or yarn, executors</li>
+<li>Spark core</li>
+<li>Spark RDD</li>
+<li>DataFrames and Datasets are built on top of RDD, and they are most commonly used at the moment</li>
+<li>Spark Streaming is possible (works in mini batches). unbounded database table</li>
+<li>mllib (distributed machine learning)</li>
+<li>graphx (distributed graph processing)</li>
+<li>Zepplin can run spark code interactively, and can also use charts/plots</li>
+</ul>
+<h2 id="spark-mllib">Spark mllib</h2>
+<ul>
+<li>Classification: logistic regression and naive bayes</li>
+<li>Regression</li>
+<li>Decision trees</li>
+<li>Recommendation engine (ALS)</li>
+<li>Clustering (K-means)</li>
+<li>LDA (topic modeling)</li>
+<li>ML workflow utilities (pipelines, feature transformation, persistence)</li>
+<li>SVD, PCA and statistics</li>
+</ul>
+<h2 id="emr-notebooks-security-and-instance-types">EMR Notebooks, Security and Instance Types</h2>
+<ul>
+<li>Similar concept to Zeppelin, with more AWS integration</li>
+<li>notebooks backed up to s3</li>
+<li>provision clusters from the notebooks</li>
+<li>hosted inside a vpc</li>
+<li>accessed only via aws console</li>
+<li>IAM policies, Kerberos (a computer-network authentication protocol that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner), SSH, IAM roles</li>
+<li>Spot instances are good choice for task nodes, only use on core or master if you are testing or very cost sensitive, however, you are risking partial data loss</li>
+</ul>
+<h2 id="feature-engineering">Feature Engineering</h2>
+<ul>
+<li>create better features</li>
+<li>learnt on experience</li>
+<li>too many features leads to sparse data</li>
+<li>every feature is a new dimension</li>
+<li>dimensionality reduction (PCA and k-means/clustering)</li>
+</ul>
+<h2 id="imputing-missing-data">Imputing Missing Data</h2>
+<ul>
+<li>this is an art</li>
+<li>mean replacement</li>
+<li>dropping</li>
+<li>linear regression, deep learning, knn and mean/median</li>
+<li>MICE (multiple imputation by chained equations)</li>
+<li>categorical data vs numeric data (categorical is usually not trivial)</li>
+<li>just get more data</li>
+</ul>
+<h2 id="unbalanced-data">Unbalanced Data</h2>
+<ul>
+<li>oversample</li>
+<li>undersample</li>
+<li>smote (synthetic minority over sampling technique), better than just oversampling</li>
+<li>adjusting thresholds</li>
+</ul>
+<h2 id="handling-outliers">Handling Outliers</h2>
+<ul>
+<li>do not throw ouliers unless it is incosistent with what you want to do</li>
+<li>Random cut forest (kinesis analytics, quicksight, sagemaker and more)</li>
+<li>use common sense</li>
+<li>box and whisker</li>
+</ul>
+<h2 id="binning-transforming-encoding-scaling-and-shuffling">Binning, Transforming, Encoding, Scaling, and Shuffling</h2>
+<ul>
+<li>binning: numeric to categorical (ordinal)</li>
+<li>transforming: log</li>
+<li>encoding: example one hot encoder</li>
+<li>scaling and normalizing</li>
+<li>shuffling</li>
+</ul>
+<h2 id="amazing-sagemaker-ground-truth-and-label-generation">Amazing Sagemaker Ground Truth and Label Generation</h2>
+<ul>
+<li>using humans to label the data</li>
+<li>ambiguous data is sent to humans</li>
+<li>ends reducing the cost by up to 70%</li>
+<li>mechanical turk</li>
+<li>other ways to generate training labels: rekognition (AWS service for image recognition, automatically classify images, Comprehend)</li>
+</ul>
+<h2 id="tf-idf">TF-IDF</h2>
+<ul>
+<li>Term Frequency: how often does a word occur in a document</li>
+<li>Document Frequency: how often does a word occur in a entire set of documents</li>
+<li>Term Frequency/Document Frequence (TF<em>Inverse</em>DF)</li>
+<li>bag of words, we do not pay attention</li>
+<li>scale is hard, spark comes in</li>
+<li>n-grams</li>
+</ul>
 </div>
 	</section>
 
@@ -300,7 +522,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		3 words in this page.
+		897 words in this page.
 	</div>
 </div>
 
@@ -311,17 +533,17 @@ onload='renderMathInElement(document.body);'></script>
 <hr class="" />
 <div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
     
-    <a class="flex-grow-0" href="/posts/aws_ml_speciality_data_engineering/">
+    <a class="flex-grow-0" href="/posts/aws_ml_speciality_ml/">
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering
+        AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations
     </a>
     
     
-    <a class="flex-grow-0" href="/posts/aws_ml_speciality_modeling/">
-        AWS Certified ML - Specialty exam (MLS-C01) - Modeling
+    <a class="flex-grow-0" href="/posts/aws_ml_speciality_data_engineering/">
+        AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -331,15 +553,6 @@ onload='renderMathInElement(document.body);'></script>
 <div >
 
 
-
-<div class="font-serif pb-2 flex align-start leading-loose">
-	<span class="heading pr-6 leading-loose">Related</span>
-	<span >
-		
-			<a href="/posts/aws_ml_speciality_data_engineering/">AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</a>
-		
-</span>
-</div>
 
 </div>
 <hr />

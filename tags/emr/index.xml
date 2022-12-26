@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emr on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/emr/</link>
+    <description>Recent content in emr on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/emr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - Exploratory Data Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</guid>
+      <description>&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#python-in-data-science-and-machine-learning&#34;&gt;Python in data science and machine learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#types-of-data&#34;&gt;Types of Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#data-distributions&#34;&gt;Data Distributions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#trends-and-seasonality&#34;&gt;Trends and seasonality&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#athena&#34;&gt;Athena&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#quicksight&#34;&gt;Quicksight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#types-of-visualization&#34;&gt;Types of visualization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apache-spark&#34;&gt;Apache Spark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emr-notebooks,-security-and-instance-types&#34;&gt;EMR Notebooks, Security and Instance Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#feature-engineering&#34;&gt;Feature Engineering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#imputing-missing-data&#34;&gt;Imputing Missing Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#unbalanced-data&#34;&gt;Unbalanced Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#handling-outliers&#34;&gt;Handling Outliers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#binning,-transoforming,-encoding,-saling,-and-shuffling&#34;&gt;Binning, Transoforming, Encoding, Saling, and Shuffling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazing-sagemaker-ground-truth-and-label-generation&#34;&gt;Amazing Sagemaker Ground Truth and Label Generation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This section requires understanding of sanitizing and preparing data for modeling, performing feature engineering, and analyzing and visualizing data for machine learning.&lt;/p&gt;
+&lt;h2 id=&#34;python-in-data-science-and-machine-learning&#34;&gt;Python in data science and machine learning&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Python code will not be tested in the exam.&lt;/li&gt;
+&lt;li&gt;Python is the industry leader at this point, however there are other alternatives such as R and Julia. Also, Java, Scala, PySpark (a python package, but requires java).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;types-of-data&#34;&gt;Types of Data&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Numerical: quantitative, continious and discrete&lt;/li&gt;
+&lt;li&gt;Categorical&lt;/li&gt;
+&lt;li&gt;Ordinal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;data-distributions&#34;&gt;Data Distributions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Normal Distribution, probability density function&lt;/li&gt;
+&lt;li&gt;Probability Mass function&lt;/li&gt;
+&lt;li&gt;Poission&lt;/li&gt;
+&lt;li&gt;Binomial&lt;/li&gt;
+&lt;li&gt;Bernoulli&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;trends-and-seasonality&#34;&gt;Trends and seasonality&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Additive and Multiplicative&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;athena&#34;&gt;Athena&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Severless interactive queries of S3 data&lt;/li&gt;
+&lt;li&gt;Presto under the hood&lt;/li&gt;
+&lt;li&gt;Supports multiple formats&lt;/li&gt;
+&lt;li&gt;Unstructured, semi structured or structured&lt;/li&gt;
+&lt;li&gt;Ad hoc queries, querying data before loading to Redshift, analyze cloudtrail, integration with jupyter, zepplin, integration with quicksight, integration with odbc, jdbc&lt;/li&gt;
+&lt;li&gt;AWS Glue datalog can extract the schema for Athena to use&lt;/li&gt;
+&lt;li&gt;Pay as you go, inexpensive, converting to columner saves a lot of money, glue and s3 have their own charges&lt;/li&gt;
+&lt;li&gt;IAM policies, excription is possible, TLS is possible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;quicksight&#34;&gt;Quicksight&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Business analytics, cloud powered&lt;/li&gt;
+&lt;li&gt;Build visualizations, perform ad-hoc analysis&lt;/li&gt;
+&lt;li&gt;anytime on any device&lt;/li&gt;
+&lt;li&gt;serverless&lt;/li&gt;
+&lt;li&gt;can connect to wide variety of data sources, redshift, aurora, athena, ec2 hosted db, files, ETL&lt;/li&gt;
+&lt;li&gt;can do calculated columns etc.&lt;/li&gt;
+&lt;li&gt;SPICE: super fast parallel, in memory calculation engine 10 gb&lt;/li&gt;
+&lt;li&gt;Quicksight is quick because of spice&lt;/li&gt;
+&lt;li&gt;Quicksights machine learning insights: Anomaly detection using Random cut forest, Forecasting and auto narratives (not too mature).&lt;/li&gt;
+&lt;li&gt;multifactor authentication&lt;/li&gt;
+&lt;li&gt;works with vpc, row-level security&lt;/li&gt;
+&lt;li&gt;users defined via iam or email signup&lt;/li&gt;
+&lt;li&gt;AugoGraph feature selects the best graph for the respective data type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;types-of-visualization&#34;&gt;Types of visualization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;bar charts:&lt;/li&gt;
+&lt;li&gt;line&lt;/li&gt;
+&lt;li&gt;scatter plot, heat map&lt;/li&gt;
+&lt;li&gt;pie graph, tree graph&lt;/li&gt;
+&lt;li&gt;pivot table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;emr&#34;&gt;EMR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;managed hadoop framework that runs on EC2&lt;/li&gt;
+&lt;li&gt;more than a hadoop cluster&lt;/li&gt;
+&lt;li&gt;spark, hbase, hive, presto, flink, and more&lt;/li&gt;
+&lt;li&gt;emr notebooks&lt;/li&gt;
+&lt;li&gt;several integration points with AWS&lt;/li&gt;
+&lt;li&gt;master nodes (manages the cluster), core node (holds hdfs data and run tasks), task node (only runs tasks)&lt;/li&gt;
+&lt;li&gt;hdfs is epimerical&lt;/li&gt;
+&lt;li&gt;transient cluster vs long running cluster&lt;/li&gt;
+&lt;li&gt;EC2: nodes&lt;/li&gt;
+&lt;li&gt;VPC: virtual network to launch instances&lt;/li&gt;
+&lt;li&gt;S3: to store input/output&lt;/li&gt;
+&lt;li&gt;Cloudwatch: monitor cluster performance&lt;/li&gt;
+&lt;li&gt;IAM configure permissions&lt;/li&gt;
+&lt;li&gt;CloudTrail: audit requests&lt;/li&gt;
+&lt;li&gt;Data Pipeline: schedule and start clusters&lt;/li&gt;
+&lt;li&gt;EMRFS: access s3 as if it were hdfs, uses dynamodb to track consistency&lt;/li&gt;
+&lt;li&gt;local file system&lt;/li&gt;
+&lt;li&gt;EBS for HDFS is also possible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;hadoop&#34;&gt;Hadoop&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MapReduce: map/reduce, but Spark can sit here on top of yarn and hdfs&lt;/li&gt;
+&lt;li&gt;Yarn: resource negotiater&lt;/li&gt;
+&lt;li&gt;Hdfs: storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;apache-spark&#34;&gt;Apache Spark&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;open source&lt;/li&gt;
+&lt;li&gt;in memory caching, DAGs&lt;/li&gt;
+&lt;li&gt;java, scala, python, R&lt;/li&gt;
+&lt;li&gt;batch processing and real time analytics, graph processing, machine learning&lt;/li&gt;
+&lt;li&gt;data transformation&lt;/li&gt;
+&lt;li&gt;Spark context, cluster manager via spark or yarn, executors&lt;/li&gt;
+&lt;li&gt;Spark core&lt;/li&gt;
+&lt;li&gt;Spark RDD&lt;/li&gt;
+&lt;li&gt;DataFrames and Datasets are built on top of RDD, and they are most commonly used at the moment&lt;/li&gt;
+&lt;li&gt;Spark Streaming is possible (works in mini batches). unbounded database table&lt;/li&gt;
+&lt;li&gt;mllib (distributed machine learning)&lt;/li&gt;
+&lt;li&gt;graphx (distributed graph processing)&lt;/li&gt;
+&lt;li&gt;Zepplin can run spark code interactively, and can also use charts/plots&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;spark-mllib&#34;&gt;Spark mllib&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Classification: logistic regression and naive bayes&lt;/li&gt;
+&lt;li&gt;Regression&lt;/li&gt;
+&lt;li&gt;Decision trees&lt;/li&gt;
+&lt;li&gt;Recommendation engine (ALS)&lt;/li&gt;
+&lt;li&gt;Clustering (K-means)&lt;/li&gt;
+&lt;li&gt;LDA (topic modeling)&lt;/li&gt;
+&lt;li&gt;ML workflow utilities (pipelines, feature transformation, persistence)&lt;/li&gt;
+&lt;li&gt;SVD, PCA and statistics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;emr-notebooks-security-and-instance-types&#34;&gt;EMR Notebooks, Security and Instance Types&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Similar concept to Zeppelin, with more AWS integration&lt;/li&gt;
+&lt;li&gt;notebooks backed up to s3&lt;/li&gt;
+&lt;li&gt;provision clusters from the notebooks&lt;/li&gt;
+&lt;li&gt;hosted inside a vpc&lt;/li&gt;
+&lt;li&gt;accessed only via aws console&lt;/li&gt;
+&lt;li&gt;IAM policies, Kerberos (a computer-network authentication protocol that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner), SSH, IAM roles&lt;/li&gt;
+&lt;li&gt;Spot instances are good choice for task nodes, only use on core or master if you are testing or very cost sensitive, however, you are risking partial data loss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;feature-engineering&#34;&gt;Feature Engineering&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;create better features&lt;/li&gt;
+&lt;li&gt;learnt on experience&lt;/li&gt;
+&lt;li&gt;too many features leads to sparse data&lt;/li&gt;
+&lt;li&gt;every feature is a new dimension&lt;/li&gt;
+&lt;li&gt;dimensionality reduction (PCA and k-means/clustering)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;imputing-missing-data&#34;&gt;Imputing Missing Data&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;this is an art&lt;/li&gt;
+&lt;li&gt;mean replacement&lt;/li&gt;
+&lt;li&gt;dropping&lt;/li&gt;
+&lt;li&gt;linear regression, deep learning, knn and mean/median&lt;/li&gt;
+&lt;li&gt;MICE (multiple imputation by chained equations)&lt;/li&gt;
+&lt;li&gt;categorical data vs numeric data (categorical is usually not trivial)&lt;/li&gt;
+&lt;li&gt;just get more data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;unbalanced-data&#34;&gt;Unbalanced Data&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;oversample&lt;/li&gt;
+&lt;li&gt;undersample&lt;/li&gt;
+&lt;li&gt;smote (synthetic minority over sampling technique), better than just oversampling&lt;/li&gt;
+&lt;li&gt;adjusting thresholds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;handling-outliers&#34;&gt;Handling Outliers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;do not throw ouliers unless it is incosistent with what you want to do&lt;/li&gt;
+&lt;li&gt;Random cut forest (kinesis analytics, quicksight, sagemaker and more)&lt;/li&gt;
+&lt;li&gt;use common sense&lt;/li&gt;
+&lt;li&gt;box and whisker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;binning-transforming-encoding-scaling-and-shuffling&#34;&gt;Binning, Transforming, Encoding, Scaling, and Shuffling&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;binning: numeric to categorical (ordinal)&lt;/li&gt;
+&lt;li&gt;transforming: log&lt;/li&gt;
+&lt;li&gt;encoding: example one hot encoder&lt;/li&gt;
+&lt;li&gt;scaling and normalizing&lt;/li&gt;
+&lt;li&gt;shuffling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;amazing-sagemaker-ground-truth-and-label-generation&#34;&gt;Amazing Sagemaker Ground Truth and Label Generation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;using humans to label the data&lt;/li&gt;
+&lt;li&gt;ambiguous data is sent to humans&lt;/li&gt;
+&lt;li&gt;ends reducing the cost by up to 70%&lt;/li&gt;
+&lt;li&gt;mechanical turk&lt;/li&gt;
+&lt;li&gt;other ways to generate training labels: rekognition (AWS service for image recognition, automatically classify images, Comprehend)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tf-idf&#34;&gt;TF-IDF&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Term Frequency: how often does a word occur in a document&lt;/li&gt;
+&lt;li&gt;Document Frequency: how often does a word occur in a entire set of documents&lt;/li&gt;
+&lt;li&gt;Term Frequency/Document Frequence (TF&lt;em&gt;Inverse&lt;/em&gt;DF)&lt;/li&gt;
+&lt;li&gt;bag of words, we do not pay attention&lt;/li&gt;
+&lt;li&gt;scale is hard, spark comes in&lt;/li&gt;
+&lt;li&gt;n-grams&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

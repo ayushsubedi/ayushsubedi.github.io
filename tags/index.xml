@@ -6,15 +6,33 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>apache-spark</title>
+      <link>https://ayushsubedi.github.io/tags/apache-spark/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/apache-spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>athena</title>
+      <link>https://ayushsubedi.github.io/tags/athena/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/athena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>certification</title>
       <link>https://ayushsubedi.github.io/tags/certification/</link>
-      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/certification/</guid>
       <description></description>
@@ -23,16 +41,25 @@
     <item>
       <title>data pipeline</title>
       <link>https://ayushsubedi.github.io/tags/data-pipeline/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/data-pipeline/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>data-distributions</title>
+      <link>https://ayushsubedi.github.io/tags/data-distributions/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-distributions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ebs</title>
       <link>https://ayushsubedi.github.io/tags/ebs/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/ebs/</guid>
       <description></description>
@@ -41,7 +68,7 @@
     <item>
       <title>efs</title>
       <link>https://ayushsubedi.github.io/tags/efs/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/efs/</guid>
       <description></description>
@@ -50,34 +77,70 @@
     <item>
       <title>elasticsearch</title>
       <link>https://ayushsubedi.github.io/tags/elasticsearch/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/elasticsearch/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>emr</title>
+      <link>https://ayushsubedi.github.io/tags/emr/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/emr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feature-engineering</title>
+      <link>https://ayushsubedi.github.io/tags/feature-engineering/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/feature-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>glue</title>
       <link>https://ayushsubedi.github.io/tags/glue/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/glue/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>handling-outliers</title>
+      <link>https://ayushsubedi.github.io/tags/handling-outliers/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/handling-outliers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>kinesis</title>
       <link>https://ayushsubedi.github.io/tags/kinesis/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/kinesis/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>quicksight</title>
+      <link>https://ayushsubedi.github.io/tags/quicksight/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/quicksight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>rds</title>
       <link>https://ayushsubedi.github.io/tags/rds/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/rds/</guid>
       <description></description>
@@ -86,7 +149,7 @@
     <item>
       <title>redshift</title>
       <link>https://ayushsubedi.github.io/tags/redshift/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/redshift/</guid>
       <description></description>
@@ -95,7 +158,7 @@
     <item>
       <title>s3</title>
       <link>https://ayushsubedi.github.io/tags/s3/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/s3/</guid>
       <description></description>
@@ -104,9 +167,27 @@
     <item>
       <title>step function</title>
       <link>https://ayushsubedi.github.io/tags/step-function/</link>
-      <pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/step-function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>types-of-data</title>
+      <link>https://ayushsubedi.github.io/tags/types-of-data/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/types-of-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unbalanced-data</title>
+      <link>https://ayushsubedi.github.io/tags/unbalanced-data/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/unbalanced-data/</guid>
       <description></description>
     </item>
     
