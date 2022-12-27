@@ -6,7 +6,7 @@
     <description>Recent content in feature-engineering on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/feature-engineering/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - Exploratory Data Analysis</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</guid>
       <description>&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
@@ -27,6 +27,7 @@
 &lt;li&gt;&lt;a href=&#34;#quicksight&#34;&gt;Quicksight&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#types-of-visualization&#34;&gt;Types of visualization&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hadoop&#34;&gt;Hadoop&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#apache-spark&#34;&gt;Apache Spark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#emr-notebooks,-security-and-instance-types&#34;&gt;EMR Notebooks, Security and Instance Types&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#feature-engineering&#34;&gt;Feature Engineering&lt;/a&gt;&lt;/li&gt;
@@ -40,7 +41,7 @@
 &lt;h2 id=&#34;python-in-data-science-and-machine-learning&#34;&gt;Python in data science and machine learning&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Python code will not be tested in the exam.&lt;/li&gt;
-&lt;li&gt;Python is the industry leader at this point, however there are other alternatives such as R and Julia. Also, Java, Scala, PySpark (a python package, but requires java).&lt;/li&gt;
+&lt;li&gt;Python is the industry choice at this point, however there are other alternatives such as R and Julia. Also, Java, Scala, PySpark (a python package, running Spark).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;types-of-data&#34;&gt;Types of Data&lt;/h2&gt;
 &lt;ul&gt;
@@ -50,14 +51,15 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;data-distributions&#34;&gt;Data Distributions&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Normal Distribution, probability density function&lt;/li&gt;
-&lt;li&gt;Probability Mass function&lt;/li&gt;
-&lt;li&gt;Poission&lt;/li&gt;
-&lt;li&gt;Binomial&lt;/li&gt;
-&lt;li&gt;Bernoulli&lt;/li&gt;
+&lt;li&gt;Normal Distribution, probability density function (continous data type)&lt;/li&gt;
+&lt;li&gt;Probability Mass function (discrete data type)&lt;/li&gt;
+&lt;li&gt;Poission (discrete data type)&lt;/li&gt;
+&lt;li&gt;Binomial (discrete data type)&lt;/li&gt;
+&lt;li&gt;Bernoulli (discrete data type)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;trends-and-seasonality&#34;&gt;Trends and seasonality&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;Time series, but cyclical trends also exist&lt;/li&gt;
 &lt;li&gt;Additive and Multiplicative&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;athena&#34;&gt;Athena&lt;/h2&gt;
@@ -89,7 +91,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;types-of-visualization&#34;&gt;Types of visualization&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;bar charts:&lt;/li&gt;
+&lt;li&gt;bar charts&lt;/li&gt;
 &lt;li&gt;line&lt;/li&gt;
 &lt;li&gt;scatter plot, heat map&lt;/li&gt;
 &lt;li&gt;pie graph, tree graph&lt;/li&gt;

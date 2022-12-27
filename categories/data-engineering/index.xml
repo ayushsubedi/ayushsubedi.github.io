@@ -6,10 +6,319 @@
     <description>Recent content in Data Engineering on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/data-engineering/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TFIDF</title>
+      <link>https://ayushsubedi.github.io/posts/tfidf/</link>
+      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/tfidf/</guid>
+      <description>&lt;h1 id=&#34;wikipedia-search-using-tfidf&#34;&gt;Wikipedia search using TFIDF&lt;/h1&gt;
+&lt;h2 id=&#34;term-frequecy-inverse-document-frequency&#34;&gt;Term Frequecy Inverse Document Frequency&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/tfidf.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;please, call, the, number, below, do, not, us, please call, call the, the number, number below, please do, do not, not call, call us&lt;/p&gt;
+&lt;p&gt;dimension = [2, 16]&lt;/p&gt;
+&lt;h1 id=&#34;example-of-unigram-tfidf&#34;&gt;Example of unigram TFIDF&lt;/h1&gt;
+&lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; os
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pyspark
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pyspark.sql &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; SparkSession
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pyspark.sql.types &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pyspark.sql.functions &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; udf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pyspark.ml.feature &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; HashingTF, IDF, Tokenizer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;sparksession&#34;&gt;SparkSession&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;spark &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SparkSession&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;builder \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;appName(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;tfidf&amp;#39;&lt;/span&gt;)\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;config(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;spark.jars&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;../jars/snowflake-jdbc-3.13.6.jar, ../jars/spark-snowflake_2.12-2.9.0-spark_3.1.jar&amp;#39;&lt;/span&gt;) \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getOrCreate()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;spark&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sparkContext&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;setLogLevel(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;WARN&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:35:58 WARN Utils: Your hostname, SPMBP136.local resolves to a loopback address: 127.0.0.1; using 192.168.0.101 instead (on interface en6)
+22/12/27 13:35:58 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+22/12/27 13:35:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+
+Setting default log level to &amp;quot;WARN&amp;quot;.
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;file_path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;../datasets/wiki.csv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wiki &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; spark&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;csv&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;option(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;load(file_path)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wiki&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;+---+--------------------+-------------------+--------------------+
+| ID|               Title|               Time|            Document|
++---+--------------------+-------------------+--------------------+
+| 12|           Anarchism|2008-12-30 06:23:05|&amp;quot;Anarchism (somet...|
+| 25|              Autism|2008-12-24 20:41:05|&amp;quot;Autism is a brai...|
+| 39|              Albedo|2008-12-29 18:19:09|&amp;quot;The albedo of an...|
+|290|                   A|2008-12-27 04:33:16|&amp;quot;The letter A is ...|
+|303|             Alabama|2008-12-29 08:15:47|&amp;quot;Alabama (formall...|
+|305|            Achilles|2008-12-30 06:18:01|&amp;quot;thumb\n\nIn Gree...|
+|307|     Abraham Lincoln|2008-12-28 20:18:23|&amp;quot;Abraham Lincoln ...|
+|308|           Aristotle|2008-12-29 23:54:48|&amp;quot;Aristotle (Greek...|
+|309|An American in Paris|2008-09-27 19:29:28|&amp;quot;An American in P...|
+|324|       Academy Award|2008-12-28 17:50:43|&amp;quot;The Academy Awar...|
+|330|             Actrius|2008-05-23 15:24:32|Actrius (Actresse...|
+|332|     Animalia (book)|2008-12-18 11:12:34|thumbAnimalia (IS...|
+|334|International Ato...|2008-11-21 22:40:20|International Ato...|
+|336|            Altruism|2008-12-27 03:57:17|&amp;quot;Altruism is self...|
+|339|            Ayn Rand|2008-12-30 08:03:06|&amp;quot;Ayn Rand (,  – M...|
+|340|        Alain Connes|2008-09-03 13:41:39|Alain Connes (bor...|
+|344|          Allan Dwan|2008-11-14 05:28:58|Allan Dwan (April...|
+|358|             Algeria|2008-12-29 02:54:36|&amp;quot;Algeria (, al-Ja...|
+|359|List of character...|2008-12-23 20:20:21|&amp;quot;This is a list o...|
+|569|        Anthropology|2008-12-28 23:04:30|&amp;quot;Anthropology (, ...|
++---+--------------------+-------------------+--------------------+
+only showing top 20 rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wiki&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;filter(wiki&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Document&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isNull())&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wiki &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; wiki&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;filter(&lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt;wiki&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Document&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isNull())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wiki&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;+---+--------------------+-------------------+--------------------+
+| ID|               Title|               Time|            Document|
++---+--------------------+-------------------+--------------------+
+| 12|           Anarchism|2008-12-30 06:23:05|&amp;quot;Anarchism (somet...|
+| 25|              Autism|2008-12-24 20:41:05|&amp;quot;Autism is a brai...|
+| 39|              Albedo|2008-12-29 18:19:09|&amp;quot;The albedo of an...|
+|290|                   A|2008-12-27 04:33:16|&amp;quot;The letter A is ...|
+|303|             Alabama|2008-12-29 08:15:47|&amp;quot;Alabama (formall...|
+|305|            Achilles|2008-12-30 06:18:01|&amp;quot;thumb\n\nIn Gree...|
+|307|     Abraham Lincoln|2008-12-28 20:18:23|&amp;quot;Abraham Lincoln ...|
+|308|           Aristotle|2008-12-29 23:54:48|&amp;quot;Aristotle (Greek...|
+|309|An American in Paris|2008-09-27 19:29:28|&amp;quot;An American in P...|
+|324|       Academy Award|2008-12-28 17:50:43|&amp;quot;The Academy Awar...|
+|330|             Actrius|2008-05-23 15:24:32|Actrius (Actresse...|
+|332|     Animalia (book)|2008-12-18 11:12:34|thumbAnimalia (IS...|
+|334|International Ato...|2008-11-21 22:40:20|International Ato...|
+|336|            Altruism|2008-12-27 03:57:17|&amp;quot;Altruism is self...|
+|339|            Ayn Rand|2008-12-30 08:03:06|&amp;quot;Ayn Rand (,  – M...|
+|340|        Alain Connes|2008-09-03 13:41:39|Alain Connes (bor...|
+|344|          Allan Dwan|2008-11-14 05:28:58|Allan Dwan (April...|
+|358|             Algeria|2008-12-29 02:54:36|&amp;quot;Algeria (, al-Ja...|
+|359|List of character...|2008-12-23 20:20:21|&amp;quot;This is a list o...|
+|569|        Anthropology|2008-12-28 23:04:30|&amp;quot;Anthropology (, ...|
++---+--------------------+-------------------+--------------------+
+only showing top 20 rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tokenizer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Tokenizer(inputCol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Document&amp;#34;&lt;/span&gt;, outputCol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;words&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wordsData &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tokenizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;transform(wiki)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wordsData&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;+---+--------------------+-------------------+--------------------+--------------------+
+| ID|               Title|               Time|            Document|               words|
++---+--------------------+-------------------+--------------------+--------------------+
+| 12|           Anarchism|2008-12-30 06:23:05|&amp;quot;Anarchism (somet...|[&amp;quot;anarchism, (som...|
+| 25|              Autism|2008-12-24 20:41:05|&amp;quot;Autism is a brai...|[&amp;quot;autism, is, a, ...|
+| 39|              Albedo|2008-12-29 18:19:09|&amp;quot;The albedo of an...|[&amp;quot;the, albedo, of...|
+|290|                   A|2008-12-27 04:33:16|&amp;quot;The letter A is ...|[&amp;quot;the, letter, a,...|
+|303|             Alabama|2008-12-29 08:15:47|&amp;quot;Alabama (formall...|[&amp;quot;alabama, (forma...|
+|305|            Achilles|2008-12-30 06:18:01|&amp;quot;thumb\n\nIn Gree...|[&amp;quot;thumb\n\nin, gr...|
+|307|     Abraham Lincoln|2008-12-28 20:18:23|&amp;quot;Abraham Lincoln ...|[&amp;quot;abraham, lincol...|
+|308|           Aristotle|2008-12-29 23:54:48|&amp;quot;Aristotle (Greek...|[&amp;quot;aristotle, (gre...|
+|309|An American in Paris|2008-09-27 19:29:28|&amp;quot;An American in P...|[&amp;quot;an, american, i...|
+|324|       Academy Award|2008-12-28 17:50:43|&amp;quot;The Academy Awar...|[&amp;quot;the, academy, a...|
+|330|             Actrius|2008-05-23 15:24:32|Actrius (Actresse...|[actrius, (actres...|
+|332|     Animalia (book)|2008-12-18 11:12:34|thumbAnimalia (IS...|[thumbanimalia, (...|
+|334|International Ato...|2008-11-21 22:40:20|International Ato...|[international, a...|
+|336|            Altruism|2008-12-27 03:57:17|&amp;quot;Altruism is self...|[&amp;quot;altruism, is, s...|
+|339|            Ayn Rand|2008-12-30 08:03:06|&amp;quot;Ayn Rand (,  – M...|[&amp;quot;ayn, rand, (,, ...|
+|340|        Alain Connes|2008-09-03 13:41:39|Alain Connes (bor...|[alain, connes, (...|
+|344|          Allan Dwan|2008-11-14 05:28:58|Allan Dwan (April...|[allan, dwan, (ap...|
+|358|             Algeria|2008-12-29 02:54:36|&amp;quot;Algeria (, al-Ja...|[&amp;quot;algeria, (,, al...|
+|359|List of character...|2008-12-23 20:20:21|&amp;quot;This is a list o...|[&amp;quot;this, is, a, li...|
+|569|        Anthropology|2008-12-28 23:04:30|&amp;quot;Anthropology (, ...|[&amp;quot;anthropology, (...|
++---+--------------------+-------------------+--------------------+--------------------+
+only showing top 20 rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hashingTF &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; HashingTF(inputCol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;words&amp;#34;&lt;/span&gt;, outputCol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rawFeatures&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;featuredData &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashingTF&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;transform(wordsData)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;featuredData&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;+---+--------------------+-------------------+--------------------+--------------------+--------------------+
+| ID|               Title|               Time|            Document|               words|         rawFeatures|
++---+--------------------+-------------------+--------------------+--------------------+--------------------+
+| 12|           Anarchism|2008-12-30 06:23:05|&amp;quot;Anarchism (somet...|[&amp;quot;anarchism, (som...|(262144,[15157,27...|
+| 25|              Autism|2008-12-24 20:41:05|&amp;quot;Autism is a brai...|[&amp;quot;autism, is, a, ...|(262144,[15,1546,...|
+| 39|              Albedo|2008-12-29 18:19:09|&amp;quot;The albedo of an...|[&amp;quot;the, albedo, of...|(262144,[7853,240...|
+|290|                   A|2008-12-27 04:33:16|&amp;quot;The letter A is ...|[&amp;quot;the, letter, a,...|(262144,[6037,942...|
+|303|             Alabama|2008-12-29 08:15:47|&amp;quot;Alabama (formall...|[&amp;quot;alabama, (forma...|(262144,[1797,256...|
+|305|            Achilles|2008-12-30 06:18:01|&amp;quot;thumb\n\nIn Gree...|[&amp;quot;thumb\n\nin, gr...|(262144,[10758,16...|
+|307|     Abraham Lincoln|2008-12-28 20:18:23|&amp;quot;Abraham Lincoln ...|[&amp;quot;abraham, lincol...|(262144,[2564,460...|
+|308|           Aristotle|2008-12-29 23:54:48|&amp;quot;Aristotle (Greek...|[&amp;quot;aristotle, (gre...|(262144,[2767,356...|
+|309|An American in Paris|2008-09-27 19:29:28|&amp;quot;An American in P...|[&amp;quot;an, american, i...|(262144,[2366,670...|
+|324|       Academy Award|2008-12-28 17:50:43|&amp;quot;The Academy Awar...|[&amp;quot;the, academy, a...|(262144,[2931,328...|
+|330|             Actrius|2008-05-23 15:24:32|Actrius (Actresse...|[actrius, (actres...|(262144,[6558,674...|
+|332|     Animalia (book)|2008-12-18 11:12:34|thumbAnimalia (IS...|[thumbanimalia, (...|(262144,[2284,609...|
+|334|International Ato...|2008-11-21 22:40:20|International Ato...|[international, a...|(262144,[847,925,...|
+|336|            Altruism|2008-12-27 03:57:17|&amp;quot;Altruism is self...|[&amp;quot;altruism, is, s...|(262144,[5675,680...|
+|339|            Ayn Rand|2008-12-30 08:03:06|&amp;quot;Ayn Rand (,  – M...|[&amp;quot;ayn, rand, (,, ...|(262144,[528,1091...|
+|340|        Alain Connes|2008-09-03 13:41:39|Alain Connes (bor...|[alain, connes, (...|(262144,[154,1595...|
+|344|          Allan Dwan|2008-11-14 05:28:58|Allan Dwan (April...|[allan, dwan, (ap...|(262144,[1578,181...|
+|358|             Algeria|2008-12-29 02:54:36|&amp;quot;Algeria (, al-Ja...|[&amp;quot;algeria, (,, al...|(262144,[3852,492...|
+|359|List of character...|2008-12-23 20:20:21|&amp;quot;This is a list o...|[&amp;quot;this, is, a, li...|(262144,[14376,19...|
+|569|        Anthropology|2008-12-28 23:04:30|&amp;quot;Anthropology (, ...|[&amp;quot;anthropology, (...|(262144,[57138,10...|
++---+--------------------+-------------------+--------------------+--------------------+--------------------+
+only showing top 20 rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;idf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; IDF(inputCol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rawFeatures&amp;#34;&lt;/span&gt;, outputCol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;features&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;idfModel &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; idf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fit(featuredData)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rescaledData &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; idfModel&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;transform(featuredData)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rescaledData&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:11 WARN DAGScheduler: Broadcasting large task binary with size 4.0 MiB
++---+--------------------+-------------------+--------------------+--------------------+--------------------+--------------------+
+| ID|               Title|               Time|            Document|               words|         rawFeatures|            features|
++---+--------------------+-------------------+--------------------+--------------------+--------------------+--------------------+
+| 12|           Anarchism|2008-12-30 06:23:05|&amp;quot;Anarchism (somet...|[&amp;quot;anarchism, (som...|(262144,[15157,27...|(262144,[15157,27...|
+| 25|              Autism|2008-12-24 20:41:05|&amp;quot;Autism is a brai...|[&amp;quot;autism, is, a, ...|(262144,[15,1546,...|(262144,[15,1546,...|
+| 39|              Albedo|2008-12-29 18:19:09|&amp;quot;The albedo of an...|[&amp;quot;the, albedo, of...|(262144,[7853,240...|(262144,[7853,240...|
+|290|                   A|2008-12-27 04:33:16|&amp;quot;The letter A is ...|[&amp;quot;the, letter, a,...|(262144,[6037,942...|(262144,[6037,942...|
+|303|             Alabama|2008-12-29 08:15:47|&amp;quot;Alabama (formall...|[&amp;quot;alabama, (forma...|(262144,[1797,256...|(262144,[1797,256...|
+|305|            Achilles|2008-12-30 06:18:01|&amp;quot;thumb\n\nIn Gree...|[&amp;quot;thumb\n\nin, gr...|(262144,[10758,16...|(262144,[10758,16...|
+|307|     Abraham Lincoln|2008-12-28 20:18:23|&amp;quot;Abraham Lincoln ...|[&amp;quot;abraham, lincol...|(262144,[2564,460...|(262144,[2564,460...|
+|308|           Aristotle|2008-12-29 23:54:48|&amp;quot;Aristotle (Greek...|[&amp;quot;aristotle, (gre...|(262144,[2767,356...|(262144,[2767,356...|
+|309|An American in Paris|2008-09-27 19:29:28|&amp;quot;An American in P...|[&amp;quot;an, american, i...|(262144,[2366,670...|(262144,[2366,670...|
+|324|       Academy Award|2008-12-28 17:50:43|&amp;quot;The Academy Awar...|[&amp;quot;the, academy, a...|(262144,[2931,328...|(262144,[2931,328...|
+|330|             Actrius|2008-05-23 15:24:32|Actrius (Actresse...|[actrius, (actres...|(262144,[6558,674...|(262144,[6558,674...|
+|332|     Animalia (book)|2008-12-18 11:12:34|thumbAnimalia (IS...|[thumbanimalia, (...|(262144,[2284,609...|(262144,[2284,609...|
+|334|International Ato...|2008-11-21 22:40:20|International Ato...|[international, a...|(262144,[847,925,...|(262144,[847,925,...|
+|336|            Altruism|2008-12-27 03:57:17|&amp;quot;Altruism is self...|[&amp;quot;altruism, is, s...|(262144,[5675,680...|(262144,[5675,680...|
+|339|            Ayn Rand|2008-12-30 08:03:06|&amp;quot;Ayn Rand (,  – M...|[&amp;quot;ayn, rand, (,, ...|(262144,[528,1091...|(262144,[528,1091...|
+|340|        Alain Connes|2008-09-03 13:41:39|Alain Connes (bor...|[alain, connes, (...|(262144,[154,1595...|(262144,[154,1595...|
+|344|          Allan Dwan|2008-11-14 05:28:58|Allan Dwan (April...|[allan, dwan, (ap...|(262144,[1578,181...|(262144,[1578,181...|
+|358|             Algeria|2008-12-29 02:54:36|&amp;quot;Algeria (, al-Ja...|[&amp;quot;algeria, (,, al...|(262144,[3852,492...|(262144,[3852,492...|
+|359|List of character...|2008-12-23 20:20:21|&amp;quot;This is a list o...|[&amp;quot;this, is, a, li...|(262144,[14376,19...|(262144,[14376,19...|
+|569|        Anthropology|2008-12-28 23:04:30|&amp;quot;Anthropology (, ...|[&amp;quot;anthropology, (...|(262144,[57138,10...|(262144,[57138,10...|
++---+--------------------+-------------------+--------------------+--------------------+--------------------+--------------------+
+only showing top 20 rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;search&#34;&gt;Search&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;search_article&lt;/span&gt;(keyword):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# get the hash val from keyword&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    schema &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; StructType([StructField(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;words&amp;#34;&lt;/span&gt;, ArrayType(StringType()))])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    temp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; spark&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;createDataFrame(([[[keyword]]]), schema)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;toDF(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;words&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    temp_unhashed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashingTF&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;transform(temp)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;select(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rawFeatures&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;collect()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    val &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(temp_unhashed[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rawFeatures&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;indices[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    termExtractor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; udf(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x:float(x[val]), FloatType())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    final &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rescaledData&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;withColumn(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;score&amp;#39;&lt;/span&gt;, termExtractor(rescaledData&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;features))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    final &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; final&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;filter(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;score&amp;gt;0&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;orderBy(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;score&amp;#34;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; final&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;select(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ID&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;score&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;search_article(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mystery&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:12 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
+
+
+[Stage 11:===================&amp;gt;                                      (1 + 2) / 3]
+
++----+--------------------+--------+
+|  ID|               Title|   score|
++----+--------------------+--------+
+| 984|     Agatha Christie|5.521461|
+| 986|          The Plague|5.521461|
+|1307|The Alan Parsons ...|5.521461|
++----+--------------------+--------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;search_article(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;comic&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:14 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
++----+--------------------+----------+
+|  ID|               Title|     score|
++----+--------------------+----------+
+| 931|The Amazing Spide...|14.4849415|
+|2101|             Asterix|  9.656628|
+|1549|             Agathon|  9.656628|
+|2023|           Aeschylus|  9.656628|
+|1028|        Aristophanes|  9.656628|
+|1614|              Alexis|  4.828314|
+|1784|  Athenian democracy|  4.828314|
++----+--------------------+----------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;search_article(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;revolution&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:15 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
++----+--------------------+---------+
+|  ID|               Title|    score|
++----+--------------------+---------+
+|1973| American Revolution|12.052151|
+|2273|            AFC Ajax|4.0173836|
+| 339|            Ayn Rand|4.0173836|
+| 572|Agricultural science|4.0173836|
+| 771|American Revoluti...|4.0173836|
+| 915|       Andrey Markov|4.0173836|
+| 930|       Alvin Toffler|4.0173836|
+|1030|     Austrian School|4.0173836|
+|1057|      Anatole France|4.0173836|
+|1192| Artistic revolution|4.0173836|
+|1316|      Annales School|4.0173836|
+|1676|Alfonso XII of Spain|4.0173836|
+|1363|  André-Marie Ampère|4.0173836|
+|2075|  Aircraft hijacking|4.0173836|
+|1784|  Athenian democracy|4.0173836|
+|1844|          Archimedes|4.0173836|
+|2070|Act of Settlement...|4.0173836|
++----+--------------------+---------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;search_article(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;football&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:16 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
++----+--------------------+---------+
+|  ID|               Title|    score|
++----+--------------------+---------+
+|2273|            AFC Ajax|54.596165|
+|2357|American Football...|46.196754|
+|2174|        Arsenal F.C.|29.397936|
+|2358|           A.S. Roma| 25.19823|
+|2102|   Arizona Cardinals|20.998526|
+|2103|     Atlanta Falcons| 16.79882|
+| 615|American Football...| 16.79882|
+| 925|Alumni Athletic Club|12.599115|
+|2289|  AZ (football club)| 4.199705|
+|2310|       Arthur Miller| 4.199705|
+|1797|                Acre| 4.199705|
+|2363|Alessandro Scarlatti| 4.199705|
+|2382|               Aalen| 4.199705|
+|1016|       Achill Island| 4.199705|
++----+--------------------+---------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;search_article(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;emirates&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:17 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
++----+------------+--------+
+|  ID|       Title|   score|
++----+------------+--------+
+|2174|Arsenal F.C.|6.214608|
++----+------------+--------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;search_article(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;the&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;22/12/27 13:36:18 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
++----+--------------------+---------+
+|  ID|               Title|    score|
++----+--------------------+---------+
+|1854| Geography of Africa|56.093544|
+|2273|            AFC Ajax|43.326492|
+|2023|           Aeschylus|41.968296|
+|1216|              Athens|30.287798|
+| 717|             Alberta|26.213207|
+|2358|           A.S. Roma|23.904272|
+| 841|      Attila the Hun|23.360992|
+|1285|Geography of Alabama|23.089354|
+|2338|Rise and Fall of ...|21.323696|
+|1440|       Abydos, Egypt|19.150581|
+| 904|           Aluminium| 18.87894|
+|1905|              Ambush|18.199842|
+|1962|  Apparent magnitude|17.928204|
+|1557|Agrippina the You...|17.792383|
+|1613|  Alexios I Komnenos|17.792383|
+|1234|     Acoustic theory|17.520744|
+|2064|      Antonio Canova|15.619268|
+|1686| Alfonso V of Aragon| 15.07599|
+|1451|APL (programming ...| 15.07599|
+|2274|Arthur Stanley Ed...| 14.80435|
++----+--------------------+---------+
+only showing top 20 rows
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</title>
