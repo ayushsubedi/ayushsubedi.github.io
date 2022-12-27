@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>certification</title>
-      <link>https://ayushsubedi.github.io/tags/certification/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/certification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>data-distributions</title>
       <link>https://ayushsubedi.github.io/tags/data-distributions/</link>
       <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
@@ -84,15 +75,6 @@
     </item>
     
     <item>
-      <title>tfidf</title>
-      <link>https://ayushsubedi.github.io/tags/tfidf/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/tfidf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>types-of-data</title>
       <link>https://ayushsubedi.github.io/tags/types-of-data/</link>
       <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
@@ -107,6 +89,15 @@
       <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/unbalanced-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certification</title>
+      <link>https://ayushsubedi.github.io/tags/certification/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/certification/</guid>
       <description></description>
     </item>
     
@@ -197,6 +188,15 @@
       <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/step-function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tfidf</title>
+      <link>https://ayushsubedi.github.io/tags/tfidf/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/tfidf/</guid>
       <description></description>
     </item>
     

@@ -26,13 +26,7 @@
     <loc>https://ayushsubedi.github.io/categories/</loc>
     <lastmod>2022-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/certification/</loc>
-    <lastmod>2022-12-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/categories/certification/</loc>
-    <lastmod>2022-12-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/data-engineering/</loc>
     <lastmod>2022-12-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/data-distributions/</loc>
@@ -62,12 +56,6 @@
     <loc>https://ayushsubedi.github.io/tags/</loc>
     <lastmod>2022-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/tfidf/</loc>
-    <lastmod>2022-12-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/tfidf/</loc>
-    <lastmod>2022-12-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/types-of-data/</loc>
     <lastmod>2022-12-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -81,6 +69,12 @@
     <lastmod>2022-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</loc>
+    <lastmod>2022-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/certification/</loc>
+    <lastmod>2022-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/data-engineering/</loc>
     <lastmod>2022-12-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/data-pipeline/</loc>
@@ -118,6 +112,12 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/step-function/</loc>
     <lastmod>2022-12-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/tfidf/</loc>
+    <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/tfidf/</loc>
+    <lastmod>2022-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/adaboost/</loc>
     <lastmod>2022-12-15T00:00:00+00:00</lastmod>

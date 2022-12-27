@@ -6,15 +6,15 @@
     <description>Recent content in tfidf on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/tfidf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>TFIDF</title>
+      <title>Term Frequecy Inverse Document Frequency (TFIDF)</title>
       <link>https://ayushsubedi.github.io/posts/tfidf/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/tfidf/</guid>
       <description>&lt;h1 id=&#34;wikipedia-search-using-tfidf&#34;&gt;Wikipedia search using TFIDF&lt;/h1&gt;
