@@ -141,12 +141,45 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/certification'>certification</a>
+		href='/tags/certification'>certification</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/deepar-in-sagemaker'>deepar-in-sagemaker</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/sagemaker-debugger'>sagemaker-debugger</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/sagemaker-canvas'>sagemaker-canvas</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-comprehend'>amazon-comprehend</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-translate'>amazon-translate</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-transcribe'>amazon-transcribe</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-polly'>amazon-polly</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-rekognition'>amazon-rekognition</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-forecast'>amazon-forecast</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-lex'>amazon-lex</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/amazon-personalize'>amazon-personalize</a>
 	
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2022-12-26">2022-12-26</time>
+		datetime="2022-12-28">2022-12-28</time>
 </div>
 
 <hr />
@@ -159,6 +192,119 @@ onload='renderMathInElement(document.body);'></script>
 <article>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="modeling">Modeling</h1>
+<ol>
+<li><a href="#introduction-to-deep-learning">Introduction to Deep Learning</a></li>
+<li><a href="#activation-functions">Activation Functions</a></li>
+<li><a href="#convolutional-neural-network">Convolutional Neural Network</a></li>
+<li><a href="#recurrent-neural-networks">Recurrent Neural Networks</a></li>
+<li><a href="#modern-nlp-with-bert-and-gpt-and-transfer-learning">Modern NLP with BERT and GPT, and Transfer Learning</a></li>
+<li><a href="#deep-learning-on-ec2-and-emr">Deep Learning on EC2 and EMR</a></li>
+<li><a href="#tuning-neural-networks">Tuning Neural Networks</a></li>
+<li><a href="#regularization-techniques-for-neural-networks-dropout-early-stopping">Regularization Techniques for Neural Networks (Dropout, Early Stopping)</a></li>
+<li><a href="#l1-and-l2-regularization">L1 and L2 Regularization</a></li>
+<li><a href="#grief-with-gradients-the-vanishing-gradient-problem">Grief with Gradients The Vanishing Gradient problem</a></li>
+<li><a href="#the-confusion-matrix">The Confusion Matrix</a></li>
+<li><a href="#precision-recall-f1-auc-and-more">Precision, Recall, F1, AUC, and more</a></li>
+<li><a href="#ensemble-methods-bagging-and-boosting">Ensemble Methods Bagging and Boosting</a></li>
+<li><a href="#introducing-amazon-sagemaker">Introducing Amazon SageMaker</a></li>
+<li><a href="#linear-learner-in-sagemaker">Linear Learner in SageMaker</a></li>
+<li><a href="#xgboost-in-sagemaker">XGBoost in SageMaker</a></li>
+<li><a href="#seq2seq-in-sagemaker">Seq2Seq in SageMaker</a></li>
+<li><a href="#deepar-in-sagemaker">DeepAR in SageMaker</a></li>
+<li><a href="#blazingtext-in-sagemaker">BlazingText in SageMaker</a></li>
+<li><a href="#object2vec-in-sagemaker">Object2Vec in SageMaker</a></li>
+<li><a href="#object-detection-in-sagemaker">Object Detection in SageMaker</a></li>
+<li><a href="#image-classification-in-sagemaker">Image Classification in SageMaker</a></li>
+<li><a href="#semantic-segmentation-in-sagemaker">Semantic Segmentation in SageMaker</a></li>
+<li><a href="#random-cut-forest-in-sagemaker">Random Cut Forest in SageMaker</a></li>
+<li><a href="#neural-topic-model-in-sagemaker">Neural Topic Model in SageMaker</a></li>
+<li><a href="#latent-dirichlet-allocation-lda-in-sagemaker">Latent Dirichlet Allocation (LDA) in SageMaker</a></li>
+<li><a href="#k-nearest-neighbors-knn-in-sagemaker">K-Nearest-Neighbors (KNN) in SageMaker</a></li>
+<li><a href="#k-means-clustering-in-sagemaker">K-Means Clustering in SageMaker</a></li>
+<li><a href="#principal-component-analysis-pca-in-sagemaker">Principal Component Analysis (PCA) in SageMaker</a></li>
+<li><a href="#factorization-machines-in-sagemaker">Factorization Machines in SageMaker</a></li>
+<li><a href="#ip-insights-in-sagemaker">IP Insights in SageMaker</a></li>
+<li><a href="#reinforcement-learning-in-sagemaker">Reinforcement Learning in SageMaker</a></li>
+<li><a href="#automatic-model-tuning">Automatic Model Tuning</a></li>
+<li><a href="#apache-spark-with-sagemaker">Apache Spark with SageMaker</a></li>
+<li><a href="#sagemaker-studio-and-sagemaker-experiments">SageMaker Studio, and SageMaker Experiments</a></li>
+<li><a href="#sagemaker-debugger">SageMaker Debugger</a></li>
+<li><a href="#sagemaker-autopilot-automl">SageMaker Autopilot / AutoML</a></li>
+<li><a href="#sagemaker-model-monitor">SageMaker Model Monitor</a></li>
+<li><a href="#other-recent-features-jumpstart-data-wrangler-features-store-edge-manager">Other recent features (JumpStart, Data Wrangler, Features Store, Edge Manager)</a></li>
+<li><a href="#sagemaker-canvas">SageMaker Canvas</a></li>
+<li><a href="#bias-measures-in-sagemaker-canvas">Bias Measures in SageMaker Canvas</a></li>
+<li><a href="#sagemaker-training-compiler">SageMaker Training Compiler</a></li>
+<li><a href="#amazon-comprehend">Amazon Comprehend</a></li>
+<li><a href="#amazon-translate">Amazon Translate</a></li>
+<li><a href="#amazon-transcribe">Amazon Transcribe</a></li>
+<li><a href="#amazon-polly">Amazon Polly</a></li>
+<li><a href="#amazon-rekognition">Amazon Rekognition</a></li>
+<li><a href="#amazon-forecast">Amazon Forecast</a></li>
+<li><a href="#amazon-forecast-algorithms">Amazon Forecast Algorithms</a></li>
+<li><a href="#amazon-lex">Amazon Lex</a></li>
+<li><a href="#amazon-personalize">Amazon Personalize</a></li>
+<li><a href="#lightning-round-textract-deeplens-deepracher-lookout-and-monitron">Lightning round! TexTract, DeepLens, DeepRacher, Lookout, and Monitron</a></li>
+<li><a href="#torchserve-aws-neuron-and-aws-panorama">TorchServe, AWS Neuron, and AWS Panorama</a></li>
+<li><a href="#deep-composer-fraud-detection-codeguru-and-contact-lens">Deep Composer, Fraud Detection, CodeGuru, and Contact Lens</a></li>
+<li><a href="#amazon-kendra-and-amazon-augmented-ai-a2i">Amazon Kendra and Amazon Augmented AI (A2I)</a></li>
+</ol>
+<h2 id="introduction-to-deep-learning">Introduction to Deep Learning</h2>
+<h2 id="activation-functions">Activation Functions</h2>
+<h2 id="convolutional-neural-network">Convolutional Neural Network</h2>
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+<h2 id="modern-nlp-with-bert-and-gpt-and-transfer-learning">Modern NLP with BERT and GPT, and Transfer Learning</h2>
+<h2 id="deep-learning-on-ec2-and-emr">Deep Learning on EC2 and EMR</h2>
+<h2 id="tuning-neural-networks">Tuning Neural Networks</h2>
+<h2 id="regularization-techniques-for-neural-networks-dropout-early-stopping">Regularization Techniques for Neural Networks (Dropout, Early Stopping)</h2>
+<h2 id="l1-and-l2-regularization">L1 and L2 Regularization</h2>
+<h2 id="grief-with-gradients-the-vanishing-gradient-problem">Grief with Gradients The Vanishing Gradient problem</h2>
+<h2 id="the-confusion-matrix">The Confusion Matrix</h2>
+<h2 id="precision-recall-f1-auc-and-more">Precision, Recall, F1, AUC, and more</h2>
+<h2 id="ensemble-methods-bagging-and-boosting">Ensemble Methods Bagging and Boosting</h2>
+<h2 id="introducing-amazon-sagemaker">Introducing Amazon SageMaker</h2>
+<h2 id="linear-learner-in-sagemaker">Linear Learner in SageMaker</h2>
+<h2 id="xgboost-in-sagemaker">XGBoost in SageMaker</h2>
+<h2 id="seq2seq-in-sagemaker">Seq2Seq in SageMaker</h2>
+<h2 id="deepar-in-sagemaker">DeepAR in SageMaker</h2>
+<h2 id="blazingtext-in-sagemaker">BlazingText in SageMaker</h2>
+<h2 id="object2vec-in-sagemaker">Object2Vec in SageMaker</h2>
+<h2 id="object-detection-in-sagemaker">Object Detection in SageMaker</h2>
+<h2 id="image-classification-in-sagemaker">Image Classification in SageMaker</h2>
+<h2 id="semantic-segmentation-in-sagemaker">Semantic Segmentation in SageMaker</h2>
+<h2 id="random-cut-forest-in-sagemaker">Random Cut Forest in SageMaker</h2>
+<h2 id="neural-topic-model-in-sagemaker">Neural Topic Model in SageMaker</h2>
+<h2 id="latent-dirichlet-allocation-lda-in-sagemaker">Latent Dirichlet Allocation (LDA) in SageMaker</h2>
+<h2 id="k-nearest-neighbors-knn-in-sagemaker">K-Nearest-Neighbors (KNN) in SageMaker</h2>
+<h2 id="k-means-clustering-in-sagemaker">K-Means Clustering in SageMaker</h2>
+<h2 id="principal-component-analysis-pca-in-sagemaker">Principal Component Analysis (PCA) in SageMaker</h2>
+<h2 id="factorization-machines-in-sagemaker">Factorization Machines in SageMaker</h2>
+<h2 id="ip-insights-in-sagemaker">IP Insights in SageMaker</h2>
+<h2 id="reinforcement-learning-in-sagemaker">Reinforcement Learning in SageMaker</h2>
+<h2 id="automatic-model-tuning">Automatic Model Tuning</h2>
+<h2 id="apache-spark-with-sagemaker">Apache Spark with SageMaker</h2>
+<h2 id="sagemaker-studio-and-sagemaker-experiments">SageMaker Studio, and SageMaker Experiments</h2>
+<h2 id="sagemaker-debugger">SageMaker Debugger</h2>
+<h2 id="sagemaker-autopilot--automl">SageMaker Autopilot / AutoML</h2>
+<h2 id="sagemaker-model-monitor">SageMaker Model Monitor</h2>
+<h2 id="other-recent-features-jumpstart-data-wrangler-features-store-edge-manager">Other recent features (JumpStart, Data Wrangler, Features Store, Edge Manager)</h2>
+<h2 id="sagemaker-canvas">SageMaker Canvas</h2>
+<h2 id="bias-measures-in-sagemaker-canvas">Bias Measures in SageMaker Canvas</h2>
+<h2 id="sagemaker-training-compiler">SageMaker Training Compiler</h2>
+<h2 id="amazon-comprehend">Amazon Comprehend</h2>
+<h2 id="amazon-translate">Amazon Translate</h2>
+<h2 id="amazon-transcribe">Amazon Transcribe</h2>
+<h2 id="amazon-polly">Amazon Polly</h2>
+<h2 id="amazon-rekognition">Amazon Rekognition</h2>
+<h2 id="amazon-forecast">Amazon Forecast</h2>
+<h2 id="amazon-forecast-algorithms">Amazon Forecast Algorithms</h2>
+<h2 id="amazon-lex">Amazon Lex</h2>
+<h2 id="amazon-personalize">Amazon Personalize</h2>
+<h2 id="lightning-round-textract-deeplens-deepracher-lookout-and-monitron">Lightning round! TexTract, DeepLens, DeepRacher, Lookout, and Monitron</h2>
+<h2 id="torchserve-aws-neuron-and-aws-panorama">TorchServe, AWS Neuron, and AWS Panorama</h2>
+<h2 id="deep-composer-fraud-detection-codeguru-and-contact-lens">Deep Composer, Fraud Detection, CodeGuru, and Contact Lens</h2>
+<h2 id="amazon-kendra-and-amazon-augmented-ai-a2i">Amazon Kendra and Amazon Augmented AI (A2I)</h2>
+<p>This section covers</p>
 </div>
 	</section>
 
@@ -300,7 +446,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1 words in this page.
+		460 words in this page.
 	</div>
 </div>
 
@@ -311,12 +457,12 @@ onload='renderMathInElement(document.body);'></script>
 <hr class="" />
 <div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
     
-    <a class="flex-grow-0" href="/posts/tfidf/">
+    <a class="flex-grow-0" href="/posts/aws_ml_speciality_eda/">
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        Term Frequecy Inverse Document Frequency (TFIDF)
+        AWS Certified ML - Specialty exam (MLS-C01) - Exploratory Data Analysis
     </a>
     
     
@@ -336,9 +482,9 @@ onload='renderMathInElement(document.body);'></script>
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
 		
-			<a href="/posts/aws_ml_speciality_data_engineering/">AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</a>&nbsp;&nbsp;&#47;&nbsp;
-		
 			<a href="/posts/aws_ml_speciality_ml/">AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/aws_ml_speciality_data_engineering/">AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</a>&nbsp;&nbsp;&#47;&nbsp;
 		
 			<a href="/posts/tfidf/">Term Frequecy Inverse Document Frequency (TFIDF)</a>
 		

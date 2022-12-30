@@ -6,10 +6,145 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>amazon-comprehend</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-comprehend/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-comprehend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-forecast</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-forecast/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-forecast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-lex</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-lex/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-lex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-personalize</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-personalize/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-personalize/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-polly</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-polly/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-polly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-rekognition</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-rekognition/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-rekognition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-transcribe</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-transcribe/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-transcribe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon-translate</title>
+      <link>https://ayushsubedi.github.io/tags/amazon-translate/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/amazon-translate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>certification</title>
+      <link>https://ayushsubedi.github.io/tags/certification/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/certification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deepar-in-sagemaker</title>
+      <link>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>greengrass</title>
+      <link>https://ayushsubedi.github.io/tags/greengrass/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/greengrass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipelines</title>
+      <link>https://ayushsubedi.github.io/tags/pipelines/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pipelines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sagemaker</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sagemaker-canvas</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker-canvas/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker-canvas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sagemaker-debugger</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker-debugger/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker-debugger/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>apache-spark</title>
@@ -89,15 +224,6 @@
       <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/unbalanced-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>certification</title>
-      <link>https://ayushsubedi.github.io/tags/certification/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/certification/</guid>
       <description></description>
     </item>
     

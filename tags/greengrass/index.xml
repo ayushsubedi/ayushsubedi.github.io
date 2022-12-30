@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>greengrass on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/greengrass/</link>
+    <description>Recent content in greengrass on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/greengrass/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
+      <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/h2&gt;
+&lt;h2 id=&#34;sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

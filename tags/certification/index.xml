@@ -6,10 +6,163 @@
     <description>Recent content in certification on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/certification/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
+      <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/h2&gt;
+&lt;h2 id=&#34;sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - Modeling</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</guid>
+      <description>&lt;h1 id=&#34;modeling&#34;&gt;Modeling&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-deep-learning&#34;&gt;Introduction to Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#activation-functions&#34;&gt;Activation Functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#convolutional-neural-network&#34;&gt;Convolutional Neural Network&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#recurrent-neural-networks&#34;&gt;Recurrent Neural Networks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#modern-nlp-with-bert-and-gpt-and-transfer-learning&#34;&gt;Modern NLP with BERT and GPT, and Transfer Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#deep-learning-on-ec2-and-emr&#34;&gt;Deep Learning on EC2 and EMR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tuning-neural-networks&#34;&gt;Tuning Neural Networks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#regularization-techniques-for-neural-networks-dropout-early-stopping&#34;&gt;Regularization Techniques for Neural Networks (Dropout, Early Stopping)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#l1-and-l2-regularization&#34;&gt;L1 and L2 Regularization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#grief-with-gradients-the-vanishing-gradient-problem&#34;&gt;Grief with Gradients The Vanishing Gradient problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-confusion-matrix&#34;&gt;The Confusion Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#precision-recall-f1-auc-and-more&#34;&gt;Precision, Recall, F1, AUC, and more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ensemble-methods-bagging-and-boosting&#34;&gt;Ensemble Methods Bagging and Boosting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introducing-amazon-sagemaker&#34;&gt;Introducing Amazon SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linear-learner-in-sagemaker&#34;&gt;Linear Learner in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#xgboost-in-sagemaker&#34;&gt;XGBoost in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#seq2seq-in-sagemaker&#34;&gt;Seq2Seq in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#deepar-in-sagemaker&#34;&gt;DeepAR in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blazingtext-in-sagemaker&#34;&gt;BlazingText in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#object2vec-in-sagemaker&#34;&gt;Object2Vec in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#object-detection-in-sagemaker&#34;&gt;Object Detection in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#image-classification-in-sagemaker&#34;&gt;Image Classification in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#semantic-segmentation-in-sagemaker&#34;&gt;Semantic Segmentation in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#random-cut-forest-in-sagemaker&#34;&gt;Random Cut Forest in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#neural-topic-model-in-sagemaker&#34;&gt;Neural Topic Model in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latent-dirichlet-allocation-lda-in-sagemaker&#34;&gt;Latent Dirichlet Allocation (LDA) in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#k-nearest-neighbors-knn-in-sagemaker&#34;&gt;K-Nearest-Neighbors (KNN) in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#k-means-clustering-in-sagemaker&#34;&gt;K-Means Clustering in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#principal-component-analysis-pca-in-sagemaker&#34;&gt;Principal Component Analysis (PCA) in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#factorization-machines-in-sagemaker&#34;&gt;Factorization Machines in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ip-insights-in-sagemaker&#34;&gt;IP Insights in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reinforcement-learning-in-sagemaker&#34;&gt;Reinforcement Learning in SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#automatic-model-tuning&#34;&gt;Automatic Model Tuning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apache-spark-with-sagemaker&#34;&gt;Apache Spark with SageMaker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-studio-and-sagemaker-experiments&#34;&gt;SageMaker Studio, and SageMaker Experiments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-debugger&#34;&gt;SageMaker Debugger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-autopilot-automl&#34;&gt;SageMaker Autopilot / AutoML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-model-monitor&#34;&gt;SageMaker Model Monitor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#other-recent-features-jumpstart-data-wrangler-features-store-edge-manager&#34;&gt;Other recent features (JumpStart, Data Wrangler, Features Store, Edge Manager)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-canvas&#34;&gt;SageMaker Canvas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bias-measures-in-sagemaker-canvas&#34;&gt;Bias Measures in SageMaker Canvas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-training-compiler&#34;&gt;SageMaker Training Compiler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-comprehend&#34;&gt;Amazon Comprehend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-translate&#34;&gt;Amazon Translate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-transcribe&#34;&gt;Amazon Transcribe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-polly&#34;&gt;Amazon Polly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-rekognition&#34;&gt;Amazon Rekognition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-forecast&#34;&gt;Amazon Forecast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-forecast-algorithms&#34;&gt;Amazon Forecast Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-lex&#34;&gt;Amazon Lex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-personalize&#34;&gt;Amazon Personalize&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#lightning-round-textract-deeplens-deepracher-lookout-and-monitron&#34;&gt;Lightning round! TexTract, DeepLens, DeepRacher, Lookout, and Monitron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#torchserve-aws-neuron-and-aws-panorama&#34;&gt;TorchServe, AWS Neuron, and AWS Panorama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#deep-composer-fraud-detection-codeguru-and-contact-lens&#34;&gt;Deep Composer, Fraud Detection, CodeGuru, and Contact Lens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-kendra-and-amazon-augmented-ai-a2i&#34;&gt;Amazon Kendra and Amazon Augmented AI (A2I)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;introduction-to-deep-learning&#34;&gt;Introduction to Deep Learning&lt;/h2&gt;
+&lt;h2 id=&#34;activation-functions&#34;&gt;Activation Functions&lt;/h2&gt;
+&lt;h2 id=&#34;convolutional-neural-network&#34;&gt;Convolutional Neural Network&lt;/h2&gt;
+&lt;h2 id=&#34;recurrent-neural-networks&#34;&gt;Recurrent Neural Networks&lt;/h2&gt;
+&lt;h2 id=&#34;modern-nlp-with-bert-and-gpt-and-transfer-learning&#34;&gt;Modern NLP with BERT and GPT, and Transfer Learning&lt;/h2&gt;
+&lt;h2 id=&#34;deep-learning-on-ec2-and-emr&#34;&gt;Deep Learning on EC2 and EMR&lt;/h2&gt;
+&lt;h2 id=&#34;tuning-neural-networks&#34;&gt;Tuning Neural Networks&lt;/h2&gt;
+&lt;h2 id=&#34;regularization-techniques-for-neural-networks-dropout-early-stopping&#34;&gt;Regularization Techniques for Neural Networks (Dropout, Early Stopping)&lt;/h2&gt;
+&lt;h2 id=&#34;l1-and-l2-regularization&#34;&gt;L1 and L2 Regularization&lt;/h2&gt;
+&lt;h2 id=&#34;grief-with-gradients-the-vanishing-gradient-problem&#34;&gt;Grief with Gradients The Vanishing Gradient problem&lt;/h2&gt;
+&lt;h2 id=&#34;the-confusion-matrix&#34;&gt;The Confusion Matrix&lt;/h2&gt;
+&lt;h2 id=&#34;precision-recall-f1-auc-and-more&#34;&gt;Precision, Recall, F1, AUC, and more&lt;/h2&gt;
+&lt;h2 id=&#34;ensemble-methods-bagging-and-boosting&#34;&gt;Ensemble Methods Bagging and Boosting&lt;/h2&gt;
+&lt;h2 id=&#34;introducing-amazon-sagemaker&#34;&gt;Introducing Amazon SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;linear-learner-in-sagemaker&#34;&gt;Linear Learner in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;xgboost-in-sagemaker&#34;&gt;XGBoost in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;seq2seq-in-sagemaker&#34;&gt;Seq2Seq in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;deepar-in-sagemaker&#34;&gt;DeepAR in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;blazingtext-in-sagemaker&#34;&gt;BlazingText in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;object2vec-in-sagemaker&#34;&gt;Object2Vec in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;object-detection-in-sagemaker&#34;&gt;Object Detection in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;image-classification-in-sagemaker&#34;&gt;Image Classification in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;semantic-segmentation-in-sagemaker&#34;&gt;Semantic Segmentation in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;random-cut-forest-in-sagemaker&#34;&gt;Random Cut Forest in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;neural-topic-model-in-sagemaker&#34;&gt;Neural Topic Model in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;latent-dirichlet-allocation-lda-in-sagemaker&#34;&gt;Latent Dirichlet Allocation (LDA) in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;k-nearest-neighbors-knn-in-sagemaker&#34;&gt;K-Nearest-Neighbors (KNN) in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;k-means-clustering-in-sagemaker&#34;&gt;K-Means Clustering in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;principal-component-analysis-pca-in-sagemaker&#34;&gt;Principal Component Analysis (PCA) in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;factorization-machines-in-sagemaker&#34;&gt;Factorization Machines in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;ip-insights-in-sagemaker&#34;&gt;IP Insights in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;reinforcement-learning-in-sagemaker&#34;&gt;Reinforcement Learning in SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;automatic-model-tuning&#34;&gt;Automatic Model Tuning&lt;/h2&gt;
+&lt;h2 id=&#34;apache-spark-with-sagemaker&#34;&gt;Apache Spark with SageMaker&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-studio-and-sagemaker-experiments&#34;&gt;SageMaker Studio, and SageMaker Experiments&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-debugger&#34;&gt;SageMaker Debugger&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-autopilot--automl&#34;&gt;SageMaker Autopilot / AutoML&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-model-monitor&#34;&gt;SageMaker Model Monitor&lt;/h2&gt;
+&lt;h2 id=&#34;other-recent-features-jumpstart-data-wrangler-features-store-edge-manager&#34;&gt;Other recent features (JumpStart, Data Wrangler, Features Store, Edge Manager)&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-canvas&#34;&gt;SageMaker Canvas&lt;/h2&gt;
+&lt;h2 id=&#34;bias-measures-in-sagemaker-canvas&#34;&gt;Bias Measures in SageMaker Canvas&lt;/h2&gt;
+&lt;h2 id=&#34;sagemaker-training-compiler&#34;&gt;SageMaker Training Compiler&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-comprehend&#34;&gt;Amazon Comprehend&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-translate&#34;&gt;Amazon Translate&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-transcribe&#34;&gt;Amazon Transcribe&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-polly&#34;&gt;Amazon Polly&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-rekognition&#34;&gt;Amazon Rekognition&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-forecast&#34;&gt;Amazon Forecast&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-forecast-algorithms&#34;&gt;Amazon Forecast Algorithms&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-lex&#34;&gt;Amazon Lex&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-personalize&#34;&gt;Amazon Personalize&lt;/h2&gt;
+&lt;h2 id=&#34;lightning-round-textract-deeplens-deepracher-lookout-and-monitron&#34;&gt;Lightning round! TexTract, DeepLens, DeepRacher, Lookout, and Monitron&lt;/h2&gt;
+&lt;h2 id=&#34;torchserve-aws-neuron-and-aws-panorama&#34;&gt;TorchServe, AWS Neuron, and AWS Panorama&lt;/h2&gt;
+&lt;h2 id=&#34;deep-composer-fraud-detection-codeguru-and-contact-lens&#34;&gt;Deep Composer, Fraud Detection, CodeGuru, and Contact Lens&lt;/h2&gt;
+&lt;h2 id=&#34;amazon-kendra-and-amazon-augmented-ai-a2i&#34;&gt;Amazon Kendra and Amazon Augmented AI (A2I)&lt;/h2&gt;
+&lt;p&gt;This section covers&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</title>
@@ -360,26 +513,6 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
 &lt;li&gt;AWS DataSync: for data migrations from on-premises to AWS storage services&lt;/li&gt;
 &lt;li&gt;MQTT: IOT protocol, Standard messaging protocol&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</title>
-      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
-      <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - Modeling</title>
-      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</guid>
-      <description>&lt;h1 id=&#34;modeling&#34;&gt;Modeling&lt;/h1&gt;
 </description>
     </item>
     

@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>analytics</title>
       <link>https://ayushsubedi.github.io/categories/analytics/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/analytics/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>AWS</title>
       <link>https://ayushsubedi.github.io/categories/aws/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/aws/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01)</title>
       <link>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</guid>
       <description></description>
@@ -41,9 +41,36 @@
     <item>
       <title>certification</title>
       <link>https://ayushsubedi.github.io/categories/certification/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/certification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Implementation and Operations</title>
+      <link>https://ayushsubedi.github.io/categories/machine-learning-implementation-and-operations/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/machine-learning-implementation-and-operations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://ayushsubedi.github.io/categories/machine-learning/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling</title>
+      <link>https://ayushsubedi.github.io/categories/modeling/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/modeling/</guid>
       <description></description>
     </item>
     
@@ -57,38 +84,11 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
-      <link>https://ayushsubedi.github.io/categories/machine-learning/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Data Engineering</title>
       <link>https://ayushsubedi.github.io/categories/data-engineering/</link>
       <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/data-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning Implementation and Operations</title>
-      <link>https://ayushsubedi.github.io/categories/machine-learning-implementation-and-operations/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/machine-learning-implementation-and-operations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Modeling</title>
-      <link>https://ayushsubedi.github.io/categories/modeling/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/modeling/</guid>
       <description></description>
     </item>
     
