@@ -179,7 +179,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2022-12-28">2022-12-28</time>
+		datetime="2023-01-01">2023-01-01</time>
 </div>
 
 <hr />
@@ -193,7 +193,6 @@ onload='renderMathInElement(document.body);'></script>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="modeling">Modeling</h1>
 <ol>
-<li><a href="#introduction-to-deep-learning">Introduction to Deep Learning</a></li>
 <li><a href="#activation-functions">Activation Functions</a></li>
 <li><a href="#convolutional-neural-network">Convolutional Neural Network</a></li>
 <li><a href="#recurrent-neural-networks">Recurrent Neural Networks</a></li>
@@ -249,19 +248,138 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#deep-composer-fraud-detection-codeguru-and-contact-lens">Deep Composer, Fraud Detection, CodeGuru, and Contact Lens</a></li>
 <li><a href="#amazon-kendra-and-amazon-augmented-ai-a2i">Amazon Kendra and Amazon Augmented AI (A2I)</a></li>
 </ol>
-<h2 id="introduction-to-deep-learning">Introduction to Deep Learning</h2>
+<p>This section covers framing business problems as machine learning problems, selecting the appropriate model(s) for a given machine learning problem, training machine learning models, performing hyperparameter optimization, and evaluate machine learning models.</p>
+<h2 id="deeplearning-frameworks">Deeplearning Frameworks</h2>
+<ul>
+<li>Tensorflow/Keras (Google)</li>
+<li>PyTorch (Meta)</li>
+<li>MXNet (Apache, and therefore AWS leans towards this)</li>
+<li>Scikit-Learn (for simple DL)</li>
+</ul>
 <h2 id="activation-functions">Activation Functions</h2>
+<ul>
+<li>Apply a non linear transformation</li>
+<li>Given the input, what should by output be</li>
+<li>Can be applied in between layers, or in the output layer</li>
+<li>Step Function, Sigmoid, TanH, ReLU, Leaky ReLU</li>
+<li>Binary Step Function is either on or off, cannot handle multiple classification, vertical slopes do not work with calculus</li>
+<li>Sigmoid: 0 to 1</li>
+<li>TanH: -1 to 1</li>
+<li>For Sigmoid and TanH there is a vanishing gradient problem (value changes slowly for high or low value)</li>
+<li>Sigmoid and TanH are computationally expensive</li>
+<li>ReLu: fast to compute, for inputs that are zero or negative, it is a linear function (dying relu problem)</li>
+<li>Leaky ReLU solves this</li>
+<li>Parametric ReLU, slope in the negative part is learned via backpropagation, complicated</li>
+<li>Exponential Linear Unit (ELU)</li>
+<li>Maxout: usually not worth the effort</li>
+<li>Softmax: usually the final layer of a classification model</li>
+<li>RNN&rsquo;s do well with Tanh</li>
+<li>Sigmoid if more that one classification is required for the same thing</li>
+<li>For everything else, start with ReLU</li>
+</ul>
 <h2 id="convolutional-neural-network">Convolutional Neural Network</h2>
+<ul>
+<li>CNN vs MLP (Multilayer perceptron)</li>
+<li>They have convolutional layers</li>
+<li>Some filters may detect edges, lines, shapes etc. and deeper layers can detect objects</li>
+<li>Feature location invariant, Shift Invariant, Space Invariant Artificial Neural Networks</li>
+<li>Image and video recognition, recommender systems, image classification, image segmentations,</li>
+<li>Machine translation, Sentence Classification, Sentiment analysis</li>
+<li>AlexNet, LeNet, GoogLeNet, ResNet as an example</li>
+<li>source data must be of appropriate dimensions</li>
+</ul>
 <h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+<ul>
+<li>deals with sequences in time (predict stock prices, understand words in a sentence, translation etc)</li>
+<li>time series data, sequence of arbitrary length</li>
+<li>captions for images, order matters</li>
+<li>structure and context is relevant</li>
+<li>machine generated music</li>
+<li>past behaviour of neuron impacts the future</li>
+<li>Sequence to Sequence: predict stock prices based on series of historic data</li>
+<li>Sequence to vector: words in a sentence to sentiment</li>
+<li>Vector to sequence: create captions from an image</li>
+<li>Encoder -&gt; Decoder: Sequence -&gt; vector -&gt; sequence, machine translation</li>
+<li>Backpropogation through time</li>
+<li>Ends up looking like a really really deep neural network</li>
+<li>Therefore, we use truncated backpropagation through time</li>
+<li>State from earlier time steps get diluted over time, Long Short-Term memory cell LSTM cell</li>
+<li>GRU cell: Gated Recurrent Unit, Simplified LSTM which performs almost as well</li>
+<li>Traning RNN&rsquo;s is hard, very sensitive to topologies, choice of hyperparameters, very resource intensive, a wrong choice can lead to a RNN that does not converge at all.</li>
+</ul>
 <h2 id="modern-nlp-with-bert-and-gpt-and-transfer-learning">Modern NLP with BERT and GPT, and Transfer Learning</h2>
-<h2 id="deep-learning-on-ec2-and-emr">Deep Learning on EC2 and EMR</h2>
+<ul>
+<li>Transformer deep learning architectures</li>
+<li>BERT, RoBERTa, T5, GPT2, GPT3, etc</li>
+<li>DistilBERT: uses knowledge distillation to reduce model size by 40%</li>
+<li>BERT: Bi-directional Encoder Representations from Transformers</li>
+<li>GPT: Generative Pre-trained Transformer</li>
+<li>Transfer Learning</li>
+<li>Model zoos: hugging face offer pre trained models to start with</li>
+<li>Hugging face DLC (deep learning containers)</li>
+<li>Transfer Learning, retrain=True vs False</li>
+</ul>
+<h2 id="deep-learning-on-ec2emr">Deep Learning on EC2/EMR</h2>
+<ul>
+<li>EMR supports Apache MXNet and GPU instance types</li>
+<li>Appropriate instance types for deep learning</li>
+<li>P3, P2, G3</li>
+<li>Deep Learning AMI&rsquo;s</li>
+</ul>
 <h2 id="tuning-neural-networks">Tuning Neural Networks</h2>
+<ul>
+<li>Neural nets are trained by gradient descent or sth similar</li>
+<li>We start at some random point, and sample different solutions seeking to minimize some cost functions, over many epochs</li>
+<li>how far apart these samples are is the learning rate</li>
+<li>learning rate is an example of a hyperparameter</li>
+<li>batch size is also a hyperparameter, smaller batch size can work out of local minima</li>
+<li>small batch size tend to not get stuck in local minima</li>
+<li>large batch sizes can converge on the wrong solution at random</li>
+<li>large learning rates can overshoot the correct solution</li>
+<li>small learning rates increate training time</li>
+</ul>
 <h2 id="regularization-techniques-for-neural-networks-dropout-early-stopping">Regularization Techniques for Neural Networks (Dropout, Early Stopping)</h2>
+<ul>
+<li>Regularization helps with avoiding overfitting</li>
+<li>build simple model, dropout, early stopping can also help with avoiding overfitting</li>
+</ul>
 <h2 id="l1-and-l2-regularization">L1 and L2 Regularization</h2>
+<ul>
+<li>L1: sum of abs value of weights: perform feature selection, computationally inefficient, sparse output</li>
+<li>L2: sum of square of weights, all features considered but weighted, computationally efficient, dence output</li>
+</ul>
 <h2 id="grief-with-gradients-the-vanishing-gradient-problem">Grief with Gradients The Vanishing Gradient problem</h2>
+<ul>
+<li>vanishing gradient propogate to deeper layer</li>
+<li>slope is approaching zero</li>
+<li>it could be the local miminum or global where the convergence is happening</li>
+<li>long short term memory RNN can be used</li>
+<li>resnet also helps with vanishing gradient problem</li>
+<li>better activation function (relu is a good choice)</li>
+</ul>
 <h2 id="the-confusion-matrix">The Confusion Matrix</h2>
+<ul>
+<li>sometimes accuracy does not tell the whole story</li>
+<li>TP, TN, FP, FN</li>
+<li>Confusion matrix shows this</li>
+<li>multi class confusion matrix: heatmap</li>
+</ul>
 <h2 id="precision-recall-f1-auc-and-more">Precision, Recall, F1, AUC, and more</h2>
+<ul>
+<li>Precision/Correct Positives/Percent of relevant results: when you are a lot about false positives: TP/(TP+FP)</li>
+<li>Recall/Sensitivity/True Positive Rate:  TP/(TP + FN): when you care about false negatives</li>
+<li>F1 score: harmonic mean of Precision and Recall</li>
+<li>Specificity: TN/(TN+FP)</li>
+<li>RMSE, AMSE, etc.</li>
+<li>ROC curve: Receiver Operating Characteristic Curve: Plot of true positive rate (recall) vs false positive rate at various threshold setting.</li>
+<li>AUC curve: area under the ROC curve.</li>
+</ul>
 <h2 id="ensemble-methods-bagging-and-boosting">Ensemble Methods Bagging and Boosting</h2>
+<ul>
+<li>Bagging: Generate N new training sets by random sampling with replacement, each resampled model can be trained in parallel</li>
+<li>Boosting: Observations are weighted, training is sequential</li>
+<li>XGBoost is the latest hotness, boosting generally yields better accuracy, bagging avoids overfitting, bagging is easier to parallelize</li>
+</ul>
 <h2 id="introducing-amazon-sagemaker">Introducing Amazon SageMaker</h2>
 <h2 id="linear-learner-in-sagemaker">Linear Learner in SageMaker</h2>
 <h2 id="xgboost-in-sagemaker">XGBoost in SageMaker</h2>
@@ -304,7 +422,6 @@ onload='renderMathInElement(document.body);'></script>
 <h2 id="torchserve-aws-neuron-and-aws-panorama">TorchServe, AWS Neuron, and AWS Panorama</h2>
 <h2 id="deep-composer-fraud-detection-codeguru-and-contact-lens">Deep Composer, Fraud Detection, CodeGuru, and Contact Lens</h2>
 <h2 id="amazon-kendra-and-amazon-augmented-ai-a2i">Amazon Kendra and Amazon Augmented AI (A2I)</h2>
-<p>This section covers</p>
 </div>
 	</section>
 
@@ -446,7 +563,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		460 words in this page.
+		1270 words in this page.
 	</div>
 </div>
 
@@ -457,12 +574,12 @@ onload='renderMathInElement(document.body);'></script>
 <hr class="" />
 <div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
     
-    <a class="flex-grow-0" href="/posts/aws_ml_speciality_eda/">
+    <a class="flex-grow-0" href="/posts/tfidf/">
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        AWS Certified ML - Specialty exam (MLS-C01) - Exploratory Data Analysis
+        Term Frequecy Inverse Document Frequency (TFIDF)
     </a>
     
     
@@ -482,9 +599,9 @@ onload='renderMathInElement(document.body);'></script>
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
 		
-			<a href="/posts/aws_ml_speciality_ml/">AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</a>&nbsp;&nbsp;&#47;&nbsp;
-		
 			<a href="/posts/aws_ml_speciality_data_engineering/">AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/aws_ml_speciality_ml/">AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</a>&nbsp;&nbsp;&#47;&nbsp;
 		
 			<a href="/posts/tfidf/">Term Frequecy Inverse Document Frequency (TFIDF)</a>
 		

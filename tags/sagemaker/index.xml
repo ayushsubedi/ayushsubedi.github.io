@@ -6,7 +6,7 @@
     <description>Recent content in sagemaker on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/sagemaker/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
       <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
@@ -29,6 +29,7 @@
 &lt;li&gt;&lt;a href=&#34;#sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;This section covers building machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance, recommending and implementing the appropriate machine learning services and features for a given problem, applying basic AWS security practices to machine learning solutions and deploying and operationalizing machine learning solutions.&lt;/p&gt;
 &lt;h2 id=&#34;section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/h2&gt;
 &lt;h2 id=&#34;sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/h2&gt;
 &lt;h2 id=&#34;sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/h2&gt;

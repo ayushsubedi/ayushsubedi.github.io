@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>amazon-comprehend</title>
       <link>https://ayushsubedi.github.io/tags/amazon-comprehend/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-comprehend/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>amazon-forecast</title>
       <link>https://ayushsubedi.github.io/tags/amazon-forecast/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-forecast/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>amazon-lex</title>
       <link>https://ayushsubedi.github.io/tags/amazon-lex/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-lex/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>amazon-personalize</title>
       <link>https://ayushsubedi.github.io/tags/amazon-personalize/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-personalize/</guid>
       <description></description>
@@ -50,7 +50,7 @@
     <item>
       <title>amazon-polly</title>
       <link>https://ayushsubedi.github.io/tags/amazon-polly/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-polly/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>amazon-rekognition</title>
       <link>https://ayushsubedi.github.io/tags/amazon-rekognition/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-rekognition/</guid>
       <description></description>
@@ -68,7 +68,7 @@
     <item>
       <title>amazon-transcribe</title>
       <link>https://ayushsubedi.github.io/tags/amazon-transcribe/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-transcribe/</guid>
       <description></description>
@@ -77,79 +77,16 @@
     <item>
       <title>amazon-translate</title>
       <link>https://ayushsubedi.github.io/tags/amazon-translate/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/amazon-translate/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>certification</title>
-      <link>https://ayushsubedi.github.io/tags/certification/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/certification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>deepar-in-sagemaker</title>
-      <link>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>greengrass</title>
-      <link>https://ayushsubedi.github.io/tags/greengrass/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/greengrass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pipelines</title>
-      <link>https://ayushsubedi.github.io/tags/pipelines/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/pipelines/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sagemaker</title>
-      <link>https://ayushsubedi.github.io/tags/sagemaker/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/sagemaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sagemaker-canvas</title>
-      <link>https://ayushsubedi.github.io/tags/sagemaker-canvas/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/sagemaker-canvas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sagemaker-debugger</title>
-      <link>https://ayushsubedi.github.io/tags/sagemaker-debugger/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/sagemaker-debugger/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>apache-spark</title>
       <link>https://ayushsubedi.github.io/tags/apache-spark/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/apache-spark/</guid>
       <description></description>
@@ -158,88 +95,52 @@
     <item>
       <title>athena</title>
       <link>https://ayushsubedi.github.io/tags/athena/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/athena/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>data-distributions</title>
-      <link>https://ayushsubedi.github.io/tags/data-distributions/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      <title>certification</title>
+      <link>https://ayushsubedi.github.io/tags/certification/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/tags/data-distributions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>emr</title>
-      <link>https://ayushsubedi.github.io/tags/emr/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/emr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>feature-engineering</title>
-      <link>https://ayushsubedi.github.io/tags/feature-engineering/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/feature-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>handling-outliers</title>
-      <link>https://ayushsubedi.github.io/tags/handling-outliers/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/handling-outliers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>quicksight</title>
-      <link>https://ayushsubedi.github.io/tags/quicksight/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/quicksight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>types-of-data</title>
-      <link>https://ayushsubedi.github.io/tags/types-of-data/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/types-of-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>unbalanced-data</title>
-      <link>https://ayushsubedi.github.io/tags/unbalanced-data/</link>
-      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/unbalanced-data/</guid>
+      <guid>https://ayushsubedi.github.io/tags/certification/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data pipeline</title>
       <link>https://ayushsubedi.github.io/tags/data-pipeline/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/data-pipeline/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>data-distributions</title>
+      <link>https://ayushsubedi.github.io/tags/data-distributions/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-distributions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deepar-in-sagemaker</title>
+      <link>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ebs</title>
       <link>https://ayushsubedi.github.io/tags/ebs/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/ebs/</guid>
       <description></description>
@@ -248,7 +149,7 @@
     <item>
       <title>efs</title>
       <link>https://ayushsubedi.github.io/tags/efs/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/efs/</guid>
       <description></description>
@@ -257,34 +158,88 @@
     <item>
       <title>elasticsearch</title>
       <link>https://ayushsubedi.github.io/tags/elasticsearch/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/elasticsearch/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>emr</title>
+      <link>https://ayushsubedi.github.io/tags/emr/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/emr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feature-engineering</title>
+      <link>https://ayushsubedi.github.io/tags/feature-engineering/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/feature-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>glue</title>
       <link>https://ayushsubedi.github.io/tags/glue/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/glue/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>greengrass</title>
+      <link>https://ayushsubedi.github.io/tags/greengrass/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/greengrass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>handling-outliers</title>
+      <link>https://ayushsubedi.github.io/tags/handling-outliers/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/handling-outliers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>kinesis</title>
       <link>https://ayushsubedi.github.io/tags/kinesis/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/kinesis/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>pipelines</title>
+      <link>https://ayushsubedi.github.io/tags/pipelines/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pipelines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quicksight</title>
+      <link>https://ayushsubedi.github.io/tags/quicksight/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/quicksight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>rds</title>
       <link>https://ayushsubedi.github.io/tags/rds/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/rds/</guid>
       <description></description>
@@ -293,7 +248,7 @@
     <item>
       <title>redshift</title>
       <link>https://ayushsubedi.github.io/tags/redshift/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/redshift/</guid>
       <description></description>
@@ -302,18 +257,63 @@
     <item>
       <title>s3</title>
       <link>https://ayushsubedi.github.io/tags/s3/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/s3/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>sagemaker</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sagemaker-canvas</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker-canvas/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker-canvas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sagemaker-debugger</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker-debugger/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker-debugger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>step function</title>
       <link>https://ayushsubedi.github.io/tags/step-function/</link>
-      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/step-function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>types-of-data</title>
+      <link>https://ayushsubedi.github.io/tags/types-of-data/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/types-of-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unbalanced-data</title>
+      <link>https://ayushsubedi.github.io/tags/unbalanced-data/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/unbalanced-data/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,7 @@
     <description>Recent content in amazon-translate on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/amazon-translate/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,11 @@
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - Modeling</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
-      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</guid>
       <description>&lt;h1 id=&#34;modeling&#34;&gt;Modeling&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#introduction-to-deep-learning&#34;&gt;Introduction to Deep Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#activation-functions&#34;&gt;Activation Functions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#convolutional-neural-network&#34;&gt;Convolutional Neural Network&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#recurrent-neural-networks&#34;&gt;Recurrent Neural Networks&lt;/a&gt;&lt;/li&gt;
@@ -75,19 +74,138 @@
 &lt;li&gt;&lt;a href=&#34;#deep-composer-fraud-detection-codeguru-and-contact-lens&#34;&gt;Deep Composer, Fraud Detection, CodeGuru, and Contact Lens&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#amazon-kendra-and-amazon-augmented-ai-a2i&#34;&gt;Amazon Kendra and Amazon Augmented AI (A2I)&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;introduction-to-deep-learning&#34;&gt;Introduction to Deep Learning&lt;/h2&gt;
+&lt;p&gt;This section covers framing business problems as machine learning problems, selecting the appropriate model(s) for a given machine learning problem, training machine learning models, performing hyperparameter optimization, and evaluate machine learning models.&lt;/p&gt;
+&lt;h2 id=&#34;deeplearning-frameworks&#34;&gt;Deeplearning Frameworks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tensorflow/Keras (Google)&lt;/li&gt;
+&lt;li&gt;PyTorch (Meta)&lt;/li&gt;
+&lt;li&gt;MXNet (Apache, and therefore AWS leans towards this)&lt;/li&gt;
+&lt;li&gt;Scikit-Learn (for simple DL)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;activation-functions&#34;&gt;Activation Functions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply a non linear transformation&lt;/li&gt;
+&lt;li&gt;Given the input, what should by output be&lt;/li&gt;
+&lt;li&gt;Can be applied in between layers, or in the output layer&lt;/li&gt;
+&lt;li&gt;Step Function, Sigmoid, TanH, ReLU, Leaky ReLU&lt;/li&gt;
+&lt;li&gt;Binary Step Function is either on or off, cannot handle multiple classification, vertical slopes do not work with calculus&lt;/li&gt;
+&lt;li&gt;Sigmoid: 0 to 1&lt;/li&gt;
+&lt;li&gt;TanH: -1 to 1&lt;/li&gt;
+&lt;li&gt;For Sigmoid and TanH there is a vanishing gradient problem (value changes slowly for high or low value)&lt;/li&gt;
+&lt;li&gt;Sigmoid and TanH are computationally expensive&lt;/li&gt;
+&lt;li&gt;ReLu: fast to compute, for inputs that are zero or negative, it is a linear function (dying relu problem)&lt;/li&gt;
+&lt;li&gt;Leaky ReLU solves this&lt;/li&gt;
+&lt;li&gt;Parametric ReLU, slope in the negative part is learned via backpropagation, complicated&lt;/li&gt;
+&lt;li&gt;Exponential Linear Unit (ELU)&lt;/li&gt;
+&lt;li&gt;Maxout: usually not worth the effort&lt;/li&gt;
+&lt;li&gt;Softmax: usually the final layer of a classification model&lt;/li&gt;
+&lt;li&gt;RNN&amp;rsquo;s do well with Tanh&lt;/li&gt;
+&lt;li&gt;Sigmoid if more that one classification is required for the same thing&lt;/li&gt;
+&lt;li&gt;For everything else, start with ReLU&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;convolutional-neural-network&#34;&gt;Convolutional Neural Network&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CNN vs MLP (Multilayer perceptron)&lt;/li&gt;
+&lt;li&gt;They have convolutional layers&lt;/li&gt;
+&lt;li&gt;Some filters may detect edges, lines, shapes etc. and deeper layers can detect objects&lt;/li&gt;
+&lt;li&gt;Feature location invariant, Shift Invariant, Space Invariant Artificial Neural Networks&lt;/li&gt;
+&lt;li&gt;Image and video recognition, recommender systems, image classification, image segmentations,&lt;/li&gt;
+&lt;li&gt;Machine translation, Sentence Classification, Sentiment analysis&lt;/li&gt;
+&lt;li&gt;AlexNet, LeNet, GoogLeNet, ResNet as an example&lt;/li&gt;
+&lt;li&gt;source data must be of appropriate dimensions&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;recurrent-neural-networks&#34;&gt;Recurrent Neural Networks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;deals with sequences in time (predict stock prices, understand words in a sentence, translation etc)&lt;/li&gt;
+&lt;li&gt;time series data, sequence of arbitrary length&lt;/li&gt;
+&lt;li&gt;captions for images, order matters&lt;/li&gt;
+&lt;li&gt;structure and context is relevant&lt;/li&gt;
+&lt;li&gt;machine generated music&lt;/li&gt;
+&lt;li&gt;past behaviour of neuron impacts the future&lt;/li&gt;
+&lt;li&gt;Sequence to Sequence: predict stock prices based on series of historic data&lt;/li&gt;
+&lt;li&gt;Sequence to vector: words in a sentence to sentiment&lt;/li&gt;
+&lt;li&gt;Vector to sequence: create captions from an image&lt;/li&gt;
+&lt;li&gt;Encoder -&amp;gt; Decoder: Sequence -&amp;gt; vector -&amp;gt; sequence, machine translation&lt;/li&gt;
+&lt;li&gt;Backpropogation through time&lt;/li&gt;
+&lt;li&gt;Ends up looking like a really really deep neural network&lt;/li&gt;
+&lt;li&gt;Therefore, we use truncated backpropagation through time&lt;/li&gt;
+&lt;li&gt;State from earlier time steps get diluted over time, Long Short-Term memory cell LSTM cell&lt;/li&gt;
+&lt;li&gt;GRU cell: Gated Recurrent Unit, Simplified LSTM which performs almost as well&lt;/li&gt;
+&lt;li&gt;Traning RNN&amp;rsquo;s is hard, very sensitive to topologies, choice of hyperparameters, very resource intensive, a wrong choice can lead to a RNN that does not converge at all.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;modern-nlp-with-bert-and-gpt-and-transfer-learning&#34;&gt;Modern NLP with BERT and GPT, and Transfer Learning&lt;/h2&gt;
-&lt;h2 id=&#34;deep-learning-on-ec2-and-emr&#34;&gt;Deep Learning on EC2 and EMR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Transformer deep learning architectures&lt;/li&gt;
+&lt;li&gt;BERT, RoBERTa, T5, GPT2, GPT3, etc&lt;/li&gt;
+&lt;li&gt;DistilBERT: uses knowledge distillation to reduce model size by 40%&lt;/li&gt;
+&lt;li&gt;BERT: Bi-directional Encoder Representations from Transformers&lt;/li&gt;
+&lt;li&gt;GPT: Generative Pre-trained Transformer&lt;/li&gt;
+&lt;li&gt;Transfer Learning&lt;/li&gt;
+&lt;li&gt;Model zoos: hugging face offer pre trained models to start with&lt;/li&gt;
+&lt;li&gt;Hugging face DLC (deep learning containers)&lt;/li&gt;
+&lt;li&gt;Transfer Learning, retrain=True vs False&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deep-learning-on-ec2emr&#34;&gt;Deep Learning on EC2/EMR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;EMR supports Apache MXNet and GPU instance types&lt;/li&gt;
+&lt;li&gt;Appropriate instance types for deep learning&lt;/li&gt;
+&lt;li&gt;P3, P2, G3&lt;/li&gt;
+&lt;li&gt;Deep Learning AMI&amp;rsquo;s&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;tuning-neural-networks&#34;&gt;Tuning Neural Networks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Neural nets are trained by gradient descent or sth similar&lt;/li&gt;
+&lt;li&gt;We start at some random point, and sample different solutions seeking to minimize some cost functions, over many epochs&lt;/li&gt;
+&lt;li&gt;how far apart these samples are is the learning rate&lt;/li&gt;
+&lt;li&gt;learning rate is an example of a hyperparameter&lt;/li&gt;
+&lt;li&gt;batch size is also a hyperparameter, smaller batch size can work out of local minima&lt;/li&gt;
+&lt;li&gt;small batch size tend to not get stuck in local minima&lt;/li&gt;
+&lt;li&gt;large batch sizes can converge on the wrong solution at random&lt;/li&gt;
+&lt;li&gt;large learning rates can overshoot the correct solution&lt;/li&gt;
+&lt;li&gt;small learning rates increate training time&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;regularization-techniques-for-neural-networks-dropout-early-stopping&#34;&gt;Regularization Techniques for Neural Networks (Dropout, Early Stopping)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Regularization helps with avoiding overfitting&lt;/li&gt;
+&lt;li&gt;build simple model, dropout, early stopping can also help with avoiding overfitting&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;l1-and-l2-regularization&#34;&gt;L1 and L2 Regularization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;L1: sum of abs value of weights: perform feature selection, computationally inefficient, sparse output&lt;/li&gt;
+&lt;li&gt;L2: sum of square of weights, all features considered but weighted, computationally efficient, dence output&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;grief-with-gradients-the-vanishing-gradient-problem&#34;&gt;Grief with Gradients The Vanishing Gradient problem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;vanishing gradient propogate to deeper layer&lt;/li&gt;
+&lt;li&gt;slope is approaching zero&lt;/li&gt;
+&lt;li&gt;it could be the local miminum or global where the convergence is happening&lt;/li&gt;
+&lt;li&gt;long short term memory RNN can be used&lt;/li&gt;
+&lt;li&gt;resnet also helps with vanishing gradient problem&lt;/li&gt;
+&lt;li&gt;better activation function (relu is a good choice)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;the-confusion-matrix&#34;&gt;The Confusion Matrix&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;sometimes accuracy does not tell the whole story&lt;/li&gt;
+&lt;li&gt;TP, TN, FP, FN&lt;/li&gt;
+&lt;li&gt;Confusion matrix shows this&lt;/li&gt;
+&lt;li&gt;multi class confusion matrix: heatmap&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;precision-recall-f1-auc-and-more&#34;&gt;Precision, Recall, F1, AUC, and more&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Precision/Correct Positives/Percent of relevant results: when you are a lot about false positives: TP/(TP+FP)&lt;/li&gt;
+&lt;li&gt;Recall/Sensitivity/True Positive Rate:  TP/(TP + FN): when you care about false negatives&lt;/li&gt;
+&lt;li&gt;F1 score: harmonic mean of Precision and Recall&lt;/li&gt;
+&lt;li&gt;Specificity: TN/(TN+FP)&lt;/li&gt;
+&lt;li&gt;RMSE, AMSE, etc.&lt;/li&gt;
+&lt;li&gt;ROC curve: Receiver Operating Characteristic Curve: Plot of true positive rate (recall) vs false positive rate at various threshold setting.&lt;/li&gt;
+&lt;li&gt;AUC curve: area under the ROC curve.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;ensemble-methods-bagging-and-boosting&#34;&gt;Ensemble Methods Bagging and Boosting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bagging: Generate N new training sets by random sampling with replacement, each resampled model can be trained in parallel&lt;/li&gt;
+&lt;li&gt;Boosting: Observations are weighted, training is sequential&lt;/li&gt;
+&lt;li&gt;XGBoost is the latest hotness, boosting generally yields better accuracy, bagging avoids overfitting, bagging is easier to parallelize&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;introducing-amazon-sagemaker&#34;&gt;Introducing Amazon SageMaker&lt;/h2&gt;
 &lt;h2 id=&#34;linear-learner-in-sagemaker&#34;&gt;Linear Learner in SageMaker&lt;/h2&gt;
 &lt;h2 id=&#34;xgboost-in-sagemaker&#34;&gt;XGBoost in SageMaker&lt;/h2&gt;
@@ -130,7 +248,6 @@
 &lt;h2 id=&#34;torchserve-aws-neuron-and-aws-panorama&#34;&gt;TorchServe, AWS Neuron, and AWS Panorama&lt;/h2&gt;
 &lt;h2 id=&#34;deep-composer-fraud-detection-codeguru-and-contact-lens&#34;&gt;Deep Composer, Fraud Detection, CodeGuru, and Contact Lens&lt;/h2&gt;
 &lt;h2 id=&#34;amazon-kendra-and-amazon-augmented-ai-a2i&#34;&gt;Amazon Kendra and Amazon Augmented AI (A2I)&lt;/h2&gt;
-&lt;p&gt;This section covers&lt;/p&gt;
 </description>
     </item>
     
