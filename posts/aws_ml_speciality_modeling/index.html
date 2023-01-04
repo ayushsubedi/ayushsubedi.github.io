@@ -381,47 +381,541 @@ onload='renderMathInElement(document.body);'></script>
 <li>XGBoost is the latest hotness, boosting generally yields better accuracy, bagging avoids overfitting, bagging is easier to parallelize</li>
 </ul>
 <h2 id="introducing-amazon-sagemaker">Introducing Amazon SageMaker</h2>
+<ul>
+<li>built to handle the entire machine learning workflow</li>
+<li>deploy model, evaluate results in production, fetch, clean and prepare data, train and evaluate a model</li>
+<li>training data will be in s3, sagemakaker docker EC2 for inference</li>
+<li>spins as many hosts, spins as many endpoints</li>
+<li>Sagemaker notebook: notebook instance on EC2, has access to s3, scikit learn, spark, tensorflow, ability to deploy trained models for making predictions at scale</li>
+<li>hyperparameter tuning from notebook</li>
+<li>Sagemaker console</li>
+<li>Data comes from S3, ideal format is RecordIO/Protobuf/csv</li>
+<li>Can also ingest from Athena, EMR, Redshift, Amazon Keyspaces DB</li>
+<li>Apache Spark integrates with Sagemaker</li>
+<li>Scikit learn, numpy, pandas all work</li>
+<li>Create training job</li>
+<li>save your trained model to s3</li>
+<li>can be deployed using persistent endpoint for making individual predictions on demand</li>
+<li>or batch transform to get prediction for and entire dataset</li>
+<li>inference pipelines</li>
+<li>sagemaker neo for deploying to edge devices</li>
+<li>elastic inference for accelerating deep learning models</li>
+<li>automatic scaling of endpoints as needed</li>
+</ul>
 <h2 id="linear-learner-in-sagemaker">Linear Learner in SageMaker</h2>
+<ul>
+<li>Linear learer can handle both classification and regression</li>
+<li>can do classification using Linear Learner threshold</li>
+<li>as long as a line will fit</li>
+<li>RecordIO wrapped protobuf float32, or csv (first column assumed to be the label)</li>
+<li>File or pipe mode both supported</li>
+<li>pipe mode will be more efficient</li>
+<li>if s3 is taking to long to train, pipe is a simple optimization</li>
+<li>training data should be normalized</li>
+<li>input data should be shuffled</li>
+<li>uses SGD</li>
+<li>multiple models are optimized in parallel</li>
+<li>tune l1, l2 regularization</li>
+<li>balance multiclass weights: give each class equal importance in loss functions</li>
+<li>learning rate, mini batch size, l1 regualization</li>
+<li>multi gpu does not help</li>
+</ul>
 <h2 id="xgboost-in-sagemaker">XGBoost in SageMaker</h2>
+<ul>
+<li>eXtreme gradient boosting</li>
+<li>boosted group of decision trees</li>
+<li>gradient descent</li>
+<li>winning a lot of kaggle competitions</li>
+<li>fast</li>
+<li>classification/regression</li>
+<li>CSV/libsvm/recordIO-protobuf/parquet</li>
+<li>models are searilized/deserialized with pickle</li>
+<li>can use as a framework withing notebooks</li>
+<li>or as a built in sagemaker algorithm</li>
+<li>subsample (prevent overfitting)</li>
+<li>ETA (step size shrinkage, prevents overfitting)</li>
+<li>Gamma (minimul loss reduction to create a partition)</li>
+<li>Alpha (L1 regularization term, larger = more conservative)</li>
+<li>Lambda (L2 regularization term, larger = more conservative)</li>
+<li>eval_metric: Optimize on AUC, example: if you care about false positives more than accuracy</li>
+<li>scale_pos_weight: adjusts balance of positive and negative weights, helpful for unbalanced classes</li>
+<li>max_depth : too high may overfit</li>
+<li>Xgboost with cpu: M5 is a good choice (optimize for memory and not compute)</li>
+<li>Xgboost with gpu: tree_method hyperparameter: gpu_hist, cheaper and faster, P3 is good choice</li>
+</ul>
 <h2 id="seq2seq-in-sagemaker">Seq2Seq in SageMaker</h2>
+<ul>
+<li>sequence to sequence (example machine translation, text summarization, speech to text)</li>
+<li>implemented with RNN&rsquo;s and CNN&rsquo;s with attention</li>
+<li>RecordIO-Protobuf tokens must be integers</li>
+<li>start with tokenized text files</li>
+<li>convert to protobuf using sample code</li>
+<li>must provide training data, validation data and vocabulary files</li>
+<li>training machine translation can take days, pretrained models are available</li>
+<li>public training datasets are avaialable for specific translation tasks</li>
+<li>batch_size, optimizer_type, learning_rate, num_layers_encoder, num_layers_decoder, can optimize on accuracy, bleu score (compares against multiple reference translations), perplexity (cross-entropy)</li>
+<li>cannot be parallelized</li>
+<li>can only use gpu instance</li>
+<li>can use multi gpu within an instance machine</li>
+</ul>
 <h2 id="deepar-in-sagemaker">DeepAR in SageMaker</h2>
+<ul>
+<li>Forecasting one dimensional time series data</li>
+<li>uses rnn&rsquo;s</li>
+<li>allows you to train the same model over several related time series</li>
+<li>finds frequencies and seasonality</li>
+<li>json lines format, Gzip or Parquet</li>
+<li>each record must contain, start and target</li>
+<li>each record can contain dynamic features and categorical features</li>
+<li>always include entire time series for training, testing and inference</li>
+<li>use entire dataset as test set</li>
+<li>do not use very large values for prediction (&gt;400)</li>
+<li>train on many time series</li>
+<li>contect length, epochs, mini batch size, learning rate, num cells</li>
+<li>can use cpu or gpu</li>
+<li>single or multi machine</li>
+<li>cpu only for inferene</li>
+<li>may need larger instances for tuning</li>
+</ul>
 <h2 id="blazingtext-in-sagemaker">BlazingText in SageMaker</h2>
+<ul>
+<li>Text classification: predict labels for a sentence, useful in web searches, information retrieal, supervised</li>
+<li>Word2vec: creates a vector representation of workds</li>
+<li>semantically similar words are represented by vectors close to each otehr</li>
+<li>this is called a word embedding</li>
+<li>it is useful for nlp, but is not an nlp algorithm itself</li>
+<li>it only works on individual words, not sentences or documents</li>
+<li>for supervised mode, one sentence per line, first word in the sentence is the string <em>label</em> followed by the label</li>
+<li>Also, &ldquo;augmented manifest text format&rdquo;</li>
+<li>Word3vec just wants a text file with one training sentence per line</li>
+<li>There are multiple modes:</li>
+<li>Cbow (Continuous Bag of Words)</li>
+<li>Skip-gram</li>
+<li>Batch skip-gram (Distributed computation over many CPU nodes)</li>
+<li>Word2vec: mode, learning rate, window size, verctor dim, negative samples</li>
+<li>Text classification: epochs, learning rate, word ngrams, vector dim</li>
+<li>For cbow and skipgram, recommend a single ml.p3.2xlarge, any single CPU or single GPU instance will work</li>
+<li>for batch_skipgram, can use single or multiple CPU instances</li>
+<li>for text classification C5 recommended if less than 2GB training data, for larger datasets use a single GPU instance ml.p2.xlarge or ml.p3.2xlarge</li>
+</ul>
 <h2 id="object2vec-in-sagemaker">Object2Vec in SageMaker</h2>
+<ul>
+<li>creates low-dimensional dense embeddings of high-dimensional objects</li>
+<li>compute nearest neighbors of objects</li>
+<li>visualize clusters</li>
+<li>genre prediction</li>
+<li>recommendations</li>
+<li>data must be tokenized into integers</li>
+<li>training data consists of pairs of tokens and or sequenses of tokens</li>
+<li>process data into json lines and shuffle it</li>
+<li>train with two input channels, two encoders, and a comparator</li>
+<li>encoder choices: average-pooled embeddings, cnn&rsquo;s, bidirectional lstm</li>
+<li>comparator is followed by feed-fowrard neural network</li>
+<li>usual suspect: dropout, early stopping, epochs, learning rate, bbatch size, layers, activation function, optimizer, weight decay</li>
+<li>Enc1_network, enc2_network</li>
+<li>instance types: can only train on a single machine (cpu or gpu, multi-gpu ok)</li>
+<li>inference: use ml.p2.2xlarge</li>
+</ul>
 <h2 id="object-detection-in-sagemaker">Object Detection in SageMaker</h2>
+<ul>
+<li>identify all objects in an image with bounding box</li>
+<li>detects and classifies objects with a single deep neural network</li>
+<li>classes are accompanied by confidence scores</li>
+<li>can train from scratch, or use pretrained models based on imagenet</li>
+<li>recodrio or image format</li>
+<li>with image format, supply a json file for annotation data for each image</li>
+<li>takes and image input, outputs all instances of objects in teh imagte with categories and confidence scores</li>
+<li>uses cnn with single shot multibox detector ssd algorithm, the base being vgg-16 or resnet-50</li>
+<li>transfer learning mode/incrementatl training: use pretrained model for the base network instead of random inintial weights</li>
+<li>uses flip, rescale, and jitter internally to avoid overfitting</li>
+<li>mini batch size, learning rate, optimizer</li>
+<li>gpu instances for training</li>
+<li>multi gpu multi machines</li>
+<li>for inference cpu is enough</li>
+</ul>
 <h2 id="image-classification-in-sagemaker">Image Classification in SageMaker</h2>
+<ul>
+<li>assign one or more labels to an image</li>
+<li>does not tell you where objects are</li>
+<li>mxnet recordio (not protobuf)</li>
+<li>raw jpg or png</li>
+<li>.lst files to associate image index and class</li>
+<li>augmented manifest image format enables pipe mode</li>
+<li>resnet cnn under the hood</li>
+<li>full training mode</li>
+<li>transfer learning mode</li>
+<li>default image is 224 224 3</li>
+<li>bbatch size, learning rate, optimizer</li>
+<li>weight decay, beta 1, beta 2, eps, gamma</li>
+<li>gpu instance fr training</li>
+<li>cpu or gpu for inference</li>
+</ul>
 <h2 id="semantic-segmentation-in-sagemaker">Semantic Segmentation in SageMaker</h2>
+<ul>
+<li>pixel level object classificaion</li>
+<li>different from image classification</li>
+<li>useful for self driving vehicles, medical imaging, robot sensing</li>
+<li>produces a semantic mask</li>
+<li>jpg or img with annotations</li>
+<li>augmented manifest image format supported for pipe mode</li>
+<li>jpg images accepted for inference</li>
+<li>mxnet gluon and gluon cv</li>
+<li>fully convolution network, pyramid scene parsing, deeplabv3</li>
+<li>resnet50, renet101, both rained on imagenet</li>
+<li>incremental training, or scratch</li>
+<li>epochs, learning rate, batch size, optimizer, algorithm, backbone</li>
+<li>only gpu for training (p2 or p3), and only on one maching</li>
+<li>cpu or gpu for inference</li>
+</ul>
 <h2 id="random-cut-forest-in-sagemaker">Random Cut Forest in SageMaker</h2>
+<ul>
+<li>anomaly detection</li>
+<li>unsupervised</li>
+<li>detect unexpected spikes in time series data</li>
+<li>breaks in periodicity</li>
+<li>unclassifiable data points</li>
+<li>assigns and anamoly score to each data points</li>
+<li>recordio protobuf or csv</li>
+<li>can use file or pipe mode on either</li>
+<li>optional test channel for computation</li>
+<li>creates a forest of trees where each tree is a partition of the training data, looks at expected change in complexity of the tree as a result of adding a point into it</li>
+<li>data is sampled randomly and then trained</li>
+<li>rcf shows up in kinesis analytics as well, it can work on streaming data as well.</li>
+<li>num_trees, num_samples_per_tree (should be chosen such that 1/num_samples_per_tree approximates the ratio of anomalous to normal data)</li>
+<li>does not take advantage of gpu</li>
+<li>ml.c5.xl for inference</li>
+</ul>
 <h2 id="neural-topic-model-in-sagemaker">Neural Topic Model in SageMaker</h2>
+<ul>
+<li>organize documents into topics</li>
+<li>classify or summarize documents based on topics</li>
+<li>it is not just tf/idf</li>
+<li>unsupervised: algorithm is neural variational inference</li>
+<li>four data channels, train, validation, test and auxiliary</li>
+<li>record io or csv</li>
+<li>words muyst be tokenized into integers</li>
+<li>file or pipe mode</li>
+<li>you define how many topics you want, these topics are latent representation based on top ranking words</li>
+<li>one of two modelling algorithms sagemaker offers</li>
+<li>batch size, num_topics</li>
+<li>gpu or cpu</li>
+</ul>
 <h2 id="latent-dirichlet-allocation-lda-in-sagemaker">Latent Dirichlet Allocation (LDA) in SageMaker</h2>
+<ul>
+<li>latent dirichlet allocation</li>
+<li>another topic modeling algorithm but not based on deep learning</li>
+<li>unsupervised: topics are unlabeled, they are just grouping of documents with a shared subseet of words</li>
+<li>can be used for other purposes as well</li>
+<li>train channel, optional test channel</li>
+<li>protobuf or csv</li>
+<li>each document has counts for every word in vocabulary</li>
+<li>pipe mode: only supported with proto</li>
+<li>unsupervised, generates however many topics you specify</li>
+<li>per-word log likelyhood</li>
+<li>num_topics, alpha0</li>
+<li>cpu single instance, cannot parallelize</li>
+</ul>
 <h2 id="k-nearest-neighbors-knn-in-sagemaker">K-Nearest-Neighbors (KNN) in SageMaker</h2>
+<ul>
+<li>simple classification or regression algorithm</li>
+<li>classification: k closest points</li>
+<li>regression: average values</li>
+<li>train channel, test channel emits accuracy or MSE</li>
+<li>protobuf or csv (first column is label)</li>
+<li>data is sampled, sagemaker includes dimensionality reduction stage, build an index for looking up neighbors, serialize the model, query the model for given K</li>
+<li>hyperparameter K, sample_size</li>
+<li>cpu or gpu</li>
+<li>cpu or gpu for inference</li>
+</ul>
 <h2 id="k-means-clustering-in-sagemaker">K-Means Clustering in SageMaker</h2>
+<ul>
+<li>unsupervised clustering</li>
+<li>divide data into k groups, where members of a group are as similar as possible to each other</li>
+<li>web scale k means clustering</li>
+<li>training input: train channel, train in shardedbys3key and testing: fullyreplicated</li>
+<li>recordio or csv</li>
+<li>file or pipemode</li>
+<li>every ovservation is mapped to n-dimensional space</li>
+<li>works to optimize the center of k clusters</li>
+<li>algorithm: k means++ tries to make initial clusters far away, lloyd&rsquo;s method</li>
+<li>mini_batch_size, extra_center_factor, init_method</li>
+<li>cpu or gpu, but cpu recommended</li>
+<li>only one gpu per instance used on gpu</li>
+</ul>
 <h2 id="principal-component-analysis-pca-in-sagemaker">Principal Component Analysis (PCA) in SageMaker</h2>
+<ul>
+<li>dimensionality reduction</li>
+<li>unsupervised</li>
+<li>covariance matrix is created, then SVD</li>
+<li>two modesL regular: for sparse matrix, randomized: for large number of observations and features</li>
+<li>algorithm_mode and subtract_mean</li>
+<li>gpu or cpu</li>
+</ul>
 <h2 id="factorization-machines-in-sagemaker">Factorization Machines in SageMaker</h2>
+<ul>
+<li>dealing with sparse data</li>
+<li>item recommendations</li>
+<li>supervised: classification or regression</li>
+<li>limited to pair-wise interactions</li>
+<li>protobuf with float32</li>
+<li>bias, factors, and linear terms</li>
+<li>cpu or gpu, cpu recommended</li>
+</ul>
 <h2 id="ip-insights-in-sagemaker">IP Insights in SageMaker</h2>
+<ul>
+<li>finding fishy behaviour</li>
+<li>unsupervised learning of ip address</li>
+<li>identifies suspicious behaviour from ip addresses</li>
+<li>user names, account ids, not need to pre process</li>
+<li>training channel, optional validation (computes auc score)</li>
+<li>csv only (entity, ips)</li>
+<li>neural network to learn latent vector representations of entities and ip addresses</li>
+<li>entities are hashed and embedded</li>
+<li>automatically generates negative samples during training by randomly pairing entities and ips</li>
+<li>num_entity vectors, vector_dim, epochs, learning rate, batch size</li>
+<li>cpu or gpu</li>
+<li>gpu recommended</li>
+<li>multiple gpu can be used withing an instance</li>
+</ul>
 <h2 id="reinforcement-learning-in-sagemaker">Reinforcement Learning in SageMaker</h2>
+<ul>
+<li>agent and environment</li>
+<li>supply chain management, hvac systems, industrial robots, dialog systems, autonomous vehicles</li>
+<li>yields fast on-line performance once the space has been explored</li>
+<li>Q learning: environment, actions, state/action part</li>
+<li>uses a deep learning framework with tensorflow and mxnet</li>
+<li>supports intel coach and ray rllib toolkits</li>
+<li>custom, open-source or commercial environments supported</li>
+<li>can distribute trining and environment rollout</li>
+<li>multi core and multi instance</li>
+</ul>
 <h2 id="automatic-model-tuning">Automatic Model Tuning</h2>
+<ul>
+<li>define the hyperparameters you care about</li>
+<li>sagemaker spins up a hyperparameter tuning job that trains as many combinations as you will allow</li>
+<li>it learns as it goes, so it does not have to try every possible combination</li>
+<li>intelligent</li>
+<li>do not optimize too many hyperparameters at once</li>
+<li>limit your ranges to as samall range</li>
+<li>use logarithmic scales</li>
+<li>do not run too many training jobs concurently</li>
+<li>make sure training jobs running on multiple instance report the correct objective metric in the end</li>
+</ul>
 <h2 id="apache-spark-with-sagemaker">Apache Spark with SageMaker</h2>
+<ul>
+<li>apache spark allows for preprocessing and also has mllib</li>
+<li>combination of sagemaker and spark is possible</li>
+<li>preprocess with spark, and instead of using mllib, you can use sagemaker estimator, you can use kmeans, pca, xgboost</li>
+<li>sagemakermodel, can be used to make inferences</li>
+<li>connect notebook to a remote emr</li>
+<li>fit, transform in sagemaker</li>
+</ul>
 <h2 id="sagemaker-studio-and-sagemaker-experiments">SageMaker Studio, and SageMaker Experiments</h2>
+<ul>
+<li>visual ide</li>
+<li>sagemaker notebooks</li>
+<li>sagemaker experiments</li>
+</ul>
 <h2 id="sagemaker-debugger">SageMaker Debugger</h2>
+<ul>
+<li>saves internal model state at periodical intervals</li>
+<li>gradients/tensors over time is saved</li>
+<li>define rules for detecting unwanted conditions while training</li>
+<li>a debug job is run for each rule</li>
+<li>logs and fires a cloudwatch event when the rule is hit</li>
+<li>sagemaker studio debugger dashboards</li>
+<li>auto generated training reports</li>
+<li>built in rules: monitor system bottlenecks, profile model framework operations, debug model parameters</li>
+<li>supported framewords and algorithms: tensorflow, pytorch, mxnet, xgboost, sagemaker generic estimator</li>
+<li>debugger api&rsquo;s available in github</li>
+<li>smdebug is the library</li>
+<li>Sagemaker debugger insights dashboard</li>
+<li>profiler report, hardware system metrics, framework metrics</li>
+<li>built in actions to receive notifications or stop training</li>
+<li>profiling system resource usage and training</li>
+</ul>
 <h2 id="sagemaker-autopilot--automl">SageMaker Autopilot / AutoML</h2>
+<ul>
+<li>automates algorithm selection, data preprocessing, model tuning</li>
+<li>it does all the trial and error for you</li>
+<li>automl</li>
+<li>automatic model creation</li>
+<li>model leaderboard</li>
+<li>ranks</li>
+<li>can add in human guidance</li>
+<li>human in the loop</li>
+<li>with or without code in sagemaker studio</li>
+<li>problem types: binary/multiclass classification</li>
+<li>linear learner, xgboost, mlp</li>
+<li>data must be tabular csv</li>
+<li>autopilot explainability</li>
+<li>integrates with sagemaker clarify</li>
+<li>transparency on how models arrive at predictions</li>
+<li>feature attributions: uses shap baselines/shapley values, research from cooperative game theory, assigns each feature an importance value for a give prediction</li>
+</ul>
 <h2 id="sagemaker-model-monitor">SageMaker Model Monitor</h2>
+<ul>
+<li>get alery on quality deviations on your deployed models via cloudwatch</li>
+<li>visualize data drift</li>
+<li>detect anomalies and outliers</li>
+<li>detect new features</li>
+<li>no code required</li>
+<li>data is stored in s3, monitoring jobs are scheduled via a monitoring schedule, metrics are emitted to cloudwatch, integrates with quicksight, tensorboard etc.</li>
+<li>drift in statistical properties of the features</li>
+<li>drift in model quality</li>
+<li>bias drift</li>
+<li>feature attribution drift</li>
+</ul>
 <h2 id="other-recent-features-jumpstart-data-wrangler-features-store-edge-manager">Other recent features (JumpStart, Data Wrangler, Features Store, Edge Manager)</h2>
+<ul>
+<li>jumpstart: one click models and algorithms from model zoos: 150 open source models in nlp, object detection, image classification etc</li>
+<li>data wrangler: import transform analayze and export data withing sagemaker studio</li>
+<li>feature studio: find, discover and share features in studio:online and offline modes</li>
+<li>sagemaker edge manager: software agent for edge devices, models optimized with agemaker neo, collects and samples data for monitoring, labeling and retraining</li>
+</ul>
 <h2 id="sagemaker-canvas">SageMaker Canvas</h2>
-<h2 id="bias-measures-in-sagemaker-canvas">Bias Measures in SageMaker Canvas</h2>
+<ul>
+<li>no code machine learning for business analysts</li>
+<li>upload csv data, select a column to predict, build it and make predictions</li>
+<li>can also join datasets</li>
+<li>classification or regressions</li>
+<li>automatic data cleaning, missing values, outlier and duplicates</li>
+<li>share models and datasets with sagemaker studio</li>
+<li>import from redshift is possible</li>
+<li>time series must be enabled via IAM</li>
+<li>vpc</li>
+<li>a little expensive</li>
+</ul>
+<h2 id="bias-measures-in-sagemaker-clarify">Bias Measures in SageMaker Clarify</h2>
+<ul>
+<li>class imbalance</li>
+<li>difference in proportions of labels</li>
+<li>kullback-leibler divergence, jensen-shannon divergence</li>
+<li>lp-norm</li>
+<li>total variation distance</li>
+<li>kolmogorov-smirnov</li>
+<li>conditional demographic disparity</li>
+</ul>
 <h2 id="sagemaker-training-compiler">SageMaker Training Compiler</h2>
+<ul>
+<li>integrates into AWS deep learning containers</li>
+<li>compile and optimize training jobs on gpu</li>
+<li>can accelerate training up to 50%</li>
+<li>converts models into hardware-optimized instructions</li>
+<li>tested with hugging face transformers library, or bring your own model</li>
+<li>ensure gpu instance are used in ml.p3, ml.p4</li>
+<li>pytorch models must use pytorch xla&rsquo;s model save function</li>
+<li>enable dubug flask in compiler_config parameter to enable debugging</li>
+</ul>
 <h2 id="amazon-comprehend">Amazon Comprehend</h2>
+<ul>
+<li>nlp and text analytics</li>
+<li>input social media, emails, web pages, documents, transcripts, medical records (comprehend medical)</li>
+<li>extract key phrases, entities, sentiment, language, syntax, topics, and document classifications</li>
+</ul>
 <h2 id="amazon-translate">Amazon Translate</h2>
+<ul>
+<li>translates text</li>
+<li>uses deep learning</li>
+<li>supports custom terminology for proper names</li>
+</ul>
 <h2 id="amazon-transcribe">Amazon Transcribe</h2>
+<ul>
+<li>speech to text</li>
+<li>speaker identification</li>
+<li>channel identification</li>
+<li>language identification</li>
+<li>custom vocabularies</li>
+</ul>
 <h2 id="amazon-polly">Amazon Polly</h2>
+<ul>
+<li>text to speech</li>
+<li>polly is parrot</li>
+<li>lexicons</li>
+<li>ssml (speech synthesis markup language)</li>
+<li>speech marks</li>
+</ul>
 <h2 id="amazon-rekognition">Amazon Rekognition</h2>
+<ul>
+<li>compute vision</li>
+<li>object and scene detection</li>
+<li>image moderation, facial analysis, celebrity recognition, face comparison, text in image, video analysis</li>
+<li>kinesis video stream h.264 encoded, 5-30 fps</li>
+<li>can use lambda to trigger image analysis upon upload</li>
+</ul>
 <h2 id="amazon-forecast">Amazon Forecast</h2>
+<ul>
+<li>fully managed service to deliver highly accurate forecasts with ml</li>
+<li>automl chooses the best model for your time series data</li>
+<li>arima, deepar, ets, npts, prophet</li>
+<li>works with any time series</li>
+<li>inventory planning, financial planning, resource planning, based on dataset groups, predictors and forecasts</li>
+</ul>
 <h2 id="amazon-forecast-algorithms">Amazon Forecast Algorithms</h2>
+<ul>
+<li>cnnqr: convolutional neural network quantile regression, best for large datasets with hundreds of time series, accepts related historical time series data and metadata</li>
+<li>deepar+ : recurrent neural network, best for large datasets, accepts related forward-looking time series and metadata</li>
+<li>prophet: additive model with non linear trends and seasonality</li>
+<li>npts: non parametric time series: good for sparse data</li>
+<li>arima: simple datasets</li>
+<li>ets: exponential smoothing</li>
+</ul>
 <h2 id="amazon-lex">Amazon Lex</h2>
+<ul>
+<li>chatbot engine</li>
+<li>lambda to fulfill intent from text</li>
+<li>can deploy to aws mobile sdk, facebook messenger, slack, twilio</li>
+</ul>
 <h2 id="amazon-personalize">Amazon Personalize</h2>
+<ul>
+<li>fully managed recommendation engine</li>
+<li>api access: feed in data, provide schema in avro, javascript or sdk, get recommendations, get personalized ranking</li>
+<li>real time or batch recommendations</li>
+<li>recommendations for new users and new items</li>
+<li>contextual recommendations</li>
+<li>similar items</li>
+<li>datasets, recipes, solutions, compaignhs</li>
+<li>hidden_dimensions, bptt, recency_mask, min/max_user_history_length_percentile, exploration_weight, exploration_item_age_cut_off</li>
+<li>necessary to maintain recency</li>
+<li>bucket policy</li>
+<li>data ingestion: per gb, training per training hour, inference per tps-hour, batch recommendations: per user or per item</li>
+</ul>
 <h2 id="lightning-round-textract-deeplens-deepracher-lookout-and-monitron">Lightning round! TexTract, DeepLens, DeepRacher, Lookout, and Monitron</h2>
+<ul>
+<li>TexTract: ocr with forms, fields, tables support</li>
+<li>DeepLens: deep learning enabled video camera, integrated with rekognition, sagemaker, polly, tensorflow, mxnet, caffe</li>
+<li>DeepRacer: reinforcement learning powered 1/18 scale race car</li>
+<li>Lookout: equipment, metrics and vision: detect defects in silicon wafers, circuit boards etc.</li>
+<li>Monitron: end to end system for monitoring equipment and predictive maintenance</li>
+</ul>
 <h2 id="torchserve-aws-neuron-and-aws-panorama">TorchServe, AWS Neuron, and AWS Panorama</h2>
+<ul>
+<li>TorchServe: model serving framework for pytorch</li>
+<li>AWS Neuron: ml inferentia chip, Ec2 inf1 instance type</li>
+<li>Panorama: computer vision at the edge</li>
+</ul>
 <h2 id="deep-composer-fraud-detection-codeguru-and-contact-lens">Deep Composer, Fraud Detection, CodeGuru, and Contact Lens</h2>
+<ul>
+<li>DeepComposer: ai powered keyboard</li>
+<li>fraud detection: upload your own data</li>
+<li>Codeguru: automated code reviews, finds lines of code that hurt performance</li>
+<li>contact lens: for customer support call centers, ingests audio, sentiment analysis</li>
+<li>finds utterances that correlate with successful calls</li>
+<li>categorize calls automatically</li>
+<li>measure talk speed and interruptions</li>
+<li>theme detection: discovers emerging issues</li>
+</ul>
 <h2 id="amazon-kendra-and-amazon-augmented-ai-a2i">Amazon Kendra and Amazon Augmented AI (A2I)</h2>
+<ul>
+<li>Enterprise search with natural languate</li>
+<li>combines data from sharepoint, intranet, sharing services, jdbc, s4 into one searchable repo</li>
+<li>ml powered, uses thumbs up/down</li>
+<li>relevance tuning, boost strength of document freshness</li>
+<li>Kendra: Alexa&rsquo;s sister</li>
+<li>AugmentedAI: human review of ml predictions, mechanical turk workforce or vendors</li>
+<li>integrated into textract and rekognition</li>
+<li>integrates with sagemaker</li>
+</ul>
 </div>
 	</section>
 
@@ -563,7 +1057,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1270 words in this page.
+		4127 words in this page.
 	</div>
 </div>
 
