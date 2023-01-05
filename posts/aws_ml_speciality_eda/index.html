@@ -200,113 +200,208 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#unbalanced-data">Unbalanced Data</a></li>
 <li><a href="#handling-outliers">Handling Outliers</a></li>
 <li><a href="#binning,-transoforming,-encoding,-saling,-and-shuffling">Binning, Transoforming, Encoding, Saling, and Shuffling</a></li>
-<li><a href="#amazing-sagemaker-ground-truth-and-label-generation">Amazing Sagemaker Ground Truth and Label Generation</a></li>
+<li><a href="#amazon-sagemaker-ground-truth-and-label-generation">Amazon Sagemaker Ground Truth and Label Generation</a></li>
 </ol>
 <p>This section requires understanding of sanitizing and preparing data for modeling, performing feature engineering, and analyzing and visualizing data for machine learning.</p>
+<p>Exploratory Data Analysis (EDA) is a process of analyzing and summarizing a dataset in order to understand its structure and relationships. In the context of Amazon Web Services (AWS), EDA is often performed on large datasets that are stored in AWS storage services such as Amazon S3 or Amazon EBS.</p>
+<p>To perform EDA on AWS, users can use various tools and services provided by AWS. For example, users can use Amazon Elastic MapReduce (EMR) to process and analyze large datasets using tools such as Apache Spark or Hive. Users can also use Amazon Athena to query datasets stored in Amazon S3 using SQL.</p>
+<p>In addition to these tools, users can also use various AWS services and libraries to visualize and explore the data. For example, users can use Amazon QuickSight to create interactive charts and dashboards, or use libraries such as pandas and matplotlib to create custom visualizations.</p>
+<p>Overall, EDA on AWS involves using a combination of tools and services to understand the structure and relationships within a dataset, and to gain insights that can inform further analysis and decision making.</p>
 <h2 id="python-in-data-science-and-machine-learning">Python in data science and machine learning</h2>
 <ul>
 <li>Python code will not be tested in the exam.</li>
-<li>Python is the industry choice at this point, however there are other alternatives such as R and Julia. Also, Java, Scala, PySpark (a python package, running Spark).</li>
+<li>Python is a popular language for data exploration, analysis, and machine learning. It has a number of useful libraries for loading, manipulating, and visualizing data, as well as for building and training machine learning models.</li>
+<li>For data exploration and visualization, some popular libraries include pandas, numpy, and matplotlib. Pandas is a library for working with tabular data, numpy is a library for working with numerical data, and matplotlib is a library for creating charts and plots.</li>
+<li>For machine learning, some popular libraries include scikit-learn, tensorflow, and pytorch. These libraries include a wide range of tools for tasks such as classification, regression, clustering, and deep learning.</li>
+<li>Overall, Python is a powerful and flexible language for data analysis and machine learning, and is widely used in the field.</li>
 </ul>
 <h2 id="types-of-data">Types of Data</h2>
+<p>There are many different types of data, and the type of data can often influence the analysis and techniques used to understand it. Some common types of data include:</p>
 <ul>
-<li>Numerical: quantitative, continious and discrete</li>
-<li>Categorical</li>
-<li>Ordinal</li>
+<li>Numeric data: This includes data that is represented as numbers, such as integers or floating point values.</li>
+<li>Categorical data: This includes data that consists of categories or groups, such as gender or eye color.</li>
+<li>Ordinal data: This is similar to categorical data, but the categories have a natural ordering, such as low, medium, and high.</li>
+<li>Binary data: This is data that has only two categories, such as true/false or 0/1.</li>
+<li>Time series data: This is data that is collected over time, such as daily stock prices or monthly sales figures.</li>
+<li>Text data: This is data that is represented as text, such as emails or social media posts.</li>
+<li>Image data: This is data that is represented as images, such as photographs or videos.</li>
 </ul>
 <h2 id="data-distributions">Data Distributions</h2>
+<h3 id="normal-distribution">Normal Distribution</h3>
 <ul>
-<li>Normal Distribution, probability density function (continous data type)</li>
-<li>Probability Mass function (discrete data type)</li>
-<li>Poission (discrete data type)</li>
-<li>Binomial (discrete data type)</li>
-<li>Bernoulli (discrete data type)</li>
+<li>The normal distribution, also known as the Gaussian distribution, is a continuous probability distribution that is defined by a symmetrical bell-shaped curve.</li>
+<li>It is one of the most widely used and well-known probability distributions in statistics, and is commonly used to model real-valued random variables.</li>
+<li>The normal distribution is completely defined by its mean and standard deviation.</li>
+<li>The mean is the center of the distribution and determines the location of the peak of the curve.</li>
+<li>The standard deviation is a measure of the spread of the distribution and determines the width of the curve.</li>
+<li>A larger standard deviation means that the data is more spread out, while a smaller standard deviation means that the data is more concentrated around the mean.</li>
+<li>The normal distribution has a number of useful properties. For example, the empirical rule states that for a normal distribution, approximately 68% of the data lies within one standard deviation of the mean, 95% of the data lies within two standard deviations of the mean, and 99.7% of the data lies within three standard deviations of the mean.</li>
+<li>This means that if a dataset follows a normal distribution, a large percentage of the data will be concentrated around the mean. Overall, the normal distribution is a widely used and important distribution in statistics, and is often used to model real-valued data.</li>
+</ul>
+<h3 id="probability-mass-function-discrete-data-type">Probability Mass function (discrete data type)</h3>
+<ul>
+<li>A probability mass function (PMF) is a function that gives the probability of a discrete random variable taking on a particular value. For a random variable X, the PMF is denoted as f(x), and it is defined as the probability that X takes on the value x.</li>
+<li>The PMF is a useful tool for describing the probability distribution of a discrete random variable. It specifies the probability of each possible outcome, and can be used to calculate various statistical quantities such as the mean, variance, and skewness of the distribution.</li>
+</ul>
+<h3 id="poission-discrete-data-type">Poission (discrete data type)</h3>
+<ul>
+<li>The Poisson distribution is a discrete probability distribution that is used to model the number of times an event occurs within a certain period of time or space. It is commonly used to model events that occur randomly and independently, such as the number of customers arriving at a store or the number of defects in a manufactured product.</li>
+<li>The Poisson distribution is defined by a single parameter, called the rate parameter or the mean rate of occurrence. This parameter is denoted as lambda (λ) and represents the average number of times the event occurs per unit of time or space.</li>
+<li>The probability mass function (PMF) of a Poisson-distributed random variable X is given by the following formula:</li>
+</ul>
+<p>f(x) = (λ^x * e^(-λ)) / x!</p>
+<p>where x is the number of times the event occurs, λ is the rate parameter, and e is the base of the natural logarithm.</p>
+<ul>
+<li>The Poisson distribution has a number of useful properties, such as the fact that the mean and variance are equal to the rate parameter λ. It is also a limiting distribution, meaning that it can be used to approximate other distributions under certain conditions.</li>
+<li>Overall, the Poisson distribution is a useful tool for modeling the number of times an event occurs within a certain period of time or space, and is widely used in a variety of applications.</li>
+</ul>
+<h3 id="binomial-discrete-data-type">Binomial (discrete data type)</h3>
+<ul>
+<li>The binomial distribution is a discrete probability distribution that is used to model the probability of a certain number of successes in a fixed number of independent trials. It is defined by two parameters: the number of trials (n) and the probability of success in each trial (p).</li>
+<li>The binomial distribution can be used to model a wide variety of situations, such as the probability of flipping a coin and getting a certain number of heads in a row, or the probability of a certain number of defects occurring in a batch of products.</li>
+<li>The probability mass function (PMF) of a binomial-distributed random variable X is given by the following formula:</li>
+</ul>
+<p>f(x) = (n choose x) * p^x * (1-p)^(n-x)</p>
+<p>where x is the number of successes, n is the number of trials, p is the probability of success in each trial, and &ldquo;choose&rdquo; represents the binomial coefficient.</p>
+<ul>
+<li>The binomial distribution has a number of useful properties, such as the fact that the mean and variance can be easily calculated from the parameters n and p. It is also a limiting distribution, meaning that it can be used to approximate other distributions under certain conditions.</li>
+<li>Overall, the binomial distribution is a useful tool for modeling the probability of a certain number of successes in a fixed number of independent trials, and is widely used in a variety of applications.</li>
+</ul>
+<h3 id="bernoulli-discrete-data-type">Bernoulli (discrete data type)</h3>
+<ul>
+<li>The Bernoulli distribution is a discrete probability distribution that models the probability of a binary outcome, such as the result of a coin flip or a yes/no question. It is defined by a single parameter p, which represents the probability of success (the probability of the outcome being &ldquo;yes&rdquo;).</li>
+<li>The Bernoulli distribution is a special case of the binomial distribution, where the number of trials is fixed at n=1. In other words, it models a single binary event, such as the flip of a coin.</li>
+<li>The probability mass function (PMF) of a Bernoulli-distributed random variable X is given by the following formula:</li>
+</ul>
+<p>f(x) = p^x * (1-p)^(1-x)</p>
+<p>where x is the outcome (0 for &ldquo;no&rdquo; and 1 for &ldquo;yes&rdquo;), and p is the probability of success.</p>
+<ul>
+<li>The Bernoulli distribution has a mean of p and a variance of p(1-p). It is a simple but widely used distribution, and is often used as a building block for more complex models.</li>
+<li>Overall, the Bernoulli distribution is a useful tool for modeling the probability of a binary outcome, and is widely used in a variety of applications.</li>
 </ul>
 <h2 id="trends-and-seasonality">Trends and seasonality</h2>
 <ul>
-<li>Time series, but cyclical trends also exist</li>
-<li>Additive and Multiplicative</li>
+<li>Trends and seasonality are two common patterns that can occur in time series data.</li>
+<li>A trend is a long-term increase or decrease in the data. It can be either linear, meaning that the data increases or decreases at a constant rate, or nonlinear, meaning that the rate of change varies over time. Trends can be caused by various factors such as changes in consumer demand, economic conditions, or technological innovations.</li>
+<li>Seasonality is a pattern that repeats over a specific time period, such as annually or monthly. It can be caused by factors such as weather patterns, holidays, or consumer behavior.</li>
+<li>Both trends and seasonality can have important implications for forecasting and decision making. For example, if a company sees a trend of increasing sales, it may decide to ramp up production or hire more staff. If a company sees seasonal fluctuations in demand, it may need to adjust its inventory or staffing levels accordingly.</li>
+<li>To analyze trends and seasonality in time series data, various techniques can be used such as smoothing methods, decomposition methods, and autoregressive models. It is important to correctly identify and account for these patterns in order to make accurate forecasts and informed decisions.</li>
+<li>Additive time series data is characterized by a constant trend and constant seasonality over time. This means that the trend and seasonality do not change, and the data can be modeled using a linear function. The relationship between the data and the trend and seasonality components can be represented as follows:</li>
+</ul>
+<p>Data = Trend + Seasonality + Noise</p>
+<ul>
+<li>Multiplicative time series data, on the other hand, is characterized by a varying trend and varying seasonality. This means that the trend and seasonality change over time, and the data cannot be modeled using a linear function. The relationship between the data and the trend and seasonality components can be represented as follows:</li>
+</ul>
+<p>Data = Trend * Seasonality * Noise</p>
+<ul>
+<li>
+<p>It is important to correctly identify whether a time series is additive or multiplicative, as this can influence the choice of modeling techniques and the interpretation of the results.</p>
+</li>
+<li>
+<p>Also this is possible:</p>
+<ul>
+<li>Additive trend and additive seasonality</li>
+<li>Additive trend and multiplicative seasonality</li>
+<li>Multiplicative trend and additive seasonality</li>
+<li>Multiplicative trend and multiplicative seasonality</li>
+</ul>
+</li>
 </ul>
 <h2 id="athena">Athena</h2>
 <ul>
-<li>Severless interactive queries of S3 data</li>
+<li>Amazon Athena is a serverless, interactive query service that allows users to analyze data stored in Amazon S3 using SQL.</li>
+<li>It is designed to be fast and easy to use, and can be used to analyze data from a wide variety of sources such as logs, streaming data, and data lakes.</li>
+<li>To use Athena, users first define a data schema by creating tables that point to the data stored in Amazon S3.</li>
+<li>They can then use SQL to query the data and analyze it using various functions and aggregations. Athena supports a wide range of SQL functions and data types, and users can also use custom user-defined functions (UDFs) to extend its capabilities.</li>
+<li>It is also highly scalable, and can handle queries on large datasets with minimal performance degradation.</li>
 <li>Presto under the hood</li>
 <li>Supports multiple formats</li>
 <li>Unstructured, semi structured or structured</li>
-<li>Ad hoc queries, querying data before loading to Redshift, analyze cloudtrail, integration with jupyter, zepplin, integration with quicksight, integration with odbc, jdbc</li>
+<li>Ad hoc queries, querying data before loading to Redshift, analyze Cloudtrail, integration with Jupyter, Zepplin, Integration with quicksight, integration with ODBC, JDBC</li>
 <li>AWS Glue datalog can extract the schema for Athena to use</li>
-<li>Pay as you go, inexpensive, converting to columner saves a lot of money, glue and s3 have their own charges</li>
-<li>IAM policies, excription is possible, TLS is possible</li>
+<li>Pay as you go, inexpensive, converting to columner saves a lot of money, Glue and S3 have their own charges</li>
+<li>IAM policies, encryption is possible, TLS is possible</li>
 </ul>
 <h2 id="quicksight">Quicksight</h2>
 <ul>
-<li>Business analytics, cloud powered</li>
-<li>Build visualizations, perform ad-hoc analysis</li>
-<li>anytime on any device</li>
-<li>serverless</li>
-<li>can connect to wide variety of data sources, redshift, aurora, athena, ec2 hosted db, files, ETL</li>
-<li>can do calculated columns etc.</li>
-<li>SPICE: super fast parallel, in memory calculation engine 10 gb</li>
-<li>Quicksight is quick because of spice</li>
+<li>Amazon QuickSight is a business intelligence and data visualization service provided by Amazon Web Services (AWS).</li>
+<li>It allows users to create interactive dashboards and charts to visualize and analyze data from a wide variety of sources.</li>
+<li>To use QuickSight, users first need to connect it to their data sources, which can include data stored in Amazon S3, Amazon Redshift, Amazon RDS, and other AWS data stores, as well as external data sources such as spreadsheets and databases.</li>
+<li>Once the data is connected, users can use QuickSight&rsquo;s visual interface to create charts, graphs, and other visualizations to explore and analyze the data.</li>
+<li>QuickSight offers a range of features and tools to help users analyze and understand their data.</li>
+<li>These include built-in analytics functions, support for custom SQL queries, and the ability to share and collaborate on dashboards with other users.</li>
+<li>Overall, Amazon QuickSight is a powerful and easy-to-use tool for creating interactive dashboards and visualizations, and is widely used in a variety of applications such as business intelligence, data exploration, and data reporting.</li>
+<li>Ad-hoc analysis</li>
+<li>Can do calculated columns etc.</li>
+<li>SPICE: Super Fast Parallel, In memory Calculation engine 10 gb</li>
+<li>Quicksight is quick because of SPICE</li>
 <li>Quicksights machine learning insights: Anomaly detection using Random cut forest, Forecasting and auto narratives (not too mature).</li>
-<li>multifactor authentication</li>
-<li>works with vpc, row-level security</li>
-<li>users defined via iam or email signup</li>
+<li>Multifactor authentication</li>
+<li>Works with vpc, and provides row-level security</li>
+<li>Users defined via IAM or email signup</li>
 <li>AugoGraph feature selects the best graph for the respective data type</li>
 </ul>
 <h2 id="types-of-visualization">Types of visualization</h2>
 <ul>
-<li>bar charts</li>
-<li>line</li>
-<li>scatter plot, heat map</li>
-<li>pie graph, tree graph</li>
-<li>pivot table</li>
+<li>Bar charts: These are used to compare categories or groups of data. They can be vertical or horizontal, and can be used to show both quantitative and categorical data.</li>
+<li>Line charts: These are used to show trends over time or other continuous variables. They can be used to show multiple data series on the same chart.</li>
+<li>Scatter plots: These are used to show the relationship between two numeric variables. They can be used to show correlations, patterns, and trends in the data.</li>
+<li>Pie charts: These are used to show proportions or percentages. They are most commonly used to show how a whole is divided into parts.</li>
+<li>Histograms: These are used to show the distribution of a continuous variable. They show the frequency or density of data points within different ranges or bins.</li>
+<li>Box plots: These are used to show the distribution and spread of a continuous variable. They show the minimum, first quartile, median, third quartile, and maximum values of the data.</li>
+<li>Heatmaps: These are used to show patterns and trends in data organized in a grid. They use color to represent the data, with warmer colors indicating higher values and cooler colors indicating lower values.</li>
 </ul>
 <h2 id="emr">EMR</h2>
 <ul>
-<li>managed hadoop framework that runs on EC2</li>
-<li>more than a hadoop cluster</li>
-<li>spark, hbase, hive, presto, flink, and more</li>
-<li>emr notebooks</li>
-<li>several integration points with AWS</li>
-<li>master nodes (manages the cluster), core node (holds hdfs data and run tasks), task node (only runs tasks)</li>
-<li>hdfs is epimerical</li>
-<li>transient cluster vs long running cluster</li>
-<li>EC2: nodes</li>
-<li>VPC: virtual network to launch instances</li>
-<li>S3: to store input/output</li>
-<li>Cloudwatch: monitor cluster performance</li>
+<li>Amazon Elastic MapReduce (EMR) is a fully managed, cloud-native big data processing service that makes it easy to process large amounts of data using Apache Hadoop and Apache Spark.</li>
+<li>It is designed to be scalable, highly available, and easy to use, and it integrates with a variety of data sources and destinations.</li>
+<li>With AWS EMR, users can create clusters of Amazon Elastic Compute Cloud (EC2) instances and use them to process and analyze large datasets stored in Amazon S3 or other data stores.</li>
+<li>EMR supports a variety of big data processing frameworks, including Hadoop, Spark, and Flink, and it provides tools to help users manage and monitor their clusters.</li>
+<li>AWS EMR is a useful tool for organizations that need to process and analyze large amounts of data, such as log files, scientific simulations, and machine learning models.</li>
+<li>It is fully managed, so users do not need to worry about infrastructure or maintenance.</li>
+<li>Provides notebooks</li>
+<li>Master nodes (manages the cluster), Core node (holds HDFS data and run tasks), Task node (only runs tasks)</li>
+<li>HDFS is epimerical</li>
+<li>Transient cluster vs Long running cluster</li>
 <li>IAM configure permissions</li>
 <li>CloudTrail: audit requests</li>
 <li>Data Pipeline: schedule and start clusters</li>
-<li>EMRFS: access s3 as if it were hdfs, uses dynamodb to track consistency</li>
-<li>local file system</li>
+<li>EMRFS: access s3 as if it were HDFS, uses DynamoDB to track consistency</li>
 <li>EBS for HDFS is also possible</li>
 </ul>
 <h2 id="hadoop">Hadoop</h2>
 <ul>
-<li>MapReduce: map/reduce, but Spark can sit here on top of yarn and hdfs</li>
-<li>Yarn: resource negotiater</li>
-<li>Hdfs: storage</li>
+<li>Apache Hadoop is an open-source software framework for storing and processing large amounts of data in a distributed computing environment.</li>
+<li>It is designed to handle data that is too large or complex for traditional database systems, and can process and analyze data in parallel across a large number of servers.</li>
+<li>Hadoop consists of two main components: the Hadoop Distributed File System (HDFS) and the MapReduce programming model.</li>
+<li>HDFS is a distributed file system that stores data across a large number of servers, and MapReduce is a programming model that allows developers to write programs that can process and analyze large amounts of data in parallel.</li>
+<li>Hadoop is commonly used for tasks such as data analysis, machine learning, and log processing. It is also often used in conjunction with other tools and technologies such as Apache Spark, Apache Hive, and Apache Pig to build more complex data processing pipelines.</li>
 </ul>
 <h2 id="apache-spark">Apache Spark</h2>
 <ul>
-<li>open source</li>
+<li>Apache Spark is an open-source, distributed computing system that is designed for fast and flexible data processing.</li>
+<li>It is a popular choice for tasks such as data analytics, machine learning, and real-time stream processing.</li>
+<li>Spark is built on top of the Hadoop distributed file system (HDFS) and is designed to be highly scalable and efficient.</li>
+<li>It can process and analyze data in parallel across a large number of servers, and supports a wide range of programming languages including Python, Java, R, and Scala.</li>
+<li>One of the main benefits of Spark is its ability to process data in memory, which allows it to be much faster than other distributed computing systems that rely on disk-based storage.</li>
+<li>It also includes a number of useful libraries and tools for tasks such as machine learning, graph processing, and stream processing.</li>
 <li>in memory caching, DAGs</li>
-<li>java, scala, python, R</li>
-<li>batch processing and real time analytics, graph processing, machine learning</li>
-<li>data transformation</li>
+<li>Batch processing and real time analytics, graph processing, machine learning</li>
 <li>Spark context, cluster manager via spark or yarn, executors</li>
 <li>Spark core</li>
-<li>Spark RDD</li>
-<li>DataFrames and Datasets are built on top of RDD, and they are most commonly used at the moment</li>
-<li>Spark Streaming is possible (works in mini batches). unbounded database table</li>
-<li>mllib (distributed machine learning)</li>
-<li>graphx (distributed graph processing)</li>
+<li>Spark RDD, DataFrames and Datasets are built on top of RDD, and they are most commonly used at the moment</li>
+<li>Spark Streaming is possible (works in mini batches). Unbounded database table</li>
+<li>MlLib (distributed machine learning)</li>
+<li>Graphx (distributed graph processing)</li>
 <li>Zepplin can run spark code interactively, and can also use charts/plots</li>
 </ul>
-<h2 id="spark-mllib">Spark mllib</h2>
+<h2 id="spark-mllib">Spark MLlib</h2>
 <ul>
+<li>MLlib is a machine learning library for Apache Spark. It is designed to provide scalable and efficient machine learning algorithms that can be used on big data.</li>
+<li>MLlib includes a wide range of machine learning algorithms and utility functions, including algorithms for classification, regression, clustering, collaborative filtering, and dimensionality reduction.</li>
+<li>It also includes tools for feature engineering, such as feature extraction, transformation, and selection.</li>
+<li>MLlib is designed to be easy to use, and includes APIs for several programming languages including Python, Java, R, and Scala.</li>
+<li>It is also designed to be highly scalable, and can be used to build machine learning models on large datasets distributed across multiple servers.</li>
 <li>Classification: logistic regression and naive bayes</li>
 <li>Regression</li>
 <li>Decision trees</li>
@@ -318,70 +413,204 @@ onload='renderMathInElement(document.body);'></script>
 </ul>
 <h2 id="emr-notebooks-security-and-instance-types">EMR Notebooks, Security and Instance Types</h2>
 <ul>
+<li>Amazon EMR Notebooks is a service that allows users to create and manage Jupyter notebooks on Amazon Elastic MapReduce (EMR) clusters. EMR is a cloud-based big data processing service, and Jupyter notebooks are interactive, web-based documents that can contain code, text, and visualizations.</li>
+<li>EMR Notebooks provides a simple and flexible way to analyze and visualize data stored in Amazon S3 or other data stores using a variety of tools and libraries such as Apache Spark, Python, and R. Users can create and edit notebooks using a web-based editor, and can also use notebooks to run and debug code, create visualizations, and collaborate with other users.</li>
+<li>EMR Notebooks is fully integrated with EMR, which means that users can easily spin up and down EMR clusters to process and analyze large datasets, and can also access other EMR features such as security and data access controls.</li>
 <li>Similar concept to Zeppelin, with more AWS integration</li>
-<li>notebooks backed up to s3</li>
-<li>provision clusters from the notebooks</li>
-<li>hosted inside a vpc</li>
-<li>accessed only via aws console</li>
+<li>Notebooks backed up to s3</li>
+<li>Provision clusters from the notebooks</li>
+<li>Hosted inside a vpc</li>
+<li>Accessed only via aws console</li>
 <li>IAM policies, Kerberos (a computer-network authentication protocol that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner), SSH, IAM roles</li>
 <li>Spot instances are good choice for task nodes, only use on core or master if you are testing or very cost sensitive, however, you are risking partial data loss</li>
 </ul>
 <h2 id="feature-engineering">Feature Engineering</h2>
 <ul>
-<li>create better features</li>
-<li>learnt on experience</li>
-<li>too many features leads to sparse data</li>
-<li>every feature is a new dimension</li>
-<li>dimensionality reduction (PCA and k-means/clustering)</li>
+<li>Feature engineering is the process of creating new features or transforming existing features in a dataset in order to improve the performance of a machine learning model. It is a crucial step in the machine learning process, and can have a significant impact on the model&rsquo;s accuracy and effectiveness.</li>
+<li>There are many different techniques that can be used in feature engineering, including:
+<ul>
+<li>Feature selection: This involves selecting a subset of the most relevant features from a dataset to use in a model. This can help to reduce overfitting, improve model interpretability, and reduce training time.</li>
+<li>Feature extraction: This involves creating new features from existing data by combining or transforming the original features. For example, a new feature could be created by taking the square root of an existing feature.</li>
+<li>Feature transformation: This involves transforming the scale or distribution of a feature in order to improve model performance. For example, data may need to be normalized or standardized in order to be used in some models.</li>
+</ul>
+</li>
 </ul>
 <h2 id="imputing-missing-data">Imputing Missing Data</h2>
+<p>There are several ways to impute (or fill in) missing data, and the best method will depend on the specific dataset and the nature of the missing data. Some common methods for imputing missing data include:</p>
 <ul>
-<li>this is an art</li>
-<li>mean replacement</li>
-<li>dropping</li>
-<li>linear regression, deep learning, knn and mean/median</li>
-<li>MICE (multiple imputation by chained equations)</li>
-<li>categorical data vs numeric data (categorical is usually not trivial)</li>
-<li>just get more data</li>
+<li>Mean imputation: This involves replacing missing values with the mean (or average) of the non-missing values. This is a simple method that can be useful for numerical data, but can be biased if the data has a skewed distribution.</li>
+<li>Median imputation: This is similar to mean imputation, but uses the median (or middle value) instead of the mean. It can be less affected by outliers than mean imputation and may be a better choice for skewed data.</li>
+<li>Mode imputation: This involves replacing missing values with the most frequent (or mode) value in the dataset. It is often used for categorical data.</li>
+<li>Regression imputation: This involves using a regression model to predict the missing values based on the other available features. It can be a more powerful method, but requires a good understanding of the relationships between the features and the target variable.</li>
+<li>Nearest Neighbors (k-NN) imputation is a method for imputing missing data that uses the k-NN algorithm to fill in missing values based on the values of the nearest neighbors. It is a simple and intuitive method that is often used in machine learning and data analysis. To use k-NN imputation, the first step is to identify the nearest neighbors of the data point with missing values. This is typically done using a distance measure such as Euclidean distance, and the number of neighbors (k) is a user-defined parameter. Once the nearest neighbors have been identified, the missing values can be imputed by averaging the values of the neighbors. k-NN imputation can be a useful method for filling in missing data, especially when the data is highly correlated and the relationships between the features are well understood. However, it can be sensitive to the choice of k, and may not always produce the best results.</li>
+<li>Dropping NA&rsquo;s: This method can be useful in some cases, such as when the number of missing values is small and removing them does not significantly affect the overall size of the dataset. However, it can also lead to a loss of information and may not be appropriate if the missing values are prevalent or if they are likely to be informative.</li>
+<li>MICE (multiple imputation by chained equations): Multiple imputation by chained equations (MICE) is a method for imputing missing data that involves creating multiple imputed datasets and combining them to produce a final result. It is a more advanced method that can be more robust and accurate than other imputation methods, especially when the data has a complex structure and the relationships between the features are not well understood. The final result is produced by combining the imputed datasets using appropriate statistical methods, such as averaging or weighted averaging. MICE can be a powerful method for imputing missing data, but it can also be time-consuming and requires a good understanding of statistical modeling.</li>
+<li>Categorical is usually not trivial</li>
+<li>Just get more data (if possible)</li>
 </ul>
 <h2 id="unbalanced-data">Unbalanced Data</h2>
+<p>There are several approaches for handling imbalanced data in machine learning, including:</p>
 <ul>
-<li>oversample</li>
-<li>undersample</li>
-<li>smote (synthetic minority over sampling technique), better than just oversampling</li>
-<li>adjusting thresholds</li>
+<li>Balancing the data: This can be done by oversampling the minority class or undersampling the majority class.</li>
+<li>Using a different evaluation metric: Instead of using accuracy, try using precision, recall, or F1 score, which are more sensitive to imbalanced data.</li>
+<li>Adjusting the class weight: Some algorithms allow you to adjust the weight of each class, which can be used to give more importance to the minority class.</li>
+<li>Using a different algorithm: Some algorithms are more robust to imbalanced data than others. For example, tree-based algorithms like random forests and gradient boosting tend to perform better on imbalanced data than algorithms like logistic regression.</li>
+<li>Using data augmentation: If you are working with image data, you can use data augmentation techniques to generate additional minority class examples.</li>
+<li>Anomaly detection: If the minority class represents anomalies or rare events, you can treat the problem as an anomaly detection problem rather than a classification problem.</li>
+<li>Synthetic minority oversampling technique (SMOTE): This is a popular method for oversampling the minority class by synthesizing new examples rather than simply replicating existing ones.</li>
+<li>Cost-sensitive learning: In this approach, the cost of misclassifying examples from the minority class is higher than the cost of misclassifying examples from the majority class.</li>
 </ul>
 <h2 id="handling-outliers">Handling Outliers</h2>
+<p>There are several ways to identify outliers in a dataset:</p>
 <ul>
-<li>do not throw ouliers unless it is incosistent with what you want to do</li>
-<li>Random cut forest (kinesis analytics, quicksight, sagemaker and more)</li>
-<li>use common sense</li>
-<li>box and whisker</li>
+<li>Visualization: One of the easiest ways to identify outliers is to plot the data using a box plot or histogram. Outliers will typically be located outside the &ldquo;whiskers&rdquo; of the box plot or outside the range of the histogram.</li>
+<li>Statistical tests: You can use statistical tests to identify outliers in a dataset. For example, you can use the Z-score method to identify outliers by calculating the distance of each data point from the mean in terms of standard deviations. Data points with a Z-score greater than a certain threshold (such as 3 or 4) can be considered outliers.</li>
+<li>Data transformation: Transforming the data, such as taking the log of the data, can make outliers more obvious.</li>
+<li>Anomaly detection algorithms: There are also machine learning algorithms specifically designed for detecting anomalies or outliers in a dataset. These algorithms include density-based methods, distance-based methods, and model-based methods.</li>
+</ul>
+<p>There are several approaches for handling outliers in a dataset:</p>
+<ul>
+<li>Ignore the outlier: This is an option if the outlier does not have a significant impact on the model or if the outlier is the result of a data entry error.</li>
+<li>Drop the outlier: This is an option if the outlier is not representative of the population being studied and if the outlier has a significant impact on the model.</li>
+<li>Transform the data: Some algorithms are more robust to outliers, such as decision trees and random forests. Transforming the data, such as using the log transformation, can also make the model more robust to outliers.</li>
+<li>Use robust models: Some models, such as linear regression with the Huber loss function, are less sensitive to outliers than other models.</li>
+<li>Anomaly detection: If the outlier represents an anomaly or rare event, you can treat the problem as an anomaly detection problem rather than a classification or regression problem.</li>
 </ul>
 <h2 id="binning-transforming-encoding-scaling-and-shuffling">Binning, Transforming, Encoding, Scaling, and Shuffling</h2>
+<h3 id="binning">Binning</h3>
 <ul>
-<li>binning: numeric to categorical (ordinal)</li>
-<li>transforming: log</li>
-<li>encoding: example one hot encoder</li>
-<li>scaling and normalizing</li>
-<li>shuffling</li>
+<li>Binning is a process of transforming numerical data into categorical data by dividing the data into a set of bins or intervals. This can be useful for reducing the number of unique values in a dataset, which can make it easier to visualize and analyze the data.</li>
+<li>For example, if you have a dataset with a large range of numerical values, you could use binning to group the values into a smaller set of intervals. This would allow you to plot the data on a histogram or bar chart, which would be more informative than a scatter plot.</li>
+<li>There are several ways to determine the size and number of bins to use for binning data, including:
+<ul>
+<li>Fixed width bins: In this approach, you specify the size of the bins and the data is divided into intervals of that size.</li>
+<li>Fixed number of bins: In this approach, you specify the number of bins and the data is divided into that number of intervals.</li>
+<li>Optimal bin width: In this approach, the optimal bin width is determined using a statistical method, such as the Scott&rsquo;s normal reference rule or the Freedman-Diaconis rule.</li>
 </ul>
-<h2 id="amazing-sagemaker-ground-truth-and-label-generation">Amazing Sagemaker Ground Truth and Label Generation</h2>
+</li>
+</ul>
+<h3 id="transforming">Transforming</h3>
+<p>Data transformation is a process of converting data from one format or representation to another. This can be useful for several reasons, such as:</p>
 <ul>
-<li>using humans to label the data</li>
-<li>ambiguous data is sent to humans</li>
-<li>ends reducing the cost by up to 70%</li>
-<li>mechanical turk</li>
-<li>other ways to generate training labels: rekognition (AWS service for image recognition, automatically classify images, Comprehend)</li>
+<li>Data cleaning: Data transformation can be used to fix or remove errors or inconsistencies in the data.</li>
+<li>Data preparation: Data transformation can be used to prepare the data for analysis by formatting the data in a specific way or creating new variables.</li>
+<li>Data reduction: Data transformation can be used to reduce the size or complexity of the data, such as by aggregating the data or removing unnecessary variables.</li>
+<li>Data normalization: Data transformation can be used to scale the data to a common range, such as by normalizing the data to have a mean of 0 and a standard deviation of 1.</li>
+<li>Data transformation can also be used to make the data more amenable to a specific algorithm or technique, such as by binning numerical data or encoding categorical data.</li>
+<li>There are many different types of data transformation techniques, including scaling, centering, normalization, aggregation, imputation, and encoding. The appropriate transformation technique will depend on the specific characteristics of the data and the goals of the analysis.</li>
+</ul>
+<h3 id="encoding">Encoding</h3>
+<ul>
+<li>Encoding is the process of converting data from one format into another, often for the purpose of efficient storage or transmission. In the context of machine learning, encoding is often used to convert categorical data, which can&rsquo;t be represented as numerical values, into numerical form.</li>
+<li>There are several types of encoding techniques that can be used, including:
+<ul>
+<li>One-hot encoding: This technique converts each categorical value into a new binary column, with a value of 1 indicating the presence of the categorical value and a value of 0 indicating its absence.</li>
+<li>Label encoding: This technique converts each categorical value into a numerical value, such as an integer. However, this can lead to problems if the numerical values are interpreted as having a meaningful order.</li>
+<li>Count encoding: This technique encodes the categorical values by the count of each value in the dataset.</li>
+<li>Binary encoding: This technique encodes the categorical values as binary code.</li>
+<li>Target encoding: This technique encodes the categorical values using the mean of the target variable for each value.</li>
+</ul>
+</li>
+</ul>
+<h3 id="scaling-and-normalizing">Scaling and normalizing</h3>
+<ul>
+<li>Scaling and normalization are techniques used to transform variables so that they have a comparable scale. This can be useful for a variety of reasons, such as:</li>
+<li>Some machine learning algorithms are sensitive to the scale of the input variables, and can perform poorly if the variables are on a different scale. Scaling the variables to the same scale can improve the performance of these algorithms.</li>
+<li>Scaling the variables can also make it easier to compare the magnitude of the variables.</li>
+<li>There are several ways to scale and normalize data:
+<ul>
+<li>Min-max scaling: This scales the variables to a specific range, such as 0-1 or -1 to 1.</li>
+<li>Standardization: This scales the variables so that they have a mean of 0 and a standard deviation of 1.</li>
+<li>Normalization: This scales the variables so that they have a unit norm (a length of 1).</li>
+</ul>
+</li>
+</ul>
+<h3 id="shuffling">Shuffling</h3>
+<ul>
+<li>Shuffling is the process of randomly rearranging the rows of a dataset. This can be useful for several reasons:</li>
+<li>Machine learning algorithms often expect the data to be in a random order. Shuffling the data before training a model can help ensure that the model is not biased by the order of the data.</li>
+<li>Shuffling the data can also help ensure that the training and test sets are representative of the overall dataset. If the data is not shuffled and the rows are ordered in a certain way, the training and test sets may not be representative of the overall dataset.</li>
+</ul>
+<h3 id="tokenization">Tokenization</h3>
+<ul>
+<li>Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements, known as tokens. Tokenization is an important preprocessing step for many natural language processing (NLP) tasks, such as text classification and information retrieval.</li>
+<li>There are several approaches to tokenization, including:
+<ul>
+<li>Word tokenization: This involves dividing the text into words.</li>
+<li>Sentence tokenization: This involves dividing the text into sentences.</li>
+<li>Word-level tokenization: This involves dividing the text into words and punctuation, such as &ldquo;don&rsquo;t&rdquo; being split into &ldquo;do&rdquo; and &ldquo;n&rsquo;t.&rdquo;</li>
+<li>N-gram tokenization: This involves dividing the text into contiguous sequences of n items, such as bigrams (pairs of words) or trigrams (triplets of words).</li>
+</ul>
+</li>
+</ul>
+<h3 id="stemming-and-lemmatization">Stemming and lemmatization</h3>
+<ul>
+<li>Stemming and lemmatization are techniques used to normalize words to their base form, known as a stem or lemma. These techniques are often used as a preprocessing step for natural language processing (NLP) tasks, such as text classification and information retrieval.</li>
+<li>Stemming involves removing the suffixes from a word to obtain the root form of the word. For example, the stem of the word &ldquo;jumping&rdquo; might be &ldquo;jump,&rdquo; and the stem of the word &ldquo;stemmer,&rdquo; might be &ldquo;stem.&rdquo;</li>
+<li>Lemmatization, on the other hand, involves determining the base form of a word based on its part of speech and meaning. For example, the lemma of the word &ldquo;was&rdquo; might be &ldquo;be,&rdquo; and the lemma of the word &ldquo;better&rdquo; might be &ldquo;good.&rdquo;</li>
+<li>Stemming and lemmatization can be useful for reducing the dimensionality of the data and improving the performance of NLP models, but they can also remove some of the context and meaning of the words.</li>
+</ul>
+<h2 id="amazon-sagemaker-ground-truth-and-label-generation">Amazon Sagemaker Ground Truth and Label Generation</h2>
+<ul>
+<li>Amazon SageMaker Ground Truth is a fully managed data labeling service that allows users to build highly accurate training datasets for machine learning.</li>
+<li>It offers a variety of labeling methods, including human labeling, active learning, and automatic labeling.</li>
+<li>SageMaker Ground Truth also includes workflows for common data labeling tasks, such as image classification, object detection, and semantic segmentation.</li>
+<li>It also provides tools for managing and tracking the data labeling process, including the ability to set up labeling jobs, track their progress, and review the results.</li>
+<li>This helps users ensure that their data is labeled accurately and efficiently.</li>
+<li>Ambiguous data is sent to humans</li>
+<li>Mechanical Turk: Amazon Mechanical Turk (MTurk) is a cloud platform that enables organizations to use a network of human workers to perform tasks that are typically difficult or time-consuming for computers to perform. These tasks, known as Human Intelligence Tasks (HITs), can include data labeling, transcription, image annotation, and many other types of work.</li>
+<li>Amazon SageMaker Ground Truth Plus helps you to create high-quality training datasets without having to build labeling applications or manage a labeling workforce.</li>
+</ul>
+<h2 id="stop-words">Stop words</h2>
+<ul>
+<li>Stop words are common words that are typically filtered out before natural language processing (NLP) tasks, such as text classification or text mining, because they do not provide meaningful information. Examples of stop words include words like &ldquo;a,&rdquo; &ldquo;an,&rdquo; &ldquo;the,&rdquo; &ldquo;and,&rdquo; and &ldquo;but.&rdquo;</li>
+<li>There are several ways to identify and handle stop words:
+<ul>
+<li>Use a list of stop words: Many NLP libraries and frameworks, such as NLTK and scikit-learn, include a pre-defined list of stop words that can be used to filter out common words.</li>
+<li>Identify stop words using term frequency-inverse document frequency (TF-IDF): This method involves calculating the importance of each word in a document or corpus and filtering out the least important words, which are often stop words.</li>
+<li>Customize the stop word list: You can customize the list of stop words based on the specific needs of your task. For example, if you are working with domain-specific language, you may need to add domain-specific words to the stop word list.</li>
+</ul>
+</li>
+<li>To handle stop words, you can simply filter them out of the dataset before performing the NLP task. This can be done by comparing the words in the dataset to the stop word list and removing any words that are on the list.</li>
+<li>It&rsquo;s important to carefully consider whether or not to filter out stop words, as they can sometimes provide important context or meaning. For example, in the phrase &ldquo;not good,&rdquo; the word &ldquo;not&rdquo; is a stop word that changes the meaning of the phrase.</li>
 </ul>
 <h2 id="tf-idf">TF-IDF</h2>
 <ul>
-<li>Term Frequency: how often does a word occur in a document</li>
-<li>Document Frequency: how often does a word occur in a entire set of documents</li>
-<li>Term Frequency/Document Frequence (TF<em>Inverse</em>DF)</li>
-<li>bag of words, we do not pay attention</li>
-<li>scale is hard, spark comes in</li>
-<li>n-grams</li>
+<li>Term Frequency-Inverse Document Frequency (TF-IDF) is a statistical measure that is used to evaluate the importance of a word in a document or corpus. The importance of a word is determined by its frequency in the document and in the corpus as a whole.</li>
+<li>TF-IDF is calculated as the product of the term frequency (TF) and the inverse document frequency (IDF). The term frequency is the number of times a word appears in the document, and the inverse document frequency is the logarithm of the number of documents in the corpus divided by the number of documents that contain the word.</li>
+<li>TF-IDF is often used as a weighting factor in information retrieval and text mining, and can be useful for tasks such as document classification, clustering, and keyword extraction.</li>
+</ul>
+<h2 id="correlation">Correlation</h2>
+<ul>
+<li>Correlation is a statistical measure that indicates the strength and direction of a linear relationship between two variables. A positive correlation indicates that as one variable increases, the other variable also increases. A negative correlation indicates that as one variable increases, the other variable decreases.</li>
+<li>The correlation coefficient, denoted by &ldquo;r,&rdquo; is a measure of the strength of the relationship between the variables. It ranges from -1 to 1, where -1 indicates a strong negative correlation, 0 indicates no correlation, and 1 indicates a strong positive correlation.</li>
+<li>Correlation can be useful for understanding the relationship between two variables and predicting one variable based on the other. However, it&rsquo;s important to remember that correlation does not necessarily imply causation, meaning that a correlation between two variables does not necessarily mean that one variable causes the other.</li>
+<li>There are several methods for calculating the correlation between variables, including Pearson&rsquo;s correlation coefficient, Spearman&rsquo;s rank correlation coefficient, and Kendall&rsquo;s tau. The appropriate method will depend on the characteristics of the data and the goals of the analysis.</li>
+</ul>
+<h2 id="p-value">p-value</h2>
+<ul>
+<li>The p-value is a statistical measure that is used to assess the significance of a hypothesis test. It is the probability of obtaining a test statistic at least as extreme as the one observed, assuming that the null hypothesis is true.</li>
+<li>The null hypothesis is a statement that there is no statistical relationship between the variables being tested. The alternative hypothesis is the opposite of the null hypothesis and states that there is a statistical relationship between the variables.</li>
+<li>To interpret the p-value, you compare it to a significance level, which is a predetermined cutoff value. If the p-value is less than the significance level, you can reject the null hypothesis and conclude that there is a statistical relationship between the variables. If the p-value is greater than the significance level, you fail to reject the null hypothesis and cannot conclude that there is a statistical relationship between the variables.</li>
+<li>It&rsquo;s important to carefully consider the appropriate significance level and the limitations of the p-value, as it can be affected by factors such as sample size and the distribution of the data.</li>
+</ul>
+<h2 id="elbow-plot">Elbow plot</h2>
+<ul>
+<li>An elbow plot is a graphical method used to determine the appropriate number of clusters to use in a cluster analysis. It plots the within-cluster sum of squared distances (WCSS) for each possible number of clusters, and the number of clusters is chosen at the &ldquo;elbow&rdquo; point, where the change in WCSS begins to level off.</li>
+<li>To create an elbow plot, you first perform a cluster analysis for a range of possible number of clusters, and then plot the WCSS for each number of clusters. The WCSS can be calculated as the sum of the squared distance between each point and its cluster centroid.</li>
+<li>The &ldquo;elbow&rdquo; point is generally considered to be the point where the WCSS starts to decrease more slowly, indicating that adding more clusters is not significantly improving the fit of the model.</li>
+<li>It&rsquo;s important to carefully consider the limitations of the elbow method, as it can be affected by the shape of the data and may not always clearly identify the appropriate number of clusters. Other methods, such as the silhouette method, can also be used to determine the number of clusters in a dataset.</li>
+</ul>
+<h2 id="summary-statistics">Summary Statistics</h2>
+<ul>
+<li>Summary statistics are quantitative measures that describe and summarize a dataset. They provide a quick and easy way to get a sense of the characteristics and patterns in the data.</li>
+<li>Some common summary statistics include:</li>
+<li>Mean: The mean is the arithmetic average of the data. It is calculated by summing all the values and dividing by the number of values.</li>
+<li>Median: The median is the middle value of the data when it is sorted in ascending order. It is a measure of central tendency that is resistant to outliers.</li>
+<li>Mode: The mode is the most frequent value in the data.</li>
+<li>Range: The range is the difference between the maximum and minimum values in the data.</li>
+<li>Variance: The variance is a measure of the spread or dispersion of the data. It is calculated as the sum of the squared differences between each value and the mean, divided by the number of values.</li>
+<li>Standard deviation: The standard deviation is the square root of the variance. It is a measure of the spread of the data that is in the same units as the original data.</li>
 </ul>
 </div>
 	</section>
@@ -524,7 +753,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		919 words in this page.
+		7084 words in this page.
 	</div>
 </div>
 
