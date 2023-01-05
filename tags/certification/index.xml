@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - Data Engineering</title>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 1. Data Engineering</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -371,111 +371,31 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
     </item>
     
     <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - Machine Learning Implementation and Operations</title>
-      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 3a. Modeling Pre-requisite</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling_prereq/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
-      <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This section covers building machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance, recommending and implementing the appropriate machine learning services and features for a given problem, applying basic AWS security practices to machine learning solutions and deploying and operationalizing machine learning solutions.&lt;/p&gt;
-&lt;h2 id=&#34;section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;scaling, productionalization and security&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;all models in agemaker are hosted in docker containers&lt;/li&gt;
-&lt;li&gt;the docker container is registered with ECR&lt;/li&gt;
-&lt;li&gt;pre built deep learning, scikit learn and spark ml&lt;/li&gt;
-&lt;li&gt;pre built tensorflow, mxnet, chainer, pytorch etc. horovod or parameter server is a way to distribute tensorflow training&lt;/li&gt;
-&lt;li&gt;you can also use any script or algorithm within sagemaker&lt;/li&gt;
-&lt;li&gt;the containers are isolated and contain all dependencies&lt;/li&gt;
-&lt;li&gt;Dockerfile structure&lt;/li&gt;
-&lt;li&gt;using your own image&lt;/li&gt;
-&lt;li&gt;you can test muliple models on live traffic using Production Variants (Roll out variant weights)&lt;/li&gt;
-&lt;li&gt;A/B test is posible&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Train once, run anywhere&lt;/li&gt;
-&lt;li&gt;supports multiple architecture&lt;/li&gt;
-&lt;li&gt;optimizes code for specific devices&lt;/li&gt;
-&lt;li&gt;consists of a compiler and a runtime&lt;/li&gt;
-&lt;li&gt;Neo compiled models can be deployed to an https endpoint, must be the same instance type used for compilation&lt;/li&gt;
-&lt;li&gt;or you can deploy to iot greengrass&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;IAM&lt;/li&gt;
-&lt;li&gt;MFA&lt;/li&gt;
-&lt;li&gt;SSL/TLS&lt;/li&gt;
-&lt;li&gt;Cloudtrail to log API and user activity&lt;/li&gt;
-&lt;li&gt;encryption&lt;/li&gt;
-&lt;li&gt;AWS key mangement service is accepted by notebooks and all sagemaker jobs&lt;/li&gt;
-&lt;li&gt;s3 can be encrypted as well&lt;/li&gt;
-&lt;li&gt;All traffic supports TLS/SSL&lt;/li&gt;
-&lt;li&gt;inter node training communication may be optionally encrypted&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;training jobs run in VPC&lt;/li&gt;
-&lt;li&gt;private VPC&lt;/li&gt;
-&lt;li&gt;s3 vpc endpoints&lt;/li&gt;
-&lt;li&gt;IAM user permissions for CreateTrainingJob, CreateModel, CreateEndpointConfig, CreateTransformJob, CreateHyperParameterTuningJob, CreateNotebookInstance, UpdateNotebookInstance&lt;/li&gt;
-&lt;li&gt;Predefined policies for AmazonSageMakerReadOnly, AmazonSageMakerFullAccess, AdministratorAccess, DataScientist&lt;/li&gt;
-&lt;li&gt;cloudwatch can log, monitor and alarm on invocations and latency of endpoints, health of instance nodes, ground truth (active workers)&lt;/li&gt;
-&lt;li&gt;cloudtrail records actions from users, roles, and services within Sagemaker: log files are delivered to s3 for auditing purposes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;depends but usually gpu for training and cpu for inference&lt;/li&gt;
-&lt;li&gt;EC2 spot training: checkpoints to s3 so training can resume&lt;/li&gt;
-&lt;li&gt;can increate training time&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;accelerates deep learning inference at a fraction of a cost&lt;/li&gt;
-&lt;li&gt;EI accelerator may be added alongside a CPU instance&lt;/li&gt;
-&lt;li&gt;EI accelerators can also be applied to notebooks&lt;/li&gt;
-&lt;li&gt;works with tensorflow, pytorch, mxnet, onnx may be used to export models to mxnet&lt;/li&gt;
-&lt;li&gt;works with custom containers built with El-enabled Tensorflow, Pytorch or mxnet&lt;/li&gt;
-&lt;li&gt;works with image classification and object detection built in algorithms&lt;/li&gt;
-&lt;li&gt;Automatic scaling: can be used to define target metrics, min or max capacity, cooldown periods, works with cloudwatch, dynamically adjusts number of instances for a production variant, load test your configuration before using it.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;specify your container, memory requirement, concurrency requirements&lt;/li&gt;
-&lt;li&gt;underlying capacity is automatically provisioned and scaled&lt;/li&gt;
-&lt;li&gt;good for infrequent or unpredictable traffic, will scale down to zero when there are no requests&lt;/li&gt;
-&lt;li&gt;chared based on usage&lt;/li&gt;
-&lt;li&gt;monitor via cloudwatch&lt;/li&gt;
-&lt;li&gt;Inference Recommender  recommends what instance type and configuration for your model&lt;/li&gt;
-&lt;li&gt;automates load testing and model tuning&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;linear sequence of 2-15 containers&lt;/li&gt;
-&lt;li&gt;any combination of pre-trained built-in algorithms or your own algorithms in Docker&lt;/li&gt;
-&lt;li&gt;combine pre-processing, predictions, post-processing&lt;/li&gt;
-&lt;li&gt;Spark ML and scikit-learn&lt;/li&gt;
-&lt;li&gt;chaining multiple inference containers into a pipeline of results&lt;/li&gt;
-&lt;/ul&gt;
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling_prereq/</guid>
+      <description>&lt;h1 id=&#34;modeling-pre-reqs&#34;&gt;Modeling Pre-reqs&lt;/h1&gt;
+&lt;h2 id=&#34;basic-machine-learning&#34;&gt;Basic Machine Learning&lt;/h2&gt;
+&lt;h2 id=&#34;confusion-matrix&#34;&gt;Confusion Matrix&lt;/h2&gt;
+&lt;h2 id=&#34;data&#34;&gt;Data&lt;/h2&gt;
+&lt;h2 id=&#34;design-of-experiments&#34;&gt;Design of Experiments&lt;/h2&gt;
+&lt;h2 id=&#34;game-theory&#34;&gt;Game Theory&lt;/h2&gt;
+&lt;h2 id=&#34;model-quality&#34;&gt;Model Quality&lt;/h2&gt;
+&lt;h2 id=&#34;non-parametric-tests&#34;&gt;Non-Parametric Tests&lt;/h2&gt;
+&lt;h2 id=&#34;optimization&#34;&gt;Optimization&lt;/h2&gt;
+&lt;h2 id=&#34;probability-based-models&#34;&gt;Probability based models&lt;/h2&gt;
+&lt;h2 id=&#34;probability-distributions&#34;&gt;Probability distributions&lt;/h2&gt;
+&lt;h2 id=&#34;regression&#34;&gt;Regression&lt;/h2&gt;
+&lt;h2 id=&#34;time-series-models&#34;&gt;Time series models&lt;/h2&gt;
+&lt;h2 id=&#34;variable-selection&#34;&gt;Variable Selection&lt;/h2&gt;
+&lt;h2 id=&#34;other-topics&#34;&gt;Other Topics&lt;/h2&gt;
 </description>
     </item>
     
     <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - Modeling</title>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 3b. Modeling</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -1204,6 +1124,110 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
 &lt;li&gt;AugmentedAI: human review of ml predictions, mechanical turk workforce or vendors&lt;/li&gt;
 &lt;li&gt;integrated into textract and rekognition&lt;/li&gt;
 &lt;li&gt;integrates with sagemaker&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 4. Machine Learning Implementation and Operations</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
+      <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This section covers building machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance, recommending and implementing the appropriate machine learning services and features for a given problem, applying basic AWS security practices to machine learning solutions and deploying and operationalizing machine learning solutions.&lt;/p&gt;
+&lt;h2 id=&#34;section-intro-machine-learning-implementation-and-operations&#34;&gt;Section Intro: Machine Learning Implementation and Operations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;scaling, productionalization and security&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemakers-inner-details-and-production-variants&#34;&gt;SageMaker&amp;rsquo;s Inner Details and Production Variants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;all models in agemaker are hosted in docker containers&lt;/li&gt;
+&lt;li&gt;the docker container is registered with ECR&lt;/li&gt;
+&lt;li&gt;pre built deep learning, scikit learn and spark ml&lt;/li&gt;
+&lt;li&gt;pre built tensorflow, mxnet, chainer, pytorch etc. horovod or parameter server is a way to distribute tensorflow training&lt;/li&gt;
+&lt;li&gt;you can also use any script or algorithm within sagemaker&lt;/li&gt;
+&lt;li&gt;the containers are isolated and contain all dependencies&lt;/li&gt;
+&lt;li&gt;Dockerfile structure&lt;/li&gt;
+&lt;li&gt;using your own image&lt;/li&gt;
+&lt;li&gt;you can test muliple models on live traffic using Production Variants (Roll out variant weights)&lt;/li&gt;
+&lt;li&gt;A/B test is posible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass&#34;&gt;SageMaker On the Edge: SageMaker Neo and IoT Greengrass&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Train once, run anywhere&lt;/li&gt;
+&lt;li&gt;supports multiple architecture&lt;/li&gt;
+&lt;li&gt;optimizes code for specific devices&lt;/li&gt;
+&lt;li&gt;consists of a compiler and a runtime&lt;/li&gt;
+&lt;li&gt;Neo compiled models can be deployed to an https endpoint, must be the same instance type used for compilation&lt;/li&gt;
+&lt;li&gt;or you can deploy to iot greengrass&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-security-encryption-at-rest-and-in-transit&#34;&gt;SageMaker Security: Encryption at Rest and In Transit&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IAM&lt;/li&gt;
+&lt;li&gt;MFA&lt;/li&gt;
+&lt;li&gt;SSL/TLS&lt;/li&gt;
+&lt;li&gt;Cloudtrail to log API and user activity&lt;/li&gt;
+&lt;li&gt;encryption&lt;/li&gt;
+&lt;li&gt;AWS key mangement service is accepted by notebooks and all sagemaker jobs&lt;/li&gt;
+&lt;li&gt;s3 can be encrypted as well&lt;/li&gt;
+&lt;li&gt;All traffic supports TLS/SSL&lt;/li&gt;
+&lt;li&gt;inter node training communication may be optionally encrypted&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-security-vpcs-iam-logging-and-monitoring&#34;&gt;SageMaker Security: VPC&amp;rsquo;s, IAM, Logging, and Monitoring&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;training jobs run in VPC&lt;/li&gt;
+&lt;li&gt;private VPC&lt;/li&gt;
+&lt;li&gt;s3 vpc endpoints&lt;/li&gt;
+&lt;li&gt;IAM user permissions for CreateTrainingJob, CreateModel, CreateEndpointConfig, CreateTransformJob, CreateHyperParameterTuningJob, CreateNotebookInstance, UpdateNotebookInstance&lt;/li&gt;
+&lt;li&gt;Predefined policies for AmazonSageMakerReadOnly, AmazonSageMakerFullAccess, AdministratorAccess, DataScientist&lt;/li&gt;
+&lt;li&gt;cloudwatch can log, monitor and alarm on invocations and latency of endpoints, health of instance nodes, ground truth (active workers)&lt;/li&gt;
+&lt;li&gt;cloudtrail records actions from users, roles, and services within Sagemaker: log files are delivered to s3 for auditing purposes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-resource-management-instance-types-and-spot-training&#34;&gt;SageMaker Resource Management: Instance Types and Spot Training&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;depends but usually gpu for training and cpu for inference&lt;/li&gt;
+&lt;li&gt;EC2 spot training: checkpoints to s3 so training can resume&lt;/li&gt;
+&lt;li&gt;can increate training time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-resource-management-elastic-inference-automatic-scaling-azs&#34;&gt;SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&amp;rsquo;s&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;accelerates deep learning inference at a fraction of a cost&lt;/li&gt;
+&lt;li&gt;EI accelerator may be added alongside a CPU instance&lt;/li&gt;
+&lt;li&gt;EI accelerators can also be applied to notebooks&lt;/li&gt;
+&lt;li&gt;works with tensorflow, pytorch, mxnet, onnx may be used to export models to mxnet&lt;/li&gt;
+&lt;li&gt;works with custom containers built with El-enabled Tensorflow, Pytorch or mxnet&lt;/li&gt;
+&lt;li&gt;works with image classification and object detection built in algorithms&lt;/li&gt;
+&lt;li&gt;Automatic scaling: can be used to define target metrics, min or max capacity, cooldown periods, works with cloudwatch, dynamically adjusts number of instances for a production variant, load test your configuration before using it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-serverless-inference-and-inference-recommender&#34;&gt;SageMaker Serverless Inference and Inference Recommender&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;specify your container, memory requirement, concurrency requirements&lt;/li&gt;
+&lt;li&gt;underlying capacity is automatically provisioned and scaled&lt;/li&gt;
+&lt;li&gt;good for infrequent or unpredictable traffic, will scale down to zero when there are no requests&lt;/li&gt;
+&lt;li&gt;chared based on usage&lt;/li&gt;
+&lt;li&gt;monitor via cloudwatch&lt;/li&gt;
+&lt;li&gt;Inference Recommender  recommends what instance type and configuration for your model&lt;/li&gt;
+&lt;li&gt;automates load testing and model tuning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sagemaker-inference-pipelines&#34;&gt;SageMaker Inference Pipelines&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;linear sequence of 2-15 containers&lt;/li&gt;
+&lt;li&gt;any combination of pre-trained built-in algorithms or your own algorithms in Docker&lt;/li&gt;
+&lt;li&gt;combine pre-processing, predictions, post-processing&lt;/li&gt;
+&lt;li&gt;Spark ML and scikit-learn&lt;/li&gt;
+&lt;li&gt;chaining multiple inference containers into a pipeline of results&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

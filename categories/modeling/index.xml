@@ -12,7 +12,31 @@
     
     
     <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - Modeling</title>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 3a. Modeling Pre-requisite</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling_prereq/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling_prereq/</guid>
+      <description>&lt;h1 id=&#34;modeling-pre-reqs&#34;&gt;Modeling Pre-reqs&lt;/h1&gt;
+&lt;h2 id=&#34;basic-machine-learning&#34;&gt;Basic Machine Learning&lt;/h2&gt;
+&lt;h2 id=&#34;confusion-matrix&#34;&gt;Confusion Matrix&lt;/h2&gt;
+&lt;h2 id=&#34;data&#34;&gt;Data&lt;/h2&gt;
+&lt;h2 id=&#34;design-of-experiments&#34;&gt;Design of Experiments&lt;/h2&gt;
+&lt;h2 id=&#34;game-theory&#34;&gt;Game Theory&lt;/h2&gt;
+&lt;h2 id=&#34;model-quality&#34;&gt;Model Quality&lt;/h2&gt;
+&lt;h2 id=&#34;non-parametric-tests&#34;&gt;Non-Parametric Tests&lt;/h2&gt;
+&lt;h2 id=&#34;optimization&#34;&gt;Optimization&lt;/h2&gt;
+&lt;h2 id=&#34;probability-based-models&#34;&gt;Probability based models&lt;/h2&gt;
+&lt;h2 id=&#34;probability-distributions&#34;&gt;Probability distributions&lt;/h2&gt;
+&lt;h2 id=&#34;regression&#34;&gt;Regression&lt;/h2&gt;
+&lt;h2 id=&#34;time-series-models&#34;&gt;Time series models&lt;/h2&gt;
+&lt;h2 id=&#34;variable-selection&#34;&gt;Variable Selection&lt;/h2&gt;
+&lt;h2 id=&#34;other-topics&#34;&gt;Other Topics&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 3b. Modeling</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
