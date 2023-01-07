@@ -159,20 +159,711 @@ onload='renderMathInElement(document.body);'></script>
 <article>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="modeling-pre-reqs">Modeling Pre-reqs</h1>
+<ol>
+<li><a href="#basic-machine-learning">Basic Machine Learning</a></li>
+<li><a href="#confusion-matrix">Confusion Matrix</a></li>
+<li><a href="#data">Data</a></li>
+<li><a href="#design-of-experiments">Design of Experiments</a></li>
+<li><a href="#game-theory">Game Theory</a></li>
+<li><a href="#model-quality">Model Quality</a></li>
+<li><a href="#non-parametric-tests">Non-Parametric Tests</a></li>
+<li><a href="#optimization">Optimization</a></li>
+<li><a href="#probability-based-models">Probability based models</a></li>
+<li><a href="#regression">Regression</a></li>
+<li><a href="#variable-selection">Variable Selection</a></li>
+<li><a href="#misc">Misc</a></li>
+</ol>
 <h2 id="basic-machine-learning">Basic Machine Learning</h2>
+<h3 id="algorithm">Algorithm</h3>
+<ul>
+<li>In the context of machine learning, an algorithm is a set of instructions that a computer follows in order to learn from data.</li>
+<li>Machine learning algorithms take input data and use statistical analysis to predict an output value within an acceptable range.</li>
+<li>The goal of a machine learning algorithm is to improve its prediction accuracy over time by adjusting the parameters of the model based on the input data.</li>
+</ul>
+<h3 id="change-detection">Change detection</h3>
+<ul>
+<li>Change detection is a process in which a system is able to identify changes in a given environment over time.</li>
+<li>In the context of machine learning, change detection involves using algorithms to analyze data from a given environment in order to identify any changes that have occurred.</li>
+<li>This can be useful in a variety of different applications, including monitoring changes in financial markets, detecting changes in customer behavior, or identifying changes in the physical environment.</li>
+</ul>
+<h3 id="classification">Classification</h3>
+<ul>
+<li>Classification is a supervised learning problem in which the model is trained to predict a discrete label or class for a given input data.</li>
+<li>The goal is to predict the class or category that a new instance belongs to, based on the training data.</li>
+<li>For example, a classifier could be trained to predict whether an email is spam or not spam, based on the contents of the email. The input data would be the contents of the email, and the output class would be either &ldquo;spam&rdquo; or &ldquo;not spam&rdquo;.</li>
+<li>There are many different algorithms that can be used for classification, including logistic regression, support vector machines (SVMs), and decision trees. The choice of algorithm depends on the characteristics of the data and the desired complexity of the model.</li>
+</ul>
+<h3 id="classifier">Classifier</h3>
+<ul>
+<li>A classifier is a machine learning model that is trained to predict a discrete class or category for a given input data. Classifiers are used in a variety of applications, including spam filtering, image classification, and natural language processing.</li>
+<li>There are many different types of classifiers, including logistic regression, support vector machines (SVMs), and decision trees. The choice of classifier depends on the characteristics of the data and the desired complexity of the model.</li>
+<li>To train a classifier, the model is presented with a labeled dataset that includes input data and the corresponding correct class or category. The model then &ldquo;learns&rdquo; to predict the correct class by finding patterns in the training data. Once trained, the classifier can then be used to predict the class for new, unseen data.</li>
+</ul>
+<h3 id="cluster">Cluster</h3>
+<ul>
+<li>In the context of machine learning, a cluster refers to a group of data points that are similar to one another. Clustering is an unsupervised learning problem in which the goal is to divide the data into distinct groups, or clusters, such that the data points within each cluster are more similar to one another than they are to data points in other clusters.</li>
+<li>There are many different algorithms that can be used for clustering, including k-means clustering and hierarchical clustering. The choice of algorithm depends on the characteristics of the data and the desired properties of the clusters.</li>
+<li>Clustering can be used for a variety of purposes, including data compression, anomaly detection, and generating hypotheses for further testing. It is a useful tool for exploring and understanding the structure of a dataset.</li>
+</ul>
+<h3 id="cluster-center">Cluster center</h3>
+<ul>
+<li>In the context of clustering, a cluster center is a representative data point for a cluster. It is typically the mean or median of the points in the cluster, depending on the specific clustering algorithm being used.</li>
+<li>In k-means clustering, for example, the cluster center is the mean of all the data points in the cluster. The k-means algorithm works by iteratively assigning each data point to the cluster with the closest cluster center and then updating the cluster center to be the mean of the points in the cluster.</li>
+<li>In hierarchical clustering, the cluster center can be thought of as the point at the center of the cluster, which is determined by the specific linkage criterion being used.</li>
+<li>The cluster center is used to represent the &ldquo;typical&rdquo; data point in a cluster, and can be useful for understanding the characteristics of the cluster and for visualization purposes.</li>
+</ul>
+<h3 id="clustering">Clustering</h3>
+<ul>
+<li>Clustering is an unsupervised learning problem in which the goal is to divide a dataset into distinct groups, or clusters, such that the data points within each cluster are more similar to one another than they are to data points in other clusters. Clustering is a useful tool for exploring and understanding the structure of a dataset, and can be used for a variety of purposes, including data compression, anomaly detection, and generating hypotheses for further testing.</li>
+<li>There are many different algorithms that can be used for clustering, including k-means clustering, hierarchical clustering, and density-based clustering. The choice of algorithm depends on the characteristics of the data and the desired properties of the clusters.</li>
+<li>In k-means clustering, for example, the goal is to partition the data into a specified number (k) of clusters by iteratively assigning each data point to the cluster with the closest cluster center and then updating the cluster center to be the mean of the points in the cluster. Hierarchical clustering, on the other hand, involves creating a hierarchy of clusters, where at each step, the two closest clusters are merged together. Density-based clustering algorithms, such as DBSCAN, identify clusters as areas of higher density surrounded by areas of lower density.</li>
+</ul>
+<h3 id="cusum">CUSUM</h3>
+<ul>
+<li>CUSUM is an acronym for &ldquo;Cumulative Sum.&rdquo; It is a statistical algorithm that is used to detect small shifts in the mean of a process over time. It is often used in quality control and reliability engineering to monitor processes and detect changes that may indicate a problem or deviation from the norm.</li>
+<li>The CUSUM algorithm works by keeping track of a running total of the difference between the observed values and the expected or target value. When the running total exceeds a pre-determined threshold, it indicates that the process has shifted and may need to be corrected or investigated.</li>
+<li>CUSUM charts are often used to visualize the performance of the CUSUM algorithm, with the running total being plotted on the y-axis and the time steps on the x-axis. The chart can then be used to identify when the running total exceeds the threshold and to identify any trends or patterns in the data.</li>
+</ul>
+<h3 id="deep-learning">Deep learning</h3>
+<ul>
+<li>Deep learning is a subfield of machine learning that is inspired by the structure and function of the brain, specifically the neural networks that make up the brain. It involves the use of artificial neural networks, which are computational models inspired by the structure and function of the brain, to learn from data and make decisions.</li>
+<li>Deep learning algorithms learn by example, just like humans do. They learn by being presented with a large amount of labeled data and adjusting the internal parameters of the network to optimize performance on a specific task. The &ldquo;deep&rdquo; in deep learning refers to the fact that these algorithms typically have multiple layers of artificial neurons, with each layer learning to extract higher-level features of the data.</li>
+<li>Deep learning has been successful in a wide range of applications, including image and speech recognition, natural language processing, and autonomous driving. It has revolutionized the field of machine learning and has enabled the development of many practical applications that were previously thought to be impossible.</li>
+</ul>
+<h3 id="dimension">Dimension</h3>
+<ul>
+<li>In the context of machine learning, a dimension refers to a particular feature or attribute of a dataset. For example, if you are working with a dataset that includes information about houses (such as price, number of bedrooms, square footage, and location), each of these features would be considered a separate dimension.</li>
+<li>The number of dimensions in a dataset is often referred to as the &ldquo;dimensionality&rdquo; of the dataset. High-dimensional datasets, which have a large number of dimensions, can be difficult to work with and visualize, as it can be challenging to represent the relationships between all of the dimensions in a meaningful way.</li>
+<li>In machine learning, techniques such as dimensionality reduction can be used to reduce the number of dimensions in a dataset, while still preserving the important information. This can be useful for tasks such as visualization and training machine learning models, which may be more efficient and effective on lower-dimensional data.</li>
+</ul>
+<h3 id="expectation-maximization-algorithm-em-algorithm">Expectation-maximization algorithm (EM algorithm)</h3>
+<ul>
+<li>The EM algorithm (Expectation-Maximization algorithm) is a widely used method for estimating the parameters of a statistical model when there is missing or incomplete data. It is an iterative algorithm that alternates between two steps: the expectation (E) step and the maximization (M) step.</li>
+<li>In the E step, the algorithm estimates the expected value of the complete data likelihood function (a measure of the probability of the data given the model parameters) based on the current parameter values. In the M step, the algorithm updates the parameter values to maximize the expected complete data likelihood. The process is then repeated until convergence, at which point the parameter estimates are considered to be optimal.</li>
+<li>The EM algorithm is widely used in a variety of applications, including machine learning, natural language processing, and bioinformatics. It is particularly useful when the data are incomplete or when the model is a mixture model (i.e., a model that consists of a mixture of different underlying distributions).</li>
+</ul>
+<h3 id="heuristic">Heuristic</h3>
+<ul>
+<li>In machine learning, a heuristic is a simplified, approximate solution to a problem that is used to quickly find a satisfactory answer. It is often used in situations where finding the optimal solution is computationally infeasible or impractical.</li>
+<li>Heuristics are often used in machine learning as a way to quickly search through a large space of possible solutions and find a good, but not necessarily optimal, solution. They can be useful for tasks such as optimization, feature selection, and model selection.</li>
+<li>Heuristics are often designed to be domain-specific and are based on the specific characteristics of the problem at hand. They can be useful for providing a rough estimate or approximation of the solution, but they may not always be reliable or accurate. In general, heuristics should be used with caution and should be validated against more rigorous methods where possible.</li>
+</ul>
+<h3 id="𝑘-means-algorithm">𝑘-means algorithm</h3>
+<ul>
+<li>The k-means algorithm is a method for clustering data into a specified number (k) of distinct clusters. It is an iterative algorithm that works by first randomly initializing k cluster centers, and then iteratively assigning each data point to the cluster with the closest cluster center and updating the cluster center to be the mean of the points in the cluster.</li>
+<li>The k-means algorithm has the following steps:
+<ul>
+<li>Initialize k cluster centers randomly.</li>
+<li>Assign each data point to the cluster with the closest cluster center.</li>
+<li>Update the cluster centers to be the mean of the points in the cluster.</li>
+<li>Repeat steps 2 and 3 until the cluster assignments stop changing or a maximum number of iterations is reached.</li>
+</ul>
+</li>
+<li>The k-means algorithm is sensitive to the initial cluster assignments, so it is common to run the algorithm multiple times with different random initializations to ensure that the final clusters are stable. The algorithm is also sensitive to outliers and may produce suboptimal clusters if the data contain outliers.</li>
+</ul>
+<h3 id="𝑘-nearest-neighbor-knn">𝑘-Nearest-Neighbor (KNN)</h3>
+<ul>
+<li>The k-nearest neighbor (KNN) algorithm is a method for classifying objects based on the closest training examples in the feature space. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data.</li>
+<li>The KNN algorithm works by calculating the distance between the new data point and all the training data, and then selecting the k training points that are closest to the new data point. The class label of the new data point is then determined by majority vote among the k nearest neighbors.</li>
+<li>The value of k is a hyperparameter of the KNN algorithm and must be chosen by the practitioner. A larger value of k will make the model more robust to noise, but a smaller value may be more sensitive to the underlying structure of the data.</li>
+<li>KNN is a simple and effective method for classification, but it can be computationally expensive for large datasets, as it requires calculating the distance between the new data point and all the training examples.</li>
+</ul>
+<h3 id="kernel">Kernel</h3>
+<ul>
+<li>In the context of machine learning, a kernel is a function that takes in two inputs and returns a scalar value. Kernels are used in a variety of machine learning algorithms, including support vector machines (SVMs) and kernel principal component analysis (PCA).</li>
+<li>In SVMs, kernels are used to define a similarity measure between two data points. The kernel function is applied to the data points to transform them into a higher-dimensional space, where it is then possible to find a linear separation between the classes. By using a kernel function, it is possible to learn a non-linear decision boundary in the original feature space using a linear classifier in the transformed space.</li>
+<li>In kernel PCA, kernels are used to define a similarity measure between data points in the original space, and the resulting kernel matrix is used to perform PCA in the feature space. This allows for non-linear dimensionality reduction, which can be useful for data that is not linearly separable.</li>
+<li>There are many different kernel functions that can be used, including linear kernels, polynomial kernels, and radial basis function (RBF) kernels. The choice of kernel depends on the characteristics of the data and the desired properties of the model.</li>
+</ul>
+<h3 id="margin">Margin</h3>
+<ul>
+<li>In the context of machine learning, the margin is the distance between the decision boundary (i.e., the line or hyperplane that separates the classes) and the nearest training data points. The margin is an important concept in certain types of algorithms, such as support vector machines (SVMs), where the goal is to find the decision boundary that has the largest margin.</li>
+<li>In SVMs, the margin is the distance between the decision boundary and the closest data points from each class. The margin is maximized when the decision boundary is as far as possible from the closest data points from each class, which leads to a model that is more robust and generalizable to new data.</li>
+<li>The margin can also be thought of as a measure of the confidence of the classifier. A larger margin indicates that the classifier is more confident in its predictions, as it is based on a wider separation between the classes.</li>
+<li>The margin is an important consideration when training a machine learning model, as a model with a large margin is often preferred to a model with a small margin, as it is likely to be more robust and generalizable to new data.</li>
+</ul>
+<h3 id="machine-learning">Machine learning</h3>
+<ul>
+<li>Machine learning is a field of artificial intelligence that involves the use of computational models to learn from data and make predictions or decisions without being explicitly programmed. It involves the development of algorithms that can automatically improve their performance through experience.</li>
+<li>There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning.</li>
+<li>In supervised learning, the goal is to learn a function that maps input data to output labels, based on a labeled training dataset. The model is trained on the training data and then evaluated on a separate test dataset to evaluate its performance. Examples of supervised learning tasks include classification and regression.</li>
+<li>In unsupervised learning, the goal is to discover patterns or relationships in the data without any prior knowledge or labeled training data. Examples of unsupervised learning tasks include clustering and dimensionality reduction.</li>
+<li>In reinforcement learning, the goal is to learn a policy that maximizes a reward signal. The model is trained by interacting with its environment and receiving feedback in the form of rewards or punishments. Reinforcement learning is used in a variety of applications, including robotics and control systems.</li>
+<li>Machine learning has been successful in a wide range of applications, including image and speech recognition, natural language processing, and autonomous driving. It has revolutionized many fields and has enabled the development of practical applications that were previously thought to be impossible.</li>
+</ul>
+<h3 id="neural-network">Neural network</h3>
+<ul>
+<li>A neural network is a type of machine learning model inspired by the structure and function of the brain. It is composed of layers of interconnected &ldquo;neurons,&rdquo; which process and transmit information. Neural networks are able to learn and adapt to new data by adjusting the strengths of the connections between neurons.</li>
+<li>The basic building block of a neural network is the neuron, which is a simple computational unit that receives input, processes it, and produces an output. The input is passed through multiple layers of neurons, with each layer learning to extract higher-level features of the data. The output of the final layer is the prediction or decision made by the neural network.</li>
+<li>There are many different types of neural networks, including feedforward neural networks, convolutional neural networks (CNNs), and recurrent neural networks (RNNs). The choice of neural network architecture depends on the characteristics of the data and the desired properties of the model.</li>
+<li>Neural networks have been successful in a wide range of applications, including image and speech recognition, natural language processing, and autonomous driving. They have revolutionized the field of machine learning and have enabled the development of many practical applications that were previously thought to be impossible.</li>
+</ul>
+<h3 id="supervised-learning">Supervised learning</h3>
+<ul>
+<li>Supervised learning is a type of machine learning in which the model is trained on a labeled dataset, where the correct output is provided for each example in the training set. The goal of supervised learning is to learn a function that can map input data to the correct output labels.</li>
+<li>Supervised learning algorithms can be divided into two main categories: regression and classification.</li>
+<li>In regression, the goal is to predict a continuous value, such as the price of a house or the likelihood of a customer churning. Examples of regression algorithms include linear regression and support vector regression.</li>
+<li>In classification, the goal is to predict a discrete label or class, such as whether an email is spam or not spam. Examples of classification algorithms include logistic regression, k-nearest neighbors, and decision trees.</li>
+<li>Supervised learning is the most widely used type of machine learning and has been successful in a wide range of applications, including image and speech recognition, natural language processing, and fraud detection. It requires a labeled dataset to train the model, which can be expensive and time-consuming to obtain.</li>
+</ul>
+<h3 id="support-vector-machine-svm">Support vector machine (SVM)</h3>
+<ul>
+<li>Support vector machine (SVM) is a type of supervised learning algorithm that can be used for classification or regression. It is based on the idea of finding a hyperplane in a high-dimensional space that maximally separates the classes.</li>
+<li>In the case of classification, the goal is to find a hyperplane that separates the data points into different classes as well as possible. The SVM algorithm finds the hyperplane that has the largest margin, or distance, between the closest data points of each class. This maximizes the separation between the classes and leads to a more robust and generalizable model.</li>
+<li>In the case of regression, the goal is to find a hyperplane that predicts the output value for a given input value. The SVM algorithm finds the hyperplane that minimizes the error between the predicted and actual values.</li>
+<li>SVMs are effective in high-dimensional spaces and are widely used in a variety of applications, including image and speech recognition, natural language processing, and bioinformatics. They are also robust to noise and can handle datasets with a large number of features. However, they can be computationally expensive to train and are not well-suited for very large datasets.</li>
+</ul>
+<h3 id="unsupervised-learning">Unsupervised learning</h3>
+<ul>
+<li>Unsupervised learning is a type of machine learning in which the model is not given any labeled training data and must find patterns or relationships in the data on its own. The goal of unsupervised learning is to discover the underlying structure of the data, without any prior knowledge or assumptions.</li>
+<li>Unsupervised learning algorithms can be divided into two main categories: clustering and dimensionality reduction.</li>
+<li>In clustering, the goal is to group the data points into distinct clusters such that the points within each cluster are more similar to one another than they are to points in other clusters. Examples of clustering algorithms include k-means clustering and hierarchical clustering.</li>
+<li>In dimensionality reduction, the goal is to reduce the number of dimensions (features) in the data while preserving as much of the information as possible. This can be useful for tasks such as visualization and feature selection. Examples of dimensionality reduction algorithms include principal component analysis (PCA) and t-SNE (t-distributed stochastic neighbor embedding).</li>
+<li>Unsupervised learning is useful for exploring and understanding the structure of a dataset, and can be used for tasks such as anomaly detection and data compression. It does not require labeled data and can be used with data that has not been labeled or has incomplete labels. However, it can be more difficult to evaluate the performance of unsupervised learning algorithms, as there is no ground truth to compare the results to.</li>
+</ul>
+<h3 id="voronoi-diagram">Voronoi diagram</h3>
+<ul>
+<li>A Voronoi diagram is a graphical representation of the partitioning of a plane into regions based on the distance to a set of points. It is named after Russian mathematician Georgy Voronoi, who developed the concept in 1908.</li>
+<li>In a Voronoi diagram, the plane is divided into a set of cells, with each cell corresponding to one of the input points. The points are called the &ldquo;generators&rdquo; of the Voronoi diagram. Each cell consists of all points that are closer to its generator than to any other generator. The boundary between cells is called a Voronoi edge, and the points where Voronoi edges intersect are called Voronoi vertices.</li>
+<li>Voronoi diagrams have a wide range of applications, including computer graphics, image processing, and spatial analysis. They are used to model the spatial distribution of points and can be used to optimize the placement of facilities, such as warehouses or cell phone towers, to minimize the distance to the nearest facility. They are also used in computer games to determine the visibility of objects on the screen and in the design of efficient algorithms for solving problems in computational geometry.</li>
+</ul>
 <h2 id="confusion-matrix">Confusion Matrix</h2>
+<h3 id="accuracy">Accuracy</h3>
+<ul>
+<li>Accuracy is a measure of how well a model correctly predicts the outcome of a given data sample. It is commonly used in classification problems, where the model is trying to predict a label for a given input.</li>
+<li>The accuracy score is calculated by dividing the number of correct predictions made by the model by the total number of predictions made. This value is then expressed as a percentage. For example, if a model made 100 predictions and 75 of them were correct, the accuracy score would be 75%.</li>
+<li>To calculate the accuracy score, you need a set of predictions made by the model and the corresponding true labels for those predictions. You can then compare the predictions to the true labels to see how many were correct.</li>
+<li>Here is an example of how to calculate the accuracy score in Python:</li>
+</ul>
+<pre tabindex="0"><code>def accuracy_score(y_true, y_pred):
+    # Calculate the number of correct predictions
+    correct = sum(y_true == y_pred)
+    # Calculate the total number of predictions
+    total = len(y_true)
+    # Calculate the accuracy score as a percentage
+    return correct / total * 100
+</code></pre><ul>
+<li>Here, y_true is a list of the true labels and y_pred is a list of the predictions made by the model. The function first calculates the number of correct predictions and then divides that by the total number of predictions to get the accuracy as a decimal. It then multiplies that value by 100 to express the accuracy as a percentage.</li>
+</ul>
+<h3 id="confusion-matrix-1">Confusion matrix</h3>
+<ul>
+<li>
+<p>A confusion matrix is a table that is used to evaluate the performance of a classification algorithm. It helps to visualize the correct and incorrect predictions made by the model and allows you to see which classes are being predicted accurately and which are not.</p>
+</li>
+<li>
+<p>The rows of the matrix represent the actual classes of the samples and the columns represent the predicted classes. The diagonal elements of the matrix represent the number of samples that have been correctly classified, while the off-diagonal elements represent the number of misclassified samples.</p>
+</li>
+<li>
+<p>Here is an example of a confusion matrix:</p>
+</li>
+</ul>
+<pre tabindex="0"><code>              Predicted Positive    Predicted Negative
+Actual Positive          TP                  FP
+Actual Negative          FN                  TN
+</code></pre><ul>
+<li>In this example, TP (true positive) is the number of samples that are actually positive and have been correctly predicted as positive. TN (true negative) is the number of samples that are actually negative and have been correctly predicted as negative. FP (false positive) is the number of samples that are actually negative but have been predicted as positive. FN (false negative) is the number of samples that are actually positive but have been predicted as negative.</li>
+<li>To calculate the values for the confusion matrix, you need a set of predictions made by the model and the corresponding true labels for those predictions. You can then compare the predictions to the true labels to see how many were correct and how many were incorrect.</li>
+<li>Here is an example of how to calculate a confusion matrix in Python:</li>
+</ul>
+<pre tabindex="0"><code>from sklearn.metrics import confusion_matrix
+
+y_true = [1, 0, 1, 1, 0, 1]
+y_pred = [1, 1, 1, 1, 0, 0]
+
+confusion_matrix(y_true, y_pred)
+</code></pre><ul>
+<li>This will output the following confusion matrix:</li>
+</ul>
+<pre tabindex="0"><code>array([[2, 1],
+       [1, 2]])
+</code></pre><h3 id="diagnostic-odds-ratio">Diagnostic odds ratio</h3>
+<ul>
+<li>The diagnostic odds ratio (DOR) is a measure of the accuracy of a diagnostic test. It is used to compare the accuracy of two or more diagnostic tests or to compare the accuracy of a diagnostic test to a reference standard.</li>
+<li>The DOR is calculated as the ratio of the odds of a positive test result in patients with the condition being tested for to the odds of a positive test result in patients without the condition.</li>
+<li>Here is the formula for calculating the DOR:</li>
+</ul>
+<pre tabindex="0"><code>DOR = (TP / FP) / (FN / TN)
+</code></pre><ul>
+<li>Where TP (true positive) is the number of samples that are actually positive and have been correctly predicted as positive, TN (true negative) is the number of samples that are actually negative and have been correctly predicted as negative, FP (false positive) is the number of samples that are actually negative but have been predicted as positive, and FN (false negative) is the number of samples that are actually positive but have been predicted as negative.</li>
+<li>The DOR can range from 0 to infinity, with higher values indicating a more accurate diagnostic test. A DOR of 1 indicates that the test is no better than a coin flip, while a DOR of infinity indicates perfect accuracy.</li>
+<li>To calculate the DOR, you need a set of predictions made by the diagnostic test and the corresponding true labels for those predictions. You can then use the formula above to calculate the DOR.</li>
+<li>Here is an example of how to calculate the DOR in Python:</li>
+</ul>
+<pre tabindex="0"><code>def diagnostic_odds_ratio(y_true, y_pred):
+    tp = sum((y_true == 1) &amp; (y_pred == 1))
+    tn = sum((y_true == 0) &amp; (y_pred == 0))
+    fp = sum((y_true == 0) &amp; (y_pred == 1))
+    fn = sum((y_true == 1) &amp; (y_pred == 0))
+    dor = (tp / fp) / (fn / tn)
+    return dor
+</code></pre><ul>
+<li>Here, y_true is a list of the true labels and y_pred is a list of the predictions made by the diagnostic test. The function calculates the values for TP, TN, FP, and FN using boolean masks and then uses these values to calculate the DOR using the formula above.</li>
+</ul>
+<h3 id="fall-out">Fall out</h3>
+<ul>
+<li>Fallout (also known as false positive rate or type I error) is a measure of the performance of a diagnostic test or classification algorithm. It is the percentage of negative samples that are incorrectly classified as positive.</li>
+<li>In the context of a diagnostic test, fallout represents the probability that a person without the condition being tested for will receive a positive test result. In the context of a classification algorithm, fallout represents the percentage of negative samples that are incorrectly classified as positive.</li>
+<li>Here is the formula for calculating fallout:</li>
+</ul>
+<pre tabindex="0"><code>Fallout = FP / (FP + TN)
+</code></pre><ul>
+<li>Where FP (false positive) is the number of samples that are actually negative but have been predicted as positive, and TN (true negative) is the number of samples that are actually negative and have been correctly predicted as negative.</li>
+<li>To calculate fallout, you need a set of predictions made by the diagnostic test or classification algorithm and the corresponding true labels for those predictions. You can then use the formula above to calculate the fallout.</li>
+<li>Here is an example of how to calculate fallout in Python:</li>
+</ul>
+<pre tabindex="0"><code>def fallout(y_true, y_pred):
+    fp = sum((y_true == 0) &amp; (y_pred == 1))
+    tn = sum((y_true == 0) &amp; (y_pred == 0))
+    fallout = fp / (fp + tn)
+    return fallout
+</code></pre><ul>
+<li>Here, y_true is a list of the true labels and y_pred is a list of the predictions made by the diagnostic test or classification algorithm. The function calculates the values for FP and TN using boolean masks and then uses these values to calculate the fallout using the formula above.</li>
+</ul>
+<h3 id="false-negative-fn">False negative (FN)</h3>
+<ul>
+<li>A false negative (FN) is a prediction made by a diagnostic test or classification algorithm that is incorrect. It refers to a situation where the test or algorithm predicts a negative result for a sample that is actually positive.</li>
+<li>In the context of a diagnostic test, a false negative means that the test failed to detect the presence of a condition in a person who actually has the condition. In the context of a classification algorithm, a false negative means that the algorithm failed to correctly classify a positive sample.</li>
+<li>False negatives are often more serious than false positives, as they can have more serious consequences. For example, if a diagnostic test for a disease returns a false negative result, the person may not receive the necessary treatment and their condition may worsen.</li>
+<li>To calculate the number of false negatives, you need a set of predictions made by the diagnostic test or classification algorithm and the corresponding true labels for those predictions. You can then compare the predictions to the true labels to see how many were incorrect.</li>
+<li>Here is an example of how to calculate the number of false negatives in Python:</li>
+</ul>
+<pre tabindex="0"><code>def false_negatives(y_true, y_pred):
+    fn = sum((y_true == 1) &amp; (y_pred == 0))
+    return fn
+</code></pre><ul>
+<li>Here, y_true is a list of the true labels and y_pred is a list of the predictions made by the diagnostic test or classification algorithm. The function calculates the number of false negatives using a boolean mask that compares the true labels to the predictions</li>
+</ul>
+<h3 id="false-negative-rate">False negative rate</h3>
+<ul>
+<li>The false negative rate (FNR) is a measure of the performance of a diagnostic test or classification algorithm. It is the percentage of positive samples that are incorrectly classified as negative.</li>
+<li>In the context of a diagnostic test, the false negative rate represents the probability that a person with the condition being tested for will receive a negative test result. In the context of a classification algorithm, the false negative rate represents the percentage of positive samples that are incorrectly classified as negative.</li>
+<li>Here is the formula for calculating the false negative rate:</li>
+</ul>
+<pre tabindex="0"><code>FNR = FN / (FN + TP)
+</code></pre><ul>
+<li>Where FN (false negative) is the number of samples that are actually positive but have been predicted as negative, and TP (true positive) is the number of samples that are actually positive and have been correctly predicted as positive.</li>
+<li>To calculate the false negative rate, you need a set of predictions made by the diagnostic test or classification algorithm and the corresponding true labels for those predictions. You can then use the formula above to calculate the false negative rate.</li>
+<li>Here is an example of how to calculate the false negative rate in Python:</li>
+</ul>
+<pre tabindex="0"><code>def false_negative_rate(y_true, y_pred):
+    fn = sum((y_true == 1) &amp; (y_pred == 0))
+    tp = sum((y_true == 1) &amp; (y_pred == 1))
+    fnr = fn / (fn + tp)
+    return fnr
+</code></pre><ul>
+<li>Here, y_true is a list of the true labels and y_pred is a list of the predictions made by the diagnostic test or classification algorithm. The function calculates the values for FN and TP using boolean masks and then uses these values to calculate the false negative rate using the formula above.</li>
+</ul>
+<h3 id="false-positive-fp">False positive (FP)</h3>
+<ul>
+<li>A false positive (FP) is a prediction made by a diagnostic test or classification algorithm that is incorrect. It refers to a situation where the test or algorithm predicts a positive result for a sample that is actually negative.</li>
+<li>In the context of a diagnostic test, a false positive means that the test detected the presence of a condition in a person who actually does not have the condition. In the context of a classification algorithm, a false positive means that the algorithm incorrectly classified a negative sample.</li>
+<li>False positives can sometimes be less serious than false negatives, as they may lead to unnecessary follow-up tests or treatment. However, they can also be costly and cause anxiety for the person being tested.</li>
+<li>To calculate the number of false positives, you need a set of predictions made by the diagnostic test or classification algorithm and the corresponding true labels for those predictions. You can then compare the predictions to the true labels to see how many were incorrect.</li>
+<li>Here is an example of how to calculate the number of false positives in Python:</li>
+</ul>
+<pre tabindex="0"><code>def false_positives(y_true, y_pred):
+    fp = sum((y_true == 0) &amp; (y_pred == 1))
+    return fp
+</code></pre><ul>
+<li>Here, y_true is a list of the true labels and y_pred is a list of the predictions made by the diagnostic test or classification algorithm. The function calculates the number of false positives using a boolean mask that compares the true labels to the predictions.</li>
+</ul>
+<h3 id="false-positive-rate">False positive rate</h3>
+<ul>
+<li>In the context of diagnostic tests, the false positive rate is the probability that a patient with a negative disease status will receive a positive test result. In other words, it is the probability of a false alarm. A high false positive rate means that there is a high probability of a patient being told they have a disease when they actually do not. This can lead to unnecessary anxiety and further testing, and can also reduce the overall credibility of the diagnostic test.</li>
+<li>The false positive rate is often considered in conjunction with the sensitivity and specificity of a diagnostic test. Sensitivity is the probability of a positive test result given that the patient actually has the disease, and specificity is the probability of a negative test result given that the patient does not have the disease. Together, these measures can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="false-omission-rate">False omission rate</h3>
+<ul>
+<li>In the context of diagnostic tests, the false omission rate, also known as the false negative rate, is the probability that a patient with a positive disease status will receive a negative test result. A high false negative rate means that there is a high probability of a patient being told they do not have a disease when they actually do. This can have serious consequences, as the patient may not receive the necessary treatment.</li>
+<li>The false negative rate is often considered in conjunction with the sensitivity and specificity of a diagnostic test. Sensitivity is the probability of a positive test result given that the patient actually has the disease, and specificity is the probability of a negative test result given that the patient does not have the disease. Together, these measures can give a more complete picture of the performance of a diagnostic test.</li>
+<li>For example, consider a diagnostic test for a particular disease. The test has a sensitivity of 90%, meaning that it correctly identifies 90% of patients with the disease. It also has a specificity of 95%, meaning that it correctly identifies 95% of patients who do not have the disease. However, if the disease is relatively rare, the false negative rate may still be unacceptably high. For example, if the prevalence of the disease is 1%, and the test has a false negative rate of 10%, then out of 100 patients with the disease, the test will correctly identify only 81 of them (90% sensitivity), while 19 will be misdiagnosed as not having the disease (10% false negative rate). This could lead to a significant number of missed diagnoses.</li>
+</ul>
+<h3 id="hit-rate">Hit rate</h3>
+<ul>
+<li>Hit rate, also known as the hit ratio, is a measure of the accuracy of a classifier, predictor, or other machine learning model. It is the number of times the model correctly predicts the outcome (a &ldquo;hit&rdquo;) divided by the total number of predictions made. For example, if a model makes 100 predictions and is correct 70 times, the hit rate is 70%.</li>
+<li>Hit rate is often used as a measure of performance for models that make binary predictions (e.g., &ldquo;positive&rdquo; or &ldquo;negative&rdquo;). In this case, a hit is a correct prediction of the positive or negative class, and the hit rate is the proportion of positive or negative predictions that are correct.</li>
+<li>Hit rate is related to the true positive rate and the false positive rate, which are measures of the performance of a binary classifier. The true positive rate is the proportion of positive cases that are correctly classified as positive, while the false positive rate is the proportion of negative cases that are incorrectly classified as positive. Together, these measures can give a more complete picture of the performance of a classifier.</li>
+</ul>
+<h3 id="miss-rate">Miss rate</h3>
+<ul>
+<li>Miss rate, also known as the miss ratio or false negative rate, is a measure of the accuracy of a classifier, predictor, or other machine learning model. It is the number of times the model incorrectly predicts the outcome (a &ldquo;miss&rdquo;) divided by the total number of predictions made. For example, if a model makes 100 predictions and is incorrect 30 times, the miss rate is 30%.</li>
+<li>Miss rate is often used as a measure of performance for models that make binary predictions (e.g., &ldquo;positive&rdquo; or &ldquo;negative&rdquo;). In this case, a miss is an incorrect prediction of the positive or negative class, and the miss rate is the proportion of positive or negative predictions that are incorrect.</li>
+<li>Miss rate is related to the true positive rate and the false positive rate, which are measures of the performance of a binary classifier. The true positive rate is the proportion of positive cases that are correctly classified as positive, while the false positive rate is the proportion of negative cases that are incorrectly classified as positive. Together, these measures can give a more complete picture of the performance of a classifier.</li>
+</ul>
+<h3 id="negative-likelihood-ratio">Negative likelihood ratio</h3>
+<ul>
+<li>The negative likelihood ratio (NLR) is a measure of the performance of a diagnostic test or other classifier. It is the ratio of the probability of a negative test result given that the patient does not have the disease (specificity) to the probability of a negative test result given that the patient does have the disease (1 - sensitivity). The NLR is used to assess the ability of a test to rule out the presence of a disease.</li>
+<li>The NLR can be calculated using the following formula: NLR = (1 - sensitivity) / specificity</li>
+<li>A diagnostic test with a high NLR (greater than 1) is said to have a high negative predictive value, meaning that it is good at ruling out the presence of a disease. A test with a low NLR (less than 1) has a low negative predictive value, meaning that it is not good at ruling out the presence of a disease.</li>
+<li>The NLR is often used in conjunction with the positive likelihood ratio (PLR), which is the ratio of the probability of a positive test result given that the patient has the disease (sensitivity) to the probability of a positive test result given that the patient does not have the disease (1 - specificity). The PLR is used to assess the ability of a test to detect the presence of a disease. Together, the NLR and PLR can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="negative-predictive-value">Negative predictive value</h3>
+<ul>
+<li>The negative predictive value (NPV) is a measure of the performance of a diagnostic test or other classifier. It is the probability that a patient with a negative test result does not have the disease. The NPV is used to assess the ability of a test to rule out the presence of a disease.</li>
+<li>The NPV can be calculated using the following formula: NPV = TN / (TN + FN)
+where TN is the number of true negatives (patients with a negative test result who do not have the disease) and FN is the number of false negatives (patients with a negative test result who do have the disease).</li>
+<li>A diagnostic test with a high NPV (close to 1) is said to have a high negative predictive value, meaning that it is good at ruling out the presence of a disease. A test with a low NPV (close to 0) has a low negative predictive value, meaning that it is not good at ruling out the presence of a disease.</li>
+<li>The NPV is often used in conjunction with the positive predictive value (PPV), which is the probability that a patient with a positive test result does have the disease. The PPV is used to assess the ability of a test to detect the presence of a disease. Together, the NPV and PPV can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="positive-likelihood-ratio">Positive likelihood ratio</h3>
+<ul>
+<li>The positive likelihood ratio (PLR) is a measure of the performance of a diagnostic test or other classifier. It is the ratio of the probability of a positive test result given that the patient has the disease (sensitivity) to the probability of a positive test result given that the patient does not have the disease (1 - specificity). The PLR is used to assess the ability of a test to detect the presence of a disease.</li>
+<li>The PLR can be calculated using the following formula: PLR = sensitivity / (1 - specificity)</li>
+<li>A diagnostic test with a high PLR (greater than 1) is said to have a high positive predictive value, meaning that it is good at detecting the presence of a disease. A test with a low PLR (less than 1) has a low positive predictive value, meaning that it is not good at detecting the presence of a disease.</li>
+<li>The PLR is often used in conjunction with the negative likelihood ratio (NLR), which is the ratio of the probability of a negative test result given that the patient does not have the disease (specificity) to the probability of a negative test result given that the patient does have the disease (1 - sensitivity). The NLR is used to assess the ability of a test to rule out the presence of a disease. Together, the PLR and NLR can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="positive-predictive-value">Positive predictive value</h3>
+<ul>
+<li>The positive predictive value (PPV) is a measure of the performance of a diagnostic test or other classifier. It is the probability that a patient with a positive test result does have the disease. The PPV is used to assess the ability of a test to detect the presence of a disease.</li>
+<li>The PPV can be calculated using the following formula: PPV = TP / (TP + FP)
+where TP is the number of true positives (patients with a positive test result who do have the disease) and FP is the number of false positives (patients with a positive test result who do not have the disease).</li>
+<li>A diagnostic test with a high PPV (close to 1) is said to have a high positive predictive value, meaning that it is good at detecting the presence of a disease. A test with a low PPV (close to 0) has a low positive predictive value, meaning that it is not good at detecting the presence of a disease.</li>
+<li>The PPV is often used in conjunction with the negative predictive value (NPV), which is the probability that a patient with a negative test result does not have the disease. The NPV is used to assess the ability of a test to rule out the presence of a disease. Together, the PPV and NPV can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="precision">Precision</h3>
+<ul>
+<li>In the context of statistical hypothesis testing and machine learning, precision is a measure of the accuracy of a classifier, predictor, or other model. It is the number of true positive predictions made by the model divided by the total number of positive predictions made by the model. Precision is used to evaluate the performance of a model that makes binary predictions (e.g., &ldquo;positive&rdquo; or &ldquo;negative&rdquo;).</li>
+<li>For example, consider a model that makes 100 predictions, of which 70 are positive and 30 are negative. If the model is correct in 60 of the positive predictions and all of the negative predictions, the precision of the model is 60/70 = 0.86. This means that of all the positive predictions made by the model, 86% are correct.</li>
+<li>Precision is often used in conjunction with the recall, which is the number of true positive predictions made by the model divided by the total number of actual positive cases. Precision and recall are both used to evaluate the performance of a binary classifier, and can be balanced against each other to achieve the desired trade-off in a particular application.</li>
+</ul>
+<h3 id="recall">Recall</h3>
+<ul>
+<li>In the context of statistical hypothesis testing and machine learning, recall is a measure of the accuracy of a classifier, predictor, or other model. It is the number of true positive predictions made by the model divided by the total number of actual positive cases. Recall is used to evaluate the performance of a model that makes binary predictions (e.g., &ldquo;positive&rdquo; or &ldquo;negative&rdquo;).</li>
+<li>For example, consider a model that makes 100 predictions, of which 70 are positive and 30 are negative. If the model is correct in 60 of the positive predictions and all of the negative predictions, and there are 80 actual positive cases, the recall of the model is 60/80 = 0.75. This means that of all the actual positive cases, 75% are correctly predicted by the model.</li>
+<li>Recall is often used in conjunction with the precision, which is the number of true positive predictions made by the model divided by the total number of positive predictions made by the model. Precision and recall are both used to evaluate the performance of a binary classifier, and can be balanced against each other to achieve the desired trade-off in a particular application.</li>
+</ul>
+<h3 id="sensitivity">Sensitivity</h3>
+<ul>
+<li>Sensitivity, also known as the true positive rate or the recall, is a measure of the performance of a diagnostic test or other classifier. It is the probability of a positive test result given that the patient actually has the disease. Sensitivity is used to evaluate the ability of a test to detect the presence of a disease.</li>
+<li>The sensitivity of a diagnostic test can be calculated using the following formula: sensitivity = TP / (TP + FN) where TP is the number of true positives (patients with a positive test result who do have the disease) and FN is the number of false negatives (patients with a negative test result who do have the disease).</li>
+<li>A diagnostic test with a high sensitivity (close to 1) is said to have a high true positive rate, meaning that it is good at detecting the presence of a disease. A test with a low sensitivity (close to 0) has a low true positive rate, meaning that it is not good at detecting the presence of a disease.</li>
+<li>Sensitivity is often used in conjunction with the specificity of a diagnostic test, which is the probability of a negative test result given that the patient does not have the disease. Together, sensitivity and specificity can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="specificity">Specificity</h3>
+<ul>
+<li>Specificity, also known as the true negative rate, is a measure of the performance of a diagnostic test or other classifier. It is the probability of a negative test result given that the patient does not have the disease. Specificity is used to evaluate the ability of a test to rule out the presence of a disease.</li>
+<li>The specificity of a diagnostic test can be calculated using the following formula: specificity = TN / (TN + FP) where TN is the number of true negatives (patients with a negative test result who do not have the disease) and FP is the number of false positives (patients with a positive test result who do not have the disease).</li>
+<li>A diagnostic test with a high specificity (close to 1) is said to have a high true negative rate, meaning that it is good at ruling out the presence of a disease. A test with a low specificity (close to 0) has a low true negative rate, meaning that it is not good at ruling out the presence of a disease.</li>
+<li>Specificity is often used in conjunction with the sensitivity of a diagnostic test, which is the probability of a positive test result given that the patient does have the disease. Together, sensitivity and specificity can give a more complete picture of the performance of a diagnostic test.</li>
+</ul>
+<h3 id="true-negative-tn">True negative (TN)</h3>
+<ul>
+<li>A true negative is a prediction made by a diagnostic test or other classifier that an event or condition is absent, and the event or condition is indeed absent. In the context of statistical hypothesis testing and machine learning, a true negative is a prediction made by a model that an instance belongs to the negative class, and the instance does indeed belong to the negative class.</li>
+<li>True negatives are typically represented by the letter TN in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.</li>
+</ul>
+<h3 id="true-positive-tp">True positive (TP)</h3>
+<p>A true positive is a prediction made by a diagnostic test or other classifier that an event or condition is present, and the event or condition is indeed present. In the context of statistical hypothesis testing and machine learning, a true positive is a prediction made by a model that an instance belongs to the positive class, and the instance does indeed belong to the positive class.</p>
+<p>True positives are typically represented by the letter TP in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.</p>
 <h2 id="data">Data</h2>
+<h3 id="attribute">Attribute</h3>
+<ul>
+<li>In the context of data modeling and database design, an attribute is a property or characteristic of an entity, typically represented as a column in a database table. An attribute can be a simple data value (e.g., a string, integer, or date) or a complex data structure (e.g., an array or object).</li>
+<li>For example, consider a database table that represents a collection of users. Each user in the table might have attributes such as name, email, and date of birth. These attributes can be used to describe the characteristics of each user in the table.</li>
+<li>In the context of machine learning, an attribute is a feature or characteristic of a data instance that can be used for prediction or classification. For example, in a dataset of customer data, each customer might have attributes such as age, income, and location, which could be used to predict their purchasing behavior.</li>
+<li>In both cases, the attributes of an entity or data instance are used to describe and differentiate it from other entities or instances in the same data set.</li>
+</ul>
+<h3 id="box-and-whisker-plot">Box and whisker plot</h3>
+<ul>
+<li>A box and whisker plot (also known as a box plot) is a graphical representation of a set of numerical data that summarizes several important features of the data using a simple and visually effective display. It is typically used to visualize the distribution of the data and to identify any outliers or unusual observations.</li>
+<li>To create a box and whisker plot, the data is first sorted into numerical order. The middle 50% of the data is then represented by a box, which extends from the lower quartile (the 25th percentile) to the upper quartile (the 75th percentile). The lower and upper quartiles are the points that divide the data into four equal parts.</li>
+<li>The median (the 50th percentile) is represented by a line inside the box. The median is the middle value of the data, such that half of the data is above it and half is below it.</li>
+<li>The &ldquo;whiskers&rdquo; of the plot extend from the box to the minimum and maximum values of the data, unless there are outliers present, in which case the whiskers extend only to the most extreme data points that are not outliers. Outliers are data points that are significantly farther from the main body of the data than the rest of the data. They are typically plotted separately as individual points on the plot.</li>
+<li>Box and whisker plots are useful for comparing the distributions of different sets of data, or for identifying patterns and trends in a single set of data.</li>
+</ul>
+<h3 id="categorical-data">Categorical data</h3>
+<h3 id="collective-outlier">Collective outlier</h3>
+<h3 id="contextual-outlier">Contextual outlier</h3>
+<h3 id="covariate">Covariate</h3>
+<h3 id="data-point">Data point</h3>
+<h3 id="detrending">Detrending</h3>
+<h3 id="eigenvalue">Eigenvalue</h3>
+<h3 id="eigenvector">Eigenvector</h3>
+<h3 id="feature">Feature</h3>
+<h3 id="imputation">Imputation</h3>
+<h3 id="observation">Observation</h3>
+<h3 id="outcome">Outcome</h3>
+<h3 id="pca">PCA</h3>
+<h3 id="point-outlier">Point outlier</h3>
+<h3 id="predictor">Predictor</h3>
+<h3 id="principal-component-analysis-pca">Principal component analysis (PCA)</h3>
+<h3 id="quantitative-data">Quantitative data</h3>
+<h3 id="response">Response</h3>
+<h3 id="scaling">Scaling</h3>
+<h3 id="standardization">Standardization</h3>
+<h3 id="structured-data">Structured data</h3>
+<h3 id="time-series-data">Time series data</h3>
+<h3 id="unstructured-data">Unstructured data</h3>
 <h2 id="design-of-experiments">Design of Experiments</h2>
+<h3 id="ab-testing">A/B testing</h3>
+<h3 id="analysis-of-varianceanova">Analysis of Variance/ANOVA</h3>
+<h3 id="balanced-design">Balanced design</h3>
+<h3 id="blocking">Blocking</h3>
+<h3 id="control">Control</h3>
+<h3 id="design-of-experiments-1">Design of experiments</h3>
+<h3 id="exploitation">Exploitation</h3>
+<h3 id="exploration">Exploration</h3>
+<h3 id="factorial-design">Factorial design</h3>
+<h3 id="fractional-factorial-design">Fractional factorial design</h3>
+<h3 id="full-factorial-design">Full factorial design</h3>
+<h3 id="multi-armed-bandit">Multi-armed bandit</h3>
+<h3 id="response-surface">Response surface</h3>
 <h2 id="game-theory">Game Theory</h2>
+<h3 id="cooperative-game-theory">Cooperative game theory</h3>
+<h3 id="game-theory-1">Game theory</h3>
+<h3 id="mixed-strategyrandomized-strategy">Mixed strategy/randomized strategy</h3>
+<h3 id="prisoners-dilemma">Prisoner&rsquo;s dilemma</h3>
+<h3 id="pure-strategy">Pure strategy</h3>
+<h3 id="sequential-game">Sequential game</h3>
+<h3 id="simultaneous-game">Simultaneous game</h3>
+<h3 id="stable-equilibrium">Stable equilibrium</h3>
+<h3 id="zero-sum-game">Zero-sum game</h3>
 <h2 id="model-quality">Model Quality</h2>
+<h3 id="aic">AIC</h3>
+<h3 id="akaike-information-criterion-aic">Akaike information criterion (AIC)</h3>
+<h3 id="bayesian-information-criterion-bic">Bayesian Information criterion (BIC)</h3>
+<h3 id="bic">BIC</h3>
+<h3 id="causation">Causation</h3>
+<h3 id="corrected-aic">Corrected AIC</h3>
+<h3 id="correlation">Correlation</h3>
+<h3 id="cross-validation">Cross-validation</h3>
+<h3 id="hypothesis-test">Hypothesis test</h3>
+<h3 id="k-fold-cross-validation">k-fold cross-validation</h3>
+<h3 id="likelihood">Likelihood</h3>
+<h3 id="maximum-likelihood">Maximum likelihood</h3>
+<h3 id="missing-data">Missing data</h3>
+<h3 id="random-effects">Random effects</h3>
+<h3 id="real-effects">Real effects</h3>
+<h3 id="sum-of-squared-errors">Sum-of-squared errors</h3>
+<h3 id="test-datatest-set">Test data/test set</h3>
+<h3 id="training-datatraining-set">Training data/training set</h3>
+<h3 id="validation">Validation</h3>
+<h3 id="validation-datavalidation-set">Validation data/validation set</h3>
 <h2 id="non-parametric-tests">Non-Parametric Tests</h2>
+<h3 id="mann-whitney-test">Mann-Whitney test</h3>
+<h3 id="mcnemars-test">McNemar&rsquo;s test</h3>
+<h3 id="nonparametric-test">Nonparametric test</h3>
+<h3 id="paired-samples">Paired samples</h3>
+<h3 id="parametric-test">Parametric test</h3>
+<h3 id="wilcoxon-signed-rank-test-one-sample">Wilcoxon signed rank test (one sample)</h3>
+<h3 id="wilcoxon-signed-rank-test">Wilcoxon signed rank test</h3>
 <h2 id="optimization">Optimization</h2>
+<h3 id="approximate-dynamic-program">Approximate dynamic program</h3>
+<h3 id="arc">Arc</h3>
+<h3 id="assignment-problem">Assignment problem</h3>
+<h3 id="bellmans-equation">Bellman&rsquo;s equation</h3>
+<h3 id="binary-integer-program">Binary integer program</h3>
+<h3 id="binary-variable">Binary variable</h3>
+<h3 id="chance-constraint">Chance constraint</h3>
+<h3 id="clique">Clique</h3>
+<h3 id="concave-function">Concave function</h3>
+<h3 id="constant">Constant</h3>
+<h3 id="constraint">Constraint</h3>
+<h3 id="convex-function">Convex function</h3>
+<h3 id="convex-optimization-model">Convex optimization model</h3>
+<h3 id="convex-quadratic-function">Convex quadratic function</h3>
+<h3 id="convex-quadratic-program">Convex quadratic program</h3>
+<h3 id="convex-set">Convex set</h3>
+<h3 id="decision">Decision</h3>
+<h3 id="diet-problem">Diet problem</h3>
+<h3 id="dynamic-programming">Dynamic programming</h3>
+<h3 id="edge">Edge</h3>
+<h3 id="feasible-solution">Feasible solution</h3>
+<h3 id="fixed-charge">Fixed charge</h3>
+<h3 id="flow">Flow</h3>
+<h3 id="global-optimummaximumminimum">Global optimum/maximum/minimum</h3>
+<h3 id="graph">Graph</h3>
+<h3 id="greedy-algorithm">Greedy algorithm</h3>
+<h3 id="improving-direction">Improving direction</h3>
+<h3 id="initialization">Initialization</h3>
+<h3 id="integer-program">Integer program</h3>
+<h3 id="iterate">Iterate</h3>
+<h3 id="linear-equation">Linear equation</h3>
+<h3 id="linear-function">Linear function</h3>
+<h3 id="linear-inequality">Linear inequality</h3>
+<h3 id="linear-program">Linear program</h3>
+<h3 id="local-optimummaximumminimum">Local optimum/maximum/minimum</h3>
+<h3 id="louvain-algorithm">Louvain algorithm</h3>
+<h3 id="markov-decision-process">Markov decision process</h3>
+<h3 id="mathematical-programming">Mathematical programming</h3>
+<h3 id="maximization-problem">Maximization problem</h3>
+<h3 id="maximum-flow-problem">Maximum flow problem</h3>
+<h3 id="minimization-problem">Minimization problem</h3>
+<h3 id="modularity">Modularity</h3>
+<h3 id="most-optimal">Most optimal</h3>
+<h3 id="network">Network</h3>
+<h3 id="network-optimization-problem">Network optimization problem</h3>
+<h3 id="node">Node</h3>
+<h3 id="non-convex-program">Non-convex program</h3>
+<h3 id="non-negativity-constraints">Non-negativity constraints</h3>
+<h3 id="objective-function">Objective function</h3>
+<h3 id="optimal">Optimal</h3>
+<h3 id="optimal-solution">Optimal solution</h3>
+<h3 id="optimization-1">Optimization</h3>
+<h3 id="robust-solution">Robust solution</h3>
+<h3 id="scenario">Scenario</h3>
+<h3 id="shortest-path-problem">Shortest path problem</h3>
+<h3 id="solution-in-the-optimization-sense">Solution (in the optimization sense)</h3>
+<h3 id="state">State</h3>
+<h3 id="step-size">Step size</h3>
+<h3 id="stochastic-dynamic-program">Stochastic dynamic program</h3>
+<h3 id="stochastic-optimization">Stochastic optimization</h3>
+<h3 id="uncertainty">Uncertainty</h3>
+<h3 id="variable-optimization-sense">Variable (optimization sense)</h3>
+<h3 id="variable-statistics-sense">Variable (statistics sense)</h3>
+<h3 id="vertex">Vertex</h3>
 <h2 id="probability-based-models">Probability based models</h2>
+<h3 id="action">Action</h3>
+<h3 id="arrival-rate">Arrival rate</h3>
+<h3 id="balking">Balking</h3>
+<h3 id="bayes-theorembayes-rule">Bayes&rsquo; theorem/Bayes&rsquo; rule</h3>
+<h3 id="continuous-time-simulation">Continuous-time simulation</h3>
+<h3 id="decision-point">Decision point</h3>
+<h3 id="deterministic-simulation">Deterministic simulation</h3>
+<h3 id="discrete-event-simulation">Discrete-event simulation</h3>
+<h3 id="empirical-bayes-model">Empirical Bayes model</h3>
+<h3 id="entity">Entity</h3>
+<h3 id="fifo">FIFO</h3>
+<h3 id="interarrival-time">Interarrival time</h3>
+<h3 id="kendall-notation">Kendall notation</h3>
+<h3 id="lifo">LIFO</h3>
+<h3 id="markov-chain">Markov chain</h3>
+<h3 id="memoryless-markov-chain">Memoryless (Markov chain)</h3>
+<h3 id="module">Module</h3>
+<h3 id="queue">Queue</h3>
+<h3 id="queuing">Queuing</h3>
+<h3 id="replication">Replication</h3>
+<h3 id="resource">Resource</h3>
+<h3 id="service-rate">Service rate</h3>
+<h3 id="simulation">Simulation</h3>
+<h3 id="steady-state">Steady state</h3>
+<h3 id="stochastic-simulation">Stochastic simulation</h3>
+<h3 id="transition-matrix">Transition matrix</h3>
+<h3 id="transition-probability">Transition probability</h3>
+<h3 id="validation-of-simulation">Validation (of simulation)</h3>
 <h2 id="probability-distributions">Probability distributions</h2>
+<h3 id="bernoulli-distribution">Bernoulli distribution</h3>
+<h3 id="bias">Bias</h3>
+<h3 id="binomial-distribution">Binomial distribution</h3>
+<h3 id="distribution-fitting">Distribution-fitting</h3>
+<h3 id="exponential-distribution">Exponential distribution</h3>
+<h3 id="geometric-distribution">Geometric distribution</h3>
+<h3 id="iid">iid</h3>
+<h3 id="independent">Independent</h3>
+<h3 id="independent-and-identically-distributed-iid">Independent and identically distributed (iid)</h3>
+<h3 id="lower-tail">Lower tail</h3>
+<h3 id="memoryless-distribution">Memoryless (distribution)</h3>
+<h3 id="normal-distribution">Normal distribution</h3>
+<h3 id="poisson-distribution">Poisson distribution</h3>
+<h3 id="q-q-plot">Q-Q plot</h3>
+<h3 id="tails">Tail(s)</h3>
+<h3 id="upper-tail">Upper tail</h3>
+<h3 id="weibull-distribution">Weibull distribution</h3>
 <h2 id="regression">Regression</h2>
+<h3 id="adjusted-r-squaredadjusted-r2">Adjusted R-squared/Adjusted R2</h3>
+<h3 id="area-under-curveauc">Area under curve/AUC</h3>
+<h3 id="bayesian-regression">Bayesian regression</h3>
+<h3 id="box-cox-transformation">Box-Cox transformation</h3>
+<h3 id="branching">Branching</h3>
+<h3 id="cart">CART</h3>
+<h3 id="classification-tree">Classification tree</h3>
+<h3 id="concordance-index">Concordance index</h3>
+<h3 id="decision-tree">Decision tree</h3>
+<h3 id="earth">Earth</h3>
+<h3 id="elastic-net">Elastic net</h3>
+<h3 id="forest">Forest</h3>
+<h3 id="interaction-term">Interaction term</h3>
+<h3 id="𝑘-nearest-neighbor-regression">𝑘-Nearest-Neighbor regression</h3>
+<h3 id="knot">Knot</h3>
+<h3 id="lassolasso-regression">Lasso/Lasso regression</h3>
+<h3 id="leaf">Leaf</h3>
+<h3 id="linear-regression">Linear regression</h3>
+<h3 id="logistic-regression">Logistic regression</h3>
+<h3 id="logit-model">Logit model</h3>
+<h3 id="mars">MARS</h3>
+<h3 id="multi-adaptive-regression-splines-mars">Multi-adaptive regression splines (MARS)</h3>
+<h3 id="p-value">p-value</h3>
+<h3 id="p-value-fishing">p-value fishing</h3>
+<h3 id="poisson-regression">Poisson regression</h3>
+<h3 id="pruning">Pruning</h3>
+<h3 id="pseudo-r-squaredpseudo-r2">Pseudo-R-squared/Pseudo-R2</h3>
+<h3 id="r-squaredr2">R-squared/R2</h3>
+<h3 id="random-forest">Random forest</h3>
+<h3 id="receiver-operating-characteristic-curve-roc-curve">Receiver operating characteristic curve (ROC curve)</h3>
+<h3 id="regression-1">Regression</h3>
+<h3 id="regression-splines">Regression splines</h3>
+<h3 id="regression-tree">Regression tree</h3>
+<h3 id="ridge-regression">Ridge regression</h3>
+<h3 id="roc-curve">ROC curve</h3>
+<h3 id="root">Root</h3>
+<h3 id="spline-regression">Spline regression</h3>
+<h3 id="transformation">Transformation</h3>
+<h3 id="tree">Tree</h3>
 <h2 id="time-series-models">Time series models</h2>
+<h3 id="additive-seasonality">Additive seasonality</h3>
+<h3 id="arima">ARIMA</h3>
+<h3 id="autoregression">Autoregression</h3>
+<h3 id="autoregressive-integrated-moving-average-arima">Autoregressive integrated moving average (ARIMA)</h3>
+<h3 id="differencing">Differencing</h3>
+<h3 id="double-exponential">Double exponential</h3>
+<h3 id="smoothing">smoothing</h3>
+<h3 id="exponential-smoothing">Exponential smoothing</h3>
+<h3 id="garch">GARCH</h3>
+<h3 id="generalized-autoregressive-conditional-heteroscedasticity-garch">Generalized autoregressive conditional heteroscedasticity (GARCH)</h3>
+<h3 id="holt-winters-method">Holt-Winters method</h3>
+<h3 id="moving-average">Moving average</h3>
+<h3 id="multiplicative-seasonality">Multiplicative seasonality</h3>
+<h3 id="seasonalitycycles">Seasonality/cycles</h3>
+<h3 id="seasonality-lengthcycle-length">Seasonality length/cycle length</h3>
+<h3 id="single-exponential-smoothing">Single exponential smoothing</h3>
+<h3 id="smoothing-1">Smoothing</h3>
+<h3 id="smoothing-constant">Smoothing constant</h3>
+<h3 id="stationary-process">Stationary process</h3>
+<h3 id="trend">Trend</h3>
+<h3 id="triple-exponential-smoothing">Triple exponential smoothing</h3>
+<h3 id="winters-method">Winters&rsquo; method</h3>
 <h2 id="variable-selection">Variable Selection</h2>
-<h2 id="other-topics">Other Topics</h2>
+<h3 id="backward-elimination">Backward elimination</h3>
+<h3 id="elastic-net-1">Elastic net</h3>
+<h3 id="forward-selection">Forward selection</h3>
+<h3 id="lassolasso-regression-1">Lasso/Lasso regression</h3>
+<h3 id="overfitting">Overfitting</h3>
+<h3 id="regularization">Regularization</h3>
+<h3 id="ridge-regression-1">Ridge regression</h3>
+<h3 id="simplicity-of-a-model">Simplicity (of a model)</h3>
+<h3 id="stepwise-regression">Stepwise regression</h3>
+<h3 id="variable-selection-1">Variable selection</h3>
+<h2 id="misc">Misc</h2>
+<h3 id="1-norm">1-norm</h3>
+<h3 id="2-norm">2-norm</h3>
+<h3 id="convex-hull-of-a-set-of-points">Convex hull (of a set of points)</h3>
+<h3 id="descriptive-analytics">Descriptive analytics</h3>
+<h3 id="distance">Distance</h3>
+<h3 id="elbow-diagram">Elbow diagram</h3>
+<h3 id="error-per-data-point">Error (per data point)</h3>
+<h3 id="error-total-over-data-set">Error (total over data set)</h3>
+<h3 id="euclidian-distancestraight--line-distance">Euclidian distance/straight- line distance</h3>
+<h3 id="fitting">Fitting</h3>
+<h3 id="heteroscedasticity">Heteroscedasticity</h3>
+<h3 id="infinity-norm">Infinity-norm</h3>
+<h3 id="linear-combination">Linear combination</h3>
+<h3 id="manhattan-distance">Manhattan distance</h3>
+<h3 id="minkowski-distance-of-order-𝑝">Minkowski distance (of order 𝑝)</h3>
+<h3 id="model-mathematical">Model (mathematical)</h3>
+<h3 id="multiplier">Multiplier</h3>
+<h3 id="normdistance-norm">Norm/distance norm</h3>
+<h3 id="order-of-magnitude">Order of magnitude</h3>
+<h3 id="orthogonal">Orthogonal</h3>
+<h3 id="outlier">Outlier</h3>
+<h3 id="overfitting-1">Overfitting</h3>
+<h3 id="𝑝-norm">𝑝-norm</h3>
+<h3 id="parameter">Parameter</h3>
+<h3 id="perturbation">Perturbation</h3>
+<h3 id="prediction">Prediction</h3>
+<h3 id="predictive-analytics">Predictive analytics</h3>
+<h3 id="prescriptive-analytics">Prescriptive analytics</h3>
+<h3 id="rectilinear-distance">Rectilinear distance</h3>
+<h3 id="threshold">Threshold</h3>
+<h3 id="transformation-1">Transformation</h3>
 </div>
 	</section>
 
@@ -314,7 +1005,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		31 words in this page.
+		9550 words in this page.
 	</div>
 </div>
 
