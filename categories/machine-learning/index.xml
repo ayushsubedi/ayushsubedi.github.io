@@ -2199,7 +2199,7 @@ only showing top 20 rows
 &lt;li&gt;The number of dimensions in a dataset is often referred to as the &amp;ldquo;dimensionality&amp;rdquo; of the dataset. High-dimensional datasets, which have a large number of dimensions, can be difficult to work with and visualize, as it can be challenging to represent the relationships between all of the dimensions in a meaningful way.&lt;/li&gt;
 &lt;li&gt;In machine learning, techniques such as dimensionality reduction can be used to reduce the number of dimensions in a dataset, while still preserving the important information. This can be useful for tasks such as visualization and training machine learning models, which may be more efficient and effective on lower-dimensional data.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;expectation-maximization-algorithm-em-algorithm&#34;&gt;Expectation-maximization algorithm (EM algorithm)&lt;/h3&gt;
+&lt;h3 id=&#34;em-algorithm-expectation-maximization-algorithm&#34;&gt;EM algorithm (Expectation-Maximization algorithm)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The EM algorithm (Expectation-Maximization algorithm) is a widely used method for estimating the parameters of a statistical model when there is missing or incomplete data. It is an iterative algorithm that alternates between two steps: the expectation (E) step and the maximization (M) step.&lt;/li&gt;
 &lt;li&gt;In the E step, the algorithm estimates the expected value of the complete data likelihood function (a measure of the probability of the data given the model parameters) based on the current parameter values. In the M step, the algorithm updates the parameter values to maximize the expected complete data likelihood. The process is then repeated until convergence, at which point the parameter estimates are considered to be optimal.&lt;/li&gt;
@@ -2515,8 +2515,10 @@ where TP is the number of true positives (patients with a positive test result w
 &lt;li&gt;True negatives are typically represented by the letter TN in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;true-positive-tp&#34;&gt;True positive (TP)&lt;/h3&gt;
-&lt;p&gt;A true positive is a prediction made by a diagnostic test or other classifier that an event or condition is present, and the event or condition is indeed present. In the context of statistical hypothesis testing and machine learning, a true positive is a prediction made by a model that an instance belongs to the positive class, and the instance does indeed belong to the positive class.&lt;/p&gt;
-&lt;p&gt;True positives are typically represented by the letter TP in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A true positive is a prediction made by a diagnostic test or other classifier that an event or condition is present, and the event or condition is indeed present. In the context of statistical hypothesis testing and machine learning, a true positive is a prediction made by a model that an instance belongs to the positive class, and the instance does indeed belong to the positive class.&lt;/li&gt;
+&lt;li&gt;True positives are typically represented by the letter TP in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;data&#34;&gt;Data&lt;/h2&gt;
 &lt;h3 id=&#34;attribute&#34;&gt;Attribute&lt;/h3&gt;
 &lt;ul&gt;
@@ -2536,8 +2538,8 @@ where TP is the number of true positives (patients with a positive test result w
 &lt;h3 id=&#34;categorical-data&#34;&gt;Categorical data&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Categorical data is data that can be divided into categories or groups. These categories are usually based on some shared characteristics or qualities. Categorical data can be either nominal, meaning the categories do not have any specific order or ranking, or ordinal, meaning the categories are ranked or ordered in some way.&lt;/li&gt;
-&lt;li&gt;Examples of categorical data include:
--Nominal data:
+&lt;li&gt;Examples of categorical data include:&lt;/li&gt;
+&lt;li&gt;Nominal data:
 &lt;ul&gt;
 &lt;li&gt;Gender (male, female)&lt;/li&gt;
 &lt;li&gt;Eye color (brown, blue, green)&lt;/li&gt;
@@ -2626,7 +2628,7 @@ where TP is the number of true positives (patients with a positive test result w
 &lt;li&gt;Observations are used to collect and analyze data in order to understand patterns, trends, and relationships within the data. By examining individual observations and the relationships between them, it is possible to draw conclusions and make predictions about the population or system being studied.&lt;/li&gt;
 &lt;li&gt;Observations can be either qualitative, meaning they describe a characteristic or attribute of an object or phenomenon, or quantitative, meaning they represent a numerical measurement. Observations are usually organized and stored in a dataset, which can be a table, spreadsheet, or other structured format. A dataset typically contains multiple observations, and each observation is often represented by a row in the dataset.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;pca&#34;&gt;PCA&lt;/h3&gt;
+&lt;h3 id=&#34;principal-component-analysis-pca&#34;&gt;Principal component analysis (PCA)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Principal component analysis (PCA) is a statistical technique that is used to reduce the dimensionality of a dataset by identifying and projecting the data onto a smaller set of orthogonal (uncorrelated) dimensions, called principal components.&lt;/li&gt;
 &lt;li&gt;PCA is often used as a preprocessing step for machine learning algorithms, as it can help to remove noise and redundancy from the data, and make the data easier to visualize and analyze. It can also help to identify patterns and trends in the data, and to identify the most important variables or features in the dataset.&lt;/li&gt;

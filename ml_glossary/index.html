@@ -115,19 +115,7 @@ onload='renderMathInElement(document.body);'></script>
 		href='/categories/analytics'>analytics</a>&nbsp;&#47;
 	
 	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
-		href='/categories/machine-learning'>machine-learning</a>&nbsp;&#47;
-	
-	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
-		href='/categories/certification'>certification</a>&nbsp;&#47;
-	
-	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
-		href='/categories/aws'>AWS</a>&nbsp;&#47;
-	
-	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
-		href='/categories/aws-certified-ml-specialty-exam-mls-c01'>AWS Certified ML - Specialty exam (MLS-C01)</a>&nbsp;&#47;
-	
-	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
-		href='/categories/modeling'>Modeling</a>
+		href='/categories/machine-learning'>machine-learning</a>
 	
 	
 	
@@ -141,7 +129,10 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/certification'>certification</a>
+		href='/tags/analytics'>analytics</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/machine-learning'>machine-learning</a>
 	
 	
 	
@@ -237,7 +228,7 @@ onload='renderMathInElement(document.body);'></script>
 <li>The number of dimensions in a dataset is often referred to as the &ldquo;dimensionality&rdquo; of the dataset. High-dimensional datasets, which have a large number of dimensions, can be difficult to work with and visualize, as it can be challenging to represent the relationships between all of the dimensions in a meaningful way.</li>
 <li>In machine learning, techniques such as dimensionality reduction can be used to reduce the number of dimensions in a dataset, while still preserving the important information. This can be useful for tasks such as visualization and training machine learning models, which may be more efficient and effective on lower-dimensional data.</li>
 </ul>
-<h3 id="expectation-maximization-algorithm-em-algorithm">Expectation-maximization algorithm (EM algorithm)</h3>
+<h3 id="em-algorithm-expectation-maximization-algorithm">EM algorithm (Expectation-Maximization algorithm)</h3>
 <ul>
 <li>The EM algorithm (Expectation-Maximization algorithm) is a widely used method for estimating the parameters of a statistical model when there is missing or incomplete data. It is an iterative algorithm that alternates between two steps: the expectation (E) step and the maximization (M) step.</li>
 <li>In the E step, the algorithm estimates the expected value of the complete data likelihood function (a measure of the probability of the data given the model parameters) based on the current parameter values. In the M step, the algorithm updates the parameter values to maximize the expected complete data likelihood. The process is then repeated until convergence, at which point the parameter estimates are considered to be optimal.</li>
@@ -553,8 +544,10 @@ where TP is the number of true positives (patients with a positive test result w
 <li>True negatives are typically represented by the letter TN in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.</li>
 </ul>
 <h3 id="true-positive-tp">True positive (TP)</h3>
-<p>A true positive is a prediction made by a diagnostic test or other classifier that an event or condition is present, and the event or condition is indeed present. In the context of statistical hypothesis testing and machine learning, a true positive is a prediction made by a model that an instance belongs to the positive class, and the instance does indeed belong to the positive class.</p>
-<p>True positives are typically represented by the letter TP in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.</p>
+<ul>
+<li>A true positive is a prediction made by a diagnostic test or other classifier that an event or condition is present, and the event or condition is indeed present. In the context of statistical hypothesis testing and machine learning, a true positive is a prediction made by a model that an instance belongs to the positive class, and the instance does indeed belong to the positive class.</li>
+<li>True positives are typically represented by the letter TP in performance metrics such as sensitivity, specificity, and the positive and negative predictive values. These metrics are used to evaluate the accuracy of a diagnostic test or other classifier. For example, the sensitivity of a test is the proportion of true positive predictions made by the test to the total number of actual positive cases, while the specificity of a test is the proportion of true negative predictions made by the test to the total number of actual negative cases.</li>
+</ul>
 <h2 id="data">Data</h2>
 <h3 id="attribute">Attribute</h3>
 <ul>
@@ -574,8 +567,8 @@ where TP is the number of true positives (patients with a positive test result w
 <h3 id="categorical-data">Categorical data</h3>
 <ul>
 <li>Categorical data is data that can be divided into categories or groups. These categories are usually based on some shared characteristics or qualities. Categorical data can be either nominal, meaning the categories do not have any specific order or ranking, or ordinal, meaning the categories are ranked or ordered in some way.</li>
-<li>Examples of categorical data include:
--Nominal data:
+<li>Examples of categorical data include:</li>
+<li>Nominal data:
 <ul>
 <li>Gender (male, female)</li>
 <li>Eye color (brown, blue, green)</li>
@@ -664,7 +657,7 @@ where TP is the number of true positives (patients with a positive test result w
 <li>Observations are used to collect and analyze data in order to understand patterns, trends, and relationships within the data. By examining individual observations and the relationships between them, it is possible to draw conclusions and make predictions about the population or system being studied.</li>
 <li>Observations can be either qualitative, meaning they describe a characteristic or attribute of an object or phenomenon, or quantitative, meaning they represent a numerical measurement. Observations are usually organized and stored in a dataset, which can be a table, spreadsheet, or other structured format. A dataset typically contains multiple observations, and each observation is often represented by a row in the dataset.</li>
 </ul>
-<h3 id="pca">PCA</h3>
+<h3 id="principal-component-analysis-pca">Principal component analysis (PCA)</h3>
 <ul>
 <li>Principal component analysis (PCA) is a statistical technique that is used to reduce the dimensionality of a dataset by identifying and projecting the data onto a smaller set of orthogonal (uncorrelated) dimensions, called principal components.</li>
 <li>PCA is often used as a preprocessing step for machine learning algorithms, as it can help to remove noise and redundancy from the data, and make the data easier to visualize and analyze. It can also help to identify patterns and trends in the data, and to identify the most important variables or features in the dataset.</li>
@@ -3108,7 +3101,7 @@ Orthonormal vectors: Two vectors are said to be orthonormal if they are orthogon
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		58101 words in this page.
+		58104 words in this page.
 	</div>
 </div>
 
@@ -3144,13 +3137,9 @@ Orthonormal vectors: Two vectors are said to be orthonormal if they are orthogon
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
 		
-			<a href="/posts/aws_ml_speciality_data_engineering/">AWS Certified ML - Specialty exam (MLS-C01) - 1. Data Engineering</a>&nbsp;&nbsp;&#47;&nbsp;
+			<a href="/posts/beginners_trap/">The Beginner&#39;s Trap in analytics</a>&nbsp;&nbsp;&#47;&nbsp;
 		
-			<a href="/posts/aws_ml_speciality_modeling/">AWS Certified ML - Specialty exam (MLS-C01) - 3b. Modeling</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/aws_ml_speciality_ml/">AWS Certified ML - Specialty exam (MLS-C01) - 4. Machine Learning Implementation and Operations</a>&nbsp;&nbsp;&#47;&nbsp;
-		
-			<a href="/posts/tfidf/">Term Frequecy Inverse Document Frequency (TFIDF)</a>
+			<a href="/posts/ride_hailing_analytics/">Analytics for Ride Hailing Services</a>
 		
 </span>
 </div>
