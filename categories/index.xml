@@ -12,38 +12,11 @@
     
     
     <item>
-      <title>certificate</title>
-      <link>https://ayushsubedi.github.io/categories/certificate/</link>
-      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/certificate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ethics</title>
       <link>https://ayushsubedi.github.io/categories/ethics/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/ethics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hippa</title>
-      <link>https://ayushsubedi.github.io/categories/hippa/</link>
-      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/hippa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>research</title>
-      <link>https://ayushsubedi.github.io/categories/research/</link>
-      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/research/</guid>
       <description></description>
     </item>
     
@@ -57,24 +30,6 @@
     </item>
     
     <item>
-      <title>analytics</title>
-      <link>https://ayushsubedi.github.io/categories/analytics/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/analytics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://ayushsubedi.github.io/categories/aws/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01)</title>
       <link>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
@@ -84,9 +39,27 @@
     </item>
     
     <item>
+      <title>analytics</title>
+      <link>https://ayushsubedi.github.io/categories/analytics/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://ayushsubedi.github.io/categories/aws/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>certification</title>
       <link>https://ayushsubedi.github.io/categories/certification/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/certification/</guid>
       <description></description>
@@ -95,45 +68,18 @@
     <item>
       <title>Data Engineering</title>
       <link>https://ayushsubedi.github.io/categories/data-engineering/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/data-engineering/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Exploratory Data Analysis</title>
-      <link>https://ayushsubedi.github.io/categories/exploratory-data-analysis/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/exploratory-data-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning Implementation and Operations</title>
-      <link>https://ayushsubedi.github.io/categories/machine-learning-implementation-and-operations/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/machine-learning-implementation-and-operations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>machine-learning</title>
       <link>https://ayushsubedi.github.io/categories/machine-learning/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Modeling</title>
-      <link>https://ayushsubedi.github.io/categories/modeling/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/modeling/</guid>
       <description></description>
     </item>
     
@@ -147,15 +93,6 @@
     </item>
     
     <item>
-      <title>data-viz</title>
-      <link>https://ayushsubedi.github.io/categories/data-viz/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/data-viz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>georgia-tech</title>
       <link>https://ayushsubedi.github.io/categories/georgia-tech/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
@@ -165,29 +102,11 @@
     </item>
     
     <item>
-      <title>group-project</title>
-      <link>https://ayushsubedi.github.io/categories/group-project/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      <title>data viz</title>
+      <link>https://ayushsubedi.github.io/categories/data-viz/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/group-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>random-forest</title>
-      <link>https://ayushsubedi.github.io/categories/random-forest/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/random-forest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>XGBoost</title>
-      <link>https://ayushsubedi.github.io/categories/xgboost/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/xgboost/</guid>
+      <guid>https://ayushsubedi.github.io/categories/data-viz/</guid>
       <description></description>
     </item>
     

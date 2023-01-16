@@ -212,9 +212,192 @@ To minimize conflicts of interest in human subjects research, institutions and f
       
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
       <description>&lt;h1 id=&#34;work-in-progress-deterministic-optimization&#34;&gt;(Work in progress) Deterministic Optimization&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#do&#34;&gt;DO&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;introduction-to-optimization&#34;&gt;Introduction to Optimization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Process of improving&lt;/li&gt;
+&lt;li&gt;A mathematical approach for seeking a &amp;ldquo;best&amp;rdquo; &amp;ldquo;decision/action&amp;rdquo; from a &amp;ldquo;set of alternatives&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Designing a box:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given a 1 feet by 1 feet piece of cardboard, cut out corners and fold to make a box of maximum volume:
+    - Decision: x = how much to cut from each of the corners?
+    - Alternatives: 0&amp;lt;=x&amp;lt;=1/2
+    - Best: Maximize volume: V(x) = x(1-2x)^2 (x is the height and (1-2x)^2 is the base, and their product is the volume)
+    - Optimization formulation: max x(1-2x)^2 subject to 0&amp;lt;=x&amp;lt;=1/2 (which are the constraints in this case)
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Data Fitting:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given N data points (y1, x1)...(yN, xN) where  yi belongs to Real and xi belongs to Rn, for all i = 1..N, find a line y = a.Tx+b that best fits the data.
+    - Decision: A vector a that belongs to Rn and a scalar b that belongs to R
+    - Alternatives: All n-dimensional vectors and scalars
+    - Best: Minimise the sum of squared errors
+    - Optimization formulation: minimize the sum of squared error subject to a belongs to Rn and b belongs to R 
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Product Mix:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;A firm make n different products using m types of resources. Each unit of product i generates pi dollars of profit, and requires rij units of resource j. The firm has uj units of resource j available. How much of each product should the firm make to maximize profits?
+    - Decision:: how much of each product to make
+    - Alternatives: defined by the resource limits
+    - Best: Maximize profits
+    - Optimization formulation: 
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Sum notation vs Matrix notation&lt;/li&gt;
+&lt;li&gt;Project investment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;A firm is considering investing in n different R&amp;amp;D projects. Project j requires an investment of cj dollars and promises a return of rj dollars. The firm has a budget of B dollars. Which projects should the firm invest in?
+    - Decision: Whether or not to invest in project
+    - Alternatives: Defined by budget
+    - Best: Maximize return on investment
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Encode decisions/actions as &lt;strong&gt;decision variables&lt;/strong&gt; whose values we are seeking&lt;/li&gt;
+&lt;li&gt;Identify the relevant &lt;strong&gt;problem data&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Express &lt;strong&gt;constraints&lt;/strong&gt; on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data&lt;/li&gt;
+&lt;li&gt;Express the &lt;strong&gt;objective function&lt;/strong&gt; as a function of the decision variables and the problem data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ingredients-of-an-optimization-model&#34;&gt;Ingredients of an optimization model:&lt;/h2&gt;
+&lt;p&gt;Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;min or max f(x1, x2, .... , xn)
+subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m 
+        xj is continuous or discrete    j = 1,....,n
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;the-problem-setting&#34;&gt;The problem setting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Finite number of decision variables&lt;/li&gt;
+&lt;li&gt;A single objective function of decision variables and problem data
+&lt;ul&gt;
+&lt;li&gt;Multiple objective functions are handled by either taking a weighted comvination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data&lt;/li&gt;
+&lt;li&gt;There may be domain restrictions (continious or discrete) on some of the variables&lt;/li&gt;
+&lt;li&gt;The functions defining the objective and constraints are algebraic (typically with rational coeffiicients)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;minimization-vs-maximization&#34;&gt;Minimization vs Maximization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function&lt;/li&gt;
+&lt;li&gt;In theory, we will only consider minimization problem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;program-vs-optimization&#34;&gt;Program vs optimization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A program or mathematical program is an optimization problem with a finite number of variables and constraints written out using explicit mathematical (algebraic) expressions&lt;/li&gt;
+&lt;li&gt;The word program means plan/planning&lt;/li&gt;
+&lt;li&gt;Early application of optimization arose in planning resource allocations and gave rise to programming to mean optimization (predates computer programming)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;problem-classification&#34;&gt;Problem classification&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Functions&lt;/th&gt;
+&lt;th&gt;Variable domains&lt;/th&gt;
+&lt;th&gt;Problem Type&lt;/th&gt;
+&lt;th&gt;Difficulty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;All linear&lt;/td&gt;
+&lt;td&gt;Continuous variables&lt;/td&gt;
+&lt;td&gt;Linear Program&lt;/td&gt;
+&lt;td&gt;Easy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Some nonlinear&lt;/td&gt;
+&lt;td&gt;Continuous variables&lt;/td&gt;
+&lt;td&gt;Nonlinear Program or Nonlinear Optimization Problem&lt;/td&gt;
+&lt;td&gt;Easy/Difficult&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Linear/nonlinear&lt;/td&gt;
+&lt;td&gt;Some discrete&lt;/td&gt;
+&lt;td&gt;Integer Problem or Discrete Optimization Problem&lt;/td&gt;
+&lt;td&gt;Difficult&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;subclasses-of-nlp&#34;&gt;Subclasses of NLP&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Unconstrained optimization: No constraints or simple bound constraints on the variables (Box design example above)&lt;/li&gt;
+&lt;li&gt;Quadrative programming: objectives and constraints involve quadratic functions (Data fitting example above)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;subclasses-of-ip&#34;&gt;Subclasses of IP&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mixed Integer Linear Program
+&lt;ul&gt;
+&lt;li&gt;All linear functions&lt;/li&gt;
+&lt;li&gt;Some variables are continous and some are discrete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mixed Integer Nonlinear Program (MINLP)
+&lt;ul&gt;
+&lt;li&gt;Some nonlinear functions&lt;/li&gt;
+&lt;li&gt;Some variables are continous and some are discrete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mixed Integer Quadratic Program (MIQLP)
+&lt;ul&gt;
+&lt;li&gt;Nonlinear functions are quadratic&lt;/li&gt;
+&lt;li&gt;Some variables are continuous and some are discrete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;why-and-how-to-classify&#34;&gt;Why and how to classify?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Important to recognize the type of an optimization problem:
+&lt;ul&gt;
+&lt;li&gt;to formulate problems to be amenable to certain solution methods&lt;/li&gt;
+&lt;li&gt;to anticipate the difficulty of solving the problem&lt;/li&gt;
+&lt;li&gt;to know which solution methods to use&lt;/li&gt;
+&lt;li&gt;to design customized solution methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;how to classify:
+&lt;ul&gt;
+&lt;li&gt;check domain restriction on variables&lt;/li&gt;
+&lt;li&gt;check the structure of the functions involved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;portfolio-optimization-problem&#34;&gt;Portfolio Optimization Problem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify basic portfolio optimization and associated issues&lt;/li&gt;
+&lt;li&gt;Examine the Markowitz Portfolio Optimization approach
+&lt;ul&gt;
+&lt;li&gt;Markowitz Principle: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Multi object problem&lt;/li&gt;
+&lt;li&gt;Two objectives can be combined:
+&lt;ul&gt;
+&lt;li&gt;Maximize Expected Return - lambda*risk&lt;/li&gt;
+&lt;li&gt;Maximize Expected Return subject to risk &amp;lt;= s_max (constraint on risk)&lt;/li&gt;
+&lt;li&gt;Minimize Risk subject to return &amp;gt;= r_min (threshold on expected returns)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Optimization Problem Statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
+- have a one month expected return of at least a given threshold
+- minimize the risk(variance) of the portfolio return
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Decision: investment in each stock&lt;/li&gt;
+&lt;li&gt;alternatives: any investment that meets the budget and the minimum expected return requirement&lt;/li&gt;
+&lt;li&gt;best: minimize variance&lt;/li&gt;
+&lt;li&gt;Key trade-off: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?&lt;/li&gt;
+&lt;li&gt;Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved&lt;/li&gt;
+&lt;li&gt;Need to exercise great caution in these assumptions and not loose sight of the true underlying problem&lt;/li&gt;
+&lt;li&gt;Assumptions:
+&lt;ul&gt;
+&lt;li&gt;No transaction cost&lt;/li&gt;
+&lt;li&gt;Stocks does not need to be bought in blocks (any amount &amp;gt;=0 is fine)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Optimization Process: Decision Problem -&amp;gt; Model -&amp;gt; Data Collection -&amp;gt; Model Solution -&amp;gt; Analysis -&amp;gt; Problem solution&lt;/li&gt;
+&lt;li&gt;No clear cut recipe&lt;/li&gt;
+&lt;li&gt;Lots of feedbacks and iterations&lt;/li&gt;
+&lt;li&gt;Approximations and assumptions involved in each stage&lt;/li&gt;
+&lt;li&gt;Success requires good understanding of the actual problem (domain knowledge is important)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

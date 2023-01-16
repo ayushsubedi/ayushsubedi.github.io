@@ -12,11 +12,38 @@
     
     
     <item>
+      <title>certificate</title>
+      <link>https://ayushsubedi.github.io/tags/certificate/</link>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hippa</title>
+      <link>https://ayushsubedi.github.io/tags/hippa/</link>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/hippa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>learning</title>
       <link>https://ayushsubedi.github.io/tags/learning/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research</title>
+      <link>https://ayushsubedi.github.io/tags/research/</link>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/research/</guid>
       <description></description>
     </item>
     
@@ -102,6 +129,15 @@
     </item>
     
     <item>
+      <title>analytics</title>
+      <link>https://ayushsubedi.github.io/tags/analytics/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>apache-spark</title>
       <link>https://ayushsubedi.github.io/tags/apache-spark/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
@@ -120,11 +156,29 @@
     </item>
     
     <item>
+      <title>AWS</title>
+      <link>https://ayushsubedi.github.io/tags/aws/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>certification</title>
       <link>https://ayushsubedi.github.io/tags/certification/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/certification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Engineering</title>
+      <link>https://ayushsubedi.github.io/tags/data-engineering/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-engineering/</guid>
       <description></description>
     </item>
     
@@ -192,6 +246,15 @@
     </item>
     
     <item>
+      <title>Exploratory Data Analysis</title>
+      <link>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>feature-engineering</title>
       <link>https://ayushsubedi.github.io/tags/feature-engineering/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
@@ -242,6 +305,33 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/kinesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Implementation and Operations</title>
+      <link>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling</title>
+      <link>https://ayushsubedi.github.io/tags/modeling/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/modeling/</guid>
       <description></description>
     </item>
     
@@ -381,6 +471,15 @@
     </item>
     
     <item>
+      <title>data-viz</title>
+      <link>https://ayushsubedi.github.io/tags/data-viz/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Deep Learning</title>
       <link>https://ayushsubedi.github.io/tags/deep-learning/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
@@ -399,6 +498,15 @@
     </item>
     
     <item>
+      <title>group-project</title>
+      <link>https://ayushsubedi.github.io/tags/group-project/</link>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/group-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>PCA</title>
       <link>https://ayushsubedi.github.io/tags/pca/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
@@ -408,7 +516,7 @@
     </item>
     
     <item>
-      <title>Random Forest</title>
+      <title>random-forest</title>
       <link>https://ayushsubedi.github.io/tags/random-forest/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
@@ -521,15 +629,6 @@
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>analytics</title>
-      <link>https://ayushsubedi.github.io/tags/analytics/</link>
-      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/analytics/</guid>
       <description></description>
     </item>
     
@@ -764,15 +863,6 @@
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/flutter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data viz</title>
-      <link>https://ayushsubedi.github.io/tags/data-viz/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/data-viz/</guid>
       <description></description>
     </item>
     
@@ -1070,15 +1160,6 @@
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/group-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine-learning</title>
-      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     
