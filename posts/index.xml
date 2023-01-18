@@ -6,254 +6,56 @@
     <description>Recent content in Posts on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 14 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ethics in Human Research</title>
-      <link>https://ayushsubedi.github.io/posts/ethics_human_research/</link>
-      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/ethics_human_research/</guid>
-      <description>&lt;h1 id=&#34;ethics-in-human-research&#34;&gt;Ethics in Human Research&lt;/h1&gt;
-&lt;iframe width=&#34;100%&#34; height =&#34;600&#34; src=&#34;https://ayushsubedi.github.io/pdfs/citi_certificate.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
-&lt;h2 id=&#34;what&#34;&gt;What&lt;/h2&gt;
-&lt;p&gt;CITI (Collaborative Institutional Training Initiative) is a program that provides training on ethical and regulatory issues related to human subjects research. It offers online courses and resources to researchers, students, and staff at institutions around the world. The training covers topics such as the history and ethical principles of human subjects research, federal regulations and guidelines, and the responsibilities of researchers and institutional review boards (IRBs). Completing CITI training is often required for researchers who plan to conduct human subjects research at institutions that participate in the program.&lt;/p&gt;
-&lt;p&gt;CITI training for Social/Behavioral Research Investigators and Key Personnel covers the ethical and regulatory issues specific to social and behavioral research involving human subjects.&lt;/p&gt;
-&lt;h2 id=&#34;why&#34;&gt;Why&lt;/h2&gt;
-&lt;p&gt;By getting certified on the CITI program, individuals can demonstrate that they have received training on responsible conduct of research and are aware of the ethical principles involved in their work.&lt;/p&gt;
-&lt;iframe width=&#34;100%&#34; height=&#34;512&#34; src=&#34;https://www.youtube.com/embed/zZ3l1jgmYrY&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;h2 id=&#34;important-topics&#34;&gt;Important Topics&lt;/h2&gt;
-&lt;h3 id=&#34;the-belmont-report&#34;&gt;The Belmont Report&lt;/h3&gt;
-&lt;p&gt;The Belmont Report is a document that was created by the National Commission for the Protection of Human Subjects of Biomedical and Behavioral Research in 1979. The report sets out the ethical principles and guidelines that govern the conduct of research involving human subjects. The report is considered a seminal document in the field of research ethics, and its principles continue to be widely referenced today.&lt;/p&gt;
-&lt;p&gt;The report&amp;rsquo;s main principles are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Respect for persons&lt;/strong&gt;: This principle acknowledges the autonomy of individuals and the need for informed consent in research.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beneficence&lt;/strong&gt;: This principle requires that research should maximize benefits and minimize harm.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Non-maleficence&lt;/strong&gt;: This principle states that researchers should not cause harm to subjects.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Justice&lt;/strong&gt;: This principle requires that the benefits and burdens of research be distributed fairly among subjects.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The report also elaborates on the concept of informed consent and the protection of vulnerable populations such as children, prisoners, pregnant women, and individuals with cognitive impairment.&lt;/p&gt;
-&lt;p&gt;In summary, The Belmont Report is a widely recognized guide for ethical conduct of research involving human subjects, which provides the foundation for Federal Policy for the Protection of Human Subjects (also known as the Common Rule) and many institutional and national guidelines on human subjects research.&lt;/p&gt;
-&lt;p&gt;The Belmont Report was written in response to the infamous Tuskegee Syphilis Study:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Tuskegee-syphilis-study_doctor-injecting-subject.jpg/1600px-Tuskegee-syphilis-study_doctor-injecting-subject.jpg?20100319000952&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;the-nuremberg-code&#34;&gt;The Nuremberg Code&lt;/h3&gt;
-&lt;p&gt;The Nuremberg Code is a set of ethical principles for human experimentation that was developed as a result of the Nuremberg Trials after World War II. The trials were held to prosecute Nazi doctors and scientists who had conducted brutal and inhumane medical experiments on concentration camp prisoners during the war. The Nuremberg Code was developed to ensure that such atrocities would never happen again.&lt;/p&gt;
-&lt;p&gt;The code consists of 10 principles that were intended to guide the conduct of medical research involving human subjects. The principles are:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The voluntary, informed consent of the human subject is absolutely essential.&lt;/li&gt;
-&lt;li&gt;The experiment should be such as to yield fruitful results for the good of society, unprocurable by other methods or means of study, and not random and unnecessary in nature.&lt;/li&gt;
-&lt;li&gt;The experiment should be so designed and based on the results of animal experimentation and a knowledge of the natural history of the disease or other problem under study that the anticipated results will justify the performance of the experiment.&lt;/li&gt;
-&lt;li&gt;The experiment should be so conducted as to avoid all unnecessary physical and mental suffering and injury.&lt;/li&gt;
-&lt;li&gt;No experiment should be conducted where there is an a priori reason to believe that death or disabling injury will occur.&lt;/li&gt;
-&lt;li&gt;The degree of risk to be taken should never exceed that determined by the humanitarian importance of the problem to be solved by the experiment.&lt;/li&gt;
-&lt;li&gt;Proper preparations should be made and adequate facilities provided to protect the experimental subject against even remote possibilities of injury, disability, or death.&lt;/li&gt;
-&lt;li&gt;The experiment should be conducted only by scientifically qualified persons.&lt;/li&gt;
-&lt;li&gt;The highest degree of skill and care should be required through all stages of the experiment of those who conduct or engage in the experiment.&lt;/li&gt;
-&lt;li&gt;During the course of the experiment, the human subject should be at liberty to bring the experiment to an end if he has reached the physical or mental state where continuation of the experiment seems to him to be impossible.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The Nuremberg Code is considered a landmark document in the history of research ethics, and its principles continue to be widely referenced today. It serves as a foundation for the protection of human subjects in medical research and other fields. The principles of informed consent, beneficence and non-maleficence were for the first time defined and established as the foundation for ethical conduct in research involving human subjects.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/1/1e/Color_photograph_of_judges%27_bench_at_IMT.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;the-declaration-of-helsinki&#34;&gt;The Declaration of Helsinki&lt;/h3&gt;
-&lt;p&gt;The Declaration of Helsinki is a set of ethical principles for medical research involving human subjects, developed by the World Medical Association (WMA). The first version of the Declaration was adopted in 1964, and it has been revised several times since then. The most recent version was adopted in 2013.&lt;/p&gt;
-&lt;p&gt;The Declaration of Helsinki sets out ethical principles for the conduct of medical research involving human subjects, including guidelines for obtaining informed consent, protecting vulnerable populations, and ensuring the safety and well-being of research participants. The Declaration also includes principles for the conduct of research involving medical interventions, such as the use of placebo controls and the reporting of adverse events.&lt;/p&gt;
-&lt;p&gt;The Declaration of Helsinki includes the following principles:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Medical research involving human subjects must conform to generally accepted scientific principles and should be based on a thorough knowledge of the scientific literature.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The well-being of the individual research subject must take precedence over all other considerations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Informed consent must be obtained from all research subjects, or their legally authorized representatives, before the research begins.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Medical research involving human subjects should only be conducted if the importance of the objective outweighs the inherent risks and burdens to the research subjects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Medical research involving human subjects should not be conducted if there are other research methods available that are likely to yield essentially the same results.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Researchers have a duty to protect the privacy and confidentiality of research subjects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The design and performance of every medical study involving human subjects must be clearly formulated in an experimental protocol.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Every medical study involving human subjects must be preceded by the appropriate ethical and regulatory review.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Researchers have a duty to publish the results of their research, whether positive or negative, and must make all data available for further research.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Researchers have a duty to respect the rights and welfare of their research subjects, even after the study has been completed.&lt;/p&gt;
-&lt;p&gt;The Declaration of Helsinki is widely recognized as an important guide for the ethical conduct of medical research involving human subjects, and is considered a cornerstone of research ethics in the international medical community. It is also considered as a foundation of many national and institutional guidelines on human subjects research.&lt;/p&gt;
-&lt;h3 id=&#34;the-common-rule&#34;&gt;The Common Rule&lt;/h3&gt;
-&lt;p&gt;The Common Rule is a set of federal regulations for the protection of human subjects in research, developed by the U.S. Department of Health and Human Services (HHS) and other federal agencies. The regulations are officially known as the Federal Policy for the Protection of Human Subjects, and are commonly referred to as the &amp;ldquo;Common Rule.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;The Common Rule was first established in 1991 and applies to all research conducted or supported by HHS and other federal agencies that involve human subjects. The Common Rule sets out requirements for informed consent, institutional review board (IRB) review, and record-keeping, and it also provides guidance on the protection of vulnerable populations, such as children, prisoners, and individuals with cognitive impairments.&lt;/p&gt;
-&lt;p&gt;The Common Rule includes the following key requirements:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Informed consent&lt;/strong&gt;: Researchers must obtain the informed consent of research participants, or their legally authorized representatives, before beginning any research involving human subjects.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Institutional Review Board (IRB) review&lt;/strong&gt;: All research involving human subjects must be reviewed and approved by an IRB, an independent body that is responsible for evaluating the ethical and scientific aspects of the research.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Record-keeping&lt;/strong&gt;: Researchers must maintain records of all research involving human subjects, including the informed consent forms and the IRB approval documents.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Protection of vulnerable populations&lt;/strong&gt;: The Common Rule includes special provisions for protecting vulnerable populations, such as children, prisoners, and individuals with cognitive impairments.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Reporting&lt;/strong&gt;: The Common Rule requires that researchers must report certain information to the relevant federal agencies, such as any unanticipated problems involving risks to subjects or others, and any serious or continuing noncompliance with the regulations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The Common Rule is considered a fundamental framework for the protection of human subjects in the United States, serving as a foundation for the ethical conduct of research involving human subjects in the country. The Common Rule was revised in January 19, 2017, and the changes went into effect in 2018. The revisions are aimed at modernizing, strengthening, and making the regulations more effective in protecting human subjects involved in research.&lt;/p&gt;
-&lt;h3 id=&#34;research-with-human-subjects&#34;&gt;Research with human subjects&lt;/h3&gt;
-&lt;p&gt;Research with human subjects involves conducting studies or experiments on living individuals to gain knowledge or understanding about a certain topic. Such research can be conducted in a variety of fields, including medicine, psychology, sociology, and anthropology. Because research with human subjects has the potential to cause harm or impact individuals&amp;rsquo; rights and well-being, it is subject to strict ethical guidelines and regulations.&lt;/p&gt;
-&lt;p&gt;Researchers are required to obtain informed consent from participants and ensure that the potential risks of the research are minimized and that any potential benefits outweigh the risks. They must also ensure that the research is conducted in a way that protects participants&amp;rsquo; privacy and confidentiality. Research involving vulnerable populations, such as children or individuals with disabilities, may require additional safeguards.&lt;/p&gt;
-&lt;h3 id=&#34;informed-concent&#34;&gt;Informed Concent&lt;/h3&gt;
-&lt;p&gt;Informed consent is a process by which a researcher obtains permission from a research participant to participate in a study. Informed consent is considered a fundamental ethical principle in research involving human subjects. It is important because it ensures that participants are aware of the nature of the research, the risks and benefits involved, and any alternatives to participation. They also have the right to discontinue participation at any time.&lt;/p&gt;
-&lt;p&gt;During the informed consent process, the researcher is responsible for providing the participant with a clear and comprehensive explanation of the study, including its purpose, procedures, risks, benefits, and any potential consequences. Participants must also be informed of their right to withdraw from the study at any time, and any potential impact on their medical or legal rights.&lt;/p&gt;
-&lt;p&gt;Informed consent is typically documented by having the participant sign a written consent form, which should be written in language that is easy for the participant to understand. Research involving vulnerable populations, such as children or individuals with cognitive impairment, may require additional safeguards to ensure that informed consent is obtained in a way that is appropriate for the population.&lt;/p&gt;
-&lt;h3 id=&#34;research-with-children&#34;&gt;Research with Children&lt;/h3&gt;
-&lt;p&gt;Research with children involves conducting studies or experiments on individuals who have not yet reached the age of legal adulthood. Such research can be conducted in a variety of fields, including medicine, psychology, sociology, and anthropology. Because children are considered a vulnerable population, research involving them is subject to additional ethical guidelines and regulations to ensure their safety, well-being and rights are protected.&lt;/p&gt;
-&lt;p&gt;When conducting research with children, researchers must obtain informed consent from both the child (if they are capable of understanding the nature of the research and giving consent) and the child&amp;rsquo;s parent or legal guardian. In addition, the research must be designed in a way that is appropriate for the age and developmental level of the children.&lt;/p&gt;
-&lt;p&gt;It is also important to minimize any potential harm to the children and to ensure that the potential benefits of the research outweigh any risks. Researchers must also take steps to protect the children&amp;rsquo;s privacy and confidentiality.&lt;/p&gt;
-&lt;h3 id=&#34;an-institutional-review-board-irb&#34;&gt;An Institutional Review Board (IRB)&lt;/h3&gt;
-&lt;p&gt;An Institutional Review Board (IRB) is a committee that is responsible for reviewing and approving research studies involving human subjects. The primary role of an IRB is to ensure that the rights and welfare of human subjects are protected in research studies. IRBs are required by federal regulations (such as the Common Rule) and are usually established by institutions that conduct or support research involving human subjects.&lt;/p&gt;
-&lt;p&gt;IRBs are made up of a diverse group of individuals, including researchers, medical professionals, ethicists, and community members, who have specific expertise in the field of research. They review the proposed research study to ensure that it meets the ethical guidelines set out in federal regulations and institutional policies.&lt;/p&gt;
-&lt;p&gt;The IRB will review the following aspects of the study:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Risks and benefits of the study&lt;/li&gt;
-&lt;li&gt;Informed consent process and the information provided to the subjects&lt;/li&gt;
-&lt;li&gt;Protection of vulnerable populations&lt;/li&gt;
-&lt;li&gt;Privacy and confidentiality of the participants&lt;/li&gt;
-&lt;li&gt;Data security and management&lt;/li&gt;
-&lt;li&gt;Proposed recruitment procedures&lt;/li&gt;
-&lt;li&gt;Study design, objectives, and methods&lt;/li&gt;
-&lt;li&gt;After reviewing the study, the IRB may approve the study, approve the study with modifications, or disapprove the study if it determines that the risks outweigh the potential benefits or that the rights of the participants are not adequately protected.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;IRBs play a critical role in ensuring that research involving human subjects is conducted in an ethical and responsible manner. They are responsible for ensuring that the rights and welfare of human subjects are protected in research studies, and they act as a safeguard to ensure that research is conducted in compliance with federal regulations and institutional policies.&lt;/p&gt;
-&lt;p&gt;There are several types of Institutional Review Board (IRB) review that are typically used to evaluate research studies involving human subjects. These include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Exempt Review&lt;/strong&gt;: Some research studies are considered to be low-risk and may be eligible for an exempt review. These studies usually involve minimal risk to participants and may include activities such as surveys, interviews, or observation of public behavior. IRBs can grant exempt status to a study after determining that it meets the criteria for exemption as defined by federal regulations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Expedited Review&lt;/strong&gt;: Some research studies may involve more than minimal risk but still be considered appropriate for expedited review. These studies may include interventions such as blood draws or physical exams that are considered to be low-risk or are already being performed as part of routine medical care. In this type of review, the IRB can make a decision based on a review by one or more members rather than a full board review.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Full Board/Convened Review&lt;/strong&gt;: Research studies that involve more than minimal risk or that involve vulnerable populations, such as children or pregnant women, require full board review. The full board will review the study, discuss it, and vote on whether to approve, disapprove, or approve with modifications. This type of review may also be necessary when a study has been previously reviewed and the new proposed changes needs to be evaluated.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Continuing Review&lt;/strong&gt;: Once a study is approved, the IRB will require that the study be reviewed on a regular basis to ensure that the rights and welfare of human subjects are being protected. This review may be expedited or full board, depending on the level of risk of the study and the nature of the changes proposed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In summary, the type of IRB review that is required depends on the level of risk involved in the research study and the type of participants involved. The IRB will determine the appropriate level of review based on federal regulations, institutional policies, and the specific characteristics of the study.&lt;/p&gt;
-&lt;h3 id=&#34;certificate-of-confidentiality&#34;&gt;Certificate of confidentiality&lt;/h3&gt;
-&lt;p&gt;A certificate of confidentiality is a legal document issued by the U.S. Department of Health and Human Services (HHS) that is intended to protect the privacy of research participants by preventing the disclosure of identifying information without the participant&amp;rsquo;s consent. Certificates of confidentiality are issued to researchers who are conducting sensitive research that involves the collection of potentially sensitive information, such as information about an individual&amp;rsquo;s mental health, substance use, or genetic information.&lt;/p&gt;
-&lt;p&gt;The main purpose of a certificate of confidentiality is to protect the privacy of research participants by allowing researchers to refuse to disclose identifying information in any legal proceeding, including civil, criminal, administrative, legislative, or other proceedings. This can include subpoena, court order, or any other legal process. Researchers who hold a certificate of confidentiality are not required to disclose identifying information about research participants in any of these proceedings, unless the participant consents to the disclosure.&lt;/p&gt;
-&lt;p&gt;A certificate of confidentiality applies to the data collected during the study, and also to any documents or records that could identify participants, such as consent forms, medical records, and study questionnaires.&lt;/p&gt;
-&lt;p&gt;In addition to protecting the privacy of research participants, a certificate of confidentiality can also help to increase trust and participation in sensitive research studies by assuring participants that their information will be kept confidential.&lt;/p&gt;
-&lt;p&gt;Certificates of confidentiality are issued by the National Institutes of Health (NIH) and the Office of Human Research Protections (OHRP) on behalf of the U.S. Department of Health and Human Services (HHS). Researchers who wish to obtain a certificate of confidentiality must submit an application, which will be reviewed by NIH or OHRP to determine if the research meets the criteria for the certificate.&lt;/p&gt;
-&lt;p&gt;In summary, a certificate of confidentiality is a legal document that protects the privacy of research participants by preventing the disclosure of identifying information without their consent. It is intended for sensitive research studies that involve the collection of potentially sensitive information, such as mental health, substance use, or genetic information.&lt;/p&gt;
-&lt;h3 id=&#34;internet-based-research&#34;&gt;Internet Based Research&lt;/h3&gt;
-&lt;p&gt;Delves on how to address the ethical challenges of conducting research in this way, including guidelines for obtaining informed consent, protecting privacy and confidentiality, and avoiding bias in the sample of participants. The module covers the following topics:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ethical considerations in Internet-based research&lt;/li&gt;
-&lt;li&gt;Informed consent in Internet-based research&lt;/li&gt;
-&lt;li&gt;Protecting the privacy and confidentiality of research participants&lt;/li&gt;
-&lt;li&gt;Recruiting participants for Internet-based research&lt;/li&gt;
-&lt;li&gt;Addressing bias in Internet-based research&lt;/li&gt;
-&lt;li&gt;Ethical considerations in data collection, management, and sharing&lt;/li&gt;
-&lt;li&gt;Special considerations for conducting Internet-based research with vulnerable - populations&lt;/li&gt;
-&lt;li&gt;Specific guidance for conducting research using social media and other online - platforms&lt;/li&gt;
-&lt;li&gt;The module is designed to help researchers understand the unique ethical - considerations involved in internet-based research, and to provide them with the - knowledge and skills they need to conduct their research in an ethical and - responsible manner.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;hippa&#34;&gt;HIPPA&lt;/h3&gt;
-&lt;p&gt;The Health Insurance Portability and Accountability Act (HIPAA) is a federal law that protects the privacy of individuals&amp;rsquo; medical information. It applies to certain entities, known as &amp;ldquo;covered entities,&amp;rdquo; which include healthcare providers, health plans, and healthcare clearinghouses.&lt;/p&gt;
-&lt;p&gt;HIPAA includes several provisions to protect the privacy of personal medical information, such as the Privacy Rule and the Security Rule. The Privacy Rule establishes national standards for protecting the confidentiality, integrity, and availability of personal medical information. It gives individuals certain rights with respect to their medical information, including the right to access and receive a copy of their own information, and the right to request that their information be corrected or amended. The Security Rule establishes standards for protecting the confidentiality, integrity, and availability of electronic personal health information.&lt;/p&gt;
-&lt;p&gt;Research is generally subject to HIPAA&amp;rsquo;s privacy protections, meaning that researchers must obtain informed consent from participants and must protect the confidentiality of the information obtained. However, there are some exceptions and modifications to the rules that apply to research, such as the &amp;ldquo;limited data set&amp;rdquo; and &amp;ldquo;de-identified information&amp;rdquo; provisions, which allow for the use and disclosure of certain information without specific authorization from the individual.&lt;/p&gt;
-&lt;p&gt;It is important for researchers to work closely with their institution&amp;rsquo;s privacy and compliance office to ensure that they are in compliance with HIPAA and other applicable laws and regulations related to the protection of personal health information in research.&lt;/p&gt;
-&lt;h3 id=&#34;vulnerable-subjects&#34;&gt;Vulnerable Subjects&lt;/h3&gt;
-&lt;p&gt;Vulnerable subjects refer to individuals or groups who may be at increased risk of harm or exploitation as a result of their participation in research. This includes individuals or groups who may have limited ability to protect their own interests, such as children, individuals with cognitive or developmental disabilities, pregnant women, prisoners, and individuals from economically or educationally disadvantaged backgrounds.&lt;/p&gt;
-&lt;p&gt;Research involving vulnerable subjects requires additional safeguards to protect their rights and well-being. Researchers must take extra care to obtain informed consent from these individuals or their legal representatives and to ensure that the risks of the research are minimized and any potential benefits outweigh the risks. Researchers must also be mindful of the potential for exploitation and must be prepared to modify their research design to address any special needs or concerns that may arise.&lt;/p&gt;
-&lt;p&gt;The CITI program has a specific module for Vulnerable Populations, it covers the following topics:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ethical considerations in research involving vulnerable populations&lt;/li&gt;
-&lt;li&gt;Informed consent in research involving vulnerable populations&lt;/li&gt;
-&lt;li&gt;Protecting the rights and welfare of vulnerable populations&lt;/li&gt;
-&lt;li&gt;Special considerations for conducting research with children, pregnant women, - prisoners and individuals with cognitive or developmental impairments&lt;/li&gt;
-&lt;li&gt;Addressing cultural and language barriers in research involving vulnerable - populations
-This module provides researchers with the knowledge and skills they need to conduct research with vulnerable populations in an ethical and responsible manner.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;conflicts-of-interest-in-human-subjects-research&#34;&gt;Conflicts of Interest in Human Subjects Research&lt;/h3&gt;
-&lt;p&gt;Conflicts of interest (COI) in human subjects research refer to any situation in which a researcher&amp;rsquo;s personal, financial, or professional interests may interfere with their ability to conduct the research in an unbiased, ethical, and objective manner. Conflicts of interest can take many forms and can occur at any stage of the research process, from the design and conduct of the study to the dissemination and interpretation of the results.&lt;/p&gt;
-&lt;p&gt;Examples of conflicts of interest in human subjects research include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Financial conflicts of interest, such as when a researcher has a financial stake in the outcome of the research, such as stock options in a company whose products are being studied, or when the researcher is being paid by a third party with a vested interest in the research outcome.&lt;/li&gt;
-&lt;li&gt;Intellectual conflicts of interest, such as when a researcher&amp;rsquo;s professional reputation or career advancement is closely tied to the success of the research.&lt;/li&gt;
-&lt;li&gt;Personal conflicts of interest, such as when a researcher has a close personal relationship with a participant in the study or a stake in the outcome of the research.
-To minimize conflicts of interest in human subjects research, institutions and funding agencies often have policies in place that require researchers to disclose any potential conflicts of interest and to take steps to manage or eliminate them. This can include measures such as limiting the researcher&amp;rsquo;s involvement in certain aspects of the study, providing independent oversight of the research, or requiring that the researcher divest themselves of any conflicting financial interests.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It is important for researchers to be aware of their own potential conflicts of interest and to be transparent about any that they may have. CITI program also have a specific module on Conflict of Interest which provides guidance on how to identify and manage conflicts of interest in research involving human subjects.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Deterministic Optimization</title>
+      <title>(Work in progress)  Deterministic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/deterministic_optimization/</link>
-      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
-      <description>&lt;h1 id=&#34;work-in-progress-deterministic-optimization&#34;&gt;(Work in progress) Deterministic Optimization&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;deterministic-optimization&#34;&gt;Deterministic Optimization&lt;/h1&gt;
 &lt;h2 id=&#34;introduction-to-optimization&#34;&gt;Introduction to Optimization&lt;/h2&gt;
+&lt;p&gt;Optimization is the process of adjusting a system to achieve the best possible performance or outcome. This can be done by finding the maximum or minimum of a function, or by satisfying some set of constraints. Optimization is used in many fields, including engineering, finance, and machine learning. There are many different optimization algorithms that can be used, such as gradient descent, simulated annealing, and genetic algorithms. The choice of algorithm will depend on the specific problem being solved. In summary, it is a process of improving, a mathematical approach for seeking a &amp;ldquo;best&amp;rdquo; &amp;ldquo;decision/action&amp;rdquo; from a &amp;ldquo;set of alternatives&amp;rdquo;.&lt;/p&gt;
+&lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision:&lt;/strong&gt; $x$ = how much to cut from each of the corners?&lt;br/&gt;
+&lt;strong&gt;Alternatives:&lt;/strong&gt; $0&amp;lt;=x&amp;lt;=1/2$&lt;br/&gt;
+&lt;strong&gt;Best:&lt;/strong&gt; Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; $max$ $x(1-2x)^2$ subject to $0&amp;lt;=x&amp;lt;=1/2$ (which are the constraints in this case)&lt;br/&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.desmos.com/calculator/ily45jyfsv?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
+&lt;h3 id=&#34;example-data-fitting&#34;&gt;Example: Data Fitting:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given $N$ data points $(y_1, x_1)&amp;hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: All $n$-dimensional vectors and scalars&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Minimise the sum of squared errors&lt;br/&gt;
+&lt;strong&gt;Optimization formulation&lt;/strong&gt;:
+$\begin{array}{ll}\min &amp;amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp;amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$&lt;/p&gt;
+&lt;h3 id=&#34;example-product-mix&#34;&gt;Example: Product Mix:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: how much of each product to make&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: defined by the resource limits&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize profits&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; &lt;br/&gt;
+Sum notation: $\begin{array}{lll}\max &amp;amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp;amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp;amp; \forall j=1, \ldots, m \ &amp;amp; x_i \geq 0 &amp;amp; \forall i=1, \ldots, n\end{array}$ &lt;br/&gt;
+Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &amp;amp; R x \leq u \ &amp;amp; x \geq 0\end{array}$&lt;/p&gt;
+&lt;h3 id=&#34;example-project-investment&#34;&gt;Example: Project investment&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; A firm is considering investing in $n$ different R&amp;amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: Whether or not to invest in project&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: Defined by budget&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize return on investment&lt;br/&gt;
+Sum notation: $\begin{aligned} \max &amp;amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp;amp; \sum_{j=1}^n c_j x_j \leq B \ &amp;amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ &lt;br/&gt;
+Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &amp;amp; c^{\top} x \leq B \ &amp;amp; x \in{0,1}^n\end{aligned}$&lt;/p&gt;
+&lt;h2 id=&#34;ingredients-of-an-optimization-model&#34;&gt;Ingredients of an optimization model:&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Process of improving&lt;/li&gt;
-&lt;li&gt;A mathematical approach for seeking a &amp;ldquo;best&amp;rdquo; &amp;ldquo;decision/action&amp;rdquo; from a &amp;ldquo;set of alternatives&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Designing a box:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given a 1 feet by 1 feet piece of cardboard, cut out corners and fold to make a box of maximum volume:
-    - Decision: x = how much to cut from each of the corners?
-    - Alternatives: 0&amp;lt;=x&amp;lt;=1/2
-    - Best: Maximize volume: V(x) = x(1-2x)^2 (x is the height and (1-2x)^2 is the base, and their product is the volume)
-    - Optimization formulation: max x(1-2x)^2 subject to 0&amp;lt;=x&amp;lt;=1/2 (which are the constraints in this case)
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Data Fitting:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given N data points (y1, x1)...(yN, xN) where  yi belongs to Real and xi belongs to Rn, for all i = 1..N, find a line y = a.Tx+b that best fits the data.
-    - Decision: A vector a that belongs to Rn and a scalar b that belongs to R
-    - Alternatives: All n-dimensional vectors and scalars
-    - Best: Minimise the sum of squared errors
-    - Optimization formulation: minimize the sum of squared error subject to a belongs to Rn and b belongs to R 
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Product Mix:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;A firm make n different products using m types of resources. Each unit of product i generates pi dollars of profit, and requires rij units of resource j. The firm has uj units of resource j available. How much of each product should the firm make to maximize profits?
-    - Decision:: how much of each product to make
-    - Alternatives: defined by the resource limits
-    - Best: Maximize profits
-    - Optimization formulation: 
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Sum notation vs Matrix notation&lt;/li&gt;
-&lt;li&gt;Project investment&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;A firm is considering investing in n different R&amp;amp;D projects. Project j requires an investment of cj dollars and promises a return of rj dollars. The firm has a budget of B dollars. Which projects should the firm invest in?
-    - Decision: Whether or not to invest in project
-    - Alternatives: Defined by budget
-    - Best: Maximize return on investment
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;Encode decisions/actions as &lt;strong&gt;decision variables&lt;/strong&gt; whose values we are seeking&lt;/li&gt;
 &lt;li&gt;Identify the relevant &lt;strong&gt;problem data&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Express &lt;strong&gt;constraints&lt;/strong&gt; on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data&lt;/li&gt;
 &lt;li&gt;Express the &lt;strong&gt;objective function&lt;/strong&gt; as a function of the decision variables and the problem data.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ingredients-of-an-optimization-model&#34;&gt;Ingredients of an optimization model:&lt;/h2&gt;
 &lt;p&gt;Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;min or max f(x1, x2, .... , xn)
 subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m 
@@ -273,7 +75,6 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;h2 id=&#34;minimization-vs-maximization&#34;&gt;Minimization vs Maximization&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function&lt;/li&gt;
-&lt;li&gt;In theory, we will only consider minimization problem.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;program-vs-optimization&#34;&gt;Program vs optimization&lt;/h2&gt;
 &lt;ul&gt;
@@ -315,12 +116,12 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;subclasses-of-nlp&#34;&gt;Subclasses of NLP&lt;/h2&gt;
+&lt;h2 id=&#34;subclasses-of-nlp-non-linear-problem&#34;&gt;Subclasses of NLP (Non Linear Problem)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Unconstrained optimization: No constraints or simple bound constraints on the variables (Box design example above)&lt;/li&gt;
 &lt;li&gt;Quadrative programming: objectives and constraints involve quadratic functions (Data fitting example above)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;subclasses-of-ip&#34;&gt;Subclasses of IP&lt;/h2&gt;
+&lt;h2 id=&#34;subclasses-of-ip-integer-programming&#34;&gt;Subclasses of IP (Integer Programming)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Mixed Integer Linear Program
 &lt;ul&gt;
@@ -366,10 +167,9 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;Markowitz Principle: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Multi object problem&lt;/li&gt;
-&lt;li&gt;Two objectives can be combined:
+&lt;li&gt;For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
 &lt;ul&gt;
-&lt;li&gt;Maximize Expected Return - lambda*risk&lt;/li&gt;
+&lt;li&gt;Maximize Expected Return - $\lambda$*risk&lt;/li&gt;
 &lt;li&gt;Maximize Expected Return subject to risk &amp;lt;= s_max (constraint on risk)&lt;/li&gt;
 &lt;li&gt;Minimize Risk subject to return &amp;gt;= r_min (threshold on expected returns)&lt;/li&gt;
 &lt;/ul&gt;
@@ -404,7 +204,7 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
     <item>
       <title>Human-Computer Interaction</title>
       <link>https://ayushsubedi.github.io/posts/human_computer_interaction/</link>
-      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/human_computer_interaction/</guid>
       <description>&lt;h1 id=&#34;work-in-progress-human-computer-interaction&#34;&gt;(Work in progress) Human-Computer Interaction&lt;/h1&gt;
@@ -475,7 +275,7 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - 1. Data Engineering</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</guid>
       <description>&lt;h1 id=&#34;data-engineering&#34;&gt;Data Engineering&lt;/h1&gt;
@@ -834,7 +634,7 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - 2. Exploratory Data Analysis</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</guid>
       <description>&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
@@ -1413,7 +1213,7 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - 3b. Modeling</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</guid>
       <description>&lt;h1 id=&#34;modeling&#34;&gt;Modeling&lt;/h1&gt;
@@ -2147,7 +1947,7 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
     <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - 4. Machine Learning Implementation and Operations</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
       <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;
@@ -2245,6 +2045,200 @@ identification and implementation of a data transformation solution.&lt;/p&gt;
 &lt;li&gt;Spark ML and scikit-learn&lt;/li&gt;
 &lt;li&gt;chaining multiple inference containers into a pipeline of results&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ethics in Human Research</title>
+      <link>https://ayushsubedi.github.io/posts/ethics_human_research/</link>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ethics_human_research/</guid>
+      <description>&lt;h1 id=&#34;ethics-in-human-research&#34;&gt;Ethics in Human Research&lt;/h1&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;600&#34; src=&#34;https://ayushsubedi.github.io/pdfs/citi_certificate.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;what&#34;&gt;What&lt;/h2&gt;
+&lt;p&gt;CITI (Collaborative Institutional Training Initiative) is a program that provides training on ethical and regulatory issues related to human subjects research. It offers online courses and resources to researchers, students, and staff at institutions around the world. The training covers topics such as the history and ethical principles of human subjects research, federal regulations and guidelines, and the responsibilities of researchers and institutional review boards (IRBs). Completing CITI training is often required for researchers who plan to conduct human subjects research at institutions that participate in the program.&lt;/p&gt;
+&lt;p&gt;CITI training for Social/Behavioral Research Investigators and Key Personnel covers the ethical and regulatory issues specific to social and behavioral research involving human subjects.&lt;/p&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why&lt;/h2&gt;
+&lt;p&gt;By getting certified on the CITI program, individuals can demonstrate that they have received training on responsible conduct of research and are aware of the ethical principles involved in their work.&lt;/p&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;512&#34; src=&#34;https://www.youtube.com/embed/zZ3l1jgmYrY&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;important-topics&#34;&gt;Important Topics&lt;/h2&gt;
+&lt;h3 id=&#34;the-belmont-report&#34;&gt;The Belmont Report&lt;/h3&gt;
+&lt;p&gt;The Belmont Report is a document that was created by the National Commission for the Protection of Human Subjects of Biomedical and Behavioral Research in 1979. The report sets out the ethical principles and guidelines that govern the conduct of research involving human subjects. The report is considered a seminal document in the field of research ethics, and its principles continue to be widely referenced today.&lt;/p&gt;
+&lt;p&gt;The report&amp;rsquo;s main principles are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Respect for persons&lt;/strong&gt;: This principle acknowledges the autonomy of individuals and the need for informed consent in research.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beneficence&lt;/strong&gt;: This principle requires that research should maximize benefits and minimize harm.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Non-maleficence&lt;/strong&gt;: This principle states that researchers should not cause harm to subjects.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Justice&lt;/strong&gt;: This principle requires that the benefits and burdens of research be distributed fairly among subjects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The report also elaborates on the concept of informed consent and the protection of vulnerable populations such as children, prisoners, pregnant women, and individuals with cognitive impairment.&lt;/p&gt;
+&lt;p&gt;In summary, The Belmont Report is a widely recognized guide for ethical conduct of research involving human subjects, which provides the foundation for Federal Policy for the Protection of Human Subjects (also known as the Common Rule) and many institutional and national guidelines on human subjects research.&lt;/p&gt;
+&lt;p&gt;The Belmont Report was written in response to the infamous Tuskegee Syphilis Study:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Tuskegee-syphilis-study_doctor-injecting-subject.jpg/1600px-Tuskegee-syphilis-study_doctor-injecting-subject.jpg?20100319000952&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-nuremberg-code&#34;&gt;The Nuremberg Code&lt;/h3&gt;
+&lt;p&gt;The Nuremberg Code is a set of ethical principles for human experimentation that was developed as a result of the Nuremberg Trials after World War II. The trials were held to prosecute Nazi doctors and scientists who had conducted brutal and inhumane medical experiments on concentration camp prisoners during the war. The Nuremberg Code was developed to ensure that such atrocities would never happen again.&lt;/p&gt;
+&lt;p&gt;The code consists of 10 principles that were intended to guide the conduct of medical research involving human subjects. The principles are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The voluntary, informed consent of the human subject is absolutely essential.&lt;/li&gt;
+&lt;li&gt;The experiment should be such as to yield fruitful results for the good of society, unprocurable by other methods or means of study, and not random and unnecessary in nature.&lt;/li&gt;
+&lt;li&gt;The experiment should be so designed and based on the results of animal experimentation and a knowledge of the natural history of the disease or other problem under study that the anticipated results will justify the performance of the experiment.&lt;/li&gt;
+&lt;li&gt;The experiment should be so conducted as to avoid all unnecessary physical and mental suffering and injury.&lt;/li&gt;
+&lt;li&gt;No experiment should be conducted where there is an a priori reason to believe that death or disabling injury will occur.&lt;/li&gt;
+&lt;li&gt;The degree of risk to be taken should never exceed that determined by the humanitarian importance of the problem to be solved by the experiment.&lt;/li&gt;
+&lt;li&gt;Proper preparations should be made and adequate facilities provided to protect the experimental subject against even remote possibilities of injury, disability, or death.&lt;/li&gt;
+&lt;li&gt;The experiment should be conducted only by scientifically qualified persons.&lt;/li&gt;
+&lt;li&gt;The highest degree of skill and care should be required through all stages of the experiment of those who conduct or engage in the experiment.&lt;/li&gt;
+&lt;li&gt;During the course of the experiment, the human subject should be at liberty to bring the experiment to an end if he has reached the physical or mental state where continuation of the experiment seems to him to be impossible.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Nuremberg Code is considered a landmark document in the history of research ethics, and its principles continue to be widely referenced today. It serves as a foundation for the protection of human subjects in medical research and other fields. The principles of informed consent, beneficence and non-maleficence were for the first time defined and established as the foundation for ethical conduct in research involving human subjects.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/1/1e/Color_photograph_of_judges%27_bench_at_IMT.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-declaration-of-helsinki&#34;&gt;The Declaration of Helsinki&lt;/h3&gt;
+&lt;p&gt;The Declaration of Helsinki is a set of ethical principles for medical research involving human subjects, developed by the World Medical Association (WMA). The first version of the Declaration was adopted in 1964, and it has been revised several times since then. The most recent version was adopted in 2013.&lt;/p&gt;
+&lt;p&gt;The Declaration of Helsinki sets out ethical principles for the conduct of medical research involving human subjects, including guidelines for obtaining informed consent, protecting vulnerable populations, and ensuring the safety and well-being of research participants. The Declaration also includes principles for the conduct of research involving medical interventions, such as the use of placebo controls and the reporting of adverse events.&lt;/p&gt;
+&lt;p&gt;The Declaration of Helsinki includes the following principles:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Medical research involving human subjects must conform to generally accepted scientific principles and should be based on a thorough knowledge of the scientific literature.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The well-being of the individual research subject must take precedence over all other considerations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Informed consent must be obtained from all research subjects, or their legally authorized representatives, before the research begins.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Medical research involving human subjects should only be conducted if the importance of the objective outweighs the inherent risks and burdens to the research subjects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Medical research involving human subjects should not be conducted if there are other research methods available that are likely to yield essentially the same results.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Researchers have a duty to protect the privacy and confidentiality of research subjects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The design and performance of every medical study involving human subjects must be clearly formulated in an experimental protocol.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Every medical study involving human subjects must be preceded by the appropriate ethical and regulatory review.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Researchers have a duty to publish the results of their research, whether positive or negative, and must make all data available for further research.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Researchers have a duty to respect the rights and welfare of their research subjects, even after the study has been completed.&lt;/p&gt;
+&lt;p&gt;The Declaration of Helsinki is widely recognized as an important guide for the ethical conduct of medical research involving human subjects, and is considered a cornerstone of research ethics in the international medical community. It is also considered as a foundation of many national and institutional guidelines on human subjects research.&lt;/p&gt;
+&lt;h3 id=&#34;the-common-rule&#34;&gt;The Common Rule&lt;/h3&gt;
+&lt;p&gt;The Common Rule is a set of federal regulations for the protection of human subjects in research, developed by the U.S. Department of Health and Human Services (HHS) and other federal agencies. The regulations are officially known as the Federal Policy for the Protection of Human Subjects, and are commonly referred to as the &amp;ldquo;Common Rule.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;The Common Rule was first established in 1991 and applies to all research conducted or supported by HHS and other federal agencies that involve human subjects. The Common Rule sets out requirements for informed consent, institutional review board (IRB) review, and record-keeping, and it also provides guidance on the protection of vulnerable populations, such as children, prisoners, and individuals with cognitive impairments.&lt;/p&gt;
+&lt;p&gt;The Common Rule includes the following key requirements:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Informed consent&lt;/strong&gt;: Researchers must obtain the informed consent of research participants, or their legally authorized representatives, before beginning any research involving human subjects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Institutional Review Board (IRB) review&lt;/strong&gt;: All research involving human subjects must be reviewed and approved by an IRB, an independent body that is responsible for evaluating the ethical and scientific aspects of the research.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Record-keeping&lt;/strong&gt;: Researchers must maintain records of all research involving human subjects, including the informed consent forms and the IRB approval documents.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Protection of vulnerable populations&lt;/strong&gt;: The Common Rule includes special provisions for protecting vulnerable populations, such as children, prisoners, and individuals with cognitive impairments.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reporting&lt;/strong&gt;: The Common Rule requires that researchers must report certain information to the relevant federal agencies, such as any unanticipated problems involving risks to subjects or others, and any serious or continuing noncompliance with the regulations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Common Rule is considered a fundamental framework for the protection of human subjects in the United States, serving as a foundation for the ethical conduct of research involving human subjects in the country. The Common Rule was revised in January 19, 2017, and the changes went into effect in 2018. The revisions are aimed at modernizing, strengthening, and making the regulations more effective in protecting human subjects involved in research.&lt;/p&gt;
+&lt;h3 id=&#34;research-with-human-subjects&#34;&gt;Research with human subjects&lt;/h3&gt;
+&lt;p&gt;Research with human subjects involves conducting studies or experiments on living individuals to gain knowledge or understanding about a certain topic. Such research can be conducted in a variety of fields, including medicine, psychology, sociology, and anthropology. Because research with human subjects has the potential to cause harm or impact individuals&amp;rsquo; rights and well-being, it is subject to strict ethical guidelines and regulations.&lt;/p&gt;
+&lt;p&gt;Researchers are required to obtain informed consent from participants and ensure that the potential risks of the research are minimized and that any potential benefits outweigh the risks. They must also ensure that the research is conducted in a way that protects participants&amp;rsquo; privacy and confidentiality. Research involving vulnerable populations, such as children or individuals with disabilities, may require additional safeguards.&lt;/p&gt;
+&lt;h3 id=&#34;informed-concent&#34;&gt;Informed Concent&lt;/h3&gt;
+&lt;p&gt;Informed consent is a process by which a researcher obtains permission from a research participant to participate in a study. Informed consent is considered a fundamental ethical principle in research involving human subjects. It is important because it ensures that participants are aware of the nature of the research, the risks and benefits involved, and any alternatives to participation. They also have the right to discontinue participation at any time.&lt;/p&gt;
+&lt;p&gt;During the informed consent process, the researcher is responsible for providing the participant with a clear and comprehensive explanation of the study, including its purpose, procedures, risks, benefits, and any potential consequences. Participants must also be informed of their right to withdraw from the study at any time, and any potential impact on their medical or legal rights.&lt;/p&gt;
+&lt;p&gt;Informed consent is typically documented by having the participant sign a written consent form, which should be written in language that is easy for the participant to understand. Research involving vulnerable populations, such as children or individuals with cognitive impairment, may require additional safeguards to ensure that informed consent is obtained in a way that is appropriate for the population.&lt;/p&gt;
+&lt;h3 id=&#34;research-with-children&#34;&gt;Research with Children&lt;/h3&gt;
+&lt;p&gt;Research with children involves conducting studies or experiments on individuals who have not yet reached the age of legal adulthood. Such research can be conducted in a variety of fields, including medicine, psychology, sociology, and anthropology. Because children are considered a vulnerable population, research involving them is subject to additional ethical guidelines and regulations to ensure their safety, well-being and rights are protected.&lt;/p&gt;
+&lt;p&gt;When conducting research with children, researchers must obtain informed consent from both the child (if they are capable of understanding the nature of the research and giving consent) and the child&amp;rsquo;s parent or legal guardian. In addition, the research must be designed in a way that is appropriate for the age and developmental level of the children.&lt;/p&gt;
+&lt;p&gt;It is also important to minimize any potential harm to the children and to ensure that the potential benefits of the research outweigh any risks. Researchers must also take steps to protect the children&amp;rsquo;s privacy and confidentiality.&lt;/p&gt;
+&lt;h3 id=&#34;an-institutional-review-board-irb&#34;&gt;An Institutional Review Board (IRB)&lt;/h3&gt;
+&lt;p&gt;An Institutional Review Board (IRB) is a committee that is responsible for reviewing and approving research studies involving human subjects. The primary role of an IRB is to ensure that the rights and welfare of human subjects are protected in research studies. IRBs are required by federal regulations (such as the Common Rule) and are usually established by institutions that conduct or support research involving human subjects.&lt;/p&gt;
+&lt;p&gt;IRBs are made up of a diverse group of individuals, including researchers, medical professionals, ethicists, and community members, who have specific expertise in the field of research. They review the proposed research study to ensure that it meets the ethical guidelines set out in federal regulations and institutional policies.&lt;/p&gt;
+&lt;p&gt;The IRB will review the following aspects of the study:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Risks and benefits of the study&lt;/li&gt;
+&lt;li&gt;Informed consent process and the information provided to the subjects&lt;/li&gt;
+&lt;li&gt;Protection of vulnerable populations&lt;/li&gt;
+&lt;li&gt;Privacy and confidentiality of the participants&lt;/li&gt;
+&lt;li&gt;Data security and management&lt;/li&gt;
+&lt;li&gt;Proposed recruitment procedures&lt;/li&gt;
+&lt;li&gt;Study design, objectives, and methods&lt;/li&gt;
+&lt;li&gt;After reviewing the study, the IRB may approve the study, approve the study with modifications, or disapprove the study if it determines that the risks outweigh the potential benefits or that the rights of the participants are not adequately protected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IRBs play a critical role in ensuring that research involving human subjects is conducted in an ethical and responsible manner. They are responsible for ensuring that the rights and welfare of human subjects are protected in research studies, and they act as a safeguard to ensure that research is conducted in compliance with federal regulations and institutional policies.&lt;/p&gt;
+&lt;p&gt;There are several types of Institutional Review Board (IRB) review that are typically used to evaluate research studies involving human subjects. These include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Exempt Review&lt;/strong&gt;: Some research studies are considered to be low-risk and may be eligible for an exempt review. These studies usually involve minimal risk to participants and may include activities such as surveys, interviews, or observation of public behavior. IRBs can grant exempt status to a study after determining that it meets the criteria for exemption as defined by federal regulations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Expedited Review&lt;/strong&gt;: Some research studies may involve more than minimal risk but still be considered appropriate for expedited review. These studies may include interventions such as blood draws or physical exams that are considered to be low-risk or are already being performed as part of routine medical care. In this type of review, the IRB can make a decision based on a review by one or more members rather than a full board review.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Full Board/Convened Review&lt;/strong&gt;: Research studies that involve more than minimal risk or that involve vulnerable populations, such as children or pregnant women, require full board review. The full board will review the study, discuss it, and vote on whether to approve, disapprove, or approve with modifications. This type of review may also be necessary when a study has been previously reviewed and the new proposed changes needs to be evaluated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Continuing Review&lt;/strong&gt;: Once a study is approved, the IRB will require that the study be reviewed on a regular basis to ensure that the rights and welfare of human subjects are being protected. This review may be expedited or full board, depending on the level of risk of the study and the nature of the changes proposed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In summary, the type of IRB review that is required depends on the level of risk involved in the research study and the type of participants involved. The IRB will determine the appropriate level of review based on federal regulations, institutional policies, and the specific characteristics of the study.&lt;/p&gt;
+&lt;h3 id=&#34;certificate-of-confidentiality&#34;&gt;Certificate of confidentiality&lt;/h3&gt;
+&lt;p&gt;A certificate of confidentiality is a legal document issued by the U.S. Department of Health and Human Services (HHS) that is intended to protect the privacy of research participants by preventing the disclosure of identifying information without the participant&amp;rsquo;s consent. Certificates of confidentiality are issued to researchers who are conducting sensitive research that involves the collection of potentially sensitive information, such as information about an individual&amp;rsquo;s mental health, substance use, or genetic information.&lt;/p&gt;
+&lt;p&gt;The main purpose of a certificate of confidentiality is to protect the privacy of research participants by allowing researchers to refuse to disclose identifying information in any legal proceeding, including civil, criminal, administrative, legislative, or other proceedings. This can include subpoena, court order, or any other legal process. Researchers who hold a certificate of confidentiality are not required to disclose identifying information about research participants in any of these proceedings, unless the participant consents to the disclosure.&lt;/p&gt;
+&lt;p&gt;A certificate of confidentiality applies to the data collected during the study, and also to any documents or records that could identify participants, such as consent forms, medical records, and study questionnaires.&lt;/p&gt;
+&lt;p&gt;In addition to protecting the privacy of research participants, a certificate of confidentiality can also help to increase trust and participation in sensitive research studies by assuring participants that their information will be kept confidential.&lt;/p&gt;
+&lt;p&gt;Certificates of confidentiality are issued by the National Institutes of Health (NIH) and the Office of Human Research Protections (OHRP) on behalf of the U.S. Department of Health and Human Services (HHS). Researchers who wish to obtain a certificate of confidentiality must submit an application, which will be reviewed by NIH or OHRP to determine if the research meets the criteria for the certificate.&lt;/p&gt;
+&lt;p&gt;In summary, a certificate of confidentiality is a legal document that protects the privacy of research participants by preventing the disclosure of identifying information without their consent. It is intended for sensitive research studies that involve the collection of potentially sensitive information, such as mental health, substance use, or genetic information.&lt;/p&gt;
+&lt;h3 id=&#34;internet-based-research&#34;&gt;Internet Based Research&lt;/h3&gt;
+&lt;p&gt;Delves on how to address the ethical challenges of conducting research in this way, including guidelines for obtaining informed consent, protecting privacy and confidentiality, and avoiding bias in the sample of participants. The module covers the following topics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ethical considerations in Internet-based research&lt;/li&gt;
+&lt;li&gt;Informed consent in Internet-based research&lt;/li&gt;
+&lt;li&gt;Protecting the privacy and confidentiality of research participants&lt;/li&gt;
+&lt;li&gt;Recruiting participants for Internet-based research&lt;/li&gt;
+&lt;li&gt;Addressing bias in Internet-based research&lt;/li&gt;
+&lt;li&gt;Ethical considerations in data collection, management, and sharing&lt;/li&gt;
+&lt;li&gt;Special considerations for conducting Internet-based research with vulnerable - populations&lt;/li&gt;
+&lt;li&gt;Specific guidance for conducting research using social media and other online - platforms&lt;/li&gt;
+&lt;li&gt;The module is designed to help researchers understand the unique ethical - considerations involved in internet-based research, and to provide them with the - knowledge and skills they need to conduct their research in an ethical and - responsible manner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hippa&#34;&gt;HIPPA&lt;/h3&gt;
+&lt;p&gt;The Health Insurance Portability and Accountability Act (HIPAA) is a federal law that protects the privacy of individuals&amp;rsquo; medical information. It applies to certain entities, known as &amp;ldquo;covered entities,&amp;rdquo; which include healthcare providers, health plans, and healthcare clearinghouses.&lt;/p&gt;
+&lt;p&gt;HIPAA includes several provisions to protect the privacy of personal medical information, such as the Privacy Rule and the Security Rule. The Privacy Rule establishes national standards for protecting the confidentiality, integrity, and availability of personal medical information. It gives individuals certain rights with respect to their medical information, including the right to access and receive a copy of their own information, and the right to request that their information be corrected or amended. The Security Rule establishes standards for protecting the confidentiality, integrity, and availability of electronic personal health information.&lt;/p&gt;
+&lt;p&gt;Research is generally subject to HIPAA&amp;rsquo;s privacy protections, meaning that researchers must obtain informed consent from participants and must protect the confidentiality of the information obtained. However, there are some exceptions and modifications to the rules that apply to research, such as the &amp;ldquo;limited data set&amp;rdquo; and &amp;ldquo;de-identified information&amp;rdquo; provisions, which allow for the use and disclosure of certain information without specific authorization from the individual.&lt;/p&gt;
+&lt;p&gt;It is important for researchers to work closely with their institution&amp;rsquo;s privacy and compliance office to ensure that they are in compliance with HIPAA and other applicable laws and regulations related to the protection of personal health information in research.&lt;/p&gt;
+&lt;h3 id=&#34;vulnerable-subjects&#34;&gt;Vulnerable Subjects&lt;/h3&gt;
+&lt;p&gt;Vulnerable subjects refer to individuals or groups who may be at increased risk of harm or exploitation as a result of their participation in research. This includes individuals or groups who may have limited ability to protect their own interests, such as children, individuals with cognitive or developmental disabilities, pregnant women, prisoners, and individuals from economically or educationally disadvantaged backgrounds.&lt;/p&gt;
+&lt;p&gt;Research involving vulnerable subjects requires additional safeguards to protect their rights and well-being. Researchers must take extra care to obtain informed consent from these individuals or their legal representatives and to ensure that the risks of the research are minimized and any potential benefits outweigh the risks. Researchers must also be mindful of the potential for exploitation and must be prepared to modify their research design to address any special needs or concerns that may arise.&lt;/p&gt;
+&lt;p&gt;The CITI program has a specific module for Vulnerable Populations, it covers the following topics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ethical considerations in research involving vulnerable populations&lt;/li&gt;
+&lt;li&gt;Informed consent in research involving vulnerable populations&lt;/li&gt;
+&lt;li&gt;Protecting the rights and welfare of vulnerable populations&lt;/li&gt;
+&lt;li&gt;Special considerations for conducting research with children, pregnant women, - prisoners and individuals with cognitive or developmental impairments&lt;/li&gt;
+&lt;li&gt;Addressing cultural and language barriers in research involving vulnerable - populations
+This module provides researchers with the knowledge and skills they need to conduct research with vulnerable populations in an ethical and responsible manner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;conflicts-of-interest-in-human-subjects-research&#34;&gt;Conflicts of Interest in Human Subjects Research&lt;/h3&gt;
+&lt;p&gt;Conflicts of interest (COI) in human subjects research refer to any situation in which a researcher&amp;rsquo;s personal, financial, or professional interests may interfere with their ability to conduct the research in an unbiased, ethical, and objective manner. Conflicts of interest can take many forms and can occur at any stage of the research process, from the design and conduct of the study to the dissemination and interpretation of the results.&lt;/p&gt;
+&lt;p&gt;Examples of conflicts of interest in human subjects research include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Financial conflicts of interest, such as when a researcher has a financial stake in the outcome of the research, such as stock options in a company whose products are being studied, or when the researcher is being paid by a third party with a vested interest in the research outcome.&lt;/li&gt;
+&lt;li&gt;Intellectual conflicts of interest, such as when a researcher&amp;rsquo;s professional reputation or career advancement is closely tied to the success of the research.&lt;/li&gt;
+&lt;li&gt;Personal conflicts of interest, such as when a researcher has a close personal relationship with a participant in the study or a stake in the outcome of the research.
+To minimize conflicts of interest in human subjects research, institutions and funding agencies often have policies in place that require researchers to disclose any potential conflicts of interest and to take steps to manage or eliminate them. This can include measures such as limiting the researcher&amp;rsquo;s involvement in certain aspects of the study, providing independent oversight of the research, or requiring that the researcher divest themselves of any conflicting financial interests.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is important for researchers to be aware of their own potential conflicts of interest and to be transparent about any that they may have. CITI program also have a specific module on Conflict of Interest which provides guidance on how to identify and manage conflicts of interest in research involving human subjects.&lt;/p&gt;
 </description>
     </item>
     

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | Deterministic Optimization</title>
+	<title>Ayush Subedi  | (Work in progress)  Deterministic Optimization</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.102.3" />
 	
@@ -102,7 +102,7 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">Deterministic Optimization</h1>
+<h1 class="pt-2">(Work in progress)  Deterministic Optimization</h1>
 
 <h3 class="text-java-700 font-normal leading-relaxed pt-2">My notes on Deterministic Optimization</h3>
 
@@ -112,7 +112,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
-		href='/categories/wip'>wip</a>
+		href='/categories/gatech'>gatech</a>
 	
 	
 	
@@ -126,12 +126,24 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/wip'>wip</a>
+		href='/tags/optimization'>optimization</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/linear-algebra'>linear-algebra</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/objective-function'>objective-function</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/cost-function'>cost-function</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/integral'>integral</a>
 	
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2023-01-13">2023-01-13</time>
+		datetime="2023-01-16">2023-01-16</time>
 </div>
 
 <hr />
@@ -143,49 +155,45 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="work-in-progress-deterministic-optimization">(Work in progress) Deterministic Optimization</h1>
+		<div class="c-rich-text"><h1 id="deterministic-optimization">Deterministic Optimization</h1>
 <h2 id="introduction-to-optimization">Introduction to Optimization</h2>
+<p>Optimization is the process of adjusting a system to achieve the best possible performance or outcome. This can be done by finding the maximum or minimum of a function, or by satisfying some set of constraints. Optimization is used in many fields, including engineering, finance, and machine learning. There are many different optimization algorithms that can be used, such as gradient descent, simulated annealing, and genetic algorithms. The choice of algorithm will depend on the specific problem being solved. In summary, it is a process of improving, a mathematical approach for seeking a &ldquo;best&rdquo; &ldquo;decision/action&rdquo; from a &ldquo;set of alternatives&rdquo;.</p>
+<h3 id="example-designing-a-box">Example: Designing a box:</h3>
+<p><strong>Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:</strong><br/>
+<strong>Decision:</strong> $x$ = how much to cut from each of the corners?<br/>
+<strong>Alternatives:</strong> $0&lt;=x&lt;=1/2$<br/>
+<strong>Best:</strong> Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)<br/>
+<strong>Optimization formulation:</strong> $max$ $x(1-2x)^2$ subject to $0&lt;=x&lt;=1/2$ (which are the constraints in this case)<br/></p>
+<iframe src="https://www.desmos.com/calculator/ily45jyfsv?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<h3 id="example-data-fitting">Example: Data Fitting:</h3>
+<p><strong>Given $N$ data points $(y_1, x_1)&hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.</strong><br/>
+<strong>Decision</strong>: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$<br/>
+<strong>Alternatives</strong>: All $n$-dimensional vectors and scalars<br/>
+<strong>Best</strong>: Minimise the sum of squared errors<br/>
+<strong>Optimization formulation</strong>:
+$\begin{array}{ll}\min &amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$</p>
+<h3 id="example-product-mix">Example: Product Mix:</h3>
+<p><strong>A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?</strong><br/>
+<strong>Decision</strong>: how much of each product to make<br/>
+<strong>Alternatives</strong>: defined by the resource limits<br/>
+<strong>Best</strong>: Maximize profits<br/>
+<strong>Optimization formulation:</strong> <br/>
+Sum notation: $\begin{array}{lll}\max &amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp; \forall j=1, \ldots, m \ &amp; x_i \geq 0 &amp; \forall i=1, \ldots, n\end{array}$ <br/>
+Matrix notation: $\begin{array}{cl}\max &amp; p^{\top} x \ \text { s.t. } &amp; R x \leq u \ &amp; x \geq 0\end{array}$</p>
+<h3 id="example-project-investment">Example: Project investment</h3>
+<p><strong> A firm is considering investing in $n$ different R&amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?</strong><br/>
+<strong>Decision</strong>: Whether or not to invest in project<br/>
+<strong>Alternatives</strong>: Defined by budget<br/>
+<strong>Best</strong>: Maximize return on investment<br/>
+Sum notation: $\begin{aligned} \max &amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp; \sum_{j=1}^n c_j x_j \leq B \ &amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ <br/>
+Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; c^{\top} x \leq B \ &amp; x \in{0,1}^n\end{aligned}$</p>
+<h2 id="ingredients-of-an-optimization-model">Ingredients of an optimization model:</h2>
 <ul>
-<li>Process of improving</li>
-<li>A mathematical approach for seeking a &ldquo;best&rdquo; &ldquo;decision/action&rdquo; from a &ldquo;set of alternatives&rdquo;</li>
-<li>Designing a box:</li>
-</ul>
-<pre tabindex="0"><code>Given a 1 feet by 1 feet piece of cardboard, cut out corners and fold to make a box of maximum volume:
-    - Decision: x = how much to cut from each of the corners?
-    - Alternatives: 0&lt;=x&lt;=1/2
-    - Best: Maximize volume: V(x) = x(1-2x)^2 (x is the height and (1-2x)^2 is the base, and their product is the volume)
-    - Optimization formulation: max x(1-2x)^2 subject to 0&lt;=x&lt;=1/2 (which are the constraints in this case)
-</code></pre><ul>
-<li>Data Fitting:</li>
-</ul>
-<pre tabindex="0"><code>Given N data points (y1, x1)...(yN, xN) where  yi belongs to Real and xi belongs to Rn, for all i = 1..N, find a line y = a.Tx+b that best fits the data.
-    - Decision: A vector a that belongs to Rn and a scalar b that belongs to R
-    - Alternatives: All n-dimensional vectors and scalars
-    - Best: Minimise the sum of squared errors
-    - Optimization formulation: minimize the sum of squared error subject to a belongs to Rn and b belongs to R 
-</code></pre><ul>
-<li>Product Mix:</li>
-</ul>
-<pre tabindex="0"><code>A firm make n different products using m types of resources. Each unit of product i generates pi dollars of profit, and requires rij units of resource j. The firm has uj units of resource j available. How much of each product should the firm make to maximize profits?
-    - Decision:: how much of each product to make
-    - Alternatives: defined by the resource limits
-    - Best: Maximize profits
-    - Optimization formulation: 
-</code></pre><ul>
-<li>Sum notation vs Matrix notation</li>
-<li>Project investment</li>
-</ul>
-<pre tabindex="0"><code>A firm is considering investing in n different R&amp;D projects. Project j requires an investment of cj dollars and promises a return of rj dollars. The firm has a budget of B dollars. Which projects should the firm invest in?
-    - Decision: Whether or not to invest in project
-    - Alternatives: Defined by budget
-    - Best: Maximize return on investment
-</code></pre><ul>
 <li>Encode decisions/actions as <strong>decision variables</strong> whose values we are seeking</li>
 <li>Identify the relevant <strong>problem data</strong></li>
 <li>Express <strong>constraints</strong> on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data</li>
 <li>Express the <strong>objective function</strong> as a function of the decision variables and the problem data.</li>
 </ul>
-<h2 id="ingredients-of-an-optimization-model">Ingredients of an optimization model:</h2>
 <p>Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.</p>
 <pre tabindex="0"><code>min or max f(x1, x2, .... , xn)
 subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m 
@@ -205,7 +213,6 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <h2 id="minimization-vs-maximization">Minimization vs Maximization</h2>
 <ul>
 <li>Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function</li>
-<li>In theory, we will only consider minimization problem.</li>
 </ul>
 <h2 id="program-vs-optimization">Program vs optimization</h2>
 <ul>
@@ -247,12 +254,12 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </tr>
 </tbody>
 </table>
-<h2 id="subclasses-of-nlp">Subclasses of NLP</h2>
+<h2 id="subclasses-of-nlp-non-linear-problem">Subclasses of NLP (Non Linear Problem)</h2>
 <ul>
 <li>Unconstrained optimization: No constraints or simple bound constraints on the variables (Box design example above)</li>
 <li>Quadrative programming: objectives and constraints involve quadratic functions (Data fitting example above)</li>
 </ul>
-<h2 id="subclasses-of-ip">Subclasses of IP</h2>
+<h2 id="subclasses-of-ip-integer-programming">Subclasses of IP (Integer Programming)</h2>
 <ul>
 <li>Mixed Integer Linear Program
 <ul>
@@ -298,10 +305,9 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <li>Markowitz Principle: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)</li>
 </ul>
 </li>
-<li>Multi object problem</li>
-<li>Two objectives can be combined:
+<li>For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
 <ul>
-<li>Maximize Expected Return - lambda*risk</li>
+<li>Maximize Expected Return - $\lambda$*risk</li>
 <li>Maximize Expected Return subject to risk &lt;= s_max (constraint on risk)</li>
 <li>Minimize Risk subject to return &gt;= r_min (threshold on expected returns)</li>
 </ul>
@@ -477,7 +483,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1083 words in this page.
+		1254 words in this page.
 	</div>
 </div>
 
@@ -497,13 +503,6 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
     </a>
     
     
-    <a class="flex-grow-0" href="/posts/ethics_human_research/">
-        Ethics in Human Research
-        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-            height="24">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
-    
 </div>
 <div >
 
@@ -513,7 +512,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
 		
-			<a href="/posts/human_computer_interaction/">Human-Computer Interaction</a>
+			<a href="/posts/ride_hailing_analytics/">Analytics for Ride Hailing Services</a>
 		
 </span>
 </div>
