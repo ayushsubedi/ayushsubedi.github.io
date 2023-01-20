@@ -12,32 +12,17 @@
     
     
     <item>
-      <title>Human-Computer Interaction</title>
+      <title>(Work in progress) Human-Computer Interaction</title>
       <link>https://ayushsubedi.github.io/posts/human_computer_interaction/</link>
       <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/human_computer_interaction/</guid>
-      <description>&lt;h1 id=&#34;work-in-progress-human-computer-interaction&#34;&gt;(Work in progress) Human-Computer Interaction&lt;/h1&gt;
-&lt;h2 id=&#34;learning-goal&#34;&gt;Learning Goal&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;common principles in HCI&lt;/li&gt;
-&lt;li&gt;design life cycle, and importance of iteration&lt;/li&gt;
-&lt;li&gt;current applications of HCI&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;learning-outcome&#34;&gt;Learning Outcome&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;design effective interactions between humans and computers&lt;/li&gt;
-&lt;li&gt;design: applying known principles to a new problem and interative processing of needfinding, prototyping and evaluaiton&lt;/li&gt;
-&lt;li&gt;effectiveness: usability/research/change&lt;/li&gt;
-&lt;li&gt;design interactions, not interfaces (shift on emphasis)&lt;/li&gt;
-&lt;/ul&gt;
+      <description>&lt;h1 id=&#34;human-computer-interaction&#34;&gt;Human-Computer Interaction&lt;/h1&gt;
 &lt;h2 id=&#34;introduction-to-hci&#34;&gt;Introduction to HCI&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;the goal is to create a scenario where user spends as much time as possible to accomplish the task, while the interface kind of vanishes during that interaction&lt;/li&gt;
-&lt;li&gt;a video game, as an example gives the user an experience of being in the game, not tinkering with the controller&lt;/li&gt;
-&lt;li&gt;ubiquity&lt;/li&gt;
-&lt;li&gt;we might be experts at interacting with computers, but that does not make us experts at designing interactions between other humans and computers&lt;/li&gt;
-&lt;li&gt;HCI is complex and large&lt;/li&gt;
+&lt;li&gt;The goal is to create a scenario where user spends as much time as possible to accomplish the task, while the interface kind of vanishes during that interaction&lt;/li&gt;
+&lt;li&gt;A video game, as an example gives the user an experience of being in the game, not tinkering with the controller&lt;/li&gt;
+&lt;li&gt;We might be experts at interacting with computers, but that does not make us experts at designing interactions between other humans and computers&lt;/li&gt;
 &lt;li&gt;HCI is a subset of Human Factors Engineering (Industrial Design, HCI, Product Design)&lt;/li&gt;
 &lt;li&gt;UI Design and UX Design and Interaction Design are a subset of HCI&lt;/li&gt;
 &lt;li&gt;Many principle of HCI come from Human Factors Engineering applied to computers&lt;/li&gt;
@@ -45,38 +30,113 @@
 &lt;li&gt;HCI is about understanding the interaction between users and computers, and UX design is about dictating the interaction between users and computer. The relationship is howerver, deeply symbiotic.&lt;/li&gt;
 &lt;li&gt;Human Factors Engineering is a merger of Engineering and Psychology&lt;/li&gt;
 &lt;li&gt;Psychology and HCI are also deeply symbiotic&lt;/li&gt;
-&lt;li&gt;HCI is about research (needfinding, prototyping, evaluation) and design (distributed congnition, mental models, universal design)&lt;/li&gt;
+&lt;li&gt;HCI is about research (needfinding, prototyping, evaluation) and design (distributed cognnition, mental models, universal design)&lt;/li&gt;
 &lt;li&gt;HCI at its core: Research informs Design and Design informs Research&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;exploring-hci&#34;&gt;Exploring HCI&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Technologies
+&lt;li&gt;Technologies : Virtual Reality, Augmented Reality, UbiComp and Wearables, Robotics, Mobile&lt;/li&gt;
+&lt;li&gt;Ideas: Context-Sensitive Computing, Gesture-Based Interaction, Pen-and Touch-Based Interaction, Information Visualization, CSCW (Computer Supported Cooperative Work) Interaction (Distributed Team, Distributed Work, Temporal and Geographical dimension): Example: Slack, Online course, etc., Social Computing&lt;/li&gt;
+&lt;li&gt;Domain: Special Needs (example: communicating data using sound for visually impaired people), Education (you might not always want to make something super easy), Healthcare (fitbit, virtual reality), Security (for security to be useful, it has to be usable). Captcha has become easy now with a checkbox, Games (topics of HCI are super salient here)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;introduction-to-principles&#34;&gt;Introduction to Principles&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Virtual Reality&lt;/li&gt;
-&lt;li&gt;Augmented Reality&lt;/li&gt;
-&lt;li&gt;UbiComp and Wearables&lt;/li&gt;
-&lt;li&gt;Robotics&lt;/li&gt;
-&lt;li&gt;Mobile&lt;/li&gt;
+&lt;li&gt;user uses interfaces to accomplish a task&lt;/li&gt;
+&lt;li&gt;need to userstand the user goals and the task&lt;/li&gt;
+&lt;li&gt;focusing on task and not the interface, allows us to come up with something amazing (nest instead of iteration on thermostat)&lt;/li&gt;
+&lt;li&gt;how to identify a task?
+&lt;ul&gt;
+&lt;li&gt;watch real users&lt;/li&gt;
+&lt;li&gt;talk to them&lt;/li&gt;
+&lt;li&gt;start small (look at individual interaction)&lt;/li&gt;
+&lt;li&gt;abstract up (why are they &lt;em&gt;actually&lt;/em&gt; performing?)&lt;/li&gt;
+&lt;li&gt;you are not your user&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Ideas
+&lt;li&gt;Goals of HCI:
 &lt;ul&gt;
-&lt;li&gt;Context-Sensitive Computing&lt;/li&gt;
-&lt;li&gt;Gesture-Based Interaction&lt;/li&gt;
-&lt;li&gt;Pen-and Touch-Based Interaction&lt;/li&gt;
-&lt;li&gt;Information Visualization&lt;/li&gt;
-&lt;li&gt;CSCW (Computer Supported Cooperative Work) Interaction (Distributed Team, Distributed Work, Temporal and Geographical dimension): Example: Slack, Online course, etc.&lt;/li&gt;
-&lt;li&gt;Social Computing&lt;/li&gt;
+&lt;li&gt;useful&lt;/li&gt;
+&lt;li&gt;usable (the big concern)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Domain
-&lt;ul&gt;
-&lt;li&gt;Special Needs (example: communicating data using sound for visually impaired people)&lt;/li&gt;
-&lt;li&gt;Education (you might not always want to make something super easy)&lt;/li&gt;
-&lt;li&gt;Healthcare (fitbit, virtual reality)&lt;/li&gt;
-&lt;li&gt;Security (for security to be useful, it has to be usable). Captcha has become easy now with a checkbox&lt;/li&gt;
-&lt;li&gt;Games (topics of HCI are super salient here)&lt;/li&gt;
+&lt;li&gt;If we were focusing on building better maps, we would not add navigation (think about what the user wants)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ex situ&lt;/strong&gt; - in a controlled or otherwise inauthentic environment&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In situ&lt;/strong&gt; - within the authentic context&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;processor&#34;&gt;Processor&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sensory processor, like another computer in the system, interface must fit within human limits, and evaluated by quantitative methods. - - &amp;ldquo;Behaviorism&amp;rdquo; from psychology&lt;/li&gt;
+&lt;li&gt;The processor model is concerned with objective, measurable outcomes, so noting the efficiency with which you can accomplish different tasks is relevant here.&lt;/li&gt;
+&lt;li&gt;control study&lt;/li&gt;
+&lt;li&gt;interfaces and get the timing&lt;/li&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Use existing data.&lt;/li&gt;
+&lt;li&gt;Objective comparison (text v/s voice).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Reason is not visible
+&lt;ul&gt;
+&lt;li&gt;why text is not better than voice.&lt;/li&gt;
+&lt;li&gt;Novice confusing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Suitable for only evaluation and optimization, not redesign.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;predictor&#34;&gt;Predictor&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ask interviews and focus groups&lt;/li&gt;
+&lt;li&gt;Get full details on textual description&lt;/li&gt;
+&lt;li&gt;Why use different interfaces at different time&lt;/li&gt;
+&lt;li&gt;why choice, why paritcular option&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Cognitivism&amp;rdquo; from psychology&lt;/li&gt;
+&lt;li&gt;knowledge, experience, expectation and thought process, we want users to predict what will happen, what are they thinking, interface must fit with knowledge, evaluated by qualitative studies.&lt;/li&gt;
+&lt;li&gt;The predictor model is concerned with what you predict will be the outcome of your action, and whether you can interpret whether the outcome matched your prediction, so focus on how the user perceives and interprets what they should do and whether it was successful.&lt;/li&gt;
+&lt;li&gt;The predictor model is not about interfaces predicting users intentions. The predictor model is about paying attention to what the user predicts the outcome of their action will be, and how they will interpret what they see after their action is complete.&lt;/li&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;More complete picture of interaction&lt;/li&gt;
+&lt;li&gt;Caters for experts and novices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;Analysis is costly&lt;/li&gt;
+&lt;li&gt;Bias in analysis. Focus on specific set of data points.&lt;/li&gt;
+&lt;li&gt;Ignore broader context.&lt;/li&gt;
+&lt;li&gt;Ex Only person and interface. Example maps in driving vs map in labs. *5 sec disappearence of search bar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;participant&#34;&gt;Participant&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Consider broader activity&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;not just inside their head but outside world, interface must fit with context, evaluted by in-situ studies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Functionalism/Systems Psychology&amp;rdquo; from psychology&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pros&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Evaluates interaction in context&lt;/li&gt;
+&lt;li&gt;Capture authentic user attentions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cons&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expensive analysis to perform and analyze both&lt;/li&gt;
+&lt;li&gt;Requires real functional interfaces, no prototypes&lt;/li&gt;
+&lt;li&gt;Hard to use when starting fresh&lt;/li&gt;
+&lt;li&gt;Lots of uncontrollable variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Each design informs one another&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
