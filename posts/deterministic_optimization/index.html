@@ -342,31 +342,51 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <li>A set of vectors are linearly independent if none of the vectors can be written as a linear combination of the others. That is the unique solution to the system of equations. There can be at most $n$ linearly independent vectors in $R^n$</li>
 <li>Any collection of $n$ linearly independent vectors in $R$ defines a basis (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &hellip;0]^T$, $e^2= [0, 1, &hellip;0]^T$,&hellip;,$e^n= [0, 0, &hellip;1]^T$, define the standard basis for $R^n$</li>
 <li>The rank of a matrix is a measure of the &ldquo;nondegeneracy&rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix. $row rank = column rank = rank(A)$. $A$ is full rank if $rank(A) = min(m, n)$</li>
+<li>A system of equations has a solution when the equations are consistent, meaning that there is at least one set of values for the variables that satisfies all of the equations. If the equations are inconsistent, meaning that there is no set of values that satisfies all of the equations, then the system of equations has no solution.</li>
 </ul>
 <iframe width="100%" height ="1024" src="https://www.aerostudents.com/courses/linear-algebra/linearAlgebraFullVersion.pdf#toolbar=0"></iframe>
 <h2 id="notes-from-multivariate-calculus">Notes from Multivariate Calculus</h2>
 <h3 id="hessian-matrix">Hessian matrix</h3>
 <ul>
-<li>The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables. It is named after the German mathematician Ludwig Otto Hesse who introduced it in 1843.</li>
+<li>The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables.</li>
 <li>The Hessian matrix of a scalar-valued function f(x) of n variables x = (x1, x2, &hellip;, xn) is defined as the matrix of second-order partial derivatives of f with respect to x, with the i-th row and j-th column containing the second partial derivative of f with respect to xi and xj.</li>
 <li>The Hessian matrix is often used in optimization, for example, to find the local minima or maxima of a function. A point where the Hessian is positive definite is a local minimum, while a point where the Hessian is negative definite is a local maximum. If the Hessian is positive semi-definite, it&rsquo;s a saddle point.</li>
 <li>It is important to notice that the Hessian Matrix is symmetric, therefore it has real eigenvalues and it is diagonalisable.</li>
 </ul>
 <h3 id="taylor-approximation">Taylor Approximation</h3>
-<p>The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series</p>
-<h3 id="set">Set</h3>
+<p>The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.
+Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.</p>
+<ul>
+<li>First order Taylor&rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)
+$$</li>
+<li>Second order Taylor&rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)+\frac{1}{2}\left(\mathbf{x}-\mathbf{x}^0\right)^{\top} \nabla^2 f\left(\mathbf{x}^0\right)\left(\mathbf{x}-\mathbf{x}^0\right)
+$$
+`</li>
+</ul>
+<h3 id="sets-in-optimization-problems">Sets in Optimization Problems</h3>
 <ul>
 <li>$R^2$ is closed but not bounded</li>
 <li>$x^2+y^2&lt;1$ is bounded but not closed</li>
 <li>$x+y&gt;=1$ is closed but not bounded</li>
 <li>$x^2+y^2&lt;=1$ is closed and bounded (compact)</li>
+<li>A set is convex if a line segment connecting two points in the set lies entirely in the set.</li>
 </ul>
 <iframe src="https://www.desmos.com/calculator/49e59msg7u?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h2 id="convex-function">Convex Function</h2>
 <ul>
+<li>A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$</li>
 <li>Function value at the average is less than the average of the function values</li>
 <li>This also implies that $a^Tx+b$ is convex (and concave)</li>
 <li>For a convex function the first order Taylor&rsquo;s approximation is a global under estimator</li>
+<li>A convex optimization problem has a convex objective and conved set of solutions.</li>
+<li>Linear programs are convex optimization problems.</li>
 </ul>
 </div>
 	</section>
@@ -515,7 +535,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1709 words in this page.
+		1869 words in this page.
 	</div>
 </div>
 

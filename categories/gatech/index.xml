@@ -204,31 +204,51 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;A set of vectors are linearly independent if none of the vectors can be written as a linear combination of the others. That is the unique solution to the system of equations. There can be at most $n$ linearly independent vectors in $R^n$&lt;/li&gt;
 &lt;li&gt;Any collection of $n$ linearly independent vectors in $R$ defines a basis (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &amp;hellip;0]^T$, $e^2= [0, 1, &amp;hellip;0]^T$,&amp;hellip;,$e^n= [0, 0, &amp;hellip;1]^T$, define the standard basis for $R^n$&lt;/li&gt;
 &lt;li&gt;The rank of a matrix is a measure of the &amp;ldquo;nondegeneracy&amp;rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix. $row rank = column rank = rank(A)$. $A$ is full rank if $rank(A) = min(m, n)$&lt;/li&gt;
+&lt;li&gt;A system of equations has a solution when the equations are consistent, meaning that there is at least one set of values for the variables that satisfies all of the equations. If the equations are inconsistent, meaning that there is no set of values that satisfies all of the equations, then the system of equations has no solution.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://www.aerostudents.com/courses/linear-algebra/linearAlgebraFullVersion.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;notes-from-multivariate-calculus&#34;&gt;Notes from Multivariate Calculus&lt;/h2&gt;
 &lt;h3 id=&#34;hessian-matrix&#34;&gt;Hessian matrix&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables. It is named after the German mathematician Ludwig Otto Hesse who introduced it in 1843.&lt;/li&gt;
+&lt;li&gt;The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables.&lt;/li&gt;
 &lt;li&gt;The Hessian matrix of a scalar-valued function f(x) of n variables x = (x1, x2, &amp;hellip;, xn) is defined as the matrix of second-order partial derivatives of f with respect to x, with the i-th row and j-th column containing the second partial derivative of f with respect to xi and xj.&lt;/li&gt;
 &lt;li&gt;The Hessian matrix is often used in optimization, for example, to find the local minima or maxima of a function. A point where the Hessian is positive definite is a local minimum, while a point where the Hessian is negative definite is a local maximum. If the Hessian is positive semi-definite, it&amp;rsquo;s a saddle point.&lt;/li&gt;
 &lt;li&gt;It is important to notice that the Hessian Matrix is symmetric, therefore it has real eigenvalues and it is diagonalisable.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;taylor-approximation&#34;&gt;Taylor Approximation&lt;/h3&gt;
-&lt;p&gt;The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series&lt;/p&gt;
-&lt;h3 id=&#34;set&#34;&gt;Set&lt;/h3&gt;
+&lt;p&gt;The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.
+Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First order Taylor&amp;rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)
+$$&lt;/li&gt;
+&lt;li&gt;Second order Taylor&amp;rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)+\frac{1}{2}\left(\mathbf{x}-\mathbf{x}^0\right)^{\top} \nabla^2 f\left(\mathbf{x}^0\right)\left(\mathbf{x}-\mathbf{x}^0\right)
+$$
+`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sets-in-optimization-problems&#34;&gt;Sets in Optimization Problems&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;$R^2$ is closed but not bounded&lt;/li&gt;
 &lt;li&gt;$x^2+y^2&amp;lt;1$ is bounded but not closed&lt;/li&gt;
 &lt;li&gt;$x+y&amp;gt;=1$ is closed but not bounded&lt;/li&gt;
 &lt;li&gt;$x^2+y^2&amp;lt;=1$ is closed and bounded (compact)&lt;/li&gt;
+&lt;li&gt;A set is convex if a line segment connecting two points in the set lies entirely in the set.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe src=&#34;https://www.desmos.com/calculator/49e59msg7u?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$&lt;/li&gt;
 &lt;li&gt;Function value at the average is less than the average of the function values&lt;/li&gt;
 &lt;li&gt;This also implies that $a^Tx+b$ is convex (and concave)&lt;/li&gt;
 &lt;li&gt;For a convex function the first order Taylor&amp;rsquo;s approximation is a global under estimator&lt;/li&gt;
+&lt;li&gt;A convex optimization problem has a convex objective and conved set of solutions.&lt;/li&gt;
+&lt;li&gt;Linear programs are convex optimization problems.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -285,9 +305,13 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;&lt;strong&gt;Ex situ&lt;/strong&gt; - in a controlled or otherwise inauthentic environment&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;In situ&lt;/strong&gt; - within the authentic context&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Three roles a human can play:&lt;/p&gt;
 &lt;h3 id=&#34;processor&#34;&gt;Processor&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Sensory processor, like another computer in the system, interface must fit within human limits, and evaluated by quantitative methods. - - &amp;ldquo;Behaviorism&amp;rdquo; from psychology&lt;/li&gt;
+&lt;li&gt;Nothing more than Sensory processor, take input and spit output out,  like another computer in the system, interface must fit within known human limits: (what humans can sense, what they can store in memory, and what they can physically do in the world)&lt;/li&gt;
+&lt;li&gt;usability: interface is physically usable (users can see colors, touch the buttons etc.)&lt;/li&gt;
+&lt;li&gt;evaluated by quantitative methods. - - &amp;ldquo;Behaviorism&amp;rdquo; from psychology&lt;/li&gt;
+&lt;li&gt;how quickly can the user complete the task?, how quickly can they react to incoming stimulus?&lt;/li&gt;
 &lt;li&gt;The processor model is concerned with objective, measurable outcomes, so noting the efficiency with which you can accomplish different tasks is relevant here.&lt;/li&gt;
 &lt;li&gt;control study&lt;/li&gt;
 &lt;li&gt;interfaces and get the timing&lt;/li&gt;
@@ -310,9 +334,9 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;Ask interviews and focus groups&lt;/li&gt;
 &lt;li&gt;Get full details on textual description&lt;/li&gt;
 &lt;li&gt;Why use different interfaces at different time&lt;/li&gt;
-&lt;li&gt;why choice, why paritcular option&lt;/li&gt;
+&lt;li&gt;why choice, why particular option&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Cognitivism&amp;rdquo; from psychology&lt;/li&gt;
-&lt;li&gt;knowledge, experience, expectation and thought process, we want users to predict what will happen, what are they thinking, interface must fit with knowledge, evaluated by qualitative studies.&lt;/li&gt;
+&lt;li&gt;here we care about the users knowledge, experience, expectation and thought process, we want users to predict what will happen, what are they thinking, interface must fit with knowledge, evaluated by qualitative studies.&lt;/li&gt;
 &lt;li&gt;The predictor model is concerned with what you predict will be the outcome of your action, and whether you can interpret whether the outcome matched your prediction, so focus on how the user perceives and interprets what they should do and whether it was successful.&lt;/li&gt;
 &lt;li&gt;The predictor model is not about interfaces predicting users intentions. The predictor model is about paying attention to what the user predicts the outcome of their action will be, and how they will interpret what they see after their action is complete.&lt;/li&gt;
 &lt;li&gt;Pros
@@ -360,6 +384,52 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Each design informs one another&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;feedback-cycles&#34;&gt;Feedback Cycles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;way in which people interact with the world and get feedback on the results of those interactions&lt;/li&gt;
+&lt;li&gt;Ubiquity of feedback cycles&lt;/li&gt;
+&lt;li&gt;Feedback cycles are hallmark of AI&lt;/li&gt;
+&lt;li&gt;The Gulf of Execution is a term used in the field of human-computer interaction to describe the gap between a user&amp;rsquo;s goals or intentions and the actions they must take in order to achieve those goals using a computer system. The gulf of execution refers to the difficulty or complexity a user may experience in understanding and using the system to accomplish their task. The term is often used in contrast to the Gulf of Evaluation, which refers to the difficulty a user may have in understanding the results or feedback provided by a system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gulf-of-execution&#34;&gt;Gulf of execution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;distance between user&amp;rsquo;s goals and the execution of the actions required to realize those goals&lt;/li&gt;
+&lt;li&gt;how do the users know what they can do?&lt;/li&gt;
+&lt;li&gt;how do the users figure out how to make those goals a reality?&lt;/li&gt;
+&lt;li&gt;how do they figure out what actions to take to make the state of the system match their goal state?&lt;/li&gt;
+&lt;li&gt;how hard is it to do in the interface what is necessary to accomplish the goals?&lt;/li&gt;
+&lt;li&gt;what is the difference between what the user thinks they have to do vs what they actually have to do?&lt;/li&gt;
+&lt;li&gt;Identify Intentions&lt;/li&gt;
+&lt;li&gt;Identify Intentions &lt;strong&gt;in the context of the system&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Identify Actions necessary to make the goal a reality&lt;/li&gt;
+&lt;li&gt;Execute in Interface&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gulf-of-evaluation&#34;&gt;Gulf of evaluation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the distance between the effects of those actions and the user&amp;rsquo;s understanding of the results&lt;/li&gt;
+&lt;li&gt;the output of the action that the user took&lt;/li&gt;
+&lt;li&gt;Interface Output (visual or sound)&lt;/li&gt;
+&lt;li&gt;Interpretation&lt;/li&gt;
+&lt;li&gt;Evaluation (whether or not the goal was accomplished/realized within the system)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tips-for-gulf-of-evaluation&#34;&gt;Tips for Gulf of evaluation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Give feedback constantly&lt;/li&gt;
+&lt;li&gt;Give feedback immediately&lt;/li&gt;
+&lt;li&gt;Match the feedback to the action (Subtle action, subtle feedback; signification action, significant feedback )&lt;/li&gt;
+&lt;li&gt;Vary your feedback (auditory, haptic etc.)&lt;/li&gt;
+&lt;li&gt;Leverage direct manipulation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;normans-feedback-cycle-stage&#34;&gt;Norman&amp;rsquo;s Feedback Cycle Stage&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The goal: what do I want to accomplish and why?&lt;/li&gt;
+&lt;li&gt;Plan: how can I do it?&lt;/li&gt;
+&lt;li&gt;Specify: what options do I have?&lt;/li&gt;
+&lt;li&gt;Perform: what can I do now?&lt;/li&gt;
+&lt;li&gt;Perceive: what just happened?&lt;/li&gt;
+&lt;li&gt;Interpret: what does it mean?&lt;/li&gt;
+&lt;li&gt;Compare: is this okay? Have I accomplished my goal?&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

@@ -204,31 +204,51 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;A set of vectors are linearly independent if none of the vectors can be written as a linear combination of the others. That is the unique solution to the system of equations. There can be at most $n$ linearly independent vectors in $R^n$&lt;/li&gt;
 &lt;li&gt;Any collection of $n$ linearly independent vectors in $R$ defines a basis (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &amp;hellip;0]^T$, $e^2= [0, 1, &amp;hellip;0]^T$,&amp;hellip;,$e^n= [0, 0, &amp;hellip;1]^T$, define the standard basis for $R^n$&lt;/li&gt;
 &lt;li&gt;The rank of a matrix is a measure of the &amp;ldquo;nondegeneracy&amp;rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix. $row rank = column rank = rank(A)$. $A$ is full rank if $rank(A) = min(m, n)$&lt;/li&gt;
+&lt;li&gt;A system of equations has a solution when the equations are consistent, meaning that there is at least one set of values for the variables that satisfies all of the equations. If the equations are inconsistent, meaning that there is no set of values that satisfies all of the equations, then the system of equations has no solution.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://www.aerostudents.com/courses/linear-algebra/linearAlgebraFullVersion.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;notes-from-multivariate-calculus&#34;&gt;Notes from Multivariate Calculus&lt;/h2&gt;
 &lt;h3 id=&#34;hessian-matrix&#34;&gt;Hessian matrix&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables. It is named after the German mathematician Ludwig Otto Hesse who introduced it in 1843.&lt;/li&gt;
+&lt;li&gt;The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables.&lt;/li&gt;
 &lt;li&gt;The Hessian matrix of a scalar-valued function f(x) of n variables x = (x1, x2, &amp;hellip;, xn) is defined as the matrix of second-order partial derivatives of f with respect to x, with the i-th row and j-th column containing the second partial derivative of f with respect to xi and xj.&lt;/li&gt;
 &lt;li&gt;The Hessian matrix is often used in optimization, for example, to find the local minima or maxima of a function. A point where the Hessian is positive definite is a local minimum, while a point where the Hessian is negative definite is a local maximum. If the Hessian is positive semi-definite, it&amp;rsquo;s a saddle point.&lt;/li&gt;
 &lt;li&gt;It is important to notice that the Hessian Matrix is symmetric, therefore it has real eigenvalues and it is diagonalisable.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;taylor-approximation&#34;&gt;Taylor Approximation&lt;/h3&gt;
-&lt;p&gt;The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series&lt;/p&gt;
-&lt;h3 id=&#34;set&#34;&gt;Set&lt;/h3&gt;
+&lt;p&gt;The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.
+Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First order Taylor&amp;rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)
+$$&lt;/li&gt;
+&lt;li&gt;Second order Taylor&amp;rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)+\frac{1}{2}\left(\mathbf{x}-\mathbf{x}^0\right)^{\top} \nabla^2 f\left(\mathbf{x}^0\right)\left(\mathbf{x}-\mathbf{x}^0\right)
+$$
+`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sets-in-optimization-problems&#34;&gt;Sets in Optimization Problems&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;$R^2$ is closed but not bounded&lt;/li&gt;
 &lt;li&gt;$x^2+y^2&amp;lt;1$ is bounded but not closed&lt;/li&gt;
 &lt;li&gt;$x+y&amp;gt;=1$ is closed but not bounded&lt;/li&gt;
 &lt;li&gt;$x^2+y^2&amp;lt;=1$ is closed and bounded (compact)&lt;/li&gt;
+&lt;li&gt;A set is convex if a line segment connecting two points in the set lies entirely in the set.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe src=&#34;https://www.desmos.com/calculator/49e59msg7u?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$&lt;/li&gt;
 &lt;li&gt;Function value at the average is less than the average of the function values&lt;/li&gt;
 &lt;li&gt;This also implies that $a^Tx+b$ is convex (and concave)&lt;/li&gt;
 &lt;li&gt;For a convex function the first order Taylor&amp;rsquo;s approximation is a global under estimator&lt;/li&gt;
+&lt;li&gt;A convex optimization problem has a convex objective and conved set of solutions.&lt;/li&gt;
+&lt;li&gt;Linear programs are convex optimization problems.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
