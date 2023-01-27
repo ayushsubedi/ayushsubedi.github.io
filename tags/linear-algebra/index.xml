@@ -205,7 +205,10 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;Any collection of $n$ linearly independent vectors in $R$ defines a basis (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &amp;hellip;0]^T$, $e^2= [0, 1, &amp;hellip;0]^T$,&amp;hellip;,$e^n= [0, 0, &amp;hellip;1]^T$, define the standard basis for $R^n$&lt;/li&gt;
 &lt;li&gt;The rank of a matrix is a measure of the &amp;ldquo;nondegeneracy&amp;rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix. $row rank = column rank = rank(A)$. $A$ is full rank if $rank(A) = min(m, n)$&lt;/li&gt;
 &lt;li&gt;A system of equations has a solution when the equations are consistent, meaning that there is at least one set of values for the variables that satisfies all of the equations. If the equations are inconsistent, meaning that there is no set of values that satisfies all of the equations, then the system of equations has no solution.&lt;/li&gt;
+&lt;li&gt;An affine function is a function that is defined as a linear combination of variables, with the addition of a constant term. An affine function can be written as:&lt;/li&gt;
 &lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;f(x) = a_1x_1 + a_2x_2 + ... + a_nx_n + b
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where x_1, x_2, &amp;hellip;, x_n are the input variables, a_1, a_2, &amp;hellip;, a_n are the coefficients, and b is a constant term. An affine function is a generalization of a linear function, which does not have the constant term.&lt;/p&gt;
 &lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://www.aerostudents.com/courses/linear-algebra/linearAlgebraFullVersion.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;notes-from-multivariate-calculus&#34;&gt;Notes from Multivariate Calculus&lt;/h2&gt;
 &lt;h3 id=&#34;hessian-matrix&#34;&gt;Hessian matrix&lt;/h3&gt;
@@ -249,6 +252,16 @@ $$&lt;/li&gt;
 &lt;li&gt;For a convex function the first order Taylor&amp;rsquo;s approximation is a global under estimator&lt;/li&gt;
 &lt;li&gt;A convex optimization problem has a convex objective and conved set of solutions.&lt;/li&gt;
 &lt;li&gt;Linear programs are convex optimization problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;operations-preserving-convexity&#34;&gt;Operations preserving convexity&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Nonnegative weighted sum of convex functions is convex, i.e. if $f_i$ is convex and $\alpha_i \geq 0$ for all $i=1, \ldots, m$, then $g(\mathbf{x})=\sum_{i=1}^m \alpha_i f_i(\mathbf{x})$ is convex.&lt;/li&gt;
+&lt;li&gt;Maximum of convex functions is convex, i.e. if $f_i$ is convex for all $i=1, \ldots, m$, then $g(\mathbf{x})=\max _i\left{f_i(\mathbf{x})\right}$ is convex.&lt;/li&gt;
+&lt;li&gt;Composition: Let $f: \mathbb{R}^m \rightarrow \mathbb{R}$ be a convex function, and $g_i: \mathbb{R}^n \rightarrow \mathbb{R}$ be convex for all $i=1, \ldots, m$. Then the composite function
+$$
+h(\mathbf{x})=f\left(g_1(\mathbf{x}), g_2(\mathbf{x}), \ldots, g_m(\mathbf{x})\right)
+$$
+is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

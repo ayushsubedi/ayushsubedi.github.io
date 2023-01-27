@@ -189,6 +189,61 @@
 &lt;li&gt;Interpret: what does it mean?&lt;/li&gt;
 &lt;li&gt;Compare: is this okay? Have I accomplished my goal?&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;research-methods&#34;&gt;Research Methods&lt;/h2&gt;
+&lt;h3 id=&#34;user-centered-design&#34;&gt;User Centered Design&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;prioritizing user needs while recognizing we do not know their needs&lt;/li&gt;
+&lt;li&gt;There are six principles of user-centered design:
+&lt;ol&gt;
+&lt;li&gt;The design is based upon an explicit understanding of users, tasks, and environments - Do needfinding&lt;/li&gt;
+&lt;li&gt;Users are involved throughout design and development - Interviews, Surveys etc.&lt;/li&gt;
+&lt;li&gt;The design is driven and refined by user-centered evaluation. Real users evaluate the prototype.&lt;/li&gt;
+&lt;li&gt;The process is iterative - No single shot results.&lt;/li&gt;
+&lt;li&gt;The design addresses the whole user experience - Entire experience is to be considered.&lt;/li&gt;
+&lt;li&gt;The design team includes multidisciplinary skills and perspectives - CS scientists, psych, designer and more&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;There are many types of stakeholders who user or are impacted by our interface:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Primary&lt;/strong&gt; - our user who uses the interface directly. Grade book tool - Teachers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Secondary&lt;/strong&gt; - are people who don&amp;rsquo;t use our system directly but who might interact with the output of it in some way. - Grade book tool Parents. Helicopter Parenting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tertiary&lt;/strong&gt; - are people who never interact with the tool or output but who are nonetheless impacted by the existence of the tool. Grade book tool - Students&lt;/li&gt;
+&lt;li&gt;Inmates are running the asylum - book by alan cooper&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;principles-of-user-centered-design&#34;&gt;Principles of User-Centered Design&lt;/h3&gt;
+&lt;h3 id=&#34;stakeholders&#34;&gt;Stakeholders&lt;/h3&gt;
+&lt;h3 id=&#34;the-design-life-cycle&#34;&gt;The Design Life Cycle&lt;/h3&gt;
+&lt;h3 id=&#34;methods-for-the-design-life-cycle&#34;&gt;Methods for the Design Life Cycle&lt;/h3&gt;
+&lt;h3 id=&#34;design-life-cycles-meet-feedback-cycles&#34;&gt;Design Life Cycles meet Feedback Cycles&lt;/h3&gt;
+&lt;h3 id=&#34;qualitative-vs-quantitative-data&#34;&gt;Qualitative vs Quantitative Data&lt;/h3&gt;
+&lt;h2 id=&#34;ethics-and-human-research&#34;&gt;Ethics and Human Research&lt;/h2&gt;
+&lt;h3 id=&#34;introduction-to-research-ethics&#34;&gt;Introduction to Research Ethics&lt;/h3&gt;
+&lt;h3 id=&#34;origin-of-the-institutional-review-board&#34;&gt;Origin of the Institutional Review Board&lt;/h3&gt;
+&lt;h3 id=&#34;the-value-of-research-ethics&#34;&gt;The value of Research Ethics&lt;/h3&gt;
+&lt;h3 id=&#34;irb-protocols&#34;&gt;IRB Protocols&lt;/h3&gt;
+&lt;h3 id=&#34;research-ethics-and-industry&#34;&gt;Research Ethics and Industry&lt;/h3&gt;
+&lt;h2 id=&#34;needfinding-and-requirements-gathering&#34;&gt;Needfinding and Requirements Gathering&lt;/h2&gt;
+&lt;h3 id=&#34;introduction-to-needfinding&#34;&gt;Introduction to Needfinding&lt;/h3&gt;
+&lt;h3 id=&#34;data-inventory&#34;&gt;Data Inventory&lt;/h3&gt;
+&lt;h3 id=&#34;the-problem-space&#34;&gt;The Problem Space&lt;/h3&gt;
+&lt;h3 id=&#34;user-types&#34;&gt;User Types&lt;/h3&gt;
+&lt;h3 id=&#34;avoiding-bias-in-needfinding&#34;&gt;Avoiding Bias in Needfinding&lt;/h3&gt;
+&lt;h3 id=&#34;naturalistic-observation&#34;&gt;Naturalistic Observation&lt;/h3&gt;
+&lt;h3 id=&#34;participant-observation&#34;&gt;Participant Observation&lt;/h3&gt;
+&lt;h3 id=&#34;hacks-and-workarounds&#34;&gt;Hacks and Workarounds&lt;/h3&gt;
+&lt;h3 id=&#34;errors&#34;&gt;Errors&lt;/h3&gt;
+&lt;h3 id=&#34;apprenticeship-and-ethnography&#34;&gt;Apprenticeship and Ethnography&lt;/h3&gt;
+&lt;h3 id=&#34;interviews-and-focus-groups&#34;&gt;Interviews and Focus Groups&lt;/h3&gt;
+&lt;h3 id=&#34;interviews&#34;&gt;Interviews&lt;/h3&gt;
+&lt;h3 id=&#34;think-aloud&#34;&gt;Think-Aloud&lt;/h3&gt;
+&lt;h3 id=&#34;surveys&#34;&gt;Surveys&lt;/h3&gt;
+&lt;h3 id=&#34;other-data-gathering&#34;&gt;Other Data Gathering&lt;/h3&gt;
+&lt;h3 id=&#34;iterative-needfinding&#34;&gt;Iterative Needfinding&lt;/h3&gt;
+&lt;h3 id=&#34;revisiting-the-inventory&#34;&gt;Revisiting the inventory&lt;/h3&gt;
+&lt;h3 id=&#34;representing-the-need&#34;&gt;Representing the Need&lt;/h3&gt;
+&lt;h3 id=&#34;defining-the-requirements&#34;&gt;Defining the Requirements&lt;/h3&gt;
 </description>
     </item>
     
