@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ayushsubedi.github.io/posts/deterministic_optimization/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/human_computer_interaction/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
     <lastmod>2023-01-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,10 +11,16 @@
     <loc>https://ayushsubedi.github.io/tags/cost-function/</loc>
     <lastmod>2023-01-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://ayushsubedi.github.io/posts/deterministic_optimization/</loc>
+    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/categories/gatech/</loc>
     <lastmod>2023-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/hci/</loc>
+    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/human_computer_interaction/</loc>
     <lastmod>2023-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/integral/</loc>

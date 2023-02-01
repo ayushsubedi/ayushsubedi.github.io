@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | (Work in progress)  Deterministic Optimization</title>
+	<title>Ayush Subedi  | Deterministic Optimization</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.102.3" />
 	
@@ -102,7 +102,7 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">(Work in progress)  Deterministic Optimization</h1>
+<h1 class="pt-2">Deterministic Optimization</h1>
 
 <h3 class="text-java-700 font-normal leading-relaxed pt-2">Optimization is the process of adjusting a system to achieve the best possible performance or outcome. This can be done by finding the maximum or minimum of a function, or by satisfying some set of constraints. Optimization is used in many fields, including engineering, finance, and machine learning. There are many different optimization algorithms that can be used, such as gradient descent, simulated annealing, and genetic algorithms. The choice of algorithm will depend on the specific problem being solved. In summary, it is a process of improving, a mathematical approach for seeking a &#34;best&#34; &#34;decision/action&#34; from a &#34;set of alternatives&#34;.</h3>
 
@@ -156,6 +156,10 @@ onload='renderMathInElement(document.body);'></script>
 <article>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="deterministic-optimization">Deterministic Optimization</h1>
+<h2 id="introduction-to-optimization-models">Introduction to Optimization Models</h2>
+<p>Deterministic (non-stochastic) optimization is a mathematical approach to finding the best solution to a problem by systematically searching the solution space for the optimal outcome. The optimization process is based on a set of deterministic (i.e., non-random) rules and algorithms, and the result of the optimization process is unique and repeatable.</p>
+<h3 id="generic-form-of-optimization-problem">Generic form of optimization problem:</h3>
+<p>$min$ $f(x)$ $s.t.$ $x \in X $</p>
 <h3 id="example-designing-a-box">Example: Designing a box:</h3>
 <p><strong>Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:</strong><br/>
 <strong>Decision:</strong> $x$ = how much to cut from each of the corners?<br/>
@@ -185,7 +189,7 @@ Matrix notation: $\begin{array}{cl}\max &amp; p^{\top} x \ \text { s.t. } &amp; 
 <strong>Best</strong>: Maximize return on investment<br/>
 Sum notation: $\begin{aligned} \max &amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp; \sum_{j=1}^n c_j x_j \leq B \ &amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ <br/>
 Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; c^{\top} x \leq B \ &amp; x \in{0,1}^n\end{aligned}$</p>
-<h2 id="ingredients-of-an-optimization-model">Ingredients of an optimization model:</h2>
+<h2 id="mathematical-ingredients-of-an-optimization-model">Mathematical ingredients of an optimization model:</h2>
 <ul>
 <li>Encode decisions/actions as <strong>decision variables</strong> whose values we are seeking</li>
 <li>Identify the relevant <strong>problem data</strong></li>
@@ -196,7 +200,7 @@ Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; 
 <pre tabindex="0"><code>min or max f(x1, x2, .... , xn)
 subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m 
         xj is continuous or discrete    j = 1,....,n
-</code></pre><h2 id="the-problem-setting">The problem setting</h2>
+</code></pre><h3 id="the-problem-setting">The problem setting</h3>
 <ul>
 <li>Finite number of decision variables</li>
 <li>A single objective function of decision variables and problem data
@@ -208,17 +212,17 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <li>There may be domain restrictions (continious or discrete) on some of the variables</li>
 <li>The functions defining the objective and constraints are algebraic (typically with rational coeffiicients)</li>
 </ul>
-<h2 id="minimization-vs-maximization">Minimization vs Maximization</h2>
+<h3 id="minimization-vs-maximization">Minimization vs Maximization</h3>
 <ul>
 <li>Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function</li>
 </ul>
-<h2 id="program-vs-optimization">Program vs optimization</h2>
+<h3 id="program-vs-optimization">Program vs optimization</h3>
 <ul>
 <li>A program or mathematical program is an optimization problem with a finite number of variables and constraints written out using explicit mathematical (algebraic) expressions</li>
 <li>The word program means plan/planning</li>
 <li>Early application of optimization arose in planning resource allocations and gave rise to programming to mean optimization (predates computer programming)</li>
 </ul>
-<h2 id="problem-classification">Problem classification</h2>
+<h2 id="classification-of-optimization-problems">Classification of optimization problems</h2>
 <ul>
 <li>The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.</li>
 </ul>
@@ -252,12 +256,12 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </tr>
 </tbody>
 </table>
-<h2 id="subclasses-of-nlp-non-linear-problem">Subclasses of NLP (Non Linear Problem)</h2>
+<h3 id="subclasses-of-nlp-non-linear-problem">Subclasses of NLP (Non Linear Problem)</h3>
 <ul>
 <li>Unconstrained optimization: No constraints or simple bound constraints on the variables (Box design example above)</li>
-<li>Quadrative programming: objectives and constraints involve quadratic functions (Data fitting example above)</li>
+<li>Quadrative programming: objectives and constraints involve quadratic functions (Data fitting example above), subset of NLP</li>
 </ul>
-<h2 id="subclasses-of-ip-integer-programming">Subclasses of IP (Integer Programming)</h2>
+<h3 id="subclasses-of-ip-integer-programming">Subclasses of IP (Integer Programming)</h3>
 <ul>
 <li>Mixed Integer Linear Program
 <ul>
@@ -275,10 +279,11 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <ul>
 <li>Nonlinear functions are quadratic</li>
 <li>Some variables are continuous and some are discrete</li>
+<li>subset of MINLP</li>
 </ul>
 </li>
 </ul>
-<h2 id="why-and-how-to-classify">Why and how to classify?</h2>
+<h3 id="why-and-how-to-classify">Why and how to classify?</h3>
 <ul>
 <li>Important to recognize the type of an optimization problem:
 <ul>
@@ -295,7 +300,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </ul>
 </li>
 </ul>
-<h2 id="portfolio-optimization-problem">Portfolio Optimization Problem</h2>
+<h3 id="portfolio-optimization-problem">Portfolio Optimization Problem</h3>
 <ul>
 <li>Identify basic portfolio optimization and associated issues</li>
 <li>Examine the Markowitz Portfolio Optimization approach
@@ -372,11 +377,19 @@ $$
 </ul>
 <h3 id="sets-in-optimization-problems">Sets in Optimization Problems</h3>
 <ul>
+<li>A set is closed if it includes its boundary points.</li>
+<li>Intersection of closed sets is closed.</li>
+<li>Typically, if none of inequalities are strict, then the set is closed.</li>
+<li>A set is convex if a line segment connecting two points in the set lies entirely in the set.</li>
+<li>A set is bounded if it can be enclosed in a large enough (hyper)-sphere or a box.</li>
+<li>A set that is both bounded and closed is called compact.
+<ul>
 <li>$R^2$ is closed but not bounded</li>
 <li>$x^2+y^2&lt;1$ is bounded but not closed</li>
 <li>$x+y&gt;=1$ is closed but not bounded</li>
 <li>$x^2+y^2&lt;=1$ is closed and bounded (compact)</li>
-<li>A set is convex if a line segment connecting two points in the set lies entirely in the set.</li>
+</ul>
+</li>
 </ul>
 <iframe src="https://www.desmos.com/calculator/49e59msg7u?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h2 id="convex-function">Convex Function</h2>
@@ -388,19 +401,146 @@ $$</li>
 <li>Function value at the average is less than the average of the function values</li>
 <li>This also implies that $a^Tx+b$ is convex (and concave)</li>
 <li>For a convex function the first order Taylor&rsquo;s approximation is a global under estimator</li>
-<li>A convex optimization problem has a convex objective and conved set of solutions.</li>
-<li>Linear programs are convex optimization problems.</li>
+<li>A convex optimization problem has a convex objective and convex set of solutions.</li>
+<li>Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.</li>
+<li>A twice differentiable univariate function is convex if the Hessian matrix is positive semi definite.</li>
+<li>A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.</li>
+<li>Sylvester&rsquo;s criterion is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
 </ul>
-<h2 id="operations-preserving-convexity">Operations preserving convexity</h2>
+<h3 id="operations-preserving-convexity">Operations preserving convexity</h3>
 <ul>
 <li>Nonnegative weighted sum of convex functions is convex, i.e. if $f_i$ is convex and $\alpha_i \geq 0$ for all $i=1, \ldots, m$, then $g(\mathbf{x})=\sum_{i=1}^m \alpha_i f_i(\mathbf{x})$ is convex.</li>
-<li>Maximum of convex functions is convex, i.e. if $f_i$ is convex for all $i=1, \ldots, m$, then $g(\mathbf{x})=\max _i\left{f_i(\mathbf{x})\right}$ is convex.</li>
+<li>Maximum of convex functions is convex.</li>
 <li>Composition: Let $f: \mathbb{R}^m \rightarrow \mathbb{R}$ be a convex function, and $g_i: \mathbb{R}^n \rightarrow \mathbb{R}$ be convex for all $i=1, \ldots, m$. Then the composite function
 $$
 h(\mathbf{x})=f\left(g_1(\mathbf{x}), g_2(\mathbf{x}), \ldots, g_m(\mathbf{x})\right)
 $$
 is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.</li>
 </ul>
+<h3 id="convex-optimization-problem">Convex Optimization Problem</h3>
+<ul>
+<li>An optimization problem (in minimization) form is a convex optimization problem, if the objective function is a convex function and constraint set is a convex set.</li>
+<li>The problem $min$ ${f(x) :  x \in X}$ is a convex optimization problem if $f$ is a convex function and $X$ is a convex set.</li>
+<li>To check if a given problem is convex, we can check convexity of each cnstraint separately. (This is a sufficient test, not necessary).</li>
+</ul>
+<h3 id="sufficient-and-necessary">Sufficient and necessary</h3>
+<ul>
+<li>In mathematical logic, the terms &ldquo;sufficient&rdquo; and &ldquo;necessary&rdquo; are used to describe the relationship between two conditions.</li>
+<li>A condition A is considered &ldquo;sufficient&rdquo; for a condition B if whenever condition A is true, condition B is also guaranteed to be true. In other words, if A is sufficient for B, then having A implies having B.</li>
+<li>A condition B is considered &ldquo;necessary&rdquo; for a condition A if whenever condition B is false, condition A is also guaranteed to be false. In other words, if B is necessary for A, then not having B implies not having A.</li>
+<li>Together, &ldquo;necessary and sufficient&rdquo; means that the two conditions are equivalent, in the sense that if one is true, then the other must also be true, and if one is false, then the other must also be false. In mathematical terms, A is necessary and sufficient for B if and only if (A if and only if B).</li>
+</ul>
+<h3 id="epigraph-of-a-function">Epigraph of a function</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epigraph_convex.svg/660px-Epigraph_convex.svg.png" alt=""></p>
+<ul>
+<li>An epigraph of a function is a graphical representation of the function&rsquo;s domain and range. It is formed by the region above the graph of the function and the line x = a for some value of a. The epigraph represents all possible values of the function for all values of x greater than or equal to a. It is used in optimization problems to visualize the feasible region for the optimization variable.</li>
+<li>A function (in black) is convex if and only if the region above its graph (in green) is a convex set. This region is the function&rsquo;s epigraph.</li>
+</ul>
+<h2 id="outcomes-of-optimization">Outcomes of Optimization</h2>
+<h3 id="possible-outcomes-of-optimization">Possible Outcomes of Optimization</h3>
+<h3 id="existence-of-optimal-solutions">Existence of Optimal Solutions</h3>
+<h3 id="local-and-global-optimal-solutions">Local and Global Optimal Solutions</h3>
+<h3 id="idea-of-improving-search">Idea of Improving Search</h3>
+<h2 id="optimality-certificates">Optimality Certificates</h2>
+<h3 id="optimality-certificates-and-relaxations">Optimality Certificates and Relaxations</h3>
+<h3 id="lagrangian-relaxation-and-duality">Lagrangian Relaxation and Duality</h3>
+<h2 id="unconstrained-optimization-derivative-based">Unconstrained Optimization: Derivative Based</h2>
+<h3 id="optimality-conditions">Optimality Conditions</h3>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<h3 id="newtons-method">Newton&rsquo;s Method</h3>
+<h2 id="unconstrained-optimization-derivative-free">Unconstrained Optimization: Derivative Free</h2>
+<h3 id="methods-for-univariate-functions">Methods for Univariate Functions</h3>
+<h3 id="methods-for-multivariate-function">Methods for Multivariate Function</h3>
+<h2 id="linear-optimization-modeling---network-flow-problems">Linear Optimization Modeling - Network Flow Problems</h2>
+<h3 id="introduction-to-lp-modeling">Introduction to LP Modeling</h3>
+<h3 id="optimal-transportation-problem">Optimal Transportation Problem</h3>
+<h3 id="maximum-flow-problem">Maximum Flow Problem</h3>
+<h3 id="shortest-path-problem">Shortest Path Problem</h3>
+<h2 id="linear-optimization-modeling---electricity-market">Linear Optimization Modeling - Electricity Market</h2>
+<h3 id="how-electricity-markets-work">How Electricity Markets Work</h3>
+<h3 id="modeling-power-plant-scheduling-using-lp">Modeling Power plant Scheduling Using LP</h3>
+<h3 id="market-clearing-mechanism">Market Clearing Mechanism</h3>
+<h2 id="linear-optimization-modeling---decision-making-under-uncertainty">Linear Optimization Modeling - Decision-Making Under Uncertainty</h2>
+<h3 id="the-need-to-make-decisions-under-uncertainty">the Need to Make Decisions Under Uncertainty</h3>
+<h3 id="two-stage-stochastic-linear-programming">Two-Stage Stochastic Linear Programming</h3>
+<h3 id="an-example-using-stochastic-lp">An Example Using Stochastic LP</h3>
+<h3 id="how-to-solve-stochastic-programs">How to Solve Stochastic Programs</h3>
+<h2 id="linear-optimization-modeling---handling-nonlinearity">Linear Optimization Modeling - Handling Nonlinearity</h2>
+<h3 id="the-power-of-piecewise-linear-functions">The Power of Piecewise Linear Functions</h3>
+<h3 id="robust-regression-using-lp">Robust Regression Using LP</h3>
+<h3 id="radiation-therapy">Radiation Therapy</h3>
+<h3 id="lp-models-for-radiation-therapy">LP Models for Radiation Therapy</h3>
+<h2 id="geometric-aspects-of-linear-optimization">Geometric Aspects of Linear Optimization</h2>
+<h3 id="basic-geometric-objects-in-lp">Basic Geometric Objects in LP</h3>
+<h3 id="extreme-points-and-convex-hull">Extreme Points and Convex Hull</h3>
+<h3 id="extreme-rays-and-unbounded-polyhedron">Extreme Rays and Unbounded Polyhedron</h3>
+<h3 id="representation-of-polyhedrons">Representation of Polyhedrons</h3>
+<h2 id="simplex-method-in-a-nutshell">Simplex Method in a Nutshell</h2>
+<h3 id="local-search---the-general-idea">Local Search - The General Idea</h3>
+<h3 id="local-search---specialized-to-lp">Local Search - Specialized to LP</h3>
+<h3 id="how-to-walk-on-the-edge">How to Walk on the Edge</h3>
+<h3 id="when-to-stop-and-declare-victory">When to Stop and Declare Victory</h3>
+<h2 id="further-development-of-simplex-method">Further Development of Simplex Method</h2>
+<h3 id="summarize-simplex-method">Summarize Simplex Method</h3>
+<h3 id="handling-degeneracy">Handling Degeneracy</h3>
+<h3 id="phase-iphase-ii-simplex-method">Phase I/Phase II Simplex Method</h3>
+<h2 id="linear-programming-duality">Linear Programming Duality</h2>
+<h3 id="introduction-to-duality-theory">Introduction to Duality Theory</h3>
+<h3 id="lagrangian-relaxation-and-lp-duality">Lagrangian Relaxation and LP Duality</h3>
+<h3 id="weak-duality-and-strong-duality">Weak Duality and Strong Duality</h3>
+<h3 id="table-of-possibles-and-impossibles">Table of Possibles and Impossibles</h3>
+<h3 id="complementary-slackness">Complementary Slackness</h3>
+<h2 id="robust-optimization">Robust Optimization</h2>
+<h3 id="concept-of-robustness">Concept of Robustness</h3>
+<h3 id="concept-of-robustness-in-example">Concept of Robustness in Example</h3>
+<h3 id="robust-linear-program">Robust Linear Program</h3>
+<h2 id="large-scale-optimization-cutting-stock-problem">Large-Scale Optimization Cutting Stock Problem</h2>
+<h3 id="cutting-stock-problem">Cutting Stock Problem</h3>
+<h3 id="gilmore-gomory-formulation">Gilmore-Gomory Formulation</h3>
+<h3 id="column-generation">Column Generation</h3>
+<h3 id="column-generation-for-cutting-stock-problem">Column Generation for Cutting Stock Problem</h3>
+<h2 id="large-scale-optimization">Large-Scale Optimization</h2>
+<h3 id="example-for-column-generation">Example for Column Generation</h3>
+<h3 id="primal-dual-relationship-constraint-generation">Primal-Dual Relationship: Constraint Generation</h3>
+<h3 id="primal-dual-relationship-pricing-problem-and-separation-problem">Primal-Dual Relationship: Pricing Problem and Separation Problem</h3>
+<h2 id="large-scale-optimization-dantzig-wolfe-decomposition">Large-Scale Optimization Dantzig-Wolfe Decomposition</h2>
+<h3 id="exploiting-special-structures-of-large-scale-optimization">Exploiting Special Structures of Large-Scale Optimization</h3>
+<h3 id="dantzig-wolfe-decomposition-1">Dantzig-Wolfe Decomposition 1</h3>
+<h3 id="dantzig-wolfe-decomposition-2">Dantzig-Wolfe Decomposition 2</h3>
+<h3 id="dantzig-wolfe-decomposition-3">Dantzig-Wolfe Decomposition 3</h3>
+<h2 id="nonlinear-optimization-modeling---approximation-and-fitting">Nonlinear Optimization Modeling - Approximation and Fitting</h2>
+<h3 id="linear-equations-norm-and-least-square">Linear Equations, Norm, and Least Square</h3>
+<h3 id="function-fitting">Function Fitting</h3>
+<h3 id="normal-equation-and-singular-value-decomposition">Normal Equation and Singular Value Decomposition</h3>
+<h3 id="image-compression-constrained-least-squares-and-svd">Image Compression, Constrained Least Squares, and SVD•</h3>
+<h2 id="convex-conic-programming-introduction">Convex Conic Programming Introduction</h2>
+<h3 id="convex-cones-order-and-linear-conic-programming">Convex Cones, Order, and Linear Conic Programming</h3>
+<h3 id="second-order-cone-and-socp">Second-Order Cone and SOCP</h3>
+<h3 id="psd-cone-and-sdp">PSD Cone and SDP</h3>
+<h2 id="ocp-sdp-examples">OCP, SDP Examples</h2>
+<h3 id="statistical-classification-problem">Statistical Classification Problem</h3>
+<h3 id="experimental-design">Experimental Design</h3>
+<h3 id="extremal-ellipsoid-problem">Extremal Ellipsoid Problem</h3>
+<h2 id="discrete-optimization---introduction">Discrete Optimization - Introduction</h2>
+<h3 id="why-discrete-variables">Why Discrete Variables</h3>
+<h3 id="discrete-optimization-challenges">Discrete Optimization Challenges</h3>
+<h3 id="computational-complexity">Computational Complexity</h3>
+<h2 id="discrete-optimization---modeling-with-binary-variables-1">Discrete Optimization - Modeling With Binary Variables 1</h2>
+<h3 id="nonconvex-functions">Nonconvex Functions</h3>
+<h3 id="nonconvex-sets-and-logical-relations">Nonconvex Sets and Logical Relations</h3>
+<h3 id="logical-relations">Logical Relations</h3>
+<h2 id="discrete-optimization---modeling-with-binary-variables-2">Discrete Optimization - Modeling With Binary Variables 2</h2>
+<h3 id="set-packing-covering-partitioning">Set Packing, Covering, Partitioning</h3>
+<h3 id="graph-and-network-problems">Graph and Network Problems</h3>
+<h2 id="discrete-optimization---modeling-exercises">Discrete Optimization - Modeling Exercises</h2>
+<h2 id="discrete-optimization---linear-programming-relaxation">Discrete Optimization - Linear Programming Relaxation</h2>
+<h3 id="linear-programming-relaxation">Linear Programming Relaxation</h3>
+<h3 id="ideal-formulations">Ideal Formulations</h3>
+<h2 id="discrete-optimization---solution-methods">Discrete Optimization - Solution Methods</h2>
+<h3 id="enumeration">Enumeration</h3>
+<h3 id="cutting-plane-methods">Cutting Plane Methods</h3>
+<h3 id="branch-and-bound-algorithm">Branch-and-Bound Algorithm</h3>
+<h3 id="heuristics">Heuristics</h3>
 </div>
 	</section>
 
@@ -548,7 +688,7 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		2047 words in this page.
+		3188 words in this page.
 	</div>
 </div>
 
@@ -564,7 +704,7 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        (Work in progress) Human-Computer Interaction
+        Human-Computer Interaction
     </a>
     
     
