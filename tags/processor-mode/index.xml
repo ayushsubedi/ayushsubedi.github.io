@@ -386,6 +386,52 @@
 &lt;li&gt;compatibility, compliance, cost&lt;/li&gt;
 &lt;li&gt;used to evaluate the interface going forward&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;direct-manipulation&#34;&gt;Direct Manipulation&lt;/h2&gt;
+&lt;h3 id=&#34;direct-manipulation-1&#34;&gt;Direct Manipulation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Direct manipulation in Human-Computer Interaction (HCI) refers to a style of user interface design where the user interacts with graphical objects on the screen directly and immediately, as opposed to indirectly or through a separate command language. The goal of direct manipulation is to make the interface more intuitive and easier to use by allowing users to manipulate objects and see the results of their actions in real-time. Examples of direct manipulation interfaces include desktop environments like Microsoft Windows and Apple&amp;rsquo;s MacOS, as well as mobile operating systems like Apple&amp;rsquo;s iOS and Google&amp;rsquo;s Android.&lt;/li&gt;
+&lt;li&gt;invisible interface&lt;/li&gt;
+&lt;li&gt;directly manipulating to perform a task (touch screen allowing for zooming with hand gesture)&lt;/li&gt;
+&lt;li&gt;Semantic distane: how hard is it to know how to do sth?&lt;/li&gt;
+&lt;li&gt;Articulary distance: how hard is it to do sth when you know what to do?&lt;/li&gt;
+&lt;li&gt;Direct manipulation is a powerful method for shortening gulfs.&lt;/li&gt;
+&lt;li&gt;VR is also allowing for direct manipulation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;invisibility-by-learning&#34;&gt;Invisibility by learning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;cars are an example&lt;/li&gt;
+&lt;li&gt;leveraging prior expectation and providing quick feedback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tips-for-invisible-interfaces&#34;&gt;Tips for invisible interfaces:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use affordances: places where visual design suggest how its supposed to be used: buttons for pressing etc.&lt;/li&gt;
+&lt;li&gt;Know your user: invisible means different things to different uses&lt;/li&gt;
+&lt;li&gt;Differentiate your user: allow multiple ways of accomplishing something&lt;/li&gt;
+&lt;li&gt;Let your interface teach: teach users more efficient ways of doing something&lt;/li&gt;
+&lt;li&gt;Talk to your user: ask them what the users are thinking (if they are talking about the interface, it is pretty visible)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;human-abilities&#34;&gt;Human abilities&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Input, and how humans react&lt;/li&gt;
+&lt;li&gt;Average person can sense and perceive (eyes: color and movement)
+&lt;ul&gt;
+&lt;li&gt;Visual&lt;/li&gt;
+&lt;li&gt;Auditory&lt;/li&gt;
+&lt;li&gt;Haptic Feedback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use recognition over recall&lt;/li&gt;
+&lt;li&gt;Procedural learning: how to do something&lt;/li&gt;
+&lt;li&gt;Declarative learning: knowledge about something&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reducing-cognitive-load&#34;&gt;Reducing cognitive load&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use multiple modalities&lt;/li&gt;
+&lt;li&gt;Let the modalities complement each other&lt;/li&gt;
+&lt;li&gt;Give the user control of the pace&lt;/li&gt;
+&lt;li&gt;Emphasize essential content and avoid the clutter&lt;/li&gt;
+&lt;li&gt;offload tasks&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

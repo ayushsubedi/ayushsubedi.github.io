@@ -438,12 +438,59 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 </ul>
 <h2 id="outcomes-of-optimization">Outcomes of Optimization</h2>
 <h3 id="possible-outcomes-of-optimization">Possible Outcomes of Optimization</h3>
+<ul>
+<li>Any $x \in X$ is a feasible solution of the optimization problem (P)</li>
+<li>Feasible solution = A solution that satisfies all the constraints</li>
+<li>An unbounded problem must be feasible</li>
+<li>An optimization problem is unbounded, if there are feasible solutions with arbitrarily small objective values.</li>
+<li>If $X=\emptyset$ then no feasible solutions exist, and the problem (P) is said to be infeasible.</li>
+<li>The problem $\min {3x+ 2y: x+ y&lt;=1,x&gt;=2,y&gt;=2}$ is infeasible</li>
+<li>An optimization problem can have 4 possible outcomes. The outcome can be infeasible, unbounded, have no optimal solution, have one optimal solution, or have multiple optimal solutions</li>
+</ul>
 <h3 id="existence-of-optimal-solutions">Existence of Optimal Solutions</h3>
+<ul>
+<li>The Weierstrass extreme value theorem asserts that if you minimize a continuous function over a closed and bounded set in $R_n$, then the minimum will be achieved at some point in the set.</li>
+<li>Sufficient conditions: if the constraint set is bounded and non empty (feasible), then continuity and closedness guarantees an optimal solution exist.</li>
+</ul>
 <h3 id="local-and-global-optimal-solutions">Local and Global Optimal Solutions</h3>
+<ul>
+<li>Local optimal solutions are also global optimal solutions for convex optimization problems</li>
+<li>Every global optimal solution is a local optimal solution, but not vice versa</li>
+<li>The objective function value at different local optimal solutions may be different</li>
+<li>The objective funtion value at all global solutions must be the same</li>
+</ul>
 <h3 id="idea-of-improving-search">Idea of Improving Search</h3>
+<ul>
+<li>Most optimization algorithms are based on the paradigm of improving search:
+<ul>
+<li>Start from a feasible solution</li>
+<li>Move to a new feasible solution with a better objective value, Stop if not possible</li>
+<li>Repeat step 2</li>
+</ul>
+</li>
+<li>In general, we are only able to look in the &ldquo;neighbourhood&rdquo; of the current solution in search of a better feasible solution (solutions that are within a small positive distance from the current solution)</li>
+<li>The move direction and step size should ensure that the new point is fesible and has an improved objective function value</li>
+<li>The improving search is better for local solutions, but for convex, in principal it can be used to find global solutions (by definition)</li>
+</ul>
 <h2 id="optimality-certificates">Optimality Certificates</h2>
 <h3 id="optimality-certificates-and-relaxations">Optimality Certificates and Relaxations</h3>
+<ul>
+<li>A certificate or a stopping condition is an easily checkable condition such that if the current solution satisfies this condition then it is guaranteed to be optimal or near optimal</li>
+<li>Lower bound allows us to get upper bound on the gap</li>
+<li>For two optimization problem (P) $min$ $f(x)$ $s.t.$ $x \in X $ and (Q) $min$ $g(x)$ $s.t.$ $x \in Y $, Problem (Q) is a relaxation of P if $X \subseteq Y$ and $f(x) &gt;= g(x) \forall x \in X $</li>
+<li>obtained by enlarging the feasible region and underapproximating the objective function. we do not have to do both of those (see equals to sign)</li>
+<li>Relaxation in optimization refers to the process of modifying or loosening the constraints of an optimization problem to make it easier to solve. The relaxed problem provides an approximate solution, which can then be improved by tightening the constraints.</li>
+<li>Optimal value of the relaxation provides a lower bound on the original problem</li>
+<li>If the relaxation is infeasible then clearly the original problem is also infeasible</li>
+<li>Suppose only the constraints are relaxed, then if a solution to the relaxation is fesible to the original problem then it must be an optimal solution to the original problem</li>
+</ul>
 <h3 id="lagrangian-relaxation-and-duality">Lagrangian Relaxation and Duality</h3>
+<ul>
+<li>Lagrangian relaxation is a method used in optimization to solve a difficult problem by relaxing some of its constraints and instead optimizing a modified objective function known as the Lagrangian function. The Lagrangian function is constructed by adding a penalty term for each constraint to the original objective function. The penalty term is multiplied by a non-negative Lagrange multiplier that represents the slack in the constraint. By choosing appropriate values for the multipliers, the relaxed problem can be made to approximate the original problem.</li>
+<li>The dual problem attempts to find the relaxation with the tightest bound</li>
+<li>Weak duality: dual optimal value &lt;= original optimal value</li>
+<li>Some times we get strong duality</li>
+</ul>
 <h2 id="unconstrained-optimization-derivative-based">Unconstrained Optimization: Derivative Based</h2>
 <h3 id="optimality-conditions">Optimality Conditions</h3>
 <h3 id="gradient-descent">Gradient Descent</h3>
@@ -688,7 +735,7 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		3188 words in this page.
+		3811 words in this page.
 	</div>
 </div>
 
