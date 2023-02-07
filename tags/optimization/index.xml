@@ -67,7 +67,7 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;Finite number of decision variables&lt;/li&gt;
 &lt;li&gt;A single objective function of decision variables and problem data
 &lt;ul&gt;
-&lt;li&gt;Multiple objective functions are handled by either taking a weighted comvination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.&lt;/li&gt;
+&lt;li&gt;Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data&lt;/li&gt;
@@ -291,6 +291,7 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.&
 &lt;li&gt;A condition A is considered &amp;ldquo;sufficient&amp;rdquo; for a condition B if whenever condition A is true, condition B is also guaranteed to be true. In other words, if A is sufficient for B, then having A implies having B.&lt;/li&gt;
 &lt;li&gt;A condition B is considered &amp;ldquo;necessary&amp;rdquo; for a condition A if whenever condition B is false, condition A is also guaranteed to be false. In other words, if B is necessary for A, then not having B implies not having A.&lt;/li&gt;
 &lt;li&gt;Together, &amp;ldquo;necessary and sufficient&amp;rdquo; means that the two conditions are equivalent, in the sense that if one is true, then the other must also be true, and if one is false, then the other must also be false. In mathematical terms, A is necessary and sufficient for B if and only if (A if and only if B).&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;being a male is a necessary condition for being a brother, but it is not sufficient — while being a male sibling is a necessary and sufficient condition for being a brother&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;epigraph-of-a-function&#34;&gt;Epigraph of a function&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epigraph_convex.svg/660px-Epigraph_convex.svg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -355,6 +356,12 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.&
 &lt;/ul&gt;
 &lt;h2 id=&#34;unconstrained-optimization-derivative-based&#34;&gt;Unconstrained Optimization: Derivative Based&lt;/h2&gt;
 &lt;h3 id=&#34;optimality-conditions&#34;&gt;Optimality Conditions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;unconstrained, that is the constraints are only $x \in R^n$ and twice differentiable&lt;/li&gt;
+&lt;li&gt;if a solution is a local optimal solution of an unconstrained problem, then the gradient vanishes at the point&lt;/li&gt;
+&lt;li&gt;Hessian is a positive semidefinite&lt;/li&gt;
+&lt;li&gt;The conditions are necessary but not sufficient&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
 &lt;h3 id=&#34;newtons-method&#34;&gt;Newton&amp;rsquo;s Method&lt;/h3&gt;
 &lt;h2 id=&#34;unconstrained-optimization-derivative-free&#34;&gt;Unconstrained Optimization: Derivative Free&lt;/h2&gt;

@@ -205,7 +205,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <li>Finite number of decision variables</li>
 <li>A single objective function of decision variables and problem data
 <ul>
-<li>Multiple objective functions are handled by either taking a weighted comvination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.</li>
+<li>Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.</li>
 </ul>
 </li>
 <li>The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data</li>
@@ -429,6 +429,7 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 <li>A condition A is considered &ldquo;sufficient&rdquo; for a condition B if whenever condition A is true, condition B is also guaranteed to be true. In other words, if A is sufficient for B, then having A implies having B.</li>
 <li>A condition B is considered &ldquo;necessary&rdquo; for a condition A if whenever condition B is false, condition A is also guaranteed to be false. In other words, if B is necessary for A, then not having B implies not having A.</li>
 <li>Together, &ldquo;necessary and sufficient&rdquo; means that the two conditions are equivalent, in the sense that if one is true, then the other must also be true, and if one is false, then the other must also be false. In mathematical terms, A is necessary and sufficient for B if and only if (A if and only if B).</li>
+<li>&ldquo;being a male is a necessary condition for being a brother, but it is not sufficient — while being a male sibling is a necessary and sufficient condition for being a brother&rdquo;</li>
 </ul>
 <h3 id="epigraph-of-a-function">Epigraph of a function</h3>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epigraph_convex.svg/660px-Epigraph_convex.svg.png" alt=""></p>
@@ -493,6 +494,12 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 </ul>
 <h2 id="unconstrained-optimization-derivative-based">Unconstrained Optimization: Derivative Based</h2>
 <h3 id="optimality-conditions">Optimality Conditions</h3>
+<ul>
+<li>unconstrained, that is the constraints are only $x \in R^n$ and twice differentiable</li>
+<li>if a solution is a local optimal solution of an unconstrained problem, then the gradient vanishes at the point</li>
+<li>Hessian is a positive semidefinite</li>
+<li>The conditions are necessary but not sufficient</li>
+</ul>
 <h3 id="gradient-descent">Gradient Descent</h3>
 <h3 id="newtons-method">Newton&rsquo;s Method</h3>
 <h2 id="unconstrained-optimization-derivative-free">Unconstrained Optimization: Derivative Free</h2>
@@ -735,7 +742,7 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		3811 words in this page.
+		3887 words in this page.
 	</div>
 </div>
 
