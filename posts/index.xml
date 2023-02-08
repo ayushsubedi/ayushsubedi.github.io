@@ -19,7 +19,6 @@
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
       <description>&lt;h1 id=&#34;deterministic-optimization&#34;&gt;Deterministic Optimization&lt;/h1&gt;
 &lt;h2 id=&#34;introduction-to-optimization-models&#34;&gt;Introduction to Optimization Models&lt;/h2&gt;
-&lt;p&gt;Deterministic (non-stochastic) optimization is a mathematical approach to finding the best solution to a problem by systematically searching the solution space for the optimal outcome. The optimization process is based on a set of deterministic (i.e., non-random) rules and algorithms, and the result of the optimization process is unique and repeatable.&lt;/p&gt;
 &lt;h3 id=&#34;generic-form-of-optimization-problem&#34;&gt;Generic form of optimization problem:&lt;/h3&gt;
 &lt;p&gt;$min$ $f(x)$ $s.t.$ $x \in X $&lt;/p&gt;
 &lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
@@ -357,106 +356,79 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.&
 &lt;h2 id=&#34;unconstrained-optimization-derivative-based&#34;&gt;Unconstrained Optimization: Derivative Based&lt;/h2&gt;
 &lt;h3 id=&#34;optimality-conditions&#34;&gt;Optimality Conditions&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;unconstrained, that is the constraints are only $x \in R^n$ and twice differentiable&lt;/li&gt;
-&lt;li&gt;if a solution is a local optimal solution of an unconstrained problem, then the gradient vanishes at the point&lt;/li&gt;
-&lt;li&gt;Hessian is a positive semidefinite&lt;/li&gt;
+&lt;li&gt;Unconstrained, that is the constraints are only $x \in R^n$ and twice differentiable&lt;/li&gt;
+&lt;li&gt;If a solution is a local optimal solution of an unconstrained problem, then the gradient vanishes at the point (First order optimality condition)&lt;/li&gt;
+&lt;li&gt;Hessian is a positive semidefinite (Second order optimality condition)&lt;/li&gt;
 &lt;li&gt;The conditions are necessary but not sufficient&lt;/li&gt;
+&lt;li&gt;For example for, $f(x)=x^3$, at point 0, both of the conditions are satisfied. However, it is neither a local min or max&lt;/li&gt;
+&lt;li&gt;A sufficient (but not necessary) condition would be the gradient vanishing at the point, and is the Hessian is positive definite.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The gradient descent method moves from one iteration to the next by moving along the negative of the gradient direction in order to minimize the function.&lt;/li&gt;
+&lt;li&gt;Gradient descent is a optimization algorithm used to minimize the error of a machine learning model. It is an iterative method that updates the model parameters in the direction of the negative gradient of the cost function with respect to the parameters. The gradient indicates the direction of steepest increase in the cost function and the descent refers to moving in the direction of negative gradient to find the minimum of the cost function. The learning rate determines the size of the steps taken to reach the minimum and the algorithm stops when the change in cost is below a certain threshold or when a maximum number of iterations is reached.&lt;/li&gt;
+&lt;li&gt;Let $x^k$ be the current iterate, and we want to chose a downhill direction $d^k$ and a step size $a$ such that $f(x^k+ad^k)&amp;lt;f(x^k)$&lt;/li&gt;
+&lt;li&gt;By Taylor&amp;rsquo;s expansion, $f(x^k+ad^k) \approx f(x^k) + a \nabla f(x^k)^Td_k$&lt;/li&gt;
+&lt;li&gt;So we want $\nabla f(x^k)^Td_k &amp;lt; 0$. The steepest descent direction is $d^k = - \nabla f(x^k) $&lt;/li&gt;
+&lt;li&gt;Step size can be identified using a line search. That is, define a function $g(a) := f(x^k + ad^k)$. Choose $a$ to minimize $g$. It can also be a small fixed step size.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;newtons-method&#34;&gt;Newton&amp;rsquo;s Method&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Newton&amp;rsquo;s Method is a second-order optimization algorithm that is used to find the minimum of a function. It is an iterative method that updates the parameters by using the gradient of the function (first derivative) and the Hessian matrix (second derivative) to find the direction of the local minimum. The algorithm starts with an initial guess for the parameters and iteratively updates them using the Newton-Raphson formula until the change in the parameters is below a certain threshold or a maximum number of iterations is reached. Newton&amp;rsquo;s Method is faster and more precise than gradient descent for well-behaved functions, but it can be sensitive to poor initialization and can get stuck in local minima.&lt;/li&gt;
+&lt;li&gt;$x^{k+1} $ = $x^k$ - $[\nabla^2$ $f(x_k)]^{-1}$ $ \nabla f(x^k)$&lt;/li&gt;
+&lt;li&gt;If started close enough to local minimum and the Hessian is positive definite, then the method has quadratic convergence&lt;/li&gt;
+&lt;li&gt;Not guarenteed to converge. The Newton direction may not be improving at all.&lt;/li&gt;
+&lt;li&gt;If the Hessian is singular ( or close to singular) at some iteration, we cannot proceed.&lt;/li&gt;
+&lt;li&gt;Computing gradient as well as the Hessian and its inverse is expensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;quasi-netwon-methods&#34;&gt;Quasi-Netwon Methods&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Blend of gradient descent and Newton&amp;rsquo;s method.&lt;/li&gt;
+&lt;li&gt;Avoids computation of Hessian and its inverse&lt;/li&gt;
+&lt;li&gt;$x^{k+1} $ = $x^k$ - $a_k H_k$ $ \nabla f(x^k)$, where $H_k$ is an approximation of $[\nabla^2$ $f(x_k)]^{-1}$ and $a_k$ is determined by line search&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;unconstrained-optimization-derivative-free&#34;&gt;Unconstrained Optimization: Derivative Free&lt;/h2&gt;
 &lt;h3 id=&#34;methods-for-univariate-functions&#34;&gt;Methods for Univariate Functions&lt;/h3&gt;
-&lt;h3 id=&#34;methods-for-multivariate-function&#34;&gt;Methods for Multivariate Function&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Golden Section Search: Start with an initial interval $[x_l, x_u]$ containing the minima, and successively narrow this interval&lt;/li&gt;
+&lt;li&gt;Golden Section Search is an optimization algorithm used to find the minimum of a unimodal function, i.e., a function with a single minimum. The method is based on the idea of dividing an interval that contains the minimum into three sections, with the middle section being proportional to the golden ratio. The algorithm iteratively narrows down the interval by selecting the section that contains the minimum and discards the other sections. The process continues until the interval is sufficiently small and the minimum can be approximated with a desired accuracy. Golden Section Search is a bracketing method, which means it only requires the function to be unimodal and does not require the derivative or any other information about the function. It is a simple and efficient method for finding the minimum of unimodal functions, but it is slower than more sophisticated optimization methods for functions with multiple minima or more complex structures.&lt;/li&gt;
+&lt;li&gt;Step 0: Set $x_1 = x_u - a(x_u-x_l)$ and $x_2=x_l+a(x_u-x_l)$&lt;/li&gt;
+&lt;li&gt;Step 1: If $(x_u-x_l) &amp;lt;= \epsilon$ stop and return $x^* = 0.5(x_l+x_u)$ as the minima&lt;/li&gt;
+&lt;li&gt;Example of how to use scipy.optimize.minimize to minimize a scalar function:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import numpy as np
+from scipy.optimize import minimize
+
+def objective_function(x):
+    return x**2 + 5*np.sin(x)
+
+x0 = np.array([1.0]) # Initial guess
+result = minimize(objective_function, x0, method=&amp;#39;BFGS&amp;#39;)
+print(&amp;#34;Minimum at:&amp;#34;, result.x)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;methods-for-multivariate-function&#34;&gt;Methods for Multivariate Function&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/d/de/Nelder-Mead_Himmelblau.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Nelder-Mead method is a optimization algorithm used to minimize a scalar function of several variables. It is a derivative-free method, meaning that it does not require the gradient of the objective function to be calculated. It works by constructing a simplex (a set of vertices) in the high-dimensional space defined by the input variables, and then iteratively modifying the vertices to find the minimum.&lt;/li&gt;
+&lt;li&gt;Here&amp;rsquo;s an example of how to use scipy.optimize.minimize with the Nelder-Mead method:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import numpy as np
+from scipy.optimize import minimize
+
+def objective_function(x):
+    return x**2 + 5*np.sin(x)
+
+x0 = np.array([1.0]) # Initial guess
+result = minimize(objective_function, x0, method=&amp;#39;Nelder-Mead&amp;#39;)
+print(&amp;#34;Minimum at:&amp;#34;, result.x)
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Nelder-Mead method is a numerical algorithm for minimizing a multivariate function using only function evaluations&lt;/li&gt;
+&lt;li&gt;It is not guaranteed to converge but often works well.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;linear-optimization-modeling---network-flow-problems&#34;&gt;Linear Optimization Modeling - Network Flow Problems&lt;/h2&gt;
 &lt;h3 id=&#34;introduction-to-lp-modeling&#34;&gt;Introduction to LP Modeling&lt;/h3&gt;
 &lt;h3 id=&#34;optimal-transportation-problem&#34;&gt;Optimal Transportation Problem&lt;/h3&gt;
 &lt;h3 id=&#34;maximum-flow-problem&#34;&gt;Maximum Flow Problem&lt;/h3&gt;
 &lt;h3 id=&#34;shortest-path-problem&#34;&gt;Shortest Path Problem&lt;/h3&gt;
-&lt;h2 id=&#34;linear-optimization-modeling---electricity-market&#34;&gt;Linear Optimization Modeling - Electricity Market&lt;/h2&gt;
-&lt;h3 id=&#34;how-electricity-markets-work&#34;&gt;How Electricity Markets Work&lt;/h3&gt;
-&lt;h3 id=&#34;modeling-power-plant-scheduling-using-lp&#34;&gt;Modeling Power plant Scheduling Using LP&lt;/h3&gt;
-&lt;h3 id=&#34;market-clearing-mechanism&#34;&gt;Market Clearing Mechanism&lt;/h3&gt;
-&lt;h2 id=&#34;linear-optimization-modeling---decision-making-under-uncertainty&#34;&gt;Linear Optimization Modeling - Decision-Making Under Uncertainty&lt;/h2&gt;
-&lt;h3 id=&#34;the-need-to-make-decisions-under-uncertainty&#34;&gt;the Need to Make Decisions Under Uncertainty&lt;/h3&gt;
-&lt;h3 id=&#34;two-stage-stochastic-linear-programming&#34;&gt;Two-Stage Stochastic Linear Programming&lt;/h3&gt;
-&lt;h3 id=&#34;an-example-using-stochastic-lp&#34;&gt;An Example Using Stochastic LP&lt;/h3&gt;
-&lt;h3 id=&#34;how-to-solve-stochastic-programs&#34;&gt;How to Solve Stochastic Programs&lt;/h3&gt;
-&lt;h2 id=&#34;linear-optimization-modeling---handling-nonlinearity&#34;&gt;Linear Optimization Modeling - Handling Nonlinearity&lt;/h2&gt;
-&lt;h3 id=&#34;the-power-of-piecewise-linear-functions&#34;&gt;The Power of Piecewise Linear Functions&lt;/h3&gt;
-&lt;h3 id=&#34;robust-regression-using-lp&#34;&gt;Robust Regression Using LP&lt;/h3&gt;
-&lt;h3 id=&#34;radiation-therapy&#34;&gt;Radiation Therapy&lt;/h3&gt;
-&lt;h3 id=&#34;lp-models-for-radiation-therapy&#34;&gt;LP Models for Radiation Therapy&lt;/h3&gt;
-&lt;h2 id=&#34;geometric-aspects-of-linear-optimization&#34;&gt;Geometric Aspects of Linear Optimization&lt;/h2&gt;
-&lt;h3 id=&#34;basic-geometric-objects-in-lp&#34;&gt;Basic Geometric Objects in LP&lt;/h3&gt;
-&lt;h3 id=&#34;extreme-points-and-convex-hull&#34;&gt;Extreme Points and Convex Hull&lt;/h3&gt;
-&lt;h3 id=&#34;extreme-rays-and-unbounded-polyhedron&#34;&gt;Extreme Rays and Unbounded Polyhedron&lt;/h3&gt;
-&lt;h3 id=&#34;representation-of-polyhedrons&#34;&gt;Representation of Polyhedrons&lt;/h3&gt;
-&lt;h2 id=&#34;simplex-method-in-a-nutshell&#34;&gt;Simplex Method in a Nutshell&lt;/h2&gt;
-&lt;h3 id=&#34;local-search---the-general-idea&#34;&gt;Local Search - The General Idea&lt;/h3&gt;
-&lt;h3 id=&#34;local-search---specialized-to-lp&#34;&gt;Local Search - Specialized to LP&lt;/h3&gt;
-&lt;h3 id=&#34;how-to-walk-on-the-edge&#34;&gt;How to Walk on the Edge&lt;/h3&gt;
-&lt;h3 id=&#34;when-to-stop-and-declare-victory&#34;&gt;When to Stop and Declare Victory&lt;/h3&gt;
-&lt;h2 id=&#34;further-development-of-simplex-method&#34;&gt;Further Development of Simplex Method&lt;/h2&gt;
-&lt;h3 id=&#34;summarize-simplex-method&#34;&gt;Summarize Simplex Method&lt;/h3&gt;
-&lt;h3 id=&#34;handling-degeneracy&#34;&gt;Handling Degeneracy&lt;/h3&gt;
-&lt;h3 id=&#34;phase-iphase-ii-simplex-method&#34;&gt;Phase I/Phase II Simplex Method&lt;/h3&gt;
-&lt;h2 id=&#34;linear-programming-duality&#34;&gt;Linear Programming Duality&lt;/h2&gt;
-&lt;h3 id=&#34;introduction-to-duality-theory&#34;&gt;Introduction to Duality Theory&lt;/h3&gt;
-&lt;h3 id=&#34;lagrangian-relaxation-and-lp-duality&#34;&gt;Lagrangian Relaxation and LP Duality&lt;/h3&gt;
-&lt;h3 id=&#34;weak-duality-and-strong-duality&#34;&gt;Weak Duality and Strong Duality&lt;/h3&gt;
-&lt;h3 id=&#34;table-of-possibles-and-impossibles&#34;&gt;Table of Possibles and Impossibles&lt;/h3&gt;
-&lt;h3 id=&#34;complementary-slackness&#34;&gt;Complementary Slackness&lt;/h3&gt;
-&lt;h2 id=&#34;robust-optimization&#34;&gt;Robust Optimization&lt;/h2&gt;
-&lt;h3 id=&#34;concept-of-robustness&#34;&gt;Concept of Robustness&lt;/h3&gt;
-&lt;h3 id=&#34;concept-of-robustness-in-example&#34;&gt;Concept of Robustness in Example&lt;/h3&gt;
-&lt;h3 id=&#34;robust-linear-program&#34;&gt;Robust Linear Program&lt;/h3&gt;
-&lt;h2 id=&#34;large-scale-optimization-cutting-stock-problem&#34;&gt;Large-Scale Optimization Cutting Stock Problem&lt;/h2&gt;
-&lt;h3 id=&#34;cutting-stock-problem&#34;&gt;Cutting Stock Problem&lt;/h3&gt;
-&lt;h3 id=&#34;gilmore-gomory-formulation&#34;&gt;Gilmore-Gomory Formulation&lt;/h3&gt;
-&lt;h3 id=&#34;column-generation&#34;&gt;Column Generation&lt;/h3&gt;
-&lt;h3 id=&#34;column-generation-for-cutting-stock-problem&#34;&gt;Column Generation for Cutting Stock Problem&lt;/h3&gt;
-&lt;h2 id=&#34;large-scale-optimization&#34;&gt;Large-Scale Optimization&lt;/h2&gt;
-&lt;h3 id=&#34;example-for-column-generation&#34;&gt;Example for Column Generation&lt;/h3&gt;
-&lt;h3 id=&#34;primal-dual-relationship-constraint-generation&#34;&gt;Primal-Dual Relationship: Constraint Generation&lt;/h3&gt;
-&lt;h3 id=&#34;primal-dual-relationship-pricing-problem-and-separation-problem&#34;&gt;Primal-Dual Relationship: Pricing Problem and Separation Problem&lt;/h3&gt;
-&lt;h2 id=&#34;large-scale-optimization-dantzig-wolfe-decomposition&#34;&gt;Large-Scale Optimization Dantzig-Wolfe Decomposition&lt;/h2&gt;
-&lt;h3 id=&#34;exploiting-special-structures-of-large-scale-optimization&#34;&gt;Exploiting Special Structures of Large-Scale Optimization&lt;/h3&gt;
-&lt;h3 id=&#34;dantzig-wolfe-decomposition-1&#34;&gt;Dantzig-Wolfe Decomposition 1&lt;/h3&gt;
-&lt;h3 id=&#34;dantzig-wolfe-decomposition-2&#34;&gt;Dantzig-Wolfe Decomposition 2&lt;/h3&gt;
-&lt;h3 id=&#34;dantzig-wolfe-decomposition-3&#34;&gt;Dantzig-Wolfe Decomposition 3&lt;/h3&gt;
-&lt;h2 id=&#34;nonlinear-optimization-modeling---approximation-and-fitting&#34;&gt;Nonlinear Optimization Modeling - Approximation and Fitting&lt;/h2&gt;
-&lt;h3 id=&#34;linear-equations-norm-and-least-square&#34;&gt;Linear Equations, Norm, and Least Square&lt;/h3&gt;
-&lt;h3 id=&#34;function-fitting&#34;&gt;Function Fitting&lt;/h3&gt;
-&lt;h3 id=&#34;normal-equation-and-singular-value-decomposition&#34;&gt;Normal Equation and Singular Value Decomposition&lt;/h3&gt;
-&lt;h3 id=&#34;image-compression-constrained-least-squares-and-svd&#34;&gt;Image Compression, Constrained Least Squares, and SVD•&lt;/h3&gt;
-&lt;h2 id=&#34;convex-conic-programming-introduction&#34;&gt;Convex Conic Programming Introduction&lt;/h2&gt;
-&lt;h3 id=&#34;convex-cones-order-and-linear-conic-programming&#34;&gt;Convex Cones, Order, and Linear Conic Programming&lt;/h3&gt;
-&lt;h3 id=&#34;second-order-cone-and-socp&#34;&gt;Second-Order Cone and SOCP&lt;/h3&gt;
-&lt;h3 id=&#34;psd-cone-and-sdp&#34;&gt;PSD Cone and SDP&lt;/h3&gt;
-&lt;h2 id=&#34;ocp-sdp-examples&#34;&gt;OCP, SDP Examples&lt;/h2&gt;
-&lt;h3 id=&#34;statistical-classification-problem&#34;&gt;Statistical Classification Problem&lt;/h3&gt;
-&lt;h3 id=&#34;experimental-design&#34;&gt;Experimental Design&lt;/h3&gt;
-&lt;h3 id=&#34;extremal-ellipsoid-problem&#34;&gt;Extremal Ellipsoid Problem&lt;/h3&gt;
-&lt;h2 id=&#34;discrete-optimization---introduction&#34;&gt;Discrete Optimization - Introduction&lt;/h2&gt;
-&lt;h3 id=&#34;why-discrete-variables&#34;&gt;Why Discrete Variables&lt;/h3&gt;
-&lt;h3 id=&#34;discrete-optimization-challenges&#34;&gt;Discrete Optimization Challenges&lt;/h3&gt;
-&lt;h3 id=&#34;computational-complexity&#34;&gt;Computational Complexity&lt;/h3&gt;
-&lt;h2 id=&#34;discrete-optimization---modeling-with-binary-variables-1&#34;&gt;Discrete Optimization - Modeling With Binary Variables 1&lt;/h2&gt;
-&lt;h3 id=&#34;nonconvex-functions&#34;&gt;Nonconvex Functions&lt;/h3&gt;
-&lt;h3 id=&#34;nonconvex-sets-and-logical-relations&#34;&gt;Nonconvex Sets and Logical Relations&lt;/h3&gt;
-&lt;h3 id=&#34;logical-relations&#34;&gt;Logical Relations&lt;/h3&gt;
-&lt;h2 id=&#34;discrete-optimization---modeling-with-binary-variables-2&#34;&gt;Discrete Optimization - Modeling With Binary Variables 2&lt;/h2&gt;
-&lt;h3 id=&#34;set-packing-covering-partitioning&#34;&gt;Set Packing, Covering, Partitioning&lt;/h3&gt;
-&lt;h3 id=&#34;graph-and-network-problems&#34;&gt;Graph and Network Problems&lt;/h3&gt;
-&lt;h2 id=&#34;discrete-optimization---modeling-exercises&#34;&gt;Discrete Optimization - Modeling Exercises&lt;/h2&gt;
-&lt;h2 id=&#34;discrete-optimization---linear-programming-relaxation&#34;&gt;Discrete Optimization - Linear Programming Relaxation&lt;/h2&gt;
-&lt;h3 id=&#34;linear-programming-relaxation&#34;&gt;Linear Programming Relaxation&lt;/h3&gt;
-&lt;h3 id=&#34;ideal-formulations&#34;&gt;Ideal Formulations&lt;/h3&gt;
-&lt;h2 id=&#34;discrete-optimization---solution-methods&#34;&gt;Discrete Optimization - Solution Methods&lt;/h2&gt;
-&lt;h3 id=&#34;enumeration&#34;&gt;Enumeration&lt;/h3&gt;
-&lt;h3 id=&#34;cutting-plane-methods&#34;&gt;Cutting Plane Methods&lt;/h3&gt;
-&lt;h3 id=&#34;branch-and-bound-algorithm&#34;&gt;Branch-and-Bound Algorithm&lt;/h3&gt;
-&lt;h3 id=&#34;heuristics&#34;&gt;Heuristics&lt;/h3&gt;
 </description>
     </item>
     
