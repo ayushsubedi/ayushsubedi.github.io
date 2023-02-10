@@ -564,9 +564,56 @@ print(&#34;Minimum at:&#34;, result.x)
 </ul>
 <h2 id="linear-optimization-modeling---network-flow-problems">Linear Optimization Modeling - Network Flow Problems</h2>
 <h3 id="introduction-to-lp-modeling">Introduction to LP Modeling</h3>
+<ul>
+<li>A linear program is composed of:
+<ul>
+<li>Variables $x=(x_1,x_2,x_3&hellip;,x_n)$</li>
+<li>Linear objective function $f(x_1,x_2,x_3&hellip;,x_n)=\sum_{i=1}^n c_i x_i = c^Tx$</li>
+<li>Linear constraints: $&gt;=, &lt;= or =$</li>
+</ul>
+</li>
+</ul>
 <h3 id="optimal-transportation-problem">Optimal Transportation Problem</h3>
+<ul>
+<li>The transportation problem is a type of linear programming problem that deals with finding the optimal assignment of resources to meet a set of demands. The problem is typically framed as a network flow problem, where the goal is to find the maximum flow from a set of sources to a set of destinations.</li>
+<li>In a transportation problem, the goal is to find the least cost way to transport a given amount of goods from a set of sources (e.g. factories) to a set of destinations (e.g. warehouses) subject to certain constraints such as limited supply at the sources and limited demand at the destinations. The cost of transporting a unit of goods from a source to a destination is represented by a cost matrix, which is usually obtained through market research or historical data.</li>
+<li>There are various algorithms that can be used to solve transportation problems, including the North-West Corner Method, the Minimum Cost Method (also known as the Vogel&rsquo;s Approximation Method), and the Modified Distribution Method. The most popular algorithm for solving transportation problems is the Iterative Proportional Fitting (IPF) algorithm, also known as the MODI (Modified Distribution) method.</li>
+<li>The transportation problem is an important optimization problem with numerous real-world applications, including supply chain management, distribution systems, and logistics planning.</li>
+<li>There are $m$ suppliers, $n$ customers. Supplier $i$ can supply up to $s_i$ units of supply, and customer $j$ has $d_j$ units of demand. It costs $c_{ij}$ to transport a unit of product from supplier $i$ to customer $j$. We want to find a transportation schedule to satisfy all the demand within minimum transportation cost.</li>
+<li>Formulation 1: $\begin{array}{ll}\min &amp; \sum_{i=1}^m \sum_{j=1}^n c_{i j} x_{i j} \ \text { s.t. } &amp; \sum_{i=1}^m x_{i j}=d_j, \quad \forall j \ &amp; \sum_{j=1}^n x_{i j} \leq s_i, \quad \forall i \ &amp; x_{i j} \geq 0, \quad \forall i, j .\end{array}$</li>
+<li>Formulation 2: $\begin{array}{ll}\min &amp; \sum_{i=1}^m \sum_{j=1}^n c_{i j} x_{i j} \ \text { s.t. } &amp; \sum_{i=1}^m x_{i j}&gt;=d_j, \quad \forall j \ &amp; \sum_{j=1}^n x_{i j} \leq s_i, \quad \forall i \ &amp; x_{i j} \geq 0, \quad \forall i, j .\end{array}$</li>
+<li>But &gt;= inequality in the second formulation will be satisfied as = at optimal solution, thus, the two formulations are equivalent</li>
+<li>The graphs here are bipartite</li>
+</ul>
 <h3 id="maximum-flow-problem">Maximum Flow Problem</h3>
+<ul>
+<li>The maximum flow problem is a classical problem in network flow theory that aims to find the maximum amount of flow that can be sent from a source node to a sink node in a network, subject to capacity constraints on the edges. The maximum flow problem is a special case of the more general minimum cut problem, which aims to find the minimum capacity of a cut that separates the source and the sink in the network.</li>
+<li>A network in this context is represented as a graph, where the nodes represent the vertices and the edges represent the capacities of the arcs. The source node is where the flow originates, and the sink node is where the flow terminates. The capacity constraints on the edges determine the maximum amount of flow that can be sent through a particular edge.</li>
+<li>There are several algorithms that can be used to solve the maximum flow problem, including the Ford-Fulkerson algorithm, the Edmonds-Karp algorithm, and the push-relabel algorithm. These algorithms work by finding augmenting paths in the residual network, which is a network derived from the original network that represents the remaining capacities of the edges after some flow has already been sent. The algorithms continue to find augmenting paths until no more can be found, at which point the maximum flow has been found.</li>
+<li>The maximum flow problem has many real-world applications, including traffic flow in transportation networks, the allocation of bandwidth in communication networks, and the distribution of resources in supply chain networks.</li>
+<li>The graphs here are directed</li>
+<li>$\begin{array}{ll}\max &amp; b_s \ \text { s.t. } &amp; \sum_{k \in O(i)} x_{i k}-\sum_{j \in I(i)} x_{j i}=b_i \quad \forall i \ &amp; b_t=-b_s \ &amp; b_i=0, \quad \forall i \neq s, t \ &amp; 0 \leq x_{i j} \leq u_{i j}, \quad \forall(i, j) \in \mathcal{A} .\end{array}$</li>
+</ul>
+<h3 id="minimum-cut-problem">Minimum Cut Problem</h3>
+<ul>
+<li>The Maximum Cut Problem is a well-known optimization problem in computer science and mathematics. The goal of the problem is to divide a given graph into two sets of vertices such that the sum of the weights of the edges between the two sets is as large as possible.</li>
+<li>Formally, given a graph G = (V,E) with a weight function w : E → R, the maximum cut problem is to find a partition of the vertices into two sets S and T such that the sum of the weights of the edges between S and T is maximized.</li>
+<li>The problem is NP-hard, meaning that finding the optimal solution is computationally infeasible for large graphs. However, there are approximate algorithms that can find near-optimal solutions, such as semidefinite programming, spectral methods, and local search algorithms.</li>
+<li>The maximum cut problem has a wide range of applications, including network design, image and signal processing, and machine learning.</li>
+<li>Minimum cut = Maximum flow</li>
+</ul>
 <h3 id="shortest-path-problem">Shortest Path Problem</h3>
+<ul>
+<li>The Maximum Cut Problem is a well-known optimization problem in computer science and mathematics. The goal of the problem is to divide a given graph into two sets of vertices such that the sum of the weights of the edges between the two sets is as large as possible.</li>
+<li>Formally, given a graph G = (V,E) with a weight function w : E → R, the maximum cut problem is to find a partition of the vertices into two sets S and T such that the sum of the weights of the edges between S and T is maximized.</li>
+<li>The problem is NP-hard, meaning that finding the optimal solution is computationally infeasible for large graphs. However, there are approximate algorithms that can find near-optimal solutions, such as semidefinite programming, spectral methods, and local search algorithms.</li>
+<li>The maximum cut problem has a wide range of applications, including network design, image and signal processing, and machine learning.</li>
+<li>Shortest Path Problem is a Flow problem if we are shipping 1 unit of flow from $s$ to all other nodes</li>
+<li>$\begin{array}{ll}\min &amp; \sum_{(i, j) \in \mathcal{A}} c_{i j} x_{i j} \ \end{array}$</li>
+<li>$\begin{array}{ll}{ s.t. } &amp; \sum_{k \in O(i)} x_{i k}-\sum_{j \in I(i)} x_{j i}=-1 \forall i \neq s \ &amp; \sum_{k \in O(s)} x_{s k}-\sum_{j \in I(s)} x_{j s}=n-1 \ &amp; x_{i j} \geq 0, \quad \forall(i, j) \in \mathcal{A} .\end{array}$</li>
+</ul>
+<h3 id="lp-model-for-market-clearing">LP model for market clearing:</h3>
+<p><img src="/img/op.png" alt="LP model for market clearing"></p>
 </div>
 	</section>
 
@@ -714,7 +761,7 @@ print(&#34;Minimum at:&#34;, result.x)
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		4338 words in this page.
+		5440 words in this page.
 	</div>
 </div>
 
