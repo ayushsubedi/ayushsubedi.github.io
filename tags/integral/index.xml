@@ -454,7 +454,8 @@ print(&amp;#34;Minimum at:&amp;#34;, result.x)
 &lt;li&gt;There are several algorithms that can be used to solve the maximum flow problem, including the Ford-Fulkerson algorithm, the Edmonds-Karp algorithm, and the push-relabel algorithm. These algorithms work by finding augmenting paths in the residual network, which is a network derived from the original network that represents the remaining capacities of the edges after some flow has already been sent. The algorithms continue to find augmenting paths until no more can be found, at which point the maximum flow has been found.&lt;/li&gt;
 &lt;li&gt;The maximum flow problem has many real-world applications, including traffic flow in transportation networks, the allocation of bandwidth in communication networks, and the distribution of resources in supply chain networks.&lt;/li&gt;
 &lt;li&gt;The graphs here are directed&lt;/li&gt;
-&lt;li&gt;$\begin{array}{ll}\max &amp;amp; b_s \ \text { s.t. } &amp;amp; \sum_{k \in O(i)} x_{i k}-\sum_{j \in I(i)} x_{j i}=b_i \quad \forall i \ &amp;amp; b_t=-b_s \ &amp;amp; b_i=0, \quad \forall i \neq s, t \ &amp;amp; 0 \leq x_{i j} \leq u_{i j}, \quad \forall(i, j) \in \mathcal{A} .\end{array}$&lt;/li&gt;
+&lt;li&gt;$\begin{array}{ll}\max &amp;amp; b_s \ \end{array}$&lt;/li&gt;
+&lt;li&gt;$\begin{array}{ll} \text { s.t. } &amp;amp; \sum_{k \in O(i)} x_{i k}-\sum_{j \in I(i)} x_{j i}=b_i \quad \forall i \ &amp;amp; b_t=-b_s \ &amp;amp; b_i=0, \quad \forall i \neq s, t \ &amp;amp; 0 \leq x_{i j} \leq u_{i j}, \quad \forall(i, j) \in \mathcal{A} .\end{array}$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;minimum-cut-problem&#34;&gt;Minimum Cut Problem&lt;/h3&gt;
 &lt;ul&gt;
@@ -475,7 +476,7 @@ print(&amp;#34;Minimum at:&amp;#34;, result.x)
 &lt;li&gt;$\begin{array}{ll}{ s.t. } &amp;amp; \sum_{k \in O(i)} x_{i k}-\sum_{j \in I(i)} x_{j i}=-1 \forall i \neq s \ &amp;amp; \sum_{k \in O(s)} x_{s k}-\sum_{j \in I(s)} x_{j s}=n-1 \ &amp;amp; x_{i j} \geq 0, \quad \forall(i, j) \in \mathcal{A} .\end{array}$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;lp-model-for-market-clearing&#34;&gt;LP model for market clearing:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/op.png&#34; alt=&#34;LP model for market clearing&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://ayushsubedi.github.io/img/op.png&#34; width=&#34;300&#34; height=&#34;200&#34;&gt;
 </description>
     </item>
     
