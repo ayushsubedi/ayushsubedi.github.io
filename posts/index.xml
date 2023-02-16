@@ -920,7 +920,60 @@ plt.show()
 &lt;li&gt;Let the modalities complement each other&lt;/li&gt;
 &lt;li&gt;Give the user control of the pace&lt;/li&gt;
 &lt;li&gt;Emphasize essential content and avoid the clutter&lt;/li&gt;
-&lt;li&gt;offload tasks&lt;/li&gt;
+&lt;li&gt;Offload tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;design-alternatives&#34;&gt;Design Alternatives&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;after having a good understanding of needs of our user, brainstorm on task we have been investigating&lt;/li&gt;
+&lt;li&gt;but it is hard&lt;/li&gt;
+&lt;li&gt;distance yourself from existing solution&lt;/li&gt;
+&lt;li&gt;tunnel vision: focusing on one alternative from the very beginning&lt;/li&gt;
+&lt;li&gt;Design space: the area in which we design our solution&lt;/li&gt;
+&lt;li&gt;explore possible design space (brainstorm lots of potential spaces)&lt;/li&gt;
+&lt;li&gt;generate lots of ideas&lt;/li&gt;
+&lt;li&gt;start with individual brainstorming&lt;/li&gt;
+&lt;li&gt;groups tend to coalesce around conclusion earlier&lt;/li&gt;
+&lt;li&gt;Tips on individual brainstorming
+&lt;ul&gt;
+&lt;li&gt;Write down the core problem&lt;/li&gt;
+&lt;li&gt;Constrain yourself&lt;/li&gt;
+&lt;li&gt;Aim for 20&lt;/li&gt;
+&lt;li&gt;Take a break&lt;/li&gt;
+&lt;li&gt;Divide and conquer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Challenges in Group Brainstorming
+&lt;ul&gt;
+&lt;li&gt;Social Loafing&lt;/li&gt;
+&lt;li&gt;Conforormity&lt;/li&gt;
+&lt;li&gt;Production blocking&lt;/li&gt;
+&lt;li&gt;Performance matching&lt;/li&gt;
+&lt;li&gt;Power dynamics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Rules for Group Brainstorming
+&lt;ul&gt;
+&lt;li&gt;Expressiveness&lt;/li&gt;
+&lt;li&gt;Nonevaluation&lt;/li&gt;
+&lt;li&gt;Quantity&lt;/li&gt;
+&lt;li&gt;Building&lt;/li&gt;
+&lt;li&gt;Stay focused, No explaining ideas, revisit the problem, encourage others&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;5 Tips for group brainstorming
+&lt;ul&gt;
+&lt;li&gt;Go through every individual idea&lt;/li&gt;
+&lt;li&gt;Find the optimal size&lt;/li&gt;
+&lt;li&gt;Set clear rules for communication&lt;/li&gt;
+&lt;li&gt;Set clear expectations&lt;/li&gt;
+&lt;li&gt;End with ideas, not decisions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Flesing out ideas&lt;/li&gt;
+&lt;li&gt;Create personas&lt;/li&gt;
+&lt;li&gt;User profiles (explore the full design space)&lt;/li&gt;
+&lt;li&gt;Timelines&lt;/li&gt;
+&lt;li&gt;Scenarios and Storyboards&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
