@@ -1004,6 +1004,38 @@ plt.show()
 &lt;li&gt;Timelines&lt;/li&gt;
 &lt;li&gt;Scenarios and Storyboards&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;design-principles-and-heuristics&#34;&gt;Design Principles and Heuristics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Discoveribility: visible and users should know or easily figure out what they can do (but walk a line between discoverability and simplicity)&lt;/li&gt;
+&lt;li&gt;Similicity: understood with little effort and experience&lt;/li&gt;
+&lt;li&gt;Affordances: the design of the things affords or hints at how it is supposed to be used (however we cannot add affordances to design, we can only add signifiers)&lt;/li&gt;
+&lt;li&gt;Mapping: (think about multiple monitors)&lt;/li&gt;
+&lt;li&gt;Perceptibity:&lt;/li&gt;
+&lt;li&gt;Consistency: be consistent&lt;/li&gt;
+&lt;li&gt;Flexibility: (accelerators/hotkeys for expert users, but should cater to wide range of individual preferences)&lt;/li&gt;
+&lt;li&gt;Equity: design is userful and marketable to people with diverse abilities. Equity is all about making sure users have similar user experience, and flexibility allows for the means to get there.&lt;/li&gt;
+&lt;li&gt;Ease and Comfort&lt;/li&gt;
+&lt;li&gt;Structure&lt;/li&gt;
+&lt;li&gt;Constraints: limitting the set of possible actions (to make sure users do not use wrong input, and help users with right input)&lt;/li&gt;
+&lt;li&gt;Tolerance: Support undo, redo. The design should be flexible and tolerant&lt;/li&gt;
+&lt;li&gt;Feedback: (worst example: blue screen of death)&lt;/li&gt;
+&lt;li&gt;Documentation: (avoid this all together, but good to have)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;mental-models-and-representations&#34;&gt;Mental Models and Representations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Understanding to the world around you, that you hold in your head&lt;/li&gt;
+&lt;li&gt;Five Tips:
+&lt;ul&gt;
+&lt;li&gt;Predictability&lt;/li&gt;
+&lt;li&gt;Synthesizability&lt;/li&gt;
+&lt;li&gt;Familiarity&lt;/li&gt;
+&lt;li&gt;Generalizability&lt;/li&gt;
+&lt;li&gt;Consistency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Analagies might make things better, but they can also hinder progress&lt;/li&gt;
+&lt;li&gt;You are not your own user.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
