@@ -636,6 +636,35 @@ ax.set_ylabel(&#39;Y axis&#39;)
 ax.set_zlabel(&#39;Z axis&#39;)
 plt.show()
 </code></pre><p><img src="/img/rosenbrock.png" alt=""></p>
+<h3 id="lp-model-for-electricity-markets">LP model for Electricity Markets</h3>
+<ul>
+<li>Decision variables
+<ul>
+<li>Generator output: $p_i$ for each generator $i \in G$</li>
+<li>Power flow: $f_{ij}$ on each edge $(i,j) \in E$</li>
+<li>Nodal potential $\theta_i$ on each node $i \in N$</li>
+</ul>
+</li>
+<li>Objective function:
+<ul>
+<li>minimize the cost of production, $\sum_{i=1}^{G} c_ip_i$</li>
+</ul>
+</li>
+<li>Constraints:
+<ul>
+<li>Flow conservation (input=output)
+<ul>
+<li>for source node $p$ we have: (&ldquo;sum of everything going out&rdquo;) - (&ldquo;sum of everything going in&rdquo;) = $p$</li>
+<li>for demand node $d$ we have: (&ldquo;sum of everything going out&rdquo;) - (&ldquo;sum of everything going in&rdquo; ) = $-d$</li>
+<li>for node which is neither source nor demand we have: (&ldquo;sum of everything going out&rdquo;) - (&ldquo;sum of everything going in&rdquo;) = $0$</li>
+</ul>
+</li>
+<li>Nodal potential</li>
+<li>Flow limit constraint</li>
+<li>Generator physical limit constraint</li>
+</ul>
+</li>
+</ul>
 </div>
 	</section>
 
@@ -783,7 +812,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		5532 words in this page.
+		5650 words in this page.
 	</div>
 </div>
 

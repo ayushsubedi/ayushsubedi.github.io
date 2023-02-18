@@ -498,6 +498,35 @@ ax.set_ylabel(&amp;#39;Y axis&amp;#39;)
 ax.set_zlabel(&amp;#39;Z axis&amp;#39;)
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/rosenbrock.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;lp-model-for-electricity-markets&#34;&gt;LP model for Electricity Markets&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Decision variables
+&lt;ul&gt;
+&lt;li&gt;Generator output: $p_i$ for each generator $i \in G$&lt;/li&gt;
+&lt;li&gt;Power flow: $f_{ij}$ on each edge $(i,j) \in E$&lt;/li&gt;
+&lt;li&gt;Nodal potential $\theta_i$ on each node $i \in N$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Objective function:
+&lt;ul&gt;
+&lt;li&gt;minimize the cost of production, $\sum_{i=1}^{G} c_ip_i$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Constraints:
+&lt;ul&gt;
+&lt;li&gt;Flow conservation (input=output)
+&lt;ul&gt;
+&lt;li&gt;for source node $p$ we have: (&amp;ldquo;sum of everything going out&amp;rdquo;) - (&amp;ldquo;sum of everything going in&amp;rdquo;) = $p$&lt;/li&gt;
+&lt;li&gt;for demand node $d$ we have: (&amp;ldquo;sum of everything going out&amp;rdquo;) - (&amp;ldquo;sum of everything going in&amp;rdquo; ) = $-d$&lt;/li&gt;
+&lt;li&gt;for node which is neither source nor demand we have: (&amp;ldquo;sum of everything going out&amp;rdquo;) - (&amp;ldquo;sum of everything going in&amp;rdquo;) = $0$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Nodal potential&lt;/li&gt;
+&lt;li&gt;Flow limit constraint&lt;/li&gt;
+&lt;li&gt;Generator physical limit constraint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
