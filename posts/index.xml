@@ -527,6 +527,35 @@ plt.show()
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;inventory-control-problem&#34;&gt;Inventory Control Problem&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;a company must commit to specific production quantity x before knowing the exact demand $d$&lt;/li&gt;
+&lt;li&gt;after seeing the demand, the company decides how many to sell and how many to sell at a discounted price of $v$&lt;/li&gt;
+&lt;li&gt;This is an example of Decision Making under Uncertainty&lt;/li&gt;
+&lt;li&gt;Here and Now decision: production quantity $x$&lt;/li&gt;
+&lt;li&gt;Wait and See decition: sell quantity $y$, discount quantity $z$&lt;/li&gt;
+&lt;li&gt;Objective: minimize production cost and expected future cost&lt;/li&gt;
+&lt;li&gt;Stochastic program:&lt;/li&gt;
+&lt;li&gt;$min_{x} cx + E_d[Q(x,d)]$ s.t $0&amp;lt;=x&amp;lt;=\hat{x}$&lt;/li&gt;
+&lt;li&gt;$Q(x,d) = min_{y,z} -r.y-s.z$ s.t $y&amp;lt;=d, y+z&amp;lt;=x, y&amp;gt;=0, z&amp;gt;=0$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;generation-capacity-expansion&#34;&gt;Generation Capacity Expansion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;An electric utility company plans to build new generation stations to serve growing demand, called generation capacity expansion.&lt;/li&gt;
+&lt;li&gt;New generation capacity has to be decided before demand and future fuel price are known&lt;/li&gt;
+&lt;li&gt;Future demand and fuel prices are not known at the moment of making capacity decision, but can be estimated as random variables.&lt;/li&gt;
+&lt;li&gt;After demand is realized, the utility company schedules existing and new generators based on capacity expansion decision.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;financial-planning&#34;&gt;Financial Planning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A family wishes to provide for a child&amp;rsquo;s college education 12 years later.&lt;/li&gt;
+&lt;li&gt;The family currently has 100k and decides how to invest in any of 5 investments&lt;/li&gt;
+&lt;li&gt;Investment can be adjusted every 4 years. So there are 3 periods&lt;/li&gt;
+&lt;li&gt;The returns of investments are unknown and modeled as random variables&lt;/li&gt;
+&lt;li&gt;The family wants to maximize the total expected return&lt;/li&gt;
+&lt;li&gt;A problem of decision making under uncertainity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;decision-types&#34;&gt;Decision Types&lt;/h2&gt;
 </description>
     </item>
     
