@@ -155,9 +155,10 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="deterministic-optimization">Deterministic Optimization</h1>
-<h2 id="introduction-to-optimization-models">Introduction to Optimization Models</h2>
-<h3 id="generic-form-of-optimization-problem">Generic form of optimization problem:</h3>
+		<div class="c-rich-text"><h1 id="introduction-to-optimization-models">Introduction to Optimization Models</h1>
+<p>The action of making the best or most effective use of a situation or resource.</p>
+<p>Mathematically,</p>
+<h2 id="generic-form-of-optimization-problem">Generic form of optimization problem:</h2>
 <p>$min$ $f(x)$ $s.t.$ $x \in X $</p>
 <h3 id="example-designing-a-box">Example: Designing a box:</h3>
 <p><strong>Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:</strong><br/>
@@ -166,13 +167,15 @@ onload='renderMathInElement(document.body);'></script>
 <strong>Best:</strong> Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)<br/>
 <strong>Optimization formulation:</strong> $max$ $x(1-2x)^2$ subject to $0&lt;=x&lt;=1/2$ (which are the constraints in this case)<br/></p>
 <iframe src="https://www.desmos.com/calculator/ily45jyfsv?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<p>This is an unconstrained optimization problem since the constraint is a simple bound based.</p>
 <h3 id="example-data-fitting">Example: Data Fitting:</h3>
 <p><strong>Given $N$ data points $(y_1, x_1)&hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.</strong><br/>
 <strong>Decision</strong>: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$<br/>
 <strong>Alternatives</strong>: All $n$-dimensional vectors and scalars<br/>
-<strong>Best</strong>: Minimise the sum of squared errors<br/>
+<strong>Best</strong>: Minimize the sum of squared errors<br/>
 <strong>Optimization formulation</strong>:
 $\begin{array}{ll}\min &amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$</p>
+<p>This is also an unconstrained optimization problem.</p>
 <h3 id="example-product-mix">Example: Product Mix:</h3>
 <p><strong>A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?</strong><br/>
 <strong>Decision</strong>: how much of each product to make<br/>
@@ -188,18 +191,19 @@ Matrix notation: $\begin{array}{cl}\max &amp; p^{\top} x \ \text { s.t. } &amp; 
 <strong>Best</strong>: Maximize return on investment<br/>
 Sum notation: $\begin{aligned} \max &amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp; \sum_{j=1}^n c_j x_j \leq B \ &amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ <br/>
 Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; c^{\top} x \leq B \ &amp; x \in{0,1}^n\end{aligned}$</p>
-<h2 id="mathematical-ingredients-of-an-optimization-model">Mathematical ingredients of an optimization model:</h2>
+<p>This is not an unconstrained problem.</p>
+<h1 id="mathematical-ingredients-of-an-optimization-model">Mathematical ingredients of an optimization model:</h1>
 <ul>
 <li>Encode decisions/actions as <strong>decision variables</strong> whose values we are seeking</li>
 <li>Identify the relevant <strong>problem data</strong></li>
 <li>Express <strong>constraints</strong> on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data</li>
 <li>Express the <strong>objective function</strong> as a function of the decision variables and the problem data.</li>
 </ul>
-<p>Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.</p>
+<p><strong>Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.</strong></p>
 <pre tabindex="0"><code>min or max f(x1, x2, .... , xn)
 subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m 
         xj is continuous or discrete    j = 1,....,n
-</code></pre><h3 id="the-problem-setting">The problem setting</h3>
+</code></pre><h2 id="the-problem-setting">The problem setting</h2>
 <ul>
 <li>Finite number of decision variables</li>
 <li>A single objective function of decision variables and problem data
@@ -208,14 +212,14 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </ul>
 </li>
 <li>The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data</li>
-<li>There may be domain restrictions (continious or discrete) on some of the variables</li>
-<li>The functions defining the objective and constraints are algebraic (typically with rational coeffiicients)</li>
+<li>There may be domain restrictions (continuous or discrete) on some of the variables</li>
+<li>The functions defining the objective and constraints are algebraic (typically with rational coefficients)</li>
 </ul>
-<h3 id="minimization-vs-maximization">Minimization vs Maximization</h3>
+<h2 id="minimization-vs-maximization">Minimization vs Maximization</h2>
 <ul>
 <li>Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function</li>
 </ul>
-<h3 id="program-vs-optimization">Program vs optimization</h3>
+<h3 id="program-vs-optimization">Program vs Optimization</h3>
 <ul>
 <li>A program or mathematical program is an optimization problem with a finite number of variables and constraints written out using explicit mathematical (algebraic) expressions</li>
 <li>The word program means plan/planning</li>
@@ -255,26 +259,77 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Optimization Problem</th>
+<th>Description</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear Programming</td>
+<td>A linear programming problem involves maximizing or minimizing a linear objective function subject to a set of linear constraints</td>
+<td>Easy to moderate</td>
+</tr>
+<tr>
+<td>Nonlinear Programming</td>
+<td>A nonlinear programming problem involves optimizing a function that is not linear, subject to a set of nonlinear constraints</td>
+<td>Moderate to hard</td>
+</tr>
+<tr>
+<td>Quadratic Programming</td>
+<td>A quadratic programming problem involves optimizing a quadratic objective function subject to a set of linear constraints</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Convex Optimization</td>
+<td>A convex optimization problem involves optimizing a convex function subject to a set of linear or convex constraints</td>
+<td>Easy to moderate</td>
+</tr>
+<tr>
+<td>Integer Programming</td>
+<td>An integer programming problem involves optimizing a linear or nonlinear objective function subject to a set of linear or nonlinear constraints, where some or all of the variables are restricted to integer values</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Mixed-integer Programming</td>
+<td>A mixed-integer programming problem is a generalization of integer programming where some or all of the variables can be restricted to integer values or continuous values</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Global Optimization</td>
+<td>A global optimization problem involves finding the global optimum of a function subject to a set of constraints, which may be nonlinear or non-convex</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Stochastic Optimization</td>
+<td>A stochastic optimization problem involves optimizing an objective function that depends on random variables, subject to a set of constraints</td>
+<td>Hard</td>
+</tr>
+</tbody>
+</table>
 <h3 id="subclasses-of-nlp-non-linear-problem">Subclasses of NLP (Non Linear Problem)</h3>
 <ul>
-<li>Unconstrained optimization: No constraints or simple bound constraints on the variables (Box design example above)</li>
-<li>Quadrative programming: objectives and constraints involve quadratic functions (Data fitting example above), subset of NLP</li>
+<li><strong>Unconstrained optimization</strong>: No constraints or simple bound constraints on the variables (Box design example above)</li>
+<li><strong>Quadratic programming</strong>: Objectives and constraints involve quadratic functions (Data fitting example above), <strong>subset of NLP</strong></li>
 </ul>
 <h3 id="subclasses-of-ip-integer-programming">Subclasses of IP (Integer Programming)</h3>
 <ul>
-<li>Mixed Integer Linear Program
+<li><strong>Mixed Integer Linear Program</strong>
 <ul>
 <li>All linear functions</li>
-<li>Some variables are continous and some are discrete</li>
+<li>Some variables are continuous and some are discrete</li>
 </ul>
 </li>
-<li>Mixed Integer Nonlinear Program (MINLP)
+<li><strong>Mixed Integer Nonlinear Program (MINLP)</strong>
 <ul>
 <li>Some nonlinear functions</li>
-<li>Some variables are continous and some are discrete</li>
+<li>Some variables are continuous and some are discrete</li>
 </ul>
 </li>
-<li>Mixed Integer Quadratic Program (MIQLP)
+<li><strong>Mixed Integer Quadratic Program (MIQLP)</strong>
 <ul>
 <li>Nonlinear functions are quadratic</li>
 <li>Some variables are continuous and some are discrete</li>
@@ -282,7 +337,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </ul>
 </li>
 </ul>
-<h3 id="why-and-how-to-classify">Why and how to classify?</h3>
+<h2 id="why-and-how-to-classify">Why and how to classify?</h2>
 <ul>
 <li>Important to recognize the type of an optimization problem:
 <ul>
@@ -299,12 +354,12 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </ul>
 </li>
 </ul>
-<h3 id="portfolio-optimization-problem">Portfolio Optimization Problem</h3>
+<h2 id="portfolio-optimization-problem">Portfolio Optimization Problem</h2>
 <ul>
 <li>Identify basic portfolio optimization and associated issues</li>
 <li>Examine the Markowitz Portfolio Optimization approach
 <ul>
-<li>Markowitz Principle: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)</li>
+<li><strong>Markowitz Principle</strong>: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)</li>
 </ul>
 </li>
 <li>For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
@@ -320,19 +375,19 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 - have a one month expected return of at least a given threshold
 - minimize the risk(variance) of the portfolio return
 </code></pre><ul>
-<li>Decision: investment in each stock</li>
-<li>alternatives: any investment that meets the budget and the minimum expected return requirement</li>
+<li><strong>Decision</strong>: investment in each stock</li>
+<li><strong>alternatives</strong>: any investment that meets the budget and the minimum expected return requirement</li>
 <li>best: minimize variance</li>
-<li>Key trade-off: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?</li>
+<li><strong>Key trade-off</strong>: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?</li>
 <li>Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved</li>
 <li>Need to exercise great caution in these assumptions and not loose sight of the true underlying problem</li>
-<li>Assumptions:
+<li><strong>Assumptions</strong>:
 <ul>
 <li>No transaction cost</li>
 <li>Stocks does not need to be bought in blocks (any amount &gt;=0 is fine)</li>
 </ul>
 </li>
-<li>Optimization Process: Decision Problem -&gt; Model -&gt; Data Collection -&gt; Model Solution -&gt; Analysis -&gt; Problem solution</li>
+<li><strong>Optimization Process</strong>: Decision Problem -&gt; Model -&gt; Data Collection -&gt; Model Solution -&gt; Analysis -&gt; Problem solution</li>
 <li>No clear cut recipe</li>
 <li>Lots of feedbacks and iterations</li>
 <li>Approximations and assumptions involved in each stage</li>
@@ -340,29 +395,40 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 </ul>
 <h2 id="notes-from-linear-algebra">Notes from Linear Algebra</h2>
 <ul>
+<li>The second derivative test is a method used in calculus to determine the nature of the critical points of a function, which can be either a maximum, minimum, or saddle point.</li>
+<li>To apply the second derivative test, we need to find the critical points of the function by setting its first derivative equal to zero and solving for the variables. Then, we can determine the nature of these critical points by examining the sign of the second derivative of the function evaluated at the critical points. Specifically:
+<ul>
+<li>If the second derivative is positive at a critical point, then the function has a local minimum at that point.</li>
+<li>If the second derivative is negative at a critical point, then the function has a local maximum at that point.</li>
+<li>If the second derivative is zero at a critical point, then the second derivative test is inconclusive, and we need to use other methods to determine the nature of the critical point.</li>
+</ul>
+</li>
 <li>A vector is a mathematical object that has both a magnitude (size) and a direction. Vectors are often used to represent physical quantities such as velocity or force. In two-dimensional space, a vector is represented by an ordered pair of numbers (x, y), and in three-dimensional space, it is represented by an ordered triple (x, y, z). Vectors can be added and subtracted, and multiplied by a scalar (a single number). They also have properties such as the dot product and cross product. In computer science and programming, a vector is also a data structure that can store multiple values of the same type.</li>
 <li>The vectors $x$ and $y$ are orthogonal if $x^Ty=0$, they make an acute angle if $x^Ty&gt;0$ and an obtuse angle if $x^Ty&lt;0$</li>
 <li>Also, $x^Ty=||x||.||y||cos\theta$</li>
 <li>A set of vectors are linearly independent if none of the vectors can be written as a linear combination of the others. That is the unique solution to the system of equations. There can be at most $n$ linearly independent vectors in $R^n$</li>
 <li>Any collection of $n$ linearly independent vectors in $R$ defines a basis (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &hellip;0]^T$, $e^2= [0, 1, &hellip;0]^T$,&hellip;,$e^n= [0, 0, &hellip;1]^T$, define the standard basis for $R^n$</li>
-<li>The rank of a matrix is a measure of the &ldquo;nondegeneracy&rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix. $row rank = column rank = rank(A)$. $A$ is full rank if $rank(A) = min(m, n)$</li>
+<li>The rank of a matrix is a measure of the &ldquo;nondegeneracy&rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix.</li>
+<li><strong>row rank = column rank = rank($A$). $A$ is full rank if rank($A$) = min($m$, $n$)</strong></li>
 <li>A system of equations has a solution when the equations are consistent, meaning that there is at least one set of values for the variables that satisfies all of the equations. If the equations are inconsistent, meaning that there is no set of values that satisfies all of the equations, then the system of equations has no solution.</li>
 <li>An affine function is a function that is defined as a linear combination of variables, with the addition of a constant term. An affine function can be written as:</li>
 </ul>
 <pre tabindex="0"><code>f(x) = a_1x_1 + a_2x_2 + ... + a_nx_n + b
 </code></pre><p>Where x_1, x_2, &hellip;, x_n are the input variables, a_1, a_2, &hellip;, a_n are the coefficients, and b is a constant term. An affine function is a generalization of a linear function, which does not have the constant term.</p>
-<iframe width="100%" height ="1024" src="https://www.aerostudents.com/courses/linear-algebra/linearAlgebraFullVersion.pdf#toolbar=0"></iframe>
+<iframe width="100%" height ="1024" src="/pdfs/la.pdf#toolbar=0"></iframe>
 <h2 id="notes-from-multivariate-calculus">Notes from Multivariate Calculus</h2>
+<p><img src="https://i.pinimg.com/736x/03/1e/73/031e73d364d35daf9ec479909c966505--systems-of-equations-maths-algebra.jpg" alt=""></p>
 <h3 id="hessian-matrix">Hessian matrix</h3>
 <ul>
 <li>The Hessian matrix is a square matrix of second-order partial derivatives of a scalar-valued function of multiple variables.</li>
 <li>The Hessian matrix of a scalar-valued function f(x) of n variables x = (x1, x2, &hellip;, xn) is defined as the matrix of second-order partial derivatives of f with respect to x, with the i-th row and j-th column containing the second partial derivative of f with respect to xi and xj.</li>
 <li>The Hessian matrix is often used in optimization, for example, to find the local minima or maxima of a function. A point where the Hessian is positive definite is a local minimum, while a point where the Hessian is negative definite is a local maximum. If the Hessian is positive semi-definite, it&rsquo;s a saddle point.</li>
 <li>It is important to notice that the Hessian Matrix is symmetric, therefore it has real eigenvalues and it is diagonalisable.</li>
+<li>$H(f)_{i,j}=\frac{\partial^2f}{\partial x_i \partial x_j}$</li>
 </ul>
 <h3 id="taylor-approximation">Taylor Approximation</h3>
-<p>The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.
-Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.</p>
+<p>The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.</p>
+<p>Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.</p>
 <ul>
 <li>First order Taylor&rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
 $$
@@ -374,9 +440,9 @@ f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\righ
 $$
 `</li>
 </ul>
-<h3 id="sets-in-optimization-problems">Sets in Optimization Problems</h3>
+<h2 id="sets-in-optimization-problems">Sets in Optimization Problems</h2>
 <ul>
-<li>A set is closed if it includes its boundary points.</li>
+<li>A set is <strong>closed</strong> if it includes its boundary points.</li>
 <li>Intersection of closed sets is closed.</li>
 <li>Typically, if none of inequalities are strict, then the set is closed.</li>
 <li>A set is convex if a line segment connecting two points in the set lies entirely in the set.</li>
@@ -389,6 +455,8 @@ $$
 <li>$x^2+y^2&lt;=1$ is closed and bounded (compact)</li>
 </ul>
 </li>
+<li>An optimal solution of maximizing a convex function over a compact set lies on the boundary
+of the set.</li>
 </ul>
 <iframe src="https://www.desmos.com/calculator/49e59msg7u?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h2 id="convex-function">Convex Function</h2>
@@ -397,30 +465,41 @@ $$
 $$
 f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
 $$</li>
-<li>Function value at the average is less than the average of the function values</li>
+<li><strong>&ldquo;Function value at the average is less than the average of the function values&rdquo;</strong></li>
 <li>This also implies that $a^Tx+b$ is convex (and concave)</li>
 <li>For a convex function the first order Taylor&rsquo;s approximation is a global under estimator</li>
 <li>A convex optimization problem has a convex objective and convex set of solutions.</li>
 <li>Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.</li>
-<li>A twice differentiable univariate function is convex if the Hessian matrix is positive semi definite.</li>
+<li>A twice differentiable univariate function is convex if $f^{&rsquo;&rsquo;}(x)&gt;=0$ for all $x \in R$</li>
+<li>To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.</li>
 <li>A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.</li>
-<li>Sylvester&rsquo;s criterion is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
+<li><strong>Sylvester&rsquo;s criterion</strong> is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
 </ul>
-<h3 id="operations-preserving-convexity">Operations preserving convexity</h3>
+<h2 id="operations-preserving-convexity">Operations preserving convexity</h2>
 <ul>
-<li>Nonnegative weighted sum of convex functions is convex, i.e. if $f_i$ is convex and $\alpha_i \geq 0$ for all $i=1, \ldots, m$, then $g(\mathbf{x})=\sum_{i=1}^m \alpha_i f_i(\mathbf{x})$ is convex.</li>
-<li>Maximum of convex functions is convex.</li>
-<li>Composition: Let $f: \mathbb{R}^m \rightarrow \mathbb{R}$ be a convex function, and $g_i: \mathbb{R}^n \rightarrow \mathbb{R}$ be convex for all $i=1, \ldots, m$. Then the composite function
+<li><strong>Nonnegative weighted sum of convex functions is convex</strong>, i.e. if $f_i$ is convex and $\alpha_i \geq 0$ for all $i=1, \ldots, m$, then $g(\mathbf{x})=\sum_{i=1}^m \alpha_i f_i(\mathbf{x})$ is convex.</li>
+<li><strong>Maximum of convex functions is convex.</strong></li>
+<li><strong>Composition</strong>: Let $f: \mathbb{R}^m \rightarrow \mathbb{R}$ be a convex function, and $g_i: \mathbb{R}^n \rightarrow \mathbb{R}$ be convex for all $i=1, \ldots, m$. Then the composite function
 $$
 h(\mathbf{x})=f\left(g_1(\mathbf{x}), g_2(\mathbf{x}), \ldots, g_m(\mathbf{x})\right)
 $$
-is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.</li>
+is convex if either $f$ is <strong>nondecreasing or if each $q_i$ is a linear</strong> function.</li>
 </ul>
-<h3 id="convex-optimization-problem">Convex Optimization Problem</h3>
+<h2 id="convexity-preserving-set-operations">Convexity Preserving Set Operations</h2>
 <ul>
-<li>An optimization problem (in minimization) form is a convex optimization problem, if the objective function is a convex function and constraint set is a convex set.</li>
+<li>Intersection of convex sets is a convex set</li>
+<li>Intersection of non convex sets might be a convex set</li>
+<li>Union of two convex set might not be a convex set</li>
+<li>Sum of convex set is a convex set</li>
+<li>Product of convex set is a convex set</li>
+</ul>
+<h2 id="convex-optimization-problem">Convex Optimization Problem</h2>
+<ul>
+<li><strong>An optimization problem (in minimization) form is a convex optimization problem, if the objective function is a convex function and constraint set is a convex set.</strong></li>
 <li>The problem $min$ ${f(x) :  x \in X}$ is a convex optimization problem if $f$ is a convex function and $X$ is a convex set.</li>
-<li>To check if a given problem is convex, we can check convexity of each cnstraint separately. (This is a sufficient test, not necessary).</li>
+<li>To check if a given problem is convex, we can check convexity of each constraint separately. (This is a sufficient test, not necessary).</li>
+<li>$\begin{array}{cl}\min &amp; f(\mathbf{x}) \ \text { s.t. } \end{array}$
+$\begin{array}{cl} g_i(\mathbf{x}) \leq b_i \quad i=1, \ldots, m \ &amp; h_j(\mathbf{x})=d_j \quad j=1, \ldots, \ell \ &amp; \mathbf{x} \in \mathbb{R}^n\end{array}$</li>
 </ul>
 <h3 id="sufficient-and-necessary">Sufficient and necessary</h3>
 <ul>
@@ -435,17 +514,19 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 <ul>
 <li>An epigraph of a function is a graphical representation of the function&rsquo;s domain and range. It is formed by the region above the graph of the function and the line x = a for some value of a. The epigraph represents all possible values of the function for all values of x greater than or equal to a. It is used in optimization problems to visualize the feasible region for the optimization variable.</li>
 <li>A function (in black) is convex if and only if the region above its graph (in green) is a convex set. This region is the function&rsquo;s epigraph.</li>
+<li><strong>The epigraph and the $\alpha$ level set, of a convex function are convex sets.</strong></li>
 </ul>
 <h2 id="outcomes-of-optimization">Outcomes of Optimization</h2>
 <h3 id="possible-outcomes-of-optimization">Possible Outcomes of Optimization</h3>
 <ul>
 <li>Any $x \in X$ is a feasible solution of the optimization problem (P)</li>
 <li>Feasible solution = A solution that satisfies all the constraints</li>
-<li>An unbounded problem must be feasible</li>
-<li>An optimization problem is unbounded, if there are feasible solutions with arbitrarily small objective values.</li>
+<li><strong>An unbounded problem must be feasible</strong></li>
+<li><strong>An optimization problem is unbounded, if there are feasible solutions with arbitrarily small objective values.(limits to negative infinity for minimization problem)</strong></li>
 <li>If $X=\emptyset$ then no feasible solutions exist, and the problem (P) is said to be infeasible.</li>
+<li><strong>If $X$ is a bounded set, then P cannot be unbounded</strong></li>
 <li>The problem $\min {3x+ 2y: x+ y&lt;=1,x&gt;=2,y&gt;=2}$ is infeasible</li>
-<li>An optimization problem can have 4 possible outcomes. The outcome can be infeasible, unbounded, have no optimal solution, have one optimal solution, or have multiple optimal solutions</li>
+<li>An optimization problem can have 4 possible outcomes. The outcome can be infeasible, unbounded (but feasible), have no optimal solution, have one optimal solution, or have multiple optimal solutions</li>
 </ul>
 <h3 id="existence-of-optimal-solutions">Existence of Optimal Solutions</h3>
 <ul>
@@ -457,8 +538,10 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 <li>Local optimal solutions are also global optimal solutions for convex optimization problems</li>
 <li>Every global optimal solution is a local optimal solution, but not vice versa</li>
 <li>The objective function value at different local optimal solutions may be different</li>
-<li>The objective funtion value at all global solutions must be the same</li>
+<li>The objective function value at all global solutions must be the same</li>
+<li>If the problem is convex, since any local solution is a global solution, we can be sure that if we find a local solution, that is also a global solution.</li>
 </ul>
+<p><img src="/img/go.png" alt=""></p>
 <h3 id="idea-of-improving-search">Idea of Improving Search</h3>
 <ul>
 <li>Most optimization algorithms are based on the paradigm of improving search:
@@ -468,37 +551,49 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 <li>Repeat step 2</li>
 </ul>
 </li>
-<li>In general, we are only able to look in the &ldquo;neighbourhood&rdquo; of the current solution in search of a better feasible solution (solutions that are within a small positive distance from the current solution)</li>
-<li>The move direction and step size should ensure that the new point is fesible and has an improved objective function value</li>
+<li>In general, we are only able to look in the &ldquo;neighborhood&rdquo; of the current solution in search of a better feasible solution (solutions that are within a small positive distance from the current solution)</li>
+<li>The move direction and step size should ensure that the new point is feasible and has an improved objective function value</li>
 <li>The improving search is better for local solutions, but for convex, in principal it can be used to find global solutions (by definition)</li>
 </ul>
 <h2 id="optimality-certificates">Optimality Certificates</h2>
 <h3 id="optimality-certificates-and-relaxations">Optimality Certificates and Relaxations</h3>
 <ul>
-<li>A certificate or a stopping condition is an easily checkable condition such that if the current solution satisfies this condition then it is guaranteed to be optimal or near optimal</li>
-<li>Lower bound allows us to get upper bound on the gap</li>
-<li>For two optimization problem (P) $min$ $f(x)$ $s.t.$ $x \in X $ and (Q) $min$ $g(x)$ $s.t.$ $x \in Y $, Problem (Q) is a relaxation of P if $X \subseteq Y$ and $f(x) &gt;= g(x) \forall x \in X $</li>
-<li>obtained by enlarging the feasible region and underapproximating the objective function. we do not have to do both of those (see equals to sign)</li>
-<li>Relaxation in optimization refers to the process of modifying or loosening the constraints of an optimization problem to make it easier to solve. The relaxed problem provides an approximate solution, which can then be improved by tightening the constraints.</li>
-<li>Optimal value of the relaxation provides a lower bound on the original problem</li>
-<li>If the relaxation is infeasible then clearly the original problem is also infeasible</li>
-<li>Suppose only the constraints are relaxed, then if a solution to the relaxation is fesible to the original problem then it must be an optimal solution to the original problem</li>
+<li><strong>A certificate or a stopping condition is an easily checkable condition such that if the current solution satisfies this condition then it is guaranteed to be optimal or near optimal</strong></li>
+<li>Lower bound (a Priori) that the objective value of any solution cannot be lower than.</li>
+<li>Suppose we have a feasible solution $x&rsquo;$ to an optimization problem with an objective value of $f(x&rsquo;)$. Suppose the optimal objective value of the problem is $v*$. Then the absolute optimality gap of the solution is $gap(x&rsquo;)$ = $f(x&rsquo;) - v*$. And, the relative gap is $(f(x&rsquo;) - v*)$/$v*$. The gap and rgap are always non negative.</li>
+<li>We do not know $v*$ but we do know the lower bound $L$. From definition, $L&lt;=v*&lt;=f(x&rsquo;)$</li>
+<li>A lower bound allows us to get an upper bound on the solution.</li>
+<li>For two optimization problem (P) $min$ $f(x)$ $s.t.$ $x \in X $ and (Q) $min$ $g(x)$ $s.t.$ $x \in Y $, Problem (Q) is a relaxation of P
+<ul>
+<li>if $X \subseteq Y$ (problem Q admits more solution than P) and/or</li>
+<li>$f(x) &gt;= g(x) \forall x \in X $</li>
+</ul>
+</li>
+<li><strong>Obtained by enlarging the feasible region and underapproximating the objective function</strong>. We do not have to do both of those (see equals to sign)</li>
+<li>Relaxation should be easier to solve.</li>
+<li>Optimal value of the relaxation provides a lower bound on the original problem. (This provides the optimality certificate.)</li>
+<li>If the relaxation is infeasible then the original problem is also infeasible.</li>
+<li><strong>Suppose only the constraints are relaxed, then if a solution to the relaxation is feasible to the original problem then it must be an optimal solution to the original problem.</strong></li>
+<li>A lower bound on the optimal value provides a way to certify the quality of a given solution.</li>
+<li>The optimal value of relaxation of an optimization problem provides a lower bound.</li>
 </ul>
 <h3 id="lagrangian-relaxation-and-duality">Lagrangian Relaxation and Duality</h3>
 <ul>
+<li>Very specific type of relaxation</li>
 <li>Lagrangian relaxation is a method used in optimization to solve a difficult problem by relaxing some of its constraints and instead optimizing a modified objective function known as the Lagrangian function. The Lagrangian function is constructed by adding a penalty term for each constraint to the original objective function. The penalty term is multiplied by a non-negative Lagrange multiplier that represents the slack in the constraint. By choosing appropriate values for the multipliers, the relaxed problem can be made to approximate the original problem.</li>
-<li>The dual problem attempts to find the relaxation with the tightest bound</li>
+<li><strong>The dual problem attempts to find the relaxation with the tightest bound (or the largest lower bound)</strong></li>
 <li>Weak duality: dual optimal value &lt;= original optimal value</li>
-<li>Some times we get strong duality</li>
+<li>Some times we get strong duality (for LP)</li>
 </ul>
+<p><img src="/img/lag_duality.png" alt=""></p>
 <h2 id="unconstrained-optimization-derivative-based">Unconstrained Optimization: Derivative Based</h2>
 <h3 id="optimality-conditions">Optimality Conditions</h3>
 <ul>
 <li>Unconstrained, that is the constraints are only $x \in R^n$ and twice differentiable</li>
 <li>If a solution is a local optimal solution of an unconstrained problem, then the gradient vanishes at the point (First order optimality condition)</li>
 <li>Hessian is a positive semidefinite (Second order optimality condition)</li>
-<li>The conditions are necessary but not sufficient</li>
-<li>For example for, $f(x)=x^3$, at point 0, both of the conditions are satisfied. However, it is neither a local min or max</li>
+<li>The conditions are <strong>necessary but not sufficient</strong>. Example: $f(x_$)$</li>
+<li>For example for, $f(x)=x^3$, at point 0, both of the conditions are satisfied. However, it is neither a local min or max.</li>
 <li>A sufficient (but not necessary) condition would be the gradient vanishing at the point, and is the Hessian is positive definite.</li>
 </ul>
 <h3 id="gradient-descent">Gradient Descent</h3>
@@ -515,11 +610,11 @@ is convex if either $f$ is nondecreasing or if each $q_i$ is a linear function.<
 <li>Newton&rsquo;s Method is a second-order optimization algorithm that is used to find the minimum of a function. It is an iterative method that updates the parameters by using the gradient of the function (first derivative) and the Hessian matrix (second derivative) to find the direction of the local minimum. The algorithm starts with an initial guess for the parameters and iteratively updates them using the Newton-Raphson formula until the change in the parameters is below a certain threshold or a maximum number of iterations is reached. Newton&rsquo;s Method is faster and more precise than gradient descent for well-behaved functions, but it can be sensitive to poor initialization and can get stuck in local minima.</li>
 <li>$x^{k+1} $ = $x^k$ - $[\nabla^2$ $f(x_k)]^{-1}$ $ \nabla f(x^k)$</li>
 <li>If started close enough to local minimum and the Hessian is positive definite, then the method has quadratic convergence</li>
-<li>Not guarenteed to converge. The Newton direction may not be improving at all.</li>
-<li>If the Hessian is singular ( or close to singular) at some iteration, we cannot proceed.</li>
-<li>Computing gradient as well as the Hessian and its inverse is expensive</li>
+<li><strong>Not guaranteed to converge. The Newton direction may not be improving at all.</strong></li>
+<li>If the Hessian is singular (or close to singular) at some iteration, we cannot proceed.</li>
+<li>Computing gradient as well as the Hessian and its inverse is expensive.</li>
 </ul>
-<h3 id="quasi-netwon-methods">Quasi-Netwon Methods</h3>
+<h3 id="quasi-newton-methods">Quasi-Newton Methods</h3>
 <ul>
 <li>Blend of gradient descent and Newton&rsquo;s method.</li>
 <li>Avoids computation of Hessian and its inverse</li>
@@ -572,6 +667,9 @@ print(&#34;Minimum at:&#34;, result.x)
 <li>Linear constraints: $&gt;=, &lt;= or =$</li>
 </ul>
 </li>
+<li>All linear problems can be written as a inner product of two vectors.</li>
+<li>The objective function must be a linear function of the variables.</li>
+<li>The constraints must be linear inequality or equality constraints.</li>
 </ul>
 <h3 id="optimal-transportation-problem">Optimal Transportation Problem</h3>
 <ul>
@@ -583,7 +681,8 @@ print(&#34;Minimum at:&#34;, result.x)
 <li>Formulation 1: $\begin{array}{ll}\min &amp; \sum_{i=1}^m \sum_{j=1}^n c_{i j} x_{i j} \ \text { s.t. } &amp; \sum_{i=1}^m x_{i j}=d_j, \quad \forall j \ &amp; \sum_{j=1}^n x_{i j} \leq s_i, \quad \forall i \ &amp; x_{i j} \geq 0, \quad \forall i, j .\end{array}$</li>
 <li>Formulation 2: $\begin{array}{ll}\min &amp; \sum_{i=1}^m \sum_{j=1}^n c_{i j} x_{i j} \ \text { s.t. } &amp; \sum_{i=1}^m x_{i j}&gt;=d_j, \quad \forall j \ &amp; \sum_{j=1}^n x_{i j} \leq s_i, \quad \forall i \ &amp; x_{i j} \geq 0, \quad \forall i, j .\end{array}$</li>
 <li>But &gt;= inequality in the second formulation will be satisfied as = at optimal solution, thus, the two formulations are equivalent</li>
-<li>The graphs here are bipartite</li>
+<li>The graphs here are bipartite.</li>
+<li>The total supply is greater than or equal to the total demand.</li>
 </ul>
 <h3 id="maximum-flow-problem">Maximum Flow Problem</h3>
 <ul>
@@ -671,7 +770,7 @@ plt.show()
 <li>after seeing the demand, the company decides how many to sell and how many to sell at a discounted price of $v$</li>
 <li>This is an example of Decision Making under Uncertainty</li>
 <li>Here and Now decision: production quantity $x$</li>
-<li>Wait and See decition: sell quantity $y$, discount quantity $z$</li>
+<li>Wait and See decision: sell quantity $y$, discount quantity $z$</li>
 <li>Objective: minimize production cost and expected future cost</li>
 <li>Stochastic program:</li>
 <li>$min_{x} cx + E_d[Q(x,d)]$ s.t $0&lt;=x&lt;=\hat{x}$</li>
@@ -691,9 +790,211 @@ plt.show()
 <li>Investment can be adjusted every 4 years. So there are 3 periods</li>
 <li>The returns of investments are unknown and modeled as random variables</li>
 <li>The family wants to maximize the total expected return</li>
-<li>A problem of decision making under uncertainity</li>
+<li>A problem of decision making under uncertainty</li>
 </ul>
 <h2 id="decision-types">Decision Types</h2>
+<ul>
+<li>Here-and-Now: decision made before knowing uncertain parameters</li>
+<li>Wait-and-See: decision made after knowing uncertain parameters</li>
+</ul>
+<h2 id="basic-geometric-objects">Basic Geometric Objects</h2>
+<h3 id="points-and-vectors">Points and vectors</h3>
+<ul>
+<li>Point: geometric object in space</li>
+<li>Algebraically, a point in n-dimensional space is given by its coordinates: $x = (x_1, &hellip;, x_n)^T \in R^n$</li>
+<li>We always write a vector as a column vector</li>
+<li>A point is also called a vector</li>
+</ul>
+<h3 id="rays-lines-and-their-parametric-forms">Rays, lines, and their parametric forms</h3>
+<ul>
+<li>A ray consists of a starting point $a$ and all the points in a direction $d$</li>
+<li>Algebraically it is a set: {$x$ $\in R^n | x = a + \theta d$, $\forall$ $\theta &gt;=0 $}</li>
+<li>A line consists of two rays starting at a point pointing two opposite directions.</li>
+<li>Algebraically it is a set: {$x$ $\in R^n | x = a + \theta d$, $\forall$ $\theta \isin R $}</li>
+<li>For ray and line, it is parametric because a and d are known, and $\theta$ is the parameter</li>
+</ul>
+<h3 id="plane-and-solutions-of-linear-equations">Plane and solutions of linear equations</h3>
+<ul>
+<li>A plane in $R^2$ is just a line. $a_1x_1+a_2x_2=c$</li>
+<li>This plane is a line but it is not a parametric representation of a line.</li>
+<li>A plane in $R^3$ is $a_1x_1+a_2x_2+a_3x_3=c$</li>
+<li>If c is 0, plane passes through the origin.</li>
+</ul>
+<h3 id="hyperplane-and-a-linear-equation">Hyperplane and a Linear equation</h3>
+<ul>
+<li>The concept of plane can be extended to any dimension R^n</li>
+<li>Algebraically, $a_1x_1+a_2x_2+&hellip;+a_nx_n=c$</li>
+<li>can be written as $a^Tx=c$</li>
+</ul>
+<h3 id="halfspace-and-a-linear-inequality">Halfspace and a linear inequality</h3>
+<ul>
+<li>In $R^2$, a halfspace is half of the whole space</li>
+<li>A halfspace also consists of the line dividing the space</li>
+<li>There are two halfspace in $R^2$, but both include the dividing line</li>
+<li>Same definition can be extended to a halfspace</li>
+<li>$H_1$ = {$x \in R^n: a^Tx&gt;=c$}</li>
+<li>$H_2$ = {$x \in R^n: a^Tx&lt;=c$}</li>
+</ul>
+<h3 id="polyhedron-and-serveral-hyperspaces">Polyhedron and serveral hyperspaces</h3>
+<ul>
+<li>A polyhedron is the intersection of a finite number of halfspaces</li>
+</ul>
+<p><img src="https://i.stack.imgur.com/rmUm7.png" alt=""></p>
+<h2 id="geometric-aspects-of-linear-optimization">Geometric Aspects of Linear Optimization</h2>
+<h3 id="corner-points">Corner Points</h3>
+<ul>
+<li>Instead of edges, look at Corner Points</li>
+<li>Corner points are responsible for generating the set</li>
+<li>Convex combination of two points in the action of generating it</li>
+</ul>
+<h3 id="convex-combination-of-two-points">Convex Combination of Two Points</h3>
+<ul>
+<li>Given two points, $a$, $b$ $\in R^n$, a convex combination of $a, b$ is given by
+<ul>
+<li>$x = \lambda a + (1- \lambda)b$ for some $\lambda \in [0, 1]$</li>
+<li>Geometrically, x is on the line segment connecting a and b</li>
+</ul>
+</li>
+<li>Given a point $x$ is a convex combination of $a_1, &hellip; a_m$ if $x$ can be written as
+<ul>
+<li>$x = \sum_{i=1}^m \lambda_ia_i$</li>
+<li>And, $\sum_{i=1}^m \lambda_i = 1, \lambda_i&gt;=0$ for $i = 1, &hellip; , m$</li>
+</ul>
+</li>
+<li>Corner points are special points, and therefore we give them a special name: Extreme Point</li>
+<li>A point x in a polyhedron P is an extreme point if and only if x is not a convex combination of other two different points in P.</li>
+</ul>
+<h3 id="convex-hull">Convex Hull</h3>
+<ul>
+<li>A convex hull of $m$ points $a_1, &hellip;., a_m$ is the set of all convex combinations of $a_1, .., a_m$ denoted as $conv$ $x{a_1,.., a_n}$</li>
+<li>Theorem: A nonempty and bounded polyhedron is the convex hull of its extreme points.</li>
+<li>A bounded polyhedron is a polyhedron that does not extend to infinity in any direction.</li>
+</ul>
+<h3 id="conic-hull">Conic Hull</h3>
+<ul>
+<li>A polyhedron is unbounded iff there are directions to move to infinity without leaving the polyhedron.</li>
+<li>Recession direction: a ray that we never leave in the direction of the polyhedron</li>
+<li>However, there are special rays on the edge which can be used to generate all other rays</li>
+<li>A ray $d$ is a conic combination of two rays, $e_1$, $e_2$ if d is a nonnegative weighted sum of $e_1$, $e_2$</li>
+<li>The set of all conic combination of rays $r_1, &hellip;, r_m$ is called the conic hull of $r_1, &hellip;, r_m$</li>
+<li>The sum of $\lambda$ does not have to equal to 1 here.</li>
+<li>A ray $e$ in a cone C is called an extreme ray, if $e$ is a conic combination of other two different rays in the cone C</li>
+</ul>
+<h3 id="extreme-ray-and-extreme-point">Extreme Ray and Extreme Point</h3>
+<ul>
+<li>If a polyhedron is bounded, there is no extreme ray</li>
+<li>If a polyhedron is bounded, there must be an extreme point</li>
+<li>If a polyhedron is unbounded, it must have an extreme point</li>
+</ul>
+<h3 id="polyhedron-representations">Polyhedron Representations</h3>
+<ul>
+<li>Halfspace representation</li>
+<li>Extreme Point representation</li>
+</ul>
+<h3 id="weyl-caratheodory-theorem">Weyl-Caratheodory Theorem</h3>
+<ul>
+<li>Any point $x$ in a polyhedron can be written as a sum of two vectors $x = x^&rsquo; + d$ where $x^&rsquo;$ is in the convex hull of its extreme points and d is in the conic hull of its extreme rays.</li>
+<li>$P =$ $conv$ ${x_1, &hellip;, x^m} + $ $conic$ ${e^1, &hellip;, e^k}$</li>
+</ul>
+<h2 id="algebraic-aspect-of-linear-optimization">Algebraic Aspect of Linear Optimization</h2>
+<ul>
+<li><strong>Active constraints</strong>: A linear constraint that is satisfied as equality at a given point is said to be active or binding at that point. Otherwise, if an inequality constraint is satisfied as strict inequality at a point, it is called inactive.</li>
+<li><strong>Linear independent constraints</strong>: If the normal directions of two or more linear constraints are linearly independent, then these constraints are called linearly independent</li>
+<li><strong>Linearly independent active constraints</strong>: Active constraints that are linearly independent</li>
+<li><strong>Basic solution</strong>: The unique solution of $n$ linearly independent active constraints in $R^n$</li>
+<li><strong>Basic feasible solution (BFS)</strong>: Basic solution that is feasible.</li>
+<li><strong>Basic Feasible Solution = Extreme Point</strong></li>
+</ul>
+<h3 id="standard-form-of-writing-an-lp">Standard Form of writing an LP</h3>
+<ul>
+<li>A standard form linear program is written as $min$ $ c^Tx$ $s.t.$ $Ax=b, x&gt;=0 \in X $</li>
+<li>$x \in R^n$ that is, there are $n$ variables</li>
+<li>$A \in R^{m*n}$, ie there are m equality constraints</li>
+<li>We always assume all the $m$ equality constraints are linearly independent</li>
+<li>Equality constraints and Nonnegative constraints on all variables</li>
+<li>The first constraint is data dependent, whereas the second one is not</li>
+<li>Any linear program can be transformed into LP</li>
+<li>Advantage of standard form LP:
+<ul>
+<li>Complicating constraints are all equality</li>
+<li>Only inequality constraints are simple, no negativity constraints, which do not depend on data</li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-solution-to-standard-form-lp">Basic Solution to standard form LP</h3>
+<ul>
+<li>A basic solution is the unique solution to $n$ linearly independent active constraints.</li>
+<li>For a standard form LP, we already have $m$ linearly independent active constraints.</li>
+<li>Need $n-m$ additional linearly independent active constraints</li>
+<li>Where to find them?</li>
+<li>Only from nonnegative constraints: $x_i &gt;= 0$</li>
+<li>But which to choose to make active?</li>
+<li>Choose $m$ such linearly independent columns, denote the corresponding $m*m$ matrix as B, called basis matrix. The corresponding $(n-m)$ $x_i$s are denoted as $x_N$, non basic variables</li>
+<li>Choose $x_i=0$ for all $i$ corresponds to the columns in $N$, $x_N$ = 0</li>
+</ul>
+<p>&hellip;</p>
+<h3 id="why-do-we-care">Why do we care?</h3>
+<ul>
+<li>Not every LP has a BFS, not every polyhedron has an extreme point (Think about a line or a halfspace)</li>
+<li>So which LP has a BFS?
+<ul>
+<li>A polyhedron P has an extreme point iff it does not contain a line</li>
+<li>Corollary: A feasible standard form LP always has a BFS</li>
+</ul>
+</li>
+<li>If an LP has a finite optimal solution, then an optimal solution is a BFS</li>
+<li>That does not mean all optimal solution must be BFS</li>
+<li>Because feasible standard form LP must have a BFS</li>
+<li>And because an optimal solution must be a BFS</li>
+<li>Then, an optimal solution of standard for LP must be a BFS</li>
+<li>So we only need to look at BFSs, and select the one BFS with the minimum obj cost</li>
+<li>This is why BFS is very important for linear programming.</li>
+</ul>
+<h2 id="local-search">Local Search</h2>
+<ul>
+<li>In a feasible region</li>
+<li>General idea (does not have to be a LP)</li>
+<li>Start from some solution, and move to certain direction to a new point, but stay in feasible region.</li>
+<li>Algorithm</li>
+</ul>
+<p><img src="/img/local_search.png" alt=""></p>
+<ul>
+<li>Generic algorithmic idea</li>
+<li>Gradient Descent and Newton Method uses local search</li>
+<li>Step size should be chosen properly, and the position should be feasible</li>
+<li>Local Search works well for convex optimization (A local minimum of a convex program is also a global minimum)</li>
+<li>Not in general for non convex optimization problems (Local search can get stuck)</li>
+</ul>
+<h3 id="local-search-for-lp">Local Search for LP</h3>
+<ul>
+<li>
+<p>We only need to look at basic feasible solution.</p>
+</li>
+<li>
+<p>The key step is to find a direction $d$ and step size $\theta$ so that:</p>
+<ul>
+<li>$d$ points from a BFS to one of its adjacent BFS</li>
+<li>That adjacent BFS should reduce objective value</li>
+<li>Move along the favorable direction as much as possible to maintain feasibility and to reduce objective</li>
+<li>Stop when optimal solution is fount (or cannot be found)</li>
+</ul>
+</li>
+<li>
+<p>Two BFS are adjacent if they share the same $n-1$ linearly independent active constraints.</p>
+</li>
+<li>
+<p>Two adjacent BFSs must share the same set of $n-m-1$ nonbasic variables as n-m-1 active constraints, and differ in one nonbasic variable.</p>
+</li>
+<li>
+<p>Example, if $x=(x_1, &hellip;, x_5)$ has nonbasic variables $x_3 = x_4 = x_5 = 0 $, then its adjacent BFS must share two of these three nonbasic variables, i.e. $x_3=x_4=x_2=0$ may be nonbasic variable in an adjacent BFS.</p>
+</li>
+</ul>
+<p>&hellip;</p>
+<h2 id="walk-edge">Walk Edge</h2>
+<ul>
+<li></li>
+</ul>
+<p>&hellip;</p>
 </div>
 	</section>
 
@@ -841,7 +1142,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		5887 words in this page.
+		8056 words in this page.
 	</div>
 </div>
 
