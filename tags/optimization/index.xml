@@ -793,7 +793,6 @@ plt.show()
 &lt;li&gt;Choose $m$ such linearly independent columns, denote the corresponding $m*m$ matrix as B, called basis matrix. The corresponding $(n-m)$ $x_i$s are denoted as $x_N$, non basic variables&lt;/li&gt;
 &lt;li&gt;Choose $x_i=0$ for all $i$ corresponds to the columns in $N$, $x_N$ = 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
 &lt;h3 id=&#34;why-do-we-care&#34;&gt;Why do we care?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Not every LP has a BFS, not every polyhedron has an extreme point (Think about a line or a halfspace)&lt;/li&gt;
