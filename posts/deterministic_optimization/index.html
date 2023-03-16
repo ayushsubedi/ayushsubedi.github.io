@@ -575,7 +575,6 @@ $\begin{array}{cl} g_i(\mathbf{x}) \leq b_i \quad i=1, \ldots, m \ &amp; h_j(\ma
 <li>If the relaxation is infeasible then the original problem is also infeasible.</li>
 <li><strong>Suppose only the constraints are relaxed, then if a solution to the relaxation is feasible to the original problem then it must be an optimal solution to the original problem.</strong></li>
 <li>A lower bound on the optimal value provides a way to certify the quality of a given solution.</li>
-<li>The optimal value of relaxation of an optimization problem provides a lower bound.</li>
 </ul>
 <h3 id="lagrangian-relaxation-and-duality">Lagrangian Relaxation and Duality</h3>
 <ul>
@@ -989,12 +988,26 @@ plt.show()
 <p>Example, if $x=(x_1, &hellip;, x_5)$ has nonbasic variables $x_3 = x_4 = x_5 = 0 $, then its adjacent BFS must share two of these three nonbasic variables, i.e. $x_3=x_4=x_2=0$ may be nonbasic variable in an adjacent BFS.</p>
 </li>
 </ul>
-<p>&hellip;</p>
-<h2 id="walk-edge">Walk Edge</h2>
+<h2 id="simplex-method">Simplex Method</h2>
 <ul>
-<li></li>
+<li>The simplex method is a linear programming algorithm that is used to solve optimization problems with linear constraints and a linear objective function. It involves iteratively constructing a sequence of feasible solutions that converge to an optimal solution.</li>
+<li>At each iteration, the simplex method selects a non-basic variable to become basic and then computes a feasible solution by solving a set of linear equations. If the solution is not optimal, the method determines a new non-basic variable to become basic and repeats the process until an optimal solution is found.</li>
+<li>The method is based on the fact that a linear programming problem can be represented graphically as a polyhedron in high-dimensional space, and the optimal solution lies at one of the extreme points of the polyhedron. The simplex method works by traversing the edges of the polyhedron until the optimal extreme point is reached.</li>
+<li>The simplex method is a powerful tool for solving large-scale linear programming problems and is widely used in industry, finance, and other fields. However, it has some limitations, such as its inability to handle nonlinear constraints and its susceptibility to numerical instability when dealing with ill-conditioned matrices.</li>
 </ul>
-<p>&hellip;</p>
+<h3 id="degeneracy">Degeneracy</h3>
+<ul>
+<li>Degeneracy in the simplex method refers to a situation where the simplex algorithm encounters multiple optimal solutions or cycles in the iteration process. In other words, a degenerate linear programming problem has more than one basic feasible solution with the same objective function value.</li>
+<li>Degeneracy can occur when one or more constraints in the linear programming problem are redundant or when there is a linear dependence among the constraints. This leads to a reduced dimensionality in the space of feasible solutions, resulting in more than one optimal solution or cycle in the iteration process.</li>
+<li>Degeneracy can pose challenges for the simplex method since it can lead to slow convergence, cycling, or termination of the algorithm before finding an optimal solution. This is because the simplex method relies on selecting non-basic variables to become basic and constructing a feasible solution by solving a set of linear equations. In a degenerate case, some of the variables may become redundant, leading to cycles in the iteration process.</li>
+<li>To address degeneracy, various modifications to the simplex method have been proposed, such as the use of anti-cycling rules, perturbation techniques, or alternative algorithms such as interior-point methods. These modifications aim to reduce or eliminate the effects of degeneracy on the convergence of the algorithm and ensure finding an optimal solution.</li>
+</ul>
+<h3 id="blands-rule-for-degeneracy">Bland&rsquo;s rule for degeneracy</h3>
+<ul>
+<li>Bland&rsquo;s rule ensures that the simplex method always chooses the variable with the smallest index as the entering variable and the variable with the smallest subscript as the leaving variable. In other words, Bland&rsquo;s rule breaks ties in the selection of entering and leaving variables in favor of the variable with the smallest index or subscript.</li>
+<li>By always selecting the variable with the smallest index or subscript, Bland&rsquo;s rule guarantees that the simplex method cycles through all basic feasible solutions before returning to a previous solution. This eliminates the possibility of the algorithm getting stuck in a cycle and ensures that it converges to an optimal solution eventually.</li>
+<li>Although Bland&rsquo;s rule can increase the number of iterations required to solve a degenerate linear programming problem, it provides a provably optimal solution and eliminates the possibility of cycling or termination before finding an optimal solution. Bland&rsquo;s rule is widely used in software implementations of the simplex method and has been shown to be effective in practice.</li>
+</ul>
 </div>
 	</section>
 
@@ -1142,7 +1155,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		8056 words in this page.
+		8617 words in this page.
 	</div>
 </div>
 
