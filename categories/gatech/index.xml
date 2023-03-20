@@ -869,7 +869,42 @@ plt.show()
 &lt;li&gt;By always selecting the variable with the smallest index or subscript, Bland&amp;rsquo;s rule guarantees that the simplex method cycles through all basic feasible solutions before returning to a previous solution. This eliminates the possibility of the algorithm getting stuck in a cycle and ensures that it converges to an optimal solution eventually.&lt;/li&gt;
 &lt;li&gt;Although Bland&amp;rsquo;s rule can increase the number of iterations required to solve a degenerate linear programming problem, it provides a provably optimal solution and eliminates the possibility of cycling or termination before finding an optimal solution. Bland&amp;rsquo;s rule is widely used in software implementations of the simplex method and has been shown to be effective in practice.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
+&lt;h2 id=&#34;linear-program-duality&#34;&gt;Linear Program Duality&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;LP duality is at the core of linear programming theory&lt;/li&gt;
+&lt;li&gt;Provides new perspective on understanding LP, is important for designing algorithms, and has many applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lagrangian-relaxation&#34;&gt;Lagrangian relaxation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A fundamental motivation of LP duality is to find a systematic way to construct a lower bound to the original LP&lt;/li&gt;
+&lt;li&gt;Original LP (Primal LP) $Z_p$ $=$ $min{c^Tx:Ax=b,x&amp;gt;=0}$&lt;/li&gt;
+&lt;li&gt;Any feasible solution $x$ provides an upper bound on $Z_p$, ie, $Z_p &amp;lt;= c^Tx$&lt;/li&gt;
+&lt;li&gt;Principles of relaxation works for general optimization problems, far beyond LP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;separability&#34;&gt;Separability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Separability refers to the property that the objective function of the Lagrangian dual problem can be expressed as the sum of separate functions, each of which depends only on a subset of the variables of the primal problem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;primal-and-dual-pair&#34;&gt;Primal and Dual Pair&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/panddpair1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;linear-programming-weak-duality&#34;&gt;Linear Programming weak duality&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a primal LP in minimization, by the construction of the dual, the objective value of any feasible solution of the dual problem provides a lower bound to the primal objective cost&lt;/li&gt;
+&lt;li&gt;Theorem 1 (Linear programming weak duality): If $x$ is any feasible solution to the primal minimization LP, and y is any feasible solution to the dual maximization LP, then $c^Tx &amp;gt;= b^Ty$&lt;/li&gt;
+&lt;li&gt;This implies:
+&lt;ul&gt;
+&lt;li&gt;If the optimal cost of the primal minimization problem is $-\inf$ then the dual maximization problem must be infeasible.&lt;/li&gt;
+&lt;li&gt;If the optimal cost of the dual maximization problem is $+\inf$ then the primal minimization problem must be infeasible.&lt;/li&gt;
+&lt;li&gt;Let $x^*$ be feasible to the primal problem and $y*$ be feasible to the dual problem, and suppose $c^Tx^*=b^Ty^*$, then $x^*$ and $y^*$ are optimal solutions to the primal and dual problems, respectively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;strong-duality&#34;&gt;Strong Duality&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;If a primal linear program has a finite optimal solution $x^*$, then its dual linear program must also have a finite optimal solution $y^*$, and the respective optimal objective values are equal, ie, $c^Tx = b^Ty$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sob-method-for-creating-dual-of-a-lp&#34;&gt;SOB method for creating dual of a LP&lt;/h2&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/tut6.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
