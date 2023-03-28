@@ -904,7 +904,48 @@ plt.show()
 &lt;li&gt;If a primal linear program has a finite optimal solution $x^*$, then its dual linear program must also have a finite optimal solution $y^*$, and the respective optimal objective values are equal, ie, $c^Tx = b^Ty$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;sob-method-for-creating-dual-of-a-lp&#34;&gt;SOB method for creating dual of a LP&lt;/h2&gt;
-&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/tut6.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/tut6.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;large-scale-optimization&#34;&gt;Large Scale Optimization&lt;/h2&gt;
+&lt;h3 id=&#34;cutting-stock-problem&#34;&gt;Cutting Stock Problem&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The cutting stock problem is a combinatorial optimization problem that involves cutting large sheets of material, such as paper or metal, into smaller pieces of specific sizes in order to minimize waste. The objective is to determine the most efficient cutting pattern that can be used to produce a given number of smaller pieces of the desired sizes, while minimizing the amount of leftover material.&lt;/li&gt;
+&lt;li&gt;The cutting stock problem is a common problem in the manufacturing industry, where it is used to optimize the use of raw materials and minimize production costs. It can be formulated as a linear programming problem, where the decision variables are the number of cuts made in each direction, and the objective function is to minimize the amount of leftover material.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gilmore-formulation&#34;&gt;Gilmore Formulation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;$min \sum_{i=1}^N x_i$, s.t $Ax=b, x \gt 0$&lt;/li&gt;
+&lt;li&gt;where the columns of A are the patterns to cut one large roll&lt;/li&gt;
+&lt;li&gt;$b$ is the amount of demand of each size of smaller rolls&lt;/li&gt;
+&lt;li&gt;The number of ways to cut a large roll into smaller ones is usually astronomical&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;column-generation&#34;&gt;Column Generation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Pick a subset&lt;/li&gt;
+&lt;li&gt;Solve the restricted master problem (RMP)&lt;/li&gt;
+&lt;li&gt;A feasible solution of RMP can be made into a feasible solution of MP. This is because RMP has all the constraints in MP.&lt;/li&gt;
+&lt;li&gt;A basic feasible solution of RMP can made into a basic feasible solution of MP&lt;/li&gt;
+&lt;li&gt;For an optimal BFS of RMP we can compute reduced cost of all nonbasis variables, if any reduced cost is negative, then we know the optimal solution of RMP if not optimal for MP&lt;/li&gt;
+&lt;li&gt;We can add the new variable with negative reduced cost to RMP solve the new RMP and repeat the process.&lt;/li&gt;
+&lt;li&gt;The procedure of finding a variable with negative reduced cost is called the Pricing Problem. Pricing Problem: Compute all the reduced costs of $x$. If all reduced costs are nonnegative, then $x$ is optimal for MP. Otherwise, we find a new column to add to RMP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;correctness-and-convergence&#34;&gt;Correctness and Convergence&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The algorithm is correct because of the key properties of RMP&lt;/li&gt;
+&lt;li&gt;Does the algorithm converge?
+&lt;ul&gt;
+&lt;li&gt;Yes, because the algorithm always adds new columns and never disregards any.&lt;/li&gt;
+&lt;li&gt;The worst case is all the columns of MP are used.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dantzig-wolfe&#34;&gt;Dantzig-Wolfe&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Dantzig-Wolfe decomposition (also known as the column generation method) is a technique for solving large-scale linear programming problems that have a special structure. It is named after George Dantzig and Philip Wolfe, who first proposed the method in the 1960s.&lt;/li&gt;
+&lt;li&gt;The Dantzig-Wolfe decomposition method decomposes a large linear programming problem into smaller sub-problems, each of which can be solved independently. The method is particularly useful when the original problem has a large number of constraints, but only a small number of variables are involved in each constraint.&lt;/li&gt;
+&lt;li&gt;The basic idea of the method is to introduce new variables (known as columns) into the problem gradually, one at a time, and to solve the resulting sub-problem using standard linear programming techniques. The optimal solution to the sub-problem is then used to generate a new column, which is added to the problem and the process is repeated until the optimal solution to the original problem is found.&lt;/li&gt;
+&lt;li&gt;The Dantzig-Wolfe decomposition method can be used to solve a wide range of linear programming problems, including those with integer variables and those with non-linear objective functions. It is particularly useful for problems that involve complex constraints or require the solution of large-scale optimization problems.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>
