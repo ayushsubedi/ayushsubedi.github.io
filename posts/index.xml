@@ -982,6 +982,38 @@ plt.show()
 &lt;li&gt;The basic idea of the method is to introduce new variables (known as columns) into the problem gradually, one at a time, and to solve the resulting sub-problem using standard linear programming techniques. The optimal solution to the sub-problem is then used to generate a new column, which is added to the problem and the process is repeated until the optimal solution to the original problem is found.&lt;/li&gt;
 &lt;li&gt;The Dantzig-Wolfe decomposition method can be used to solve a wide range of linear programming problems, including those with integer variables and those with non-linear objective functions. It is particularly useful for problems that involve complex constraints or require the solution of large-scale optimization problems.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;nonlinear-optimization-modeling&#34;&gt;Nonlinear Optimization Modeling&lt;/h1&gt;
+&lt;h3 id=&#34;nonnegative-orthant-cone&#34;&gt;Nonnegative Orthant cone&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The nonnegative orthant cone is a special type of cone in linear algebra and convex analysis. It is defined as the set of all nonnegative vectors in n-dimensional Euclidean space, denoted as R^n_+, where R^+ denotes the set of nonnegative real numbers.&lt;/li&gt;
+&lt;li&gt;Generalizations of linear programming to nonlinear programming through convex cones and generalized inequalities&lt;/li&gt;
+&lt;li&gt;A set K is called convex cone if K is convex and $ax \in K$ for all $a \ge 0$ whenever $x \in K$&lt;/li&gt;
+&lt;li&gt;What is the relation between order and cone?
+&lt;ul&gt;
+&lt;li&gt;Order is a comparison relationship between two elements $a$ and $b$, usually written as $a \gt b$&lt;/li&gt;
+&lt;li&gt;An order $\succeq_K$ is defined by an underlying convex cone K as
+&lt;ul&gt;
+&lt;li&gt;$a \succeq_K b$ iff $a-b \in K$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;A standard form LP can be viewed as
+&lt;ul&gt;
+&lt;li&gt;$min$ ${c^Tx: Ax=b, x \gt_{R_+^n}0}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An elegant way to generalize linear programming is to generalize $R_+^n$ to a general convex cone $K$&lt;/li&gt;
+&lt;li&gt;Linear Conic Programming: $min$ $c^T x: Ax=b, x \ge_K 0$&lt;/li&gt;
+&lt;li&gt;Linear Conic Programming is a type of optimization problem that involves finding the best solution to a linear objective function subject to a set of linear constraints and the requirement that certain variables lie in a cone. A cone is a set of vectors that satisfies certain properties, such as being non-negative or having a fixed norm.&lt;/li&gt;
+&lt;li&gt;In Linear Conic Programming, the constraints are expressed in the form of linear equations or inequalities, while the requirement that certain variables lie in a cone is expressed using conic constraints. Common types of cones include the non-negative orthant, the second-order cone, the semi-definite cone, and the exponential cone.&lt;/li&gt;
+&lt;li&gt;The goal of Linear Conic Programming is to find a feasible solution that satisfies all the constraints and optimizes the objective function. This type of optimization problem arises in a variety of applications, such as portfolio optimization, transportation planning, and engineering design. Linear Conic Programming is a powerful tool that can be solved efficiently using specialized algorithms, such as interior-point methods.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;second-order-cone&#34;&gt;Second order cone&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;$L^3 = \lbrace (x,y,z) : \sqrt{x^2-y^2} \le z \rbrace$ = $\lbrace(x,y,z):||[x;y]||_2 \le z \rbrace$&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
