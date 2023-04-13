@@ -6,7 +6,7 @@
     <description>Recent content in cost-function on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/cost-function/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,46 +14,20 @@
     <item>
       <title>Deterministic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/deterministic_optimization/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
-      <description>&lt;h1 id=&#34;introduction-to-optimization-models&#34;&gt;Introduction to Optimization Models&lt;/h1&gt;
-&lt;p&gt;The action of making the best or most effective use of a situation or resource.&lt;/p&gt;
-&lt;p&gt;Mathematically,&lt;/p&gt;
+      <description>&lt;h1 id=&#34;deterministic-optimization&#34;&gt;Deterministic Optimization&lt;/h1&gt;
+&lt;h1 id=&#34;general-overview-and-key-concepts-in-optimization&#34;&gt;General overview and key concepts in optimization&lt;/h1&gt;
+&lt;p&gt;Optimization is the action of making the best or most effective use of a situation or resource.&lt;/p&gt;
 &lt;h2 id=&#34;generic-form-of-optimization-problem&#34;&gt;Generic form of optimization problem:&lt;/h2&gt;
 &lt;p&gt;$min$ $f(x)$ $s.t.$ $x \in X $&lt;/p&gt;
-&lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:&lt;/strong&gt;&lt;br/&gt;
-&lt;strong&gt;Decision:&lt;/strong&gt; $x$ = how much to cut from each of the corners?&lt;br/&gt;
-&lt;strong&gt;Alternatives:&lt;/strong&gt; $0&amp;lt;=x&amp;lt;=1/2$&lt;br/&gt;
-&lt;strong&gt;Best:&lt;/strong&gt; Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)&lt;br/&gt;
-&lt;strong&gt;Optimization formulation:&lt;/strong&gt; $max$ $x(1-2x)^2$ subject to $0&amp;lt;=x&amp;lt;=1/2$ (which are the constraints in this case)&lt;br/&gt;&lt;/p&gt;
-&lt;iframe src=&#34;https://www.desmos.com/calculator/ily45jyfsv?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
-&lt;p&gt;This is an unconstrained optimization problem since the constraint is a simple bound based.&lt;/p&gt;
-&lt;h3 id=&#34;example-data-fitting&#34;&gt;Example: Data Fitting:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Given $N$ data points $(y_1, x_1)&amp;hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.&lt;/strong&gt;&lt;br/&gt;
-&lt;strong&gt;Decision&lt;/strong&gt;: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$&lt;br/&gt;
-&lt;strong&gt;Alternatives&lt;/strong&gt;: All $n$-dimensional vectors and scalars&lt;br/&gt;
-&lt;strong&gt;Best&lt;/strong&gt;: Minimize the sum of squared errors&lt;br/&gt;
-&lt;strong&gt;Optimization formulation&lt;/strong&gt;:
-$\begin{array}{ll}\min &amp;amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp;amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$&lt;/p&gt;
-&lt;p&gt;This is also an unconstrained optimization problem.&lt;/p&gt;
-&lt;h3 id=&#34;example-product-mix&#34;&gt;Example: Product Mix:&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?&lt;/strong&gt;&lt;br/&gt;
-&lt;strong&gt;Decision&lt;/strong&gt;: how much of each product to make&lt;br/&gt;
-&lt;strong&gt;Alternatives&lt;/strong&gt;: defined by the resource limits&lt;br/&gt;
-&lt;strong&gt;Best&lt;/strong&gt;: Maximize profits&lt;br/&gt;
-&lt;strong&gt;Optimization formulation:&lt;/strong&gt; &lt;br/&gt;
-Sum notation: $\begin{array}{lll}\max &amp;amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp;amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp;amp; \forall j=1, \ldots, m \ &amp;amp; x_i \geq 0 &amp;amp; \forall i=1, \ldots, n\end{array}$ &lt;br/&gt;
-Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &amp;amp; R x \leq u \ &amp;amp; x \geq 0\end{array}$&lt;/p&gt;
-&lt;h3 id=&#34;example-project-investment&#34;&gt;Example: Project investment&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt; A firm is considering investing in $n$ different R&amp;amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?&lt;/strong&gt;&lt;br/&gt;
-&lt;strong&gt;Decision&lt;/strong&gt;: Whether or not to invest in project&lt;br/&gt;
-&lt;strong&gt;Alternatives&lt;/strong&gt;: Defined by budget&lt;br/&gt;
-&lt;strong&gt;Best&lt;/strong&gt;: Maximize return on investment&lt;br/&gt;
-Sum notation: $\begin{aligned} \max &amp;amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp;amp; \sum_{j=1}^n c_j x_j \leq B \ &amp;amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ &lt;br/&gt;
-Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &amp;amp; c^{\top} x \leq B \ &amp;amp; x \in{0,1}^n\end{aligned}$&lt;/p&gt;
-&lt;p&gt;This is not an unconstrained problem.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
+&lt;li&gt;the function $f$ is the objective function&lt;/li&gt;
+&lt;li&gt;A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints&lt;/li&gt;
+&lt;li&gt;$X$ is the set of inequality constraints&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;mathematical-ingredients-of-an-optimization-model&#34;&gt;Mathematical ingredients of an optimization model:&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Encode decisions/actions as &lt;strong&gt;decision variables&lt;/strong&gt; whose values we are seeking&lt;/li&gt;
@@ -87,6 +61,39 @@ subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m
 &lt;li&gt;The word program means plan/planning&lt;/li&gt;
 &lt;li&gt;Early application of optimization arose in planning resource allocations and gave rise to programming to mean optimization (predates computer programming)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision:&lt;/strong&gt; $x$ = how much to cut from each of the corners?&lt;br/&gt;
+&lt;strong&gt;Alternatives:&lt;/strong&gt; $0&amp;lt;=x&amp;lt;=1/2$&lt;br/&gt;
+&lt;strong&gt;Best:&lt;/strong&gt; Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; $max$ $x(1-2x)^2$ subject to $0&amp;lt;=x&amp;lt;=1/2$ (which are the constraints in this case)&lt;br/&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.desmos.com/calculator/ily45jyfsv?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
+&lt;p&gt;This is an unconstrained optimization problem since the constraint is a simple bound based.&lt;/p&gt;
+&lt;h3 id=&#34;example-data-fitting&#34;&gt;Example: Data Fitting:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given $N$ data points $(y_1, x_1)&amp;hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: All $n$-dimensional vectors and scalars&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Minimize the sum of squared errors&lt;br/&gt;
+&lt;strong&gt;Optimization formulation&lt;/strong&gt;:
+$\begin{array}{ll}\min &amp;amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp;amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$&lt;/p&gt;
+&lt;p&gt;This is also an unconstrained optimization problem.&lt;/p&gt;
+&lt;h3 id=&#34;example-product-mix&#34;&gt;Example: Product Mix:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: how much of each product to make&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: defined by the resource limits&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize profits&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; &lt;br/&gt;
+Sum notation: $\begin{array}{lll}\max &amp;amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp;amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp;amp; \forall j=1, \ldots, m \ &amp;amp; x_i \geq 0 &amp;amp; \forall i=1, \ldots, n\end{array}$ &lt;br/&gt;
+Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &amp;amp; R x \leq u \ &amp;amp; x \geq 0\end{array}$&lt;/p&gt;
+&lt;h3 id=&#34;example-project-investment&#34;&gt;Example: Project investment&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; A firm is considering investing in $n$ different R&amp;amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: Whether or not to invest in project&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: Defined by budget&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize return on investment&lt;br/&gt;
+Sum notation: $\begin{aligned} \max &amp;amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp;amp; \sum_{j=1}^n c_j x_j \leq B \ &amp;amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ &lt;br/&gt;
+Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &amp;amp; c^{\top} x \leq B \ &amp;amp; x \in{0,1}^n\end{aligned}$&lt;/p&gt;
+&lt;p&gt;This is not an unconstrained problem.&lt;/p&gt;
 &lt;h2 id=&#34;classification-of-optimization-problems&#34;&gt;Classification of optimization problems&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.&lt;/li&gt;
@@ -518,6 +525,7 @@ print(&amp;#34;Minimum at:&amp;#34;, result.x)
 &lt;li&gt;Nelder-Mead method is a numerical algorithm for minimizing a multivariate function using only function evaluations&lt;/li&gt;
 &lt;li&gt;It is not guaranteed to converge but often works well.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h1 id=&#34;linear-optimization&#34;&gt;Linear optimization&lt;/h1&gt;
 &lt;h2 id=&#34;linear-optimization-modeling---network-flow-problems&#34;&gt;Linear Optimization Modeling - Network Flow Problems&lt;/h2&gt;
 &lt;h3 id=&#34;introduction-to-lp-modeling&#34;&gt;Introduction to LP Modeling&lt;/h3&gt;
 &lt;ul&gt;
@@ -946,7 +954,7 @@ plt.show()
 &lt;li&gt;The Dantzig-Wolfe decomposition method can be used to solve a wide range of linear programming problems, including those with integer variables and those with non-linear objective functions. It is particularly useful for problems that involve complex constraints or require the solution of large-scale optimization problems.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
-&lt;h1 id=&#34;nonlinear-optimization-modeling&#34;&gt;Nonlinear Optimization Modeling&lt;/h1&gt;
+&lt;h1 id=&#34;nonlinear-optimization-and-convex-conic-optimization&#34;&gt;Nonlinear optimization and Convex Conic Optimization&lt;/h1&gt;
 &lt;h3 id=&#34;nonnegative-orthant-cone&#34;&gt;Nonnegative Orthant cone&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The nonnegative orthant cone is a special type of cone in linear algebra and convex analysis. It is defined as the set of all nonnegative vectors in n-dimensional Euclidean space, denoted as R^n_+, where R^+ denotes the set of nonnegative real numbers.&lt;/li&gt;
@@ -977,6 +985,7 @@ plt.show()
 &lt;ul&gt;
 &lt;li&gt;$L^3 = \lbrace (x,y,z) : \sqrt{x^2-y^2} \le z \rbrace$ = $\lbrace(x,y,z):||[x;y]||_2 \le z \rbrace$&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h1 id=&#34;integer-optimization&#34;&gt;Integer optimization&lt;/h1&gt;
 </description>
     </item>
     
