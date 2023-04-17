@@ -19,12 +19,12 @@
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
       <description>&lt;h1 id=&#34;deterministic-optimization&#34;&gt;Deterministic Optimization&lt;/h1&gt;
 &lt;h1 id=&#34;general-overview-and-key-concepts-in-optimization&#34;&gt;General overview and key concepts in optimization&lt;/h1&gt;
-&lt;p&gt;Optimization is the action of making the best or most effective use of a situation or resource.&lt;/p&gt;
+&lt;p&gt;In plain English, &lt;strong&gt;optimization&lt;/strong&gt; is the action of making the best or most effective use of a situation or resource.&lt;/p&gt;
 &lt;h2 id=&#34;generic-form-of-optimization-problem&#34;&gt;Generic form of optimization problem:&lt;/h2&gt;
 &lt;p&gt;$min$ $f(x)$ $s.t.$ $x \in X $&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;the vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
-&lt;li&gt;the function $f$ is the objective function&lt;/li&gt;
+&lt;li&gt;The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
+&lt;li&gt;The function $f$ is the objective function&lt;/li&gt;
 &lt;li&gt;A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints&lt;/li&gt;
 &lt;li&gt;$X$ is the set of inequality constraints&lt;/li&gt;
 &lt;/ul&gt;
@@ -94,6 +94,44 @@ Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &a
 Sum notation: $\begin{aligned} \max &amp;amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp;amp; \sum_{j=1}^n c_j x_j \leq B \ &amp;amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ &lt;br/&gt;
 Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &amp;amp; c^{\top} x \leq B \ &amp;amp; x \in{0,1}^n\end{aligned}$&lt;/p&gt;
 &lt;p&gt;This is not an unconstrained problem.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify basic portfolio optimization and associated issues&lt;/li&gt;
+&lt;li&gt;Examine the Markowitz Portfolio Optimization approach
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Markowitz Principle&lt;/strong&gt;: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
+&lt;ul&gt;
+&lt;li&gt;Maximize Expected Return - $\lambda$*risk&lt;/li&gt;
+&lt;li&gt;Maximize Expected Return subject to risk &amp;lt;= s_max (constraint on risk)&lt;/li&gt;
+&lt;li&gt;Minimize Risk subject to return &amp;gt;= r_min (threshold on expected returns)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Optimization Problem Statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
+- have a one month expected return of at least a given threshold
+- minimize the risk(variance) of the portfolio return
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Decision&lt;/strong&gt;: investment in each stock&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;alternatives&lt;/strong&gt;: any investment that meets the budget and the minimum expected return requirement&lt;/li&gt;
+&lt;li&gt;best: minimize variance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key trade-off&lt;/strong&gt;: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?&lt;/li&gt;
+&lt;li&gt;Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved&lt;/li&gt;
+&lt;li&gt;Need to exercise great caution in these assumptions and not loose sight of the true underlying problem&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assumptions&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;No transaction cost&lt;/li&gt;
+&lt;li&gt;Stocks does not need to be bought in blocks (any amount &amp;gt;=0 is fine)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimization Process&lt;/strong&gt;: Decision Problem -&amp;gt; Model -&amp;gt; Data Collection -&amp;gt; Model Solution -&amp;gt; Analysis -&amp;gt; Problem solution&lt;/li&gt;
+&lt;li&gt;No clear cut recipe&lt;/li&gt;
+&lt;li&gt;Lots of feedbacks and iterations&lt;/li&gt;
+&lt;li&gt;Approximations and assumptions involved in each stage&lt;/li&gt;
+&lt;li&gt;Success requires good understanding of the actual problem (domain knowledge is important)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;classification-of-optimization-problems&#34;&gt;Classification of optimization problems&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.&lt;/li&gt;
@@ -223,45 +261,6 @@ Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &a
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;portfolio-optimization-problem&#34;&gt;Portfolio Optimization Problem&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Identify basic portfolio optimization and associated issues&lt;/li&gt;
-&lt;li&gt;Examine the Markowitz Portfolio Optimization approach
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Markowitz Principle&lt;/strong&gt;: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
-&lt;ul&gt;
-&lt;li&gt;Maximize Expected Return - $\lambda$*risk&lt;/li&gt;
-&lt;li&gt;Maximize Expected Return subject to risk &amp;lt;= s_max (constraint on risk)&lt;/li&gt;
-&lt;li&gt;Minimize Risk subject to return &amp;gt;= r_min (threshold on expected returns)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Optimization Problem Statement&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
-- have a one month expected return of at least a given threshold
-- minimize the risk(variance) of the portfolio return
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Decision&lt;/strong&gt;: investment in each stock&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;alternatives&lt;/strong&gt;: any investment that meets the budget and the minimum expected return requirement&lt;/li&gt;
-&lt;li&gt;best: minimize variance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Key trade-off&lt;/strong&gt;: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?&lt;/li&gt;
-&lt;li&gt;Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved&lt;/li&gt;
-&lt;li&gt;Need to exercise great caution in these assumptions and not loose sight of the true underlying problem&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Assumptions&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;No transaction cost&lt;/li&gt;
-&lt;li&gt;Stocks does not need to be bought in blocks (any amount &amp;gt;=0 is fine)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Optimization Process&lt;/strong&gt;: Decision Problem -&amp;gt; Model -&amp;gt; Data Collection -&amp;gt; Model Solution -&amp;gt; Analysis -&amp;gt; Problem solution&lt;/li&gt;
-&lt;li&gt;No clear cut recipe&lt;/li&gt;
-&lt;li&gt;Lots of feedbacks and iterations&lt;/li&gt;
-&lt;li&gt;Approximations and assumptions involved in each stage&lt;/li&gt;
-&lt;li&gt;Success requires good understanding of the actual problem (domain knowledge is important)&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;notes-from-linear-algebra&#34;&gt;Notes from Linear Algebra&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The second derivative test is a method used in calculus to determine the nature of the critical points of a function, which can be either a maximum, minimum, or saddle point.&lt;/li&gt;
@@ -294,6 +293,8 @@ Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &a
 &lt;li&gt;The Hessian matrix is often used in optimization, for example, to find the local minima or maxima of a function. A point where the Hessian is positive definite is a local minimum, while a point where the Hessian is negative definite is a local maximum. If the Hessian is positive semi-definite, it&amp;rsquo;s a saddle point.&lt;/li&gt;
 &lt;li&gt;It is important to notice that the Hessian Matrix is symmetric, therefore it has real eigenvalues and it is diagonalisable.&lt;/li&gt;
 &lt;li&gt;$H(f)_{i,j}=\frac{\partial^2f}{\partial x_i \partial x_j}$&lt;/li&gt;
+&lt;li&gt;The symmetry of second derivatives (also called the equality of mixed partials) refers to the possibility of interchanging the order of taking partial derivatives of a function. The symmetry is the assertion that the second-order partial derivatives satisfy the identity. In the context of partial differential equations it is called the &lt;strong&gt;Schwarz integrability condition&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;$\frac{\partial^2f}{\partial x_i \partial x_j} = \frac{\partial^2f}{\partial x_j \partial x_i}$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;taylor-approximation&#34;&gt;Taylor Approximation&lt;/h3&gt;
 &lt;p&gt;The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.&lt;/p&gt;
@@ -329,6 +330,7 @@ of the set.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe src=&#34;https://www.desmos.com/calculator/49e59msg7u?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
 $$

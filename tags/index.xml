@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>predictor-model</title>
+      <link>https://ayushsubedi.github.io/tags/predictor-model/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/predictor-model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>processor-mode</title>
+      <link>https://ayushsubedi.github.io/tags/processor-mode/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/processor-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user-experience</title>
+      <link>https://ayushsubedi.github.io/tags/user-experience/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/user-experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user-interaction</title>
+      <link>https://ayushsubedi.github.io/tags/user-interaction/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/user-interaction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user-interface</title>
+      <link>https://ayushsubedi.github.io/tags/user-interface/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/user-interface/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cost-function</title>
@@ -170,51 +215,6 @@
       <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>predictor-model</title>
-      <link>https://ayushsubedi.github.io/tags/predictor-model/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/predictor-model/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>processor-mode</title>
-      <link>https://ayushsubedi.github.io/tags/processor-mode/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/processor-mode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>user-experience</title>
-      <link>https://ayushsubedi.github.io/tags/user-experience/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/user-experience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>user-interaction</title>
-      <link>https://ayushsubedi.github.io/tags/user-interaction/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/user-interaction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>user-interface</title>
-      <link>https://ayushsubedi.github.io/tags/user-interface/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/user-interface/</guid>
       <description></description>
     </item>
     

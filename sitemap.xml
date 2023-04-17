@@ -3,18 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/gatech/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/hci/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/human_computer_interaction/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/predictor-model/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/processor-mode/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/user-experience/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/user-interaction/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/user-interface/</loc>
+    <lastmod>2023-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/cost-function/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/deterministic_optimization/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/gatech/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/integral/</loc>
@@ -27,12 +54,6 @@
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/optimization/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/careerdevelopment/</loc>
@@ -79,27 +100,6 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/sql/</loc>
     <lastmod>2023-03-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/hci/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/human_computer_interaction/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/predictor-model/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/processor-mode/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/user-experience/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/user-interaction/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/user-interface/</loc>
-    <lastmod>2023-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/amazon-comprehend/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>

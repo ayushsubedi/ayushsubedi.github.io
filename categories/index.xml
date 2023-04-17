@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>gatech</title>
       <link>https://ayushsubedi.github.io/categories/gatech/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/gatech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hci</title>
+      <link>https://ayushsubedi.github.io/categories/hci/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/hci/</guid>
       <description></description>
     </item>
     
@@ -26,15 +35,6 @@
       <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/codefornepal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hci</title>
-      <link>https://ayushsubedi.github.io/categories/hci/</link>
-      <pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/hci/</guid>
       <description></description>
     </item>
     

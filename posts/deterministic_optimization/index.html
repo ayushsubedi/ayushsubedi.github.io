@@ -157,12 +157,12 @@ onload='renderMathInElement(document.body);'></script>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="deterministic-optimization">Deterministic Optimization</h1>
 <h1 id="general-overview-and-key-concepts-in-optimization">General overview and key concepts in optimization</h1>
-<p>Optimization is the action of making the best or most effective use of a situation or resource.</p>
+<p>In plain English, <strong>optimization</strong> is the action of making the best or most effective use of a situation or resource.</p>
 <h2 id="generic-form-of-optimization-problem">Generic form of optimization problem:</h2>
 <p>$min$ $f(x)$ $s.t.$ $x \in X $</p>
 <ul>
-<li>the vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem</li>
-<li>the function $f$ is the objective function</li>
+<li>The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem</li>
+<li>The function $f$ is the objective function</li>
 <li>A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints</li>
 <li>$X$ is the set of inequality constraints</li>
 </ul>
@@ -232,6 +232,44 @@ Matrix notation: $\begin{array}{cl}\max &amp; p^{\top} x \ \text { s.t. } &amp; 
 Sum notation: $\begin{aligned} \max &amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp; \sum_{j=1}^n c_j x_j \leq B \ &amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ <br/>
 Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; c^{\top} x \leq B \ &amp; x \in{0,1}^n\end{aligned}$</p>
 <p>This is not an unconstrained problem.</p>
+<ul>
+<li>Identify basic portfolio optimization and associated issues</li>
+<li>Examine the Markowitz Portfolio Optimization approach
+<ul>
+<li><strong>Markowitz Principle</strong>: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)</li>
+</ul>
+</li>
+<li>For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
+<ul>
+<li>Maximize Expected Return - $\lambda$*risk</li>
+<li>Maximize Expected Return subject to risk &lt;= s_max (constraint on risk)</li>
+<li>Minimize Risk subject to return &gt;= r_min (threshold on expected returns)</li>
+</ul>
+</li>
+<li>Optimization Problem Statement</li>
+</ul>
+<pre tabindex="0"><code>Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
+- have a one month expected return of at least a given threshold
+- minimize the risk(variance) of the portfolio return
+</code></pre><ul>
+<li><strong>Decision</strong>: investment in each stock</li>
+<li><strong>alternatives</strong>: any investment that meets the budget and the minimum expected return requirement</li>
+<li>best: minimize variance</li>
+<li><strong>Key trade-off</strong>: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?</li>
+<li>Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved</li>
+<li>Need to exercise great caution in these assumptions and not loose sight of the true underlying problem</li>
+<li><strong>Assumptions</strong>:
+<ul>
+<li>No transaction cost</li>
+<li>Stocks does not need to be bought in blocks (any amount &gt;=0 is fine)</li>
+</ul>
+</li>
+<li><strong>Optimization Process</strong>: Decision Problem -&gt; Model -&gt; Data Collection -&gt; Model Solution -&gt; Analysis -&gt; Problem solution</li>
+<li>No clear cut recipe</li>
+<li>Lots of feedbacks and iterations</li>
+<li>Approximations and assumptions involved in each stage</li>
+<li>Success requires good understanding of the actual problem (domain knowledge is important)</li>
+</ul>
 <h2 id="classification-of-optimization-problems">Classification of optimization problems</h2>
 <ul>
 <li>The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.</li>
@@ -361,45 +399,6 @@ Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; 
 </ul>
 </li>
 </ul>
-<h2 id="portfolio-optimization-problem">Portfolio Optimization Problem</h2>
-<ul>
-<li>Identify basic portfolio optimization and associated issues</li>
-<li>Examine the Markowitz Portfolio Optimization approach
-<ul>
-<li><strong>Markowitz Principle</strong>: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)</li>
-</ul>
-</li>
-<li>For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
-<ul>
-<li>Maximize Expected Return - $\lambda$*risk</li>
-<li>Maximize Expected Return subject to risk &lt;= s_max (constraint on risk)</li>
-<li>Minimize Risk subject to return &gt;= r_min (threshold on expected returns)</li>
-</ul>
-</li>
-<li>Optimization Problem Statement</li>
-</ul>
-<pre tabindex="0"><code>Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
-- have a one month expected return of at least a given threshold
-- minimize the risk(variance) of the portfolio return
-</code></pre><ul>
-<li><strong>Decision</strong>: investment in each stock</li>
-<li><strong>alternatives</strong>: any investment that meets the budget and the minimum expected return requirement</li>
-<li>best: minimize variance</li>
-<li><strong>Key trade-off</strong>: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?</li>
-<li>Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved</li>
-<li>Need to exercise great caution in these assumptions and not loose sight of the true underlying problem</li>
-<li><strong>Assumptions</strong>:
-<ul>
-<li>No transaction cost</li>
-<li>Stocks does not need to be bought in blocks (any amount &gt;=0 is fine)</li>
-</ul>
-</li>
-<li><strong>Optimization Process</strong>: Decision Problem -&gt; Model -&gt; Data Collection -&gt; Model Solution -&gt; Analysis -&gt; Problem solution</li>
-<li>No clear cut recipe</li>
-<li>Lots of feedbacks and iterations</li>
-<li>Approximations and assumptions involved in each stage</li>
-<li>Success requires good understanding of the actual problem (domain knowledge is important)</li>
-</ul>
 <h2 id="notes-from-linear-algebra">Notes from Linear Algebra</h2>
 <ul>
 <li>The second derivative test is a method used in calculus to determine the nature of the critical points of a function, which can be either a maximum, minimum, or saddle point.</li>
@@ -432,6 +431,8 @@ Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; 
 <li>The Hessian matrix is often used in optimization, for example, to find the local minima or maxima of a function. A point where the Hessian is positive definite is a local minimum, while a point where the Hessian is negative definite is a local maximum. If the Hessian is positive semi-definite, it&rsquo;s a saddle point.</li>
 <li>It is important to notice that the Hessian Matrix is symmetric, therefore it has real eigenvalues and it is diagonalisable.</li>
 <li>$H(f)_{i,j}=\frac{\partial^2f}{\partial x_i \partial x_j}$</li>
+<li>The symmetry of second derivatives (also called the equality of mixed partials) refers to the possibility of interchanging the order of taking partial derivatives of a function. The symmetry is the assertion that the second-order partial derivatives satisfy the identity. In the context of partial differential equations it is called the <strong>Schwarz integrability condition</strong>.</li>
+<li>$\frac{\partial^2f}{\partial x_i \partial x_j} = \frac{\partial^2f}{\partial x_j \partial x_i}$</li>
 </ul>
 <h3 id="taylor-approximation">Taylor Approximation</h3>
 <p>The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.</p>
@@ -467,6 +468,7 @@ of the set.</li>
 </ul>
 <iframe src="https://www.desmos.com/calculator/49e59msg7u?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h2 id="convex-function">Convex Function</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png" alt=""></p>
 <ul>
 <li>A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
 $$
@@ -1271,7 +1273,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		9935 words in this page.
+		9998 words in this page.
 	</div>
 </div>
 
@@ -1290,6 +1292,13 @@ plt.show()
         Code for Nepal and DataCamp Partnership: Empowering Data Literacy and Career Growth
     </a>
     
+    
+    <a class="flex-grow-0" href="/posts/human_computer_interaction/">
+        Human-Computer Interaction
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
     
 </div>
 <div >
