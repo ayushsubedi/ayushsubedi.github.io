@@ -988,6 +988,16 @@ plt.show()
 &lt;li&gt;$L^3 = \lbrace (x,y,z) : \sqrt{x^2-y^2} \le z \rbrace$ = $\lbrace(x,y,z):||[x;y]||_2 \le z \rbrace$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;integer-optimization&#34;&gt;Integer optimization&lt;/h1&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;set-packing-covering-and-partitioning&#34;&gt;Set Packing, Covering and Partitioning&lt;/h2&gt;
+&lt;h3 id=&#34;store-location-example&#34;&gt;Store Location Example&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Where should store be located so that it can maximize the number of customers?&lt;/li&gt;
+&lt;li&gt;maximize total customers, constrained to among the locations same location cannot attract more than one city&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pupl&lt;/code&gt; is the python package that can be used to model this&lt;/li&gt;
+&lt;li&gt;Set Packing: Given $m$ elements and a collection of subsets $S_1, &amp;hellip;. , S_n \belongs {1,..,m} with associated nonnegative weights $w_1, &amp;hellip;, w_n$ pick sets from this collection such that they are disjoint and the sum of the weights is maximized.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf&#34;&gt;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
