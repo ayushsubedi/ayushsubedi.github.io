@@ -6,7 +6,7 @@
     <description>Recent content in integral on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Apr 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/integral/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Deterministic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/deterministic_optimization/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
       <description>&lt;h1 id=&#34;deterministic-optimization&#34;&gt;Deterministic Optimization&lt;/h1&gt;
@@ -998,6 +998,43 @@ plt.show()
 &lt;li&gt;Set Packing: Given $m$ elements and a collection of subsets $S_1, &amp;hellip;. , S_n \belongs {1,..,m} with associated nonnegative weights $w_1, &amp;hellip;, w_n$ pick sets from this collection such that they are disjoint and the sum of the weights is maximized.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf&#34;&gt;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;linear-programming-relaxation&#34;&gt;Linear Programming Relaxation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Decision variable is only taking continuous value to generate the relaxation (drop the integer constraints).&lt;/li&gt;
+&lt;li&gt;If LP relaxation is infeasible, so it the IP&lt;/li&gt;
+&lt;li&gt;If LP relaxation is unbounded, then the IP can either be infeasible or unbounded.&lt;/li&gt;
+&lt;li&gt;If LP relaxation has an optimal solution, then the IP could be infeasible or have an optimal solution&lt;/li&gt;
+&lt;li&gt;It always holds that $v_{LP} \le v_{IP}$&lt;/li&gt;
+&lt;li&gt;If an optimal solution to the LP is an integer, then it is an optimal solution to the IP.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s solution can sometimes be rounded to get a good solution to the IP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ideal-formulations&#34;&gt;Ideal Formulations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Stronger Formulation: Stronger formulation lead to stronger LP relaxations, and so better LP relaxation  better bounds, and sometimes LP relaxations solutions that are feasible to the MLP&lt;/li&gt;
+&lt;li&gt;The formulation of an MLP can be strengthened
+&lt;ul&gt;
+&lt;li&gt;by adding constraints (valid inequalities)&lt;/li&gt;
+&lt;li&gt;by tightening constraint coefficients&lt;/li&gt;
+&lt;li&gt;by introducing new variables and constraints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An ideal formulation of a MILP is one whose LP relaxation solves the MLP&lt;/li&gt;
+&lt;li&gt;Ideal formulations are hard to obtain, so we strive to obtain strong formulation that approximate the ideal formulation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;branch-bound-algorithm&#34;&gt;Branch Bound Algorithm&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Branch and bound is a popular algorithm used for solving mixed-integer linear programming (MILP) problems. The basic idea behind branch and bound is to divide the problem into smaller subproblems, solve each subproblem separately, and then combine the solutions to obtain an overall solution to the original problem.&lt;/li&gt;
+&lt;li&gt;Here are the steps involved in the branch and bound algorithm for MILP:
+&lt;ul&gt;
+&lt;li&gt;Solve the relaxed linear programming (LP) problem, which is the MILP problem with the integer constraints removed. This provides an initial solution to the MILP problem.&lt;/li&gt;
+&lt;li&gt;If the LP solution satisfies all the integer constraints, then we have found an optimal solution to the MILP problem. Otherwise, select one of the integer variables with a non-integer value in the LP solution.&lt;/li&gt;
+&lt;li&gt;Create two new subproblems by branching on the selected variable: one subproblem where the variable is fixed to its integer floor, and another subproblem where the variable is fixed to its integer ceiling.&lt;/li&gt;
+&lt;li&gt;Solve each of the subproblems using the LP solver. If a subproblem has an integer solution that is worse than the current best solution, we can prune that branch of the search tree. Otherwise, continue branching until we have found an optimal integer solution or all branches have been pruned.&lt;/li&gt;
+&lt;li&gt;Once all branches have been pruned, the best integer solution found during the search is the optimal solution to the MILP problem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

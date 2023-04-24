@@ -6,24 +6,15 @@
     <description>Recent content in user-experience on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Apr 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/user-experience/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Redesigning the Goodreads bookshelf interaction</title>
-      <link>https://ayushsubedi.github.io/posts/redesigning_goodreads/</link>
-      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/redesigning_goodreads/</guid>
-      <description>&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/cse6750_final_project.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
-    </item>
-    
-    <item>
       <title>Human-Computer Interaction</title>
       <link>https://ayushsubedi.github.io/posts/human_computer_interaction/</link>
-      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/human_computer_interaction/</guid>
       <description>&lt;h1 id=&#34;human-computer-interaction&#34;&gt;Human-Computer Interaction&lt;/h1&gt;
@@ -585,38 +576,49 @@ intentions and the actions they must take in order to achieve those goals using 
 &lt;li&gt;When you are an expert in something there are parts of the task that you do subconsciously without even thinking about them.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;I am not my user.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;27-goms-model&#34;&gt;2.7 GOMS Model&lt;/h1&gt;
-&lt;p&gt;A human information processor model; it builds off the processor model of the human&amp;rsquo;s role in a system. There are four categories in the GOMS model:&lt;/p&gt;
+&lt;h1 id=&#34;27-task-analysis&#34;&gt;2.7 Task Analysis&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Human information processor model&lt;/li&gt;
+&lt;li&gt;Cognitive Task analysis (similar to the predictor model)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;human-information-processor-model&#34;&gt;Human information processor model&lt;/h2&gt;
+&lt;p&gt;A human information processor model; it builds off the processor model of the human&amp;rsquo;s role in a system. One of the human information processor model is teh GOMS model. There are four categories in the GOMS model:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Elements_of_a_GOMS_model.svg/220px-Elements_of_a_GOMS_model.svg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Goals - users goals&lt;/li&gt;
-&lt;li&gt;Operators - user operations to carry out method&lt;/li&gt;
-&lt;li&gt;Methods - user can use to complete (Methods - Operator 1&amp;mdash;n)&lt;/li&gt;
-&lt;li&gt;Selection rules - which to select methods&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goals&lt;/strong&gt; - users goals in the system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operators&lt;/strong&gt; - user operations to carry out method&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Methods&lt;/strong&gt; - user can use to complete (Methods - Operator 1&amp;mdash;n)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Selection rules&lt;/strong&gt; - which to select among different methods&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This model proposes that a human has a set of &lt;em&gt;goals&lt;/em&gt; and &lt;em&gt;methods&lt;/em&gt; they can choose from to accomplish those goals. Each method is comprised of a series of &lt;em&gt;operators&lt;/em&gt; which help carry out that method. Lastly, they use some set of &lt;em&gt;selection rules&lt;/em&gt; to help decide what method to choose from.&lt;/p&gt;
-&lt;p&gt;Ex - Transfer information to coworkers - Email, chat, In person, etc.&lt;/p&gt;
+&lt;p&gt;Example - Transfer information to coworkers - Email, chat, In person, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/goms.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;strengths-and-weaknesses-of-goms&#34;&gt;Strengths And Weaknesses Of GOMS&lt;/h2&gt;
-&lt;p&gt;Weaknesses of GOMS model:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Weaknesses of GOMS model:
 &lt;ol&gt;
-&lt;li&gt;Does not address complexity - There are many methods and sub-methods. Standard GOMS rules this out.&lt;/li&gt;
-&lt;li&gt;Assumes user is an expert - GOMS doesn&amp;rsquo;t account for novices and user errors. I don&amp;rsquo;t know highway in USA.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Does not address complexity&lt;/strong&gt; - There are many methods and sub-methods. Standard GOMS rules this out.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assumes user is an expert&lt;/strong&gt; - GOMS doesn&amp;rsquo;t account for novices and user errors. I don&amp;rsquo;t know highway in USA.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Strengths of GOMS model:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Strengths of GOMS model:
 &lt;ol&gt;
-&lt;li&gt;Formalize user interaction into steps - Interaction steps to measure for efficiency. Helps to narrow down the time for each steps. Finding areas of improvement. Count time for each operator, easy to get keychain while holding something in hand.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formalize user interaction into steps&lt;/strong&gt; - Interaction steps to measure for efficiency. Helps to narrow down the time for each steps. Finding areas of improvement. Count time for each operator, easy to get keychain while holding something in hand.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;types-of-goms&#34;&gt;Types of GOMS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;KLM - GOMS -&amp;gt; Keystroke level model
+&lt;li&gt;&lt;strong&gt;KLM-GOMS&lt;/strong&gt; -&amp;gt; Keystroke level model
 &lt;ul&gt;
 &lt;li&gt;here operator + execution time - efficiency determination&lt;/li&gt;
-&lt;li&gt;original work had 6 types of operators, wont work on modern ideas&lt;/li&gt;
+&lt;li&gt;original work had 6 types of operators, won&amp;rsquo;t work on modern ideas&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Card, Moran and Newell GOMS &lt;em&gt;CMN GOMS&lt;/em&gt;
+&lt;li&gt;&lt;strong&gt;CMN GOMS&lt;/strong&gt; -&amp;gt; Card, Moran and Newell GOMS
 &lt;ul&gt;
 &lt;li&gt;Hierarchical Goals and choose multiple goals&lt;/li&gt;
-&lt;li&gt;Very low level goals (moving text,delete phrases)&lt;/li&gt;
+&lt;li&gt;Very low level goals (moving text, delete phrases)&lt;/li&gt;
 &lt;li&gt;Model how long each individual GOMS to take
 &lt;ul&gt;
 &lt;li&gt;Find place which we can cut out&lt;/li&gt;
@@ -624,7 +626,7 @@ intentions and the actions they must take in order to achieve those goals using 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;N GOMSL - Natural language GOMS
+&lt;li&gt;&lt;strong&gt;NGOMSL&lt;/strong&gt; - Natural language GOMS
 &lt;ul&gt;
 &lt;li&gt;Working memory if exploited can be identified&lt;/li&gt;
 &lt;li&gt;lends itself for human interpretation.&lt;/li&gt;
@@ -636,7 +638,7 @@ intentions and the actions they must take in order to achieve those goals using 
 &lt;li&gt;Focus on small goals
 &lt;ul&gt;
 &lt;li&gt;GOMS should be small, abstract up from there.&lt;/li&gt;
-&lt;li&gt;Example - Navigating end of doc.&lt;/li&gt;
+&lt;li&gt;Example - Navigating end of document&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Nest goals, not operators
@@ -649,7 +651,7 @@ intentions and the actions they must take in order to achieve those goals using 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Differentiate descriptive &lt;em&gt;What people do&lt;/em&gt; and prescriptive &lt;em&gt;What they wanna do&lt;/em&gt;
+&lt;li&gt;Differentiate descriptive &lt;em&gt;What people do?&lt;/em&gt; and prescriptive &lt;em&gt;What they wanna do?&lt;/em&gt;
 &lt;ul&gt;
 &lt;li&gt;GOMS of former doesn&amp;rsquo;t mean they will do later. They will not do that?&lt;/li&gt;
 &lt;/ul&gt;
@@ -666,23 +668,24 @@ intentions and the actions they must take in order to achieve those goals using 
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;goms-to-cognitive-task-analysis&#34;&gt;GOMS to Cognitive Task Analysis&lt;/h2&gt;
-&lt;p&gt;The GOMS model assumes the human is an input-output machine (processor model). However, human reasoning may be too nuanced and complex to be so simplified.&lt;/p&gt;
-&lt;p&gt;Cognitive task analysis is another way of examining tasks but it puts a much higher emphasis on things like memory, attention, and cognitive load (predictor model).&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;The GOMS model assumes the human is an input-output machine (processor model).&lt;/li&gt;
+&lt;li&gt;However, human reasoning may be too nuanced and complex to be so simplified.&lt;/li&gt;
+&lt;li&gt;Cognitive task analysis is another way of examining tasks but it puts a much higher emphasis on things like memory, attention, and cognitive load (predictor model).&lt;/li&gt;
 &lt;li&gt;Behaviorism vs Cognitivism
 &lt;ul&gt;
 &lt;li&gt;Observable of things&lt;/li&gt;
-&lt;li&gt;Get into mind.&lt;/li&gt;
+&lt;li&gt;Get into mind&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;cognitive-task-analysis&#34;&gt;Cognitive Task Analysis&lt;/h2&gt;
 &lt;p&gt;Its collection of methods focus on what we cant see.&lt;/p&gt;
 &lt;p&gt;Cognitive task analysis are concerned with the underlying thought process associated with performing a task. Most methods follow a particular common sequence:&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;Collecting preliminary knowledge
 &lt;ul&gt;
-&lt;li&gt;No experts needed, but need some familiarity (observe ppl performing tasks)&lt;/li&gt;
+&lt;li&gt;No experts needed, but need some familiarity (observe people performing tasks)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Identify knowledge representations
@@ -700,52 +703,46 @@ intentions and the actions they must take in order to achieve those goals using 
 &lt;/li&gt;
 &lt;li&gt;Analyze and verify data acquired
 &lt;ul&gt;
-&lt;li&gt;Confirming if understanding is correct.&lt;/li&gt;
+&lt;li&gt;Confirming if understanding is correct&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Format results for intend application
 &lt;ul&gt;
-&lt;li&gt;We take results and models user.&lt;/li&gt;
+&lt;li&gt;We take results and models user&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Result looks like a flow chart, with various tasks in each box.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Result looks like a flow chart, with various tasks in each box.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hierarchical-task-analysis&#34;&gt;Hierarchical Task Analysis&lt;/h2&gt;
-&lt;p&gt;Tasks could be broken and small tasks could be reused.&lt;/p&gt;
-&lt;p&gt;This form of task analysis helps us understand what tools might already be available to accomplish certain portions of our task, or how we might design certain things to transfer between different tasks and different contexts.&lt;/p&gt;
-&lt;p&gt;Hierarchical task analysis process:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/hta.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tasks could be broken and small tasks could be reused. In the image above, Checkout can be represented as a subtask.&lt;/li&gt;
+&lt;li&gt;This form of task analysis helps us understand what tools might already be available to accomplish certain portions of our task, or how we might design certain things to transfer between different tasks and different contexts.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hierarchical task analysis process&lt;/strong&gt;:
 &lt;ol&gt;
-&lt;li&gt;Abstracting out unnecessary details for a certain level of abstraction&lt;/li&gt;
-&lt;li&gt;Modularizing designs or principles so that they can be transferred between different tasks or different contexts&lt;/li&gt;
-&lt;li&gt;Organizing the cognitive task analysis in a way that makes it easier to understand and reason over&lt;/li&gt;
+&lt;li&gt;Abstracting out unnecessary details for a certain level of abstraction.&lt;/li&gt;
+&lt;li&gt;Modularizing designs or principles so that they can be transferred between different tasks or different contexts.&lt;/li&gt;
+&lt;li&gt;Organizing the cognitive task analysis in a way that makes it easier to understand and reason over.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;cognitive-task-analysis-strengths-and-weaknesses&#34;&gt;Cognitive Task Analysis Strengths And Weaknesses&lt;/h2&gt;
-&lt;p&gt;Like the GOMS model, cognitive task analysis also have strengths and weaknesses.&lt;/p&gt;
-&lt;p&gt;Strengths:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Like the GOMS model, cognitive task analysis also have strengths and weaknesses.&lt;/li&gt;
+&lt;li&gt;Strengths:
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Emphasizes mental processes&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Unlike GOMS, emphasis on whats goes on users head&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Formal enough to for interface design&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Easy to communicate
-Weaknesses:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Time-intensive - They involve talking and systematic analysis of data&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;May deemphasize context - Role of artifacts and details in world&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ill-suited for novices - Who is trying to use an interface.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Emphasizes mental processes:&lt;/strong&gt; Unlike GOMS, emphasis on whats goes on users head&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formal enough to for interface design:&lt;/strong&gt; Easy to communicate and compare&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Weaknesses:
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Time-intensive&lt;/strong&gt; - They involve talking and systematic analysis of data&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;May deemphasize context&lt;/strong&gt; - Role of artifacts and details in world&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ill-suited for novices&lt;/strong&gt; - Who is trying to use an interface.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;other-task-analysis&#34;&gt;Other task analysis&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Human information&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -764,46 +761,70 @@ Weaknesses:&lt;/li&gt;
 &lt;li&gt;Skilled CTA&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;28-distributed-cognition&#34;&gt;2.8 Distributed Cognition&lt;/h1&gt;
-&lt;p&gt;Distributed cognition suggests models of cognition should be extended outside the mind. An example is you can either add large numbers in your head (much more difficult) or add large numbers on a piece of paper. Each object in the the process can be said to extend the cognitive process. Don&amp;rsquo;t get smarter by pen and paper, cognition got distributed among the artifacts.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Distributed cognition suggests models of cognition should be extended outside the mind.&lt;/li&gt;
+&lt;li&gt;An example is you can either add large numbers in your head (much more difficult) or add large numbers on a piece of paper.&lt;/li&gt;
+&lt;li&gt;Each object in the the process can be said to extend the cognitive process. Don&amp;rsquo;t get smarter by pen and paper, cognition got distributed among the artifacts.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;how-a-cockpit-remembers-its-speeds&#34;&gt;How A Cockpit Remembers Its Speeds&lt;/h2&gt;
 &lt;p&gt;Given the dynamic nature of flight, how does a cockpit remember its speeds?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/pilots.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The paper references to a cockpit and not one individual component as the cockpit comprises of more than one cognitive component to remember speeds:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Long-term memory: a library of configurations (booklet)&lt;/li&gt;
-&lt;li&gt;Short-term memory: a specific configuration (one sheet)&lt;/li&gt;
-&lt;li&gt;Working memory: use of speed bugs on a dial&lt;/li&gt;
-&lt;li&gt;Deliberation: the two pilots in the cockpit&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Long-term memory&lt;/strong&gt;: a library of configurations (booklet)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Short-term memory&lt;/strong&gt;: a specific configuration (one sheet)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Working memory&lt;/strong&gt;: use of speed bugs on a dial&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliberation&lt;/strong&gt;: the two pilots in the cockpit&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Each one of these components helps in remembering the speed of a plane by serving as an individual cognitive component in the cognitive system.&lt;/p&gt;
-&lt;h2 id=&#34;distributed-cognition-to-cognition-load&#34;&gt;Distributed Cognition To Cognition Load&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Each one of these components helps in remembering the speed of a plane by serving as an individual cognitive component in the cognitive system.&lt;/li&gt;
+&lt;li&gt;Distributed Cognition To Cognition Load
 &lt;ul&gt;
 &lt;li&gt;Artifacts are extra memory to brain. Driving example is cognitive overload. GPS is a approach. Cruise control. Offload tasks to artifacts&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;distributed-cognition-as-lens&#34;&gt;Distributed Cognition as Lens&lt;/h2&gt;
+&lt;/li&gt;
+&lt;li&gt;Distributed Cognition as Lens
 &lt;ul&gt;
-&lt;li&gt;A way of approaching/looking at  the problem/design. Separation of monitors.&lt;/li&gt;
+&lt;li&gt;A way of approaching/looking at the problem/design. Separation of monitors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;distributed-cognition-to-social-cognition&#34;&gt;Distributed Cognition To Social Cognition&lt;/h2&gt;
-&lt;p&gt;Distributed cognition is concerned with how the mind can be extended by relations with other artifacts and other individuals.&lt;/p&gt;
-&lt;p&gt;Social cognition is concerned with distributing cognition across individuals. Example : map reading during driving in old days.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Distributed cognition is concerned with how the mind can be extended by relations with other artifacts and other individuals.&lt;/li&gt;
+&lt;li&gt;Social cognition is concerned with distributing cognition across individuals. Example : map reading during driving in old days.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;social-cognition&#34;&gt;Social Cognition&lt;/h2&gt;
-&lt;p&gt;Social cognition is about how social connections create systems that can, together, accomplish tasks. Social cognition is also concerned with the cognitive underpinning of social interactions themselves.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Social cognition is about how social connections create systems that can, together, accomplish tasks. For example, you and your friend navigating to a place.&lt;/li&gt;
+&lt;li&gt;Social cognition is also concerned with the cognitive underpinning of social interactions themselves. it is interested in how perception, memory and learning relate to social phenomenon. (Think designing social media)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;situated-action&#34;&gt;Situated Action&lt;/h2&gt;
-&lt;p&gt;Situated action is strongly concerned with the context within which people interact. However, situation action is not interested in the long-term and enduring permanent interactions amongst these things.&lt;/p&gt;
-&lt;p&gt;Situated action is interested in the kinds of novel situational problems that arise all the time. How do we find out more about these problems?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Situated action is strongly concerned with the context within which people interact.&lt;/li&gt;
+&lt;li&gt;However, situation action is not interested in the long-term and enduring permanent interactions amongst these things.&lt;/li&gt;
+&lt;li&gt;Situated action is interested in the kinds of novel situational problems that arise all the time. How do we find out more about these problems?
 &lt;ol&gt;
 &lt;li&gt;We must examine the interfaces we design within the context in which they&amp;rsquo;re used&lt;/li&gt;
 &lt;li&gt;We must understand the task the user performs grows out of interaction with the interface&lt;/li&gt;
 &lt;li&gt;The task doesn&amp;rsquo;t exist until the user gets started, and once they start, they define the task&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;situated-action-and-memory&#34;&gt;Situated Action And Memory&lt;/h2&gt;
-&lt;p&gt;Memory is context dependent. People will often remember e.g., a list of personal tasks because it is part of a larger narrative versus remembering a list of tasks someone else gave them.&lt;/p&gt;
-&lt;h2 id=&#34;activity-theory&#34;&gt;Activity Theory&lt;/h2&gt;
-&lt;p&gt;A massive and well-developed set of theories regarding interaction between various pieces of an activity. This theory predates HCI and there are some contributions of activity theory to HCI we should be aware of:&lt;/p&gt;
-&lt;p&gt;Task to Activity theory
-- Why we see task and then design
-- Up and down hierarchy - due to learning.&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;Memory is context dependent. People will often remember e.g., a list of personal tasks because it is part of a larger narrative versus remembering a list of tasks someone else gave them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;activity-theory&#34;&gt;Activity Theory&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A massive and well-developed set of theories regarding interaction between various pieces of an activity.&lt;/li&gt;
+&lt;li&gt;This theory predates HCI and there are some contributions of activity theory to HCI we should be aware of:&lt;/li&gt;
+&lt;li&gt;Task to Activity theory
+&lt;ul&gt;
+&lt;li&gt;Why we see task and then design&lt;/li&gt;
+&lt;li&gt;Up and down hierarchy - due to learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;It predates HCI&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
@@ -811,16 +832,20 @@ Weaknesses:&lt;/li&gt;
 &lt;li&gt;Activity theory puts an emphasis on the idea that we can create low level operations from higher level actions&lt;/li&gt;
 &lt;li&gt;Activity theory points out that actions by the user can actually move up and down a hierarchy&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;There are several similarities between Activity Theory and Distributed Cognition (both are focused on goals, where as Situated Action is focused on improvisation)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;29-interfaces-and-politics&#34;&gt;2.9 Interfaces and Politics&lt;/h1&gt;
-&lt;h2 id=&#34;change-a-third-motivation&#34;&gt;Change: A Third Motivation&lt;/h2&gt;
+&lt;p&gt;Designing for change, and anticipating the change from our design.&lt;/p&gt;
+&lt;h3 id=&#34;change-a-third-motivation&#34;&gt;Change: A Third Motivation&lt;/h3&gt;
 &lt;p&gt;There are three goals of HCI:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Help a user do a task&lt;/li&gt;
-&lt;li&gt;Understand how a user does a task&lt;/li&gt;
-&lt;li&gt;Change the way the user does a task&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Help&lt;/strong&gt; a user do a task&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Understand&lt;/strong&gt; how a user does a task&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Change&lt;/strong&gt; the way the user does a task&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Car - Seatbelt example - Not usability but safety.&lt;/p&gt;
-&lt;h2 id=&#34;paper---do-artifacts-have-politics&#34;&gt;Paper - Do artifacts have politics?&lt;/h2&gt;
+&lt;h3 id=&#34;paper---do-artifacts-have-politics&#34;&gt;Paper - Do artifacts have politics?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Nuclear Power
 &lt;ul&gt;
@@ -831,13 +856,13 @@ Weaknesses:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;two-types&#34;&gt;Two types&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Inherently political
+&lt;li&gt;&lt;strong&gt;Inherently political&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Nuclear power (top down)-  Authoritarian&lt;/li&gt;
 &lt;li&gt;Solar Power (distributed) - Egalitarian society&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Technical arrangements as forms of order
+&lt;li&gt;&lt;strong&gt;Technical arrangements as forms of order&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Technology can change social order - Context and purpose - Busting unions.&lt;/li&gt;
 &lt;/ul&gt;
@@ -849,8 +874,9 @@ Weaknesses:&lt;/li&gt;
 &lt;li&gt;Normal designs with underlying politics
 &lt;ul&gt;
 &lt;li&gt;People can design things to intentionally create a negative (designing bridges too low so that it&amp;rsquo;s harder for poor people to go to a destination) or positive change (Facebook&amp;rsquo;s &lt;em&gt;like&lt;/em&gt; button).&lt;/li&gt;
-&lt;li&gt;Wealthy people can go to park, low bridges for poor people (social order) ,Net neutrality&lt;/li&gt;
-&lt;li&gt;Positive interactions. Like button and Emotions in FB. Societal trend.&lt;/li&gt;
+&lt;li&gt;Wealthy people can go to park, low bridges for poor people (social order),&lt;/li&gt;
+&lt;li&gt;Net neutrality&lt;/li&gt;
+&lt;li&gt;Positive interactions: Like button and emotions in Facebook. Societal trend.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -865,8 +891,9 @@ Weaknesses:&lt;/li&gt;
 &lt;li&gt;Existing Infrastructure and Internet&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;value-sensitive-design&#34;&gt;Value-sensitive Design&lt;/h2&gt;
-&lt;p&gt;Value-sensitive design seeks to provide theory and method to account for human values in a principled and systematic manner throughout the design process.&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;Value-sensitive design seeks to provide theory and method to account for human values in a principled and systematic manner throughout the design process.&lt;/li&gt;
+&lt;li&gt;Another dimension to consider while designing: Usable, Useful and Value sensitive&lt;/li&gt;
 &lt;li&gt;Privacy by design - Privacy is the value. Preserve value.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;value-sensitive-design-and-information-systems&#34;&gt;Value-sensitive Design and Information Systems&lt;/h2&gt;
@@ -885,17 +912,22 @@ Weaknesses:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;5-tips-value-sensitive-design&#34;&gt;5 Tips: Value-sensitive Design&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Start early - Identify values early on design process and check throughout&lt;/li&gt;
-&lt;li&gt;Know your users - Know user values. Challenges are to be identified.&lt;/li&gt;
-&lt;li&gt;Consider both direct and indirect stakeholder - People who don&amp;rsquo;t user but affected by it. Bank UI.&lt;/li&gt;
-&lt;li&gt;Brainstorm the interface&amp;rsquo;s possibilities - How it could be used. Tracking hours - unjust call for termination.&lt;/li&gt;
-&lt;li&gt;Choose carefully between supporting values and prescribing values - We should not prescribe values for everyone. Be careful about support and change&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start early&lt;/strong&gt; - Identify values early on design process and check throughout&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Know your users&lt;/strong&gt; - Know user&amp;rsquo;s values. Challenges are to be identified.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consider both direct and indirect stakeholder&lt;/strong&gt; - People who don&amp;rsquo;t user but affected by it. Bank UI.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Brainstorm the interface&amp;rsquo;s possibilities&lt;/strong&gt; - How it could be used. Tracking hours - unjust call for termination.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Choose carefully between supporting values and prescribing values&lt;/strong&gt; - We should not prescribe values for everyone. Be careful about support and change.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;reversing-the-relationship&#34;&gt;Reversing The Relationship&lt;/h2&gt;
-&lt;p&gt;Technology changes society but society could also change technology too (e.g., demand for single platform to link to others for TV subscriptions).&lt;/p&gt;
-&lt;p&gt;Bulbs - florescent bulbs vs Electricity Bill
-- Satisfaction of politics, preserve power of organization.&lt;/p&gt;
-&lt;h1 id=&#34;29-conclusion-to-principles&#34;&gt;2.9 Conclusion To Principles&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Technology changes society but society could also change technology too (e.g., demand for single platform to link to others for TV subscriptions).&lt;/li&gt;
+&lt;li&gt;Bulbs - florescent bulbs vs Electricity Bill
+&lt;ul&gt;
+&lt;li&gt;Satisfaction of politics, preserve power of organization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;210-conclusion-to-principles&#34;&gt;2.10 Conclusion To Principles&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Human As Processor&lt;/strong&gt;: At the narrowest level, we might view HCI as the interaction between a person and an interface. This view is shared by models such as the GOMS model.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Human As Predictor&lt;/strong&gt;: Most of the time we are viewing HCI as the user interacting through some interface to accomplish some task. At this level we can look interactions in terms of the gulf of execution and evaluation. We can use tools like cognitive task analysis and hierarchical task analysis to understand things like user&amp;rsquo;s mental models, errors, and mappings between representations and the underlying tasks. Design principles are made.&lt;/li&gt;
@@ -1382,189 +1414,178 @@ Weaknesses:&lt;/li&gt;
 &lt;h2 id=&#34;basics-of-prototyping&#34;&gt;Basics Of Prototyping&lt;/h2&gt;
 &lt;p&gt;Some basics to prototyping:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Early prototyping - rapid revision on preliminary ideas&lt;/li&gt;
-&lt;li&gt;Late prototyping - finishing touches on final design/revising already live design&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Early prototyping&lt;/strong&gt; - rapid revision on preliminary ideas&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Late prototyping&lt;/strong&gt; - finishing touches on final design/revising already live design&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;representation-types&#34;&gt;Representation (Types)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;What is the prototype?&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;Different prototype representations from early (low-fidelity) to late (high fidelity):&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Verbal&lt;/li&gt;
-&lt;li&gt;Paper&lt;/li&gt;
-&lt;li&gt;Wizard of Oz&lt;/li&gt;
-&lt;li&gt;Wireframe&lt;/li&gt;
-&lt;li&gt;Physical&lt;/li&gt;
-&lt;li&gt;Functional - Working idea.&lt;/li&gt;
-&lt;li&gt;Live&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Verbal prototype&lt;/strong&gt;: A verbal prototype is a concept or idea that is described in words, without any visual or physical representation. It can be used to quickly test and refine ideas without investing time or resources in creating a physical prototype.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Paper prototype&lt;/strong&gt;: A paper prototype is a simple, low-fidelity mockup of a product that is made using paper or cardboard. It is used to test the layout and functionality of a design, and can be easily modified as needed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wizard of Oz prototype&lt;/strong&gt;: A Wizard of Oz prototype is a type of interactive mockup that simulates the behavior of a fully functioning product by using human operators to perform the actions that would normally be performed by the product itself. This type of prototype can be used to test user interaction and identify usability issues before building a fully functional prototype.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wireframe prototype&lt;/strong&gt;: A wireframe prototype is a visual representation of a product that shows the layout and structure of the interface, without including detailed graphics or other design elements. It can be used to test the flow and functionality of a design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Physical prototype&lt;/strong&gt;: A physical prototype is a working model of a product that is built using real materials. It can be used to test the form and function of a design and identify any manufacturing or engineering issues that may need to be addressed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Functional prototype&lt;/strong&gt;: A functional prototype is a working model of a product that includes some or all of the features and functionality of the final product. It can be used to test the performance and usability of a design before beginning mass production.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Live prototype&lt;/strong&gt;: A live prototype is a fully functional version of a product that is released to a limited audience for testing and feedback. It can be used to identify any remaining bugs or usability issues before launching the product to a wider audience.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/prototype.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;fidelity&#34;&gt;Fidelity&lt;/h3&gt;
 &lt;p&gt;Fidelity - Completeness/Maturity of prototype. Far from being complete. Correlated to representation.&lt;/p&gt;
 &lt;h3 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h3&gt;
-&lt;p&gt;Prototype evaluation from early to late:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prototype evaluation from early to late:
 &lt;ol&gt;
-&lt;li&gt;Function - Low fidelity - what button to press ? Can it do what it is meant to do? Can user figure out what to do by looking at it?&lt;/li&gt;
-&lt;li&gt;Interface -  Readability&lt;/li&gt;
-&lt;li&gt;Performance - Higher fidelity - working/closing to working output&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Function&lt;/strong&gt; - Low fidelity - what button to press ? Can it do what it is meant to do? Can user figure out what to do by looking at it?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interface&lt;/strong&gt; -  Readability&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance&lt;/strong&gt; - Higher fidelity - working/closing to working output&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;scope&#34;&gt;Scope&lt;/h3&gt;
-&lt;p&gt;Prototype scope from early to late:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Horizontal prototype - covers the design as a whole but in a more shallow way
+&lt;ul&gt;
+&lt;li&gt;Prototype scope from early to late:&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Horizontal prototype&lt;/strong&gt; - covers the design as a whole but in a more shallow way
 &lt;ul&gt;
 &lt;li&gt;Entire FB website&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Vertical prototype - great detail on a small portion of the interaction
+&lt;li&gt;&lt;strong&gt;Vertical prototype&lt;/strong&gt; - great detail on a small portion of the interaction
 &lt;ul&gt;
 &lt;li&gt;Status posting screen&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Summary of concepts:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Representation - what is the prototype?&lt;/li&gt;
-&lt;li&gt;Fidelity&lt;/li&gt;
-&lt;li&gt;Evaluation&lt;/li&gt;
-&lt;li&gt;Scope&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;tradeoffs-in-prototyping&#34;&gt;Tradeoffs In Prototyping&lt;/h2&gt;
 &lt;p&gt;We must note tradeoffs in prototyping:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Low-fidelity prototypes:
 &lt;ul&gt;
-&lt;li&gt;Pros: easy to create and modify&lt;/li&gt;
-&lt;li&gt;Cons: not as effective for detailed comprehensive evaluations&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Low-fidelity prototypes&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pros&lt;/strong&gt;: easy to create and modify&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: not as effective for detailed comprehensive evaluations&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;High-fidelity prototypes:
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;High-fidelity prototypes&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Pros: can be used for detailed feedback and evaluation&lt;/li&gt;
-&lt;li&gt;Cons: difficult to actually put together&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pros&lt;/strong&gt;: can be used for detailed feedback and evaluation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: difficult to actually put together&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Remember that we are designing to get more feedback. Start easy get ideas and move to higher fidelity. Not complete interfaces.&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Remember that we are designing to get more feedback.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start easy get ideas and move to higher fidelity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Not complete interfaces.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;5-tips-prototyping&#34;&gt;5 Tips: Prototyping&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Keep prototypes easy to change - Enable rapid revision (paper vs code)&lt;/li&gt;
-&lt;li&gt;Make it clear that it&amp;rsquo;s a prototype - Don&amp;rsquo;t make too good, make it look like prototype&lt;/li&gt;
-&lt;li&gt;Be creative - Do whatever it takes to get feedback. Find ones that get feedback.&lt;/li&gt;
-&lt;li&gt;Evaluate risks - Minimize time spent on bad design by getting feedback early. Don&amp;rsquo;t waste time.&lt;/li&gt;
-&lt;li&gt;Prototype for feedback - Goal of prototype is feedback. Prototype for kind of feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keep prototypes easy to change&lt;/strong&gt; - Enable rapid revision (paper vs code)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make it clear that it&amp;rsquo;s a prototype&lt;/strong&gt; - Don&amp;rsquo;t make too good, make it look like prototype&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be creative&lt;/strong&gt; - Do whatever it takes to get feedback. Find ones that get feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evaluate risks&lt;/strong&gt; - Minimize time spent on bad design by getting feedback early. Don&amp;rsquo;t waste time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prototype for feedback&lt;/strong&gt; - Goal of prototype is feedback. Prototype for kind of feedback.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;types-of-prototypes&#34;&gt;Types Of Prototypes&lt;/h2&gt;
-&lt;p&gt;Below are different types of prototypes:&lt;/p&gt;
+&lt;h3 id=&#34;design-life-cycle-revisited&#34;&gt;Design Life Cycle Revisited&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Verbal&lt;/strong&gt; - describing the design we have in mind to our user
+&lt;li&gt;We do not just move to the evaluation stage after we are done with prototyping, rather a single prototype corresponds to a single iteration through the cycle.&lt;/li&gt;
+&lt;li&gt;Success of prototype -&amp;gt; Raise the fidelity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;multi-level-prototyping&#34;&gt;Multi-Level Prototyping&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Social desirability bias&lt;/em&gt; can occur so we need to make sure to ask for specific and critical feedback&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Expert blind spot&lt;/em&gt; can also occur so we can use analogies to explain prototypes&lt;/li&gt;
+&lt;li&gt;All prototypes do not have to be at the same level at the same time. Instead, prototyping can and should exist at multiple levels of fidelity.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t do everything, part could be done from low to high fidelity.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Paper&lt;/strong&gt; - drawing our our design
-&lt;ul&gt;
-&lt;li&gt;We can utilize &lt;em&gt;card-based prototyping&lt;/em&gt; where each screen is on a different card and can be used to simulate the interaction&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Wizard Of Oz&lt;/strong&gt; - a prototype where the user can now interact authentically with the system while a human supplies functionality that has not be implemented yet
-&lt;ul&gt;
-&lt;li&gt;Voice and Gesture interface&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Wire framing&lt;/strong&gt; - using more detailed tools to mark up what an interface might look like.
-&lt;ul&gt;
-&lt;li&gt;Formalize designs&lt;/li&gt;
-&lt;li&gt;Challenges of screen real estate.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Physical&lt;/strong&gt; - a 3D prototype on the interface but does not have to be the actual working version
-&lt;ul&gt;
-&lt;li&gt;Physical or 3d.&lt;/li&gt;
-&lt;li&gt;Bluetooth device that syncs with phones to execute the actions.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;design-life-cycle-revisited&#34;&gt;Design Life Cycle Revisited&lt;/h2&gt;
-&lt;p&gt;We do not just move to the evaluation stage after we are done with prototyping, rather a single prototype corresponds to a single iteration through the cycle.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Success of prototype-&amp;gt; Raise the fidelity&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;multi-level-prototyping&#34;&gt;Multi-Level Prototyping&lt;/h2&gt;
-&lt;p&gt;All prototypes do not have to be at the same level at the same time. Instead, prototyping can and should exist at multiple levels of fidelity.
-- Dont do everything, part could be done from low to high fidelity.&lt;/p&gt;
 &lt;h1 id=&#34;36-evaluation&#34;&gt;3.6 Evaluation&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/evaluations.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;three-types-of-evaluation&#34;&gt;Three Types Of Evaluation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Qualitative evaluation&lt;/strong&gt; - evaluation that emphasizes the totality of a phenomenon. Likes dislike need doesn&amp;rsquo;t need, easy vs hard etc.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Empirical evaluation&lt;/strong&gt; - evaluation based on numeric summaries or observations of a phenomenon. More participants and qualitative is done in prior.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Predictive evaluation&lt;/strong&gt; - evaluation based on systematic application of pre-established principles and heuristics&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Predictive evaluation&lt;/strong&gt; - evaluation based on systematic application of pre-established principles and heuristics (no users).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;evaluation-terminology&#34;&gt;Evaluation Terminology&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reliability&lt;/strong&gt; - whether a measure consistently returns the same results for the same phenomenon&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reliability&lt;/strong&gt; - whether a measure consistently returns the same results for the same phenomenon.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Validity&lt;/strong&gt; - whether a measure&amp;rsquo;s results actually reflect the underlying phenomenon (reality and results)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Generalizability&lt;/strong&gt; - whether a measure&amp;rsquo;s results can be used to predict phenomena beyond what it measured. Broader Audience (may or may not be applicable to all).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Precision&lt;/strong&gt; - the level of detail a measure supplies&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;5-tips-what-to-evaluate&#34;&gt;5 Tips: What To Evaluate&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Efficiency - how long does user take to achieve text (Expert)&lt;/li&gt;
-&lt;li&gt;Accuracy - how many users does users commit while executing a task (Expert)&lt;/li&gt;
-&lt;li&gt;Learnability - How long does user take to reach expertise.&lt;/li&gt;
-&lt;li&gt;Memorability - users ability to remember on how to use interface over time.&lt;/li&gt;
-&lt;li&gt;Satisfaction - Cognitive load, how many actually download the app? - Social desirability bias.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Efficiency&lt;/strong&gt; - how long does user take to achieve text (Expert)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy&lt;/strong&gt; - how many users does users commit while executing a task (Expert)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Learnability&lt;/strong&gt; - How long does user take to reach expertise.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Memorability&lt;/strong&gt; - users ability to remember on how to use interface over time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Satisfaction&lt;/strong&gt; - Cognitive load, how many actually download the app? - Social desirability bias.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Important things needed to address the research.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Important things needed to address the research:
 &lt;ul&gt;
 &lt;li&gt;What data are you gathering?&lt;/li&gt;
 &lt;li&gt;What are you evaluating ?&lt;/li&gt;
 &lt;li&gt;What approach will you use to evaluate?&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;evaluation-timeline&#34;&gt;Evaluation Timeline&lt;/h2&gt;
 &lt;p&gt;Change in evaluation with time, The evaluation timeline usually is as follows:&lt;/p&gt;
-&lt;p&gt;Regarding purpose:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regarding &lt;strong&gt;purpose&lt;/strong&gt;:
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Formative&lt;/strong&gt; - primary purpose is to help redesign and improve our interface&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Summative&lt;/strong&gt; - the intention of conclusively saying at the end what the difference was&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formative&lt;/strong&gt; - primary purpose is to help redesign and improve our interface (early)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summative&lt;/strong&gt; - the intention of conclusively saying at the end what the difference was (late, hopefully we only do formative)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Regarding approach: Ways to fullfil purpose&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Regarding &lt;strong&gt;approach&lt;/strong&gt;: Ways to fullfil purpose
 &lt;ol&gt;
-&lt;li&gt;Qualitative - the goal is to help us improve and understand tasks&lt;/li&gt;
-&lt;li&gt;Predictive - inform how we revise and improve our interface over time (Similar to qualitative evaluation)&lt;/li&gt;
-&lt;li&gt;Empirical - the goal is to demonstrate or assess change&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qualitative&lt;/strong&gt; - the goal is to help us improve and understand tasks (early)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Predictive&lt;/strong&gt; - inform how we revise and improve our interface over time (Similar to qualitative evaluation)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Empirical&lt;/strong&gt; - the goal is to demonstrate or assess change (late)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Regarding data:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Regarding &lt;strong&gt;data&lt;/strong&gt;:
 &lt;ol&gt;
-&lt;li&gt;Qualitative - always useful to improve our interfaces.&lt;/li&gt;
-&lt;li&gt;Quantitative - while always useful, can only arise when we have rigorous evaluations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qualitative&lt;/strong&gt; - always useful to improve our interfaces (early and late)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quantitative&lt;/strong&gt; - while always useful, can only arise when we have rigorous evaluations (late)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Regarding setting: where does it take place.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Regarding &lt;strong&gt;setting&lt;/strong&gt;: where does it take place.
 &lt;ol&gt;
-&lt;li&gt;Lab testing - helps us focus exclusively on the interface early on&lt;/li&gt;
-&lt;li&gt;Field testing - helps us focus more on the interface in context&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lab testing&lt;/strong&gt; - helps us focus exclusively on the interface early on&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Field testing&lt;/strong&gt; - helps us focus more on the interface in context&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;evaluation-design&#34;&gt;Evaluation Design&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Define the task - very large or very small task.&lt;/li&gt;
-&lt;li&gt;Define performance measures - how are we going to measure this. Define it and avoid confirmation bias. Create metrics. Qualitative vs Quantitative.&lt;/li&gt;
-&lt;li&gt;Develop the experiment - How we find user performance on the measures. Survey or Interview/ What to control or vary empirically.&lt;/li&gt;
-&lt;li&gt;Recruit participants - Ethics - right awareness&lt;/li&gt;
-&lt;li&gt;Do the experiment&lt;/li&gt;
-&lt;li&gt;Analyze the data - what data tells about performance measures. Do followups if you find something extra than expected.&lt;/li&gt;
-&lt;li&gt;Summarize the data - Informs ongoing process&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Define the task&lt;/strong&gt; - very large or very small task.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Define performance measures&lt;/strong&gt; - how are we going to measure this. Define it and avoid confirmation bias. Create metrics. Qualitative vs Quantitative.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Develop the experiment&lt;/strong&gt; - How we find user performance on the measures. Survey or Interview/ What to control or vary empirically.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recruit participants&lt;/strong&gt; - Ethics - right awareness&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Do the experiment&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analyze the data&lt;/strong&gt; - what data tells about performance measures. Do followups if you find something extra than expected.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summarize the data&lt;/strong&gt; - Informs ongoing process&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/evaluations1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/evaluations3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;qualitative-evaluation&#34;&gt;Qualitative Evaluation&lt;/h2&gt;
-&lt;p&gt;Get qualitative feedback about the interface.
-There are some questions we want to ask in this evaluation: (Similar to interviews)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get qualitative feedback about the interface.&lt;/li&gt;
+&lt;li&gt;There are some questions we want to ask in this evaluation: (Similar to interviews)
 &lt;ol&gt;
 &lt;li&gt;What did you like/dislike?&lt;/li&gt;
 &lt;li&gt;What were you thinking while using this interface?&lt;/li&gt;
 &lt;li&gt;What was your goal when you took that particular action?&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Methods - Interview/Survey/ Think out load protocol/Focus Groups&lt;/p&gt;
-&lt;p&gt;Use these techniques to get feedback on how our prototype changes the task.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Methods - Interview/Survey/ Think out load protocol/Focus Groups&lt;/li&gt;
+&lt;li&gt;Use these techniques to get feedback on how our prototype changes the task.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;designing-a-qualitative-evaluation&#34;&gt;Designing A Qualitative Evaluation&lt;/h2&gt;
 &lt;p&gt;There are options when designing a qualitative evaluation:&lt;/p&gt;
 &lt;ol&gt;
@@ -1576,42 +1597,41 @@ There are some questions we want to ask in this evaluation: (Similar to intervie
 &lt;/ol&gt;
 &lt;h2 id=&#34;capturing-qualitative-evaluation&#34;&gt;Capturing Qualitative Evaluation&lt;/h2&gt;
 &lt;p&gt;Options to capture qualitative evaluation:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Video recording
 &lt;ul&gt;
-&lt;li&gt;Pros; Automated Comprehensive and passive (Focus on administering)&lt;/li&gt;
-&lt;li&gt;Cons: intrusive, nonalyzalble and screenless. Overwhelming on analyses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Video recording&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pros:&lt;/strong&gt; Automated, comprehensive and passive (focus on administering)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: Intrusive, non-analyzable and screen-less. Overwhelming on analyses.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Note-taking
+&lt;li&gt;&lt;strong&gt;Note-taking&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;Pros: Cheap, Non intrusive (Capture what we do/not everything) and Analyzable&lt;/li&gt;
-&lt;li&gt;Cons: Slow, Manual and Limited&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pros&lt;/strong&gt;: Cheap, Non intrusive (Capture what we do/not everything) and Analyzable&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: Slow, Manual and Limited&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Software logging
+&lt;li&gt;&lt;strong&gt;Software logging&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;Pros: Automated passive and analyzable&lt;/li&gt;
-&lt;li&gt;Cons: Limited (only some parts could be captured), Narrow and Tech Sensitive&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pros&lt;/strong&gt;: Automated, passive and analyzable&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: Limited (only some parts could be captured), Narrow and Tech Sensitive (prototype needs to reach certain level of fidelity)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;5-tips-qualitative-evaluation&#34;&gt;5 Tips: Qualitative Evaluation&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Run pilot studies - Recruiting is hard, gather useful data . Use friends and coworkers&lt;/li&gt;
-&lt;li&gt;Focus on feedback - Don&amp;rsquo;t explain rationale, don&amp;rsquo;t teach. Take it and design.&lt;/li&gt;
-&lt;li&gt;Use questions - when user get stuck? Guide user&lt;/li&gt;
-&lt;li&gt;Instruct users what to do, not how - Reduce bias&lt;/li&gt;
-&lt;li&gt;Capture satisfaction - Do they like it?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run pilot studies&lt;/strong&gt; - Recruiting is hard, gather useful data . Use friends and coworkers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus on feedback&lt;/strong&gt; - Don&amp;rsquo;t explain rationale, don&amp;rsquo;t teach. Take it and design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use questions&lt;/strong&gt; - when user get stuck? Guide user&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Instruct users what to do, not how&lt;/strong&gt; - Reduce bias&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capture satisfaction&lt;/strong&gt; - Do they like it?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;empirical-evaluation&#34;&gt;Empirical Evaluation&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Something numerical is evaluation? What layout of button is useful?&lt;/li&gt;
+&lt;li&gt;Something numerical in evaluation. What layout of button is useful?&lt;/li&gt;
 &lt;li&gt;Comparing design and showing improvement in industry.&lt;/li&gt;
 &lt;li&gt;Build new theories (gesture has tuf curve than voice)&lt;/li&gt;
 &lt;li&gt;How can we show there is a difference between these designs?&lt;/li&gt;
 &lt;li&gt;The goal of empirical evaluation is to come up with strong conclusions. Most empirical evaluations are comparisons.&lt;/li&gt;
-&lt;li&gt;In qualitative eval we get ppl  one after another.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;designing-empirical-evaluation&#34;&gt;Designing Empirical Evaluation&lt;/h2&gt;
 &lt;ul&gt;
@@ -1624,34 +1644,43 @@ There are some questions we want to ask in this evaluation: (Similar to intervie
 &lt;ul&gt;
 &lt;li&gt;Reaction time study? Data is generated and compare this.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Hypothesis testing&lt;/strong&gt; - testing whether or not the data allows us to conclude a difference exists.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Null&lt;/strong&gt; - Assume oppose is true&lt;/li&gt;
+&lt;li&gt;Alternative if data doesn&amp;rsquo;t support that. Less than 5% chance.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Null= Assume oppose is true
-Alternative if data doesn&amp;rsquo;t support that. Less than 5% chance.&lt;/p&gt;
 &lt;h2 id=&#34;quantitative-data-and-empirical-tests&#34;&gt;Quantitative Data And Empirical Tests&lt;/h2&gt;
 &lt;p&gt;Recall that there are a number of tests for quantitative data:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Nominal:
 &lt;ul&gt;
-&lt;li&gt;Recommended - Chi-squared test&lt;/li&gt;
-&lt;li&gt;Alternatively: Fisher&amp;rsquo;s exact test, G-test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nominal&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Recommended&lt;/strong&gt; - Chi-squared test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alternatively&lt;/strong&gt;: Fisher&amp;rsquo;s exact test, G-test&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Ordinal:
+&lt;li&gt;&lt;strong&gt;Ordinal&lt;/strong&gt;:
 &lt;ul&gt;
-&lt;li&gt;Recommended - Kolmogorov-Smirnov test&lt;/li&gt;
-&lt;li&gt;Alternatively - Chi-squared test, median test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recommended&lt;/strong&gt; - Kolmogorov-Smirnov test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alternatively&lt;/strong&gt; - Chi-squared test, median test&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Interval and ratio:
+&lt;li&gt;&lt;strong&gt;Interval and ratio:&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;Recommended - Student&amp;rsquo;s &lt;em&gt;t&lt;/em&gt;-test&lt;/li&gt;
-&lt;li&gt;Alternatively - MWW test, Kruskal-Wallis test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recommended&lt;/strong&gt; - Student&amp;rsquo;s &lt;em&gt;t&lt;/em&gt;-test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alternatively&lt;/strong&gt; - MWW test, Kruskal-Wallis test&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;special-test&#34;&gt;Special Test&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Three independent variable (hypothesis) - Do pairwise - Repeated testing - False positive - Falsely reject null and agree alternative hypothesis.&lt;/li&gt;
+&lt;li&gt;Three independent variable (hypothesis)&lt;/li&gt;
+&lt;li&gt;Do pairwise
+&lt;ul&gt;
+&lt;li&gt;Repeated testing&lt;/li&gt;
+&lt;li&gt;False positive&lt;/li&gt;
+&lt;li&gt;Falsely reject null and agree alternative hypothesis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Type I Error (False Positive): False rejection of null hypothesis&lt;/li&gt;
+&lt;li&gt;Type II Error (False Negative): False retention of null hypothesis&lt;/li&gt;
 &lt;li&gt;Fishers exact and G-test
 &lt;ul&gt;
 &lt;li&gt;Where is the difference?&lt;/li&gt;
@@ -1659,25 +1688,28 @@ Alternative if data doesn&amp;rsquo;t support that. Less than 5% chance.&lt;/p&g
 &lt;/li&gt;
 &lt;li&gt;ANOVA and Kruskal Wallis (Interval and Ratio)
 &lt;ul&gt;
-&lt;li&gt;Where is the difference?
-Independent variable is Mostly categorical. GPA is interval data.
-Binomial Data - Two sample binomial test&lt;/li&gt;
+&lt;li&gt;Where is the difference?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;Independent variable is mostly categorical. GPA is interval data.&lt;/li&gt;
+&lt;li&gt;Binomial Data - Two sample binomial test&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;summary-of-empirical-tests&#34;&gt;Summary Of Empirical Tests&lt;/h2&gt;
 &lt;p&gt;Below is a summary of empirical tests:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;lesson-19-summary-of-empirical-tests.PNG&#34; alt=&#34;Summary of Empirical Tests&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/test.png&#34; alt=&#34;Summary of Empirical Tests&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;5-tips-empirical-evaluation&#34;&gt;5 Tips: Empirical Evaluation&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Control what you can, document what you can&amp;rsquo;t - Try to make treatments identical as possible&lt;/li&gt;
-&lt;li&gt;Limit your variables - Noisy data false conclusion and monitor handful of things at a point.&lt;/li&gt;
-&lt;li&gt;Work backwards - Messy and reliability is last and decide question and analysis&lt;/li&gt;
-&lt;li&gt;Script your analyses in advance - Torture data and analyze and conclude. Don&amp;rsquo;t do again&lt;/li&gt;
-&lt;li&gt;Pay attention to power - Size of difference the test can detect.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Control what you can, document what you can&amp;rsquo;t&lt;/strong&gt; - Try to make treatments identical as possible&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Limit your variables&lt;/strong&gt; - Noisy data false conclusion and monitor handful of things at a point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Work backwards&lt;/strong&gt; in designing experiments - Decide what question you want to answer, the anaysis you want to use and the question you want to ask&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Script your analyses in advance&lt;/strong&gt; - Do not torture data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pay attention to power&lt;/strong&gt; - Size of difference the test can detect.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;predictive-evaluation&#34;&gt;Predictive Evaluation&lt;/h2&gt;
-&lt;p&gt;Predictive evaluation should only be used where we wouldn&amp;rsquo;t otherwise be doing any evaluation. Rapid feedback, appropriately and when users are not available.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Predictive evaluation should only be used where we wouldn&amp;rsquo;t otherwise be doing any evaluation.&lt;/li&gt;
+&lt;li&gt;Rapid feedback, appropriately and when users are not available.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;types-of-predictive-evaluation&#34;&gt;Types Of Predictive Evaluation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Heuristic evaluation&lt;/strong&gt; - each individual evaluator inspects the interface alone, and identifies places where the interface violates some heuristic. Sit with an expert and get the report.
@@ -1688,8 +1720,8 @@ Binomial Data - Two sample binomial test&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;cognitive-walkthrough&#34;&gt;Cognitive Walkthrough&lt;/h2&gt;
-&lt;p&gt;The most common type of predictive evaluation is actually cognitive walkthrough:&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;The most common type of predictive evaluation is actually cognitive walkthrough.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Cognitive walkthrough&lt;/strong&gt; - stepping through the process of interacting with an interface, mentally simulating in each stage what the user is seeing and thinking and doing. To do this, we start with task and goal.
 &lt;ul&gt;
 &lt;li&gt;predict what action will user take&lt;/li&gt;
@@ -1706,18 +1738,28 @@ Binomial Data - Two sample binomial test&lt;/li&gt;
 &lt;li&gt;Some quantitative evaluation.&lt;/li&gt;
 &lt;li&gt;For all the prototypes.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/evaluation_advantage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;37-hci-and-agile-development&#34;&gt;3.7 HCI and Agile Development&lt;/h1&gt;
-&lt;h2 id=&#34;the-demand-for-rapid-hci&#34;&gt;The Demand For Rapid Hci&lt;/h2&gt;
-&lt;p&gt;Before, costs for development, distribution, and feedback regarding software and products were expensive compared to now.
-- Specialized development skills
-- Distribution is physical
-- Fix was hard
-- By have users to come into testing&lt;/p&gt;
-&lt;p&gt;How do we take the principles we have covered so far and apply them to a rapid agile development process?
-- Cheap development
-- Internet distribution - Free and update
-- Usage data is free and live. Lots of feedback
-- More incentive to build and save&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/agile.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-demand-for-rapid-hci&#34;&gt;The Demand For Rapid HCI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Before, costs for development, distribution, and feedback regarding software and products were expensive compared to now.
+&lt;ul&gt;
+&lt;li&gt;Specialized development skills&lt;/li&gt;
+&lt;li&gt;Distribution is physical&lt;/li&gt;
+&lt;li&gt;Fix was hard&lt;/li&gt;
+&lt;li&gt;By have users to come into testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;How do we take the principles we have covered so far and apply them to a rapid agile development process?
+&lt;ul&gt;
+&lt;li&gt;Cheap development&lt;/li&gt;
+&lt;li&gt;Internet distribution - Free and update&lt;/li&gt;
+&lt;li&gt;Usage data is free and live. Lots of feedback&lt;/li&gt;
+&lt;li&gt;More incentive to build and save&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;when-to-go-agile&#34;&gt;When To Go Agile?&lt;/h2&gt;
 &lt;p&gt;We can make the decision to go agile by considering the following:&lt;/p&gt;
 &lt;table&gt;
@@ -1735,7 +1777,7 @@ Binomial Data - Two sample binomial test&lt;/li&gt;
 &lt;td&gt;Low&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Requirements is..&lt;/td&gt;
+&lt;td&gt;Requirements change..&lt;/td&gt;
 &lt;td&gt;Rarely&lt;/td&gt;
 &lt;td&gt;Frequently&lt;/td&gt;
 &lt;/tr&gt;
@@ -1751,21 +1793,18 @@ Binomial Data - Two sample binomial test&lt;/li&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;towards-a-framework-for-integrating-agile-development-and-user-centred-design-usd&#34;&gt;Towards a framework for integrating agile development and user-centred design (USD).&lt;/h2&gt;
-&lt;p&gt;Similarities and Differences Between UCD and Agile Development&lt;/p&gt;
+&lt;h2 id=&#34;towards-a-framework-for-integrating-agile-development-and-user-centred-design-ucd&#34;&gt;Towards a framework for integrating agile development and user-centred design (UCD).&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Similarities and Differences Between UCD and Agile Development&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;They rely on an iterative development process, building on empirical information from previous cycles or rounds. For instance, one of XP’s values is feedback ([2:20]), and the idea of refactoring code is an embodiment of this value. In UCD one of its founding principles is iterative design&lt;/li&gt;
+&lt;li&gt;They rely on an iterative development process, building on empirical information from previous cycles or rounds. For instance, one of XP’s values is feedback, and the idea of refactoring code is an embodiment of this value. In UCD one of its founding principles is iterative design&lt;/li&gt;
 &lt;li&gt;Agile techniques place an emphasis on the user, encouraging participation
-throughout the development process. For instance, in Scrum, user evaluation of the product is encouraged on a monthly basis as users are ideally present during the sprint review ([16:54]) and the “Product Owner” is responsible for the requirements and feature prioritization for the product. A second founding principle of UCD, is early and continual focus on users.&lt;/li&gt;
-&lt;li&gt;Both approaches emphasis the importance of team coherence. Beck states that one of the purposes of the planning game is to “bring the team together” ([2:85]). One of the features of the UCD approach is that the whole team should have the user in mind while developing the product.&lt;/li&gt;
+throughout the development process. For instance, in Scrum, user evaluation of the product is encouraged on a monthly basis as users are ideally present during the sprint review  and the “Product Owner” is responsible for the requirements and feature prioritization for the product. A second founding principle of UCD, is early and continual focus on users.&lt;/li&gt;
+&lt;li&gt;Both approaches emphasis the importance of team coherence. Beck states that one of the purposes of the planning game is to “bring the team together”. One of the features of the UCD approach is that the whole team should have the user in mind while developing the product.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The two main differences are:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;UCD advocates maintain that certain design products are required to support
-communication with developers, while agile methods seek minimal documentation.&lt;/li&gt;
-&lt;li&gt;UCD encourages the team to understand their users as much as possible before the
-product build begins, whereas agile methods are largely against an up-front period
-of investigation at the expense of writing code.&lt;/li&gt;
+&lt;li&gt;UCD advocates maintain that certain design products are required to support communication with developers, while agile methods seek minimal documentation.&lt;/li&gt;
+&lt;li&gt;UCD encourages the team to understand their users as much as possible before the product build begins, whereas agile methods are largely against an up-front period of investigation at the expense of writing code.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;live-prototyping&#34;&gt;Live Prototyping&lt;/h2&gt;
 &lt;ul&gt;
@@ -1779,14 +1818,17 @@ of investigation at the expense of writing code.&lt;/li&gt;
 &lt;li&gt;Real user testing&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;agile-hci-in-the-design-life-cycle&#34;&gt;Agile HCI In The Design Life Cycle&lt;/h2&gt;
-&lt;p&gt;Agile development techniques don&amp;rsquo;t replace the design life cycle, they just change the rate at which we go through it and the types of prototypes and evaluation that we actually do. We&amp;rsquo;re still going to do the initial need-finding step.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Agile development techniques don&amp;rsquo;t replace the design life cycle, they just change the rate at which we go through it and the types of prototypes and evaluation that we actually do. We&amp;rsquo;re still going to do the initial need-finding step.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/caffine.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;5-tips-mitigating-risk-in-hci-and-agile-development&#34;&gt;5 Tips: Mitigating Risk In HCI And Agile Development&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Start more traditional - Once you have something up and running, move to agile&lt;/li&gt;
-&lt;li&gt;Focus on small changes - Don&amp;rsquo;t make huge change&lt;/li&gt;
-&lt;li&gt;Adopt a parallel track method - 2 week sprints, have HCI one sprint ahead.&lt;/li&gt;
-&lt;li&gt;Be careful with consistency - Don&amp;rsquo;t mess with user expectation&lt;/li&gt;
-&lt;li&gt;Nest your design cycles - Small cycles rapidly in Agile&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start more traditional&lt;/strong&gt; - Once you have something up and running, move to agile&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus on small changes&lt;/strong&gt; - Don&amp;rsquo;t make huge change&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Adopt a parallel track method&lt;/strong&gt; - 2 week sprints, have HCI one sprint ahead&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be careful with consistency&lt;/strong&gt; - Don&amp;rsquo;t mess with user expectation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nest your design cycles&lt;/strong&gt; - Small cycles rapidly in Agile&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;38-conclusion-to-methods&#34;&gt;3.8 Conclusion To Methods&lt;/h1&gt;
 &lt;h2 id=&#34;approaches-to-user-centered-design&#34;&gt;Approaches To User-Centered Design&lt;/h2&gt;
@@ -1797,6 +1839,15 @@ of investigation at the expense of writing code.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Design-based research&lt;/strong&gt; - similar to action research but it can be done by outside practitioners as well. Common in learning science research&lt;/li&gt;
 &lt;/ol&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Redesigning the Goodreads bookshelf interaction</title>
+      <link>https://ayushsubedi.github.io/posts/redesigning_goodreads/</link>
+      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/redesigning_goodreads/</guid>
+      <description>&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/cse6750_final_project.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
   </channel>

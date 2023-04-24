@@ -143,7 +143,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2023-04-04">2023-04-04</time>
+		datetime="2023-04-23">2023-04-23</time>
 </div>
 
 <hr />
@@ -1136,6 +1136,43 @@ plt.show()
 <li>Set Packing: Given $m$ elements and a collection of subsets $S_1, &hellip;. , S_n \belongs {1,..,m} with associated nonnegative weights $w_1, &hellip;, w_n$ pick sets from this collection such that they are disjoint and the sum of the weights is maximized.</li>
 </ul>
 <p><a href="https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf">https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf</a></p>
+<p>&hellip;</p>
+<h2 id="linear-programming-relaxation">Linear Programming Relaxation</h2>
+<ul>
+<li>Decision variable is only taking continuous value to generate the relaxation (drop the integer constraints).</li>
+<li>If LP relaxation is infeasible, so it the IP</li>
+<li>If LP relaxation is unbounded, then the IP can either be infeasible or unbounded.</li>
+<li>If LP relaxation has an optimal solution, then the IP could be infeasible or have an optimal solution</li>
+<li>It always holds that $v_{LP} \le v_{IP}$</li>
+<li>If an optimal solution to the LP is an integer, then it is an optimal solution to the IP.</li>
+<li>It&rsquo;s solution can sometimes be rounded to get a good solution to the IP</li>
+</ul>
+<h2 id="ideal-formulations">Ideal Formulations</h2>
+<ul>
+<li>Stronger Formulation: Stronger formulation lead to stronger LP relaxations, and so better LP relaxation  better bounds, and sometimes LP relaxations solutions that are feasible to the MLP</li>
+<li>The formulation of an MLP can be strengthened
+<ul>
+<li>by adding constraints (valid inequalities)</li>
+<li>by tightening constraint coefficients</li>
+<li>by introducing new variables and constraints</li>
+</ul>
+</li>
+<li>An ideal formulation of a MILP is one whose LP relaxation solves the MLP</li>
+<li>Ideal formulations are hard to obtain, so we strive to obtain strong formulation that approximate the ideal formulation</li>
+</ul>
+<h2 id="branch-bound-algorithm">Branch Bound Algorithm</h2>
+<ul>
+<li>Branch and bound is a popular algorithm used for solving mixed-integer linear programming (MILP) problems. The basic idea behind branch and bound is to divide the problem into smaller subproblems, solve each subproblem separately, and then combine the solutions to obtain an overall solution to the original problem.</li>
+<li>Here are the steps involved in the branch and bound algorithm for MILP:
+<ul>
+<li>Solve the relaxed linear programming (LP) problem, which is the MILP problem with the integer constraints removed. This provides an initial solution to the MILP problem.</li>
+<li>If the LP solution satisfies all the integer constraints, then we have found an optimal solution to the MILP problem. Otherwise, select one of the integer variables with a non-integer value in the LP solution.</li>
+<li>Create two new subproblems by branching on the selected variable: one subproblem where the variable is fixed to its integer floor, and another subproblem where the variable is fixed to its integer ceiling.</li>
+<li>Solve each of the subproblems using the LP solver. If a subproblem has an integer solution that is worse than the current best solution, we can prune that branch of the search tree. Otherwise, continue branching until we have found an optimal integer solution or all branches have been pruned.</li>
+<li>Once all branches have been pruned, the best integer solution found during the search is the optimal solution to the MILP problem.</li>
+</ul>
+</li>
+</ul>
 </div>
 	</section>
 
@@ -1283,7 +1320,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		10091 words in this page.
+		10505 words in this page.
 	</div>
 </div>
 
@@ -1294,21 +1331,14 @@ plt.show()
 <hr class="" />
 <div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
     
-    <a class="flex-grow-0" href="/posts/code_for_nepal/">
+    <a class="flex-grow-0" href="/posts/human_computer_interaction/">
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        Code for Nepal and DataCamp Partnership: Empowering Data Literacy and Career Growth
+        Human-Computer Interaction
     </a>
     
-    
-    <a class="flex-grow-0" href="/posts/human_computer_interaction/">
-        Human-Computer Interaction
-        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-            height="24">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
     
 </div>
 <div >
