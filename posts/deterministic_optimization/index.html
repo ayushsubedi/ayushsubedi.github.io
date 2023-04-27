@@ -143,7 +143,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2023-04-23">2023-04-23</time>
+		datetime="2023-04-25">2023-04-25</time>
 </div>
 
 <hr />
@@ -155,9 +155,9 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="deterministic-optimization">Deterministic Optimization</h1>
-<h1 id="general-overview-and-key-concepts-in-optimization">General overview and key concepts in optimization</h1>
-<p>In plain English, <strong>optimization</strong> is the action of making the best or most effective use of a situation or resource.</p>
+		<div class="c-rich-text"><h1 id="general-overview-and-key-concepts">General overview and key concepts</h1>
+<p>In plain English, <strong>optimization</strong> is the action of making the best or most effective use of a situation or resource. Optimization problems are of great practical interest. For example, in manufacturing, how should one cut plates of a material so that the waste is minimized? In business, how should a company allocate the available resources that its profit is maximized? Some of the first optimization problems have been solved in ancient Greece and are regarded among the most significant discoveries of that time. In the first century A.D., the Alexandrian mathematician Heron solved the problem of finding the shortest path between two points by way of the mirror.</p>
+<p>This result, also known as Heron’s theorem of the light ray, can be viewed as the origin of the theory of geometrical optics. The problem of finding extreme values gained special importance in the seventeenth century, when it served as one of the motivations in the invention of differential calculus, which is the foundation of the modern theory of mathematical optimization.</p>
 <h2 id="generic-form-of-optimization-problem">Generic form of optimization problem:</h2>
 <p>$min$ $f(x)$ $s.t.$ $x \in X $</p>
 <ul>
@@ -166,7 +166,7 @@ onload='renderMathInElement(document.body);'></script>
 <li>A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints</li>
 <li>$X$ is the set of inequality constraints</li>
 </ul>
-<h1 id="mathematical-ingredients-of-an-optimization-model">Mathematical ingredients of an optimization model:</h1>
+<h3 id="mathematical-ingredients">Mathematical ingredients:</h3>
 <ul>
 <li>Encode decisions/actions as <strong>decision variables</strong> whose values we are seeking</li>
 <li>Identify the relevant <strong>problem data</strong></li>
@@ -177,7 +177,7 @@ onload='renderMathInElement(document.body);'></script>
 <pre tabindex="0"><code>min or max f(x1, x2, .... , xn)
 subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m 
         xj is continuous or discrete    j = 1,....,n
-</code></pre><h2 id="the-problem-setting">The problem setting</h2>
+</code></pre><h3 id="the-problem-setting">The problem setting</h3>
 <ul>
 <li>Finite number of decision variables</li>
 <li>A single objective function of decision variables and problem data
@@ -189,7 +189,7 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <li>There may be domain restrictions (continuous or discrete) on some of the variables</li>
 <li>The functions defining the objective and constraints are algebraic (typically with rational coefficients)</li>
 </ul>
-<h2 id="minimization-vs-maximization">Minimization vs Maximization</h2>
+<h3 id="minimization-vs-maximization">Minimization vs Maximization</h3>
 <ul>
 <li>Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function</li>
 </ul>
@@ -199,7 +199,6 @@ subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m
 <li>The word program means plan/planning</li>
 <li>Early application of optimization arose in planning resource allocations and gave rise to programming to mean optimization (predates computer programming)</li>
 </ul>
-<h2 id="examples">Examples</h2>
 <h3 id="example-designing-a-box">Example: Designing a box:</h3>
 <p><strong>Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:</strong><br/>
 <strong>Decision:</strong> $x$ = how much to cut from each of the corners?<br/>
@@ -382,7 +381,7 @@ Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; 
 </ul>
 </li>
 </ul>
-<h2 id="why-and-how-to-classify">Why and how to classify?</h2>
+<h3 id="why-and-how-to-classify">Why and how to classify?</h3>
 <ul>
 <li>Important to recognize the type of an optimization problem:
 <ul>
@@ -399,9 +398,17 @@ Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; 
 </ul>
 </li>
 </ul>
-<h2 id="notes-from-linear-algebra">Notes from Linear Algebra</h2>
+<h2 id="linear-algebra-primer">Linear Algebra Primer</h2>
 <ul>
-<li>The second derivative test is a method used in calculus to determine the nature of the critical points of a function, which can be either a maximum, minimum, or saddle point.</li>
+<li><strong>Vectors</strong>: Vectors are mathematical objects that have both magnitude and direction. They can be represented as ordered lists of numbers or as arrows in space.  Vectors are often used to represent physical quantities such as velocity or force. In two-dimensional space, a vector is represented by an ordered pair of numbers (x, y), and in three-dimensional space, it is represented by an ordered triple (x, y, z). Vectors can be added and subtracted, and multiplied by a scalar (a single number). They also have properties such as the dot product and cross product. In computer science and programming, a vector is also a data structure that can store multiple values of the same type.</li>
+<li><strong>Matrices</strong>: Matrices are rectangular arrays of numbers that can be used to represent linear transformations and systems of linear equations. They are also used to represent data in statistics and machine learning.</li>
+<li><strong>Linear equations</strong>: Linear equations are equations that involve only linear terms, such as x and y, rather than more complex functions like sin(x) or e^x. They can be represented using matrices and solved using techniques like Gaussian elimination.</li>
+<li><strong>Eigenvectors and eigenvalues</strong>: Eigenvectors are special vectors that are unchanged by a linear transformation, except for a scaling factor. Eigenvalues are the corresponding scaling factors. They are useful in many applications, such as analyzing networks and modeling physical systems.</li>
+<li><strong>Vector spaces</strong>: Vector spaces are sets of vectors that satisfy certain properties, such as closure under addition and scalar multiplication. They are used to represent many mathematical objects, such as functions and polynomials.</li>
+<li><strong>Inner products</strong>: An inner product is a function that takes two vectors as input and produces a scalar as output. It is used to measure the angle between vectors and the length of a vector.</li>
+<li><strong>Orthogonality</strong>: Two vectors are orthogonal if they are perpendicular to each other. Orthogonal vectors have many important applications, such as in least squares regression and in the Gram-Schmidt process for orthonormalizing a set of vectors.</li>
+<li>The <strong>second derivative test</strong> is a method used in calculus to determine the nature of the critical points of a function, which can be either a maximum, minimum, or saddle point.</li>
+<li>A <strong>critical point</strong> is a point on the graph of a function where the derivative is either zero or undefined.</li>
 <li>To apply the second derivative test, we need to find the critical points of the function by setting its first derivative equal to zero and solving for the variables. Then, we can determine the nature of these critical points by examining the sign of the second derivative of the function evaluated at the critical points. Specifically:
 <ul>
 <li>If the second derivative is positive at a critical point, then the function has a local minimum at that point.</li>
@@ -409,20 +416,19 @@ Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; 
 <li>If the second derivative is zero at a critical point, then the second derivative test is inconclusive, and we need to use other methods to determine the nature of the critical point.</li>
 </ul>
 </li>
-<li>A vector is a mathematical object that has both a magnitude (size) and a direction. Vectors are often used to represent physical quantities such as velocity or force. In two-dimensional space, a vector is represented by an ordered pair of numbers (x, y), and in three-dimensional space, it is represented by an ordered triple (x, y, z). Vectors can be added and subtracted, and multiplied by a scalar (a single number). They also have properties such as the dot product and cross product. In computer science and programming, a vector is also a data structure that can store multiple values of the same type.</li>
 <li>The vectors $x$ and $y$ are orthogonal if $x^Ty=0$, they make an acute angle if $x^Ty&gt;0$ and an obtuse angle if $x^Ty&lt;0$</li>
 <li>Also, $x^Ty=||x||.||y||cos\theta$</li>
-<li>A set of vectors are linearly independent if none of the vectors can be written as a linear combination of the others. That is the unique solution to the system of equations. There can be at most $n$ linearly independent vectors in $R^n$</li>
-<li>Any collection of $n$ linearly independent vectors in $R$ defines a basis (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &hellip;0]^T$, $e^2= [0, 1, &hellip;0]^T$,&hellip;,$e^n= [0, 0, &hellip;1]^T$, define the standard basis for $R^n$</li>
-<li>The rank of a matrix is a measure of the &ldquo;nondegeneracy&rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix.</li>
+<li>A set of vectors are <strong>linearly independent</strong> if none of the vectors can be written as a linear combination of the others. That is the unique solution to the system of equations. There can be at most $n$ linearly independent vectors in $R^n$</li>
+<li>Any collection of $n$ linearly independent vectors in $R$ defines a <strong>basis</strong> (or a coordinate system) of $R^n$, any vector in $R^n$ can be written as a linear combination of the basis vectors  The unit vectors $e^1= [1, 0, &hellip;0]^T$, $e^2= [0, 1, &hellip;0]^T$,&hellip;,$e^n= [0, 0, &hellip;1]^T$, define the standard basis for $R^n$</li>
+<li>The <strong>rank</strong> of a matrix is a measure of the &ldquo;nondegeneracy&rdquo; of the matrix and it is one of the most important concepts in linear algebra. It is defined as the dimension of the vector space spanned by its columns or rows. Intuitively, it represents the number of linearly independent columns or rows in the matrix.</li>
 <li><strong>row rank = column rank = rank($A$). $A$ is full rank if rank($A$) = min($m$, $n$)</strong></li>
 <li>A system of equations has a solution when the equations are consistent, meaning that there is at least one set of values for the variables that satisfies all of the equations. If the equations are inconsistent, meaning that there is no set of values that satisfies all of the equations, then the system of equations has no solution.</li>
-<li>An affine function is a function that is defined as a linear combination of variables, with the addition of a constant term. An affine function can be written as:</li>
+<li>An <strong>affine function</strong> is a function that is defined as a linear combination of variables, with the addition of a constant term. An affine function can be written as:</li>
 </ul>
 <pre tabindex="0"><code>f(x) = a_1x_1 + a_2x_2 + ... + a_nx_n + b
 </code></pre><p>Where x_1, x_2, &hellip;, x_n are the input variables, a_1, a_2, &hellip;, a_n are the coefficients, and b is a constant term. An affine function is a generalization of a linear function, which does not have the constant term.</p>
 <iframe width="100%" height ="1024" src="/pdfs/la.pdf#toolbar=0"></iframe>
-<h2 id="notes-from-multivariate-calculus">Notes from Multivariate Calculus</h2>
+<h2 id="multivariate-calculus-primer">Multivariate Calculus Primer</h2>
 <p><img src="https://i.pinimg.com/736x/03/1e/73/031e73d364d35daf9ec479909c966505--systems-of-equations-maths-algebra.jpg" alt=""></p>
 <h3 id="hessian-matrix">Hessian matrix</h3>
 <ul>
@@ -448,7 +454,7 @@ f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\righ
 $$
 `</li>
 </ul>
-<h2 id="sets-in-optimization-problems">Sets in Optimization Problems</h2>
+<h3 id="sets-in-optimization-problems">Sets in Optimization Problems</h3>
 <ul>
 <li>A set is <strong>closed</strong> if it includes its boundary points.</li>
 <li>Intersection of closed sets is closed.</li>
@@ -467,7 +473,7 @@ $$
 of the set.</li>
 </ul>
 <iframe src="https://www.desmos.com/calculator/49e59msg7u?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
-<h2 id="convex-function">Convex Function</h2>
+<h3 id="convex-function">Convex Function</h3>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png" alt=""></p>
 <ul>
 <li>A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
@@ -484,7 +490,7 @@ $$</li>
 <li>A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.</li>
 <li><strong>Sylvester&rsquo;s criterion</strong> is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
 </ul>
-<h2 id="operations-preserving-convexity">Operations preserving convexity</h2>
+<h3 id="operations-preserving-convexity">Operations preserving convexity</h3>
 <ul>
 <li><strong>Nonnegative weighted sum of convex functions is convex</strong>, i.e. if $f_i$ is convex and $\alpha_i \geq 0$ for all $i=1, \ldots, m$, then $g(\mathbf{x})=\sum_{i=1}^m \alpha_i f_i(\mathbf{x})$ is convex.</li>
 <li><strong>Maximum of convex functions is convex.</strong></li>
@@ -494,7 +500,7 @@ h(\mathbf{x})=f\left(g_1(\mathbf{x}), g_2(\mathbf{x}), \ldots, g_m(\mathbf{x})\r
 $$
 is convex if either $f$ is <strong>nondecreasing or if each $q_i$ is a linear</strong> function.</li>
 </ul>
-<h2 id="convexity-preserving-set-operations">Convexity Preserving Set Operations</h2>
+<h3 id="convexity-preserving-set-operations">Convexity Preserving Set Operations</h3>
 <ul>
 <li>Intersection of convex sets is a convex set</li>
 <li>Intersection of non convex sets might be a convex set</li>
@@ -502,7 +508,7 @@ is convex if either $f$ is <strong>nondecreasing or if each $q_i$ is a linear</s
 <li>Sum of convex set is a convex set</li>
 <li>Product of convex set is a convex set</li>
 </ul>
-<h2 id="convex-optimization-problem">Convex Optimization Problem</h2>
+<h3 id="convex-optimization-problem">Convex Optimization Problem</h3>
 <ul>
 <li><strong>An optimization problem (in minimization) form is a convex optimization problem, if the objective function is a convex function and constraint set is a convex set.</strong></li>
 <li>The problem $min$ ${f(x) :  x \in X}$ is a convex optimization problem if $f$ is a convex function and $X$ is a convex set.</li>
@@ -526,7 +532,6 @@ $\begin{array}{cl} g_i(\mathbf{x}) \leq b_i \quad i=1, \ldots, m \ &amp; h_j(\ma
 <li><strong>The epigraph and the $\alpha$ level set, of a convex function are convex sets.</strong></li>
 </ul>
 <h2 id="outcomes-of-optimization">Outcomes of Optimization</h2>
-<h3 id="possible-outcomes-of-optimization">Possible Outcomes of Optimization</h3>
 <ul>
 <li>Any $x \in X$ is a feasible solution of the optimization problem (P)</li>
 <li>Feasible solution = A solution that satisfies all the constraints</li>
@@ -1035,6 +1040,7 @@ plt.show()
 </ul>
 <h2 id="primal-and-dual-pair">Primal and Dual Pair</h2>
 <p><img src="/img/panddpair1.png" alt=""></p>
+<p><img src="https://i.stack.imgur.com/3hQEH.png" alt=""></p>
 <h2 id="linear-programming-weak-duality">Linear Programming weak duality</h2>
 <ul>
 <li>Given a primal LP in minimization, by the construction of the dual, the objective value of any feasible solution of the dual problem provides a lower bound to the primal objective cost</li>
@@ -1086,7 +1092,7 @@ plt.show()
 </ul>
 </li>
 </ul>
-<h2 id="dantzig-wolfe">Dantzig-Wolfe</h2>
+<h3 id="dantzig-wolfe">Dantzig-Wolfe</h3>
 <ul>
 <li>The Dantzig-Wolfe decomposition (also known as the column generation method) is a technique for solving large-scale linear programming problems that have a special structure. It is named after George Dantzig and Philip Wolfe, who first proposed the method in the 1960s.</li>
 <li>The Dantzig-Wolfe decomposition method decomposes a large linear programming problem into smaller sub-problems, each of which can be solved independently. The method is particularly useful when the original problem has a large number of constraints, but only a small number of variables are involved in each constraint.</li>
@@ -1320,7 +1326,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		10505 words in this page.
+		10881 words in this page.
 	</div>
 </div>
 
@@ -1331,21 +1337,14 @@ plt.show()
 <hr class="" />
 <div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
     
-    <a class="flex-grow-0" href="/posts/redesigning_goodreads/">
+    <a class="flex-grow-0" href="/posts/human_computer_interaction/">
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        Redesigning the Goodreads bookshelf interaction
+        Human-Computer Interaction
     </a>
     
-    
-    <a class="flex-grow-0" href="/posts/human_computer_interaction/">
-        Human-Computer Interaction
-        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-            height="24">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
     
 </div>
 <div >
