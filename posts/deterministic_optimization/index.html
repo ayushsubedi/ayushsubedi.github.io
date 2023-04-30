@@ -1022,29 +1022,69 @@ plt.show()
 <li>By always selecting the variable with the smallest index or subscript, Bland&rsquo;s rule guarantees that the simplex method cycles through all basic feasible solutions before returning to a previous solution. This eliminates the possibility of the algorithm getting stuck in a cycle and ensures that it converges to an optimal solution eventually.</li>
 <li>Although Bland&rsquo;s rule can increase the number of iterations required to solve a degenerate linear programming problem, it provides a provably optimal solution and eliminates the possibility of cycling or termination before finding an optimal solution. Bland&rsquo;s rule is widely used in software implementations of the simplex method and has been shown to be effective in practice.</li>
 </ul>
+<hr/>
 <h2 id="linear-program-duality">Linear Program Duality</h2>
 <ul>
-<li>LP duality is at the core of linear programming theory</li>
-<li>Provides new perspective on understanding LP, is important for designing algorithms, and has many applications</li>
-</ul>
-<h2 id="lagrangian-relaxation">Lagrangian relaxation</h2>
-<ul>
-<li>A fundamental motivation of LP duality is to find a systematic way to construct a lower bound to the original LP</li>
-<li>Original LP (Primal LP) $Z_p$ $=$ $min{c^Tx:Ax=b,x&gt;=0}$</li>
-<li>Any feasible solution $x$ provides an upper bound on $Z_p$, ie, $Z_p &lt;= c^Tx$</li>
+<li>LP duality is at the core of linear programming theory.</li>
+<li>Provides new perspective on understanding LP, is important for designing algorithms, and has many applications (pricing, game theory, robust optimization, and many more).</li>
+<li>Linear Program (LP) duality is a powerful concept in optimization theory that establishes a relationship between the primal and dual LP problems. The duality principle provides insights into the structure of optimization problems, helps in understanding the solutions and provides a tool for solving LP problems.</li>
+<li>In LP duality, there are two LP problems, known as the primal problem and the dual problem. The primal problem is the original LP problem that seeks to minimize or maximize a linear objective function subject to a set of linear constraints. The dual problem is constructed from the primal problem, and it seeks to maximize or minimize a function subject to a set of constraints.</li>
+<li>The duality principle states that the optimal value of the primal problem is equal to the optimal value of the dual problem. Furthermore, the optimal solutions of both problems are related in a specific way. This relationship is known as the duality gap, which is the difference between the optimal values of the primal and dual problems.</li>
+<li>There are two forms of LP duality: weak duality and strong duality. Weak duality states that the optimal value of the dual problem is always greater than or equal to the optimal value of the primal problem. In contrast, strong duality states that if the primal problem has an optimal solution, then the dual problem also has an optimal solution, and the duality gap is zero.</li>
+<li>The dual LP problem provides useful information about the primal LP problem. For example, the dual problem provides a lower bound on the optimal value of the primal problem, and it can be used to derive sensitivity analysis and shadow prices. Additionally, the dual problem can be used to reformulate the primal problem and generate alternative solutions.</li>
+<li><strong>A fundamental motivation of LP duality is to find a systematic way to construct a lower bound to the original LP</strong></li>
+<li>Original LP (Primal LP) $Z_p =  min \lbrace c^Tx:Ax=b,x \ge 0 \rbrace $</li>
+<li>Any feasible solution $x$ provides an upper bound on $Z_p$, ie, $Z_p \le c^Tx$</li>
+<li>What about a lower bound, i.e $Z_D \le Z_p$?</li>
+<li>This lower bound is useful because if the lower bound is very close to an upper bound, we have a good estimate of the true optimal.</li>
+<li>However, to get a lower bound, we need to modify the original LP</li>
+<li>In particular, we need to relax the problem.</li>
 <li>Principles of relaxation works for general optimization problems, far beyond LP</li>
 </ul>
-<h3 id="separability">Separability</h3>
+<h3 id="principle-of-relaxation">Principle of Relaxation</h3>
 <ul>
-<li>Separability refers to the property that the objective function of the Lagrangian dual problem can be expressed as the sum of separate functions, each of which depends only on a subset of the variables of the primal problem.</li>
+<li>Relaxation:
+<ul>
+<li>Find a new objective function that is always smaller or equal to the original objective function at any feasible point</li>
+<li>Find a feasible region that is larger than the feasible region of the original problem</li>
+</ul>
+</li>
+<li>Minimize a function <em>lower</em> than the original objective over a region that is <em>larger</em> than the original one. The optimal objective of the new problem will be a lower bound to the original one.</li>
+<li>Among all possible relaxations and lower bounds, find the best lower bound.</li>
+</ul>
+<p><img src="/img/relaxation.png" alt=""></p>
+<h3 id="systematic-way-to-carry-out-relaxation">Systematic way to carry out relaxation</h3>
+<ul>
+<li><strong>Step 1</strong>: Relax the objective function</li>
+<li><strong>Step 2</strong>: Relax the feasible region by ignoring constraints
+<ul>
+<li><strong>Separability</strong> refers to the property that the objective function of the Lagrangian dual problem can be expressed as the sum of separate functions, each of which depends only on a subset of the variables of the primal problem.</li>
+</ul>
+</li>
+<li><strong>Step 3</strong> Find the best lower bound.</li>
 </ul>
 <h2 id="primal-and-dual-pair">Primal and Dual Pair</h2>
 <p><img src="/img/panddpair1.png" alt=""></p>
 <p><img src="https://i.stack.imgur.com/3hQEH.png" alt=""></p>
+<h2 id="is-lagrangian-relaxation-a-dual-problem-to-the-primal">Is Lagrangian relaxation a dual problem to the primal?</h2>
+<ul>
+<li>Yes, Lagrangian relaxation is a way of obtaining a lower bound on the optimal value of the primal problem by constructing a dual problem.</li>
+<li>In Lagrangian relaxation, the primal problem is first converted into its Lagrangian dual problem by introducing Lagrange multipliers, which are used to form a penalty term that is added to the original objective function. The resulting Lagrangian function is then minimized subject to the constraints, resulting in a lower bound on the optimal value of the primal problem.</li>
+<li>The Lagrangian dual problem is formulated by taking the infimum (minimum) of the Lagrangian over all possible values of the Lagrange multipliers. The dual problem is a maximization problem that seeks to find the maximum value of the infimum, subject to certain constraints that are derived from the original primal problem.</li>
+<li>The duality theorem states that the optimal value of the primal problem is equal to the optimal value of the dual problem, and that any feasible solution to one problem gives a lower bound or upper bound for the other problem. Therefore, Lagrangian relaxation can be seen as a way of constructing the dual problem to the primal problem, and finding a lower bound on the optimal value of the primal problem.</li>
+</ul>
+<h2 id="important">Important</h2>
+<ul>
+<li>If a linear program has an unbounded feasible region, then it can either be unbounded or have a finite optimal solution.</li>
+<li>If it has finite optimal solution than its dual must also have finite optimal solution.</li>
+<li>If it is unbounded, then its dual must be infeasible.</li>
+<li>If a linear program has an unbounded feasible region, then its dual problem cannot have an unbounded optimal solution.</li>
+<li>If a linear program has an unbounded feasible region, then its dual may be infeasible or have a finite optimal solution.</li>
+</ul>
 <h2 id="linear-programming-weak-duality">Linear Programming weak duality</h2>
 <ul>
 <li>Given a primal LP in minimization, by the construction of the dual, the objective value of any feasible solution of the dual problem provides a lower bound to the primal objective cost</li>
-<li>Theorem 1 (Linear programming weak duality): If $x$ is any feasible solution to the primal minimization LP, and y is any feasible solution to the dual maximization LP, then $c^Tx &gt;= b^Ty$</li>
+<li><strong>Theorem 1 (Linear programming weak duality)</strong>: If $x$ is any feasible solution to the primal minimization LP, and y is any feasible solution to the dual maximization LP, then $c^Tx \ge b^Ty$</li>
 <li>This implies:
 <ul>
 <li>If the optimal cost of the primal minimization problem is $-\inf$ then the dual maximization problem must be infeasible.</li>
@@ -1052,13 +1092,32 @@ plt.show()
 <li>Let $x^*$ be feasible to the primal problem and $y*$ be feasible to the dual problem, and suppose $c^Tx^*=b^Ty^*$, then $x^*$ and $y^*$ are optimal solutions to the primal and dual problems, respectively.</li>
 </ul>
 </li>
+<li>Weak duality does not hold if problem is infeasible.</li>
 </ul>
 <h2 id="strong-duality">Strong Duality</h2>
 <ul>
-<li>If a primal linear program has a finite optimal solution $x^*$, then its dual linear program must also have a finite optimal solution $y^*$, and the respective optimal objective values are equal, ie, $c^Tx = b^Ty$</li>
+<li><strong>Theorem 1 (Linear programming strong duality)</strong>: If a primal linear program has a finite optimal solution $x^*$, then its dual linear program must also have a finite optimal solution $y^*$, and the respective optimal objective values are equal, ie, $c^Tx = b^Ty$</li>
+<li>Strong duality is the single most important theorem in LP. Its proof is very illuminating.</li>
 </ul>
+<h3 id="tables-of-possibilities">Tables of possibilities</h3>
+<p><img src="/img/duality.png" alt=""></p>
+<p><img src="/img/primal_dual_combinations.png" alt=""></p>
 <h2 id="sob-method-for-creating-dual-of-a-lp">SOB method for creating dual of a LP</h2>
 <iframe width="100%" height ="1024" src="/pdfs/tut6.pdf#toolbar=0"></iframe>
+<h2 id="complementarity-slackness">Complementarity Slackness</h2>
+<ul>
+<li>Complementarity slackness is a fundamental concept in optimization theory that arises in the context of solving optimization problems with inequality constraints. It provides insights into the structure of the solutions and helps in understanding the behavior of the constraints in the optimization process.</li>
+<li>In an optimization problem with inequality constraints, the optimal solution typically satisfies the constraints with equality or with some slackness. Complementarity slackness is the condition that ensures that a constraint is either binding (i.e., satisfied with equality) or non-binding (i.e., satisfied with strict inequality) in the optimal solution.</li>
+<li>More formally, let x be a feasible solution to an optimization problem with inequality constraints, and let s be the slack variables associated with the constraints. The complementarity slackness condition requires that the product of the slack variables and the dual variables associated with the constraints is equal to zero.</li>
+</ul>
+<h2 id="robust-optimization">Robust Optimization</h2>
+<ul>
+<li><strong>Making decision during uncertainty</strong></li>
+<li>Robust optimization is a mathematical optimization technique that seeks to find a solution that is optimal under a set of possible scenarios, often in the presence of uncertain or varying parameters. It is particularly useful when dealing with systems that are subject to variability, such as financial or transportation systems, where decisions need to be made under uncertain conditions.</li>
+<li>In robust optimization, instead of trying to find a single optimal solution, a set of feasible solutions is identified that can perform well across a range of possible scenarios. The objective function is typically defined as a worst-case scenario, which ensures that the selected solution is optimal under all possible scenarios.</li>
+<li>Robust optimization can be used in a variety of applications, including portfolio optimization, supply chain management, and resource allocation. It has become increasingly popular in recent years due to its ability to provide robust solutions that can withstand unpredictable changes in the environment.</li>
+<li>We need to formulate constraint in such a way that solution we obtain will allow production to survive all possible realizations of the coefficients.</li>
+</ul>
 <h2 id="large-scale-optimization">Large Scale Optimization</h2>
 <h3 id="cutting-stock-problem">Cutting Stock Problem</h3>
 <ul>
@@ -1073,11 +1132,12 @@ plt.show()
 <li>The number of ways to cut a large roll into smaller ones is usually astronomical</li>
 </ul>
 <h3 id="column-generation">Column Generation</h3>
+<p><img src="/img/column_generation.png" alt=""></p>
 <ul>
 <li>Pick a subset</li>
 <li>Solve the restricted master problem (RMP)</li>
 <li>A feasible solution of RMP can be made into a feasible solution of MP. This is because RMP has all the constraints in MP.</li>
-<li>A basic feasible solution of RMP can made into a basic feasible solution of MP</li>
+<li>A <em>basic</em> feasible solution of RMP can made into a <em>basic</em> feasible solution of MP</li>
 <li>For an optimal BFS of RMP we can compute reduced cost of all nonbasis variables, if any reduced cost is negative, then we know the optimal solution of RMP if not optimal for MP</li>
 <li>We can add the new variable with negative reduced cost to RMP solve the new RMP and repeat the process.</li>
 <li>The procedure of finding a variable with negative reduced cost is called the Pricing Problem. Pricing Problem: Compute all the reduced costs of $x$. If all reduced costs are nonnegative, then $x$ is optimal for MP. Otherwise, we find a new column to add to RMP.</li>
@@ -1326,7 +1386,7 @@ plt.show()
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		10881 words in this page.
+		12013 words in this page.
 	</div>
 </div>
 
