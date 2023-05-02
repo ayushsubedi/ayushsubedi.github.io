@@ -6,7 +6,7 @@
     <description>Recent content in integral on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/integral/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,11 @@
     <item>
       <title>Deterministic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/deterministic_optimization/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/deterministic_optimization/</guid>
       <description>&lt;h1 id=&#34;general-overview-and-key-concepts&#34;&gt;General overview and key concepts&lt;/h1&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;480&#34; src=&#34;https://www.youtube.com/embed/ijD2KSXWDyo&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;In plain English, &lt;strong&gt;optimization&lt;/strong&gt; is the action of making the best or most effective use of a situation or resource. Optimization problems are of great practical interest. For example, in manufacturing, how should one cut plates of a material so that the waste is minimized? In business, how should a company allocate the available resources that its profit is maximized? Some of the first optimization problems have been solved in ancient Greece and are regarded among the most significant discoveries of that time. In the first century A.D., the Alexandrian mathematician Heron solved the problem of finding the shortest path between two points by way of the mirror.&lt;/p&gt;
 &lt;p&gt;This result, also known as Heron’s theorem of the light ray, can be viewed as the origin of the theory of geometrical optics. The problem of finding extreme values gained special importance in the seventeenth century, when it served as one of the motivations in the invention of differential calculus, which is the foundation of the modern theory of mathematical optimization.&lt;/p&gt;
 &lt;h2 id=&#34;generic-form-of-optimization-problem&#34;&gt;Generic form of optimization problem:&lt;/h2&gt;
@@ -982,16 +983,19 @@ plt.show()
 &lt;/ul&gt;
 &lt;h2 id=&#34;large-scale-optimization&#34;&gt;Large Scale Optimization&lt;/h2&gt;
 &lt;h3 id=&#34;cutting-stock-problem&#34;&gt;Cutting Stock Problem&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.researchgate.net/publication/228428085/figure/fig1/AS:301993223573505@1449012203611/One-dimensional-cutting-stock-problem-with-one-stock-type.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The cutting stock problem is a combinatorial optimization problem that involves cutting large sheets of material, such as paper or metal, into smaller pieces of specific sizes in order to minimize waste. The objective is to determine the most efficient cutting pattern that can be used to produce a given number of smaller pieces of the desired sizes, while minimizing the amount of leftover material.&lt;/li&gt;
 &lt;li&gt;The cutting stock problem is a common problem in the manufacturing industry, where it is used to optimize the use of raw materials and minimize production costs. It can be formulated as a linear programming problem, where the decision variables are the number of cuts made in each direction, and the objective function is to minimize the amount of leftover material.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;gilmore-formulation&#34;&gt;Gilmore Formulation&lt;/h3&gt;
+&lt;h3 id=&#34;gilmore-gomory-formulation&#34;&gt;Gilmore-Gomory Formulation&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;$min \sum_{i=1}^N x_i$, s.t $Ax=b, x \gt 0$&lt;/li&gt;
+&lt;li&gt;the coefficients are 1&lt;/li&gt;
 &lt;li&gt;where the columns of A are the patterns to cut one large roll&lt;/li&gt;
 &lt;li&gt;$b$ is the amount of demand of each size of smaller rolls&lt;/li&gt;
 &lt;li&gt;The number of ways to cut a large roll into smaller ones is usually astronomical&lt;/li&gt;
+&lt;li&gt;very large number of variables&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;column-generation&#34;&gt;Column Generation&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/column_generation.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -1003,6 +1007,19 @@ plt.show()
 &lt;li&gt;For an optimal BFS of RMP we can compute reduced cost of all nonbasis variables, if any reduced cost is negative, then we know the optimal solution of RMP if not optimal for MP&lt;/li&gt;
 &lt;li&gt;We can add the new variable with negative reduced cost to RMP solve the new RMP and repeat the process.&lt;/li&gt;
 &lt;li&gt;The procedure of finding a variable with negative reduced cost is called the Pricing Problem. Pricing Problem: Compute all the reduced costs of $x$. If all reduced costs are nonnegative, then $x$ is optimal for MP. Otherwise, we find a new column to add to RMP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;important-1&#34;&gt;Important&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The features of the cutting stock problem that make column generation a feasible approach to solve:
+&lt;ul&gt;
+&lt;li&gt;The cutting stock problem formulation has objective coefficients all equal to 1.&lt;/li&gt;
+&lt;li&gt;The cutting stock problem has columns with special structures which can be generated by another optimization problem that is easy to solve.&lt;/li&gt;
+&lt;li&gt;The cutting stock problem has a small number of rows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The column generation algorithm will terminate if all columns have been added or if no column can further reduce the number of big rolls used to satisfy demand.&lt;/li&gt;
+&lt;li&gt;Constraint generation can be used when problems have too many constraints, but not many variables, &lt;strong&gt;or&lt;/strong&gt; with too many rows and not many columns.&lt;/li&gt;
+&lt;li&gt;The constraint generation algorithm will terminate if all the constraints are satisfied by the current solution, &lt;strong&gt;or&lt;/strong&gt; if all the contraints are added.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;correctness-and-convergence&#34;&gt;Correctness and Convergence&lt;/h3&gt;
 &lt;ul&gt;
@@ -1021,8 +1038,44 @@ plt.show()
 &lt;li&gt;The basic idea of the method is to introduce new variables (known as columns) into the problem gradually, one at a time, and to solve the resulting sub-problem using standard linear programming techniques. The optimal solution to the sub-problem is then used to generate a new column, which is added to the problem and the process is repeated until the optimal solution to the original problem is found.&lt;/li&gt;
 &lt;li&gt;The Dantzig-Wolfe decomposition method can be used to solve a wide range of linear programming problems, including those with integer variables and those with non-linear objective functions. It is particularly useful for problems that involve complex constraints or require the solution of large-scale optimization problems.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-&lt;h1 id=&#34;nonlinear-optimization-and-convex-conic-optimization&#34;&gt;Nonlinear optimization and Convex Conic Optimization&lt;/h1&gt;
+&lt;h3 id=&#34;important-2&#34;&gt;Important&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To use Dantzig-Wolfe decomposition algorithm, the problem must have a special structure where:
+&lt;ul&gt;
+&lt;li&gt;all constraints are linear and have a block angular structure&lt;/li&gt;
+&lt;li&gt;the objective funciton is a linear function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;We solve Dantzig-Wolfe decomposition by using column generation because:
+&lt;ul&gt;
+&lt;li&gt;the number of extreme points can be huge&lt;/li&gt;
+&lt;li&gt;there are not many constraints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The pricing problem is relatively easy to solve because:
+&lt;ul&gt;
+&lt;li&gt;We can use simplex method instead of enumeration over all the extreme points&lt;/li&gt;
+&lt;li&gt;There are no complicating constraint so that we can solve those pricing problems with angular structures in a distributed manner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;moore-penrose-pseudoinverse&#34;&gt;Moore Penrose Pseudoinverse&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.researchgate.net/publication/278627426/figure/fig1/AS:360884149997586@1463052894718/Geometrical-interpretation-of-the-Moore-Penrose-pseudoinverse-In-the-leftmost-picture.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Moore-Penrose pseudoinverse, also known as the Moore-Penrose inverse or simply the pseudoinverse, is a generalization of the matrix inverse for non-square matrices. It is named after Elisha L. Moore and Roger Penrose, who independently introduced the concept in the mid-20th century.&lt;/li&gt;
+&lt;li&gt;The pseudoinverse is defined for any m-by-n matrix A, where m and n need not be equal, and it is denoted by A+. The pseudoinverse has several important properties, including:
+&lt;ul&gt;
+&lt;li&gt;A+AA+A=A+&lt;/li&gt;
+&lt;li&gt;AA+A=AA+&lt;/li&gt;
+&lt;li&gt;(AA+)&amp;rsquo;=AA+&lt;/li&gt;
+&lt;li&gt;(A+A)A=A&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;where A&amp;rsquo; denotes the transpose of A.&lt;/li&gt;
+&lt;li&gt;The pseudoinverse is useful in a variety of applications, including linear regression, least-squares approximation, and control theory. In particular, if A has linearly independent columns, then A+A is the unique solution to the linear system Ax=b that minimizes the Euclidean norm of the error vector Ax-b.&lt;/li&gt;
+&lt;li&gt;The pseudoinverse can be computed using singular value decomposition (SVD) or the QR decomposition. In particular, if A has full column rank, then its pseudoinverse can be computed as A+(A&amp;rsquo;A)^(-1) where A&amp;rsquo; denotes the transpose of A.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;convex-conic-optimization&#34;&gt;Convex Conic Optimization&lt;/h1&gt;
 &lt;h3 id=&#34;nonnegative-orthant-cone&#34;&gt;Nonnegative Orthant cone&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The nonnegative orthant cone is a special type of cone in linear algebra and convex analysis. It is defined as the set of all nonnegative vectors in n-dimensional Euclidean space, denoted as R^n_+, where R^+ denotes the set of nonnegative real numbers.&lt;/li&gt;
@@ -1054,8 +1107,27 @@ plt.show()
 &lt;li&gt;$L^3 = \lbrace (x,y,z) : \sqrt{x^2-y^2} \le z \rbrace$ = $\lbrace(x,y,z):||[x;y]||_2 \le z \rbrace$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;integer-optimization&#34;&gt;Integer optimization&lt;/h1&gt;
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Integer optimization is a type of optimization problem where the decision variables are required to take integer values. This is in contrast to continuous optimization, where the decision variables can take any real value.&lt;/li&gt;
+&lt;li&gt;Integer optimization problems arise in a variety of fields, including operations research, computer science, engineering, and economics. Examples of integer optimization problems include finding the optimal assignment of workers to shifts, determining the best routes for vehicles to travel, and selecting the optimal set of investments to make.&lt;/li&gt;
+&lt;li&gt;Integer optimization is often more difficult than continuous optimization, because the feasible set of integer solutions is typically discrete and non-convex. This means that traditional optimization techniques, such as gradient descent, cannot be used. Instead, specialized algorithms, such as branch and bound or cutting plane methods, are used to find optimal or near-optimal solutions.&lt;/li&gt;
+&lt;li&gt;Integer optimization is also sometimes referred to as mixed-integer optimization, when the problem includes both integer and continuous decision variables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;binary-optimization-models&#34;&gt;Binary Optimization Models&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A special and important class of discrete optimization models are those where the discrete variables and required to be binary, that is, they are required to take values of 0 and 1.&lt;/li&gt;
+&lt;li&gt;$min$ $f(x)$ $s.t.$ $g_i(x) \le b_i, x \in R^{n-p} \times \lbrace 0,1 \rbrace^p$&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;set-packing-covering-and-partitioning&#34;&gt;Set Packing, Covering and Partitioning&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.researchgate.net/publication/354791763/figure/fig1/AS:1071429466456066@1632460099978/Set-covering-set-partitioning-and-set-packing-problems.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Set Packing&lt;/strong&gt;: A set packing is a collection of sets in which no two sets share a common element. In other words, a set packing is a collection of non-overlapping sets. The objective in set packing is to find the largest possible subset of the sets that do not overlap.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Set Covering&lt;/strong&gt;: A set covering is a collection of sets that together contain every element in a given universe. In other words, a set covering is a collection of sets that covers all the elements of a universe. The objective in set covering is to find the smallest possible subset of the sets that covers all the elements.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Set Partitioning&lt;/strong&gt;: Set partitioning is a way to divide a set into non-empty subsets such that each element belongs to exactly one subset. In other words, set partitioning is a way to divide a set into mutually exclusive and exhaustive subsets. The objective in set partitioning is to find a partition that satisfies some given criteria.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The set packing problem arises when each set element must appear in at most one subset. In this case, the constraints are of the less-than-or-equal form. The set partitioning problem arises when each set element must appear in exactly one subset, and the constraints in this problem are equality constraints.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;store-location-example&#34;&gt;Store Location Example&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Where should store be located so that it can maximize the number of customers?&lt;/li&gt;
@@ -1063,8 +1135,7 @@ plt.show()
 &lt;li&gt;&lt;code&gt;pupl&lt;/code&gt; is the python package that can be used to model this&lt;/li&gt;
 &lt;li&gt;Set Packing: Given $m$ elements and a collection of subsets $S_1, &amp;hellip;. , S_n \belongs {1,..,m} with associated nonnegative weights $w_1, &amp;hellip;, w_n$ pick sets from this collection such that they are disjoint and the sum of the weights is maximized.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf&#34;&gt;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://www.dam.brown.edu/people/huiwang/classes/am121/Archive/ip_121.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;linear-programming-relaxation&#34;&gt;Linear Programming Relaxation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Decision variable is only taking continuous value to generate the relaxation (drop the integer constraints).&lt;/li&gt;

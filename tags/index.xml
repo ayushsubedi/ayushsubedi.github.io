@@ -6,15 +6,42 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>calculus</title>
+      <link>https://ayushsubedi.github.io/tags/calculus/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>column-generation</title>
+      <link>https://ayushsubedi.github.io/tags/column-generation/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/column-generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>convex</title>
+      <link>https://ayushsubedi.github.io/tags/convex/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/convex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>cost-function</title>
       <link>https://ayushsubedi.github.io/tags/cost-function/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/cost-function/</guid>
       <description></description>
@@ -23,7 +50,7 @@
     <item>
       <title>integral</title>
       <link>https://ayushsubedi.github.io/tags/integral/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/integral/</guid>
       <description></description>
@@ -32,7 +59,7 @@
     <item>
       <title>linear-algebra</title>
       <link>https://ayushsubedi.github.io/tags/linear-algebra/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/linear-algebra/</guid>
       <description></description>
@@ -41,7 +68,7 @@
     <item>
       <title>objective-function</title>
       <link>https://ayushsubedi.github.io/tags/objective-function/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/objective-function/</guid>
       <description></description>
@@ -50,9 +77,18 @@
     <item>
       <title>optimization</title>
       <link>https://ayushsubedi.github.io/tags/optimization/</link>
-      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>simplex</title>
+      <link>https://ayushsubedi.github.io/tags/simplex/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/simplex/</guid>
       <description></description>
     </item>
     
