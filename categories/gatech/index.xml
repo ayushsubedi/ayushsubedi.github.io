@@ -6,10 +6,19 @@
     <description>Recent content in gatech on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/gatech/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Machine Learning For Trading (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/machine_learning_for_trading/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/machine_learning_for_trading/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Deterministic Optimization</title>
