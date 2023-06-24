@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | Machine Learning For Trading (WIP)</title>
+	<title>Ayush Subedi  | Machine Learning for Trading</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.102.3" />
 	
@@ -102,9 +102,9 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">Machine Learning For Trading (WIP)</h1>
+<h1 class="pt-2">Machine Learning for Trading</h1>
 
-<h3 class="text-java-700 font-normal leading-relaxed pt-2">In this course, students will learn about the practical difficulties of implementing trading strategies based on machine learning, covering the entire algorithmic process from data collection to market orders. The main emphasis is on utilizing probabilistic machine learning techniques for making informed trading decisions. The course covers statistical methods such as linear regression, Q-Learning, KNN, and regression trees, and their application to real-world stock trading scenarios.</h3>
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Machine learning plays a vital role in trading by enabling the analysis of vast amounts of financial data and the development of predictive models. It leverages algorithms and statistical techniques to identify patterns, make predictions, and generate insights for informed trading decisions. Machine learning algorithms can be applied to various aspects of trading, including price prediction, risk management, portfolio optimization, market analysis, and automated trading. By leveraging machine learning, traders can uncover hidden patterns in data, adapt to changing market conditions, and improve decision-making processes, ultimately aiming to achieve better trading performance and profitability.</h3>
 
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
@@ -137,7 +137,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2023-05-04">2023-05-04</time>
+		datetime="2023-06-04">2023-06-04</time>
 </div>
 
 <hr />
@@ -149,7 +149,503 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"></div>
+		<div class="c-rich-text"><h1 id="machine-learning-for-trading">Machine Learning for Trading</h1>
+<p>Machine learning plays a vital role in trading by enabling the analysis of vast amounts of financial data and the development of predictive models. It leverages algorithms and statistical techniques to identify patterns, make predictions, and generate insights for informed trading decisions. Machine learning algorithms can be applied to various aspects of trading, including price prediction, risk management, portfolio optimization, market analysis, and automated trading. By leveraging machine learning, traders can uncover hidden patterns in data, adapt to changing market conditions, and improve decision-making processes, ultimately aiming to achieve better trading performance and profitability.</p>
+<h1 id="sections">Sections</h1>
+<ol>
+<li><a href="#manipulating-financial-data">Manipulating Financial Data</a></li>
+<li><a href="#computational-investing">Computational Investing</a></li>
+<li><a href="#learning-algorithms-for-trading">Learning algorithms for Trading</a></li>
+</ol>
+<h1 id="manipulating-financial-data">Manipulating Financial Data</h1>
+<p><img src="https://i.ytimg.com/vi/_z6I9K6Sy6A/maxresdefault.jpg" alt=""></p>
+<h2 id="pandas">Pandas</h2>
+<p>Pandas is a popular Python library that provides powerful data manipulation and analysis tools. It&rsquo;s widely used for working with various types of data, including stock data analysis.</p>
+<p><strong>Importing Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span></code></pre></div><p><strong>Loading Data:</strong> Load the stock data into a Pandas DataFrame. There are various ways to load data, such as reading from a CSV file or querying an API. Here&rsquo;s an example of loading data from a CSV file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;stock_data.csv&#39;</span>)
+</span></span></code></pre></div><p><strong>Exploring Data:</strong> Use various Pandas functions to explore and understand the data. Some commonly used functions include <code>head()</code>, <code>tail()</code>, <code>info()</code>, <code>describe()</code>, and <code>shape</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head()  <span style="color:#75715e"># Display the first few rows of the DataFrame</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>info()  <span style="color:#75715e"># Get information about the DataFrame</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>describe()  <span style="color:#75715e"># Statistical summary of the data</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>shape  <span style="color:#75715e"># Get the number of rows and columns in the DataFrame</span>
+</span></span></code></pre></div><p><strong>Data Cleaning:</strong> Perform any necessary data cleaning steps, such as handling missing values, removing duplicates, and converting data types.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>dropna()  <span style="color:#75715e"># Drop rows with missing values</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>drop_duplicates()  <span style="color:#75715e"># Remove duplicate rows</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(df[<span style="color:#e6db74">&#39;date&#39;</span>])  <span style="color:#75715e"># Convert the &#39;date&#39; column to datetime</span>
+</span></span></code></pre></div><p><strong>Data Manipulation:</strong> Pandas functions can be used to manipulate the data according to any analysis requirements. It can be used to filter rows, select specific columns, create new columns, apply mathematical operations, and more.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Selecting specific columns</span>
+</span></span><span style="display:flex;"><span>df[[<span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;close_price&#39;</span>]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Filtering rows</span>
+</span></span><span style="display:flex;"><span>df[df[<span style="color:#e6db74">&#39;volume&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1000000</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Creating new columns</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;returns&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;close_price&#39;</span>]<span style="color:#f92672">.</span>pct_change()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Applying mathematical operations</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;moving_average&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;close_price&#39;</span>]<span style="color:#f92672">.</span>rolling(window<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)<span style="color:#f92672">.</span>mean()
+</span></span></code></pre></div><p><strong>Data Visualization:</strong> Pandas can work well with other libraries like Matplotlib or Seaborn to create visualizations of the stock data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>plot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;date&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;close_price&#39;</span>, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Stock Price&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>These are just a few examples of how Pandas can be used for stock data analysis. Pandas provides a wide range of functions and methods that can be used to manipulate, analyze, and visualize stock data effectively.</p>
+<h3 id="slicing-and-indexing">Slicing and indexing</h3>
+<p>Pandas provides several methods for slicing and indexing data in a DataFrame. Here are some commonly used techniques for slicing data with Pandas:</p>
+<ul>
+<li><strong>Column Selection:</strong></li>
+<li>To select a single column, the square bracket notation with the column name as a string can be used:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;column_name&#39;</span>]
+</span></span></code></pre></div><ul>
+<li>To select multiple columns, provide a list of column names within the square brackets:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[[<span style="color:#e6db74">&#39;column_name1&#39;</span>, <span style="color:#e6db74">&#39;column_name2&#39;</span>, <span style="color:#f92672">...</span>]]
+</span></span></code></pre></div><ul>
+<li><strong>Row Selection:</strong>
+<ul>
+<li>To select rows based on a specific condition, use boolean indexing:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[condition]
+</span></span></code></pre></div><ul>
+<li>For example, to select rows where the &lsquo;price&rsquo; column is greater than 100:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[df[<span style="color:#e6db74">&#39;price&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span>]
+</span></span></code></pre></div><ul>
+<li><strong>Slicing Rows:</strong>
+<ul>
+<li>To slice rows based on their position, use the <code>loc</code> or <code>iloc</code> accessor:</li>
+<li><code>loc</code> is label-based and inclusive of the endpoints.</li>
+<li><code>iloc</code> is index-based and exclusive of the endpoints.</li>
+<li>For example, to slice the first five rows:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>]  <span style="color:#75715e"># Exclusive of the endpoint</span>
+</span></span></code></pre></div><ul>
+<li>To slice rows by labels, use:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[start_label:end_label]  <span style="color:#75715e"># Inclusive of the endpoints</span>
+</span></span></code></pre></div><ul>
+<li><strong>Slicing Rows and Columns:</strong>
+<ul>
+<li>To slice both rows and columns simultaneously, use the <code>loc</code> or <code>iloc</code> accessor with row and column selections separated by a comma:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>loc[start_label:end_label, [<span style="color:#e6db74">&#39;column_name1&#39;</span>, <span style="color:#e6db74">&#39;column_name2&#39;</span>, <span style="color:#f92672">...</span>]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>iloc[start_index:end_index, [column_index1, column_index2, <span style="color:#f92672">...</span>]]
+</span></span></code></pre></div><p>For example, to slice the first five rows and select columns &lsquo;price&rsquo; and &lsquo;volume&rsquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>, [<span style="color:#e6db74">&#39;price&#39;</span>, <span style="color:#e6db74">&#39;volume&#39;</span>]]
+</span></span></code></pre></div><h2 id="numpy">Numpy</h2>
+<p>Numpy is a fundamental Python library that provides efficient numerical computing capabilities. It offers a powerful array data structure and a wide range of mathematical functions, making it useful for financial research and analysis. Here are some key points about Numpy focused on its application in financial research:</p>
+<ul>
+<li><strong>Numerical Data Handling:</strong> Numpy provides the <code>ndarray</code> (N-dimensional array) data structure, which is highly efficient for handling large volumes of numerical data. It allows for fast element-wise operations and supports various numerical data types, including integers, floating-point numbers, and complex numbers.</li>
+<li><strong>Array Creation and Manipulation:</strong> Numpy offers functions to create and manipulate arrays, such as <code>np.array()</code>, <code>np.zeros()</code>, <code>np.ones()</code>, <code>np.arange()</code>, and <code>np.linspace()</code>. These functions are beneficial for creating arrays representing financial data, such as price series, returns, or volume data.</li>
+<li><strong>Mathematical Operations:</strong> Numpy provides a comprehensive set of mathematical functions and operators that can be applied to arrays. These include basic arithmetic operations, statistical functions (<code>mean()</code>, <code>std()</code>, <code>min()</code>, <code>max()</code>, etc.), linear algebra functions (<code>dot()</code>, <code>inv()</code>, <code>eig()</code>, etc.), and more advanced functions for trigonometry, exponentials, logarithms, and random number generation. These operations can be leveraged to perform calculations on financial data efficiently.</li>
+<li><strong>Data Aggregation and Summary Statistics:</strong> Numpy functions are helpful for calculating summary statistics on financial data. Functions like <code>np.sum()</code>, <code>np.mean()</code>, <code>np.std()</code>, <code>np.median()</code>, and <code>np.percentile()</code> allow you to calculate aggregate measures, central tendency, dispersion, and percentiles on arrays or subsets of data.</li>
+<li><strong>Time Series Analysis:</strong> Numpy provides tools for working with time series data, including date and time handling. The <code>np.datetime64</code> data type enables storing and manipulating date and time values, allowing for easy handling of temporal aspects in financial research.</li>
+<li><strong>Broadcasting and Vectorization:</strong> Numpy&rsquo;s broadcasting feature allows for performing element-wise operations between arrays of different shapes and sizes, making it efficient for vectorized calculations. This feature is particularly useful when working with arrays representing financial data, as it enables applying operations across entire arrays without explicit looping.</li>
+<li><strong>Integration with Other Libraries:</strong> Numpy plays a vital role in the scientific Python ecosystem and integrates well with other libraries commonly used in financial research. For example, Numpy arrays can be seamlessly used with Pandas DataFrames, providing efficient data processing and analysis capabilities.</li>
+</ul>
+<p>By leveraging Numpy&rsquo;s capabilities, financial researchers can efficiently handle and analyze large datasets, perform mathematical computations, calculate summary statistics, and conduct time series analysis. Its fast execution and integration with other libraries make it a valuable tool for financial research and analysis.</p>
+<h2 id="global-statistics">Global Statistics</h2>
+<ul>
+<li>To calculate global statistics of stock prices in Python, you can use the Pandas library to load and manipulate stock price data. Here&rsquo;s an example of how you can calculate common statistics such as mean, standard deviation, minimum, maximum, and percentiles for stock prices:
+-Import the necessary libraries:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span></code></pre></div><ul>
+<li>Load the stock price data into a Pandas DataFrame. Assuming you have a CSV file named &lsquo;stock_prices.csv&rsquo; with a &lsquo;price&rsquo; column containing the stock prices, you can use the following code:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;stock_prices.csv&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>Calculate the desired statistics using Numpy functions on the &lsquo;price&rsquo; column:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mean_price <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(df[<span style="color:#e6db74">&#39;price&#39;</span>])
+</span></span><span style="display:flex;"><span>std_price <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>std(df[<span style="color:#e6db74">&#39;price&#39;</span>])
+</span></span><span style="display:flex;"><span>min_price <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>min(df[<span style="color:#e6db74">&#39;price&#39;</span>])
+</span></span><span style="display:flex;"><span>max_price <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>max(df[<span style="color:#e6db74">&#39;price&#39;</span>])
+</span></span><span style="display:flex;"><span>percentiles <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>percentile(df[<span style="color:#e6db74">&#39;price&#39;</span>], [<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">75</span>])
+</span></span></code></pre></div><ul>
+<li>Print or use the calculated statistics as needed:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Mean price:&#34;</span>, mean_price)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Standard deviation:&#34;</span>, std_price)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Minimum price:&#34;</span>, min_price)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Maximum price:&#34;</span>, max_price)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;25th, 50th, and 75th percentiles:&#34;</span>, percentiles)
+</span></span></code></pre></div><h2 id="rolling-statistics">Rolling Statistics</h2>
+<p>To calculate rolling statistics for stock prices in Python, you can use the rolling window functionality provided by Pandas. Here&rsquo;s an example of how you can calculate rolling mean and standard deviation for stock prices:</p>
+<ul>
+<li>Import the necessary libraries:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span></code></pre></div><ul>
+<li>Load the stock price data into a Pandas DataFrame. Assuming you have a CSV file named &lsquo;stock_prices.csv&rsquo; with a &lsquo;price&rsquo; column containing the stock prices, you can use the following code:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;stock_prices.csv&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>Convert the date column to a datetime type if it is not already in that format:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(df[<span style="color:#e6db74">&#39;date&#39;</span>])
+</span></span></code></pre></div><ul>
+<li>Sort the DataFrame by the date column in ascending order:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;date&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>Calculate the rolling mean and standard deviation using the <code>rolling()</code> function on the &lsquo;price&rsquo; column:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>window_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>  <span style="color:#75715e"># Define the rolling window size</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;rolling_mean&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;price&#39;</span>]<span style="color:#f92672">.</span>rolling(window<span style="color:#f92672">=</span>window_size)<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;rolling_std&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;price&#39;</span>]<span style="color:#f92672">.</span>rolling(window<span style="color:#f92672">=</span>window_size)<span style="color:#f92672">.</span>std()
+</span></span></code></pre></div><p>In the code above, <code>window_size</code> represents the number of observations to include in each rolling window. You can adjust it based on your specific requirements.</p>
+<ul>
+<li>Print or use the rolling statistics as needed:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(df[[<span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;price&#39;</span>, <span style="color:#e6db74">&#39;rolling_mean&#39;</span>, <span style="color:#e6db74">&#39;rolling_std&#39;</span>]])
+</span></span></code></pre></div><p>This code will display the &lsquo;date&rsquo;, &lsquo;price&rsquo;, &lsquo;rolling_mean&rsquo;, and &lsquo;rolling_std&rsquo; columns of the DataFrame, showing the calculated rolling statistics.</p>
+<p>By applying these steps, you can calculate rolling statistics, such as the rolling mean and standard deviation, for stock prices using Python and Pandas. Feel free to modify the code to incorporate additional rolling statistics or customize the output to suit your needs.</p>
+<h2 id="bollinger-bands">Bollinger bands</h2>
+<p><img src="https://www.investopedia.com/thmb/XOTAkeqxe65MifNefOz1vGXiQq0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/dotdash_Final_Using_Bollinger_Bands_to_Gauge_Trends_Oct_2020-01-73f4b5749a6e445585bc2751d6e39d34.jpg" alt=""></p>
+<p>Bollinger Bands is a popular technical analysis tool used to identify potential price trends and volatility in financial markets. It consists of three lines plotted on a price chart: the middle band (usually a simple moving average), an upper band (typically two standard deviations above the middle band), and a lower band (usually two standard deviations below the middle band). Here&rsquo;s an example of how you can calculate and plot Bollinger Bands using Python and Pandas:</p>
+<ul>
+<li>Import the necessary libraries:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><ul>
+<li>Load the stock price data into a Pandas DataFrame. Assuming you have a CSV file named &lsquo;stock_prices.csv&rsquo; with a &lsquo;price&rsquo; column containing the stock prices, you can use the following code:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;stock_prices.csv&#39;</span>)
+</span></span></code></pre></div><ul>
+<li>Calculate the middle band, upper band, and lower band using rolling mean and standard deviation:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>window_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>  <span style="color:#75715e"># Define the rolling window size</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;middle_band&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;price&#39;</span>]<span style="color:#f92672">.</span>rolling(window<span style="color:#f92672">=</span>window_size)<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;std&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;price&#39;</span>]<span style="color:#f92672">.</span>rolling(window<span style="color:#f92672">=</span>window_size)<span style="color:#f92672">.</span>std()
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;upper_band&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;middle_band&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> df[<span style="color:#e6db74">&#39;std&#39;</span>]
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;lower_band&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;middle_band&#39;</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> df[<span style="color:#e6db74">&#39;std&#39;</span>]
+</span></span></code></pre></div><p>In the code above, the &lsquo;middle_band&rsquo; is calculated as the rolling mean of the &lsquo;price&rsquo; column, while the &lsquo;std&rsquo; represents the rolling standard deviation.</p>
+<ul>
+<li>Plot the Bollinger Bands:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(df[<span style="color:#e6db74">&#39;price&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Price&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(df[<span style="color:#e6db74">&#39;middle_band&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Middle Band&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(df[<span style="color:#e6db74">&#39;upper_band&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Upper Band&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(df[<span style="color:#e6db74">&#39;lower_band&#39;</span>], label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Lower Band&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Bollinger Bands&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Date&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Price&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><ul>
+<li>The code above will create a line plot with the stock price (&lsquo;price&rsquo;) and the Bollinger Bands: the middle band (&lsquo;middle_band&rsquo;), upper band (&lsquo;upper_band&rsquo;), and lower band (&rsquo;lower_band&rsquo;).</li>
+</ul>
+<h2 id="daily-returns">Daily returns</h2>
+<p>Daily returns refer to the percentage change in the value of an asset from one trading day to the next. It is a commonly used metric to measure the performance and volatility of an asset over time. Daily returns can be calculated using the following mathematical equation:</p>
+<pre tabindex="0"><code>Daily Return = (Price_today - Price_yesterday) / Price_yesterday
+</code></pre><p>where Price_today is the closing price of the asset on the current day, and Price_yesterday is the closing price of the asset on the previous day.</p>
+<p>To calculate daily returns in Python, you can use the Pandas library. Here&rsquo;s an example of Python code that calculates daily returns from a DataFrame containing historical price data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Assuming you have a DataFrame named &#39;df&#39; with a &#39;closing_price&#39; column</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;daily_return&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;closing_price&#39;</span>]<span style="color:#f92672">.</span>pct_change()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print the DataFrame with daily returns</span>
+</span></span><span style="display:flex;"><span>print(df[[<span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;closing_price&#39;</span>, <span style="color:#e6db74">&#39;daily_return&#39;</span>]])
+</span></span></code></pre></div><p>In the code above, the <code>pct_change()</code> function is used to calculate the percentage change between consecutive values in the &lsquo;closing_price&rsquo; column. The result is stored in a new column named &lsquo;daily_return&rsquo; in the DataFrame.</p>
+<p>The printed DataFrame will display the &lsquo;date&rsquo;, &lsquo;closing_price&rsquo;, and &lsquo;daily_return&rsquo; columns, showing the historical prices and corresponding daily returns.</p>
+<h2 id="cumulative-returns">Cumulative returns</h2>
+<p>Cumulative returns, in finance and trading, represent the total percentage change in the value of an asset over a given period. It provides an understanding of the overall performance and growth of an investment over time. Cumulative returns can be calculated by multiplying the daily returns together and then subtracting 1. The mathematical equation for calculating cumulative returns is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#f92672">Cumulative</span> <span style="color:#f92672">Return</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#f92672">1</span> <span style="color:#f92672">+</span> <span style="color:#f92672">Daily</span> <span style="color:#f92672">Return_1</span><span style="color:#f92672">)</span> <span style="color:#f92672">*</span> <span style="color:#f92672">(</span><span style="color:#f92672">1</span> <span style="color:#f92672">+</span> <span style="color:#f92672">Daily</span> <span style="color:#f92672">Return_2</span><span style="color:#f92672">)</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">...</span> <span style="color:#f92672">*</span> <span style="color:#f92672">(</span><span style="color:#f92672">1</span> <span style="color:#f92672">+</span> <span style="color:#f92672">Daily</span> <span style="color:#f92672">Return_n</span><span style="color:#f92672">)</span> <span style="color:#f92672">-</span> <span style="color:#f92672">1</span>
+</span></span></code></pre></div><p>where Daily Return_1, Daily Return_2, &hellip;, Daily Return_n are the daily returns for each respective trading day.</p>
+<p>To calculate cumulative returns in Python, you can use the Pandas library. Here&rsquo;s an example of Python code that calculates cumulative returns from a DataFrame containing daily return data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Assuming you have a DataFrame named &#39;df&#39; with a &#39;daily_return&#39; column</span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;cumulative_return&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> df[<span style="color:#e6db74">&#39;daily_return&#39;</span>])<span style="color:#f92672">.</span>cumprod() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print the DataFrame with cumulative returns</span>
+</span></span><span style="display:flex;"><span>print(df[[<span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;daily_return&#39;</span>, <span style="color:#e6db74">&#39;cumulative_return&#39;</span>]])
+</span></span></code></pre></div><p>In the code above, the <code>cumprod()</code> function is used to calculate the cumulative product of the (1 + daily_return) values. The result is then subtracted by 1 to obtain the cumulative return. The cumulative returns are stored in a new column named &lsquo;cumulative_return&rsquo; in the DataFrame.</p>
+<p>The printed DataFrame will display the &lsquo;date&rsquo;, &lsquo;daily_return&rsquo;, and &lsquo;cumulative_return&rsquo; columns, showing the historical daily returns and corresponding cumulative returns.</p>
+<h2 id="histograms-and-scatter-plots">Histograms and Scatter Plots</h2>
+<p>Histograms provide a graphical representation of the distribution of a dataset. In the context of market analysis, histograms are often used to visualize the frequency distribution of stock prices, trading volumes, or other relevant financial variables. They display the number of occurrences or the probability of data falling within different intervals, allowing analysts to identify patterns, outliers, and the shape of the distribution. Histograms help in understanding the central tendency, dispersion, and skewness of the data, providing valuable insights into market dynamics.</p>
+<p>Scatter plots, on the other hand, visualize the relationship between two variables. In market analysis, scatter plots are commonly used to explore the correlation or association between two financial variables, such as the relationship between stock prices and trading volumes. Each data point represents a pair of values for the two variables, and their positions on the plot indicate the values of the variables. Scatter plots provide a visual indication of the strength, direction, and pattern of the relationship between the variables. They can help identify trends, patterns, outliers, or potential trading opportunities based on the observed relationships between variables.</p>
+<p>Both histograms and scatter plots facilitate the exploration and analysis of financial data, enabling market analysts to uncover patterns, relationships, and potential insights that can inform trading strategies and decision-making processes.</p>
+<h2 id="kurtosis">Kurtosis</h2>
+<p>Kurtosis is a statistical measure that quantifies the shape of a probability distribution. In market analysis, kurtosis helps evaluate the distribution of returns or other financial variables. It measures the tail-heaviness or tail-thinness of the distribution compared to a normal distribution. High kurtosis indicates heavy tails, implying a higher likelihood of extreme values, while low kurtosis suggests lighter tails and a more peaked distribution. Kurtosis analysis aids in understanding the level of risk and potential outliers in the data, which are crucial considerations for assessing investment strategies and managing portfolio risk.</p>
+<p><img src="https://av-eks-blogoptimized.s3.amazonaws.com/57983kurt1.png" alt=""></p>
+<h2 id="beta-vs-correlation">Beta vs correlation</h2>
+<p>Beta and correlation are both metrics used in finance to measure the relationship between two variables, but they serve different purposes and provide distinct insights.</p>
+<p>Correlation measures the strength and direction of the linear relationship between two variables. It ranges between -1 and +1, where -1 represents a perfect negative correlation, +1 represents a perfect positive correlation, and 0 indicates no correlation. Correlation helps in understanding the degree to which changes in one variable are associated with changes in another variable. In finance, correlation is commonly used to assess the relationship between the returns of different assets or the relationship between an asset&rsquo;s returns and a benchmark index. It helps to identify diversification opportunities and understand how assets move in relation to each other.</p>
+<p>Beta, on the other hand, is a measure of systematic risk or volatility of an asset relative to a benchmark, usually the overall market represented by an index such as the S&amp;P 500. It quantifies the sensitivity of an asset&rsquo;s returns to the movements of the market. A beta of 1 indicates that the asset tends to move in sync with the market, while a beta greater than 1 indicates higher volatility than the market, and a beta less than 1 indicates lower volatility. Beta is used to evaluate the risk-reward tradeoff of an asset and to assess its potential impact on a portfolio&rsquo;s overall risk. Investors often consider beta when constructing portfolios to balance risk exposure and diversify holdings.</p>
+<p>In summary, correlation measures the degree of linear relationship between two variables, while beta measures the relative volatility or risk of an asset compared to a benchmark. Correlation helps identify associations between variables, while beta aids in assessing the systematic risk of an asset and its impact on portfolio performance. Both metrics provide valuable insights in different aspects of financial analysis and decision-making.</p>
+<p><img src="https://camo.githubusercontent.com/8d963291b8f1c6c5f8f52136f23f73489b5726845b623149fb716d223b0b3555/68747470733a2f2f6173736574732e6f6d7363732e696f2f6e6f7465732f323032302d30312d31352d32322d31352d32342e706e67" alt=""></p>
+<h2 id="daily-portfolio-values">Daily Portfolio values</h2>
+<p>The daily portfolio value can be calculated by normalizing it with the values of the first day, allocating the portfolio based on the desired weights, and then calculating the position values by multiplying the allocated weights with the starting values of each asset. Finally, the portfolio value is obtained by summing the position values.</p>
+<p>Here&rsquo;s a breakdown of the steps involved:</p>
+<ul>
+<li>Normalize the daily portfolio value by dividing it by the value of the portfolio on the first day. This normalization allows for comparison and analysis of the portfolio&rsquo;s performance over time.</li>
+<li>Calculate the allocation of the portfolio by determining the desired weights for each asset. The allocation specifies the proportion of the portfolio&rsquo;s total value that will be invested in each asset. These weights can be based on factors like risk tolerance, investment strategy, or market conditions.</li>
+<li>Compute the position values by multiplying the allocated weights with the starting values of each asset. This step determines the initial value of each asset position in the portfolio.</li>
+<li>Calculate the portfolio value by summing the position values. The portfolio value represents the total worth of the portfolio on a given trading day, taking into account the values of all the assets held in the portfolio.</li>
+</ul>
+<h2 id="portfolio-statistics">Portfolio statistics</h2>
+<p><strong>Daily Returns:</strong>
+Daily Return = (Portfolio Value_today - Portfolio Value_yesterday) / Portfolio Value_yesterday</p>
+<p><strong>Cumulative Returns:</strong>
+Cumulative Return = (Portfolio Value_today - Portfolio Value_start) / Portfolio Value_start</p>
+<p><strong>Average Daily Returns:</strong>
+Average Daily Return = mean(Daily Returns)</p>
+<p><strong>Standard Deviation of Daily Returns:</strong>
+Standard Deviation = std(Daily Returns)</p>
+<p><strong>Sharpe Ratio:</strong>
+Sharpe Ratio = (Average Daily Return - Risk-Free Rate) / Standard Deviation of Daily Returns</p>
+<h2 id="sharpe-ratio">Sharpe ratio</h2>
+<ul>
+<li>Risk adjusted return</li>
+<li>All else being equal
+<ul>
+<li>lower risk is better</li>
+<li>higher return is better</li>
+</ul>
+</li>
+<li>SR also considers risk free rate of return (which is 0% for practical purposes)</li>
+</ul>
+<h2 id="parameterized-model">Parameterized model</h2>
+<p>A parameterized model, in the context of finance and trading, refers to a mathematical or statistical model that includes parameters as variables that can be adjusted or optimized based on specific criteria or data. These models provide a flexible framework for analyzing financial data, making predictions, and generating insights.</p>
+<p>In a parameterized model, the parameters represent various characteristics or assumptions that govern the behavior of the model. These parameters can be estimated, calibrated, or optimized using historical data, statistical techniques, or other methods. By adjusting the values of the parameters, analysts can test different scenarios, evaluate the model&rsquo;s performance, and make informed decisions based on the desired objectives.</p>
+<p>The advantage of parameterized models lies in their ability to adapt to different market conditions, asset classes, or investment strategies. By incorporating parameters, the models can capture specific features or dynamics of the financial markets and provide more accurate predictions or analysis.</p>
+<p>Examples of parameterized models in finance include regression models, time series models like ARIMA or GARCH, option pricing models such as Black-Scholes, and machine learning models like neural networks or random forests. Each of these models contains parameters that can be adjusted or optimized to enhance their performance and align them with the characteristics of the data or the specific requirements of the analysis.</p>
+<p>By utilizing parameterized models, market analysts and researchers can gain deeper insights into financial data, forecast future market trends, manage risk, and optimize investment strategies. The flexibility and adaptability of these models make them valuable tools for decision-making and analysis in the dynamic and complex world of finance.</p>
+<h2 id="optimizer">Optimizer</h2>
+<p>An optimizer, in the context of finance and mathematical modeling, refers to a computational algorithm or method used to find the optimal solution for a given problem. It is designed to search through a space of possible solutions and identify the values or configurations that optimize a specific objective or satisfy certain constraints.</p>
+<p>An optimizer typically works by iteratively adjusting the input variables or parameters of a model, evaluating the corresponding output or objective function, and updating the variables based on a defined optimization criterion. The process continues until a satisfactory solution is found, often the one that minimizes or maximizes the objective function within the given constraints.</p>
+<p>In finance, optimizers are extensively used in areas such as portfolio optimization, asset allocation, risk management, and trading strategy development. They enable investors and analysts to find the optimal allocation of assets, determine the optimal weights or positions for a portfolio, or identify the optimal parameters for a trading strategy.</p>
+<p>Various optimization algorithms exist, ranging from simple techniques like grid search and random search to more advanced methods such as gradient-based optimization (e.g., gradient descent), evolutionary algorithms, or convex optimization algorithms. The choice of optimizer depends on the nature of the problem, the complexity of the model, and the desired solution accuracy.</p>
+<h1 id="computational-investing">Computational Investing</h1>
+<ul>
+<li><strong>Liquidity</strong> is a measurement of how easy it is to buy or sell shares in a fund. ETFs, or exchange-traded funds are the most liquid of funds. They can be bought and sold easily and near-instantly during the trading day just like individual stocks; ETFs, though, represent some distribution of stocks. The volume of an ETF is just as important to its liquidity: because there are often millions of people trading it, it’s easy to get your buy / sell order filled.</li>
+<li>A <strong>large-cap stock</strong> like Apple refers to a stock with a large market capitalization. Market capitalization is a metric of a stock’s total shares times its price. It’s worth noting that the <em>price of a stock has no relation to the value of a company</em>; it only describes the cost of owning a single share in that company. If you can afford the market capitalization of a company, you can afford to buy the company in its entirety and take over its ownership.</li>
+<li>A <strong>bull market</strong> or a <strong>bullish position</strong> on a stock is an optimistic viewpoint that implies that things will continue to grow. On the other hand, a <strong>bear market</strong> or a <strong>bearish position</strong> is pessimistic (or cautionary, or realistic, depending on how you see the glass) about the future of an asset.</li>
+</ul>
+<h2 id="types-of-managed-funds">Types of Managed Funds</h2>
+<h3 id="etfs-exchange-traded-funds">ETFs (Exchange Traded Funds)</h3>
+<p>ETFs, or exchange-traded funds, are investment funds that are traded on stock exchanges, similar to individual stocks. They are designed to track the performance of a specific index, sector, commodity, or asset class. ETFs offer investors a way to gain exposure to a diversified portfolio of assets without directly owning the underlying securities.</p>
+<p><strong>Structure:</strong> ETFs are structured as open-end investment companies or unit investment trusts. They issue shares to investors, and these shares represent an ownership interest in the ETF&rsquo;s underlying assets.</p>
+<p><strong>Underlying Assets:</strong> ETFs can track a wide range of underlying assets, including stock indexes (such as the S&amp;P 500), bond indexes, commodity prices, currencies, or a combination of assets. The ETF&rsquo;s performance is designed to closely mirror that of its underlying index or asset class.</p>
+<p><strong>Creation and Redemption:</strong> Authorized Participants (APs) play a crucial role in the creation and redemption of ETF shares. They are typically large institutional investors, such as market makers or authorized broker-dealers. APs create new shares of an ETF by delivering a basket of the underlying assets to the ETF issuer, and in return, they receive ETF shares. Conversely, they can redeem ETF shares by returning them to the issuer in exchange for the underlying assets.</p>
+<p><strong>Listing and Trading:</strong> ETFs are listed on stock exchanges, making them easily tradable throughout the trading day. Investors can buy and sell ETF shares through brokerage accounts, just like they would trade individual stocks. The price of an ETF share is determined by market demand and supply and can sometimes deviate slightly from the net asset value (NAV) of the underlying assets.</p>
+<p><strong>Benefits of ETFs:</strong></p>
+<ol>
+<li><strong>Diversification:</strong> ETFs offer investors exposure to a broad range of securities within a single investment. This diversification can help reduce risk compared to investing in individual stocks or bonds.</li>
+<li><strong>Liquidity:</strong> ETFs are traded on stock exchanges, providing investors with liquidity. They can be bought or sold throughout the trading day at market prices.</li>
+<li><strong>Transparency:</strong> ETFs disclose their holdings on a daily basis, allowing investors to see exactly which securities they own. This transparency helps investors make informed decisions.</li>
+<li><strong>Lower Costs:</strong> ETFs generally have lower expense ratios compared to mutual funds. They often passively track an index rather than actively managed funds, resulting in lower management fees.</li>
+<li><strong>Flexibility:</strong> ETFs can be used for various investment strategies, including long-term investing, short-term trading, or tactical asset allocation.</li>
+</ol>
+<p>It&rsquo;s important to note that while ETFs offer many benefits, they also carry risks. The value of an ETF can fluctuate based on the performance of its underlying assets, and there are potential risks associated with market volatility, liquidity, and tracking error.</p>
+<h3 id="mutual-funds">Mutual Funds</h3>
+<p>Mutual funds are investment vehicles that pool money from multiple investors to invest in a diversified portfolio of securities, such as stocks, bonds, or a combination of both. They are managed by professional investment firms or asset management companies.</p>
+<p><strong>Structure:</strong> Mutual funds are set up as open-end investment companies. This means that the fund continuously issues and redeems shares based on investor demand. Investors purchase shares of the mutual fund at the net asset value (NAV), which is calculated by dividing the total value of the fund&rsquo;s assets by the number of shares outstanding.</p>
+<p><strong>Professional Management:</strong> Mutual funds are managed by professional fund managers or investment teams who make investment decisions on behalf of the fund. The fund manager conducts research, performs security analysis, and selects investments based on the fund&rsquo;s investment objective and strategy.</p>
+<p><strong>Investment Objectives and Strategies:</strong> Mutual funds can have various investment objectives and strategies. For example, a mutual fund may aim to achieve long-term capital appreciation, income generation, or a blend of both. The investment strategy could be actively managed, where the fund manager actively selects and manages the fund&rsquo;s portfolio, or passively managed, where the fund aims to replicate the performance of a specific index.</p>
+<p><strong>Diversification:</strong> Mutual funds provide diversification by investing in a wide range of securities. By pooling money from multiple investors, the fund can hold a diversified portfolio of stocks, bonds, or other assets. This diversification helps spread the investment risk and reduces the impact of any single security&rsquo;s performance on the overall portfolio.</p>
+<p><strong>Net Asset Value (NAV):</strong> The NAV of a mutual fund represents the per-share value of the fund&rsquo;s assets. It is calculated by subtracting the fund&rsquo;s liabilities from its total assets and dividing the result by the number of shares outstanding. The NAV is typically calculated at the end of each trading day.</p>
+<p><strong>Fees and Expenses:</strong> Mutual funds charge fees and expenses to cover the costs of managing the fund. These fees may include an expense ratio, which covers management fees, administrative expenses, and other operational costs. Additionally, some funds may charge sales loads, which are fees paid when purchasing or selling shares of the fund.</p>
+<p><strong>Liquidity:</strong> Mutual funds are priced and traded at the NAV at the end of each trading day. Investors can buy or sell shares directly with the fund company or through brokerage accounts. Mutual funds are generally considered to be liquid investments, as they provide investors with the ability to buy or sell shares on any business day.</p>
+<p><strong>Benefits of Mutual Funds:</strong></p>
+<ol>
+<li><strong>Professional Management:</strong> Mutual funds are managed by experienced professionals who make investment decisions based on their expertise and research.</li>
+<li><strong>Diversification:</strong> Mutual funds offer instant diversification by investing in a broad range of securities, reducing the risk associated with investing in individual stocks or bonds.</li>
+<li><strong>Accessibility:</strong> Mutual funds are accessible to a wide range of investors, as they have relatively low minimum investment requirements.</li>
+<li><strong>Liquidity:</strong> Investors can typically buy or sell mutual fund shares on any business day at the NAV, providing liquidity.</li>
+<li><strong>Flexibility:</strong> Mutual funds offer various investment strategies and asset classes to cater to different investor preferences and goals.</li>
+</ol>
+<p><strong>Risks of Mutual Funds:</strong></p>
+<ol>
+<li><strong>Market Risk:</strong> The value of mutual fund shares can fluctuate based on the performance of the underlying securities, and investors may experience losses if the market declines.</li>
+<li><strong>Fees and Expenses:</strong> Mutual funds charge fees and expenses, which can affect the overall returns earned by investors.</li>
+<li><strong>Management Risk:</strong> The performance of a mutual fund depends on the investment decisions made by the fund manager. Poor investment choices or ineffective management can negatively impact returns.</li>
+<li><strong>No Guarantees:</strong> Mutual funds do not provide guaranteed returns, and investors may not receive back the full amount of their initial investment.</li>
+</ol>
+<h2 id="hedge-funds">Hedge Funds</h2>
+<p>Hedge funds are alternative investment vehicles that are designed for wealthy individuals or institutional investors. Unlike mutual funds, hedge funds are typically only available to accredited investors due to their complex nature and higher risk profile. Hedge funds employ a range of investment strategies and techniques to seek higher returns, often through active management and the use of leverage.</p>
+<p><strong>Structure:</strong> Hedge funds are structured as private investment partnerships or limited liability companies. They are managed by professional investment managers or investment firms who act as general partners or managers of the fund.</p>
+<p><strong>Investment Strategies:</strong> Hedge funds employ various investment strategies with the goal of generating higher returns than traditional investments. These strategies can include long and short positions in stocks, bonds, commodities, currencies, derivatives, and other financial instruments. Hedge funds can also utilize leverage (borrowed money) to amplify potential returns.</p>
+<p><strong>Limited Regulation:</strong> Hedge funds often operate with fewer regulatory restrictions compared to mutual funds. This allows them to have more flexibility in their investment strategies, including the ability to engage in short selling, derivative trading, and alternative investments.</p>
+<p><strong>Performance Fees:</strong> Hedge funds typically charge performance fees in addition to management fees. The performance fee is a percentage of the fund&rsquo;s profits, usually around 20%. This fee structure aligns the interests of the fund managers with those of the investors, as the managers earn higher fees when they generate positive returns.</p>
+<p><strong>Risk Management:</strong> Hedge funds often employ risk management techniques to mitigate potential losses. This can involve diversifying investments, hedging against market downturns, and implementing risk controls. However, it&rsquo;s important to note that hedge funds can still be subject to substantial risk, and their strategies may not always be successful.</p>
+<p><strong>Access and Investor Requirements:</strong> Hedge funds generally have higher minimum investment requirements compared to mutual funds, often ranging from hundreds of thousands to millions of dollars. They are typically open only to accredited investors, who have higher income or net worth thresholds set by regulatory authorities.</p>
+<p><strong>Liquidity and Lock-up Periods:</strong> Hedge funds often have restrictions on liquidity. Investors may face limited redemption options and longer lock-up periods, where their investment is tied up for a specific period, typically one year or more. This illiquidity is intended to provide fund managers with more flexibility in managing investments and executing strategies.</p>
+<p><strong>Benefits of Hedge Funds:</strong></p>
+<ol>
+<li><strong>Potential Higher Returns:</strong> Hedge funds aim to generate higher returns by using sophisticated investment strategies, including short selling, leverage, and alternative investments.</li>
+<li><strong>Diversification:</strong> Hedge funds often employ a wide range of investment strategies and can invest across multiple asset classes, offering potential diversification benefits to investors.</li>
+<li><strong>Active Management:</strong> Hedge fund managers actively monitor and adjust their investment portfolios, seeking opportunities to capitalize on market inefficiencies and generate alpha (excess returns).</li>
+</ol>
+<p><strong>Risks of Hedge Funds:</strong></p>
+<ol>
+<li><strong>Higher Risk</strong>: Hedge funds typically carry higher risk compared to traditional investments. The use of leverage, complex strategies, and alternative investments can amplify potential losses.</li>
+<li><strong>Limited Transparency</strong>: Hedge funds are less regulated than mutual funds, and they often have limited disclosure requirements. Investors may have less visibility into the fund&rsquo;s holdings and investment decisions.</li>
+<li><strong>Limited Liquidity</strong>: Hedge funds may have restrictions on withdrawals and longer lock-up periods, limiting investors&rsquo; access to their capital.</li>
+<li><strong>Potential for High Fees</strong>: Hedge funds generally charge higher management and performance fees compared to traditional investment options, which can erode overall returns.</li>
+</ol>
+<h1 id="learning-algorithms-for-trading">Learning Algorithms for Trading</h1>
+<h2 id="parametric-vs-non-parametric">Parametric vs non parametric</h2>
+<p>A parametric learner, in the context of machine learning, refers to a model that makes strong assumptions about the underlying data distribution. It assumes a specific functional form or structure for the relationship between the input variables and the output variable. In other words, the model is characterized by a fixed number of parameters that need to be estimated from the training data. Examples of parametric learners include linear regression, logistic regression, and neural networks. Once the parameters are estimated, the model can make predictions or classifications based on new input data. Parametric learners tend to be computationally efficient and require less training data, but their performance heavily depends on the accuracy of the assumed parametric form.</p>
+<p>On the other hand, a non-parametric learner does not make explicit assumptions about the underlying data distribution or functional form. Instead, it seeks to directly learn the relationship between the input variables and the output variable from the training data. Non-parametric learners, such as k-nearest neighbors, decision trees, and support vector machines, can adapt to more complex and flexible relationships in the data. They typically have more parameters and their complexity grows with the size of the training set. Non-parametric learners may require more data for training and can be computationally more expensive, but they offer greater flexibility in capturing intricate patterns in the data.</p>
+<h2 id="knn">KNN</h2>
+<p>K-Nearest Neighbors (KNN) is a popular algorithm used in machine learning for both classification and regression tasks. In the context of classification, KNN predicts the class of a new data point based on the classes of its K nearest neighbors in the feature space. The algorithm assumes that similar instances tend to have similar labels.</p>
+<p>Overfitting occurs when a model learns too much from the training data, including noise and irrelevant patterns, which leads to poor generalization on unseen data. KNN can be prone to overfitting when the value of K is too small. With a small K, the model can become overly sensitive to the local characteristics of the training data, potentially causing the model to memorize the training examples and perform poorly on new instances.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KNNClassifier</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, k):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>k <span style="color:#f92672">=</span> k
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fit</span>(self, X, y):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>X_train <span style="color:#f92672">=</span> X
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>y_train <span style="color:#f92672">=</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">predict</span>(self, X):
+</span></span><span style="display:flex;"><span>        y_pred <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> sample <span style="color:#f92672">in</span> X:
+</span></span><span style="display:flex;"><span>            distances <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(np<span style="color:#f92672">.</span>sum((self<span style="color:#f92672">.</span>X_train <span style="color:#f92672">-</span> sample)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>            nearest_indices <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argsort(distances)[:self<span style="color:#f92672">.</span>k]
+</span></span><span style="display:flex;"><span>            nearest_labels <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>y_train[nearest_indices]
+</span></span><span style="display:flex;"><span>            unique, counts <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>unique(nearest_labels, return_counts<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>            y_pred<span style="color:#f92672">.</span>append(unique[np<span style="color:#f92672">.</span>argmax(counts)])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> y_pred
+</span></span></code></pre></div><h2 id="kernel-regression">Kernel regression</h2>
+<p>In kernel regression, the main idea is to assign weights to nearby data points based on their distance from the point being estimated. These weights, known as kernel weights, determine the influence of each data point on the estimation. The closer a data point is to the target point, the higher its weight and vice versa.</p>
+<h2 id="rmse">RMSE</h2>
+<ul>
+<li>Root Mean Square Error (RMSE) is a commonly used metric to evaluate the performance of regression models. It measures the average deviation between the predicted and actual values of the target variable. RMSE provides a quantitative measure of the model&rsquo;s accuracy by calculating the square root of the mean of squared differences between the predicted and actual values.</li>
+</ul>
+<h3 id="pros-of-rmse">Pros of RMSE:</h3>
+<ul>
+<li>RMSE takes into account both the magnitude and direction of errors, giving a comprehensive assessment of the model&rsquo;s performance.</li>
+<li>It is widely used and easily interpretable, allowing for meaningful comparisons between different models or techniques.</li>
+<li>RMSE penalizes larger errors more heavily than mean absolute error, making it more sensitive to outliers.</li>
+</ul>
+<h3 id="cons-of-rmse">Cons of RMSE:</h3>
+<ul>
+<li>Since RMSE is based on squared differences, it amplifies the impact of large errors, which can be problematic if outliers or extreme values are present in the data.</li>
+<li>RMSE does not have the same unit of measurement as the target variable, making it less interpretable in terms of the original scale.</li>
+<li>It assumes that errors follow a Gaussian distribution and that there is no heteroscedasticity (unequal variance) in the residuals.</li>
+</ul>
+<p>Here&rsquo;s an example of Python code for calculating RMSE from scratch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rmse</span>(y_true, y_pred):
+</span></span><span style="display:flex;"><span>    squared_errors <span style="color:#f92672">=</span> (y_true <span style="color:#f92672">-</span> y_pred) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    mean_squared_error <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(squared_errors)
+</span></span><span style="display:flex;"><span>    rmse <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(mean_squared_error)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> rmse
+</span></span></code></pre></div><p>In the code above, the <code>rmse</code> function takes the true values (<code>y_true</code>) and predicted values (<code>y_pred</code>) as input. It calculates the squared differences between the true and predicted values, computes the mean squared error, and returns the square root of the mean squared error as the RMSE.</p>
+<p>When using this implementation, it&rsquo;s important to ensure that the true and predicted values are in the same format and shape. Additionally, data preprocessing, feature engineering, and model selection should be performed prior to calculating RMSE to ensure accurate evaluation of the model&rsquo;s performance.</p>
+<h2 id="mae">MAE</h2>
+<ul>
+<li>Mean Absolute Error (MAE) is a widely used metric for evaluating the performance of regression models. It measures the average absolute difference between the predicted and actual values of the target variable. MAE provides a straightforward measure of the model&rsquo;s accuracy without considering the direction of errors.</li>
+</ul>
+<h3 id="pros-of-mae">Pros of MAE:</h3>
+<ul>
+<li>MAE is robust to outliers since it does not involve squaring the differences between predicted and actual values. It treats all errors equally regardless of their magnitude.</li>
+<li>It is easily interpretable as it has the same unit of measurement as the target variable, allowing for direct comparison and understanding of the model&rsquo;s performance.</li>
+<li>MAE does not make any assumptions about the underlying distribution of errors and is less sensitive to heteroscedasticity.</li>
+</ul>
+<h3 id="cons-of-mae">Cons of MAE:</h3>
+<ul>
+<li>Since MAE does not square the errors, it may be less sensitive to large errors compared to metrics like RMSE, which can be a disadvantage when outliers need to be given more weight in the evaluation.</li>
+<li>MAE does not provide information on the variance or distribution of errors, making it less informative for certain types of analysis or decision-making.</li>
+</ul>
+<p>Here&rsquo;s an example of Python code for calculating MAE from scratch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mae</span>(y_true, y_pred):
+</span></span><span style="display:flex;"><span>    absolute_errors <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>abs(y_true <span style="color:#f92672">-</span> y_pred)
+</span></span><span style="display:flex;"><span>    mean_absolute_error <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(absolute_errors)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> mean_absolute_error
+</span></span></code></pre></div><p>In the code above, the <code>mae</code> function takes the true values (<code>y_true</code>) and predicted values (<code>y_pred</code>) as input. It calculates the absolute differences between the true and predicted values, computes the mean of these absolute differences, and returns it as the MAE.</p>
+<p>When using this implementation, ensure that the true and predicted values are in the same format and shape. Additionally, perform any necessary data preprocessing, feature engineering, and model selection before calculating MAE to ensure accurate evaluation of the model&rsquo;s performance.</p>
+<h2 id="cross-validation">Cross validation</h2>
+<ul>
+<li>Cross-validation is a resampling technique used in machine learning to assess the performance and generalization ability of a model. It involves partitioning the available data into multiple subsets or folds, where each fold is used as both a training set and a validation set in a series of iterations. Cross-validation provides a more reliable estimate of the model&rsquo;s performance by evaluating its consistency across different data subsets.</li>
+</ul>
+<h3 id="pros-of-cross-validation">Pros of Cross-Validation:</h3>
+<ul>
+<li>Cross-validation provides a more robust evaluation of the model&rsquo;s performance compared to a single train-test split, as it utilizes multiple subsets of the data for training and testing.</li>
+<li>It helps to estimate how well the model generalizes to unseen data and provides insights into the model&rsquo;s stability and consistency.</li>
+<li>Cross-validation allows for tuning hyperparameters and selecting the best model configuration by comparing the performance across different folds.</li>
+</ul>
+<h3 id="cons-of-cross-validation">Cons of Cross-Validation:</h3>
+<ul>
+<li>Implementing cross-validation can be computationally expensive, especially for large datasets or complex models, as it requires fitting and evaluating the model multiple times.</li>
+<li>In some cases, the performance of a model can vary significantly across different folds, leading to a less reliable estimate of its generalization ability.</li>
+<li>Cross-validation may not account for certain types of data dependencies, such as time-series data, where the order of observations is important.</li>
+</ul>
+<p>Here&rsquo;s an example of Python code for implementing k-fold cross-validation from scratch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cross_validation</span>(X, y, model, k):
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(X)
+</span></span><span style="display:flex;"><span>    fold_size <span style="color:#f92672">=</span> n <span style="color:#f92672">//</span> k
+</span></span><span style="display:flex;"><span>    scores <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
+</span></span><span style="display:flex;"><span>        start <span style="color:#f92672">=</span> i <span style="color:#f92672">*</span> fold_size
+</span></span><span style="display:flex;"><span>        end <span style="color:#f92672">=</span> start <span style="color:#f92672">+</span> fold_size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        X_train <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate((X[:start], X[end:]), axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        y_train <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate((y[:start], y[end:]), axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        X_val <span style="color:#f92672">=</span> X[start:end]
+</span></span><span style="display:flex;"><span>        y_val <span style="color:#f92672">=</span> y[start:end]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>        score <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>evaluate(X_val, y_val)  <span style="color:#75715e"># Evaluation metric specific to the model</span>
+</span></span><span style="display:flex;"><span>        scores<span style="color:#f92672">.</span>append(score)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> scores
+</span></span></code></pre></div><p>In the code above, the <code>cross_validation</code> function takes the input features (<code>X</code>), target variable (<code>y</code>), the model to evaluate, and the number of folds (<code>k</code>) as input. It iteratively partitions the data into training and validation sets, fits the model on the training data, and evaluates its performance using a specific evaluation metric. The function returns a list of scores obtained from each fold.</p>
+<p>It&rsquo;s important to note that the code provided is a basic implementation and may need to be modified or extended depending on the specific requirements of the model and evaluation metric. Additionally, the <code>model.fit</code> and <code>model.evaluate</code> methods represent placeholder functions and should be replaced with the appropriate methods for the chosen model.</p>
+<h2 id="ensemble-learners">Ensemble learners</h2>
+<ul>
+<li>Ensemble learning is a machine learning technique that combines multiple individual models, called base models or weak learners, to improve predictive performance and generalization ability. The idea behind ensemble learning is to leverage the diversity of the base models and aggregate their predictions to make a final prediction that is often more accurate and robust than that of any individual model.</li>
+</ul>
+<p>Ensemble learners can be categorized into two main types: bagging and boosting.</p>
+<ol>
+<li><strong>Bagging</strong>: Bagging stands for bootstrap aggregating. It involves training multiple base models independently on different subsets of the training data, created through bootstrap sampling (sampling with replacement). The predictions from these models are then combined, typically through majority voting (for classification) or averaging (for regression), to obtain the final prediction. The goal is to reduce variance and improve generalization by reducing the impact of individual noisy or overfitting models.</li>
+<li><strong>Boosting</strong>: Boosting aims to sequentially train a series of base models, where each subsequent model focuses on correcting the mistakes made by the previous models. In boosting, the training data is reweighted, giving higher importance to the instances that were misclassified by previous models. The predictions of the base models are combined by weighted voting or weighted averaging to obtain the final prediction. Boosting methods, such as AdaBoost, Gradient Boosting, and XGBoost, often achieve high accuracy by iteratively building strong models from weak ones.</li>
+</ol>
+<p>Here&rsquo;s an example of Python code for implementing ensemble learning using the Random Forest algorithm, which is a popular ensemble method based on bagging:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create an ensemble of 100 decision tree classifiers</span>
+</span></span><span style="display:flex;"><span>ensemble <span style="color:#f92672">=</span> RandomForestClassifier(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Train the ensemble on the training data</span>
+</span></span><span style="display:flex;"><span>ensemble<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make predictions using the ensemble</span>
+</span></span><span style="display:flex;"><span>predictions <span style="color:#f92672">=</span> ensemble<span style="color:#f92672">.</span>predict(X_test)
+</span></span></code></pre></div><p>In the code above, the <code>RandomForestClassifier</code> class from the scikit-learn library is used to create an ensemble of 100 decision tree classifiers. The <code>n_estimators</code> parameter specifies the number of base models in the ensemble. The ensemble is then trained on the training data (<code>X_train</code> and <code>y_train</code>), and predictions are made on the test data (<code>X_test</code>) using the <code>predict</code> method.</p>
+</div>
 	</section>
 
 </article>
@@ -296,7 +792,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		0 words in this page.
+		7129 words in this page.
 	</div>
 </div>
 
