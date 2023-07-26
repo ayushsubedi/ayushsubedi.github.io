@@ -6,10 +6,31 @@
     <description>Recent content in capstone-project on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/capstone-project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Enhancing Decision-Making for Parents and Authorities, A Comprehensive Analysis and Mapping of School Performance in New York City</title>
+      <link>https://ayushsubedi.github.io/posts/school_satisfaction_and_school_ranking/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/school_satisfaction_and_school_ranking/</guid>
+      <description>&lt;h3 id=&#34;as-a-part-of-georgia-tech-omsa-mgt-6203-data-analytics-for-business&#34;&gt;As a part of Georgia Tech OMSA, MGT 6203: Data Analytics For Business&lt;/h3&gt;
+&lt;h2 id=&#34;presentation-recording&#34;&gt;Presentation Recording&lt;/h2&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;420&#34; src=&#34;https://www.youtube.com/embed/TpHvoHO0o70&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr/&gt;
+&lt;h2 id=&#34;tableau-dashboard&#34;&gt;Tableau Dashboard&lt;/h2&gt;
+&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1690384008812&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;#&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;mg&amp;#47;mgt6203-Team83&amp;#47;SchoolRankingandSurveyresponsesEDA&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;mgt6203-Team83&amp;#47;SchoolRankingandSurveyresponsesEDA&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;mg&amp;#47;mgt6203-Team83&amp;#47;SchoolRankingandSurveyresponsesEDA&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en-US&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1690384008812&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    if ( divElement.offsetWidth &gt; 800 ) { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;} else if ( divElement.offsetWidth &gt; 500 ) { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=(divElement.offsetWidth*0.75)+&#39;px&#39;;} else { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=&#39;900px&#39;;}                     var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;
+&lt;hr/&gt;
+&lt;h2 id=&#34;presentation-slides&#34;&gt;Presentation Slides&lt;/h2&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;420&#34; src=&#34;https://ayushsubedi.github.io/pdfs/Team83FinalPresentation.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;hr/&gt;
+&lt;h2 id=&#34;final-report&#34;&gt;Final Report&lt;/h2&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/Team83FinalReport.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
     
     <item>
       <title>Flight delay prediction and exploration in the United States</title>

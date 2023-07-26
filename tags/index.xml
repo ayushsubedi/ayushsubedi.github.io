@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>analytics</title>
+      <link>https://ayushsubedi.github.io/tags/analytics/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>correlation</title>
+      <link>https://ayushsubedi.github.io/tags/correlation/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/correlation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-viz</title>
+      <link>https://ayushsubedi.github.io/tags/data-viz/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-viz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>group-project</title>
+      <link>https://ayushsubedi.github.io/tags/group-project/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/group-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random-forest</title>
+      <link>https://ayushsubedi.github.io/tags/random-forest/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/random-forest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XGBoost</title>
+      <link>https://ayushsubedi.github.io/tags/xgboost/</link>
+      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/xgboost/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>algorithmic-trading</title>
@@ -453,15 +516,6 @@
     </item>
     
     <item>
-      <title>analytics</title>
-      <link>https://ayushsubedi.github.io/tags/analytics/</link>
-      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/analytics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>apache-spark</title>
       <link>https://ayushsubedi.github.io/tags/apache-spark/</link>
       <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
@@ -642,15 +696,6 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
-      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
-      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Modeling</title>
       <link>https://ayushsubedi.github.io/tags/modeling/</link>
       <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
@@ -822,24 +867,6 @@
     </item>
     
     <item>
-      <title>correlation</title>
-      <link>https://ayushsubedi.github.io/tags/correlation/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/correlation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data-viz</title>
-      <link>https://ayushsubedi.github.io/tags/data-viz/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/data-viz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Deep Learning</title>
       <link>https://ayushsubedi.github.io/tags/deep-learning/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
@@ -858,38 +885,11 @@
     </item>
     
     <item>
-      <title>group-project</title>
-      <link>https://ayushsubedi.github.io/tags/group-project/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/group-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PCA</title>
       <link>https://ayushsubedi.github.io/tags/pca/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>random-forest</title>
-      <link>https://ayushsubedi.github.io/tags/random-forest/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/random-forest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>XGBoost</title>
-      <link>https://ayushsubedi.github.io/tags/xgboost/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/xgboost/</guid>
       <description></description>
     </item>
     
