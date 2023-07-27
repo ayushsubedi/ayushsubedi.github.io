@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Topics on High-Dimensional Data Analytics</title>
+      <title>Special Topics on High-Dimensional Data Analytics</title>
       <link>https://ayushsubedi.github.io/posts/topics_on_hdda/</link>
       <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/topics_on_hdda/</guid>
-      <description>&lt;h1 id=&#34;topics-on-high-dimensional-data-analytics&#34;&gt;Topics on High-Dimensional Data Analytics&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;special-topics-on-high-dimensional-data-analytics&#34;&gt;Special Topics on High-Dimensional Data Analytics&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;#functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#image-analysis&#34;&gt;Image Analysis&lt;/a&gt;&lt;/li&gt;
@@ -26,10 +26,45 @@
 &lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/h1&gt;
+&lt;h2 id=&#34;regression---least-square-estimates&#34;&gt;Regression - Least square Estimates&lt;/h2&gt;
+&lt;h2 id=&#34;polynomial-regression&#34;&gt;Polynomial Regression&lt;/h2&gt;
+&lt;h2 id=&#34;splines&#34;&gt;Splines&lt;/h2&gt;
+&lt;h2 id=&#34;order-m-splines&#34;&gt;Order-M Splines&lt;/h2&gt;
+&lt;h2 id=&#34;b-splines&#34;&gt;B-Splines&lt;/h2&gt;
+&lt;h2 id=&#34;smoothing-splines&#34;&gt;Smoothing Splines&lt;/h2&gt;
+&lt;h2 id=&#34;natural-cubic-splines&#34;&gt;Natural Cubic Splines&lt;/h2&gt;
+&lt;h2 id=&#34;k-nearest-neighbor&#34;&gt;K-Nearest Neighbor&lt;/h2&gt;
+&lt;h2 id=&#34;kernel-smoother-regression&#34;&gt;Kernel Smoother Regression&lt;/h2&gt;
+&lt;h2 id=&#34;rbf-kernel&#34;&gt;RBF Kernel&lt;/h2&gt;
+&lt;h2 id=&#34;functional-pca&#34;&gt;Functional PCA&lt;/h2&gt;
 &lt;h1 id=&#34;image-analysis&#34;&gt;Image Analysis&lt;/h1&gt;
+&lt;h2 id=&#34;transformation&#34;&gt;Transformation&lt;/h2&gt;
+&lt;h2 id=&#34;convolution&#34;&gt;Convolution&lt;/h2&gt;
+&lt;h2 id=&#34;convolution-with-a-mask&#34;&gt;Convolution with a Mask&lt;/h2&gt;
+&lt;h2 id=&#34;segmentation&#34;&gt;Segmentation&lt;/h2&gt;
+&lt;h2 id=&#34;k-means-clustering&#34;&gt;K-means clustering&lt;/h2&gt;
+&lt;h2 id=&#34;edge-detection-using-derivatives&#34;&gt;Edge detection using derivatives&lt;/h2&gt;
+&lt;h2 id=&#34;sobel-operator&#34;&gt;Sobel Operator&lt;/h2&gt;
+&lt;h2 id=&#34;kirsch-operator&#34;&gt;Kirsch Operator&lt;/h2&gt;
+&lt;h2 id=&#34;prewitt-mask-and-gaussian-mask&#34;&gt;Prewitt Mask and Gaussian Mask.&lt;/h2&gt;
 &lt;h1 id=&#34;tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/h1&gt;
-&lt;h1 id=&#34;optimization-application&#34;&gt;Optimization Application&lt;/h1&gt;
+&lt;h2 id=&#34;tensor-data-analysis-1&#34;&gt;Tensor data analysis&lt;/h2&gt;
+&lt;h2 id=&#34;outer-product&#34;&gt;Outer product&lt;/h2&gt;
+&lt;h2 id=&#34;inner-product&#34;&gt;Inner product&lt;/h2&gt;
+&lt;h2 id=&#34;kronecker-product&#34;&gt;Kronecker product&lt;/h2&gt;
+&lt;h2 id=&#34;khatri-rao-product&#34;&gt;Khatri-Rao product&lt;/h2&gt;
+&lt;h2 id=&#34;hadamard-product&#34;&gt;Hadamard product&lt;/h2&gt;
+&lt;h2 id=&#34;defining-tensor-ranks&#34;&gt;Defining tensor ranks&lt;/h2&gt;
+&lt;h2 id=&#34;rank-one-tensor&#34;&gt;Rank one tensor&lt;/h2&gt;
+&lt;h2 id=&#34;candecompparafac-cp-decomposition&#34;&gt;Candecomp/parafac (CP) decomposition&lt;/h2&gt;
+&lt;h2 id=&#34;tucker-decomposition&#34;&gt;Tucker decomposition&lt;/h2&gt;
+&lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
 &lt;h1 id=&#34;regularization&#34;&gt;Regularization&lt;/h1&gt;
+&lt;h2 id=&#34;ridge&#34;&gt;Ridge&lt;/h2&gt;
+&lt;h2 id=&#34;lasso&#34;&gt;Lasso&lt;/h2&gt;
+&lt;h2 id=&#34;non-negative&#34;&gt;Non-negative&lt;/h2&gt;
+&lt;h2 id=&#34;adaptive-lasso&#34;&gt;Adaptive Lasso&lt;/h2&gt;
+&lt;h2 id=&#34;group-lasso&#34;&gt;Group Lasso&lt;/h2&gt;
 </description>
     </item>
     
