@@ -6,79 +6,30 @@
     <description>Recent content in wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Human-Computer Interaction</title>
-      <link>https://ayushsubedi.github.io/posts/human_computer_interaction/</link>
-      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      <title>Topics on High-Dimensional Data Analytics</title>
+      <link>https://ayushsubedi.github.io/posts/topics_on_hdda/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/human_computer_interaction/</guid>
-      <description>&lt;h1 id=&#34;work-in-progress-human-computer-interaction&#34;&gt;(Work in progress) Human-Computer Interaction&lt;/h1&gt;
-&lt;h2 id=&#34;learning-goal&#34;&gt;Learning Goal&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;common principles in HCI&lt;/li&gt;
-&lt;li&gt;design life cycle, and importance of iteration&lt;/li&gt;
-&lt;li&gt;current applications of HCI&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;learning-outcome&#34;&gt;Learning Outcome&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;design effective interactions between humans and computers&lt;/li&gt;
-&lt;li&gt;design: applying known principles to a new problem and interative processing of needfinding, prototyping and evaluaiton&lt;/li&gt;
-&lt;li&gt;effectiveness: usability/research/change&lt;/li&gt;
-&lt;li&gt;design interactions, not interfaces (shift on emphasis)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;introduction-to-hci&#34;&gt;Introduction to HCI&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;the goal is to create a scenario where user spends as much time as possible to accomplish the task, while the interface kind of vanishes during that interaction&lt;/li&gt;
-&lt;li&gt;a video game, as an example gives the user an experience of being in the game, not tinkering with the controller&lt;/li&gt;
-&lt;li&gt;ubiquity&lt;/li&gt;
-&lt;li&gt;we might be experts at interacting with computers, but that does not make us experts at designing interactions between other humans and computers&lt;/li&gt;
-&lt;li&gt;HCI is complex and large&lt;/li&gt;
-&lt;li&gt;HCI is a subset of Human Factors Engineering (Industrial Design, HCI, Product Design)&lt;/li&gt;
-&lt;li&gt;UI Design and UX Design and Interaction Design are a subset of HCI&lt;/li&gt;
-&lt;li&gt;Many principle of HCI come from Human Factors Engineering applied to computers&lt;/li&gt;
-&lt;li&gt;Tha gap between HCI and Interaction Design is shrinking (as computers become ubiquitious)&lt;/li&gt;
-&lt;li&gt;HCI is about understanding the interaction between users and computers, and UX design is about dictating the interaction between users and computer. The relationship is howerver, deeply symbiotic.&lt;/li&gt;
-&lt;li&gt;Human Factors Engineering is a merger of Engineering and Psychology&lt;/li&gt;
-&lt;li&gt;Psychology and HCI are also deeply symbiotic&lt;/li&gt;
-&lt;li&gt;HCI is about research (needfinding, prototyping, evaluation) and design (distributed congnition, mental models, universal design)&lt;/li&gt;
-&lt;li&gt;HCI at its core: Research informs Design and Design informs Research&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;exploring-hci&#34;&gt;Exploring HCI&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Technologies
-&lt;ul&gt;
-&lt;li&gt;Virtual Reality&lt;/li&gt;
-&lt;li&gt;Augmented Reality&lt;/li&gt;
-&lt;li&gt;UbiComp and Wearables&lt;/li&gt;
-&lt;li&gt;Robotics&lt;/li&gt;
-&lt;li&gt;Mobile&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Ideas
-&lt;ul&gt;
-&lt;li&gt;Context-Sensitive Computing&lt;/li&gt;
-&lt;li&gt;Gesture-Based Interaction&lt;/li&gt;
-&lt;li&gt;Pen-and Touch-Based Interaction&lt;/li&gt;
-&lt;li&gt;Information Visualization&lt;/li&gt;
-&lt;li&gt;CSCW (Computer Supported Cooperative Work) Interaction (Distributed Team, Distributed Work, Temporal and Geographical dimension): Example: Slack, Online course, etc.&lt;/li&gt;
-&lt;li&gt;Social Computing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Domain
-&lt;ul&gt;
-&lt;li&gt;Special Needs (example: communicating data using sound for visually impaired people)&lt;/li&gt;
-&lt;li&gt;Education (you might not always want to make something super easy)&lt;/li&gt;
-&lt;li&gt;Healthcare (fitbit, virtual reality)&lt;/li&gt;
-&lt;li&gt;Security (for security to be useful, it has to be usable). Captcha has become easy now with a checkbox&lt;/li&gt;
-&lt;li&gt;Games (topics of HCI are super salient here)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+      <guid>https://ayushsubedi.github.io/posts/topics_on_hdda/</guid>
+      <description>&lt;h1 id=&#34;topics-on-high-dimensional-data-analytics&#34;&gt;Topics on High-Dimensional Data Analytics&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#image-analysis&#34;&gt;Image Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#optimization-application&#34;&gt;Optimization Application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/h1&gt;
+&lt;h1 id=&#34;image-analysis&#34;&gt;Image Analysis&lt;/h1&gt;
+&lt;h1 id=&#34;tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/h1&gt;
+&lt;h1 id=&#34;optimization-application&#34;&gt;Optimization Application&lt;/h1&gt;
+&lt;h1 id=&#34;regularization&#34;&gt;Regularization&lt;/h1&gt;
 </description>
     </item>
     
