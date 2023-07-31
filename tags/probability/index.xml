@@ -6,10 +6,46 @@
     <description>Recent content in probability on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/probability/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>(WIP) Computational Data Analytics (Machine Learning 1)</title>
+      <link>https://ayushsubedi.github.io/posts/computational_data_analytics/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/computational_data_analytics/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#clustering&#34;&gt;Clustering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pca&#34;&gt;PCA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#density-estimation&#34;&gt;Density Estimation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gaussin-mixture-model-and-em-algorithm&#34;&gt;Gaussian Mixture Model and EM Algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#optimization&#34;&gt;Optimization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#classification&#34;&gt;Classification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#support-vector-machines&#34;&gt;Support Vector Machines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-neural-nets&#34;&gt;Introduction to Neural Nets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#boosting&#34;&gt;Boosting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#random-forest&#34;&gt;Random Forest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cross-validation&#34;&gt;Cross Validation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;clustering&#34;&gt;Clustering&lt;/h1&gt;
+&lt;h1 id=&#34;pca&#34;&gt;PCA&lt;/h1&gt;
+&lt;h1 id=&#34;nonlinear-dimensionality-reduction&#34;&gt;Nonlinear Dimensionality Reduction&lt;/h1&gt;
+&lt;h1 id=&#34;density-estimation&#34;&gt;Density Estimation&lt;/h1&gt;
+&lt;h1 id=&#34;gaussian-mixture-model-and-em-algorithm&#34;&gt;Gaussian Mixture Model and EM Algorithm&lt;/h1&gt;
+&lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
+&lt;h1 id=&#34;classification&#34;&gt;Classification&lt;/h1&gt;
+&lt;h1 id=&#34;support-vector-machines&#34;&gt;Support Vector Machines&lt;/h1&gt;
+&lt;h1 id=&#34;introduction-to-neural-nets&#34;&gt;Introduction to Neural Nets&lt;/h1&gt;
+&lt;h1 id=&#34;boosting&#34;&gt;Boosting&lt;/h1&gt;
+&lt;h1 id=&#34;random-forest&#34;&gt;Random Forest&lt;/h1&gt;
+&lt;h1 id=&#34;cross-validation&#34;&gt;Cross Validation&lt;/h1&gt;
+</description>
+    </item>
     
     <item>
       <title>Republic of Zorgania</title>
