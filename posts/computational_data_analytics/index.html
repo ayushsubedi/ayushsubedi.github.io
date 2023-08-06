@@ -104,6 +104,8 @@ onload='renderMathInElement(document.body);'></script>
 </div>
 <h1 class="pt-2">(WIP) Computational Data Analytics (Machine Learning 1)</h1>
 
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">This is my notes on Georgia Tech&#39;s ISYE 6740: Computational Data Analytics. Machine learning is a field of computer science that gives computers the ability to learn without being explicitly programmed. The course is designed to answer the most fundamental questions about machine learning: What are the most important methods to know about, and why? How can we answer the questions such as “is this method better than that one&#39; using asymptotic theory”? How can we answer the question &#39;is this method better than that one&#39; for a specific dataset of interest? What can we say about the errors our method will make on future data? What&#39;s the “right” objective function? What does it mean to be statistically rigorous? This course is designed to give graduate students a thorough grounding in the methods, theory, mathematics and algorithms needed to do research and applications in machine learning. The course covers topics from machine learning, classical statistics, and data mining. </h3>
+
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
 	
@@ -192,6 +194,125 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#cross-validation">Cross Validation</a></li>
 </ol>
 <h1 id="introduction">Introduction</h1>
+<p><img src="https://www.mathworks.com/discovery/reinforcement-learning/_jcr_content/mainParsys3/discoverysubsection/mainParsys/image.adapt.full.medium.png/1689243268873.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th><strong>Application</strong></th>
+<th><strong>Desired Outcomes</strong></th>
+<th><strong>Inputs (Data)</strong></th>
+<th><strong>Learning Paradigms</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image Classification</td>
+<td>Classify objects in images</td>
+<td>Labeled images</td>
+<td>Supervised Learning</td>
+</tr>
+<tr>
+<td>Natural Language Processing (NLP)</td>
+<td>Text understanding, sentiment analysis</td>
+<td>Text data, language corpora</td>
+<td>Supervised/Unsupervised Learning</td>
+</tr>
+<tr>
+<td>Speech Recognition</td>
+<td>Convert spoken language to text</td>
+<td>Audio data</td>
+<td>Supervised Learning</td>
+</tr>
+<tr>
+<td>Fraud Detection</td>
+<td>Identify fraudulent transactions</td>
+<td>Transaction data, labeled instances</td>
+<td>Supervised Learning</td>
+</tr>
+<tr>
+<td>Recommender Systems</td>
+<td>Recommend products, movies, etc. to users</td>
+<td>User-item interactions, preferences</td>
+<td>Collaborative Filtering, Content-Based, Hybrid</td>
+</tr>
+<tr>
+<td>Autonomous Vehicles</td>
+<td>Navigate and drive without human intervention</td>
+<td>Sensor data (cameras, LiDAR, etc.)</td>
+<td>Reinforcement Learning</td>
+</tr>
+<tr>
+<td>Medical Diagnosis</td>
+<td>Diagnose diseases or conditions</td>
+<td>Patient data, medical records</td>
+<td>Supervised Learning</td>
+</tr>
+<tr>
+<td>Sentiment Analysis</td>
+<td>Determine sentiment (positive/negative)</td>
+<td>Text data (reviews, social media)</td>
+<td>Supervised Learning</td>
+</tr>
+<tr>
+<td>Time Series Forecasting</td>
+<td>Predict future values in time series data</td>
+<td>Historical time series data</td>
+<td>Supervised/Unsupervised Learning</td>
+</tr>
+<tr>
+<td>Virtual Assistants</td>
+<td>Provide intelligent responses and assistance</td>
+<td>Voice/text data, user interactions</td>
+<td>NLP, Supervised Learning</td>
+</tr>
+<tr>
+<td>Finding Communities</td>
+<td>Identify groups of densely connected nodes</td>
+<td>Network/graph data</td>
+<td>Unsupervised Learning</td>
+</tr>
+<tr>
+<td>Spam Detection</td>
+<td>Identify and filter out spam emails/messages</td>
+<td>Email/text data</td>
+<td>Supervised Learning</td>
+</tr>
+<tr>
+<td>Novelty Detection</td>
+<td>Detect anomalies or new patterns</td>
+<td>Feature vectors, sensor data</td>
+<td>Unsupervised Learning</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="probabilities">Probabilities</h3>
+<ul>
+<li>Distribution</li>
+<li>Densities</li>
+<li>Marginalization</li>
+<li>Conditioning</li>
+</ul>
+<h3 id="statistics">Statistics</h3>
+<ul>
+<li>Mean</li>
+<li>Variance</li>
+<li>Maximum Likelihood Estimation</li>
+</ul>
+<h3 id="linear-algebra">Linear Algebra</h3>
+<ul>
+<li>Vector</li>
+<li>Matrix</li>
+<li>Multiplication</li>
+<li>Inversion</li>
+<li>Eigen-decomposition</li>
+</ul>
+<h3 id="algorithms-and-programming">Algorithms and Programming</h3>
+<ul>
+<li>Basic Data Structures</li>
+<li>Computational Complexity</li>
+</ul>
+<h3 id="convex-optimization">Convex optimization</h3>
 <h1 id="clustering">Clustering</h1>
 <h1 id="pca">PCA</h1>
 <h1 id="nonlinear-dimensionality-reduction">Nonlinear Dimensionality Reduction</h1>
@@ -359,7 +480,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		53 words in this page.
+		256 words in this page.
 	</div>
 </div>
 
