@@ -6,15 +6,123 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>algorithms</title>
+      <link>https://ayushsubedi.github.io/tags/algorithms/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boosting</title>
+      <link>https://ayushsubedi.github.io/tags/boosting/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/boosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classification</title>
+      <link>https://ayushsubedi.github.io/tags/classification/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clustering</title>
+      <link>https://ayushsubedi.github.io/tags/clustering/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cross-valiadtion</title>
+      <link>https://ayushsubedi.github.io/tags/cross-valiadtion/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/cross-valiadtion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>neural-nets</title>
+      <link>https://ayushsubedi.github.io/tags/neural-nets/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/neural-nets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>https://ayushsubedi.github.io/tags/optimization/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>https://ayushsubedi.github.io/tags/pca/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>https://ayushsubedi.github.io/tags/probability/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random-forest</title>
+      <link>https://ayushsubedi.github.io/tags/random-forest/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/random-forest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>https://ayushsubedi.github.io/tags/statistics/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svm</title>
+      <link>https://ayushsubedi.github.io/tags/svm/</link>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/svm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>wip</title>
       <link>https://ayushsubedi.github.io/tags/wip/</link>
-      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/wip/</guid>
       <description></description>
@@ -62,15 +170,6 @@
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>random-forest</title>
-      <link>https://ayushsubedi.github.io/tags/random-forest/</link>
-      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/random-forest/</guid>
       <description></description>
     </item>
     
@@ -260,15 +359,6 @@
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/objective-function/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>optimization</title>
-      <link>https://ayushsubedi.github.io/tags/optimization/</link>
-      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
       <description></description>
     </item>
     
@@ -894,15 +984,6 @@
     </item>
     
     <item>
-      <title>PCA</title>
-      <link>https://ayushsubedi.github.io/tags/pca/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Contingency Table</title>
       <link>https://ayushsubedi.github.io/tags/contingency-table/</link>
       <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
@@ -1371,15 +1452,6 @@
     </item>
     
     <item>
-      <title>classification</title>
-      <link>https://ayushsubedi.github.io/tags/classification/</link>
-      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/classification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>pytorch</title>
       <link>https://ayushsubedi.github.io/tags/pytorch/</link>
       <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
@@ -1430,15 +1502,6 @@
       <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/monte-carlo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probability</title>
-      <link>https://ayushsubedi.github.io/tags/probability/</link>
-      <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/probability/</guid>
       <description></description>
     </item>
     
