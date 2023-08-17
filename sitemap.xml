@@ -2,26 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/clustering/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/convolution/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/gatech/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/hadamard_product/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/image_analysis/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/khatri_rao_product/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/kirsch_operator/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/kmeans/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/knn/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/kronecker_product/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/lasso/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/optimization/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/pca/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/polynomial_regression/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/rbfkernel/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/regression/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/regularization/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/ridge/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/segmentation/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/sobel_operator/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/splines/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/wip/</loc>
-    <lastmod>2023-07-27T00:00:00+00:00</lastmod>
+    <loc>https://ayushsubedi.github.io/tags/tensor_data_analysis/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/transformation/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/tucker_decomposition/</loc>
+    <lastmod>2023-08-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/analytics/</loc>
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
@@ -74,9 +140,6 @@
     <loc>https://ayushsubedi.github.io/tags/indicators/</loc>
     <lastmod>2023-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/knn/</loc>
-    <lastmod>2023-06-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/linear-regression/</loc>
     <lastmod>2023-06-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -120,9 +183,6 @@
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/objective-function/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/optimization/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/simplex/</loc>
@@ -389,9 +449,6 @@
     <loc>https://ayushsubedi.github.io/posts/airlines_delay/</loc>
     <lastmod>2022-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/pca/</loc>
-    <lastmod>2022-12-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/contingency-table/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -456,9 +513,6 @@
     <lastmod>2021-12-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/isye-6501/</loc>
-    <lastmod>2021-12-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/regression/</loc>
     <lastmod>2021-12-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/ride-hailing/</loc>
