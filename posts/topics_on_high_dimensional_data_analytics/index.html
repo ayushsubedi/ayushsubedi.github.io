@@ -145,13 +145,52 @@ onload='renderMathInElement(document.body);'></script>
 	<section class="mx-auto content">
 		<div class="c-rich-text"><h1 id="topics-on-high-dimensional-data-analytics">Topics on High-Dimensional Data Analytics</h1>
 <ol>
+<li><a href="#introduction">Introduction</a></li>
 <li><a href="#functional-data-analysis">Functional Data Analysis</a></li>
 <li><a href="#image-analysis">Image Analysis</a></li>
 <li><a href="#tensor-data-analysis">Tensor Data Analysis</a></li>
 <li><a href="#optimization-application">Optimization Application</a></li>
 <li><a href="#regularization">Regularization</a></li>
 </ol>
+<h1 id="introduction">Introduction</h1>
+<h2 id="big-data">Big Data</h2>
+<ul>
+<li>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</li>
+</ul>
+<ol>
+<li><strong>Volume:</strong>  This refers to the sheer scale of data generated and collected. Big data involves datasets that are too large to be managed and processed using traditional databases and tools. This massive volume can range from terabytes to petabytes and beyond.</li>
+<li><strong>Velocity:</strong>  This characteristic pertains to the speed at which data is generated, collected, and processed. In today&rsquo;s fast-paced digital world, data is generated at an unprecedented rate, often in real-time or near-real-time. Examples include social media interactions, sensor data from IoT devices, financial transactions, and more.</li>
+<li><strong>Variety:</strong>  Big data comes in various formats and types, such as structured, semi-structured, and unstructured data. Structured data is organized into a well-defined format (e.g., tables in a relational database), whereas unstructured data lacks a specific structure (e.g., text documents, images, videos, social media posts). Semi-structured data lies somewhere in between, having a partial structure but not fitting neatly into traditional databases.</li>
+<li><strong>Veracity:</strong>  Veracity refers to the quality and reliability of the data. With the proliferation of data sources, there&rsquo;s an increased potential for data to be incomplete, inaccurate, or inconsistent. Ensuring the accuracy and trustworthiness of big data is a significant challenge, and data quality management is crucial for meaningful insights.</li>
+</ol>
+<h2 id="high-dimensional-data">High Dimensional Data</h2>
+<p>High-dimensional data refers to datasets where the number of features or variables (dimensions) is significantly larger than the number of observations or samples. In other words, the data has a high number of attributes compared to the number of data points available. This kind of data is prevalent in various fields such as genomics, image analysis, social networks, and more.</p>
+<p><img src="/img/high_dimensional_.png" alt=""></p>
+<h2 id="difference-between-high-dimensional-data-and-big-data">Difference between High Dimensional Data and Big Data</h2>
+<p><img src="/img/diff_bet_high_and_low.png" alt=""></p>
+<p>p = dimension
+n = samples</p>
+<h2 id="the-curse-of-dimensionality">The Curse of Dimensionality</h2>
+<blockquote>
+<p>As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially!</p>
+</blockquote>
+<p><img src="/img/distance_dimension.png" alt=""></p>
+<p>As distance between observations increases with the dimensions, the sample size required for learning a model drastically increases.</p>
+<ol>
+<li><strong>Increased Sparsity:</strong>  In higher dimensions, the available data points are spread out more thinly across the space. This means that data points become farther apart from each other, making it challenging to find meaningful clusters or patterns. It&rsquo;s like having a lot of points scattered in a large, high-dimensional space, and they&rsquo;re so spread out that it&rsquo;s difficult to identify any consistent relationships.</li>
+<li><strong>More Data Needed:</strong>  With higher-dimensional data, you need a disproportionately larger amount of data to capture the underlying patterns accurately. When the data is sparse, it&rsquo;s harder to generalize from the observed points to make accurate predictions or draw conclusions. As the dimensionality increases, you might need exponentially more data to maintain the same level of accuracy in your models.</li>
+<li><strong>Impact on Complexity:</strong>  The complexity of machine learning models increases with dimensionality. More dimensions mean more parameters to estimate, which can lead to overfitting – a situation where a model fits the training data too closely and fails to generalize well to new data.</li>
+<li><strong>Increased Computational Demands:</strong>  Processing and analyzing high-dimensional data require more computational resources and time. Many algorithms become slower and more memory-intensive as the number of dimensions grows. This can make experimentation and model training more challenging and time-consuming.</li>
+<li><strong>Difficulties in Visualization:</strong>  Our ability to visualize data effectively diminishes as the number of dimensions increases. We are accustomed to thinking in 2D and 3D space, but visualizing data in, say, 10 dimensions is practically impossible. This can make it hard to understand the structure of the data and the relationships between variables.</li>
+</ol>
+<p>To mitigate the Curse of Dimensionality, researchers and practitioners often turn to techniques like dimensionality reduction and feature selection. These methods aim to reduce the number of dimensions while preserving as much relevant information as possible. Dimensionality reduction techniques like Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are commonly used to address this challenge.</p>
+<h2 id="low-dimensional-learning-from-high-dimensional-data">Low Dimensional Learning From High Dimensional Data</h2>
+<p>High dimensional data usually have low dimensional structure.</p>
+<p><img src="https://www.mathworks.com/help/examples/stats/win64/ChangeTsneSettingsExample_01.png" alt=""></p>
+<p>This can be achieved through Functional Data Analysis, Tensor Analysis, Rank Deficient Methods among others.</p>
 <h1 id="functional-data-analysis">Functional Data Analysis</h1>
+<p>A fluctuating quantity or impulse whose variations represent information and is often represented as a function of time or space.</p>
+<p><img src="https://lands.let.ru.nl/FDA/images/FDA_pic4website.bmp" alt=""></p>
 <h2 id="regression---least-square-estimates">Regression - Least square Estimates</h2>
 <h2 id="polynomial-regression">Polynomial Regression</h2>
 <h2 id="splines">Splines</h2>
@@ -346,7 +385,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		104 words in this page.
+		838 words in this page.
 	</div>
 </div>
 
@@ -365,13 +404,6 @@ onload='renderMathInElement(document.body);'></script>
         Enhancing Decision-Making for Parents and Authorities, A Comprehensive Analysis and Mapping of School Performance in New York City
     </a>
     
-    
-    <a class="flex-grow-0" href="/posts/computational_data_analytics/">
-        (WIP) Computational Data Analytics (Machine Learning 1)
-        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-            height="24">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
     
 </div>
 <div >
