@@ -6,7 +6,7 @@
     <description>Recent content in gatech on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Aug 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/gatech/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Topics on High-Dimensional Data Analytics (Machine Learning 2)</title>
       <link>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</link>
-      <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</guid>
       <description>&lt;h1 id=&#34;topics-on-high-dimensional-data-analytics&#34;&gt;Topics on High-Dimensional Data Analytics&lt;/h1&gt;
@@ -26,25 +26,52 @@
 &lt;li&gt;&lt;a href=&#34;#optimization-application&#34;&gt;Optimization Application&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-&lt;h2 id=&#34;big-data&#34;&gt;Big Data&lt;/h2&gt;
+&lt;h1 id=&#34;functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/h1&gt;
+&lt;p&gt;A fluctuating quantity or impulse whose variations represent information and is often represented as a function of time or space.&lt;/p&gt;
+&lt;p&gt;From Wikipedia&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Functional data analysis (FDA)&lt;/strong&gt; is a branch of statistics that analyses data providing information about curves, surfaces or anything else varying over a continuum. In its most general form, under an FDA framework, each sample element of functional data is considered to be a random function. The physical continuum over which these functions are defined is often time, but may also be spatial location, wavelength, probability, etc. Intrinsically, functional data are infinite dimensional. The high intrinsic dimensionality of these data brings challenges for theory as well as computation, where these challenges vary with how the functional data were sampled. However, the high or infinite dimensional structure of the data is a rich source of information and there are many interesting challenges for research and data analysis.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://lands.let.ru.nl/FDA/images/FDA_pic4website.bmp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;regression---least-square-estimates&#34;&gt;Regression - Least square Estimates&lt;/h2&gt;
+&lt;p&gt;A linear regression model assumes that the regression function $E(Y|X)$ is linear in the inputs $X_1, &amp;hellip;, X_p$. They were developed in the pre-computer age of statistics, but even in today&amp;rsquo;s computer era there are still good reasons to study and use them. They are simple and often provide an adequate and interpretable description of how the inputs affect the output.&lt;/p&gt;
+&lt;p&gt;The linear regression model has the form:&lt;/p&gt;
+&lt;p&gt;$f(X) = \beta_0 + \sum_{j=1}^p X_j\beta_j$&lt;/p&gt;
+&lt;p&gt;Typically we have a set of training data $(x_1, y_1)&amp;hellip;(x_N, y_N)$ from which to estimate the parameters $\beta$. Each $x_i = (x_{i1}, x_{i2} &amp;hellip; x_{ip})^T$ is a vector of feature measurements for the $i$th case. The most popular estimation method is the least squares, in which we pick the coefficients $\beta = (\beta_0, \beta_1,&amp;hellip;.\beta_p)^T$ to minimize the residual sum of squares.&lt;/p&gt;
+&lt;p&gt;$\sum_{i=1}^N (y_i - f(x))^2 = \sum_{i=1}^N (y_i - \beta_0 - \sum_{j=1}^p X_j\beta_j)^2$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/lr.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Denote $X$ by the $N \times (p+1)$ matrix with each row an input vector (with a 1 in the first position, to represent the intercept), and similarity let $y$ be the $N$ vector of outputs in the training set. Then we can write the residual sum-of-squares as :&lt;/p&gt;
+&lt;p&gt;$RSS(\beta) = (y-X\beta)^T(y-X\beta)$&lt;/p&gt;
+&lt;p&gt;Differentiating with respect to $\beta$, &amp;hellip;.&lt;/p&gt;
+&lt;p&gt;$\hat{\beta} = (X^TX)^{-1}X^Ty$&lt;/p&gt;
+&lt;h2 id=&#34;geometric-interpretation&#34;&gt;Geometric Interpretation&lt;/h2&gt;
+&lt;p&gt;$\hat{y} = X\hat{\beta} = X(X^TX)^{-1}X^Ty = Hy $&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Projection Matrix&lt;/strong&gt; (or Hat matrix): The outcome vector $y$ is orthogonally projected onto the hyperplane spanned by the input vectors $x_1$ and $x_2$. The Projection $\hat{y}$ represents the vector of predictions obtained by the least square method.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/ols_projection.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;properties-of-ols&#34;&gt;Properties of OLS&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &amp;ldquo;big data&amp;rdquo; is often associated with what is referred to as the &amp;ldquo;4V&amp;rdquo; framework, which describes the key characteristics of big data:&lt;/li&gt;
+&lt;li&gt;They are unbiased estimators. That is the expected value of estimators and actual parameters are the same $E(\hat{\beta}) = \beta$&lt;/li&gt;
+&lt;li&gt;The covariance can be obtained by $cov(\hat{\beta}) = \sigma^2 (X^TX)^{-1}$, where $\sigma^2 = SSE/(n-p)$&lt;/li&gt;
+&lt;li&gt;According to the &lt;strong&gt;Gauss-Markov Theorem&lt;/strong&gt;, among all unbiased linear estimates, the least square estimate (LSE) has the minimum variance and it is unique.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;splines&#34;&gt;Splines&lt;/h2&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h3 id=&#34;big-data&#34;&gt;Big Data&lt;/h3&gt;
+&lt;p&gt;Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &amp;ldquo;big data&amp;rdquo; is often associated with what is referred to as the &amp;ldquo;4V&amp;rdquo; framework, which describes the key characteristics of big data:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Volume:&lt;/strong&gt;  This refers to the sheer scale of data generated and collected. Big data involves datasets that are too large to be managed and processed using traditional databases and tools. This massive volume can range from terabytes to petabytes and beyond.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Velocity:&lt;/strong&gt;  This characteristic pertains to the speed at which data is generated, collected, and processed. In today&amp;rsquo;s fast-paced digital world, data is generated at an unprecedented rate, often in real-time or near-real-time. Examples include social media interactions, sensor data from IoT devices, financial transactions, and more.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Variety:&lt;/strong&gt;  Big data comes in various formats and types, such as structured, semi-structured, and unstructured data. Structured data is organized into a well-defined format (e.g., tables in a relational database), whereas unstructured data lacks a specific structure (e.g., text documents, images, videos, social media posts). Semi-structured data lies somewhere in between, having a partial structure but not fitting neatly into traditional databases.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Veracity:&lt;/strong&gt;  Veracity refers to the quality and reliability of the data. With the proliferation of data sources, there&amp;rsquo;s an increased potential for data to be incomplete, inaccurate, or inconsistent. Ensuring the accuracy and trustworthiness of big data is a significant challenge, and data quality management is crucial for meaningful insights.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;high-dimensional-data&#34;&gt;High Dimensional Data&lt;/h2&gt;
+&lt;h3 id=&#34;high-dimensional-data&#34;&gt;High Dimensional Data&lt;/h3&gt;
 &lt;p&gt;High-dimensional data refers to datasets where the number of features or variables (dimensions) is significantly larger than the number of observations or samples. In other words, the data has a high number of attributes compared to the number of data points available. This kind of data is prevalent in various fields such as genomics, image analysis, social networks, and more.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/high_dimensional_.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;difference-between-high-dimensional-data-and-big-data&#34;&gt;Difference between High Dimensional Data and Big Data&lt;/h2&gt;
+&lt;h3 id=&#34;difference-between-high-dimensional-data-and-big-data&#34;&gt;Difference between High Dimensional Data and Big Data&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/diff_bet_high_and_low.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;p = dimension
 n = samples&lt;/p&gt;
-&lt;h2 id=&#34;the-curse-of-dimensionality&#34;&gt;The Curse of Dimensionality&lt;/h2&gt;
+&lt;h3 id=&#34;the-curse-of-dimensionality&#34;&gt;The Curse of Dimensionality&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -57,15 +84,10 @@ n = samples&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Increased Computational Demands:&lt;/strong&gt;  Processing and analyzing high-dimensional data require more computational resources and time. Many algorithms become slower and more memory-intensive as the number of dimensions grows. This can make experimentation and model training more challenging and time-consuming.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Difficulties in Visualization:&lt;/strong&gt;  Our ability to visualize data effectively diminishes as the number of dimensions increases. We are accustomed to thinking in 2D and 3D space, but visualizing data in, say, 10 dimensions is practically impossible. This can make it hard to understand the structure of the data and the relationships between variables.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;To mitigate the Curse of Dimensionality, researchers and practitioners often turn to techniques like dimensionality reduction and feature selection. These methods aim to reduce the number of dimensions while preserving as much relevant information as possible. Dimensionality reduction techniques like Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are commonly used to address this challenge.&lt;/p&gt;
-&lt;h2 id=&#34;low-dimensional-learning-from-high-dimensional-data&#34;&gt;Low Dimensional Learning From High Dimensional Data&lt;/h2&gt;
+&lt;h3 id=&#34;low-dimensional-learning-from-high-dimensional-data&#34;&gt;Low Dimensional Learning From High Dimensional Data&lt;/h3&gt;
 &lt;p&gt;High dimensional data usually have low dimensional structure.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.mathworks.com/help/examples/stats/win64/ChangeTsneSettingsExample_01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This can be achieved through Functional Data Analysis, Tensor Analysis, Rank Deficient Methods among others.&lt;/p&gt;
-&lt;h1 id=&#34;functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/h1&gt;
-&lt;p&gt;A fluctuating quantity or impulse whose variations represent information and is often represented as a function of time or space.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lands.let.ru.nl/FDA/images/FDA_pic4website.bmp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;regression---least-square-estimates&#34;&gt;Regression - Least square Estimates&lt;/h2&gt;
 </description>
     </item>
     

@@ -197,7 +197,7 @@ onload='renderMathInElement(document.body);'></script>
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2023-08-17">2023-08-17</time>
+		datetime="2023-08-22">2023-08-22</time>
 </div>
 
 <hr />
@@ -218,25 +218,52 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#optimization-application">Optimization Application</a></li>
 <li><a href="#regularization">Regularization</a></li>
 </ol>
-<h1 id="introduction">Introduction</h1>
-<h2 id="big-data">Big Data</h2>
+<h1 id="functional-data-analysis">Functional Data Analysis</h1>
+<p>A fluctuating quantity or impulse whose variations represent information and is often represented as a function of time or space.</p>
+<p>From Wikipedia</p>
+<blockquote>
+<p><strong>Functional data analysis (FDA)</strong> is a branch of statistics that analyses data providing information about curves, surfaces or anything else varying over a continuum. In its most general form, under an FDA framework, each sample element of functional data is considered to be a random function. The physical continuum over which these functions are defined is often time, but may also be spatial location, wavelength, probability, etc. Intrinsically, functional data are infinite dimensional. The high intrinsic dimensionality of these data brings challenges for theory as well as computation, where these challenges vary with how the functional data were sampled. However, the high or infinite dimensional structure of the data is a rich source of information and there are many interesting challenges for research and data analysis.</p>
+</blockquote>
+<p><img src="https://lands.let.ru.nl/FDA/images/FDA_pic4website.bmp" alt=""></p>
+<h2 id="regression---least-square-estimates">Regression - Least square Estimates</h2>
+<p>A linear regression model assumes that the regression function $E(Y|X)$ is linear in the inputs $X_1, &hellip;, X_p$. They were developed in the pre-computer age of statistics, but even in today&rsquo;s computer era there are still good reasons to study and use them. They are simple and often provide an adequate and interpretable description of how the inputs affect the output.</p>
+<p>The linear regression model has the form:</p>
+<p>$f(X) = \beta_0 + \sum_{j=1}^p X_j\beta_j$</p>
+<p>Typically we have a set of training data $(x_1, y_1)&hellip;(x_N, y_N)$ from which to estimate the parameters $\beta$. Each $x_i = (x_{i1}, x_{i2} &hellip; x_{ip})^T$ is a vector of feature measurements for the $i$th case. The most popular estimation method is the least squares, in which we pick the coefficients $\beta = (\beta_0, \beta_1,&hellip;.\beta_p)^T$ to minimize the residual sum of squares.</p>
+<p>$\sum_{i=1}^N (y_i - f(x))^2 = \sum_{i=1}^N (y_i - \beta_0 - \sum_{j=1}^p X_j\beta_j)^2$</p>
+<p><img src="/img/lr.png" alt=""></p>
+<p>Denote $X$ by the $N \times (p+1)$ matrix with each row an input vector (with a 1 in the first position, to represent the intercept), and similarity let $y$ be the $N$ vector of outputs in the training set. Then we can write the residual sum-of-squares as :</p>
+<p>$RSS(\beta) = (y-X\beta)^T(y-X\beta)$</p>
+<p>Differentiating with respect to $\beta$, &hellip;.</p>
+<p>$\hat{\beta} = (X^TX)^{-1}X^Ty$</p>
+<h2 id="geometric-interpretation">Geometric Interpretation</h2>
+<p>$\hat{y} = X\hat{\beta} = X(X^TX)^{-1}X^Ty = Hy $</p>
+<p><strong>Projection Matrix</strong> (or Hat matrix): The outcome vector $y$ is orthogonally projected onto the hyperplane spanned by the input vectors $x_1$ and $x_2$. The Projection $\hat{y}$ represents the vector of predictions obtained by the least square method.</p>
+<p><img src="/img/ols_projection.png" alt=""></p>
+<h2 id="properties-of-ols">Properties of OLS</h2>
 <ul>
-<li>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</li>
+<li>They are unbiased estimators. That is the expected value of estimators and actual parameters are the same $E(\hat{\beta}) = \beta$</li>
+<li>The covariance can be obtained by $cov(\hat{\beta}) = \sigma^2 (X^TX)^{-1}$, where $\sigma^2 = SSE/(n-p)$</li>
+<li>According to the <strong>Gauss-Markov Theorem</strong>, among all unbiased linear estimates, the least square estimate (LSE) has the minimum variance and it is unique.</li>
 </ul>
+<h2 id="splines">Splines</h2>
+<h1 id="introduction">Introduction</h1>
+<h3 id="big-data">Big Data</h3>
+<p>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</p>
 <ol>
 <li><strong>Volume:</strong>  This refers to the sheer scale of data generated and collected. Big data involves datasets that are too large to be managed and processed using traditional databases and tools. This massive volume can range from terabytes to petabytes and beyond.</li>
 <li><strong>Velocity:</strong>  This characteristic pertains to the speed at which data is generated, collected, and processed. In today&rsquo;s fast-paced digital world, data is generated at an unprecedented rate, often in real-time or near-real-time. Examples include social media interactions, sensor data from IoT devices, financial transactions, and more.</li>
 <li><strong>Variety:</strong>  Big data comes in various formats and types, such as structured, semi-structured, and unstructured data. Structured data is organized into a well-defined format (e.g., tables in a relational database), whereas unstructured data lacks a specific structure (e.g., text documents, images, videos, social media posts). Semi-structured data lies somewhere in between, having a partial structure but not fitting neatly into traditional databases.</li>
 <li><strong>Veracity:</strong>  Veracity refers to the quality and reliability of the data. With the proliferation of data sources, there&rsquo;s an increased potential for data to be incomplete, inaccurate, or inconsistent. Ensuring the accuracy and trustworthiness of big data is a significant challenge, and data quality management is crucial for meaningful insights.</li>
 </ol>
-<h2 id="high-dimensional-data">High Dimensional Data</h2>
+<h3 id="high-dimensional-data">High Dimensional Data</h3>
 <p>High-dimensional data refers to datasets where the number of features or variables (dimensions) is significantly larger than the number of observations or samples. In other words, the data has a high number of attributes compared to the number of data points available. This kind of data is prevalent in various fields such as genomics, image analysis, social networks, and more.</p>
 <p><img src="/img/high_dimensional_.png" alt=""></p>
-<h2 id="difference-between-high-dimensional-data-and-big-data">Difference between High Dimensional Data and Big Data</h2>
+<h3 id="difference-between-high-dimensional-data-and-big-data">Difference between High Dimensional Data and Big Data</h3>
 <p><img src="/img/diff_bet_high_and_low.png" alt=""></p>
 <p>p = dimension
 n = samples</p>
-<h2 id="the-curse-of-dimensionality">The Curse of Dimensionality</h2>
+<h3 id="the-curse-of-dimensionality">The Curse of Dimensionality</h3>
 <blockquote>
 <p>As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially!</p>
 </blockquote>
@@ -249,15 +276,10 @@ n = samples</p>
 <li><strong>Increased Computational Demands:</strong>  Processing and analyzing high-dimensional data require more computational resources and time. Many algorithms become slower and more memory-intensive as the number of dimensions grows. This can make experimentation and model training more challenging and time-consuming.</li>
 <li><strong>Difficulties in Visualization:</strong>  Our ability to visualize data effectively diminishes as the number of dimensions increases. We are accustomed to thinking in 2D and 3D space, but visualizing data in, say, 10 dimensions is practically impossible. This can make it hard to understand the structure of the data and the relationships between variables.</li>
 </ol>
-<p>To mitigate the Curse of Dimensionality, researchers and practitioners often turn to techniques like dimensionality reduction and feature selection. These methods aim to reduce the number of dimensions while preserving as much relevant information as possible. Dimensionality reduction techniques like Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are commonly used to address this challenge.</p>
-<h2 id="low-dimensional-learning-from-high-dimensional-data">Low Dimensional Learning From High Dimensional Data</h2>
+<h3 id="low-dimensional-learning-from-high-dimensional-data">Low Dimensional Learning From High Dimensional Data</h3>
 <p>High dimensional data usually have low dimensional structure.</p>
 <p><img src="https://www.mathworks.com/help/examples/stats/win64/ChangeTsneSettingsExample_01.png" alt=""></p>
 <p>This can be achieved through Functional Data Analysis, Tensor Analysis, Rank Deficient Methods among others.</p>
-<h1 id="functional-data-analysis">Functional Data Analysis</h1>
-<p>A fluctuating quantity or impulse whose variations represent information and is often represented as a function of time or space.</p>
-<p><img src="https://lands.let.ru.nl/FDA/images/FDA_pic4website.bmp" alt=""></p>
-<h2 id="regression---least-square-estimates">Regression - Least square Estimates</h2>
 </div>
 	</section>
 
@@ -413,7 +435,7 @@ n = samples</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		758 words in this page.
+		1144 words in this page.
 	</div>
 </div>
 
