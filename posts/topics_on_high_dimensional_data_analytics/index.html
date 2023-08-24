@@ -246,7 +246,37 @@ onload='renderMathInElement(document.body);'></script>
 <li>The covariance can be obtained by $cov(\hat{\beta}) = \sigma^2 (X^TX)^{-1}$, where $\sigma^2 = SSE/(n-p)$</li>
 <li>According to the <strong>Gauss-Markov Theorem</strong>, among all unbiased linear estimates, the least square estimate (LSE) has the minimum variance and it is unique.</li>
 </ul>
+<blockquote>
+<p>Regression can be used for Feature Extraction</p>
+</blockquote>
 <h2 id="splines">Splines</h2>
+<p><strong>Polynomial Regression</strong> is a type of regression analysis where the relationship between the independent variable (input) and the dependent variable (output) is modeled as an nth-degree polynomial. In other words, instead of fitting a straight line (linear regression), a polynomial regression can fit curves of various degrees, allowing for more flexibility in capturing complex relationships. For example, a quadratic polynomial regression (degree 2) can model a parabolic relationship, and a cubic polynomial regression (degree 3) can model more intricate curves.</p>
+<blockquote>
+<p><strong>Polynomial regression is still considered a type of linear regression</strong> because the relationship between the input and output variables is linear with respect to the coefficients, even though the input variables may be raised to different powers. The model equation for polynomial regression of degree n is:</p>
+</blockquote>
+<p>$y = \beta_0 + \beta_1x + \beta_2x^2 + \beta_3x^3 + &hellip; + \beta_mx^m + \epsilon$</p>
+<p><strong>Nonlinear Regression</strong>, on the other hand, refers to a broader class of regression models where the relationship between the independent and dependent variables is not a linear function. Nonlinear regression can encompass a wide range of functional forms, including exponential, logarithmic, sigmoidal, and other complex shapes. The main characteristic of nonlinear regression is that the model parameters are estimated in a way that best fits the chosen nonlinear function to the data.</p>
+<p>Unlike polynomial regression, nonlinear regression models can&rsquo;t be expressed in terms of a simple equation with polynomial terms. The specific form of the nonlinear function needs to be determined based on the problem&rsquo;s nature and domain knowledge.</p>
+<p><strong>Disadvantages of Polynomial Regression</strong></p>
+<ul>
+<li>Remote part of the function is very sensitive to outliers</li>
+<li>Less flexibility due to global function structure</li>
+</ul>
+<p><img src="/img/dis_pr.png" alt=""></p>
+<blockquote>
+<p>The global function structure causes underfitting or overfitting.</p>
+</blockquote>
+<p>The solution is to move from global to local structure -&gt; Splines.</p>
+<h3 id="splines-1">Splines</h3>
+<ul>
+<li>Linear combination of Piecewise polynomial function <strong>under continuity assumption</strong></li>
+<li>Partition the domain of x into continuous intervals and fit polynomials in each interval separately</li>
+<li>Provides flexibility and local fitting</li>
+</ul>
+<p>Suppose $x \in [a,b]$. Partition the x domain using the following points (a.k.a knots):</p>
+<p>$a&lt;\xi_1&lt;\xi_2&hellip;&lt;\xi_k&lt;b, &lt;\xi_0=a, &lt;\xi_{k+1}=b$</p>
+<p>Fit a polynomial in each interval under the continuity conditions and integrate them by</p>
+<p>$f(X) = \sum_{m=1}^K \beta_mh_m(X)$</p>
 <h1 id="introduction">Introduction</h1>
 <h3 id="big-data">Big Data</h3>
 <p>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</p>
@@ -435,7 +465,7 @@ n = samples</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1144 words in this page.
+		1508 words in this page.
 	</div>
 </div>
 
