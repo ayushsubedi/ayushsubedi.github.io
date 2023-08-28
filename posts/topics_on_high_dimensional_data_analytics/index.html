@@ -269,7 +269,7 @@ onload='renderMathInElement(document.body);'></script>
 <p>The solution is to move from global to local structure -&gt; Splines.</p>
 <h3 id="splines-1">Splines</h3>
 <ul>
-<li>Linear combination of Piecewise polynomial function <strong>under continuity assumption</strong></li>
+<li>Linear combination of Piecewise Polynomial Function <strong>under continuity assumption</strong></li>
 <li>Partition the domain of x into continuous intervals and fit polynomials in each interval separately</li>
 <li>Provides flexibility and local fitting</li>
 </ul>
@@ -277,6 +277,83 @@ onload='renderMathInElement(document.body);'></script>
 <p>$a&lt;\xi_1&lt;\xi_2&hellip;&lt;\xi_k&lt;b, &lt;\xi_0=a, &lt;\xi_{k+1}=b$</p>
 <p>Fit a polynomial in each interval under the continuity conditions and integrate them by</p>
 <p>$f(X) = \sum_{m=1}^K \beta_mh_m(X)$</p>
+<h3 id="simple-example">Simple Example</h3>
+<h3 id="piecewise-constant">Piecewise Constant</h3>
+<p><img src="/img/pwc.png" alt=""></p>
+<p>Here we are using a zero order polynomial. A zero order polynomial can be defined by an indicator function. If we use OLS, the beta would be the average of point in each local region.</p>
+<p>$f(X) = \sum_{m=1}^3 \beta_mh_m(X)$</p>
+<h3 id="piecewise-linear">Piecewise Linear</h3>
+<p><img src="/img/pwl.png" alt=""></p>
+<p>Here we are using a first order polynomial. A first order polynomial includes slopes and intercept (and therefore $K=6$ here.)</p>
+<p>$f(X) = \sum_{m=1}^6 \beta_mh_m(X)$</p>
+<p>There are two issues here:</p>
+<ul>
+<li>Discontinuity</li>
+<li>Underfitting</li>
+</ul>
+<h2 id="solving-for-discontinuity">Solving for Discontinuity</h2>
+<p>We can impose continuity constraint for each knot:</p>
+<p>$f{\xi^-_1}=f(\xi^+_1)$</p>
+<p>This can be translated to $\beta_1+\xi_1\beta_4 = \beta_2 + \xi_1\beta_5$</p>
+<blockquote>
+<p>Not sure how</p>
+</blockquote>
+<p>By adding constraints we are losing some degrees of freedom.
+The total number of free parameters (degree of freedom) = 6 (total number of parameters -2 (total number of constraints) = 4</p>
+<p>Alternatively, once could incorporate the constraints into the basis functions:</p>
+<p>$h_1(X) = 1$,</p>
+<p>$h_2(X) = X$,</p>
+<p>$h_3(X) = (X-\xi_1)_+$,</p>
+<p>$h_4(X) = (X-\xi_2)_+$</p>
+<p>This basis is known as truncated power basis</p>
+<p>$(X-\xi_k)_+ = (X-\xi_k)$ if $x \ge xi_k$ $0$ if $x&lt;xi_k$</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/790G152GYz4?si=PIkkurtDgaioUCMu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h2 id="solving-for-underfitting">Solving for Underfitting</h2>
+<p>Splines with Higher Order of Continuity can be used to tackle underfitting.</p>
+<p><img src="/img/cp.png" alt=""></p>
+<p>Continuity constraints for smoothness</p>
+<p>$f{\xi^-_1}=f(\xi^+_1)$</p>
+<p>$f^&rsquo;{\xi^-_1}=f^&rsquo;(\xi^+_1)$</p>
+<p>$f^{&rsquo;&rsquo;}{\xi^-_1}=f^{&rsquo;&rsquo;}(\xi^+_1)$</p>
+<p>$h_1(X) = 1$,</p>
+<p>$h_2(X) = X$,</p>
+<p>$h_3(X) = X^2$,</p>
+<p>$h_4(X) = X^3$,</p>
+<p>$h_5(X) = (X-\xi_1)^3_+$,</p>
+<p>$h_6(X) = (X-\xi_2)^3_+$</p>
+<p>The degree of freedom is calculated by:
+Number of regions * Number of parameters in each region) - (Number of knots)*(Number of constraints per knot)</p>
+<h2 id="order-m-splines">Order-M Splines</h2>
+<ul>
+<li>M=1 piecewise-constant splines</li>
+<li>M=2 linear splines</li>
+<li>M=3 quadratic splines</li>
+<li>M=4 cubic splines</li>
+</ul>
+<p>For Truncated power basis functions:</p>
+<ul>
+<li>Total degree of freedom is K+M</li>
+<li>Cubic spline is the lowest order spline for which the knot discontinuity is not visible to human eyes</li>
+<li>Knots selection: a simple method is to use x quantiles. However, the choice of knots is a variable/model selection problem.</li>
+</ul>
+<h2 id="estimation">Estimation</h2>
+<ul>
+<li>After creating the basis function, we can use OLS to estimate parameters $\beta$</li>
+<li>First of all, create a basis matrix by concatinating basis vectors. For example if we have cubic splines with two knots, we will have six basis vectors.</li>
+</ul>
+<p>$H = [h_1(x) \quad h_2(x) \quad h_3(x) \quad h_4(x) \quad h_5(x) \quad h_6(x)]$</p>
+<p>gives $\hat\beta = (H^TH)^-1H^Ty$</p>
+<p>Linear Smoother: $\hat y= H\hat\beta = H(H^TH)^{-1}H^Ty = Sy$</p>
+<p>Degrees of Freedom $df=trace S$</p>
+<p>Although truncated power basis functions are simple and algebraically appealing, it is not efficient for computation and ill-posed and numerically unstable. The matrix is close to singular (because of correlations among themselves, and determinant being very close to zero), and inverting it becomes challenging.</p>
+<p>The solution is to user Bsplines.</p>
+<h2 id="bsplines">Bsplines</h2>
+<ul>
+<li>Alternative basis vectors for piecewise polynomials that are computationally more efficient</li>
+<li>Each basis function has a local support, that is, it is nonzero over at most M (spline order) consecutive intervals</li>
+<li>The basis matrix is banded</li>
+</ul>
+<p><img src="/img/bspline.png" alt=""></p>
 <h1 id="introduction">Introduction</h1>
 <h3 id="big-data">Big Data</h3>
 <p>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</p>
@@ -465,7 +542,7 @@ n = samples</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1508 words in this page.
+		1968 words in this page.
 	</div>
 </div>
 
