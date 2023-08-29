@@ -352,8 +352,148 @@ Number of regions * Number of parameters in each region) - (Number of knots)*(Nu
 <li>Alternative basis vectors for piecewise polynomials that are computationally more efficient</li>
 <li>Each basis function has a local support, that is, it is nonzero over at most M (spline order) consecutive intervals</li>
 <li>The basis matrix is banded</li>
+<li>The low bandwidth of the matrix reduces the linear dependency of the columns, and therefore, removes the numeric column stability.</li>
 </ul>
 <p><img src="/img/bspline.png" alt=""></p>
+<h2 id="bspline-basis">Bspline Basis</h2>
+<p>Let $B_{j,m}(x)$ be the $j^{th}$ B-spline basis function of order $m(m \le M)$ for the knot sequence $\tau$</p>
+<p>$a &lt; \xi_1 &lt; \xi_2 &lt; &hellip; &lt; \xi_k &lt; b$</p>
+<p>Define the augmented knots sequence $\tau$</p>
+<p>$\tau_1 \le \tau_2 &hellip;\le \tau_M \le \xi_0$ (before the lower bound)</p>
+<p>$\tau_{M+j} = \xi_j, j = 1, &hellip; , K$</p>
+<p>$\xi_{K+1} \le \tau_{M+K+1} \le \tau_{M+K+2} \le &hellip; \le \tau_{2M+K}$ (after the lower bound)</p>
+<h3 id="smoother-matrix">Smoother Matrix</h3>
+<p>Consider a regression Spline basis B</p>
+<p>$\hat f = B(B^TB)^{-1}B^Ty = Hy$</p>
+<ul>
+<li>H is the smoother matrix (projection matrix)</li>
+<li>H is idempotent ($H \times H = H$)</li>
+<li>H is symmetric</li>
+<li>Degrees of freedom trace (H)</li>
+</ul>
+<h2 id="smoothing-splines">Smoothing Splines</h2>
+<h3 id="bspline-basis-boundary-issue">Bspline basis boundary issue</h3>
+<p>Consider the following setting with the fixed training data</p>
+<p>$y_i = f(x_i) + \epsilon_i$</p>
+<p>$\epsilon_i \approx iid(0, \sigma^2)$</p>
+<p>$Var(\hat f(x)) = h(x)^T(H^TH)^{-1}h(x)\sigma^2$ (variance of estimated function using spline)</p>
+<blockquote>
+<p>Behavior of splines tends to be sporadic near the boundaries, and extrapolation can be problematic. The main reason is that the complexity of Cubic Spline is more than the complexity of Global Cubic Polynomial, due to the large number of parameters (less bias, more variance). The solution is to use linear splines instead of cubic splines (Natural Cubic Splines).</p>
+</blockquote>
+<h2 id="natural-cubic-splines">Natural Cubic Splines</h2>
+<ul>
+<li>Additional constraints are added to make the function linear beyond the boundary knots</li>
+<li>Assuming the function is linear near the boundaries (where there is less information) is often reasonable</li>
+<li>Cubic spline; linear on $[-\inf, \xi_1]$ and $[\xi_k , \inf]$</li>
+<li>Prediction variance decreases</li>
+<li>The price is the bias near the boundaries</li>
+<li>Degrees of freedom is K, the number of knots</li>
+<li>Each of these basis functions has zero second and third derivative in the linear region.</li>
+</ul>
+<h2 id="penalized-residual-sum-of-squares">Penalized residual sum of squares</h2>
+<p>$\min_f \frac{1}{n}\sum_{i-1}^n[y_i - f(x_i)]^2+\lambda \int^a_b[f^{&quot;}(x)^2dx]$</p>
+<ul>
+<li>The first term measures the closeness of the model to the data (related to bias)</li>
+<li>The second term penalizes curvature of the function (related to variance)</li>
+<li>$\lambda$ is the smoothing parameter controlling the trade between bias and variance</li>
+<li>$\lambda = 0$ interpolate the data (overfitting)</li>
+<li>$\lambda = \inf$ linear least-square regression (underfitting)</li>
+</ul>
+<p>It can be shown that the minimizer is a natural cubic spline.</p>
+<p>Solution: $\hat \theta = (N^TN + \lambda\Omega)^{-1}N^Ty$
+, $\Omega$ represents the second derivative</p>
+<p>$ f = (N^TN + \lambda\Omega)^{-1}N^Ty = S_\lambda y$</p>
+<ul>
+<li>Smoothing spline estimator is a linear smoother</li>
+<li>$S_\lambda$ is the smoother matrix</li>
+<li>$S_\lambda$ is NOT idempotent</li>
+<li>$S_\lambda$ is symmetric</li>
+<li>$S_\lambda$ is positive definite</li>
+<li>Degrees of freedom: trace($S_\lambda$)</li>
+</ul>
+<h2 id="choice-of-tuning-parameters">Choice of Tuning Parameters</h2>
+<ul>
+<li>
+<p>Train Test Validation
+<img src="/img/pt.png" alt=""></p>
+</li>
+<li>
+<p>Cross Validation
+If an independent validation dataset is not affordable, the K-fold cross validation or leave-one-out CV can be useful</p>
+</li>
+<li>
+<p>Akaike Information Criteria (AIC)</p>
+</li>
+<li>
+<p>Bayesian Information Criteria (BIC)</p>
+</li>
+<li>
+<p>Generalized Cross-validation</p>
+</li>
+</ul>
+<h2 id="kernel-smoothers">Kernel Smoothers</h2>
+<h3 id="k-nearest-neighbor-knn">K-Nearest Neighbor (KNN)</h3>
+<p>KNN Average $\hat f(x_0) = \sum_{i=1}^nw(x_0, x_i)y_i$</p>
+<p>where $\sum_{i=1}^nw(x_0, x_i)$ = $\frac{1}{K}$ if $x_i \in N_k(x_0)$ else $0$</p>
+<ul>
+<li>Simple average of the k nearest observations to $x_0$ (local averaging)</li>
+<li>Equal weights are assigned to all neighbors</li>
+<li>However, the fitted function is in the form of a step function (non-smooth function)</li>
+<li>Also, the bias is quite high</li>
+</ul>
+<h3 id="kernel-function">Kernel Function</h3>
+<p>Any non-negative real-valued integrable function that satisfies the following conditions:</p>
+<ul>
+<li>$\int_{-\inf}^{\inf}K(u)du=1$</li>
+<li>K is an even function; $K(-u) = K(u)$</li>
+<li>It has a finite second moment; $u^2\int_{-\inf}^{\inf}K(u)du &lt; \inf$</li>
+</ul>
+<h3 id="kernel-smoother-regression">Kernel Smoother Regression</h3>
+<p><strong>Kernel Regression</strong></p>
+<ul>
+<li>Is weighted local averaging that fits a simple model separately at each query point $x_0$</li>
+<li>More weights are assigned to closer observation</li>
+<li>Localization is defined by the weighting function</li>
+<li>Kernel regression requires little training, all calculations get done at the evaluation time.</li>
+</ul>
+<p><img src="/img/kregression.png" alt=""></p>
+<h3 id="choice-of-lambda">Choice of $\lambda$</h3>
+<ul>
+<li>$\lambda$ defines the width of the neighbourhood</li>
+<li>Only points withing $[x_0-\lambda, x_0+\lambda]$ receive positive weights</li>
+<li>Smaller $\lambda$: rough estimate, larger bias, smaller variance</li>
+<li>Larger $\lambda$: smoother estimate, smaller bias, larger variance</li>
+</ul>
+<p>Cross-validation can be used for determining of $\lambda$:</p>
+<h3 id="drawbacks-of-local-averaging">Drawbacks of Local Averaging</h3>
+<ul>
+<li>The local averaging can be biased on the boundaries of the domain due to the asymmetry of the kernel in that region.</li>
+<li>This can be solved by local linear regression</li>
+</ul>
+<p><img src="/img/nw_kernel.png" alt=""></p>
+<ul>
+<li>Local linear regression corrects the bias on the boundaries</li>
+<li>Local polynomial regression corrects the bias in the curvature region</li>
+<li>However, local polynomial regression is complex due to higher order of polynomials, therefore, it increases the prediction variance.</li>
+<li>A good solution would be to use local linear model for points in the boundaries, and local quadratic regression in the interior regions.</li>
+</ul>
+<h2 id="functional-principal-component">Functional Principal Component</h2>
+<p>Similar to PCA, FPCA aims to reduce the dimension of functional data by extracting a small set of uncorrelated features, which capture the most of the variation.</p>
+<p>Functional data (observed signals) are comprised of two main components. The first component is the continuous functional mean, and the second component is the error term, that is, the realizations from a stochastic process with mean function 0 and covariance function $C(t, t^&rsquo;)$. It includes both random noise and signal-to-signal variations</p>
+<p>$s_i(t) = \mu(t) + \epsilon_i(t)$</p>
+<p>The mean function is common across all signals (notice that it does not have the $i$ subscript)</p>
+<p>Since signal variance comes from the noise function, we first focus on this for dimensionality reduction using the Karhunen-Loeve Theorem.</p>
+<p><img src="/img/kl.png" alt=""></p>
+<p>The variance of $\xi_{ik}$ quickly decays with k. Therefore, only a few $\xi_{ik}$ also known as FPC-scores, would be enough to accurately approximate the noise function. That is,</p>
+<p>$\epsilon_i(t) \approx \sum_{k=1}^K \xi_{ik}\phi_{k}(t)$</p>
+<p>Signals decomposition is given by</p>
+<p>$s_i(t) = \mu(t) + \epsilon_i(t) \implies \mu(t) + \sum_{k=1}^K \xi_{ik}\phi_{k}(t)$</p>
+<h2 id="model-estimation">Model Estimation</h2>
+<p>Both the mean and covariance is unknown, and should be measured using training data. In practice, we have two types of signals/data:</p>
+<ul>
+<li>Complete signals: Sampled regularly</li>
+<li>Incomplete signals: Sampled irregularly, sparse, fragmented</li>
+</ul>
 <h1 id="introduction">Introduction</h1>
 <h3 id="big-data">Big Data</h3>
 <p>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</p>
@@ -542,7 +682,7 @@ n = samples</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1968 words in this page.
+		2903 words in this page.
 	</div>
 </div>
 
