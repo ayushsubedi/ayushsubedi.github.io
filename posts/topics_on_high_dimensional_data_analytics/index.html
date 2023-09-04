@@ -553,6 +553,12 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 <p><img src="/img/image_analysis.png" alt=""></p>
 <h2 id="what-is-an-image">What is an Image?</h2>
 <p>A gray (color-RGB) image is a 2-D (3-D) light intensity function, $f (x_1, x_2)$, where $f$ measures brightness at position $f(x_1, x_2)$ . A digital gray (color) image is a representation of an image by a 2-D (3-D) array of discrete samples. <strong>Pixel</strong> is referred to an element of the array.</p>
+<p>Possible values each pixel can have:</p>
+<ul>
+<li>Black and white image: 2</li>
+<li>8-bit Gray image: 256</li>
+<li>RGB: 256 x 256 x 256 = 16777216</li>
+</ul>
 <h2 id="basic-manipulation-in-python">Basic Manipulation in Python</h2>
 <pre tabindex="0"><code>import cv2
 
@@ -650,6 +656,13 @@ else:
 <li>The goal is to automatically determine the threshold $t$ given an image histogram.</li>
 </ul>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Otsu%27s_Method_Visualization.gif/440px-Otsu%27s_Method_Visualization.gif" alt=""></p>
+<p>Steps:</p>
+<ul>
+<li>Get the histogram of the image</li>
+<li>Calculate group mean and variance</li>
+<li>Find the maximum value for the variance</li>
+<li>Threshold the image</li>
+</ul>
 <pre tabindex="0"><code>import numpy as np
 
 def compute_otsu_criteria(im, th):
@@ -697,6 +710,9 @@ best_threshold = threshold_range[np.argmin(criterias)]
 <li>Update the cluster mean</li>
 <li>Repeat the last two process until convergence</li>
 </ul>
+<blockquote>
+<p>The objective of K-means is to minimize the within cluster variation, and maximize the inter-class variation.</p>
+</blockquote>
 <h3 id="edge-detection">Edge Detection</h3>
 <ul>
 <li>Edges are significant local changes of intensity in an image.</li>
@@ -744,7 +760,10 @@ best_threshold = threshold_range[np.argmin(criterias)]
 <pre tabindex="0"><code>0  1  0
 1 -4  1
 0  1  0
-</code></pre></div>
+</code></pre><blockquote>
+<p>Laplacian, Sobel, and Prewitt are masks used for edge detection. Gaussian is not a mask for edge detection.</p>
+</blockquote>
+</div>
 	</section>
 
 </article>
@@ -899,7 +918,7 @@ best_threshold = threshold_range[np.argmin(criterias)]
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		4134 words in this page.
+		4213 words in this page.
 	</div>
 </div>
 

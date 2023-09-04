@@ -361,6 +361,12 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/image_analysis.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-is-an-image&#34;&gt;What is an Image?&lt;/h2&gt;
 &lt;p&gt;A gray (color-RGB) image is a 2-D (3-D) light intensity function, $f (x_1, x_2)$, where $f$ measures brightness at position $f(x_1, x_2)$ . A digital gray (color) image is a representation of an image by a 2-D (3-D) array of discrete samples. &lt;strong&gt;Pixel&lt;/strong&gt; is referred to an element of the array.&lt;/p&gt;
+&lt;p&gt;Possible values each pixel can have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Black and white image: 2&lt;/li&gt;
+&lt;li&gt;8-bit Gray image: 256&lt;/li&gt;
+&lt;li&gt;RGB: 256 x 256 x 256 = 16777216&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;basic-manipulation-in-python&#34;&gt;Basic Manipulation in Python&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import cv2
 
@@ -458,6 +464,13 @@ else:
 &lt;li&gt;The goal is to automatically determine the threshold $t$ given an image histogram.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Otsu%27s_Method_Visualization.gif/440px-Otsu%27s_Method_Visualization.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get the histogram of the image&lt;/li&gt;
+&lt;li&gt;Calculate group mean and variance&lt;/li&gt;
+&lt;li&gt;Find the maximum value for the variance&lt;/li&gt;
+&lt;li&gt;Threshold the image&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import numpy as np
 
 def compute_otsu_criteria(im, th):
@@ -505,6 +518,9 @@ best_threshold = threshold_range[np.argmin(criterias)]
 &lt;li&gt;Update the cluster mean&lt;/li&gt;
 &lt;li&gt;Repeat the last two process until convergence&lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The objective of K-means is to minimize the within cluster variation, and maximize the inter-class variation.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;edge-detection&#34;&gt;Edge Detection&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Edges are significant local changes of intensity in an image.&lt;/li&gt;
@@ -552,7 +568,10 @@ best_threshold = threshold_range[np.argmin(criterias)]
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;0  1  0
 1 -4  1
 0  1  0
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;Laplacian, Sobel, and Prewitt are masks used for edge detection. Gaussian is not a mask for edge detection.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
     
   </channel>
