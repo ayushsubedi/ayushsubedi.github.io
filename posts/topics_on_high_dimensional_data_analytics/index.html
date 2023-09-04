@@ -541,7 +541,210 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 <li>Compute the Eigen functions</li>
 <li>Compute the FPC scores</li>
 </ul>
-</div>
+<h1 id="image-analysis">Image Analysis</h1>
+<h2 id="introduction-to-image-processing">Introduction to Image Processing</h2>
+<ul>
+<li>The process of processing raw images and extracting useful information for decision making.</li>
+<li><strong>Level 0:</strong> Image representation (acquisition, sampling, quantization, compression)</li>
+<li><strong>Level 1:</strong> Image to Image transformations (enhancement, filtering, restoration, smoothing, segmentation)</li>
+<li><strong>Level 2:</strong> Image to vector transformation (feature extraction and dimension reduction)</li>
+<li><strong>Level 3:</strong> Feature to decision mapping</li>
+</ul>
+<p><img src="/img/image_analysis.png" alt=""></p>
+<h2 id="what-is-an-image">What is an Image?</h2>
+<p>A gray (color-RGB) image is a 2-D (3-D) light intensity function, $f (x_1, x_2)$, where $f$ measures brightness at position $f(x_1, x_2)$ . A digital gray (color) image is a representation of an image by a 2-D (3-D) array of discrete samples. <strong>Pixel</strong> is referred to an element of the array.</p>
+<h2 id="basic-manipulation-in-python">Basic Manipulation in Python</h2>
+<pre tabindex="0"><code>import cv2
+
+# Load the image
+image_path = &#39;your_image.jpg&#39;  # Replace with the path to your image
+original_image = cv2.imread(image_path)
+
+# Check if the image was loaded successfully
+if original_image is None:
+    print(&#34;Error: Could not open or find the image.&#34;)
+else:
+    # Convert the image to grayscale
+    gray_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
+
+    # Convert the grayscale image to black and white using thresholding
+    _, binary_image = cv2.threshold(gray_image, 128, 255, cv2.THRESH_BINARY)
+
+    # Resize the image (e.g., to a width of 800 pixels while maintaining aspect ratio)
+    new_width = 800
+    aspect_ratio = original_image.shape[1] / original_image.shape[0]
+    new_height = int(new_width / aspect_ratio)
+    resized_image = cv2.resize(binary_image, (new_width, new_height))
+
+    # Save the processed images to disk
+    cv2.imwrite(&#39;gray_image.jpg&#39;, gray_image)
+    cv2.imwrite(&#39;black_and_white_image.jpg&#39;, binary_image)
+    cv2.imwrite(&#39;resized_image.jpg&#39;, resized_image)
+
+    print(&#34;Images processed and saved successfully.&#34;)
+</code></pre><h2 id="image-transformation">Image Transformation</h2>
+<h3 id="image-histogram">Image Histogram</h3>
+<ul>
+<li>Histogram represents the distribution of gray levels.</li>
+<li>It is an estimate of the probability density function (pdf) of the underlying random process.</li>
+</ul>
+<p>Image can be transformed by applying a function on the image matrix.</p>
+<p>$g(x,y) = T(f(x,y))$</p>
+<p>For example if a threshold function is sued as the transformation function a gray-scale image can be converted to a BW image.</p>
+<p><img src="/img/step_function.png" alt=""></p>
+<ul>
+<li>The brightness of an image can be changed by shifting its histogram.</li>
+<li>The contrast of an image is defined by the difference in maximum and minimum pixel intensity.</li>
+<li>Gray level resolution refers to change in the shades or levels of gray in an image.</li>
+<li>The number of different colors in an image depends on bits per pixel (bpp).</li>
+</ul>
+<p>$L = 2^{bpp}$</p>
+<ul>
+<li>Gray level transformation is often used for image enchantment.</li>
+<li>Three typical transformation functions are:
+<ul>
+<li>Linear (negative image)</li>
+<li>Log</li>
+<li>Power-Law</li>
+</ul>
+</li>
+</ul>
+<h3 id="convolution-and-image-filtering">Convolution and image filtering</h3>
+<p>The convolution of functions $f$ and $g$ is defined by:</p>
+<p><img src="/img/convolutions.png" alt=""></p>
+<ul>
+<li>Convolution is widely used in image processing for denoising, blurring, sharpening, embossing, and edge detection.</li>
+<li>Image filter is a convolution of a mask (aka kernel, and convolution matrix) with an image that can be used for blurring, sharpening, edge detection, etc.</li>
+<li>A mask is a matrix convolved with an image.</li>
+</ul>
+<h3 id="image-convolution-with-a-mask">Image Convolution with a Mask</h3>
+<ul>
+<li>Flip the mask (kernel) both horizontally and vertically.</li>
+<li>Put the center element of the mask at every pixel of the image. Multiply the corresponding elements and then add them up. Replace the pixel value corresponding to the center of the mask with the resulting sum.</li>
+</ul>
+<p><img src="/img/convolution.png" alt=""></p>
+<ul>
+<li>For pixels on the border of image matrix, some elements of the mask might fall out of the image matrix. In this case, we can extend the image by adding zeros. This is known as padding.</li>
+</ul>
+<p><img src="/img/padding.png" alt=""></p>
+<h3 id="denoising-of-smooth-images-using-splines">Denoising of Smooth Images using Splines</h3>
+<ul>
+<li>Another approach for denoising smooth images is to use local regression with smooth basis (eg. splines)</li>
+<li>Using Kronecker product, a 2D-spline basis can be generated from 1D basis matrices</li>
+</ul>
+<h2 id="image-segmentation">Image Segmentation</h2>
+<ul>
+<li>The main goal of image segmentation is to partition an image into multiple sets of pixels (segments)</li>
+<li>Image segmentation has been widely used for object detection, face and fingerprint recognition, medical imaging, video surveillance, etc.</li>
+<li>Various methods exist for image segmentation including:
+<ul>
+<li>Local and global thresholding</li>
+<li>Otsu&rsquo;s method</li>
+<li>K-means clustering</li>
+</ul>
+</li>
+<li>Thresholding is a simple segmentation approach that converts grayscale image to binary image by applying the thresholding function on histogram.</li>
+</ul>
+<h3 id="otsus-method">Otsu&rsquo;s Method</h3>
+<ul>
+<li>The goal is to automatically determine the threshold $t$ given an image histogram.</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Otsu%27s_Method_Visualization.gif/440px-Otsu%27s_Method_Visualization.gif" alt=""></p>
+<pre tabindex="0"><code>import numpy as np
+
+def compute_otsu_criteria(im, th):
+    &#34;&#34;&#34;Otsu&#39;s method to compute criteria.&#34;&#34;&#34;
+    # create the thresholded image
+    thresholded_im = np.zeros(im.shape)
+    thresholded_im[im &gt;= th] = 1
+
+    # compute weights
+    nb_pixels = im.size
+    nb_pixels1 = np.count_nonzero(thresholded_im)
+    weight1 = nb_pixels1 / nb_pixels
+    weight0 = 1 - weight1
+
+    # if one of the classes is empty, eg all pixels are below or above the threshold, that threshold will not be considered
+    # in the search for the best threshold
+    if weight1 == 0 or weight0 == 0:
+        return np.inf
+
+    # find all pixels belonging to each class
+    val_pixels1 = im[thresholded_im == 1]
+    val_pixels0 = im[thresholded_im == 0]
+
+    # compute variance of these classes
+    var1 = np.var(val_pixels1) if len(val_pixels1) &gt; 0 else 0
+    var0 = np.var(val_pixels0) if len(val_pixels0) &gt; 0 else 0
+
+    return weight0 * var0 + weight1 * var1
+
+im = # load your image as a numpy array.
+# For testing purposes, one can use for example im = np.random.randint(0,255, size = (50,50))
+
+# testing all thresholds from 0 to the maximum of the image
+threshold_range = range(np.max(im)+1)
+criterias = [compute_otsu_criteria(im, th) for th in threshold_range]
+
+# best threshold is the one minimizing the Otsu criteria
+best_threshold = threshold_range[np.argmin(criterias)]
+</code></pre><h3 id="k-means-clustering-method">K-Means Clustering Method</h3>
+<p>K-means clustering is a method for partitioning a set of observations to K clusters, such that the within-cluster variation is minimized.</p>
+<ul>
+<li>Rearrange the image pixels such that the number of rows in the resulting matrix is equal to the number of pixels and the number of columns is the same as the number of color channels</li>
+<li>Randomly select K centers</li>
+<li>Assign each pixel to the closest cluster</li>
+<li>Update the cluster mean</li>
+<li>Repeat the last two process until convergence</li>
+</ul>
+<h3 id="edge-detection">Edge Detection</h3>
+<ul>
+<li>Edges are significant local changes of intensity in an image.</li>
+<li>Edge Detection: Detect pixel with sudden intensity change</li>
+<li>Often points that lie on an edge are detected by:
+<ul>
+<li>Detecting the local <strong>maxima</strong> or <strong>minima</strong> of the first derivative.</li>
+<li>Detecting the <strong>zero-crossings</strong> of the second derivative.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/edge.png" alt=""></p>
+<h3 id="sobel-operator">Sobel Operator</h3>
+<p>The Sobel operator works by convolving an image with a pair of 3x3 kernels or filters, one for detecting edges in the horizontal direction (often referred to as the Sobel-X operator) and the other for detecting edges in the vertical direction (often referred to as the Sobel-Y operator). These kernels are as follows:</p>
+<p>Sobel-X Kernel:</p>
+<pre tabindex="0"><code>-1  0  1
+-2  0  2
+-1  0  1
+</code></pre><p>Sobel-Y Kernel:</p>
+<pre tabindex="0"><code>-1 -2 -1
+ 0  0  0
+ 1  2  1
+</code></pre><h3 id="krisch-operator">Krisch Operator</h3>
+<p>Krisch is another derivative mask that finds the maximum edge strength in eight directions of a compass.</p>
+<p><img src="/img/kirsh.png" alt=""></p>
+<blockquote>
+<p>It is more time consuming compare to Sobel</p>
+</blockquote>
+<h3 id="prewitt-mask">Prewitt Mask</h3>
+<p>The Prewitt operator, like the Sobel operator, employs a pair of 3x3 convolution kernels, one for detecting edges in the horizontal direction and the other for detecting edges in the vertical direction.</p>
+<p>Here are the two Prewitt kernels:</p>
+<p>Prewitt-X Kernel:</p>
+<pre tabindex="0"><code>-1  0  1
+-1  0  1
+-1  0  1
+</code></pre><p>Prewitt-Y Kernel:</p>
+<pre tabindex="0"><code>-1 -1 -1
+ 0  0  0
+ 1  1  1
+</code></pre><h3 id="laplacian-and-laplacian-of-gaussian-mask">Laplacian and Laplacian of Gaussian Mask</h3>
+<ul>
+<li>Laplacian mask is a second order derivative mask.</li>
+<li>For noisy images, is combined with a Gaussian mask to reduce the noise</li>
+</ul>
+<pre tabindex="0"><code>0  1  0
+1 -4  1
+0  1  0
+</code></pre></div>
 	</section>
 
 </article>
@@ -696,7 +899,7 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		2959 words in this page.
+		4134 words in this page.
 	</div>
 </div>
 
