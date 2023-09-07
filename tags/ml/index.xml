@@ -411,6 +411,16 @@ weighted avg       0.82      0.82      0.82       178
     document.getElementById(&#39;iEQNONC6A81P7ECNP9I4A&#39;)
   );
 &lt;/script&gt;
+&lt;hr/&gt;
+&lt;br/&gt;
+## Sources
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://papers.nips.cc/paper_files/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html&#34;&gt;https://papers.nips.cc/paper_files/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shap/shap&#34;&gt;https://github.com/shap/shap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=VB9uV-x0gtg&#34;&gt;https://www.youtube.com/watch?v=VB9uV-x0gtg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Shapley_value&#34;&gt;https://en.wikipedia.org/wiki/Shapley_value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Lloyd_Shapley&#34;&gt;https://en.wikipedia.org/wiki/Lloyd_Shapley&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
