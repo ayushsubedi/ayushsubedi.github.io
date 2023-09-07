@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>explainability</title>
+      <link>https://ayushsubedi.github.io/tags/explainability/</link>
+      <pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/explainability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game-theory</title>
+      <link>https://ayushsubedi.github.io/tags/game-theory/</link>
+      <pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/game-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ml</title>
+      <link>https://ayushsubedi.github.io/tags/ml/</link>
+      <pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shap</title>
+      <link>https://ayushsubedi.github.io/tags/shap/</link>
+      <pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/shap/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>clustering</title>
@@ -1142,15 +1178,6 @@
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/flask/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ml</title>
-      <link>https://ayushsubedi.github.io/tags/ml/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/ml/</guid>
       <description></description>
     </item>
     
