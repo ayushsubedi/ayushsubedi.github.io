@@ -26,6 +26,13 @@
 &lt;li&gt;&lt;a href=&#34;#optimization-application&#34;&gt;Optimization Application&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h1 id=&#34;tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/h1&gt;
+&lt;h2 id=&#34;multilinear-algebra-preliminaries-i&#34;&gt;Multilinear Algebra Preliminaries I&lt;/h2&gt;
+&lt;h2 id=&#34;multilinear-algebra-preliminaries-ii&#34;&gt;Multilinear Algebra Preliminaries II&lt;/h2&gt;
+&lt;h2 id=&#34;tensor-decomposition-methods---cp-decomposition&#34;&gt;Tensor Decomposition Methods - CP Decomposition&lt;/h2&gt;
+&lt;h2 id=&#34;tensor-decomposition-methods---tucker-decomposition&#34;&gt;Tensor Decomposition Methods - Tucker Decomposition&lt;/h2&gt;
+&lt;h2 id=&#34;tensor-analysis-applications-i&#34;&gt;Tensor Analysis Applications I&lt;/h2&gt;
+&lt;h2 id=&#34;tensor-analysis-application-ii&#34;&gt;Tensor Analysis Application II&lt;/h2&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;h3 id=&#34;big-data&#34;&gt;Big Data&lt;/h3&gt;
 &lt;p&gt;Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &amp;ldquo;big data&amp;rdquo; is often associated with what is referred to as the &amp;ldquo;4V&amp;rdquo; framework, which describes the key characteristics of big data:&lt;/p&gt;
