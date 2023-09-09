@@ -18,7 +18,7 @@
       
       <guid>https://ayushsubedi.github.io/posts/shap_exploration/</guid>
       <description>&lt;h1 id=&#34;paper-exploration-a-unified-approach-to-interpreting-model-predictions&#34;&gt;Paper Exploration: A Unified Approach to Interpreting Model Predictions&lt;/h1&gt;
-&lt;!-- &lt;iframe width=&#34;100%&#34; height=&#34;412&#34; src=&#34;https://www.youtube.com/embed/dmbOd5es8gY?si=7yLpfZbUu9gGKS8d&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt; --&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;412&#34; src=&#34;https://www.youtube.com/embed/dmbOd5es8gY?si=7yLpfZbUu9gGKS8d&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;strong&gt;Paper Authors&lt;/strong&gt;: Scott M. Lundberg, Su-In Lee&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/shap/shap&#34;&gt;https://github.com/shap/shap&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Original Paper&lt;/strong&gt;:&lt;/p&gt;
