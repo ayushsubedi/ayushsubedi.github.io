@@ -27,12 +27,101 @@
 &lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/h1&gt;
-&lt;h2 id=&#34;multilinear-algebra-preliminaries-i&#34;&gt;Multilinear Algebra Preliminaries I&lt;/h2&gt;
-&lt;h2 id=&#34;multilinear-algebra-preliminaries-ii&#34;&gt;Multilinear Algebra Preliminaries II&lt;/h2&gt;
-&lt;h2 id=&#34;tensor-decomposition-methods---cp-decomposition&#34;&gt;Tensor Decomposition Methods - CP Decomposition&lt;/h2&gt;
-&lt;h2 id=&#34;tensor-decomposition-methods---tucker-decomposition&#34;&gt;Tensor Decomposition Methods - Tucker Decomposition&lt;/h2&gt;
-&lt;h2 id=&#34;tensor-analysis-applications-i&#34;&gt;Tensor Analysis Applications I&lt;/h2&gt;
-&lt;h2 id=&#34;tensor-analysis-application-ii&#34;&gt;Tensor Analysis Application II&lt;/h2&gt;
+&lt;h2 id=&#34;tensor-introduction&#34;&gt;Tensor Introduction&lt;/h2&gt;
+&lt;p&gt;In mathematics, a tensor is an algebraic object that describes a multi-linear relationship between sets of algebraic objects related to a vector space. Tensors may map between different objects such as vectors, scalars, and even other tensors.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Components_stress_tensor.svg/600px-Components_stress_tensor.svg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Tensor is a multidimensional array, examples include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scalars&lt;/li&gt;
+&lt;li&gt;Vectors&lt;/li&gt;
+&lt;li&gt;Matrices&lt;/li&gt;
+&lt;li&gt;Matrix sequences&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;terminologies&#34;&gt;Terminologies:&lt;/h3&gt;
+&lt;h4 id=&#34;order&#34;&gt;Order&lt;/h4&gt;
+&lt;p&gt;The number of dimensions of a tensor also known as ways or modes&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/tensor_order.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;fibers&#34;&gt;Fibers&lt;/h4&gt;
+&lt;p&gt;A fiber, the higher order analogue of matrix row and column, is defined by fixing every index but one, e.g.,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A matrix column is a mode-1 fiber and a matrix row is a mode-2 fiber&lt;/li&gt;
+&lt;li&gt;Third-order tensors have column, row, and tube fibers&lt;/li&gt;
+&lt;li&gt;Extracted fibers from a tensor are assumed to be oriented as column vectors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/fibers.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;slices&#34;&gt;Slices&lt;/h4&gt;
+&lt;p&gt;Two-dimensional sections of a tensor, defined by fixing all but two indices.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/slices.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;norm&#34;&gt;Norm&lt;/h4&gt;
+&lt;p&gt;Norm of a tensor $X \in \R^{I_1 \times I_2 \times &amp;hellip;. \times I_N}$ is the square root of the sum of the squares of all its elements.&lt;/p&gt;
+&lt;p&gt;This is analogous to the matrix Frobenius norm, which is denoted $||A||_F$ for matrix $A$&lt;/p&gt;
+&lt;h4 id=&#34;outer-product&#34;&gt;Outer Product&lt;/h4&gt;
+&lt;p&gt;A multi-way vector outer product is a tensor where each element is the product of corresponding elements in vectors&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/outer_product.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;inner-product&#34;&gt;Inner Product&lt;/h4&gt;
+&lt;p&gt;The inner product of two tensors is a generalization of the dot product operation for vectors as calculated by dot. A dot product operation (multiply and sum) is performed on all corresponding dimensions in the tensors, so the operation returns a scalar value. For this operation, the tensors must have the same size.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/innter_product.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;using-tensorly-for-inner-and-outer-product&#34;&gt;Using Tensorly for inner and outer product&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import tensorly as tl
+import numpy as np
+
+# Define the shape of the random tensors
+shape = (4, 2, 3)
+
+# Generate random data for X and Y using NumPy
+X_data = np.random.rand(*shape)
+Y_data = np.random.rand(*shape)
+
+# Convert the NumPy arrays to TensorLy tensors
+X = tl.tensor(X_data)
+Y = tl.tensor(Y_data)
+
+# Calculate the inner product of X and Y
+inner_product = tl.tenalg.inner(X, Y)
+
+# Calculate the outer product of X and Y
+outer_product = tl.tenalg.outer(X, Y)
+
+# Print the results
+print(&amp;#34;Inner Product:&amp;#34;)
+print(inner_product)
+
+print(&amp;#34;\nOuter Product:&amp;#34;)
+print(outer_product)
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;using-tensorly-for-unfolding-and-flattening&#34;&gt;Using Tensorly for unfolding, and flattening&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Unfold an N-way tensor into a matrix&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import tensorly as tl
+import numpy as np
+
+# Create a random 2x2x2 tensor
+random_data = np.random.rand(2, 2, 2)
+tensor = tl.tensor(random_data)
+
+# Mode-1 matricization (unfold along the first mode)
+mode1_matricization = tl.unfold(tensor, mode=0)
+
+# Mode-2 matricization (unfold along the second mode)
+mode2_matricization = tl.unfold(tensor, mode=1)
+
+# Mode-3 matricization (unfold along the third mode)
+mode3_matricization = tl.unfold(tensor, mode=2)
+
+# Print the results
+print(&amp;#34;Mode-1 Matricization:&amp;#34;)
+print(mode1_matricization)
+
+print(&amp;#34;\nMode-2 Matricization:&amp;#34;)
+print(mode2_matricization)
+
+print(&amp;#34;\nMode-3 Matricization:&amp;#34;)
+print(mode3_matricization)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/matrixization.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;!-- ## Tensor Decomposition Methods - CP Decomposition
+## Tensor Decomposition Methods - Tucker Decomposition
+## Tensor Analysis Applications I
+## Tensor Analysis Application II --&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;h3 id=&#34;big-data&#34;&gt;Big Data&lt;/h3&gt;
 &lt;p&gt;Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &amp;ldquo;big data&amp;rdquo; is often associated with what is referred to as the &amp;ldquo;4V&amp;rdquo; framework, which describes the key characteristics of big data:&lt;/p&gt;

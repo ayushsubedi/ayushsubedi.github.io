@@ -219,12 +219,101 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#regularization">Regularization</a></li>
 </ol>
 <h1 id="tensor-data-analysis">Tensor Data Analysis</h1>
-<h2 id="multilinear-algebra-preliminaries-i">Multilinear Algebra Preliminaries I</h2>
-<h2 id="multilinear-algebra-preliminaries-ii">Multilinear Algebra Preliminaries II</h2>
-<h2 id="tensor-decomposition-methods---cp-decomposition">Tensor Decomposition Methods - CP Decomposition</h2>
-<h2 id="tensor-decomposition-methods---tucker-decomposition">Tensor Decomposition Methods - Tucker Decomposition</h2>
-<h2 id="tensor-analysis-applications-i">Tensor Analysis Applications I</h2>
-<h2 id="tensor-analysis-application-ii">Tensor Analysis Application II</h2>
+<h2 id="tensor-introduction">Tensor Introduction</h2>
+<p>In mathematics, a tensor is an algebraic object that describes a multi-linear relationship between sets of algebraic objects related to a vector space. Tensors may map between different objects such as vectors, scalars, and even other tensors.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Components_stress_tensor.svg/600px-Components_stress_tensor.svg.png" alt=""></p>
+<p>Tensor is a multidimensional array, examples include:</p>
+<ul>
+<li>Scalars</li>
+<li>Vectors</li>
+<li>Matrices</li>
+<li>Matrix sequences</li>
+</ul>
+<h3 id="terminologies">Terminologies:</h3>
+<h4 id="order">Order</h4>
+<p>The number of dimensions of a tensor also known as ways or modes</p>
+<p><img src="/img/tensor_order.png" alt=""></p>
+<h4 id="fibers">Fibers</h4>
+<p>A fiber, the higher order analogue of matrix row and column, is defined by fixing every index but one, e.g.,</p>
+<ul>
+<li>A matrix column is a mode-1 fiber and a matrix row is a mode-2 fiber</li>
+<li>Third-order tensors have column, row, and tube fibers</li>
+<li>Extracted fibers from a tensor are assumed to be oriented as column vectors.</li>
+</ul>
+<p><img src="/img/fibers.png" alt=""></p>
+<h4 id="slices">Slices</h4>
+<p>Two-dimensional sections of a tensor, defined by fixing all but two indices.</p>
+<p><img src="/img/slices.png" alt=""></p>
+<h4 id="norm">Norm</h4>
+<p>Norm of a tensor $X \in \R^{I_1 \times I_2 \times &hellip;. \times I_N}$ is the square root of the sum of the squares of all its elements.</p>
+<p>This is analogous to the matrix Frobenius norm, which is denoted $||A||_F$ for matrix $A$</p>
+<h4 id="outer-product">Outer Product</h4>
+<p>A multi-way vector outer product is a tensor where each element is the product of corresponding elements in vectors</p>
+<p><img src="/img/outer_product.png" alt=""></p>
+<h4 id="inner-product">Inner Product</h4>
+<p>The inner product of two tensors is a generalization of the dot product operation for vectors as calculated by dot. A dot product operation (multiply and sum) is performed on all corresponding dimensions in the tensors, so the operation returns a scalar value. For this operation, the tensors must have the same size.</p>
+<p><img src="/img/innter_product.png" alt=""></p>
+<h4 id="using-tensorly-for-inner-and-outer-product">Using Tensorly for inner and outer product</h4>
+<pre tabindex="0"><code>import tensorly as tl
+import numpy as np
+
+# Define the shape of the random tensors
+shape = (4, 2, 3)
+
+# Generate random data for X and Y using NumPy
+X_data = np.random.rand(*shape)
+Y_data = np.random.rand(*shape)
+
+# Convert the NumPy arrays to TensorLy tensors
+X = tl.tensor(X_data)
+Y = tl.tensor(Y_data)
+
+# Calculate the inner product of X and Y
+inner_product = tl.tenalg.inner(X, Y)
+
+# Calculate the outer product of X and Y
+outer_product = tl.tenalg.outer(X, Y)
+
+# Print the results
+print(&#34;Inner Product:&#34;)
+print(inner_product)
+
+print(&#34;\nOuter Product:&#34;)
+print(outer_product)
+</code></pre><h4 id="using-tensorly-for-unfolding-and-flattening">Using Tensorly for unfolding, and flattening</h4>
+<blockquote>
+<p>Unfold an N-way tensor into a matrix</p>
+</blockquote>
+<pre tabindex="0"><code>import tensorly as tl
+import numpy as np
+
+# Create a random 2x2x2 tensor
+random_data = np.random.rand(2, 2, 2)
+tensor = tl.tensor(random_data)
+
+# Mode-1 matricization (unfold along the first mode)
+mode1_matricization = tl.unfold(tensor, mode=0)
+
+# Mode-2 matricization (unfold along the second mode)
+mode2_matricization = tl.unfold(tensor, mode=1)
+
+# Mode-3 matricization (unfold along the third mode)
+mode3_matricization = tl.unfold(tensor, mode=2)
+
+# Print the results
+print(&#34;Mode-1 Matricization:&#34;)
+print(mode1_matricization)
+
+print(&#34;\nMode-2 Matricization:&#34;)
+print(mode2_matricization)
+
+print(&#34;\nMode-3 Matricization:&#34;)
+print(mode3_matricization)
+</code></pre><p><img src="/img/matrixization.png" alt=""></p>
+<!-- ## Tensor Decomposition Methods - CP Decomposition
+## Tensor Decomposition Methods - Tucker Decomposition
+## Tensor Analysis Applications I
+## Tensor Analysis Application II -->
 <h1 id="introduction">Introduction</h1>
 <h3 id="big-data">Big Data</h3>
 <p>Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &ldquo;big data&rdquo; is often associated with what is referred to as the &ldquo;4V&rdquo; framework, which describes the key characteristics of big data:</p>
@@ -925,7 +1014,7 @@ best_threshold = threshold_range[np.argmin(criterias)]
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		4244 words in this page.
+		4649 words in this page.
 	</div>
 </div>
 
