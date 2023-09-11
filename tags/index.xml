@@ -6,10 +6,217 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>clustering</title>
+      <link>https://ayushsubedi.github.io/tags/clustering/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>convolution</title>
+      <link>https://ayushsubedi.github.io/tags/convolution/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/convolution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hadamard_product</title>
+      <link>https://ayushsubedi.github.io/tags/hadamard_product/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/hadamard_product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image_analysis</title>
+      <link>https://ayushsubedi.github.io/tags/image_analysis/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/image_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>khatri_rao_product</title>
+      <link>https://ayushsubedi.github.io/tags/khatri_rao_product/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/khatri_rao_product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kirsch_operator</title>
+      <link>https://ayushsubedi.github.io/tags/kirsch_operator/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/kirsch_operator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kmeans</title>
+      <link>https://ayushsubedi.github.io/tags/kmeans/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/kmeans/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>knn</title>
+      <link>https://ayushsubedi.github.io/tags/knn/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/knn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kronecker_product</title>
+      <link>https://ayushsubedi.github.io/tags/kronecker_product/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/kronecker_product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lasso</title>
+      <link>https://ayushsubedi.github.io/tags/lasso/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/lasso/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>https://ayushsubedi.github.io/tags/optimization/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>https://ayushsubedi.github.io/tags/pca/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>polynomial_regression</title>
+      <link>https://ayushsubedi.github.io/tags/polynomial_regression/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/polynomial_regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rbfkernel</title>
+      <link>https://ayushsubedi.github.io/tags/rbfkernel/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/rbfkernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>https://ayushsubedi.github.io/tags/regression/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regularization</title>
+      <link>https://ayushsubedi.github.io/tags/regularization/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/regularization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ridge</title>
+      <link>https://ayushsubedi.github.io/tags/ridge/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ridge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>segmentation</title>
+      <link>https://ayushsubedi.github.io/tags/segmentation/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/segmentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sobel_operator</title>
+      <link>https://ayushsubedi.github.io/tags/sobel_operator/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sobel_operator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>splines</title>
+      <link>https://ayushsubedi.github.io/tags/splines/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/splines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tensor_data_analysis</title>
+      <link>https://ayushsubedi.github.io/tags/tensor_data_analysis/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/tensor_data_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>transformation</title>
+      <link>https://ayushsubedi.github.io/tags/transformation/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/transformation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tucker_decomposition</title>
+      <link>https://ayushsubedi.github.io/tags/tucker_decomposition/</link>
+      <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/tucker_decomposition/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>explainability</title>
@@ -44,213 +251,6 @@
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/shap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clustering</title>
-      <link>https://ayushsubedi.github.io/tags/clustering/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/clustering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>convolution</title>
-      <link>https://ayushsubedi.github.io/tags/convolution/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/convolution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadamard_product</title>
-      <link>https://ayushsubedi.github.io/tags/hadamard_product/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/hadamard_product/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>image_analysis</title>
-      <link>https://ayushsubedi.github.io/tags/image_analysis/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/image_analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>khatri_rao_product</title>
-      <link>https://ayushsubedi.github.io/tags/khatri_rao_product/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/khatri_rao_product/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kirsch_operator</title>
-      <link>https://ayushsubedi.github.io/tags/kirsch_operator/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/kirsch_operator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kmeans</title>
-      <link>https://ayushsubedi.github.io/tags/kmeans/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/kmeans/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>knn</title>
-      <link>https://ayushsubedi.github.io/tags/knn/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/knn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kronecker_product</title>
-      <link>https://ayushsubedi.github.io/tags/kronecker_product/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/kronecker_product/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lasso</title>
-      <link>https://ayushsubedi.github.io/tags/lasso/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/lasso/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>optimization</title>
-      <link>https://ayushsubedi.github.io/tags/optimization/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PCA</title>
-      <link>https://ayushsubedi.github.io/tags/pca/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>polynomial_regression</title>
-      <link>https://ayushsubedi.github.io/tags/polynomial_regression/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/polynomial_regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rbfkernel</title>
-      <link>https://ayushsubedi.github.io/tags/rbfkernel/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/rbfkernel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>https://ayushsubedi.github.io/tags/regression/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regularization</title>
-      <link>https://ayushsubedi.github.io/tags/regularization/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/regularization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ridge</title>
-      <link>https://ayushsubedi.github.io/tags/ridge/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/ridge/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>segmentation</title>
-      <link>https://ayushsubedi.github.io/tags/segmentation/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/segmentation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sobel_operator</title>
-      <link>https://ayushsubedi.github.io/tags/sobel_operator/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/sobel_operator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>splines</title>
-      <link>https://ayushsubedi.github.io/tags/splines/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/splines/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tensor_data_analysis</title>
-      <link>https://ayushsubedi.github.io/tags/tensor_data_analysis/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/tensor_data_analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>transformation</title>
-      <link>https://ayushsubedi.github.io/tags/transformation/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/transformation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tucker_decomposition</title>
-      <link>https://ayushsubedi.github.io/tags/tucker_decomposition/</link>
-      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/tucker_decomposition/</guid>
       <description></description>
     </item>
     
