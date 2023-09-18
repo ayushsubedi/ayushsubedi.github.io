@@ -678,7 +678,7 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/matrixization.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tensor-multiplication&#34;&gt;Tensor Multiplication&lt;/h2&gt;
 &lt;p&gt;The n-mode product is referred to as multiplying a tensor by a matrix (or a vector) in mode n.&lt;/p&gt;
-&lt;p&gt;The n-mode (matrix) product of a tensor $X \in \R^{I_1 \times I_2 \times &amp;hellip;. \times I_N}$ with a matrix $U \in R^{J \times I_n}$ is denoted by $X \times_n U$ and is of size $I_1 \times I_2 \times &amp;hellip;. \times I_{n-1} \times J \times J_{n+1} \times &amp;hellip;\times I_N $&lt;/p&gt;
+&lt;p&gt;The n-mode (matrix) product of a tensor $X \in \R^{I_1 \times I_2 \times &amp;hellip;. \times I_N}$ with a matrix $U \in R^{J \times I_n}$ is denoted by $X \times_n U$ and is of size $I_1 \times I_2 \times &amp;hellip;. \times I_{n-1} \times J \times I_{n+1} \times &amp;hellip;\times I_N $&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; tensorly &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; tl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -782,7 +782,76 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hadamard Product:&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(C)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tensor-decomposition&#34;&gt;Tensor Decomposition&lt;/h2&gt;
-</description>
+&lt;h3 id=&#34;rank-one-tensor&#34;&gt;Rank-One Tensor&lt;/h3&gt;
+&lt;p&gt;A Rank-One Tensor can be created by the outer product of multiple vectors, e.g., a 3-order rank-one tensor is obtained by&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/outer_product.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;candecompparafac-cp-decomposition&#34;&gt;Candecomp/Parafac (CP) Decomposition&lt;/h3&gt;
+&lt;p&gt;Candecomp/Parafac (CP)(Parallel Factor Analysis) decomposition is a tensor decomposition method used in multilinear algebra and multivariate data analysis. It is an extension of the matrix factorization technique, like Singular Value Decomposition (SVD), to higher-order tensors, often referred to as multi-way arrays.&lt;/p&gt;
+&lt;p&gt;The CP decomposition factorizes a tensor into a sum of component rank-one tensors, e.g. given a third-order tensor $X \in R^{I \times J\ times K}$, CP decomposition is given by,&lt;/p&gt;
+&lt;p&gt;$X \approx \sum_{r=1}^{R} a_r \cdot b_r \cdot c_r$&lt;/p&gt;
+&lt;p&gt;$R$ is a positive integer.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If R is the rank of higher-tensor then CP decomposition will be exact and unique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;rank-of-tensor&#34;&gt;Rank of Tensor&lt;/h3&gt;
+&lt;p&gt;Rank of a tensor $X$, denoted by $rank(X)$ is the smallest number of rank-one tensors whose sum can generate $X$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Determining the rank of a tensor is an NP-hard problem. Some weaker upper bounds, however, exits that helps restrict the rank space. For example,&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$X^{I \times J \times K}$,&lt;/p&gt;
+&lt;p&gt;$rank(X)$ $\le min(IJ,JK, IK)$&lt;/p&gt;
+&lt;h3 id=&#34;cp-decomposition-in-python&#34;&gt;CP Decomposition in Python&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; tensorly &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; tl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the dimensions of the tensor&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;I &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;J &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;K &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create a random tensor with the specified dimensions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(I, J, K)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Set the desired rank for the decomposition&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rank &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Perform CP decomposition using TensorLy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;factors &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decomposition&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;parafac(X, rank&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;rank)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Reconstruct the original tensor&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reconstructed_X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;kruskal_to_tensor(factors)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Evaluate the reconstruction error&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reconstruction_error &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;norm(X &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; reconstructed_X, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Reconstruction Error: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;reconstruction_error&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tucker-decomposition&#34;&gt;Tucker Decomposition&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tucker Decomposition is &lt;strong&gt;not&lt;/strong&gt; a special case of CP Decomposition&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Tucker decomposition, also known as Tucker factorization or Tucker model, is a tensor decomposition method used to represent a multi-dimensional tensor as a core tensor and a set of factor matrices that capture the relationships between the tensor&amp;rsquo;s modes or dimensions. Tucker decomposition is a higher-order extension of matrix factorization techniques like Singular Value Decomposition (SVD) to tensors.&lt;/p&gt;
+&lt;p&gt;In Tucker decomposition, a given tensor is approximated as the product of a core tensor and a set of factor matrices for each mode. The core tensor contains the most important information about the original tensor&amp;rsquo;s structure, while the factor matrices capture how each mode contributes to the overall tensor. Here&amp;rsquo;s an overview of the Tucker decomposition process:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; tensorly &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; tl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the dimensions of the tensor&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shape &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;# Change these dimensions according to your data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create a random tensor with the specified dimensions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tensor(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;shape))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Specify the Tucker rank (adjust these values as needed)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rank &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Perform Tucker decomposition using TensorLy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;core, factors &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decomposition&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tucker(X, rank&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;rank)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Reconstruct the original tensor&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reconstructed_X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;tucker_to_tensor(core, factors)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Evaluate the reconstruction error&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reconstruction_error &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;norm(X &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; reconstructed_X, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Reconstruction Error: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;reconstruction_error&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>

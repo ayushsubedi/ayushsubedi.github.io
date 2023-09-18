@@ -870,7 +870,7 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 </span></span></code></pre></div><p><img src="/img/matrixization.png" alt=""></p>
 <h2 id="tensor-multiplication">Tensor Multiplication</h2>
 <p>The n-mode product is referred to as multiplying a tensor by a matrix (or a vector) in mode n.</p>
-<p>The n-mode (matrix) product of a tensor $X \in \R^{I_1 \times I_2 \times &hellip;. \times I_N}$ with a matrix $U \in R^{J \times I_n}$ is denoted by $X \times_n U$ and is of size $I_1 \times I_2 \times &hellip;. \times I_{n-1} \times J \times J_{n+1} \times &hellip;\times I_N $</p>
+<p>The n-mode (matrix) product of a tensor $X \in \R^{I_1 \times I_2 \times &hellip;. \times I_N}$ with a matrix $U \in R^{J \times I_n}$ is denoted by $X \times_n U$ and is of size $I_1 \times I_2 \times &hellip;. \times I_{n-1} \times J \times I_{n+1} \times &hellip;\times I_N $</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorly <span style="color:#66d9ef">as</span> tl
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span><span style="display:flex;"><span>
@@ -974,7 +974,76 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hadamard Product:&#34;</span>)
 </span></span><span style="display:flex;"><span>print(C)
 </span></span></code></pre></div><h2 id="tensor-decomposition">Tensor Decomposition</h2>
-</div>
+<h3 id="rank-one-tensor">Rank-One Tensor</h3>
+<p>A Rank-One Tensor can be created by the outer product of multiple vectors, e.g., a 3-order rank-one tensor is obtained by</p>
+<p><img src="/img/outer_product.png" alt=""></p>
+<h3 id="candecompparafac-cp-decomposition">Candecomp/Parafac (CP) Decomposition</h3>
+<p>Candecomp/Parafac (CP)(Parallel Factor Analysis) decomposition is a tensor decomposition method used in multilinear algebra and multivariate data analysis. It is an extension of the matrix factorization technique, like Singular Value Decomposition (SVD), to higher-order tensors, often referred to as multi-way arrays.</p>
+<p>The CP decomposition factorizes a tensor into a sum of component rank-one tensors, e.g. given a third-order tensor $X \in R^{I \times J\ times K}$, CP decomposition is given by,</p>
+<p>$X \approx \sum_{r=1}^{R} a_r \cdot b_r \cdot c_r$</p>
+<p>$R$ is a positive integer.</p>
+<blockquote>
+<p>If R is the rank of higher-tensor then CP decomposition will be exact and unique.</p>
+</blockquote>
+<h3 id="rank-of-tensor">Rank of Tensor</h3>
+<p>Rank of a tensor $X$, denoted by $rank(X)$ is the smallest number of rank-one tensors whose sum can generate $X$</p>
+<blockquote>
+<p>Determining the rank of a tensor is an NP-hard problem. Some weaker upper bounds, however, exits that helps restrict the rank space. For example,</p>
+</blockquote>
+<p>$X^{I \times J \times K}$,</p>
+<p>$rank(X)$ $\le min(IJ,JK, IK)$</p>
+<h3 id="cp-decomposition-in-python">CP Decomposition in Python</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorly <span style="color:#66d9ef">as</span> tl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the dimensions of the tensor</span>
+</span></span><span style="display:flex;"><span>I <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>J <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>K <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a random tensor with the specified dimensions</span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(I, J, K)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the desired rank for the decomposition</span>
+</span></span><span style="display:flex;"><span>rank <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Perform CP decomposition using TensorLy</span>
+</span></span><span style="display:flex;"><span>factors <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>decomposition<span style="color:#f92672">.</span>parafac(X, rank<span style="color:#f92672">=</span>rank)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reconstruct the original tensor</span>
+</span></span><span style="display:flex;"><span>reconstructed_X <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>kruskal_to_tensor(factors)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Evaluate the reconstruction error</span>
+</span></span><span style="display:flex;"><span>reconstruction_error <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>norm(X <span style="color:#f92672">-</span> reconstructed_X, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Reconstruction Error: </span><span style="color:#e6db74">{</span>reconstruction_error<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><h2 id="tucker-decomposition">Tucker Decomposition</h2>
+<blockquote>
+<p>Tucker Decomposition is <strong>not</strong> a special case of CP Decomposition</p>
+</blockquote>
+<p>Tucker decomposition, also known as Tucker factorization or Tucker model, is a tensor decomposition method used to represent a multi-dimensional tensor as a core tensor and a set of factor matrices that capture the relationships between the tensor&rsquo;s modes or dimensions. Tucker decomposition is a higher-order extension of matrix factorization techniques like Singular Value Decomposition (SVD) to tensors.</p>
+<p>In Tucker decomposition, a given tensor is approximated as the product of a core tensor and a set of factor matrices for each mode. The core tensor contains the most important information about the original tensor&rsquo;s structure, while the factor matrices capture how each mode contributes to the overall tensor. Here&rsquo;s an overview of the Tucker decomposition process:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> tensorly <span style="color:#66d9ef">as</span> tl
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the dimensions of the tensor</span>
+</span></span><span style="display:flex;"><span>shape <span style="color:#f92672">=</span> (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>)  <span style="color:#75715e"># Change these dimensions according to your data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a random tensor with the specified dimensions</span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>tensor(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#f92672">*</span>shape))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify the Tucker rank (adjust these values as needed)</span>
+</span></span><span style="display:flex;"><span>rank <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Perform Tucker decomposition using TensorLy</span>
+</span></span><span style="display:flex;"><span>core, factors <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>decomposition<span style="color:#f92672">.</span>tucker(X, rank<span style="color:#f92672">=</span>rank)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reconstruct the original tensor</span>
+</span></span><span style="display:flex;"><span>reconstructed_X <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>tucker_to_tensor(core, factors)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Evaluate the reconstruction error</span>
+</span></span><span style="display:flex;"><span>reconstruction_error <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>norm(X <span style="color:#f92672">-</span> reconstructed_X, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Reconstruction Error: </span><span style="color:#e6db74">{</span>reconstruction_error<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div></div>
 	</section>
 
 </article>
@@ -1129,7 +1198,7 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		5439 words in this page.
+		5922 words in this page.
 	</div>
 </div>
 
