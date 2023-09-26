@@ -215,7 +215,7 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#functional-data-analysis">Functional Data Analysis</a></li>
 <li><a href="#image-analysis">Image Analysis</a></li>
 <li><a href="#tensor-data-analysis">Tensor Data Analysis</a></li>
-<li><a href="#optimization-application">Optimization and Application</a></li>
+<li><a href="#optimization-and-application">Optimization and Application</a></li>
 <li><a href="#regularization">Regularization</a></li>
 </ol>
 <!-- ## Tensor Decomposition Methods - CP Decomposition
@@ -1043,7 +1043,651 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Evaluate the reconstruction error</span>
 </span></span><span style="display:flex;"><span>reconstruction_error <span style="color:#f92672">=</span> tl<span style="color:#f92672">.</span>norm(X <span style="color:#f92672">-</span> reconstructed_X, <span style="color:#ae81ff">2</span>)
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Reconstruction Error: </span><span style="color:#e6db74">{</span>reconstruction_error<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-</span></span></code></pre></div></div>
+</span></span></code></pre></div><h1 id="optimization-and-application">Optimization and Application</h1>
+<p>In plain English, <strong>optimization</strong> is the action of making the best or most effective use of a situation or resource. Optimization problems are of great practical interest. For example, in manufacturing, how should one cut plates of a material so that the waste is minimized? In business, how should a company allocate the available resources that its profit is maximized? Some of the first optimization problems have been solved in ancient Greece and are regarded among the most significant discoveries of that time. In the first century A.D., the Alexandrian mathematician Heron solved the problem of finding the shortest path between two points by way of the mirror.</p>
+<p>This result, also known as Heron’s theorem of the light ray, can be viewed as the origin of the theory of geometrical optics. The problem of finding extreme values gained special importance in the seventeenth century, when it served as one of the motivations in the invention of differential calculus, which is the foundation of the modern theory of mathematical optimization.</p>
+<h2 id="generic-form-of-optimization-problem">Generic form of optimization problem:</h2>
+<p>$min$ $f(x)$ $s.t.$ $x \in X $</p>
+<ul>
+<li>The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem</li>
+<li>The function $f$ is the objective function</li>
+<li>A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints</li>
+<li>$X$ is the set of inequality constraints</li>
+</ul>
+<h3 id="mathematical-ingredients">Mathematical ingredients:</h3>
+<ul>
+<li>Encode decisions/actions as <strong>decision variables</strong> whose values we are seeking</li>
+<li>Identify the relevant <strong>problem data</strong></li>
+<li>Express <strong>constraints</strong> on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data</li>
+<li>Express the <strong>objective function</strong> as a function of the decision variables and the problem data.</li>
+</ul>
+<p><strong>Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.</strong></p>
+<pre tabindex="0"><code>min or max f(x1, x2, .... , xn)
+subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m 
+        xj is continuous or discrete    j = 1,....,n
+</code></pre><h3 id="the-problem-setting">The problem setting</h3>
+<ul>
+<li>Finite number of decision variables</li>
+<li>A single objective function of decision variables and problem data
+<ul>
+<li>Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.</li>
+</ul>
+</li>
+<li>The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data</li>
+<li>There may be domain restrictions (continuous or discrete) on some of the variables</li>
+<li>The functions defining the objective and constraints are algebraic (typically with rational coefficients)</li>
+</ul>
+<h3 id="minimization-vs-maximization">Minimization vs Maximization</h3>
+<ul>
+<li>Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function</li>
+</ul>
+<h3 id="program-vs-optimization">Program vs Optimization</h3>
+<ul>
+<li>A program or mathematical program is an optimization problem with a finite number of variables and constraints written out using explicit mathematical (algebraic) expressions</li>
+<li>The word program means plan/planning</li>
+<li>Early application of optimization arose in planning resource allocations and gave rise to programming to mean optimization (predates computer programming)</li>
+</ul>
+<h3 id="example-designing-a-box">Example: Designing a box:</h3>
+<p><strong>Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:</strong><br/>
+<strong>Decision:</strong> $x$ = how much to cut from each of the corners?<br/>
+<strong>Alternatives:</strong> $0&lt;=x&lt;=1/2$<br/>
+<strong>Best:</strong> Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)<br/>
+<strong>Optimization formulation:</strong> $max$ $x(1-2x)^2$ subject to $0&lt;=x&lt;=1/2$ (which are the constraints in this case)<br/></p>
+<iframe src="https://www.desmos.com/calculator/ily45jyfsv?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<p>This is an unconstrained optimization problem since the constraint is a simple bound based.</p>
+<h3 id="example-data-fitting">Example: Data Fitting:</h3>
+<p><strong>Given $N$ data points $(y_1, x_1)&hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.</strong><br/>
+<strong>Decision</strong>: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$<br/>
+<strong>Alternatives</strong>: All $n$-dimensional vectors and scalars<br/>
+<strong>Best</strong>: Minimize the sum of squared errors<br/>
+<strong>Optimization formulation</strong>:
+$\begin{array}{ll}\min &amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$</p>
+<p>This is also an unconstrained optimization problem.</p>
+<h3 id="example-product-mix">Example: Product Mix:</h3>
+<p><strong>A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?</strong><br/>
+<strong>Decision</strong>: how much of each product to make<br/>
+<strong>Alternatives</strong>: defined by the resource limits<br/>
+<strong>Best</strong>: Maximize profits<br/>
+<strong>Optimization formulation:</strong> <br/>
+Sum notation: $\begin{array}{lll}\max &amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp; \forall j=1, \ldots, m \ &amp; x_i \geq 0 &amp; \forall i=1, \ldots, n\end{array}$ <br/>
+Matrix notation: $\begin{array}{cl}\max &amp; p^{\top} x \ \text { s.t. } &amp; R x \leq u \ &amp; x \geq 0\end{array}$</p>
+<h3 id="example-project-investment">Example: Project investment</h3>
+<p><strong> A firm is considering investing in $n$ different R&amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?</strong><br/>
+<strong>Decision</strong>: Whether or not to invest in project<br/>
+<strong>Alternatives</strong>: Defined by budget<br/>
+<strong>Best</strong>: Maximize return on investment<br/>
+Sum notation: $\begin{aligned} \max &amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp; \sum_{j=1}^n c_j x_j \leq B \ &amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ <br/>
+Matrix notation: $\begin{aligned} \max  &amp; r^{\top} x \ \text { s.t. } &amp; c^{\top} x \leq B \ &amp; x \in{0,1}^n\end{aligned}$</p>
+<p>This is not an unconstrained problem.</p>
+<ul>
+<li>Identify basic portfolio optimization and associated issues</li>
+<li>Examine the Markowitz Portfolio Optimization approach
+<ul>
+<li><strong>Markowitz Principle</strong>: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)</li>
+</ul>
+</li>
+<li>For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
+<ul>
+<li>Maximize Expected Return - $\lambda$*risk</li>
+<li>Maximize Expected Return subject to risk &lt;= s_max (constraint on risk)</li>
+<li>Minimize Risk subject to return &gt;= r_min (threshold on expected returns)</li>
+</ul>
+</li>
+<li>Optimization Problem Statement</li>
+</ul>
+<pre tabindex="0"><code>Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
+- have a one month expected return of at least a given threshold
+- minimize the risk(variance) of the portfolio return
+</code></pre><ul>
+<li><strong>Decision</strong>: investment in each stock</li>
+<li><strong>alternatives</strong>: any investment that meets the budget and the minimum expected return requirement</li>
+<li>best: minimize variance</li>
+<li><strong>Key trade-off</strong>: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?</li>
+<li>Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved</li>
+<li>Need to exercise great caution in these assumptions and not loose sight of the true underlying problem</li>
+<li><strong>Assumptions</strong>:
+<ul>
+<li>No transaction cost</li>
+<li>Stocks does not need to be bought in blocks (any amount &gt;=0 is fine)</li>
+</ul>
+</li>
+<li><strong>Optimization Process</strong>: Decision Problem -&gt; Model -&gt; Data Collection -&gt; Model Solution -&gt; Analysis -&gt; Problem solution</li>
+<li>No clear cut recipe</li>
+<li>Lots of feedbacks and iterations</li>
+<li>Approximations and assumptions involved in each stage</li>
+<li>Success requires good understanding of the actual problem (domain knowledge is important)</li>
+</ul>
+<h2 id="classification-of-optimization-problems">Classification of optimization problems</h2>
+<ul>
+<li>The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Functions</th>
+<th>Variable domains</th>
+<th>Problem Type</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All linear</td>
+<td>Continuous variables</td>
+<td>Linear Program</td>
+<td>Easy</td>
+</tr>
+<tr>
+<td>Some nonlinear</td>
+<td>Continuous variables</td>
+<td>Nonlinear Program or Nonlinear Optimization Problem</td>
+<td>Easy/Difficult</td>
+</tr>
+<tr>
+<td>Linear/nonlinear</td>
+<td>Some discrete</td>
+<td>Integer Problem or Discrete Optimization Problem</td>
+<td>Difficult</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Optimization Problem</th>
+<th>Description</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear Programming</td>
+<td>A linear programming problem involves maximizing or minimizing a linear objective function subject to a set of linear constraints</td>
+<td>Easy to moderate</td>
+</tr>
+<tr>
+<td>Nonlinear Programming</td>
+<td>A nonlinear programming problem involves optimizing a function that is not linear, subject to a set of nonlinear constraints</td>
+<td>Moderate to hard</td>
+</tr>
+<tr>
+<td>Quadratic Programming</td>
+<td>A quadratic programming problem involves optimizing a quadratic objective function subject to a set of linear constraints</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Convex Optimization</td>
+<td>A convex optimization problem involves optimizing a convex function subject to a set of linear or convex constraints</td>
+<td>Easy to moderate</td>
+</tr>
+<tr>
+<td>Integer Programming</td>
+<td>An integer programming problem involves optimizing a linear or nonlinear objective function subject to a set of linear or nonlinear constraints, where some or all of the variables are restricted to integer values</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Mixed-integer Programming</td>
+<td>A mixed-integer programming problem is a generalization of integer programming where some or all of the variables can be restricted to integer values or continuous values</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Global Optimization</td>
+<td>A global optimization problem involves finding the global optimum of a function subject to a set of constraints, which may be nonlinear or non-convex</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Stochastic Optimization</td>
+<td>A stochastic optimization problem involves optimizing an objective function that depends on random variables, subject to a set of constraints</td>
+<td>Hard</td>
+</tr>
+</tbody>
+</table>
+<h3 id="subclasses-of-nlp-non-linear-problem">Subclasses of NLP (Non Linear Problem)</h3>
+<ul>
+<li><strong>Unconstrained optimization</strong>: No constraints or simple bound constraints on the variables (Box design example above)</li>
+<li><strong>Quadratic programming</strong>: Objectives and constraints involve quadratic functions (Data fitting example above), <strong>subset of NLP</strong></li>
+</ul>
+<h3 id="subclasses-of-ip-integer-programming">Subclasses of IP (Integer Programming)</h3>
+<ul>
+<li><strong>Mixed Integer Linear Program</strong>
+<ul>
+<li>All linear functions</li>
+<li>Some variables are continuous and some are discrete</li>
+</ul>
+</li>
+<li><strong>Mixed Integer Nonlinear Program (MINLP)</strong>
+<ul>
+<li>Some nonlinear functions</li>
+<li>Some variables are continuous and some are discrete</li>
+</ul>
+</li>
+<li><strong>Mixed Integer Quadratic Program (MIQLP)</strong>
+<ul>
+<li>Nonlinear functions are quadratic</li>
+<li>Some variables are continuous and some are discrete</li>
+<li>subset of MINLP</li>
+</ul>
+</li>
+</ul>
+<h3 id="why-and-how-to-classify">Why and how to classify?</h3>
+<ul>
+<li>Important to recognize the type of an optimization problem:
+<ul>
+<li>to formulate problems to be amenable to certain solution methods</li>
+<li>to anticipate the difficulty of solving the problem</li>
+<li>to know which solution methods to use</li>
+<li>to design customized solution methods</li>
+</ul>
+</li>
+<li>how to classify:
+<ul>
+<li>check domain restriction on variables</li>
+<li>check the structure of the functions involved</li>
+</ul>
+</li>
+</ul>
+<h3 id="taylor-approximation">Taylor Approximation</h3>
+<p>The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.</p>
+<p>Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.</p>
+<ul>
+<li>First order Taylor&rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)
+$$</li>
+<li>Second order Taylor&rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)+\frac{1}{2}\left(\mathbf{x}-\mathbf{x}^0\right)^{\top} \nabla^2 f\left(\mathbf{x}^0\right)\left(\mathbf{x}-\mathbf{x}^0\right)
+$$
+`</li>
+</ul>
+<h3 id="sets-in-optimization-problems">Sets in Optimization Problems</h3>
+<ul>
+<li>A set is <strong>closed</strong> if it includes its boundary points.</li>
+<li>Intersection of closed sets is closed.</li>
+<li>Typically, if none of inequalities are strict, then the set is closed.</li>
+<li>A set is convex if a line segment connecting two points in the set lies entirely in the set.</li>
+<li>A set is bounded if it can be enclosed in a large enough (hyper)-sphere or a box.</li>
+<li>A set that is both bounded and closed is called compact.
+<ul>
+<li>$R^2$ is closed but not bounded</li>
+<li>$x^2+y^2&lt;1$ is bounded but not closed</li>
+<li>$x+y&gt;=1$ is closed but not bounded</li>
+<li>$x^2+y^2&lt;=1$ is closed and bounded (compact)</li>
+</ul>
+</li>
+<li>An optimal solution of maximizing a convex function over a compact set lies on the boundary
+of the set.</li>
+</ul>
+<iframe src="https://www.desmos.com/calculator/49e59msg7u?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<h3 id="convex-function">Convex Function</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png" alt=""></p>
+<ul>
+<li>A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$</li>
+<li><strong>&ldquo;Function value at the average is less than the average of the function values&rdquo;</strong></li>
+<li>This also implies that $a^Tx+b$ is convex (and concave)</li>
+<li>For a convex function the first order Taylor&rsquo;s approximation is a global under estimator</li>
+<li>A convex optimization problem has a convex objective and convex set of solutions.</li>
+<li>Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.</li>
+<li>A twice differentiable univariate function is convex if $f^{&rsquo;&rsquo;}(x)&gt;=0$ for all $x \in R$</li>
+<li>To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.</li>
+<li>A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.</li>
+<li><strong>Sylvester&rsquo;s criterion</strong> is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
+</ul>
+<h2 id="first-order-methods">First Order Methods</h2>
+<h3 id="gradient-descent">Gradient descent</h3>
+<p>Gradient descent is an iterative optimization algorithm used to find the minimum of a function, typically used in machine learning and deep learning to update the parameters of a model during training. The basic idea behind gradient descent is to adjust the parameters in the direction of steepest descent (negative gradient) to minimize a cost or loss function. Here&rsquo;s a detailed explanation of gradient descent:</p>
+<ol>
+<li><strong>Objective Function</strong> : Gradient descent begins with an objective function (also called a cost or loss function) that you want to minimize. In machine learning, this function typically represents the error between the model&rsquo;s predictions and the actual data.</li>
+</ol>
+<p>Let&rsquo;s denote the objective function as J(θ), where θ represents a vector of parameters that we want to optimize.</p>
+<ol start="2">
+<li>
+<p><strong>Initialization</strong> : You start by initializing the parameter vector θ with some arbitrary values or often with random values. This is the starting point of the optimization process.</p>
+</li>
+<li>
+<p><strong>Gradient Calculation</strong> : Calculate the gradient of the objective function with respect to the parameters. The gradient is a vector that points in the direction of the steepest increase in the function. Mathematically, the gradient is represented as:</p>
+</li>
+</ol>
+<p>∇J(θ) = [∂J(θ)/∂θ₁, ∂J(θ)/∂θ₂, &hellip;, ∂J(θ)/∂θ_n]</p>
+<p>Here, ∂J(θ)/∂θ_i represents the partial derivative of J(θ) with respect to the i-th parameter θ_i.</p>
+<ol start="4">
+<li><strong>Update Parameters</strong> : Update the parameters θ using the gradient. The update rule is as follows:</li>
+</ol>
+<p>θ_new = θ_old - α * ∇J(θ_old)</p>
+<p>Where:</p>
+<ul>
+<li>θ_new is the updated parameter vector.</li>
+<li>θ_old is the current parameter vector.</li>
+<li>α (alpha) is the learning rate, a hyperparameter that controls the step size or how much to move in the direction of the gradient. It&rsquo;s a small positive value typically chosen in advance.</li>
+</ul>
+<p>This step is performed iteratively until a stopping criterion is met.</p>
+<ol start="5">
+<li>
+<p><strong>Stopping Criterion</strong> : The algorithm continues to update the parameters and compute the gradient until a stopping criterion is satisfied. Common stopping criteria include a maximum number of iterations, a minimum change in the objective function, or when the gradient becomes close to zero.</p>
+</li>
+<li>
+<p><strong>Convergence</strong> : Gradient descent converges when it reaches a local or global minimum of the objective function, or when it satisfies the stopping criterion. The choice of learning rate (α) and the convergence behavior are important aspects to consider when using gradient descent.</p>
+</li>
+</ol>
+<p>There are variations of gradient descent, including:</p>
+<ul>
+<li><strong>Batch Gradient Descent</strong> : In each iteration, it computes the gradient using the entire dataset. This can be computationally expensive for large datasets.</li>
+<li><strong>Stochastic Gradient Descent (SGD)</strong> : In each iteration, it computes the gradient using only one random data point from the dataset. It&rsquo;s faster but has more noise in its updates.</li>
+<li><strong>Mini-batch Gradient Descent</strong> : It uses a small random subset (mini-batch) of the dataset in each iteration, striking a balance between the computational efficiency of SGD and the stability of batch gradient descent.</li>
+<li><strong>Momentum, Adagrad, RMSprop, and Adam</strong> : These are advanced optimization techniques that incorporate additional mechanisms to improve convergence speed and stability.</li>
+</ul>
+<p>The choice of the specific gradient descent variant and its hyperparameters depends on the problem at hand, the dataset, and computational resources. Proper tuning of the learning rate and monitoring convergence is crucial for successful optimization.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gradient_descent</span>(obj_func, gradient_func, initial_theta, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.01</span>, max_iterations<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, tolerance<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-5</span>):
+</span></span><span style="display:flex;"><span>    theta <span style="color:#f92672">=</span> initial_theta
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(max_iterations):
+</span></span><span style="display:flex;"><span>        gradient <span style="color:#f92672">=</span> gradient_func(theta)
+</span></span><span style="display:flex;"><span>        theta <span style="color:#f92672">=</span> theta <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> gradient
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Calculate the magnitude of the gradient for convergence check</span>
+</span></span><span style="display:flex;"><span>        gradient_magnitude <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(gradient)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> gradient_magnitude <span style="color:#f92672">&lt;</span> tolerance:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Converged after </span><span style="color:#e6db74">{</span>iteration<span style="color:#e6db74">}</span><span style="color:#e6db74"> iterations.&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> theta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">objective_function</span>(theta):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> theta[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> theta[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gradient_function</span>(theta):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> theta[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> theta[<span style="color:#ae81ff">1</span>]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial parameters</span>
+</span></span><span style="display:flex;"><span>initial_theta <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call gradient descent</span>
+</span></span><span style="display:flex;"><span>final_theta <span style="color:#f92672">=</span> gradient_descent(objective_function, gradient_function, initial_theta)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Optimal parameters:&#34;</span>, final_theta)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Minimum value of the objective function:&#34;</span>, objective_function(final_theta))
+</span></span></code></pre></div><h3 id="accelerated-gradient-descent">Accelerated Gradient Descent</h3>
+<p>Accelerated Gradient Descent, also known as Nesterov Accelerated Gradient (NAG) or simply Nesterov momentum, is an optimization algorithm that improves upon the standard gradient descent by adding momentum to the updates. This momentum helps the algorithm converge faster and provides better stability, especially in the presence of noisy gradients. Here&rsquo;s how it works:</p>
+<ol>
+<li><strong>Initialization</strong> : Initialize the parameter vector θ with some arbitrary values, and initialize the momentum vector <code>v</code> to zero.</li>
+<li><strong>Update Momentum (v)</strong> : In each iteration, before computing the gradient, update the momentum vector <code>v</code> using the previous momentum and the gradient from the previous iteration. This is the key difference between NAG and traditional momentum.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">v_t</span> <span style="color:#f92672">=</span> <span style="color:#f92672">γ</span> <span style="color:#f92672">*</span> <span style="color:#f92672">v_</span>{<span style="color:#f92672">t-1</span>} <span style="color:#f92672">+</span> <span style="color:#f92672">α</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">∇</span><span style="color:#f92672">J</span><span style="color:#f92672">(</span><span style="color:#f92672">θ_</span>{<span style="color:#f92672">t-1</span>} <span style="color:#f92672">-</span> <span style="color:#f92672">γ</span> <span style="color:#f92672">*</span> <span style="color:#f92672">v_</span>{<span style="color:#f92672">t-1</span>})
+</span></span></code></pre></div><ul>
+<li><code>γ</code> is the momentum coefficient (typically a value close to 0.9).</li>
+<li><code>α</code> is the learning rate.</li>
+<li><code>∇J(θ_{t-1} - γ * v_{t-1})</code> is the gradient of the loss function evaluated at the updated position using the momentum.</li>
+</ul>
+<ol start="3">
+<li><strong>Update Parameters (θ)</strong> : Update the parameters θ using the momentum <code>v</code> computed in the previous step.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-arduino" data-lang="arduino"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">θ</span>_t <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">θ</span>_{t<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>} <span style="color:#f92672">-</span> v_t
+</span></span></code></pre></div><ol start="4">
+<li><strong>Repeat</strong> : Repeat steps 2 and 3 until a stopping criterion is met, such as a maximum number of iterations or a small gradient magnitude.</li>
+</ol>
+<p>The key insight in Nesterov Accelerated Gradient Descent is that it calculates the gradient at a &ldquo;lookahead&rdquo; position by subtracting the previous momentum-scaled update from the current parameters before computing the gradient. This lookahead helps in achieving smoother convergence by reducing oscillations.</p>
+<p>Here&rsquo;s a Python implementation of Nesterov Accelerated Gradient Descent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">nesterov_accelerated_gradient_descent</span>(obj_func, gradient_func, initial_theta, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.01</span>, momentum<span style="color:#f92672">=</span><span style="color:#ae81ff">0.9</span>, max_iterations<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, tolerance<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-5</span>):
+</span></span><span style="display:flex;"><span>    theta <span style="color:#f92672">=</span> initial_theta
+</span></span><span style="display:flex;"><span>    v <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(initial_theta)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(max_iterations):
+</span></span><span style="display:flex;"><span>        gradient <span style="color:#f92672">=</span> gradient_func(theta <span style="color:#f92672">-</span> momentum <span style="color:#f92672">*</span> v)
+</span></span><span style="display:flex;"><span>        v <span style="color:#f92672">=</span> momentum <span style="color:#f92672">*</span> v <span style="color:#f92672">+</span> learning_rate <span style="color:#f92672">*</span> gradient
+</span></span><span style="display:flex;"><span>        theta <span style="color:#f92672">=</span> theta <span style="color:#f92672">-</span> v
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Calculate the magnitude of the gradient for convergence check</span>
+</span></span><span style="display:flex;"><span>        gradient_magnitude <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(gradient)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> gradient_magnitude <span style="color:#f92672">&lt;</span> tolerance:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Converged after </span><span style="color:#e6db74">{</span>iteration<span style="color:#e6db74">}</span><span style="color:#e6db74"> iterations.&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> theta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define your objective function and gradient function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">objective_function</span>(theta):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> theta[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> theta[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gradient_function</span>(theta):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> theta[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> theta[<span style="color:#ae81ff">1</span>]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial parameters</span>
+</span></span><span style="display:flex;"><span>initial_theta <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call Nesterov Accelerated Gradient Descent</span>
+</span></span><span style="display:flex;"><span>final_theta <span style="color:#f92672">=</span> nesterov_accelerated_gradient_descent(objective_function, gradient_function, initial_theta)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Optimal parameters:&#34;</span>, final_theta)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Minimum value of the objective function:&#34;</span>, objective_function(final_theta))
+</span></span></code></pre></div><p>In this implementation, <code>momentum</code> is the momentum coefficient (typically close to 0.9), and <code>learning_rate</code> is the step size. The rest of the algorithm follows the Nesterov Accelerated Gradient Descent procedure described earlier.</p>
+<h3 id="stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</h3>
+<p>Stochastic Gradient Descent (SGD) is an optimization algorithm used for training machine learning models, particularly in cases where you have a large dataset. Unlike traditional gradient descent, which computes the gradient of the cost function using the entire dataset in each iteration, SGD updates the model&rsquo;s parameters by considering only a single randomly chosen data point (or a small batch of data points) in each iteration. This makes it much faster and enables it to handle large datasets.</p>
+<p>Here&rsquo;s how Stochastic Gradient Descent works:</p>
+<ol>
+<li><strong>Initialization</strong> : Start with an initial guess for the model&rsquo;s parameters, often set to small random values.</li>
+<li><strong>Shuffling</strong> : Shuffle the training dataset randomly. This step ensures that the data points are processed in a random order in each epoch (a complete pass through the dataset).</li>
+<li><strong>Iterative Update</strong> : For each iteration:</li>
+</ol>
+<ul>
+<li>Select a random data point (or a small mini-batch) from the shuffled dataset.</li>
+<li>Compute the gradient of the loss function with respect to the model&rsquo;s parameters using only the selected data point (or mini-batch).</li>
+<li>Update the model&rsquo;s parameters in the opposite direction of the gradient:</li>
+</ul>
+<pre tabindex="0"><code>
+θ = θ - learning_rate * gradient
+</code></pre><p>Where:</p>
+<ul>
+<li><code>θ</code> represents the model&rsquo;s parameters.</li>
+<li><code>learning_rate</code> is a positive scalar called the learning rate, which controls the step size in the parameter update.</li>
+<li><code>gradient</code> is the gradient of the loss function with respect to the parameters computed using the selected data point (or mini-batch).</li>
+</ul>
+<ol start="4">
+<li><strong>Repeat</strong> : Continue this process for a fixed number of iterations (epochs) or until a stopping criterion is met.</li>
+</ol>
+<p>SGD has several advantages, including:</p>
+<ul>
+<li>Efficiency: It&rsquo;s computationally efficient because it uses only one or a few data points at a time, making it suitable for large datasets.</li>
+<li>Regularization: The inherent randomness in SGD acts as a form of regularization, which can help prevent overfitting.</li>
+<li>Escape Local Minima: The noise introduced by using individual data points can help the algorithm escape local minima in the loss landscape.</li>
+</ul>
+<p>However, SGD can have high variance in its parameter updates because of the noisy gradient estimates, which can lead to oscillations and slow convergence. To address this, variations of SGD have been developed, including Mini-batch Gradient Descent, which uses small random mini-batches of data, and techniques like learning rate schedules and momentum to stabilize and accelerate convergence.</p>
+<p>Here&rsquo;s a simple Python implementation of Stochastic Gradient Descent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">stochastic_gradient_descent</span>(obj_func, gradient_func, initial_theta, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.01</span>, max_epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, tolerance<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-5</span>):
+</span></span><span style="display:flex;"><span>    theta <span style="color:#f92672">=</span> initial_theta
+</span></span><span style="display:flex;"><span>    num_examples <span style="color:#f92672">=</span> len(obj_func)  <span style="color:#75715e"># Number of data points</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(max_epochs):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Shuffle the data for each epoch</span>
+</span></span><span style="display:flex;"><span>        shuffled_indices <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>permutation(num_examples)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> shuffled_indices:
+</span></span><span style="display:flex;"><span>            gradient <span style="color:#f92672">=</span> gradient_func(theta, i)
+</span></span><span style="display:flex;"><span>            theta <span style="color:#f92672">=</span> theta <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> gradient
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Calculate the magnitude of the gradient for convergence check</span>
+</span></span><span style="display:flex;"><span>            gradient_magnitude <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(gradient)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> gradient_magnitude <span style="color:#f92672">&lt;</span> tolerance:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Converged after </span><span style="color:#e6db74">{</span>epoch<span style="color:#e6db74">}</span><span style="color:#e6db74"> epochs.&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> theta
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Did not converge.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> theta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define your objective function, gradient function, and dataset</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make sure gradient_func(theta, i) computes the gradient for the i-th data point.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># obj_func: Returns the loss for the entire dataset.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial parameters</span>
+</span></span><span style="display:flex;"><span>initial_theta <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4.0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call Stochastic Gradient Descent</span>
+</span></span><span style="display:flex;"><span>final_theta <span style="color:#f92672">=</span> stochastic_gradient_descent(obj_func, gradient_func, initial_theta)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Optimal parameters:&#34;</span>, final_theta)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Minimum value of the objective function:&#34;</span>, obj_func(final_theta))
+</span></span></code></pre></div><p>In this implementation, <code>obj_func</code> represents the objective function you want to minimize, and <code>gradient_func</code> computes the gradient of the loss function with respect to the model&rsquo;s parameters for a specific data point <code>i</code>. The rest of the algorithm follows the SGD procedure described earlier.</p>
+<h2 id="second-order-methods">Second order Methods</h2>
+<h3 id="newton-method">Newton method</h3>
+<p>Newton-Raphson method, often referred to as the Newton method, is an iterative numerical technique used to find the approximate roots (or solutions) of real-valued functions. It is particularly effective for finding the roots of nonlinear equations, optimizing functions, and solving systems of nonlinear equations. The method is named after Sir Isaac Newton and Joseph Raphson, who contributed to its development.</p>
+<p>The basic idea behind the Newton method is to iteratively refine an initial guess for the root by approximating the function with a linear equation (a tangent line) near the current guess. Mathematically, the algorithm can be summarized as follows:</p>
+<p>Given a function f(x)f(x)f(x) and an initial guess x0x_0x0​, repeat the following steps until a convergence criterion is met:</p>
+<ol>
+<li>Compute the value of the function f(xn)f(x_n)f(xn​) and its derivative f′(xn)f&rsquo;(x_n)f′(xn​) at the current guess xnx_nxn​.</li>
+<li>Update the guess for the root using the formula:
+xn+1=xn−f(xn)f′(xn)x_{n+1} = x_n - \frac{f(x_n)}{f&rsquo;(x_n)}xn+1​=xn​−f′(xn​)f(xn​)​</li>
+<li>Repeat steps 1 and 2 until ∣f(xn+1)∣|f(x_{n+1})|∣f(xn+1​)∣ is sufficiently close to zero or until a maximum number of iterations is reached.</li>
+</ol>
+<p>The method converges rapidly if the initial guess is reasonably close to the actual root and if the function is well-behaved (continuous and with a well-defined derivative).</p>
+<p>Here&rsquo;s a Python implementation of the Newton method to find the root of a single-variable function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">newton_method</span>(f, df, x0, tol<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-6</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> x0
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(max_iter):
+</span></span><span style="display:flex;"><span>        fx <span style="color:#f92672">=</span> f(x)
+</span></span><span style="display:flex;"><span>        dfx <span style="color:#f92672">=</span> df(x)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check for small derivatives to avoid division by zero</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> abs(dfx) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1e-6</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Derivative is too small.&#34;</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        x_new <span style="color:#f92672">=</span> x <span style="color:#f92672">-</span> fx <span style="color:#f92672">/</span> dfx
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> abs(x_new <span style="color:#f92672">-</span> x) <span style="color:#f92672">&lt;</span> tol:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Converged after </span><span style="color:#e6db74">{</span>iteration<span style="color:#e6db74">}</span><span style="color:#e6db74"> iterations.&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> x_new
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> x_new
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Did not converge.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define your function f(x) and its derivative df(x)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">df</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial guess</span>
+</span></span><span style="display:flex;"><span>x0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call Newton&#39;s method</span>
+</span></span><span style="display:flex;"><span>root <span style="color:#f92672">=</span> newton_method(f, df, x0)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Approximate root:&#34;</span>, root)
+</span></span></code></pre></div><p>In this example, <code>f(x)</code> represents the function you want to find the root of, and <code>df(x)</code> is its derivative. The algorithm iteratively refines the estimate of the root (<code>x</code>) until it converges within a specified tolerance (<code>tol</code>) or until a maximum number of iterations (<code>max_iter</code>) is reached.</p>
+<h3 id="gauss-newton-method">Gauss-Newton method</h3>
+<p>Gauss-Newton method iteratively updates the parameter vector ppp to minimize the objective function. In each iteration, it approximates the objective function using a linearization around the current estimate of ppp, which is why it&rsquo;s often considered an extension of the Newton-Raphson method for nonlinear optimization.</p>
+<p>Here are the main steps of the Gauss-Newton method:</p>
+<ol>
+<li><strong>Initialization</strong> : Start with an initial guess for the parameter vector ppp.</li>
+<li><strong>Iterative Update</strong> :</li>
+</ol>
+<ul>
+<li>For each iteration:</li>
+<li>Calculate the Jacobian matrix J(p)J(p)J(p), which contains the partial derivatives of the model predictions fi(p)f_i(p)fi​(p) with respect to each parameter.</li>
+<li>Calculate the residual vector r(p)r(p)r(p), which is the difference between the observed data yiy_iyi​ and the model predictions $fi(p)f_i(p)fi​(p)$ for all data points.</li>
+<li>Update the parameter vector ppp using the following formula:
+$pnew=pold+Δpp_{\text{new}} = p_{\text{old}} + \Delta ppnew​=pold​+Δp$
+where
+$Δp=(JTJ)−1JTr\Delta p = (J^T J)^{-1} J^T rΔp=(JTJ)−1JTr$
+$JTJ^TJT$ is the transpose of the Jacobian matrix, and $(JTJ)−1(J^T J)^{-1}(JTJ)−1$ is the pseudoinverse of the Jacobian matrix.</li>
+<li>Repeat the iterative update until a convergence criterion is met, such as small changes in the parameter estimates or a maximum number of iterations.</li>
+</ul>
+<ol start="3">
+<li><strong>Convergence</strong> : The algorithm converges when the parameter estimates ppp stabilize or when a predefined stopping criterion is satisfied.</li>
+</ol>
+<p>Here&rsquo;s a Python example demonstrating the Gauss-Newton method for nonlinear regression:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy.optimize <span style="color:#f92672">import</span> least_squares
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the model function and its Jacobian</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">model</span>(p, x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>p[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jacobian</span>(p, x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>vstack((<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>p[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> x), x <span style="color:#f92672">*</span> p[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>p[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> x)))<span style="color:#f92672">.</span>T
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate synthetic data</span>
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>x_data <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>true_params <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">1.0</span>]
+</span></span><span style="display:flex;"><span>y_data <span style="color:#f92672">=</span> model(true_params, x_data) <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.1</span> <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(len(x_data))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the objective function (residuals)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">objective</span>(p):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> y_data <span style="color:#f92672">-</span> model(p, x_data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial guess for parameters</span>
+</span></span><span style="display:flex;"><span>initial_guess <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">2.0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use SciPy&#39;s least_squares function to perform Gauss-Newton optimization</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> least_squares(objective, initial_guess, jac<span style="color:#f92672">=</span>jacobian, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lm&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract the estimated parameters</span>
+</span></span><span style="display:flex;"><span>estimated_params <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;True parameters:&#34;</span>, true_params)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Estimated parameters:&#34;</span>, estimated_params)
+</span></span></code></pre></div><p>In this example, we define a simple exponential model and generate synthetic data with added noise. Then, we use SciPy&rsquo;s <code>least_squares</code> function to perform the Gauss-Newton optimization to estimate the parameters of the model. The estimated parameters are compared to the true parameters to assess the quality of the fit.</p>
+<h3 id="quasi-newton-methods">Quasi-Newton methods</h3>
+<p>Quasi-Newton methods are a class of optimization algorithms used for finding the minimum of a scalar function of several variables. These methods belong to the broader category of gradient-based optimization techniques and are particularly useful when it&rsquo;s computationally expensive to compute the exact Hessian matrix (the matrix of second derivatives) of the objective function. Instead of calculating the Hessian directly, quasi-Newton methods approximate it using updates based on gradient information, making them more efficient for many practical optimization problems.</p>
+<p>The most well-known quasi-Newton method is the Broyden–Fletcher–Goldfarb–Shanno (BFGS) algorithm, but there are other variants like the Limited-memory BFGS (L-BFGS) that are suitable for large-scale problems. Here&rsquo;s an overview of how quasi-Newton methods work:</p>
+<ol>
+<li><strong>Initialization</strong> : Start with an initial guess for the parameters (variables) you want to optimize.</li>
+<li><strong>Initialization of the Approximate Hessian</strong> : Initialize an approximation of the Hessian matrix. In BFGS, for example, this is usually done with the identity matrix or a scaled version of it.</li>
+<li><strong>Iterative Update</strong> : Quasi-Newton methods iteratively update the parameter vector and the approximation of the Hessian matrix until convergence is achieved. The main steps in each iteration are as follows:</li>
+</ol>
+<ul>
+<li><strong>Calculate the Gradient</strong> : Compute the gradient of the objective function with respect to the parameters at the current parameter values.</li>
+<li><strong>Solve the Quasi-Newton Equation</strong> : Quasi-Newton methods update the approximation of the Hessian matrix using information from the gradient and parameter changes. The update formula depends on the specific quasi-Newton method (e.g., BFGS or L-BFGS). The objective is to construct an approximation of the Hessian that preserves important curvature information of the objective function.</li>
+<li><strong>Update Parameters</strong> : Update the parameter vector using the approximate Hessian matrix. This update step usually involves solving a linear system of equations that is determined by the approximation of the Hessian.</li>
+<li><strong>Convergence Check</strong> : Check for convergence criteria, such as the magnitude of the gradient, small changes in the parameters, or a predefined number of iterations.</li>
+</ul>
+<ol start="4">
+<li><strong>Convergence</strong> : The optimization process terminates when one or more convergence criteria are met.</li>
+</ol>
+<p>Quasi-Newton methods are efficient and widely used because they can handle large-scale optimization problems without explicitly computing and storing the full Hessian matrix, which can be computationally expensive and memory-intensive. Instead, they maintain an approximation of the Hessian using a limited amount of memory.</p>
+<p>Here&rsquo;s an example of how to use the L-BFGS-B variant of the L-BFGS quasi-Newton method in Python using SciPy&rsquo;s optimization module:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy.optimize <span style="color:#f92672">import</span> minimize
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define the objective function to minimize</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">objective_function</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (x[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (x[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial guess for the parameters</span>
+</span></span><span style="display:flex;"><span>initial_guess <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use L-BFGS-B for optimization</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> minimize(objective_function, initial_guess, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;L-BFGS-B&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract the optimized parameters</span>
+</span></span><span style="display:flex;"><span>optimized_parameters <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Optimized parameters:&#34;</span>, optimized_parameters)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Minimum value of the objective function:&#34;</span>, result<span style="color:#f92672">.</span>fun)
+</span></span></code></pre></div><p>In this example, we define a simple quadratic objective function to minimize, and we use the <code>minimize</code> function from SciPy&rsquo;s optimization module with the L-BFGS-B method to find the minimum. The <code>result</code> object contains the optimized parameters and the minimum value of the objective function.</p>
+</div>
 	</section>
 
 </article>
@@ -1198,7 +1842,7 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		5922 words in this page.
+		10983 words in this page.
 	</div>
 </div>
 

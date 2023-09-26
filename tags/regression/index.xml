@@ -23,7 +23,7 @@
 &lt;li&gt;&lt;a href=&#34;#functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#image-analysis&#34;&gt;Image Analysis&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#optimization-application&#34;&gt;Optimization and Application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#optimization-and-application&#34;&gt;Optimization and Application&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;!-- ## Tensor Decomposition Methods - CP Decomposition
@@ -851,7 +851,651 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Evaluate the reconstruction error&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reconstruction_error &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tl&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;norm(X &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; reconstructed_X, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Reconstruction Error: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;reconstruction_error&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;optimization-and-application&#34;&gt;Optimization and Application&lt;/h1&gt;
+&lt;p&gt;In plain English, &lt;strong&gt;optimization&lt;/strong&gt; is the action of making the best or most effective use of a situation or resource. Optimization problems are of great practical interest. For example, in manufacturing, how should one cut plates of a material so that the waste is minimized? In business, how should a company allocate the available resources that its profit is maximized? Some of the first optimization problems have been solved in ancient Greece and are regarded among the most significant discoveries of that time. In the first century A.D., the Alexandrian mathematician Heron solved the problem of finding the shortest path between two points by way of the mirror.&lt;/p&gt;
+&lt;p&gt;This result, also known as Heron’s theorem of the light ray, can be viewed as the origin of the theory of geometrical optics. The problem of finding extreme values gained special importance in the seventeenth century, when it served as one of the motivations in the invention of differential calculus, which is the foundation of the modern theory of mathematical optimization.&lt;/p&gt;
+&lt;h2 id=&#34;generic-form-of-optimization-problem&#34;&gt;Generic form of optimization problem:&lt;/h2&gt;
+&lt;p&gt;$min$ $f(x)$ $s.t.$ $x \in X $&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
+&lt;li&gt;The function $f$ is the objective function&lt;/li&gt;
+&lt;li&gt;A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints&lt;/li&gt;
+&lt;li&gt;$X$ is the set of inequality constraints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mathematical-ingredients&#34;&gt;Mathematical ingredients:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Encode decisions/actions as &lt;strong&gt;decision variables&lt;/strong&gt; whose values we are seeking&lt;/li&gt;
+&lt;li&gt;Identify the relevant &lt;strong&gt;problem data&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Express &lt;strong&gt;constraints&lt;/strong&gt; on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data&lt;/li&gt;
+&lt;li&gt;Express the &lt;strong&gt;objective function&lt;/strong&gt; as a function of the decision variables and the problem data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Minimize or Maximize an objective function of decision variable subject to constraints on the values of the decision variables.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;min or max f(x1, x2, .... , xn)
+subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m 
+        xj is continuous or discrete    j = 1,....,n
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;the-problem-setting&#34;&gt;The problem setting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Finite number of decision variables&lt;/li&gt;
+&lt;li&gt;A single objective function of decision variables and problem data
+&lt;ul&gt;
+&lt;li&gt;Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data&lt;/li&gt;
+&lt;li&gt;There may be domain restrictions (continuous or discrete) on some of the variables&lt;/li&gt;
+&lt;li&gt;The functions defining the objective and constraints are algebraic (typically with rational coefficients)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;minimization-vs-maximization&#34;&gt;Minimization vs Maximization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;program-vs-optimization&#34;&gt;Program vs Optimization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A program or mathematical program is an optimization problem with a finite number of variables and constraints written out using explicit mathematical (algebraic) expressions&lt;/li&gt;
+&lt;li&gt;The word program means plan/planning&lt;/li&gt;
+&lt;li&gt;Early application of optimization arose in planning resource allocations and gave rise to programming to mean optimization (predates computer programming)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision:&lt;/strong&gt; $x$ = how much to cut from each of the corners?&lt;br/&gt;
+&lt;strong&gt;Alternatives:&lt;/strong&gt; $0&amp;lt;=x&amp;lt;=1/2$&lt;br/&gt;
+&lt;strong&gt;Best:&lt;/strong&gt; Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; $max$ $x(1-2x)^2$ subject to $0&amp;lt;=x&amp;lt;=1/2$ (which are the constraints in this case)&lt;br/&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.desmos.com/calculator/ily45jyfsv?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
+&lt;p&gt;This is an unconstrained optimization problem since the constraint is a simple bound based.&lt;/p&gt;
+&lt;h3 id=&#34;example-data-fitting&#34;&gt;Example: Data Fitting:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given $N$ data points $(y_1, x_1)&amp;hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: All $n$-dimensional vectors and scalars&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Minimize the sum of squared errors&lt;br/&gt;
+&lt;strong&gt;Optimization formulation&lt;/strong&gt;:
+$\begin{array}{ll}\min &amp;amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp;amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$&lt;/p&gt;
+&lt;p&gt;This is also an unconstrained optimization problem.&lt;/p&gt;
+&lt;h3 id=&#34;example-product-mix&#34;&gt;Example: Product Mix:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: how much of each product to make&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: defined by the resource limits&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize profits&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; &lt;br/&gt;
+Sum notation: $\begin{array}{lll}\max &amp;amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp;amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp;amp; \forall j=1, \ldots, m \ &amp;amp; x_i \geq 0 &amp;amp; \forall i=1, \ldots, n\end{array}$ &lt;br/&gt;
+Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &amp;amp; R x \leq u \ &amp;amp; x \geq 0\end{array}$&lt;/p&gt;
+&lt;h3 id=&#34;example-project-investment&#34;&gt;Example: Project investment&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; A firm is considering investing in $n$ different R&amp;amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: Whether or not to invest in project&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: Defined by budget&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize return on investment&lt;br/&gt;
+Sum notation: $\begin{aligned} \max &amp;amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp;amp; \sum_{j=1}^n c_j x_j \leq B \ &amp;amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ &lt;br/&gt;
+Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &amp;amp; c^{\top} x \leq B \ &amp;amp; x \in{0,1}^n\end{aligned}$&lt;/p&gt;
+&lt;p&gt;This is not an unconstrained problem.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify basic portfolio optimization and associated issues&lt;/li&gt;
+&lt;li&gt;Examine the Markowitz Portfolio Optimization approach
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Markowitz Principle&lt;/strong&gt;: Select a portfolio that attempts to maximize the expected return and minimize the variance of returns (risk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;For multi objective problem (like defined by the Markowitz Principle), two objectives can be combined:
+&lt;ul&gt;
+&lt;li&gt;Maximize Expected Return - $\lambda$*risk&lt;/li&gt;
+&lt;li&gt;Maximize Expected Return subject to risk &amp;lt;= s_max (constraint on risk)&lt;/li&gt;
+&lt;li&gt;Minimize Risk subject to return &amp;gt;= r_min (threshold on expected returns)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Optimization Problem Statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Given $1000, how much should we invest in each of the three stocks MSFT, V and WMT so as to :
+- have a one month expected return of at least a given threshold
+- minimize the risk(variance) of the portfolio return
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Decision&lt;/strong&gt;: investment in each stock&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;alternatives&lt;/strong&gt;: any investment that meets the budget and the minimum expected return requirement&lt;/li&gt;
+&lt;li&gt;best: minimize variance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key trade-off&lt;/strong&gt;: How much of the detail of the actual problem to consider while maintaining computational tractability of the mathematical model?&lt;/li&gt;
+&lt;li&gt;Requires making simplifying assumptions, either because some of the problem characteristics are not well-defined mathematically, or because we wish to develop a model that can actually be solved&lt;/li&gt;
+&lt;li&gt;Need to exercise great caution in these assumptions and not loose sight of the true underlying problem&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assumptions&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;No transaction cost&lt;/li&gt;
+&lt;li&gt;Stocks does not need to be bought in blocks (any amount &amp;gt;=0 is fine)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimization Process&lt;/strong&gt;: Decision Problem -&amp;gt; Model -&amp;gt; Data Collection -&amp;gt; Model Solution -&amp;gt; Analysis -&amp;gt; Problem solution&lt;/li&gt;
+&lt;li&gt;No clear cut recipe&lt;/li&gt;
+&lt;li&gt;Lots of feedbacks and iterations&lt;/li&gt;
+&lt;li&gt;Approximations and assumptions involved in each stage&lt;/li&gt;
+&lt;li&gt;Success requires good understanding of the actual problem (domain knowledge is important)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;classification-of-optimization-problems&#34;&gt;Classification of optimization problems&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Functions&lt;/th&gt;
+&lt;th&gt;Variable domains&lt;/th&gt;
+&lt;th&gt;Problem Type&lt;/th&gt;
+&lt;th&gt;Difficulty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;All linear&lt;/td&gt;
+&lt;td&gt;Continuous variables&lt;/td&gt;
+&lt;td&gt;Linear Program&lt;/td&gt;
+&lt;td&gt;Easy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Some nonlinear&lt;/td&gt;
+&lt;td&gt;Continuous variables&lt;/td&gt;
+&lt;td&gt;Nonlinear Program or Nonlinear Optimization Problem&lt;/td&gt;
+&lt;td&gt;Easy/Difficult&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Linear/nonlinear&lt;/td&gt;
+&lt;td&gt;Some discrete&lt;/td&gt;
+&lt;td&gt;Integer Problem or Discrete Optimization Problem&lt;/td&gt;
+&lt;td&gt;Difficult&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Optimization Problem&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Difficulty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Linear Programming&lt;/td&gt;
+&lt;td&gt;A linear programming problem involves maximizing or minimizing a linear objective function subject to a set of linear constraints&lt;/td&gt;
+&lt;td&gt;Easy to moderate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nonlinear Programming&lt;/td&gt;
+&lt;td&gt;A nonlinear programming problem involves optimizing a function that is not linear, subject to a set of nonlinear constraints&lt;/td&gt;
+&lt;td&gt;Moderate to hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quadratic Programming&lt;/td&gt;
+&lt;td&gt;A quadratic programming problem involves optimizing a quadratic objective function subject to a set of linear constraints&lt;/td&gt;
+&lt;td&gt;Moderate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Convex Optimization&lt;/td&gt;
+&lt;td&gt;A convex optimization problem involves optimizing a convex function subject to a set of linear or convex constraints&lt;/td&gt;
+&lt;td&gt;Easy to moderate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Integer Programming&lt;/td&gt;
+&lt;td&gt;An integer programming problem involves optimizing a linear or nonlinear objective function subject to a set of linear or nonlinear constraints, where some or all of the variables are restricted to integer values&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mixed-integer Programming&lt;/td&gt;
+&lt;td&gt;A mixed-integer programming problem is a generalization of integer programming where some or all of the variables can be restricted to integer values or continuous values&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Global Optimization&lt;/td&gt;
+&lt;td&gt;A global optimization problem involves finding the global optimum of a function subject to a set of constraints, which may be nonlinear or non-convex&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stochastic Optimization&lt;/td&gt;
+&lt;td&gt;A stochastic optimization problem involves optimizing an objective function that depends on random variables, subject to a set of constraints&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;subclasses-of-nlp-non-linear-problem&#34;&gt;Subclasses of NLP (Non Linear Problem)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unconstrained optimization&lt;/strong&gt;: No constraints or simple bound constraints on the variables (Box design example above)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quadratic programming&lt;/strong&gt;: Objectives and constraints involve quadratic functions (Data fitting example above), &lt;strong&gt;subset of NLP&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;subclasses-of-ip-integer-programming&#34;&gt;Subclasses of IP (Integer Programming)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mixed Integer Linear Program&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;All linear functions&lt;/li&gt;
+&lt;li&gt;Some variables are continuous and some are discrete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mixed Integer Nonlinear Program (MINLP)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Some nonlinear functions&lt;/li&gt;
+&lt;li&gt;Some variables are continuous and some are discrete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mixed Integer Quadratic Program (MIQLP)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Nonlinear functions are quadratic&lt;/li&gt;
+&lt;li&gt;Some variables are continuous and some are discrete&lt;/li&gt;
+&lt;li&gt;subset of MINLP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;why-and-how-to-classify&#34;&gt;Why and how to classify?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Important to recognize the type of an optimization problem:
+&lt;ul&gt;
+&lt;li&gt;to formulate problems to be amenable to certain solution methods&lt;/li&gt;
+&lt;li&gt;to anticipate the difficulty of solving the problem&lt;/li&gt;
+&lt;li&gt;to know which solution methods to use&lt;/li&gt;
+&lt;li&gt;to design customized solution methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;how to classify:
+&lt;ul&gt;
+&lt;li&gt;check domain restriction on variables&lt;/li&gt;
+&lt;li&gt;check the structure of the functions involved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;taylor-approximation&#34;&gt;Taylor Approximation&lt;/h3&gt;
+&lt;p&gt;The Taylor series of a real or complex-valued function f (x) that is infinitely differentiable at a real or complex number a is the power series.&lt;/p&gt;
+&lt;p&gt;Let $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a differentiable function and $\mathbf{x}^0 \in \mathbb{R}^n$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First order Taylor&amp;rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)
+$$&lt;/li&gt;
+&lt;li&gt;Second order Taylor&amp;rsquo;s approximation of $f$ at $\mathbf{x}^0$ :
+$$
+f(\mathbf{x}) \approx f\left(\mathbf{x}^0\right)+\nabla f\left(\mathbf{x}^0\right)^{\top}\left(\mathbf{x}-\mathbf{x}^0\right)+\frac{1}{2}\left(\mathbf{x}-\mathbf{x}^0\right)^{\top} \nabla^2 f\left(\mathbf{x}^0\right)\left(\mathbf{x}-\mathbf{x}^0\right)
+$$
+`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sets-in-optimization-problems&#34;&gt;Sets in Optimization Problems&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A set is &lt;strong&gt;closed&lt;/strong&gt; if it includes its boundary points.&lt;/li&gt;
+&lt;li&gt;Intersection of closed sets is closed.&lt;/li&gt;
+&lt;li&gt;Typically, if none of inequalities are strict, then the set is closed.&lt;/li&gt;
+&lt;li&gt;A set is convex if a line segment connecting two points in the set lies entirely in the set.&lt;/li&gt;
+&lt;li&gt;A set is bounded if it can be enclosed in a large enough (hyper)-sphere or a box.&lt;/li&gt;
+&lt;li&gt;A set that is both bounded and closed is called compact.
+&lt;ul&gt;
+&lt;li&gt;$R^2$ is closed but not bounded&lt;/li&gt;
+&lt;li&gt;$x^2+y^2&amp;lt;1$ is bounded but not closed&lt;/li&gt;
+&lt;li&gt;$x+y&amp;gt;=1$ is closed but not bounded&lt;/li&gt;
+&lt;li&gt;$x^2+y^2&amp;lt;=1$ is closed and bounded (compact)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An optimal solution of maximizing a convex function over a compact set lies on the boundary
+of the set.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe src=&#34;https://www.desmos.com/calculator/49e59msg7u?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
+&lt;h3 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Function value at the average is less than the average of the function values&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;This also implies that $a^Tx+b$ is convex (and concave)&lt;/li&gt;
+&lt;li&gt;For a convex function the first order Taylor&amp;rsquo;s approximation is a global under estimator&lt;/li&gt;
+&lt;li&gt;A convex optimization problem has a convex objective and convex set of solutions.&lt;/li&gt;
+&lt;li&gt;Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.&lt;/li&gt;
+&lt;li&gt;A twice differentiable univariate function is convex if $f^{&amp;rsquo;&amp;rsquo;}(x)&amp;gt;=0$ for all $x \in R$&lt;/li&gt;
+&lt;li&gt;To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.&lt;/li&gt;
+&lt;li&gt;A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sylvester&amp;rsquo;s criterion&lt;/strong&gt; is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;first-order-methods&#34;&gt;First Order Methods&lt;/h2&gt;
+&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient descent&lt;/h3&gt;
+&lt;p&gt;Gradient descent is an iterative optimization algorithm used to find the minimum of a function, typically used in machine learning and deep learning to update the parameters of a model during training. The basic idea behind gradient descent is to adjust the parameters in the direction of steepest descent (negative gradient) to minimize a cost or loss function. Here&amp;rsquo;s a detailed explanation of gradient descent:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Objective Function&lt;/strong&gt; : Gradient descent begins with an objective function (also called a cost or loss function) that you want to minimize. In machine learning, this function typically represents the error between the model&amp;rsquo;s predictions and the actual data.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let&amp;rsquo;s denote the objective function as J(θ), where θ represents a vector of parameters that we want to optimize.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : You start by initializing the parameter vector θ with some arbitrary values or often with random values. This is the starting point of the optimization process.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gradient Calculation&lt;/strong&gt; : Calculate the gradient of the objective function with respect to the parameters. The gradient is a vector that points in the direction of the steepest increase in the function. Mathematically, the gradient is represented as:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;∇J(θ) = [∂J(θ)/∂θ₁, ∂J(θ)/∂θ₂, &amp;hellip;, ∂J(θ)/∂θ_n]&lt;/p&gt;
+&lt;p&gt;Here, ∂J(θ)/∂θ_i represents the partial derivative of J(θ) with respect to the i-th parameter θ_i.&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Update Parameters&lt;/strong&gt; : Update the parameters θ using the gradient. The update rule is as follows:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;θ_new = θ_old - α * ∇J(θ_old)&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;θ_new is the updated parameter vector.&lt;/li&gt;
+&lt;li&gt;θ_old is the current parameter vector.&lt;/li&gt;
+&lt;li&gt;α (alpha) is the learning rate, a hyperparameter that controls the step size or how much to move in the direction of the gradient. It&amp;rsquo;s a small positive value typically chosen in advance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This step is performed iteratively until a stopping criterion is met.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stopping Criterion&lt;/strong&gt; : The algorithm continues to update the parameters and compute the gradient until a stopping criterion is satisfied. Common stopping criteria include a maximum number of iterations, a minimum change in the objective function, or when the gradient becomes close to zero.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Convergence&lt;/strong&gt; : Gradient descent converges when it reaches a local or global minimum of the objective function, or when it satisfies the stopping criterion. The choice of learning rate (α) and the convergence behavior are important aspects to consider when using gradient descent.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are variations of gradient descent, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Batch Gradient Descent&lt;/strong&gt; : In each iteration, it computes the gradient using the entire dataset. This can be computationally expensive for large datasets.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stochastic Gradient Descent (SGD)&lt;/strong&gt; : In each iteration, it computes the gradient using only one random data point from the dataset. It&amp;rsquo;s faster but has more noise in its updates.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mini-batch Gradient Descent&lt;/strong&gt; : It uses a small random subset (mini-batch) of the dataset in each iteration, striking a balance between the computational efficiency of SGD and the stability of batch gradient descent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Momentum, Adagrad, RMSprop, and Adam&lt;/strong&gt; : These are advanced optimization techniques that incorporate additional mechanisms to improve convergence speed and stability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The choice of the specific gradient descent variant and its hyperparameters depends on the problem at hand, the dataset, and computational resources. Proper tuning of the learning rate and monitoring convergence is crucial for successful optimization.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;gradient_descent&lt;/span&gt;(obj_func, gradient_func, initial_theta, learning_rate&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.01&lt;/span&gt;, max_iterations&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, tolerance&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1e-5&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; initial_theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(max_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gradient &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gradient_func(theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradient
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Calculate the magnitude of the gradient for convergence check&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gradient_magnitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;linalg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;norm(gradient)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; gradient_magnitude &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; tolerance:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Converged after &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;iteration&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; iterations.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;objective_function&lt;/span&gt;(theta):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;gradient_function&lt;/span&gt;(theta):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;initial_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;3.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4.0&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Call gradient descent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;final_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gradient_descent(objective_function, gradient_function, initial_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Optimal parameters:&amp;#34;&lt;/span&gt;, final_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Minimum value of the objective function:&amp;#34;&lt;/span&gt;, objective_function(final_theta))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;accelerated-gradient-descent&#34;&gt;Accelerated Gradient Descent&lt;/h3&gt;
+&lt;p&gt;Accelerated Gradient Descent, also known as Nesterov Accelerated Gradient (NAG) or simply Nesterov momentum, is an optimization algorithm that improves upon the standard gradient descent by adding momentum to the updates. This momentum helps the algorithm converge faster and provides better stability, especially in the presence of noisy gradients. Here&amp;rsquo;s how it works:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Initialize the parameter vector θ with some arbitrary values, and initialize the momentum vector &lt;code&gt;v&lt;/code&gt; to zero.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Update Momentum (v)&lt;/strong&gt; : In each iteration, before computing the gradient, update the momentum vector &lt;code&gt;v&lt;/code&gt; using the previous momentum and the gradient from the previous iteration. This is the key difference between NAG and traditional momentum.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;v_t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;γ&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;v_&lt;/span&gt;{&lt;span style=&#34;color:#f92672&#34;&gt;t-1&lt;/span&gt;} &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;α&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;∇&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;J&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;θ_&lt;/span&gt;{&lt;span style=&#34;color:#f92672&#34;&gt;t-1&lt;/span&gt;} &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;γ&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;v_&lt;/span&gt;{&lt;span style=&#34;color:#f92672&#34;&gt;t-1&lt;/span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;γ&lt;/code&gt; is the momentum coefficient (typically a value close to 0.9).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;α&lt;/code&gt; is the learning rate.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;∇J(θ_{t-1} - γ * v_{t-1})&lt;/code&gt; is the gradient of the loss function evaluated at the updated position using the momentum.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Update Parameters (θ)&lt;/strong&gt; : Update the parameters θ using the momentum &lt;code&gt;v&lt;/code&gt; computed in the previous step.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-arduino&#34; data-lang=&#34;arduino&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;θ&lt;/span&gt;_t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;θ&lt;/span&gt;_{t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;} &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; v_t
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; : Repeat steps 2 and 3 until a stopping criterion is met, such as a maximum number of iterations or a small gradient magnitude.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The key insight in Nesterov Accelerated Gradient Descent is that it calculates the gradient at a &amp;ldquo;lookahead&amp;rdquo; position by subtracting the previous momentum-scaled update from the current parameters before computing the gradient. This lookahead helps in achieving smoother convergence by reducing oscillations.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a Python implementation of Nesterov Accelerated Gradient Descent:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nesterov_accelerated_gradient_descent&lt;/span&gt;(obj_func, gradient_func, initial_theta, learning_rate&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.01&lt;/span&gt;, momentum&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.9&lt;/span&gt;, max_iterations&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, tolerance&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1e-5&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; initial_theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    v &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros_like(initial_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(max_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gradient &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gradient_func(theta &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; momentum &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; v)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        v &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; momentum &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; v &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradient
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; v
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Calculate the magnitude of the gradient for convergence check&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        gradient_magnitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;linalg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;norm(gradient)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; gradient_magnitude &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; tolerance:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Converged after &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;iteration&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; iterations.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example usage:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define your objective function and gradient function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;objective_function&lt;/span&gt;(theta):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;gradient_function&lt;/span&gt;(theta):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; theta[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;initial_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;3.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4.0&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Call Nesterov Accelerated Gradient Descent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;final_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nesterov_accelerated_gradient_descent(objective_function, gradient_function, initial_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Optimal parameters:&amp;#34;&lt;/span&gt;, final_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Minimum value of the objective function:&amp;#34;&lt;/span&gt;, objective_function(final_theta))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this implementation, &lt;code&gt;momentum&lt;/code&gt; is the momentum coefficient (typically close to 0.9), and &lt;code&gt;learning_rate&lt;/code&gt; is the step size. The rest of the algorithm follows the Nesterov Accelerated Gradient Descent procedure described earlier.&lt;/p&gt;
+&lt;h3 id=&#34;stochastic-gradient-descent-sgd&#34;&gt;Stochastic Gradient Descent (SGD)&lt;/h3&gt;
+&lt;p&gt;Stochastic Gradient Descent (SGD) is an optimization algorithm used for training machine learning models, particularly in cases where you have a large dataset. Unlike traditional gradient descent, which computes the gradient of the cost function using the entire dataset in each iteration, SGD updates the model&amp;rsquo;s parameters by considering only a single randomly chosen data point (or a small batch of data points) in each iteration. This makes it much faster and enables it to handle large datasets.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s how Stochastic Gradient Descent works:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Start with an initial guess for the model&amp;rsquo;s parameters, often set to small random values.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shuffling&lt;/strong&gt; : Shuffle the training dataset randomly. This step ensures that the data points are processed in a random order in each epoch (a complete pass through the dataset).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Iterative Update&lt;/strong&gt; : For each iteration:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Select a random data point (or a small mini-batch) from the shuffled dataset.&lt;/li&gt;
+&lt;li&gt;Compute the gradient of the loss function with respect to the model&amp;rsquo;s parameters using only the selected data point (or mini-batch).&lt;/li&gt;
+&lt;li&gt;Update the model&amp;rsquo;s parameters in the opposite direction of the gradient:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+θ = θ - learning_rate * gradient
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;θ&lt;/code&gt; represents the model&amp;rsquo;s parameters.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;learning_rate&lt;/code&gt; is a positive scalar called the learning rate, which controls the step size in the parameter update.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gradient&lt;/code&gt; is the gradient of the loss function with respect to the parameters computed using the selected data point (or mini-batch).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; : Continue this process for a fixed number of iterations (epochs) or until a stopping criterion is met.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;SGD has several advantages, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiency: It&amp;rsquo;s computationally efficient because it uses only one or a few data points at a time, making it suitable for large datasets.&lt;/li&gt;
+&lt;li&gt;Regularization: The inherent randomness in SGD acts as a form of regularization, which can help prevent overfitting.&lt;/li&gt;
+&lt;li&gt;Escape Local Minima: The noise introduced by using individual data points can help the algorithm escape local minima in the loss landscape.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, SGD can have high variance in its parameter updates because of the noisy gradient estimates, which can lead to oscillations and slow convergence. To address this, variations of SGD have been developed, including Mini-batch Gradient Descent, which uses small random mini-batches of data, and techniques like learning rate schedules and momentum to stabilize and accelerate convergence.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a simple Python implementation of Stochastic Gradient Descent:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stochastic_gradient_descent&lt;/span&gt;(obj_func, gradient_func, initial_theta, learning_rate&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.01&lt;/span&gt;, max_epochs&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, tolerance&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1e-5&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; initial_theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    num_examples &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; len(obj_func)  &lt;span style=&#34;color:#75715e&#34;&gt;# Number of data points&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; epoch &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(max_epochs):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Shuffle the data for each epoch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        shuffled_indices &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;permutation(num_examples)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; shuffled_indices:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            gradient &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gradient_func(theta, i)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradient
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;# Calculate the magnitude of the gradient for convergence check&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            gradient_magnitude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;linalg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;norm(gradient)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; gradient_magnitude &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; tolerance:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Converged after &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;epoch&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; epochs.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Did not converge.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example usage:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define your objective function, gradient function, and dataset&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Make sure gradient_func(theta, i) computes the gradient for the i-th data point.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# obj_func: Returns the loss for the entire dataset.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;initial_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;3.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4.0&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Call Stochastic Gradient Descent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;final_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; stochastic_gradient_descent(obj_func, gradient_func, initial_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Optimal parameters:&amp;#34;&lt;/span&gt;, final_theta)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Minimum value of the objective function:&amp;#34;&lt;/span&gt;, obj_func(final_theta))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this implementation, &lt;code&gt;obj_func&lt;/code&gt; represents the objective function you want to minimize, and &lt;code&gt;gradient_func&lt;/code&gt; computes the gradient of the loss function with respect to the model&amp;rsquo;s parameters for a specific data point &lt;code&gt;i&lt;/code&gt;. The rest of the algorithm follows the SGD procedure described earlier.&lt;/p&gt;
+&lt;h2 id=&#34;second-order-methods&#34;&gt;Second order Methods&lt;/h2&gt;
+&lt;h3 id=&#34;newton-method&#34;&gt;Newton method&lt;/h3&gt;
+&lt;p&gt;Newton-Raphson method, often referred to as the Newton method, is an iterative numerical technique used to find the approximate roots (or solutions) of real-valued functions. It is particularly effective for finding the roots of nonlinear equations, optimizing functions, and solving systems of nonlinear equations. The method is named after Sir Isaac Newton and Joseph Raphson, who contributed to its development.&lt;/p&gt;
+&lt;p&gt;The basic idea behind the Newton method is to iteratively refine an initial guess for the root by approximating the function with a linear equation (a tangent line) near the current guess. Mathematically, the algorithm can be summarized as follows:&lt;/p&gt;
+&lt;p&gt;Given a function f(x)f(x)f(x) and an initial guess x0x_0x0​, repeat the following steps until a convergence criterion is met:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Compute the value of the function f(xn)f(x_n)f(xn​) and its derivative f′(xn)f&amp;rsquo;(x_n)f′(xn​) at the current guess xnx_nxn​.&lt;/li&gt;
+&lt;li&gt;Update the guess for the root using the formula:
+xn+1=xn−f(xn)f′(xn)x_{n+1} = x_n - \frac{f(x_n)}{f&amp;rsquo;(x_n)}xn+1​=xn​−f′(xn​)f(xn​)​&lt;/li&gt;
+&lt;li&gt;Repeat steps 1 and 2 until ∣f(xn+1)∣|f(x_{n+1})|∣f(xn+1​)∣ is sufficiently close to zero or until a maximum number of iterations is reached.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The method converges rapidly if the initial guess is reasonably close to the actual root and if the function is well-behaved (continuous and with a well-defined derivative).&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a Python implementation of the Newton method to find the root of a single-variable function:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;newton_method&lt;/span&gt;(f, df, x0, tol&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1e-6&lt;/span&gt;, max_iter&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; x0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(max_iter):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        fx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        dfx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# Check for small derivatives to avoid division by zero&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; abs(dfx) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1e-6&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ValueError&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Derivative is too small.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x_new &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; fx &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; dfx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; abs(x_new &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; x) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; tol:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Converged after &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;iteration&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; iterations.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; x_new
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; x_new
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Did not converge.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example usage:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define your function f(x) and its derivative df(x)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;(x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; x&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;df&lt;/span&gt;(x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial guess&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Call Newton&amp;#39;s method&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; newton_method(f, df, x0)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Approximate root:&amp;#34;&lt;/span&gt;, root)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this example, &lt;code&gt;f(x)&lt;/code&gt; represents the function you want to find the root of, and &lt;code&gt;df(x)&lt;/code&gt; is its derivative. The algorithm iteratively refines the estimate of the root (&lt;code&gt;x&lt;/code&gt;) until it converges within a specified tolerance (&lt;code&gt;tol&lt;/code&gt;) or until a maximum number of iterations (&lt;code&gt;max_iter&lt;/code&gt;) is reached.&lt;/p&gt;
+&lt;h3 id=&#34;gauss-newton-method&#34;&gt;Gauss-Newton method&lt;/h3&gt;
+&lt;p&gt;Gauss-Newton method iteratively updates the parameter vector ppp to minimize the objective function. In each iteration, it approximates the objective function using a linearization around the current estimate of ppp, which is why it&amp;rsquo;s often considered an extension of the Newton-Raphson method for nonlinear optimization.&lt;/p&gt;
+&lt;p&gt;Here are the main steps of the Gauss-Newton method:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Start with an initial guess for the parameter vector ppp.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Iterative Update&lt;/strong&gt; :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;For each iteration:&lt;/li&gt;
+&lt;li&gt;Calculate the Jacobian matrix J(p)J(p)J(p), which contains the partial derivatives of the model predictions fi(p)f_i(p)fi​(p) with respect to each parameter.&lt;/li&gt;
+&lt;li&gt;Calculate the residual vector r(p)r(p)r(p), which is the difference between the observed data yiy_iyi​ and the model predictions $fi(p)f_i(p)fi​(p)$ for all data points.&lt;/li&gt;
+&lt;li&gt;Update the parameter vector ppp using the following formula:
+$pnew=pold+Δpp_{\text{new}} = p_{\text{old}} + \Delta ppnew​=pold​+Δp$
+where
+$Δp=(JTJ)−1JTr\Delta p = (J^T J)^{-1} J^T rΔp=(JTJ)−1JTr$
+$JTJ^TJT$ is the transpose of the Jacobian matrix, and $(JTJ)−1(J^T J)^{-1}(JTJ)−1$ is the pseudoinverse of the Jacobian matrix.&lt;/li&gt;
+&lt;li&gt;Repeat the iterative update until a convergence criterion is met, such as small changes in the parameter estimates or a maximum number of iterations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Convergence&lt;/strong&gt; : The algorithm converges when the parameter estimates ppp stabilize or when a predefined stopping criterion is satisfied.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&amp;rsquo;s a Python example demonstrating the Gauss-Newton method for nonlinear regression:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; scipy.optimize &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; least_squares
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the model function and its Jacobian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;model&lt;/span&gt;(p, x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; p[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exp(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;p[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;jacobian&lt;/span&gt;(p, x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;vstack((&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exp(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;p[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x), x &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; p[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exp(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;p[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; x)))&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Generate synthetic data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;seed(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;linspace(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;true_params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;2.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; model(true_params, x_data) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(len(x_data))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the objective function (residuals)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;objective&lt;/span&gt;(p):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; y_data &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; model(p, x_data)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial guess for parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;initial_guess &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2.0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Use SciPy&amp;#39;s least_squares function to perform Gauss-Newton optimization&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; least_squares(objective, initial_guess, jac&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;jacobian, method&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;lm&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Extract the estimated parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;estimated_params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;x
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;True parameters:&amp;#34;&lt;/span&gt;, true_params)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Estimated parameters:&amp;#34;&lt;/span&gt;, estimated_params)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this example, we define a simple exponential model and generate synthetic data with added noise. Then, we use SciPy&amp;rsquo;s &lt;code&gt;least_squares&lt;/code&gt; function to perform the Gauss-Newton optimization to estimate the parameters of the model. The estimated parameters are compared to the true parameters to assess the quality of the fit.&lt;/p&gt;
+&lt;h3 id=&#34;quasi-newton-methods&#34;&gt;Quasi-Newton methods&lt;/h3&gt;
+&lt;p&gt;Quasi-Newton methods are a class of optimization algorithms used for finding the minimum of a scalar function of several variables. These methods belong to the broader category of gradient-based optimization techniques and are particularly useful when it&amp;rsquo;s computationally expensive to compute the exact Hessian matrix (the matrix of second derivatives) of the objective function. Instead of calculating the Hessian directly, quasi-Newton methods approximate it using updates based on gradient information, making them more efficient for many practical optimization problems.&lt;/p&gt;
+&lt;p&gt;The most well-known quasi-Newton method is the Broyden–Fletcher–Goldfarb–Shanno (BFGS) algorithm, but there are other variants like the Limited-memory BFGS (L-BFGS) that are suitable for large-scale problems. Here&amp;rsquo;s an overview of how quasi-Newton methods work:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Start with an initial guess for the parameters (variables) you want to optimize.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Initialization of the Approximate Hessian&lt;/strong&gt; : Initialize an approximation of the Hessian matrix. In BFGS, for example, this is usually done with the identity matrix or a scaled version of it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Iterative Update&lt;/strong&gt; : Quasi-Newton methods iteratively update the parameter vector and the approximation of the Hessian matrix until convergence is achieved. The main steps in each iteration are as follows:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Calculate the Gradient&lt;/strong&gt; : Compute the gradient of the objective function with respect to the parameters at the current parameter values.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Solve the Quasi-Newton Equation&lt;/strong&gt; : Quasi-Newton methods update the approximation of the Hessian matrix using information from the gradient and parameter changes. The update formula depends on the specific quasi-Newton method (e.g., BFGS or L-BFGS). The objective is to construct an approximation of the Hessian that preserves important curvature information of the objective function.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Update Parameters&lt;/strong&gt; : Update the parameter vector using the approximate Hessian matrix. This update step usually involves solving a linear system of equations that is determined by the approximation of the Hessian.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Convergence Check&lt;/strong&gt; : Check for convergence criteria, such as the magnitude of the gradient, small changes in the parameters, or a predefined number of iterations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Convergence&lt;/strong&gt; : The optimization process terminates when one or more convergence criteria are met.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Quasi-Newton methods are efficient and widely used because they can handle large-scale optimization problems without explicitly computing and storing the full Hessian matrix, which can be computationally expensive and memory-intensive. Instead, they maintain an approximation of the Hessian using a limited amount of memory.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example of how to use the L-BFGS-B variant of the L-BFGS quasi-Newton method in Python using SciPy&amp;rsquo;s optimization module:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; scipy.optimize &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; minimize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define the objective function to minimize&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;objective_function&lt;/span&gt;(x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (x[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (x[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial guess for the parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;initial_guess &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Use L-BFGS-B for optimization&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; minimize(objective_function, initial_guess, method&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;L-BFGS-B&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Extract the optimized parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;optimized_parameters &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;x
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Optimized parameters:&amp;#34;&lt;/span&gt;, optimized_parameters)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Minimum value of the objective function:&amp;#34;&lt;/span&gt;, result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fun)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this example, we define a simple quadratic objective function to minimize, and we use the &lt;code&gt;minimize&lt;/code&gt; function from SciPy&amp;rsquo;s optimization module with the L-BFGS-B method to find the minimum. The &lt;code&gt;result&lt;/code&gt; object contains the optimized parameters and the minimum value of the objective function.&lt;/p&gt;
+</description>
     </item>
     
     <item>
