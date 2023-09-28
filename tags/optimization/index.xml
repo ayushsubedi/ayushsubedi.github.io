@@ -782,6 +782,7 @@ If an independent validation dataset is not affordable, the K-fold cross validat
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hadamard Product:&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(C)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tensor-decomposition&#34;&gt;Tensor Decomposition&lt;/h2&gt;
+&lt;iframe width=&#34;100%&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/L8uT6hgMt00?si=l6KQPaHQk80f7Nh9&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h3 id=&#34;rank-one-tensor&#34;&gt;Rank-One Tensor&lt;/h3&gt;
 &lt;p&gt;A Rank-One Tensor can be created by the outer product of multiple vectors, e.g., a 3-order rank-one tensor is obtained by&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/outer_product.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -1150,7 +1151,7 @@ $$&lt;/li&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Objective Function&lt;/strong&gt; : Gradient descent begins with an objective function (also called a cost or loss function) that you want to minimize. In machine learning, this function typically represents the error between the model&amp;rsquo;s predictions and the actual data.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Let&amp;rsquo;s denote the objective function as J(θ), where θ represents a vector of parameters that we want to optimize.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s denote the objective function as $J(θ)$, where $θ$ represents a vector of parameters that we want to optimize.&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : You start by initializing the parameter vector θ with some arbitrary values or often with random values. This is the starting point of the optimization process.&lt;/p&gt;
@@ -1159,17 +1160,18 @@ $$&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;Gradient Calculation&lt;/strong&gt; : Calculate the gradient of the objective function with respect to the parameters. The gradient is a vector that points in the direction of the steepest increase in the function. Mathematically, the gradient is represented as:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;∇J(θ) = [∂J(θ)/∂θ₁, ∂J(θ)/∂θ₂, &amp;hellip;, ∂J(θ)/∂θ_n]&lt;/p&gt;
-&lt;p&gt;Here, ∂J(θ)/∂θ_i represents the partial derivative of J(θ) with respect to the i-th parameter θ_i.&lt;/p&gt;
+&lt;p&gt;$(\nabla J(\theta) = \left[\frac{\partial J(\theta)}{\partial \theta_1}, \frac{\partial J(\theta)}{\partial \theta_2}, \ldots, \frac{\partial J(\theta)}{\partial \theta_n}\right])
+$&lt;/p&gt;
+&lt;p&gt;Here, $∂J(θ)/∂θ_i$ represents the partial derivative of $J(θ)$ with respect to the i-th parameter $θ_i$.&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Update Parameters&lt;/strong&gt; : Update the parameters θ using the gradient. The update rule is as follows:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;θ_new = θ_old - α * ∇J(θ_old)&lt;/p&gt;
+&lt;p&gt;$θ_{new} = θ_{old} - α * ∇J(θ_{old})$&lt;/p&gt;
 &lt;p&gt;Where:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;θ_new is the updated parameter vector.&lt;/li&gt;
-&lt;li&gt;θ_old is the current parameter vector.&lt;/li&gt;
-&lt;li&gt;α (alpha) is the learning rate, a hyperparameter that controls the step size or how much to move in the direction of the gradient. It&amp;rsquo;s a small positive value typically chosen in advance.&lt;/li&gt;
+&lt;li&gt;$θ_{new}$ is the updated parameter vector.&lt;/li&gt;
+&lt;li&gt;$θ_{old}$ is the current parameter vector.&lt;/li&gt;
+&lt;li&gt;$α$ (alpha) is the learning rate, a hyperparameter that controls the step size or how much to move in the direction of the gradient. It&amp;rsquo;s a small positive value typically chosen in advance.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This step is performed iteratively until a stopping criterion is met.&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
@@ -1225,19 +1227,17 @@ $$&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Initialize the parameter vector θ with some arbitrary values, and initialize the momentum vector &lt;code&gt;v&lt;/code&gt; to zero.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Update Momentum (v)&lt;/strong&gt; : In each iteration, before computing the gradient, update the momentum vector &lt;code&gt;v&lt;/code&gt; using the previous momentum and the gradient from the previous iteration. This is the key difference between NAG and traditional momentum.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;v_t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;γ&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;v_&lt;/span&gt;{&lt;span style=&#34;color:#f92672&#34;&gt;t-1&lt;/span&gt;} &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;α&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;∇&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;J&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;θ_&lt;/span&gt;{&lt;span style=&#34;color:#f92672&#34;&gt;t-1&lt;/span&gt;} &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;γ&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;v_&lt;/span&gt;{&lt;span style=&#34;color:#f92672&#34;&gt;t-1&lt;/span&gt;})
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;γ&lt;/code&gt; is the momentum coefficient (typically a value close to 0.9).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;α&lt;/code&gt; is the learning rate.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;∇J(θ_{t-1} - γ * v_{t-1})&lt;/code&gt; is the gradient of the loss function evaluated at the updated position using the momentum.&lt;/li&gt;
+&lt;p&gt;$v_t = γ * v_{t-1} + α * ∇J(θ_{t-1} - γ * v_{t-1})$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$γ$ is the momentum coefficient (typically a value close to 0.9).&lt;/li&gt;
+&lt;li&gt;$α$ is the learning rate.&lt;/li&gt;
+&lt;li&gt;$∇J(θ_{t-1} - γ * v_{t-1})$ is the gradient of the loss function evaluated at the updated position using the momentum.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Update Parameters (θ)&lt;/strong&gt; : Update the parameters θ using the momentum &lt;code&gt;v&lt;/code&gt; computed in the previous step.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-arduino&#34; data-lang=&#34;arduino&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;θ&lt;/span&gt;_t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;θ&lt;/span&gt;_{t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;} &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; v_t
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;p&gt;$θ_t = θ_{t-1} - v_t$&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; : Repeat steps 2 and 3 until a stopping criterion is met, such as a maximum number of iterations or a small gradient magnitude.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The key insight in Nesterov Accelerated Gradient Descent is that it calculates the gradient at a &amp;ldquo;lookahead&amp;rdquo; position by subtracting the previous momentum-scaled update from the current parameters before computing the gradient. This lookahead helps in achieving smoother convergence by reducing oscillations.&lt;/p&gt;
@@ -1293,12 +1293,11 @@ $$&lt;/li&gt;
 &lt;li&gt;Compute the gradient of the loss function with respect to the model&amp;rsquo;s parameters using only the selected data point (or mini-batch).&lt;/li&gt;
 &lt;li&gt;Update the model&amp;rsquo;s parameters in the opposite direction of the gradient:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
-θ = θ - learning_rate * gradient
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where:&lt;/p&gt;
+&lt;p&gt;$θ = θ - learningrate * gradient$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;θ&lt;/code&gt; represents the model&amp;rsquo;s parameters.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;learning_rate&lt;/code&gt; is a positive scalar called the learning rate, which controls the step size in the parameter update.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;learningrate&lt;/code&gt; is a positive scalar called the learning rate, which controls the step size in the parameter update.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gradient&lt;/code&gt; is the gradient of the loss function with respect to the parameters computed using the selected data point (or mini-batch).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
@@ -1336,11 +1335,6 @@ $$&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Did not converge.&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; theta
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Example usage:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define your objective function, gradient function, and dataset&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Make sure gradient_func(theta, i) computes the gradient for the i-th data point.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# obj_func: Returns the loss for the entire dataset.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial parameters&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;initial_theta &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;3.0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4.0&lt;/span&gt;])
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -1354,12 +1348,12 @@ $$&lt;/li&gt;
 &lt;h3 id=&#34;newton-method&#34;&gt;Newton method&lt;/h3&gt;
 &lt;p&gt;Newton-Raphson method, often referred to as the Newton method, is an iterative numerical technique used to find the approximate roots (or solutions) of real-valued functions. It is particularly effective for finding the roots of nonlinear equations, optimizing functions, and solving systems of nonlinear equations. The method is named after Sir Isaac Newton and Joseph Raphson, who contributed to its development.&lt;/p&gt;
 &lt;p&gt;The basic idea behind the Newton method is to iteratively refine an initial guess for the root by approximating the function with a linear equation (a tangent line) near the current guess. Mathematically, the algorithm can be summarized as follows:&lt;/p&gt;
-&lt;p&gt;Given a function f(x)f(x)f(x) and an initial guess x0x_0x0​, repeat the following steps until a convergence criterion is met:&lt;/p&gt;
+&lt;p&gt;Given a function $f(x)$ and an initial guess $x_0$​, repeat the following steps until a convergence criterion is met:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Compute the value of the function f(xn)f(x_n)f(xn​) and its derivative f′(xn)f&amp;rsquo;(x_n)f′(xn​) at the current guess xnx_nxn​.&lt;/li&gt;
+&lt;li&gt;Compute the value of the function $f(x_n)$ and its derivative $f′(x_n)$ at the current guess $x_n$​.&lt;/li&gt;
 &lt;li&gt;Update the guess for the root using the formula:
-xn+1=xn−f(xn)f′(xn)x_{n+1} = x_n - \frac{f(x_n)}{f&amp;rsquo;(x_n)}xn+1​=xn​−f′(xn​)f(xn​)​&lt;/li&gt;
-&lt;li&gt;Repeat steps 1 and 2 until ∣f(xn+1)∣|f(x_{n+1})|∣f(xn+1​)∣ is sufficiently close to zero or until a maximum number of iterations is reached.&lt;/li&gt;
+$(x_{n+1} = x_{n} - \frac{f&amp;rsquo;(x_{n})}{f(x_{n})})$&lt;/li&gt;
+&lt;li&gt;Repeat steps 1 and 2 until $∣f(xn+1)∣$ is sufficiently close to zero or until a maximum number of iterations is reached.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The method converges rapidly if the initial guess is reasonably close to the actual root and if the function is well-behaved (continuous and with a well-defined derivative).&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s a Python implementation of the Newton method to find the root of a single-variable function:&lt;/p&gt;
@@ -1406,21 +1400,23 @@ xn+1=xn−f(xn)f′(xn)x_{n+1} = x_n - \frac{f(x_n)}{f&amp;rsquo;(x_n)}xn+1​=x
 &lt;p&gt;Here are the main steps of the Gauss-Newton method:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Start with an initial guess for the parameter vector ppp.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Iterative Update&lt;/strong&gt; :&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;strong&gt;Iterative Update&lt;/strong&gt;:
 &lt;ul&gt;
-&lt;li&gt;For each iteration:&lt;/li&gt;
-&lt;li&gt;Calculate the Jacobian matrix J(p)J(p)J(p), which contains the partial derivatives of the model predictions fi(p)f_i(p)fi​(p) with respect to each parameter.&lt;/li&gt;
-&lt;li&gt;Calculate the residual vector r(p)r(p)r(p), which is the difference between the observed data yiy_iyi​ and the model predictions $fi(p)f_i(p)fi​(p)$ for all data points.&lt;/li&gt;
-&lt;li&gt;Update the parameter vector ppp using the following formula:
-$pnew=pold+Δpp_{\text{new}} = p_{\text{old}} + \Delta ppnew​=pold​+Δp$
+&lt;li&gt;For each iteration:
+&lt;ul&gt;
+&lt;li&gt;Calculate the Jacobian matrix $J(p)$, which contains the partial derivatives of the model predictions $f_i(p)$ with respect to each parameter.&lt;/li&gt;
+&lt;li&gt;Calculate the residual vector $r(p)$, which is the difference between the observed data $y_i$ and the model predictions $f_i(p)$ for all data points.&lt;/li&gt;
+&lt;li&gt;Update the parameter vector $p$ using the following formula:
+$p_{\text{new}} = p_{\text{old}} + \Delta p$
 where
-$Δp=(JTJ)−1JTr\Delta p = (J^T J)^{-1} J^T rΔp=(JTJ)−1JTr$
-$JTJ^TJT$ is the transpose of the Jacobian matrix, and $(JTJ)−1(J^T J)^{-1}(JTJ)−1$ is the pseudoinverse of the Jacobian matrix.&lt;/li&gt;
+$\Delta p = (J^T J)^{-1} J^T r$
+$J^T$ is the transpose of the Jacobian matrix, and $(J^T J)^{-1}$ is the pseudoinverse of the Jacobian matrix.&lt;/li&gt;
 &lt;li&gt;Repeat the iterative update until a convergence criterion is met, such as small changes in the parameter estimates or a maximum number of iterations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;strong&gt;Convergence&lt;/strong&gt; : The algorithm converges when the parameter estimates ppp stabilize or when a predefined stopping criterion is satisfied.&lt;/li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Convergence&lt;/strong&gt;: The algorithm converges when the parameter estimates $p$ stabilize or when a predefined stopping criterion is satisfied.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Here&amp;rsquo;s a Python example demonstrating the Gauss-Newton method for nonlinear regression:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
