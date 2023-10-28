@@ -1683,7 +1683,181 @@ $J^T$ is the transpose of the Jacobian matrix, and $(J^T J)^{-1}$ is the pseudoi
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Optimized parameters:&#34;</span>, optimized_parameters)
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Minimum value of the objective function:&#34;</span>, result<span style="color:#f92672">.</span>fun)
 </span></span></code></pre></div><p>In this example, we define a simple quadratic objective function to minimize, and we use the <code>minimize</code> function from SciPy&rsquo;s optimization module with the L-BFGS-B method to find the minimum. The <code>result</code> object contains the optimized parameters and the minimum value of the objective function.</p>
-</div>
+<h2 id="proximal-gradient-descent">Proximal Gradient Descent</h2>
+<p>Proximal Gradient Descent is a method used in optimization, particularly for handling problems where the objective function is composed of two parts. The first part is convex and continious, whereas the second part is convex but not continious.</p>
+<p>Implementation of Proximal Gradient Descent in Python for LASSO:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">soft_thresholding</span>(v, lambda_alpha):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>sign(v) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>maximum(np<span style="color:#f92672">.</span>abs(v) <span style="color:#f92672">-</span> lambda_alpha, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">proximal_gradient_descent</span>(X, y, alpha, lambda_<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-3</span>, n_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    m, n <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>shape
+</span></span><span style="display:flex;"><span>    beta <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(n)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n_iter):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Gradient step</span>
+</span></span><span style="display:flex;"><span>        gradient <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>dot(X<span style="color:#f92672">.</span>T, y <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>dot(X, beta)) <span style="color:#f92672">/</span> m
+</span></span><span style="display:flex;"><span>        beta <span style="color:#f92672">=</span> beta <span style="color:#f92672">-</span> lambda_ <span style="color:#f92672">*</span> gradient
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Proximal step (for L1 norm)</span>
+</span></span><span style="display:flex;"><span>        beta <span style="color:#f92672">=</span> soft_thresholding(beta, lambda_ <span style="color:#f92672">*</span> alpha)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> beta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>)  
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>beta <span style="color:#f92672">=</span> proximal_gradient_descent(X, y, alpha)
+</span></span><span style="display:flex;"><span>print(beta)
+</span></span></code></pre></div><h2 id="accelerated-proximal-gradient-descent">Accelerated Proximal Gradient Descent</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">soft_thresholding</span>(v, lambda_alpha):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>sign(v) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>maximum(np<span style="color:#f92672">.</span>abs(v) <span style="color:#f92672">-</span> lambda_alpha, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">accelerated_proximal_gradient_descent</span>(X, y, alpha, lambda_<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-3</span>, n_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    m, n <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>shape
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(n)
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(n_iter):
+</span></span><span style="display:flex;"><span>        old_x <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>        gradient <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>dot(X<span style="color:#f92672">.</span>T, y <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>dot(X, y)) <span style="color:#f92672">/</span> m
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> y <span style="color:#f92672">-</span> lambda_ <span style="color:#f92672">*</span> gradient
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> soft_thresholding(x, lambda_ <span style="color:#f92672">*</span> alpha)
+</span></span><span style="display:flex;"><span>        t_old <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>        t <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>sqrt(<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> t <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> ((t_old <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> t) <span style="color:#f92672">*</span> (x <span style="color:#f92672">-</span> old_x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>) 
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>beta <span style="color:#f92672">=</span> accelerated_proximal_gradient_descent(X, y, alpha)
+</span></span><span style="display:flex;"><span>print(beta)
+</span></span></code></pre></div><h2 id="augmented-lagrangian-method-and-alternating-direction-methods-for-multipliers">Augmented Lagrangian Method and Alternating Direction Methods for Multipliers</h2>
+<ul>
+<li>Proximal gradient descent is useful for minimizing decomposable convex functions with a differentiable and a non-differentiable part</li>
+<li>However if prox is not easy to obtain, proximal gradient methods may not be useful.</li>
+<li>Augmented Lagrangian Method and Alternating Direction Methods for Multipliers can be useful here</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Objective function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Constraint (should return zero when constraint is satisfied)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">h</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> x[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Gradient of the objective function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grad_f</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Gradient of the constraint function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grad_h</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Augmented Lagrangian function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">L_A</span>(x, lambda_, rho):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> f(x) <span style="color:#f92672">+</span> lambda_ <span style="color:#f92672">*</span> h(x) <span style="color:#f92672">+</span> (rho <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> h(x)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Gradient of the Augmented Lagrangian</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grad_L_A</span>(x, lambda_, rho):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> grad_f(x) <span style="color:#f92672">+</span> lambda_ <span style="color:#f92672">*</span> grad_h(x) <span style="color:#f92672">+</span> rho <span style="color:#f92672">*</span> h(x) <span style="color:#f92672">*</span> grad_h(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Simple Gradient Descent for the x-update step</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gradient_descent_update</span>(x, lambda_, rho, learning_rate<span style="color:#f92672">=</span><span style="color:#ae81ff">0.01</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> grad_L_A(x, lambda_, rho)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Augmented Lagrangian Method</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">augmented_lagrangian_method</span>(initial_x, initial_lambda, rho, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> initial_x
+</span></span><span style="display:flex;"><span>    lambda_ <span style="color:#f92672">=</span> initial_lambda
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(max_iter):
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> gradient_descent_update(x, lambda_, rho)
+</span></span><span style="display:flex;"><span>        lambda_ <span style="color:#f92672">=</span> lambda_ <span style="color:#f92672">+</span> rho <span style="color:#f92672">*</span> h(x)  <span style="color:#75715e"># λ-update</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
+</span></span><span style="display:flex;"><span>x_opt <span style="color:#f92672">=</span> augmented_lagrangian_method(np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Optimized x:&#34;</span>, x_opt)
+</span></span></code></pre></div><h3 id="admm">ADMM</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">admm</span>(f, g, A, B, c, rho, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(A<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    z <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(B<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    lambda_ <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(c<span style="color:#f92672">.</span>shape)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(max_iter):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># x-update (modify according to your f)</span>
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(A<span style="color:#f92672">.</span>T <span style="color:#f92672">@</span> A <span style="color:#f92672">+</span> rho <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(A<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])) <span style="color:#f92672">@</span> (A<span style="color:#f92672">.</span>T <span style="color:#f92672">@</span> (c <span style="color:#f92672">-</span> B <span style="color:#f92672">@</span> z <span style="color:#f92672">+</span> lambda_<span style="color:#f92672">/</span>rho))
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># z-update (modify according to your g)</span>
+</span></span><span style="display:flex;"><span>        z <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(B<span style="color:#f92672">.</span>T <span style="color:#f92672">@</span> B <span style="color:#f92672">+</span> rho <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(B<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>])) <span style="color:#f92672">@</span> (B<span style="color:#f92672">.</span>T <span style="color:#f92672">@</span> (c <span style="color:#f92672">-</span> A <span style="color:#f92672">@</span> x <span style="color:#f92672">-</span> lambda_<span style="color:#f92672">/</span>rho))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># λ-update</span>
+</span></span><span style="display:flex;"><span>        lambda_ <span style="color:#f92672">=</span> lambda_ <span style="color:#f92672">+</span> rho <span style="color:#f92672">*</span> (A <span style="color:#f92672">@</span> x <span style="color:#f92672">+</span> B <span style="color:#f92672">@</span> z <span style="color:#f92672">-</span> c)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x, z
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]])
+</span></span><span style="display:flex;"><span>B <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>], [<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]])
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define f and g (here they are simple placeholders)</span>
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(x, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> z: np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(z, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rho <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>x, z <span style="color:#f92672">=</span> admm(f, g, A, B, c, rho)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;x:&#34;</span>, x)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;z:&#34;</span>, z)
+</span></span></code></pre></div><h2 id="coordinate-descent-algorithm">Coordinate Descent Algorithm</h2>
+<p>Coordinate Descent is an optimization algorithm where the solution is obtained by successively optimizing the objective function along one direction or coordinate at a time. This approach is particularly effective for problems where each step of optimizing along a single coordinate (or a small block of coordinates) can be performed efficiently. Coordinate Descent is widely used in scenarios such as large-scale linear regression, LASSO regression, and machine learning algorithms where the dimensionality of the data is high.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">coordinate_descent</span>(A, b, lam, num_iters<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, tol<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-5</span>):
+</span></span><span style="display:flex;"><span>    m, n <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>shape
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(n)
+</span></span><span style="display:flex;"><span>    r <span style="color:#f92672">=</span> b <span style="color:#f92672">-</span> A<span style="color:#f92672">.</span>dot(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(num_iters):
+</span></span><span style="display:flex;"><span>        x_old <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Compute the update for coordinate i (assuming a quadratic objective)</span>
+</span></span><span style="display:flex;"><span>            A_i <span style="color:#f92672">=</span> A[:, i]
+</span></span><span style="display:flex;"><span>            r <span style="color:#f92672">+=</span> A_i <span style="color:#f92672">*</span> x[i]
+</span></span><span style="display:flex;"><span>            x[i] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(A_i, r) <span style="color:#f92672">/</span> (np<span style="color:#f92672">.</span>dot(A_i, A_i) <span style="color:#f92672">+</span> lam)
+</span></span><span style="display:flex;"><span>            r <span style="color:#f92672">-=</span> A_i <span style="color:#f92672">*</span> x[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check for convergence</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(x <span style="color:#f92672">-</span> x_old, ord<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>) <span style="color:#f92672">&lt;</span> tol:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example usage</span>
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>lam <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>  <span style="color:#75715e"># Regularization parameter</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> coordinate_descent(A, b, lam)
+</span></span><span style="display:flex;"><span>print(x)
+</span></span></code></pre></div></div>
 	</section>
 
 </article>
@@ -1838,7 +2012,7 @@ $J^T$ is the transpose of the Jacobian matrix, and $(J^T J)^{-1}$ is the pseudoi
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		10955 words in this page.
+		11753 words in this page.
 	</div>
 </div>
 
