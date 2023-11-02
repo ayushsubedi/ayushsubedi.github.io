@@ -26,10 +26,6 @@
 &lt;li&gt;&lt;a href=&#34;#optimization-and-application&#34;&gt;Optimization and Application&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;!-- ## Tensor Decomposition Methods - CP Decomposition
-## Tensor Decomposition Methods - Tucker Decomposition
-## Tensor Analysis Applications I
-## Tensor Analysis Application II --&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;h3 id=&#34;big-data&#34;&gt;Big Data&lt;/h3&gt;
 &lt;p&gt;Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &amp;ldquo;big data&amp;rdquo; is often associated with what is referred to as the &amp;ldquo;4V&amp;rdquo; framework, which describes the key characteristics of big data:&lt;/p&gt;
@@ -1601,6 +1597,10 @@ $J^T$ is the transpose of the Jacobian matrix, and $(J^T J)^{-1}$ is the pseudoi
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x_opt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; augmented_lagrangian_method(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array([&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]), &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Optimized x:&amp;#34;&lt;/span&gt;, x_opt)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;admm&#34;&gt;ADMM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Similar to Augmented Lagrangian method, we augment the objective function.&lt;/li&gt;
+&lt;li&gt;The augmented term does not change the objective, as its value is always zero due to the constraints.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;admm&lt;/span&gt;(f, g, A, B, c, rho, max_iter&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;):
@@ -1665,7 +1665,206 @@ $J^T$ is the transpose of the Jacobian matrix, and $(J^T J)^{-1}$ is the pseudoi
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; coordinate_descent(A, b, lam)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(x)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;regularization&#34;&gt;Regularization&lt;/h1&gt;
+&lt;p&gt;Regularization is a crucial technique in machine learning used to prevent overfitting and improve the generalization ability of a model. Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor performance on new, unseen data. Regularization helps to keep the model simple and more generalized by adding a penalty on the complexity of the model. The most common regularization techniques are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;L1 Regularization (Lasso Regression):&lt;/strong&gt;  Adds a penalty equal to the absolute value of the magnitude of coefficients. This can lead to coefficients being zero, which is useful for feature selection in models where some features are irrelevant or redundant. L1 regularization tends to produce sparse solutions and is defined as:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Cost function+λ∑∣wi∣\text{Cost function} + \lambda \sum |w_i|Cost function+λ∑∣wi​∣&lt;/p&gt;
+&lt;p&gt;Where λ\lambdaλ is a regularization parameter and wiw_iwi​ are the model weights.
+2. &lt;strong&gt;L2 Regularization (Ridge Regression):&lt;/strong&gt;  Adds a penalty equal to the square of the magnitude of coefficients. This discourages large weights but does not force them to be zero, leading to a model where all features are considered but their impact is moderated. L2 regularization is defined as:&lt;/p&gt;
+&lt;p&gt;Cost function+λ∑wi2\text{Cost function} + \lambda \sum w_i^2Cost function+λ∑wi2​&lt;/p&gt;
+&lt;p&gt;This method tends to distribute error among all the terms, but it doesn’t necessarily eliminate any weights completely, as L1 can.
+3. &lt;strong&gt;Elastic Net:&lt;/strong&gt;  A combination of L1 and L2 regularization. It adds both penalties to the model and is useful when there are multiple features that are correlated with one another. Elastic Net aims to enjoy the benefits of both Ridge and Lasso regularization, allowing it to handle situations when there are numerous correlated features.
+4. &lt;strong&gt;Early Stopping:&lt;/strong&gt;  A form of regularization used especially in neural networks where training is stopped as soon as the performance on a validation set starts to degrade. This prevents the model from learning the training data too well.
+5. &lt;strong&gt;Dropout:&lt;/strong&gt;  Specifically used in neural networks, it involves randomly setting a fraction of input units to 0 at each update during training time, which helps prevent overfitting. This forces the network to not rely too much on any one node, hence aiding in generalization.
+6. &lt;strong&gt;Max-Norm Regularization:&lt;/strong&gt;  In neural networks, this involves limiting the size of the weight vector for every neuron to a maximum value. This can be effective at preventing overfitting and is often used alongside dropout.&lt;/p&gt;
+&lt;h2 id=&#34;ridge-regression-l_2&#34;&gt;Ridge Regression ($L_2$)&lt;/h2&gt;
+&lt;p&gt;Ridge regression is a technique used primarily to analyze multiple regression data that suffer from multicollinearity. When multicollinearity occurs, least squares estimates are unbiased, but their variances are large so they may be far from the true value. This can result in overfitting in the model, where the model performs well on the training data but poorly on unseen data.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key Concepts in Ridge Regression:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Shrinkage Penalty:&lt;/strong&gt;  The core idea of ridge regression is to introduce a regularization (shrinkage penalty) to the regression estimates. This method is also known as Tikhonov regularization. It works by penalizing the size of the regression coefficients.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cost Function:&lt;/strong&gt;  In ridge regression, the cost function is altered by adding a penalty equivalent to square of the magnitude of the coefficients. The regularization term is given by $λ$ (lambda), a tuning parameter multiplied by the sum of the squares of the coefficients:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$J(\theta) = \text{RSS} + \lambda \sum_{j=1}^{p} \theta_j^2$&lt;/p&gt;
+&lt;p&gt;Here, RSS is the residual sum of squares and $\theta$ represents the coefficient vector. The λ controls the amount of shrinkage: the larger the value of λ, the greater the amount of shrinkage.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Bias-Variance Trade-off:&lt;/strong&gt;  By introducing $λ$, ridge regression trades off the unbiasedness of the OLS estimator for a reduction in variance, potentially leading to better mean squared error (MSE) on new observations. The coefficients are shrunk towards zero and towards each other, leading to a more stable and interpretable model.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Solving Ridge Regression:&lt;/strong&gt;  The solution for the ridge estimate is:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$\hat{\beta}^{ridge} = (X^TX + \lambda I)^{-1}X^Ty$&lt;/p&gt;
+&lt;p&gt;where XXX is the matrix of input features, and III is the identity matrix. This formula shows how ridge regression penalizes the scale of the coefficients based on the value of λ.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Choice of λ:&lt;/strong&gt;  The value of λ is crucial in ridge regression. If λ = 0, the solution is just the ordinary least squares estimates. As λ → ∞, all coefficients are shrunk towards zero. The choice of λ is typically done via cross-validation, often seeking to minimize prediction error.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Geometric Interpretation:&lt;/strong&gt;  Geometrically, ridge regression constrains the coefficients to lie within a sphere centered at zero with radius proportional to 1/λ1/\sqrt{\lambda}1/λ​. This constraint can lead to better prediction accuracy when the true relationship between the target and the predictors is approximately linear but complex, with predictors exhibiting collinearity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Multicollinearity:&lt;/strong&gt;  Ridge regression doesn&amp;rsquo;t eliminate multicollinearity but mitigates its problematic aspects by controlling the coefficient magnitude and introducing bias into the estimates, which may improve prediction accuracy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Applications:&lt;/strong&gt;  Ridge regression is widely used when the data has many multicollinear predictors and when prediction accuracy is a priority over interpretability. It&amp;rsquo;s also used in scenarios where the number of predictors exceeds the number of observations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;statistics-form&#34;&gt;Statistics Form&lt;/h3&gt;
+&lt;p&gt;$\min_{\beta} \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{j=1}^{p} \beta_j^2$&lt;/p&gt;
+&lt;h3 id=&#34;optimization-form&#34;&gt;Optimization Form&lt;/h3&gt;
+&lt;p&gt;$\min_{\beta} { | \mathbf{y} - \mathbf{X}\beta |^2 + \lambda | \beta |^2 }$&lt;/p&gt;
+&lt;h3 id=&#34;matrix-form&#34;&gt;Matrix Form&lt;/h3&gt;
+&lt;p&gt;$| \mathbf{y} - \mathbf{X}\beta |^2 + \lambda | \beta |^2$
+$\mathbf{X}^\top \mathbf{X}\beta + \lambda \mathbf{I}\beta = \mathbf{X}^\top \mathbf{y}$
+$\beta = (\mathbf{X}^\top \mathbf{X} + \lambda \mathbf{I})^{-1} \mathbf{X}^\top \mathbf{y}$&lt;/p&gt;
+&lt;h2 id=&#34;lasso-regression&#34;&gt;Lasso Regression&lt;/h2&gt;
+&lt;p&gt;The key aspects of Lasso regression include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Regularization Term:&lt;/strong&gt;  Lasso regression modifies the cost function by adding a penalty equivalent to the absolute value of the magnitude of coefficients. This can be represented as:
+$J(\theta) = \text{RSS} + \lambda \sum_{j=1}^{p} |\theta_j|$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here, RSS is the residual sum of squares, θj\theta_jθj​ are the coefficients, and λ\lambdaλ is a tuning parameter controlling the strength of the penalty.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Objective and Impact:&lt;/strong&gt;  Unlike Ridge regression, which aims to minimize the square of the coefficients, Lasso regression tends to produce some coefficients that are exactly zero and others that are shrunk towards zero but potentially non-zero. This property of Lasso regression helps in feature selection along with regularization, making it particularly useful in cases where we suspect that many features could be irrelevant or redundant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bias-Variance Trade-Off:&lt;/strong&gt;  Similar to Ridge regression, Lasso trades off bias for variance. By increasing λ, more coefficients are set to zero, which increases model bias but can decrease variance, potentially leading to better generalization.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Solving Lasso Regression:&lt;/strong&gt;  The Lasso problem does not have a closed-form solution like Ridge regression because the absolute value function is not differentiable at zero. Instead, it&amp;rsquo;s typically solved using numerical techniques like coordinate descent.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Choice of λ:&lt;/strong&gt;  The selection of the tuning parameter λ is crucial. When λ = 0, the Lasso estimates equal the least squares estimates. As λ increases, the impact of the shrinkage penalty grows. For large values of λ, many coefficients are exactly zeroed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Sparse Models:&lt;/strong&gt;  Due to its tendency to prefer solutions with fewer parameter values, Lasso is particularly useful in creating sparse models in high-dimensional data where feature selection is essential.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Applications and Limitations:&lt;/strong&gt;  Lasso is widely used in fields like bioinformatics, image analysis, and genomics where feature selection is as crucial as prediction. One of the limitations of Lasso is that if the number of predictors is greater than the number of observations, Lasso selects at most n predictors as non-zero, even if all predictors are relevant (or &amp;ldquo;true&amp;rdquo;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;statistics-form-1&#34;&gt;Statistics Form&lt;/h3&gt;
+&lt;p&gt;$\min_{\beta} \sum_{i=1}^{n} (y_i - \beta_0 - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{j=1}^{p} |\beta_j|$&lt;/p&gt;
+&lt;h3 id=&#34;optimization-form-1&#34;&gt;Optimization Form&lt;/h3&gt;
+&lt;p&gt;$\min_{\beta} { | \mathbf{y} - \mathbf{X}\beta |^2 + \lambda \sum_{j=1}^{p} |\beta_j| }$&lt;/p&gt;
+&lt;h3 id=&#34;matrix-form-1&#34;&gt;Matrix Form&lt;/h3&gt;
+&lt;p&gt;In Lasso regression, there isn&amp;rsquo;t a closed-form solution like there is for Ridge Regression due to the absolute value operation in the regularization term. This makes it challenging to express Lasso regression in a simple matrix form. The non-differentiability of the absolute value at zero means that solutions have to be found via numerical methods like coordinate descent, rather than a straightforward analytical solution.&lt;/p&gt;
+&lt;h2 id=&#34;nng-and-adaptive-lasso&#34;&gt;NNG and Adaptive Lasso&lt;/h2&gt;
+&lt;h3 id=&#34;nng&#34;&gt;NNG&lt;/h3&gt;
+&lt;p&gt;The Non-Negative Garrote, introduced by Breiman in 1995, is a method for variable selection and shrinkage in linear models. It&amp;rsquo;s closely related to, but distinct from, techniques like Ridge and Lasso regression.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key Aspects:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Formulation:&lt;/strong&gt;
+The NNG modifies the ordinary least squares (OLS) estimates by applying a non-negative shrinkage factor.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here, vjv_jvj​ are non-negative constants, λ\lambdaλ is a non-negative tuning parameter, and (x)+=max⁡(0,x)(x)_+ = \max(0, x)(x)+​=max(0,x). This approach effectively shrinks the OLS estimates towards zero, with the possibility of setting some coefficients exactly to zero.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Weights:&lt;/strong&gt;
+The constants vjv_jvj​ are crucial in determining how much each coefficient is shrunk. Different methods for choosing vjv_jvj​ include setting them to be proportional to the inverse of the absolute values of the β^OLS\hat{\beta}^{OLS}β^​OLS or their squares.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Characteristics:&lt;/strong&gt;
+Unlike Lasso, NNG does not directly impose sparsity by constraining the size of coefficients. Instead, it adapts the shrinkage of each coefficient based on the OLS estimates, which can sometimes lead to better prediction accuracy and interpretability, especially when the OLS estimates are believed to be good approximations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;adaptive-lasso&#34;&gt;Adaptive Lasso&lt;/h3&gt;
+&lt;p&gt;The Adaptive Lasso is a variant of the traditional Lasso method, designed to enjoy the consistency properties that the standard Lasso may lack, particularly in terms of variable selection.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key Aspects:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Formulation:&lt;/strong&gt;
+The Adaptive Lasso modifies the Lasso penalty by weighting the absolute values of the coefficients. The cost function becomes:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$J(\theta) = \text{RSS} + \lambda \sum_{j=1}^{p} w_j |\theta_j|$&lt;/p&gt;
+&lt;p&gt;Here, wjw_jwj​ are weights applied to each coefficient.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Weights:&lt;/strong&gt;
+A common choice for weights is the inverse of the absolute values of the coefficients from an OLS estimate or a Ridge regression estimate, i.e., wj=1/∣β^jOLS∣w_j = 1 / |\hat{\beta}_j^{OLS}|wj​=1/∣β^​jOLS​∣. This choice of weights allows for larger penalties on coefficients that were small in the OLS model, promoting sparsity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Properties:&lt;/strong&gt;
+The Adaptive Lasso is particularly known for its oracle properties. An estimator is said to possess the oracle property if it can correctly select the true model asymptotically — it identifies zero coefficients correctly as zero and provides consistent estimates for the non-zero coefficients.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$\min_{\beta} \sum_{i=1}^{n} (y_i - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{j=1}^{p} w_j |\beta_j|$&lt;/p&gt;
+&lt;h2 id=&#34;elastic-net&#34;&gt;Elastic Net&lt;/h2&gt;
+&lt;p&gt;Elastic Net regression is a regularization and variable selection method that linearly combines the penalties of the Lasso and Ridge methods. It&amp;rsquo;s particularly useful in the context of models with highly correlated predictors or when the number of predictors ppp is greater than the number of observations nnn. Here are some key points that are crucial in understanding Elastic Net.&lt;/p&gt;
+&lt;h3 id=&#34;key-characteristics&#34;&gt;Key Characteristics&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Penalty Term:&lt;/strong&gt;
+Elastic Net adds both the L1 and L2 norm of the coefficients as penalty terms to the loss function:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$J(\theta) = \text{RSS} + \lambda \left( \alpha \sum_{j=1}^{p} |\theta_j| + \frac{1 - \alpha}{2} \sum_{j=1}^{p} \theta_j^2 \right)$&lt;/p&gt;
+&lt;p&gt;Here, RSS is the residual sum of squares, θj\theta_jθj​ represents the regression coefficients, λ\lambdaλ is the tuning parameter that controls the overall strength of the penalty, and α\alphaα is the balance between L1 and L2 penalty (with α=1\alpha = 1α=1 being the Lasso penalty, and α=0\alpha = 0α=0 the Ridge penalty).&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Overcoming Limitations of Lasso and Ridge:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Lasso&amp;rsquo;s Limitation:&lt;/strong&gt;  Lasso can only select at most nnn variables before it saturates when p&amp;gt;np &amp;gt; np&amp;gt;n. Also, in the case of highly correlated variables, Lasso tends to arbitrarily select any one variable among the correlated ones.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ridge&amp;rsquo;s Limitation:&lt;/strong&gt;  Ridge regression can shrink the coefficients towards zero but cannot set them exactly to zero (no feature selection).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Elastic Net aims to overcome these limitations by combining the penalties. It can select groups of correlated variables, unlike Lasso which might just pick one from a group.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Variable Selection and Grouping Effect:&lt;/strong&gt;
+The Elastic Net, due to its L1 penalty component, has a variable selection feature. The L2 penalty encourages grouping effect where strongly correlated predictors tend to be in or out of the model together.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tuning Parameters:&lt;/strong&gt;
+The choice of λ\lambdaλ and α\alphaα is crucial:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;λ\lambdaλ controls the overall strength of the penalty, often chosen via cross-validation.&lt;/li&gt;
+&lt;li&gt;α\alphaα decides the mix of the L1 and L2 penalties, also typically selected through cross-validation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Computational Aspects:&lt;/strong&gt;
+The presence of the L1 penalty means that, like Lasso, Elastic Net doesn&amp;rsquo;t have a closed-form solution and is usually solved using coordinate gradient descent methods.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;applications&#34;&gt;Applications&lt;/h3&gt;
+&lt;p&gt;Elastic Net is particularly useful in genomic data and other high-dimensional datasets where the number of predictors can be much larger than the number of observations. Its ability to handle multicollinearity and select a relevant subset of variables makes it a powerful tool in both predictive modeling and feature selection.&lt;/p&gt;
+&lt;p&gt;Understanding and implementing Elastic Net requires a grasp of both Lasso and Ridge regression&amp;rsquo;s strengths and weaknesses. Elastic Net stands out in scenarios where you need a middle ground between feature elimination (Lasso) and feature shrinkage (Ridge), especially when dealing with correlated features or when the dimensionality is high compared to the sample size.&lt;/p&gt;
+&lt;p&gt;$\min_{\beta} \sum_{i=1}^{n} (y_i - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda_1 \sum_{j=1}^{p} |\beta_j| + \lambda_2 \sum_{j=1}^{p} \beta_j^2$&lt;/p&gt;
+&lt;h2 id=&#34;group-lasso&#34;&gt;Group Lasso&lt;/h2&gt;
+&lt;p&gt;Group Lasso is an extension of the Lasso (Least Absolute Shrinkage and Selection Operator) technique, tailored for situations where predictors (features) can be naturally divided into groups, and we are interested in selecting or discarding these groups as units. It&amp;rsquo;s particularly useful in models where some variables are categorical and have been one-hot encoded, leading to groups of dummy variables in the dataset, or in situations with a hierarchical or grouped structure in the predictors.&lt;/p&gt;
+&lt;h3 id=&#34;key-concepts&#34;&gt;Key Concepts:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Formulation:&lt;/strong&gt;
+In Group Lasso, the regularization term is modified to sum over groups of coefficients, rather than individual coefficients as in standard Lasso. The optimization problem is typically formulated as:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$\min_{\theta} \frac{1}{2n} | Y - X\theta |^2_2 + \lambda \sum_{g=1}^{G} \sqrt{p_g} | \theta_g |
+$&lt;/p&gt;
+&lt;p&gt;Here, θ\thetaθ represents the vector of coefficients, split into GGG groups. θg\theta_gθg​ denotes the subset of coefficients belonging to group ggg, pgp_gpg​ is the size of group ggg, λ\lambdaλ is a non-negative regularization parameter, and ∥⋅∥| \cdot |∥⋅∥ denotes the Euclidean norm.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Group-wise Sparsity:&lt;/strong&gt;
+The key feature of Group Lasso is its ability to enforce group-wise sparsity. That is, if the coefficients of a particular group are collectively not significant, Group Lasso can shrink all of these coefficients to zero simultaneously, effectively removing the entire group of features from the model.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Normalization by Group Size:&lt;/strong&gt;
+The pg\sqrt{p_g}pg​​ term normalizes the penalty by group size, ensuring that larger groups don&amp;rsquo;t dominate the penalty term purely by virtue of having more coefficients.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Applications:&lt;/strong&gt;
+Group Lasso finds applications in multiple fields, including bioinformatics, signal processing, and any domain where variables can be naturally grouped. It&amp;rsquo;s especially useful in models with hierarchical feature organization or when dealing with categorical variables that have been transformed into multiple dummy variables.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;computational-aspects-and-challenges&#34;&gt;Computational Aspects and Challenges:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Optimization:&lt;/strong&gt;  Solving the Group Lasso problem requires specialized optimization algorithms. Coordinate descent methods, similar to those used in standard Lasso, are often adapted for Group Lasso.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tuning:&lt;/strong&gt;  Selecting the regularization parameter λ\lambdaλ is crucial and can be challenging. It&amp;rsquo;s typically done using cross-validation or similar techniques.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interpretability:&lt;/strong&gt;  While Group Lasso provides a clear mechanism for feature selection at the group level, interpreting the results, particularly in the context of the relationships within and between groups, can be complex.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Group Lasso extends the concept of sparsity from individual predictors to groups of predictors, providing a powerful tool for models where group structure is important. Its usage demands a clear understanding of group relevance in the predictive model and careful tuning and validation of the model.&lt;/p&gt;
+&lt;p&gt;$\min_{\beta} \sum_{i=1}^{n} (y_i - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{g=1}^{G} \sqrt{m_g} |\beta_{g}|_2$&lt;/p&gt;
+&lt;h2 id=&#34;compressed-sensing&#34;&gt;Compressed sensing&lt;/h2&gt;
+&lt;h2 id=&#34;matrix-completion&#34;&gt;Matrix Completion&lt;/h2&gt;
+&lt;h2 id=&#34;robust-pca&#34;&gt;Robust PCA&lt;/h2&gt;
+&lt;h2 id=&#34;sparse-smooth-decomposition&#34;&gt;Sparse Smooth Decomposition&lt;/h2&gt;
+&lt;h2 id=&#34;rkhs-ridge-kernel-regression&#34;&gt;RKHS Ridge Kernel Regression&lt;/h2&gt;
+</description>
     </item>
     
     <item>
