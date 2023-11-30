@@ -6,7 +6,7 @@
     <description>Recent content in kmeans on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Nov 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/kmeans/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Topics on High-Dimensional Data Analytics (Machine Learning 2)</title>
       <link>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</link>
-      <pubDate>Sat, 16 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</guid>
       <description>&lt;h1 id=&#34;topics-on-high-dimensional-data-analytics&#34;&gt;Topics on High-Dimensional Data Analytics&lt;/h1&gt;
@@ -1859,11 +1859,6 @@ Group Lasso finds applications in multiple fields, including bioinformatics, sig
 &lt;/ul&gt;
 &lt;p&gt;Group Lasso extends the concept of sparsity from individual predictors to groups of predictors, providing a powerful tool for models where group structure is important. Its usage demands a clear understanding of group relevance in the predictive model and careful tuning and validation of the model.&lt;/p&gt;
 &lt;p&gt;$\min_{\beta} \sum_{i=1}^{n} (y_i - \sum_{j=1}^{p} \beta_j x_{ij})^2 + \lambda \sum_{g=1}^{G} \sqrt{m_g} |\beta_{g}|_2$&lt;/p&gt;
-&lt;h2 id=&#34;compressed-sensing&#34;&gt;Compressed sensing&lt;/h2&gt;
-&lt;h2 id=&#34;matrix-completion&#34;&gt;Matrix Completion&lt;/h2&gt;
-&lt;h2 id=&#34;robust-pca&#34;&gt;Robust PCA&lt;/h2&gt;
-&lt;h2 id=&#34;sparse-smooth-decomposition&#34;&gt;Sparse Smooth Decomposition&lt;/h2&gt;
-&lt;h2 id=&#34;rkhs-ridge-kernel-regression&#34;&gt;RKHS Ridge Kernel Regression&lt;/h2&gt;
 </description>
     </item>
     
