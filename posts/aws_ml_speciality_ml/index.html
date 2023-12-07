@@ -179,89 +179,6 @@ onload='renderMathInElement(document.body);'></script>
 <li><a href="#sagemaker-serverless-inference-and-inference-recommender">SageMaker Serverless Inference and Inference Recommender</a></li>
 <li><a href="#sagemaker-inference-pipelines">SageMaker Inference Pipelines</a></li>
 </ol>
-<p>This section covers building machine learning solutions for performance, availability, scalability, resiliency, and fault tolerance, recommending and implementing the appropriate machine learning services and features for a given problem, applying basic AWS security practices to machine learning solutions and deploying and operationalizing machine learning solutions.</p>
-<h2 id="section-intro-machine-learning-implementation-and-operations">Section Intro: Machine Learning Implementation and Operations</h2>
-<ul>
-<li>scaling, productionalization and security</li>
-</ul>
-<h2 id="sagemakers-inner-details-and-production-variants">SageMaker&rsquo;s Inner Details and Production Variants</h2>
-<ul>
-<li>all models in agemaker are hosted in docker containers</li>
-<li>the docker container is registered with ECR</li>
-<li>pre built deep learning, scikit learn and spark ml</li>
-<li>pre built tensorflow, mxnet, chainer, pytorch etc. horovod or parameter server is a way to distribute tensorflow training</li>
-<li>you can also use any script or algorithm within sagemaker</li>
-<li>the containers are isolated and contain all dependencies</li>
-<li>Dockerfile structure</li>
-<li>using your own image</li>
-<li>you can test muliple models on live traffic using Production Variants (Roll out variant weights)</li>
-<li>A/B test is posible</li>
-</ul>
-<h2 id="sagemaker-on-the-edge-sagemaker-neo-and-iot-greengrass">SageMaker On the Edge: SageMaker Neo and IoT Greengrass</h2>
-<ul>
-<li>Train once, run anywhere</li>
-<li>supports multiple architecture</li>
-<li>optimizes code for specific devices</li>
-<li>consists of a compiler and a runtime</li>
-<li>Neo compiled models can be deployed to an https endpoint, must be the same instance type used for compilation</li>
-<li>or you can deploy to iot greengrass</li>
-</ul>
-<h2 id="sagemaker-security-encryption-at-rest-and-in-transit">SageMaker Security: Encryption at Rest and In Transit</h2>
-<ul>
-<li>IAM</li>
-<li>MFA</li>
-<li>SSL/TLS</li>
-<li>Cloudtrail to log API and user activity</li>
-<li>encryption</li>
-<li>AWS key mangement service is accepted by notebooks and all sagemaker jobs</li>
-<li>s3 can be encrypted as well</li>
-<li>All traffic supports TLS/SSL</li>
-<li>inter node training communication may be optionally encrypted</li>
-</ul>
-<h2 id="sagemaker-security-vpcs-iam-logging-and-monitoring">SageMaker Security: VPC&rsquo;s, IAM, Logging, and Monitoring</h2>
-<ul>
-<li>training jobs run in VPC</li>
-<li>private VPC</li>
-<li>s3 vpc endpoints</li>
-<li>IAM user permissions for CreateTrainingJob, CreateModel, CreateEndpointConfig, CreateTransformJob, CreateHyperParameterTuningJob, CreateNotebookInstance, UpdateNotebookInstance</li>
-<li>Predefined policies for AmazonSageMakerReadOnly, AmazonSageMakerFullAccess, AdministratorAccess, DataScientist</li>
-<li>cloudwatch can log, monitor and alarm on invocations and latency of endpoints, health of instance nodes, ground truth (active workers)</li>
-<li>cloudtrail records actions from users, roles, and services within Sagemaker: log files are delivered to s3 for auditing purposes</li>
-</ul>
-<h2 id="sagemaker-resource-management-instance-types-and-spot-training">SageMaker Resource Management: Instance Types and Spot Training</h2>
-<ul>
-<li>depends but usually gpu for training and cpu for inference</li>
-<li>EC2 spot training: checkpoints to s3 so training can resume</li>
-<li>can increate training time</li>
-</ul>
-<h2 id="sagemaker-resource-management-elastic-inference-automatic-scaling-azs">SageMaker Resource Management: Elastic Inference, Automatic Scaling, AZ&rsquo;s</h2>
-<ul>
-<li>accelerates deep learning inference at a fraction of a cost</li>
-<li>EI accelerator may be added alongside a CPU instance</li>
-<li>EI accelerators can also be applied to notebooks</li>
-<li>works with tensorflow, pytorch, mxnet, onnx may be used to export models to mxnet</li>
-<li>works with custom containers built with El-enabled Tensorflow, Pytorch or mxnet</li>
-<li>works with image classification and object detection built in algorithms</li>
-<li>Automatic scaling: can be used to define target metrics, min or max capacity, cooldown periods, works with cloudwatch, dynamically adjusts number of instances for a production variant, load test your configuration before using it.</li>
-</ul>
-<h2 id="sagemaker-serverless-inference-and-inference-recommender">SageMaker Serverless Inference and Inference Recommender</h2>
-<ul>
-<li>specify your container, memory requirement, concurrency requirements</li>
-<li>underlying capacity is automatically provisioned and scaled</li>
-<li>good for infrequent or unpredictable traffic, will scale down to zero when there are no requests</li>
-<li>chared based on usage</li>
-<li>monitor via cloudwatch</li>
-<li>Inference Recommender  recommends what instance type and configuration for your model</li>
-<li>automates load testing and model tuning</li>
-</ul>
-<h2 id="sagemaker-inference-pipelines">SageMaker Inference Pipelines</h2>
-<ul>
-<li>linear sequence of 2-15 containers</li>
-<li>any combination of pre-trained built-in algorithms or your own algorithms in Docker</li>
-<li>combine pre-processing, predictions, post-processing</li>
-<li>Spark ML and scikit-learn</li>
-<li>chaining multiple inference containers into a pipeline of results</li>
-</ul>
 </div>
 	</section>
 
@@ -417,7 +334,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		625 words in this page.
+		67 words in this page.
 	</div>
 </div>
 
