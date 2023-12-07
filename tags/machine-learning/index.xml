@@ -12,63 +12,6 @@
     
     
     <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - 1. Data Engineering</title>
-      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</guid>
-      <description>&lt;h1 id=&#34;data-engineering&#34;&gt;Data Engineering&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#s3&#34;&gt;S3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kinesis&#34;&gt;Kinesis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#glue&#34;&gt;Glue&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#redshift&#34;&gt;Redshift&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#rds&#34;&gt;RDS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#dynamodb&#34;&gt;DynamoDB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#opensearch&#34;&gt;OpenSearch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aws-data-pipeline&#34;&gt;AWS Data Pipeline&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aws-batch&#34;&gt;AWS Batch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aws-batch&#34;&gt;AWS DMS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#step-functions&#34;&gt;Step Functions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#efs&#34;&gt;EFS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#ebs&#34;&gt;EBS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#misc&#34;&gt;Misc&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>AWS Certified ML - Specialty exam (MLS-C01) - 2. Exploratory Data Analysis</title>
-      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</guid>
-      <description>&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#python-in-data-science-and-machine-learning&#34;&gt;Python in data science and machine learning&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#types-of-data&#34;&gt;Types of Data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#data-distributions&#34;&gt;Data Distributions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#trends-and-seasonality&#34;&gt;Trends and seasonality&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#athena&#34;&gt;Athena&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#quicksight&#34;&gt;Quicksight&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#types-of-visualization&#34;&gt;Types of visualization&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#hadoop&#34;&gt;Hadoop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#apache-spark&#34;&gt;Apache Spark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#emr-notebooks,-security-and-instance-types&#34;&gt;EMR Notebooks, Security and Instance Types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#feature-engineering&#34;&gt;Feature Engineering&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#imputing-missing-data&#34;&gt;Imputing Missing Data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#unbalanced-data&#34;&gt;Unbalanced Data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#handling-outliers&#34;&gt;Handling Outliers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#binning,-transoforming,-encoding,-scaling,-and-shuffling&#34;&gt;Binning, Transoforming, Encoding, Scaling, and Shuffling&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#amazon-sagemaker-ground-truth-and-label-generation&#34;&gt;Amazon Sagemaker Ground Truth and Label Generation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#misc&#34;&gt;Misc&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - 3. Modeling</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
@@ -135,9 +78,66 @@
     </item>
     
     <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 1. Data Engineering</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</guid>
+      <description>&lt;h1 id=&#34;data-engineering&#34;&gt;Data Engineering&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#s3&#34;&gt;S3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kinesis&#34;&gt;Kinesis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#glue&#34;&gt;Glue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#redshift&#34;&gt;Redshift&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rds&#34;&gt;RDS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dynamodb&#34;&gt;DynamoDB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#opensearch&#34;&gt;OpenSearch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aws-data-pipeline&#34;&gt;AWS Data Pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aws-batch&#34;&gt;AWS Batch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aws-batch&#34;&gt;AWS DMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#step-functions&#34;&gt;Step Functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#efs&#34;&gt;EFS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ebs&#34;&gt;EBS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#misc&#34;&gt;Misc&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AWS Certified ML - Specialty exam (MLS-C01) - 2. Exploratory Data Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</guid>
+      <description>&lt;h1 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#python-in-data-science-and-machine-learning&#34;&gt;Python in data science and machine learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#types-of-data&#34;&gt;Types of Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#data-distributions&#34;&gt;Data Distributions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#trends-and-seasonality&#34;&gt;Trends and seasonality&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#athena&#34;&gt;Athena&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#quicksight&#34;&gt;Quicksight&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#types-of-visualization&#34;&gt;Types of visualization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emr&#34;&gt;EMR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hadoop&#34;&gt;Hadoop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apache-spark&#34;&gt;Apache Spark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emr-notebooks,-security-and-instance-types&#34;&gt;EMR Notebooks, Security and Instance Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#feature-engineering&#34;&gt;Feature Engineering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#imputing-missing-data&#34;&gt;Imputing Missing Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#unbalanced-data&#34;&gt;Unbalanced Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#handling-outliers&#34;&gt;Handling Outliers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#binning,-transoforming,-encoding,-scaling,-and-shuffling&#34;&gt;Binning, Transoforming, Encoding, Scaling, and Shuffling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#amazon-sagemaker-ground-truth-and-label-generation&#34;&gt;Amazon Sagemaker Ground Truth and Label Generation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#misc&#34;&gt;Misc&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>AWS Certified ML - Specialty exam (MLS-C01) - 4. Machine Learning Implementation and Operations</title>
       <link>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</guid>
       <description>&lt;h1 id=&#34;machine-learning-implementation-and-operations&#34;&gt;Machine Learning Implementation and Operations&lt;/h1&gt;

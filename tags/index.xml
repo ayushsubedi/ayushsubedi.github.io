@@ -93,24 +93,6 @@
     </item>
     
     <item>
-      <title>apache-spark</title>
-      <link>https://ayushsubedi.github.io/tags/apache-spark/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/apache-spark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>athena</title>
-      <link>https://ayushsubedi.github.io/tags/athena/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/athena/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>AWS</title>
       <link>https://ayushsubedi.github.io/tags/aws/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
@@ -129,146 +111,11 @@
     </item>
     
     <item>
-      <title>Data Engineering</title>
-      <link>https://ayushsubedi.github.io/tags/data-engineering/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/data-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data pipeline</title>
-      <link>https://ayushsubedi.github.io/tags/data-pipeline/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/data-pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data-distributions</title>
-      <link>https://ayushsubedi.github.io/tags/data-distributions/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/data-distributions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>deepar-in-sagemaker</title>
       <link>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ebs</title>
-      <link>https://ayushsubedi.github.io/tags/ebs/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/ebs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>efs</title>
-      <link>https://ayushsubedi.github.io/tags/efs/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/efs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>elasticsearch</title>
-      <link>https://ayushsubedi.github.io/tags/elasticsearch/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/elasticsearch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>emr</title>
-      <link>https://ayushsubedi.github.io/tags/emr/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/emr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Exploratory Data Analysis</title>
-      <link>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>feature-engineering</title>
-      <link>https://ayushsubedi.github.io/tags/feature-engineering/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/feature-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>glue</title>
-      <link>https://ayushsubedi.github.io/tags/glue/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/glue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>greengrass</title>
-      <link>https://ayushsubedi.github.io/tags/greengrass/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/greengrass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hadoop</title>
-      <link>https://ayushsubedi.github.io/tags/hadoop/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/hadoop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>handling-outliers</title>
-      <link>https://ayushsubedi.github.io/tags/handling-outliers/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/handling-outliers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kinesis</title>
-      <link>https://ayushsubedi.github.io/tags/kinesis/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/kinesis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning Implementation and Operations</title>
-      <link>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</guid>
       <description></description>
     </item>
     
@@ -291,60 +138,6 @@
     </item>
     
     <item>
-      <title>pipelines</title>
-      <link>https://ayushsubedi.github.io/tags/pipelines/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/pipelines/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>quicksight</title>
-      <link>https://ayushsubedi.github.io/tags/quicksight/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/quicksight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rds</title>
-      <link>https://ayushsubedi.github.io/tags/rds/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/rds/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>redshift</title>
-      <link>https://ayushsubedi.github.io/tags/redshift/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/redshift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>s3</title>
-      <link>https://ayushsubedi.github.io/tags/s3/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/s3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sagemaker</title>
-      <link>https://ayushsubedi.github.io/tags/sagemaker/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/sagemaker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>sagemaker-canvas</title>
       <link>https://ayushsubedi.github.io/tags/sagemaker-canvas/</link>
       <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
@@ -363,9 +156,225 @@
     </item>
     
     <item>
+      <title>wip</title>
+      <link>https://ayushsubedi.github.io/tags/wip/</link>
+      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/wip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache-spark</title>
+      <link>https://ayushsubedi.github.io/tags/apache-spark/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/apache-spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>athena</title>
+      <link>https://ayushsubedi.github.io/tags/athena/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/athena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Engineering</title>
+      <link>https://ayushsubedi.github.io/tags/data-engineering/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data pipeline</title>
+      <link>https://ayushsubedi.github.io/tags/data-pipeline/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-distributions</title>
+      <link>https://ayushsubedi.github.io/tags/data-distributions/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/data-distributions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ebs</title>
+      <link>https://ayushsubedi.github.io/tags/ebs/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ebs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>efs</title>
+      <link>https://ayushsubedi.github.io/tags/efs/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/efs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://ayushsubedi.github.io/tags/elasticsearch/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emr</title>
+      <link>https://ayushsubedi.github.io/tags/emr/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/emr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploratory Data Analysis</title>
+      <link>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feature-engineering</title>
+      <link>https://ayushsubedi.github.io/tags/feature-engineering/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/feature-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>glue</title>
+      <link>https://ayushsubedi.github.io/tags/glue/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/glue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>greengrass</title>
+      <link>https://ayushsubedi.github.io/tags/greengrass/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/greengrass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hadoop</title>
+      <link>https://ayushsubedi.github.io/tags/hadoop/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/hadoop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>handling-outliers</title>
+      <link>https://ayushsubedi.github.io/tags/handling-outliers/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/handling-outliers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kinesis</title>
+      <link>https://ayushsubedi.github.io/tags/kinesis/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/kinesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Implementation and Operations</title>
+      <link>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipelines</title>
+      <link>https://ayushsubedi.github.io/tags/pipelines/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/pipelines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quicksight</title>
+      <link>https://ayushsubedi.github.io/tags/quicksight/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/quicksight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rds</title>
+      <link>https://ayushsubedi.github.io/tags/rds/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/rds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redshift</title>
+      <link>https://ayushsubedi.github.io/tags/redshift/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/redshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>s3</title>
+      <link>https://ayushsubedi.github.io/tags/s3/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sagemaker</title>
+      <link>https://ayushsubedi.github.io/tags/sagemaker/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sagemaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>spark</title>
       <link>https://ayushsubedi.github.io/tags/spark/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/spark/</guid>
       <description></description>
@@ -374,7 +383,7 @@
     <item>
       <title>step function</title>
       <link>https://ayushsubedi.github.io/tags/step-function/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/step-function/</guid>
       <description></description>
@@ -383,7 +392,7 @@
     <item>
       <title>types-of-data</title>
       <link>https://ayushsubedi.github.io/tags/types-of-data/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/types-of-data/</guid>
       <description></description>
@@ -392,7 +401,7 @@
     <item>
       <title>unbalanced-data</title>
       <link>https://ayushsubedi.github.io/tags/unbalanced-data/</link>
-      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/unbalanced-data/</guid>
       <description></description>

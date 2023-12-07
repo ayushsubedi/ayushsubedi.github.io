@@ -6,105 +6,18 @@
     <description>Recent content in wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Dec 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>(WIP) Topics on High-Dimensional Data Analytics (Machine Learning 2)</title>
-      <link>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</link>
-      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <title>SimPy Explorations</title>
+      <link>https://ayushsubedi.github.io/posts/0_sample-copy/</link>
+      <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/</guid>
-      <description>&lt;h1 id=&#34;topics-on-high-dimensional-data-analytics&#34;&gt;Topics on High-Dimensional Data Analytics&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#image-analysis&#34;&gt;Image Analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#optimization-application&#34;&gt;Optimization Application&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#regularization&#34;&gt;Regularization&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-&lt;h2 id=&#34;big-data&#34;&gt;Big Data&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Big data is a term used to describe extremely large and complex datasets that traditional data processing applications are not well-equipped to handle. The concept of &amp;ldquo;big data&amp;rdquo; is often associated with what is referred to as the &amp;ldquo;4V&amp;rdquo; framework, which describes the key characteristics of big data:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Volume:&lt;/strong&gt;  This refers to the sheer scale of data generated and collected. Big data involves datasets that are too large to be managed and processed using traditional databases and tools. This massive volume can range from terabytes to petabytes and beyond.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Velocity:&lt;/strong&gt;  This characteristic pertains to the speed at which data is generated, collected, and processed. In today&amp;rsquo;s fast-paced digital world, data is generated at an unprecedented rate, often in real-time or near-real-time. Examples include social media interactions, sensor data from IoT devices, financial transactions, and more.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Variety:&lt;/strong&gt;  Big data comes in various formats and types, such as structured, semi-structured, and unstructured data. Structured data is organized into a well-defined format (e.g., tables in a relational database), whereas unstructured data lacks a specific structure (e.g., text documents, images, videos, social media posts). Semi-structured data lies somewhere in between, having a partial structure but not fitting neatly into traditional databases.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Veracity:&lt;/strong&gt;  Veracity refers to the quality and reliability of the data. With the proliferation of data sources, there&amp;rsquo;s an increased potential for data to be incomplete, inaccurate, or inconsistent. Ensuring the accuracy and trustworthiness of big data is a significant challenge, and data quality management is crucial for meaningful insights.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;high-dimensional-data&#34;&gt;High Dimensional Data&lt;/h2&gt;
-&lt;p&gt;High-dimensional data refers to datasets where the number of features or variables (dimensions) is significantly larger than the number of observations or samples. In other words, the data has a high number of attributes compared to the number of data points available. This kind of data is prevalent in various fields such as genomics, image analysis, social networks, and more.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/high_dimensional_.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;difference-between-high-dimensional-data-and-big-data&#34;&gt;Difference between High Dimensional Data and Big Data&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/diff_bet_high_and_low.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;p = dimension
-n = samples&lt;/p&gt;
-&lt;h2 id=&#34;the-curse-of-dimensionality&#34;&gt;The Curse of Dimensionality&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/distance_dimension.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;As distance between observations increases with the dimensions, the sample size required for learning a model drastically increases.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Increased Sparsity:&lt;/strong&gt;  In higher dimensions, the available data points are spread out more thinly across the space. This means that data points become farther apart from each other, making it challenging to find meaningful clusters or patterns. It&amp;rsquo;s like having a lot of points scattered in a large, high-dimensional space, and they&amp;rsquo;re so spread out that it&amp;rsquo;s difficult to identify any consistent relationships.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;More Data Needed:&lt;/strong&gt;  With higher-dimensional data, you need a disproportionately larger amount of data to capture the underlying patterns accurately. When the data is sparse, it&amp;rsquo;s harder to generalize from the observed points to make accurate predictions or draw conclusions. As the dimensionality increases, you might need exponentially more data to maintain the same level of accuracy in your models.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Impact on Complexity:&lt;/strong&gt;  The complexity of machine learning models increases with dimensionality. More dimensions mean more parameters to estimate, which can lead to overfitting – a situation where a model fits the training data too closely and fails to generalize well to new data.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Increased Computational Demands:&lt;/strong&gt;  Processing and analyzing high-dimensional data require more computational resources and time. Many algorithms become slower and more memory-intensive as the number of dimensions grows. This can make experimentation and model training more challenging and time-consuming.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Difficulties in Visualization:&lt;/strong&gt;  Our ability to visualize data effectively diminishes as the number of dimensions increases. We are accustomed to thinking in 2D and 3D space, but visualizing data in, say, 10 dimensions is practically impossible. This can make it hard to understand the structure of the data and the relationships between variables.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To mitigate the Curse of Dimensionality, researchers and practitioners often turn to techniques like dimensionality reduction and feature selection. These methods aim to reduce the number of dimensions while preserving as much relevant information as possible. Dimensionality reduction techniques like Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are commonly used to address this challenge.&lt;/p&gt;
-&lt;h2 id=&#34;low-dimensional-learning-from-high-dimensional-data&#34;&gt;Low Dimensional Learning From High Dimensional Data&lt;/h2&gt;
-&lt;p&gt;High dimensional data usually have low dimensional structure.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.mathworks.com/help/examples/stats/win64/ChangeTsneSettingsExample_01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;This can be achieved through Functional Data Analysis, Tensor Analysis, Rank Deficient Methods among others.&lt;/p&gt;
-&lt;h1 id=&#34;functional-data-analysis&#34;&gt;Functional Data Analysis&lt;/h1&gt;
-&lt;p&gt;A fluctuating quantity or impulse whose variations represent information and is often represented as a function of time or space.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lands.let.ru.nl/FDA/images/FDA_pic4website.bmp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;regression---least-square-estimates&#34;&gt;Regression - Least square Estimates&lt;/h2&gt;
-&lt;h2 id=&#34;polynomial-regression&#34;&gt;Polynomial Regression&lt;/h2&gt;
-&lt;h2 id=&#34;splines&#34;&gt;Splines&lt;/h2&gt;
-&lt;h2 id=&#34;order-m-splines&#34;&gt;Order-M Splines&lt;/h2&gt;
-&lt;h2 id=&#34;b-splines&#34;&gt;B-Splines&lt;/h2&gt;
-&lt;h2 id=&#34;smoothing-splines&#34;&gt;Smoothing Splines&lt;/h2&gt;
-&lt;h2 id=&#34;natural-cubic-splines&#34;&gt;Natural Cubic Splines&lt;/h2&gt;
-&lt;h2 id=&#34;k-nearest-neighbor&#34;&gt;K-Nearest Neighbor&lt;/h2&gt;
-&lt;h2 id=&#34;kernel-smoother-regression&#34;&gt;Kernel Smoother Regression&lt;/h2&gt;
-&lt;h2 id=&#34;rbf-kernel&#34;&gt;RBF Kernel&lt;/h2&gt;
-&lt;h2 id=&#34;functional-pca&#34;&gt;Functional PCA&lt;/h2&gt;
-&lt;h1 id=&#34;image-analysis&#34;&gt;Image Analysis&lt;/h1&gt;
-&lt;h2 id=&#34;transformation&#34;&gt;Transformation&lt;/h2&gt;
-&lt;h2 id=&#34;convolution&#34;&gt;Convolution&lt;/h2&gt;
-&lt;h2 id=&#34;convolution-with-a-mask&#34;&gt;Convolution with a Mask&lt;/h2&gt;
-&lt;h2 id=&#34;segmentation&#34;&gt;Segmentation&lt;/h2&gt;
-&lt;h2 id=&#34;k-means-clustering&#34;&gt;K-means clustering&lt;/h2&gt;
-&lt;h2 id=&#34;edge-detection-using-derivatives&#34;&gt;Edge detection using derivatives&lt;/h2&gt;
-&lt;h2 id=&#34;sobel-operator&#34;&gt;Sobel Operator&lt;/h2&gt;
-&lt;h2 id=&#34;kirsch-operator&#34;&gt;Kirsch Operator&lt;/h2&gt;
-&lt;h2 id=&#34;prewitt-mask-and-gaussian-mask&#34;&gt;Prewitt Mask and Gaussian Mask.&lt;/h2&gt;
-&lt;h1 id=&#34;tensor-data-analysis&#34;&gt;Tensor Data Analysis&lt;/h1&gt;
-&lt;h2 id=&#34;tensor-data-analysis-1&#34;&gt;Tensor data analysis&lt;/h2&gt;
-&lt;h2 id=&#34;outer-product&#34;&gt;Outer product&lt;/h2&gt;
-&lt;h2 id=&#34;inner-product&#34;&gt;Inner product&lt;/h2&gt;
-&lt;h2 id=&#34;kronecker-product&#34;&gt;Kronecker product&lt;/h2&gt;
-&lt;h2 id=&#34;khatri-rao-product&#34;&gt;Khatri-Rao product&lt;/h2&gt;
-&lt;h2 id=&#34;hadamard-product&#34;&gt;Hadamard product&lt;/h2&gt;
-&lt;h2 id=&#34;defining-tensor-ranks&#34;&gt;Defining tensor ranks&lt;/h2&gt;
-&lt;h2 id=&#34;rank-one-tensor&#34;&gt;Rank one tensor&lt;/h2&gt;
-&lt;h2 id=&#34;candecompparafac-cp-decomposition&#34;&gt;Candecomp/parafac (CP) decomposition&lt;/h2&gt;
-&lt;h2 id=&#34;tucker-decomposition&#34;&gt;Tucker decomposition&lt;/h2&gt;
-&lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
-&lt;h1 id=&#34;regularization&#34;&gt;Regularization&lt;/h1&gt;
-&lt;h2 id=&#34;ridge&#34;&gt;Ridge&lt;/h2&gt;
-&lt;h2 id=&#34;lasso&#34;&gt;Lasso&lt;/h2&gt;
-&lt;h2 id=&#34;non-negative&#34;&gt;Non-negative&lt;/h2&gt;
-&lt;h2 id=&#34;adaptive-lasso&#34;&gt;Adaptive Lasso&lt;/h2&gt;
-&lt;h2 id=&#34;group-lasso&#34;&gt;Group Lasso&lt;/h2&gt;
-</description>
+      <guid>https://ayushsubedi.github.io/posts/0_sample-copy/</guid>
+      <description></description>
     </item>
     
   </channel>
