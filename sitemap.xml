@@ -2,11 +2,161 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-comprehend/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-forecast/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-lex/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-personalize/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-polly/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-rekognition/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-transcribe/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/amazon-translate/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/analytics/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/apache-spark/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/athena/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/aws/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
-    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/certification/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/data-engineering/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/data-pipeline/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/data-distributions/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/ebs/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/efs/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/elasticsearch/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/emr/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/feature-engineering/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/glue/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/greengrass/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/hadoop/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/handling-outliers/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/kinesis/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/machine-learning/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/modeling/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/pipelines/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/quicksight/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/rds/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/redshift/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/s3/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/sagemaker/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/sagemaker-canvas/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/sagemaker-debugger/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/spark/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/step-function/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/types-of-data/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/unbalanced-data/</loc>
+    <lastmod>2023-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/clustering/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
@@ -50,9 +200,6 @@
     <loc>https://ayushsubedi.github.io/tags/polynomial_regression/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/rbfkernel/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -72,9 +219,6 @@
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/splines/</loc>
-    <lastmod>2023-11-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/tensor_data_analysis/</loc>
@@ -107,9 +251,6 @@
     <loc>https://ayushsubedi.github.io/tags/shap/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/analytics/</loc>
-    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/categories/capstone-project/</loc>
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
   </url><url>
@@ -126,9 +267,6 @@
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/group-project/</loc>
-    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/machine-learning/</loc>
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/random-forest/</loc>
@@ -277,144 +415,6 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/sql/</loc>
     <lastmod>2023-03-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-comprehend/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-forecast/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-lex/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-personalize/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-polly/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-rekognition/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-transcribe/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/amazon-translate/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/apache-spark/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/athena/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/aws/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_data_engineering/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_eda/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_modeling/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/certification/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/data-engineering/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/data-pipeline/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/data-distributions/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/deepar-in-sagemaker/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/ebs/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/efs/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/elasticsearch/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/emr/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/exploratory-data-analysis/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/feature-engineering/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/glue/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/greengrass/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/hadoop/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/handling-outliers/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/kinesis/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/modeling/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/pipelines/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/quicksight/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/rds/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/redshift/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/s3/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/sagemaker/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/sagemaker-canvas/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/sagemaker-debugger/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/spark/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/step-function/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/types-of-data/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/unbalanced-data/</loc>
-    <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/certificate/</loc>
     <lastmod>2023-01-14T00:00:00+00:00</lastmod>
