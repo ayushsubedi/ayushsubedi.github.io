@@ -45,6 +45,8 @@
 &lt;li&gt;The convolutional layers are followed by max-pooling layers&lt;/li&gt;
 &lt;li&gt;ReLU activation functions are used throughout the network to introduce non-linearity.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://production-media.paperswithcode.com/methods/MaxpoolSample2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:789/1*FxzVKINmFbbcMkkxnIqlYQ.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch.nn &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; nn
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch.optim &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; optim
@@ -269,13 +271,13 @@ Accuracy of the network on the 10000 test images: 80.16%
 &lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sota.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;transformer-architecture&#34;&gt;Transformer Architecture&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1400/format:webp/0*O5X15ycTtapwnzgc.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Embeddings are representations of words or tokens in a continuous vector space. Each word/token in a sequence is mapped to a high-dimensional vector.  In the Transformer model, embeddings are used to represent the input tokens. These embeddings serve as the initial input to the model, and they capture the semantic information of the tokens.&lt;/li&gt;
-&lt;li&gt;Attention mechanisms allow a model to focus on different parts of the input sequence when making predictions. It assigns different weights to different elements of the sequence. The Transformer uses a self-attention mechanism, which means that each element in the sequence can attend to all other elements. This allows the model to weigh the importance of different words in the context of the entire sequence.&lt;/li&gt;
-&lt;li&gt;In the Transformer model, the self-attention mechanism is applied to the input embeddings. Each element in the sequence (word embedding) can attend to all other elements, capturing dependencies and relationships between words. The attention mechanism assigns weights to each element based on its relevance to the others. These weights are used to compute a weighted sum of the input embeddings. This weighted sum is a context vector that represents the importance of different parts of the input sequence for the current position.&lt;/li&gt;
-&lt;li&gt;Since Transformer models do not inherently capture the order of elements in a sequence, positional encoding is added to the input embeddings to provide information about the position of each token. Positional encoding ensures that the model understands the sequential order of the input tokens, allowing it to process sequences effectively.&lt;/li&gt;
-&lt;li&gt;The Transformer architecture consists of an encoder and a decoder. Each encoder layer contains a multi-head self-attention mechanism and a feedforward neural network. The attention mechanism in the encoder captures relationships between different words in the input sequence. The embeddings, enriched by attention, flow through the layers of the encoder, allowing the model to learn complex patterns and dependencies.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Embeddings are representations of words or tokens in a continuous vector space. Each word/token in a sequence is mapped to a high-dimensional vector.  In the Transformer model, embeddings are used to represent the input tokens. These embeddings serve as the initial input to the model, and they capture the semantic information of the tokens.&lt;/p&gt;
+&lt;p&gt;Attention mechanisms allow a model to focus on different parts of the input sequence when making predictions. It assigns different weights to different elements of the sequence. The Transformer uses a self-attention mechanism, which means that each element in the sequence can attend to all other elements. This allows the model to weigh the importance of different words in the context of the entire sequence.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://viso.ai/wp-content/uploads/2021/09/confidence-and-attention-of-vision-transformers-vit.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the Transformer model, the self-attention mechanism is applied to the input embeddings. Each element in the sequence (word embedding) can attend to all other elements, capturing dependencies and relationships between words. The attention mechanism assigns weights to each element based on its relevance to the others. These weights are used to compute a weighted sum of the input embeddings. This weighted sum is a context vector that represents the importance of different parts of the input sequence for the current position.&lt;/p&gt;
+&lt;p&gt;Since Transformer models do not inherently capture the order of elements in a sequence, positional encoding is added to the input embeddings to provide information about the position of each token. Positional encoding ensures that the model understands the sequential order of the input tokens, allowing it to process sequences effectively.&lt;/p&gt;
+&lt;p&gt;The Transformer architecture consists of an encoder and a decoder. Each encoder layer contains a multi-head self-attention mechanism and a feedforward neural network. The attention mechanism in the encoder captures relationships between different words in the input sequence. The embeddings, enriched by attention, flow through the layers of the encoder, allowing the model to learn complex patterns and dependencies.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1400/0*ibdpYn8Q0RfWRZoI.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;core-idea-of-the-paper&#34;&gt;Core Idea of the Paper&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;The paper introduces the use of Transformers, originally designed for natural language processing, in image recognition tasks.&lt;/li&gt;
@@ -291,6 +293,7 @@ Accuracy of the network on the 10000 test images: 80.16%
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/lucidrains/vit-pytorch/raw/main/images/vit.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://colab.research.google.com/github/hirotomusiker/schwert_colab_data_storage/blob/master/notebook/Vision_Transformer_Tutorial.ipynb&#34;&gt;Colab Walkthrough&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/vit2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
