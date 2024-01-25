@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>ml</title>
       <link>https://ayushsubedi.github.io/tags/ml/</link>
-      <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/ml/</guid>
       <description></description>
@@ -23,9 +23,27 @@
     <item>
       <title>paper</title>
       <link>https://ayushsubedi.github.io/tags/paper/</link>
-      <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>roc</title>
+      <link>https://ayushsubedi.github.io/tags/roc/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/roc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>smote</title>
+      <link>https://ayushsubedi.github.io/tags/smote/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/smote/</guid>
       <description></description>
     </item>
     
