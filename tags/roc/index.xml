@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>roc on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/roc/</link>
+    <description>Recent content in roc on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Jan 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/roc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Paper Exploration] SMOTE: Synthetic Minority Over-sampling Technique</title>
+      <link>https://ayushsubedi.github.io/posts/smote_paper_exploration/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/smote_paper_exploration/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-smote-synthetic-minority-over-sampling-technique&#34;&gt;[Paper Exploration] SMOTE: Synthetic Minority Over-sampling Technique&amp;quot;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Nitesh V. Chawla, Kevin W. Bowyer, Lawrence O. Hall, W. Philip Kegelmeyer&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 9 Jun 2011&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1106.1813.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An approach to the construction of classifiers from imbalanced datasets is described. A dataset is imbalanced if the classification categories are not approximately equally represented. Often real-world data sets are predominately composed of “normal” examples with only a small percentage of “abnormal” or “interesting” examples. It is also the case that the cost of misclassifying an abnormal (interesting) example as a normal example is
+often much higher than the cost of the reverse error. Under-sampling of the majority (normal) class has been proposed as a good means of increasing the sensitivity of a classifier to the minority class. This paper shows that a combination of our method of over-sampling
+the minority (abnormal) class and under-sampling the majority (normal) class can achieve better classifier performance (in ROC space) than only under-sampling the majority class. This paper also shows that a combination of our method of over-sampling the minority class and under-sampling the majority class can achieve better classifier performance (in ROC space) than varying the loss ratios in Ripper or class priors in Naive Bayes. Our method of over-sampling the minority class involves creating synthetic minority class examples. Experiments are performed using C4.5, Ripper and a Naive Bayes classifier. The method is evaluated using the area under the Receiver Operating Characteristic curve (AUC) and the ROC convex hull strategy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;terminologies&#34;&gt;Terminologies&lt;/h2&gt;
+&lt;h3 id=&#34;imbalanced-dataset&#34;&gt;Imbalanced dataset&lt;/h3&gt;
+&lt;p&gt;An imbalanced dataset refers to a situation where the number of examples in different classes is not evenly distributed, meaning one class has significantly fewer instances than the others.&lt;/p&gt;
+&lt;h3 id=&#34;undersampling&#34;&gt;Undersampling&lt;/h3&gt;
+&lt;p&gt;Undersampling is a technique used to address this imbalance by reducing the size of the over-represented class, typically by randomly removing instances from that class.&lt;/p&gt;
+&lt;h3 id=&#34;oversampling&#34;&gt;Oversampling&lt;/h3&gt;
+&lt;p&gt;Oversampling involves increasing the number of instances in the under-represented class, often by duplicating or generating new examples.&lt;/p&gt;
+&lt;h3 id=&#34;receiver-operating-characteristic-roc&#34;&gt;Receiver Operating Characteristic (ROC)&lt;/h3&gt;
+&lt;p&gt;A standard technique for summarizing classifier performance over a range of tradeoffs between true positive and false positive error rates. The Area Under the Curve (AUC) is an accepted traditional performance metric for a ROC curve.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/4jRBRDbJemM?si=JLjtRQm9f7dN-At1&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;img src=&#34;https://commons.wikimedia.org/wiki/File:Roc-draft-xkcd-style.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;main-points-in-the-paper&#34;&gt;Main points in the paper&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CeOd_Wbn7O6kpjSTKTIUog.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Imbalanced dataset challenge prevalent in machine learning models.&lt;/li&gt;
+&lt;li&gt;SMOTE, or Synthetic Minority Over-sampling Technique, introduced to tackle class imbalance.
+&lt;ul&gt;
+&lt;li&gt;Involves the generation of synthetic instances for the minority class.&lt;/li&gt;
+&lt;li&gt;Utilizes interpolation techniques based on the characteristics of nearest neighbors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Primary objective: Improve the overall performance of machine learning models when faced with imbalanced datasets.&lt;/li&gt;
+&lt;li&gt;Empirical validation through extensive experiments across diverse classifiers and datasets.&lt;/li&gt;
+&lt;li&gt;Rigorous testing to establish the generalizability and effectiveness of SMOTE.&lt;/li&gt;
+&lt;li&gt;Recognition of limitations, including the potential risk of overfitting in certain scenarios.
+&lt;ul&gt;
+&lt;li&gt;Discusses strategies for adapting SMOTE to specific use cases and potential drawbacks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Significant impact observed in the machine learning community since its introduction in 2002.&lt;/li&gt;
+&lt;li&gt;Widely adopted by practitioners and researchers alike.&lt;/li&gt;
+&lt;li&gt;Acknowledged as a pioneering technique for addressing class imbalance.&lt;/li&gt;
+&lt;li&gt;Influence on subsequent research evident in the development of various methods to handle imbalanced datasets.&lt;/li&gt;
+&lt;li&gt;In conclusion, SMOTE stands out as a valuable and extensively utilized tool, making a substantial impact on addressing the challenges posed by imbalanced datasets in machine learning.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
