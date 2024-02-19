@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | Path to DBT Analytics Engineering</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.121.2">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+		
+	<title>Ayush Subedi</title>
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://subedi.ml/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://subedi.ml/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://subedi.ml/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://subedi.ml/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+	
+	
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-177424799-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+	
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">Path to DBT Analytics Engineering</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Path to DBT Analytics Engineering</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/certification'>certification</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/notes'>notes</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/dbt'>dbt</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2024-02-14">2024-02-14</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="prereqs">Prereqs</h1>
+<h3 id="data-warehousing">Data Warehousing</h3>
+<ul>
+<li>There have been multiple modeling paradigms since the advent of database technology. Many of these are classified as normalized modeling.</li>
+<li>Normalized modeling techniques were designed when storage was expensive and computational power was not as affordable as it is today.</li>
+<li>With a modern cloud-based data warehouse, we can approach analytics differently in an agile or ad hoc modeling technique. This is often referred to as denormalized modeling.</li>
+<li>dbt can build your data warehouse into any of these schemas. dbt is a tool for how to build these rather than enforcing what to build. dbt removes DDL and DML ..</li>
+<li>DDL (Data Definition Language)/DML (Data Manipulation Language)/DQL (Data Query Language)</li>
+</ul>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20210920153429/new.png" alt=""></p>
+<ul>
+<li>Kimball, Inmon, and Data Vault are three popular methodologies used in data warehousing, each with its own approach and principles.</li>
+<li><strong>Kimball Methodology</strong>:
+<ul>
+<li>Developed by Ralph Kimball, this methodology focuses on building data warehouses using a dimensional modeling approach.</li>
+<li>It emphasizes the creation of star schemas or snowflake schemas for organizing data into facts (measurable events) and dimensions (descriptive attributes).</li>
+<li>Kimball&rsquo;s approach is more bottom-up, meaning it starts with identifying business processes and building data marts that serve specific business functions.</li>
+<li>It emphasizes simplicity, agility, and business user accessibility.</li>
+<li>The Kimball methodology is more suited for smaller to medium-sized data warehousing projects.</li>
+</ul>
+</li>
+<li><strong>Inmon Methodology</strong>:
+<ul>
+<li>Created by Bill Inmon, this methodology advocates for the construction of a centralized data warehouse known as the &ldquo;Corporate Information Factory&rdquo; (CIF).</li>
+<li>Inmon&rsquo;s approach focuses on the normalization of data before it&rsquo;s loaded into the data warehouse, aiming to reduce redundancy and ensure data consistency.</li>
+<li>It emphasizes a top-down approach, starting with integrating all data into a single, enterprise-wide data model before creating data marts.</li>
+<li>The Inmon methodology prioritizes data integration and consistency across the entire organization.</li>
+<li>It&rsquo;s often considered more suitable for large enterprises with complex data integration needs.</li>
+</ul>
+</li>
+<li><strong>Data Vault</strong>:
+<ul>
+<li>Data Vault is a methodology developed by Dan Linstedt, focusing on the construction of a flexible, scalable, and auditable data warehousing architecture.</li>
+<li>It employs a hub-and-spoke architecture, where raw data (hubs) are connected through relationships (links) and descriptive metadata (satellites).</li>
+<li>Data Vault modeling enables easy scalability and adaptability to changing business requirements, making it suitable for agile environments.</li>
+<li>It emphasizes historical tracking of data changes, making it particularly useful for compliance and auditing purposes.</li>
+<li>Data Vault is often seen as a hybrid approach, complementing either Kimball or Inmon methodologies, or even used standalone.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="dbt">DBT</h1>
+<p>dbt is an open-source command line tool that helps analysts and engineers transform data in their warehouse more effectively. dbt is a SQL-first transformation workflow that lets teams quickly and collaboratively deploy analytics code following software engineering best practices like modularity, portability, CI/CD, and documentation. Now anyone on the data team can safely contribute to production-grade data pipelines.</p>
+<p><img src="https://www.getdbt.com/ui/img/png/carousel-bg-img.png" alt=""></p>
+<hr>
+<h2 id="dbt-fundamentals">DBT Fundamentals</h2>
+<h3 id="traditional-data-teams">Traditional Data Teams</h3>
+<ul>
+<li>Data engineers are responsible for maintaining data infrastructure and the ETL process for creating tables and views.</li>
+<li>Data analysts focus on querying tables and views to drive business insights for stakeholders.</li>
+</ul>
+<h3 id="etl-vs-elt">ETL vs ELT</h3>
+<ul>
+<li>ETL (extract transform load) is the process of creating new database objects by extracting data from multiple data sources, transforming it on a local or third party machine, and loading the transformed data into a data warehouse.</li>
+<li>ELT (extract load transform) is a more recent process of creating new database objects by first extracting and loading raw data into a data warehouse and then transforming that data directly in the warehouse.</li>
+<li>The new ELT process is made possible by the introduction of cloud-based data warehouse technologies.</li>
+</ul>
+<p><img src="https://www.montecarlodata.com/wp-content/uploads/2022/08/ETL-vs-ELT-630-%C3%97-418-px.png" alt=""></p>
+<h3 id="analytics-engineering">Analytics Engineering</h3>
+<ul>
+<li>Analytics engineers focus on the transformation of raw data into transformed data that is ready for analysis. This new role on the data team changes the responsibilities of data engineers and data analysts.</li>
+<li>Data engineers can focus on larger data architecture and the EL in ELT.</li>
+<li>Data analysts can focus on insight and dashboard work using the transformed data.</li>
+<li>Note: At a small company, a data team of one may own all three of these roles and responsibilities. As your team grows, the lines between these roles will remain blurry.</li>
+</ul>
+<hr>
+<h3 id="models">Models</h3>
+<ul>
+<li>Models are .sql files that live in the models folder.</li>
+<li>Models are simply written as select statements - there is no DDL/DML that needs to be written around this. This allows the developer to focus on the logic.</li>
+<li>After constructing a model, dbt run in the command line will actually materialize the models into the data warehouse. The default materialization is a view.</li>
+<li>The materialization can be configured as a table with the following configuration block at the top of the model file:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>{{ <span style="color:#ae81ff">config(</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">materialized=&#39;table&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">) }}</span>
+</span></span></code></pre></div><ul>
+<li>The same applies for configuring a model as a view:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>{{ <span style="color:#ae81ff">config(</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">materialized=&#39;view&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">) }}</span>
+</span></span></code></pre></div><ul>
+<li>When dbt run is executing, dbt is wrapping the select statement in the correct DDL/DML to build that model as a table/view. If that model already exists in the data warehouse, dbt will automatically drop that table or view before building the new database object.</li>
+</ul>
+<hr>
+<h3 id="modularity">Modularity</h3>
+<ul>
+<li>We could build each of our final models in a single model as we did with <code>dim_customers</code>, however with dbt we can create our final data products using modularity.</li>
+<li>Modularity is the degree to which a system&rsquo;s components may be separated and recombined, often with the benefit of flexibility and variety in use.</li>
+<li>This allows us to build data artifacts in logical steps.</li>
+<li>For example, we can stage the raw customers and orders data to shape it into what we want it to look like. Then we can build a model that references both of these to build the final <code>dim_customers</code> model.</li>
+<li>Thinking modularly is how software engineers build applications. Models can be leveraged to apply this modular thinking to analytics engineering.</li>
+</ul>
+<h4 id="ref-macro">ref Macro</h4>
+<ul>
+<li>Models can be written to reference the underlying tables and views that were building the data warehouse (e.g. <code>analytics.dbt_jsmith.stg_customers</code>). This hard codes the table names and makes it difficult to share code between developers.</li>
+<li>The ref function allows us to build dependencies between models in a flexible way that can be shared in a common code base. The ref function compiles to the name of the database object as it has been created on the most recent execution of dbt run in the particular development environment. This is determined by the environment configuration that was set up when the project was created.</li>
+<li>Example: <code>{{ ref('stg_customers') }}</code> compiles to <code>analytics.dbt_jsmith.stg_customers</code>.</li>
+<li>The ref function also builds a lineage graph like the one shown below. dbt is able to determine dependencies between models and takes those into account to build models in the correct order.</li>
+</ul>
+<p><img src="https://files.cdn.thinkific.com/file_uploads/342803/images/07a/64f/d1f/DAG.png?width=1920" alt=""></p>
+<hr>
+<h3 id="naming-conventions">Naming Conventions</h3>
+<ul>
+<li><strong>Sources</strong> (src) refer to the raw table data that have been built in the warehouse through a loading process.</li>
+<li><strong>Staging</strong> (stg) refers to models that are built directly on top of sources. These have a one-to-one relationship with sources tables. These are used for very light transformations that shape the data into what you want it to be. These models are used to clean and standardize the data before transforming data downstream. Note: These are typically materialized as views.</li>
+<li><strong>Intermediate</strong> (int) refers to any models that exist between final fact and dimension tables. These should be built on staging models rather than directly on sources to leverage the data cleaning that was done in staging.</li>
+<li><strong>Fact</strong> (fct) refers to any data that represents something that occurred or is occurring. Examples include sessions, transactions, orders, stories, votes. These are typically skinny, long tables.</li>
+<li><strong>Dimension</strong> (dim) refers to data that represents a person, place or thing. Examples include customers, products, candidates, buildings, employees.</li>
+</ul>
+<hr>
+<h3 id="project-organization">Project Organization</h3>
+<ul>
+<li>When dbt run is executed, dbt will automatically run every model in the models directory.</li>
+<li>The subfolder structure within the models directory can be leveraged for organizing the project as the data team sees fit.</li>
+<li>This can then be leveraged to select certain folders with dbt run and the model selector.</li>
+<li>Example: If <code>dbt run -s staging</code> will run all models that exist in models/staging.</li>
+<li><strong>Marts</strong> folder: All intermediate, fact, and dimension models can be stored here. Further subfolders can be used to separate data by business function (e.g. marketing, finance)</li>
+<li><strong>Staging</strong> folder: All staging models and source configurations can be stored here. Further subfolders can be used to separate data by data source (e.g. Stripe, Segment, Salesforce). (We will cover configuring Sources in the Sources module)</li>
+</ul>
+<p><img src="https://files.cdn.thinkific.com/file_uploads/342803/images/37a/954/943/models.png?width=1920" alt=""></p>
+<hr>
+<h3 id="sources">Sources</h3>
+<ul>
+<li>Sources represent the raw data that is loaded into the data warehouse.</li>
+<li>We can reference tables in our models with an explicit table name (<code>raw.jaffle_shop.customers</code>).</li>
+<li>However, setting up Sources in dbt and referring to them with the source function enables a few important tools.
+<ul>
+<li>Multiple tables from a single source can be configured in one place.</li>
+<li>Sources are easily identified as green nodes in the Lineage Graph.</li>
+<li>You can use dbt source freshness to check the freshness of raw tables.</li>
+</ul>
+</li>
+<li>Sources are configured in YML files in the models directory.</li>
+<li>The following code block configures the table raw.jaffle_shop.customers and raw.jaffle_shop.orders:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">sources</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">jaffle_shop</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">database</span>: <span style="color:#ae81ff">raw</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">schema</span>: <span style="color:#ae81ff">jaffle_shop</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tables</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">customers</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">orders</span>
+</span></span></code></pre></div><ul>
+<li>The ref function is used to build dependencies between models.</li>
+<li>Similarly, the source function is used to build the dependency of one model to a source.</li>
+<li>Given the source configuration above, the snippet <code>{{ source('jaffle_shop','customers') }}</code> in a model file will compile to raw.<code>jaffle_shop.customers</code>.</li>
+<li>The Lineage Graph will represent the sources in green.</li>
+</ul>
+<p><img src="https://files.cdn.thinkific.com/file_uploads/342803/images/ea4/909/31e/DAG_sources.png?width=1920" alt=""></p>
+<ul>
+<li>Freshness thresholds can be set in the YML file where sources are configured. For each table, the keys loaded_at_field and freshness must be configured.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">sources</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">jaffle_shop</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">database</span>: <span style="color:#ae81ff">raw</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">schema</span>: <span style="color:#ae81ff">jaffle_shop</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tables</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">orders</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">loaded_at_field</span>: <span style="color:#ae81ff">_etl_loaded_at</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">freshness</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">warn_after</span>: {<span style="color:#f92672">count: 12, period</span>: <span style="color:#ae81ff">hour}</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">error_after</span>: {<span style="color:#f92672">count: 24, period</span>: <span style="color:#ae81ff">hour}</span>
+</span></span></code></pre></div><ul>
+<li>A threshold can be configured for giving a warning and an error with the keys <code>warn_after</code> and <code>error_after</code>.</li>
+<li>The freshness of sources can then be determined with the command <code>dbt source</code> freshness.</li>
+</ul>
+<hr>
+<h3 id="testing">Testing</h3>
+<ul>
+<li>Testing is used in software engineering to make sure that the code does what we expect it to.</li>
+<li>In Analytics Engineering, testing allows us to make sure that the SQL transformations we write produce a model that meets our assertions.</li>
+<li>In dbt, tests are written as select statements. These select statements are run against your materialized models to ensure they meet your assertions.</li>
+<li>In dbt, there are two types of tests - generic tests and singular tests
+<ul>
+<li><strong>Generic tests</strong> are written in YAML and return the number of records that do not meet your assertions. These are run on specific columns in a model.</li>
+<li><strong>Singular tests</strong> are specific queries that you run against your models. These are run on the entire model.</li>
+</ul>
+</li>
+<li>dbt ships with four built in tests: unique, not null, accepted values, relationships.
+<ul>
+<li><strong>Unique</strong> tests to see if every value in a column is unique</li>
+<li><strong>Not_null</strong> tests to see if every value in a column is not null</li>
+<li><strong>Accepted_values</strong> tests to make sure every value in a column is equal to a value in a provided list</li>
+<li><strong>Relationships</strong> tests to ensure that every value in a column exists in a column in another model (see: referential integrity)</li>
+</ul>
+</li>
+<li>Generic tests are configured in a YAML file, whereas singular tests are stored as select statements in the tests folder.</li>
+<li>Tests can be run against your current project using a range of commands
+<ul>
+<li><code>dbt test runs all tests in the dbt project</code></li>
+<li><code>dbt test --select test_type:generic</code></li>
+<li><code>dbt test --select test_type:singular</code></li>
+<li><code>dbt test --select one_specific_model</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Documentation is essential for an analytics team to work effectively and efficiently. Strong documentation empowers users to self-service questions about data and enables new team members to on-board quickly.</li>
+<li>Documentation often lags behind the code it is meant to describe. This can happen because documentation is a separate process from the coding itself that lives in another tool.</li>
+<li>Therefore, documentation should be as automated as possible and happen as close as possible to the coding.</li>
+<li>In dbt, models are built in SQL files. These models are documented in YML files that live in the same folder as the models.</li>
+<li>Documentation of models occurs in the YML files (where generic tests also live) inside the models directory. It is helpful to store the YML file in the same subfolder as the models you are documenting.</li>
+<li>For models, descriptions can happen at the model, source, or column level.</li>
+<li>If a longer form, more styled version of text would provide a strong description, <em>doc blocks</em> can be used to render markdown in the generated documentation.</li>
+<li>In the command line section, an updated version of documentation can be generated through the command dbt docs generate. This will refresh the <code>view docs</code> link in the top left corner of the Cloud IDE.</li>
+<li>The generated documentation includes the following:
+<ul>
+<li>Lineage Graph</li>
+<li>Model, source, and column descriptions</li>
+<li>Generic tests added to a column</li>
+<li>The underlying SQL code for each model</li>
+<li>and more&hellip;</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="dbt-commands-cheatsheet">DBT Commands Cheatsheet</h1>
+<h2 id="dbt-generic-commands">dbt generic commands</h2>
+<p><code>dbt init project_name</code><br>
+Performs several actions necessary to create a new dbt project.</p>
+<p><code>dbt deps</code><br>
+Install the dbt dependencies from packages.yml file.</p>
+<p><code>dbt clean</code><br>
+Removes the /dbt_modules (populated when you run deps) and /target folder (populated when models are run).</p>
+<p><code>dbt run</code><br>
+Regular run. Will run all models based on hierarchy.</p>
+<p><code>dbt run --full-refresh</code><br>
+Refreshes incremental models.</p>
+<p><code>dbt test</code><br>
+Runs custom data tests and schema tests.</p>
+<p><code>dbt seed</code><br>
+Loads CSV files specified in the data-paths directory into the data warehouse.</p>
+<p><code>dbt compile</code><br>
+Compiles all models. This isn’t a command you will need to run regularly. dbt will compile the models when you run any models.</p>
+<p><code>dbt snapshot</code><br>
+Executes all the snapshots defined in your project.</p>
+<p><code>dbt clean</code><br>
+A utility function that deletes all folders specified in the clean-targets list specified in dbt_project.yml. It is useful for deleting the dbt_modules and target directories.</p>
+<p><code>dbt debug</code><br>
+Ensures your connection, config file, and dbt dependencies are good.</p>
+<p><code>dbt run threads 2</code><br>
+Runs all models in 2 threads and also overrides the threads in profiles.yml.</p>
+<hr>
+<h2 id="running-based-on-the-model-name">Running based on the model name</h2>
+<p><code>dbt run --models modelname</code><br>
+Will only run the specified modelname.</p>
+<p><code>dbt run --models +modelname</code><br>
+Will run the specified modelname and all of its parent models.</p>
+<p><code>dbt run --models modelname+</code><br>
+Will run the specified modelname and all of its child models.</p>
+<p><code>dbt run --models +modelname+</code><br>
+Will run the specified modelname, and all of its parent and child models.</p>
+<p><code>dbt run --models @modelname</code><br>
+Will run the specified modelname, all of its parent models, all of its child models, and all parents of its child models.</p>
+<p><code>dbt run --exclude modelname</code><br>
+Will run all models except the specified modelname.</p>
+<hr>
+<h2 id="running-based-on-the-folder-name">Running based on the folder name</h2>
+<p><code>dbt run --models folder</code><br>
+Will run all models in the specified folder.</p>
+<p><code>dbt run --models folder.subfolder</code><br>
+Will run all models in the specified subfolder.</p>
+<p><code>dbt run --models +folder.subfolder</code><br>
+Will run all models in the specified subfolder and all of its parent models.</p>
+<p><code>dbt run --models folder.subfolder+</code><br>
+Will run all models in the specified subfolder and all of its child models.</p>
+<p><code>dbt run --models +folder.subfolder+</code><br>
+Will run all models in the specified subfolder, all of its parent models, and all of its child models.</p>
+<p><code>dbt run --models @folder.subfolder</code><br>
+Will run all models in the specified subfolder, all of its parent models, all of its child models, and all parents of its child models.</p>
+<p><code>dbt run --exclude folder</code><br>
+Will run all models except those in the specified folder.</p>
+<hr>
+<h2 id="running-based-on-tag">Running based on tag</h2>
+<p><code>dbt run -m tag:tagname</code><br>
+Will run only models tagged with the specified tagname.</p>
+<p><code>dbt run -m +tag:tagname</code><br>
+Will run models tagged with the specified tagname and all of their parent models.</p>
+<p><code>dbt run -m tag:tagname+</code><br>
+Will run models tagged with the specified tagname and all of their child models.</p>
+<p><code>dbt run -m +tag:tagname+</code><br>
+Will run models tagged with the specified tagname, all of their parent models, and all of their child models.</p>
+<p><code>dbt run -m @tag:tagname</code><br>
+Will run models tagged with the specified tagname, all of their parent models, all of their child models, and all parents of their child models.</p>
+<p><code>dbt run --exclude tag:tagname</code><br>
+Will run all models except those tagged with the specified tagname.</p>
+<p><code>dbt test -m tag:tagname</code><br>
+Will run tests only for models tagged with the specified tagname.</p>
+<p><code>dbt test -m +tag:tagname</code><br>
+Will run tests for models tagged with the specified tagname and all of their parent models.</p>
+<p><code>dbt test -m tag:tagname+</code><br>
+Will run tests for models tagged with the specified tagname and all of their child models.</p>
+<p><code>dbt test -m +tag:tagname+</code><br>
+Will run tests for models tagged with the specified tagname, all of their parent models, and all of their child models.</p>
+<p><code>dbt test -m @tag:tagname</code><br>
+Will run tests for models tagged with the specified tagname, all of their parent models, all of their child models, and all parents of their child models.</p>
+<p><code>dbt test --exclude tag:tagname</code><br>
+Will run tests for all models except those tagged with the specified tagname.</p>
+<hr>
+<h2 id="multiple-model-inputs-in-dbt-command">Multiple model inputs in dbt command</h2>
+<p><code>dbt run -m modelname+ folder @tag:tagname modelname</code><br>
+Specifies a list of models to run, including modelname and all of its children, models in the folder, models tagged with tagname, and modelname itself.</p>
+<p><code>dbt run --exclude modelname folder tag:tagname modelname</code><br>
+Specifies a list of models to exclude from running, including modelname, models in the folder, and models tagged with tagname.</p>
+<h2 id="sources-1">Sources</h2>
+<ul>
+<li><a href="https://datacaffee.com/dbt-data-built-tool-commands-cheat-sheet/">https://datacaffee.com/dbt-data-built-tool-commands-cheat-sheet/</a></li>
+<li><a href="https://courses.getdbt.com/courses/fundamentals">https://courses.getdbt.com/courses/fundamentals</a></li>
+</ul>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/ml_glossary/" title="ML Glossary page" >
+			ML Glossary
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		2854 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/smote_paper_exploration/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        [Paper Exploration] SMOTE: Synthetic Minority Over-sampling Technique
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
