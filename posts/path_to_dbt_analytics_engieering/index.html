@@ -104,7 +104,7 @@ onload='renderMathInElement(document.body);'></script>
 </div>
 <h1 class="pt-2">Path to DBT Analytics Engineering</h1>
 
-<h3 class="text-java-700 font-normal leading-relaxed pt-2">Path to DBT Analytics Engineering</h3>
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">dbt is an open-source command line tool that helps analysts and engineers transform data in their warehouse more effectively. dbt is a SQL-first transformation workflow that lets teams quickly and collaboratively deploy analytics code following software engineering best practices like modularity, portability, CI/CD, and documentation. This is my notes on DBT as I prepare for DBT Analytics Engineering certification.</h3>
 
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
@@ -146,7 +146,7 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="prereqs">Prereqs</h1>
+		<div class="c-rich-text"><h1 id="dbt">DBT</h1>
 <h3 id="data-warehousing">Data Warehousing</h3>
 <ul>
 <li>There have been multiple modeling paradigms since the advent of database technology. Many of these are classified as normalized modeling.</li>
@@ -187,9 +187,11 @@ onload='renderMathInElement(document.body);'></script>
 </li>
 </ul>
 <hr>
-<h1 id="dbt">DBT</h1>
+<h1 id="dbt-1">DBT</h1>
 <p>dbt is an open-source command line tool that helps analysts and engineers transform data in their warehouse more effectively. dbt is a SQL-first transformation workflow that lets teams quickly and collaboratively deploy analytics code following software engineering best practices like modularity, portability, CI/CD, and documentation. Now anyone on the data team can safely contribute to production-grade data pipelines.</p>
 <p><img src="https://www.getdbt.com/ui/img/png/carousel-bg-img.png" alt=""></p>
+<h2 id="dbt-viewpoint">DBT viewpoint</h2>
+<p>The landscape of analytics has evolved, with a shift towards modular and collaborative solutions comprising data integration tools, analytic databases, programming languages like SQL, R, Python, and visualization tools. Despite this progress, analytics teams face challenges in delivering high-quality, timely analyses due to workflow inefficiencies such as isolated operations, redundant work, and inconsistent methodologies. Drawing parallels from software engineering practices, there&rsquo;s a call to adopt collaborative features in analytics workflows, including version control, quality assurance, documentation, and modularity. Additionally, recognizing analytic code as a valuable asset, emphasis is placed on protecting and enhancing investments through features like multiple environments, service level guarantees, design for maintainability, and automated tools to streamline workflows. The vision is to establish an open set of tools and processes to facilitate efficient and effective analytics operations.</p>
 <hr>
 <h2 id="dbt-fundamentals">DBT Fundamentals</h2>
 <h3 id="traditional-data-teams">Traditional Data Teams</h3>
@@ -231,7 +233,21 @@ onload='renderMathInElement(document.body);'></script>
 </span></span></code></pre></div><ul>
 <li>When dbt run is executing, dbt is wrapping the select statement in the correct DDL/DML to build that model as a table/view. If that model already exists in the data warehouse, dbt will automatically drop that table or view before building the new database object.</li>
 </ul>
-<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">models</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;model_name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">columns</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;column_name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data_type</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">&lt;markdown_string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">quote</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tests</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tags</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">meta</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;another_column&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">...</span>
+</span></span></code></pre></div><hr>
 <h3 id="modularity">Modularity</h3>
 <ul>
 <li>We could build each of our final models in a single model as we did with <code>dim_customers</code>, however with dbt we can create our final data products using modularity.</li>
@@ -281,17 +297,23 @@ onload='renderMathInElement(document.body);'></script>
 </ul>
 </li>
 <li>Sources are configured in YML files in the models directory.</li>
-<li>The following code block configures the table raw.jaffle_shop.customers and raw.jaffle_shop.orders:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">sources</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">jaffle_shop</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">database</span>: <span style="color:#ae81ff">raw</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">schema</span>: <span style="color:#ae81ff">jaffle_shop</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;source_name&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tables</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">customers</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">orders</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;table_name&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">columns</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;column_name&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">&lt;markdown_string&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">data_type</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">quote</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">tests</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">tags</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">meta</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;another_column&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">...</span>
 </span></span></code></pre></div><ul>
 <li>The ref function is used to build dependencies between models.</li>
 <li>Similarly, the source function is used to build the dependency of one model to a source.</li>
@@ -319,6 +341,46 @@ onload='renderMathInElement(document.body);'></script>
 <li>The freshness of sources can then be determined with the command <code>dbt source</code> freshness.</li>
 </ul>
 <hr>
+<h3 id="seeds">Seeds</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">seeds</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;seed_name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">columns</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;column_name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">&lt;markdown_string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data_type</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">quote</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tests</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tags</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">meta</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;another_column&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">...</span>
+</span></span></code></pre></div><h3 id="snapshots">Snapshots</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">snapshots</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;snapshot_name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">columns</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;column_name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">&lt;markdown_string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data_type</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">quote</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tests</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">tags</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">meta</span>: <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;another_column&gt;</span>
+</span></span></code></pre></div><h3 id="analyses">Analyses</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">analyses</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;analysis_name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">columns</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;column_name&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">&lt;markdown_string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data_type</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">&lt;another_column&gt;</span>
+</span></span></code></pre></div><hr>
 <h3 id="testing">Testing</h3>
 <ul>
 <li>Testing is used in software engineering to make sure that the code does what we expect it to.</li>
@@ -369,7 +431,90 @@ onload='renderMathInElement(document.body);'></script>
 </li>
 </ul>
 <hr>
+<h2 id="source-properties">Source Properties</h2>
+<p>Source properties can be declared in any <code>properties.yml</code> file in your models/ directory (as defined by the <code>model-paths</code> config). Source properties are &ldquo;special properties&rdquo; in that you can&rsquo;t configure them in the <code>dbt_project.yml</code> file or using config() blocks.
+You can name these files <code>whatever_you_want.yml</code>, and nest them arbitrarily deeply in subfolders within the models/ directory:</p>
+<h2 id="dbt_projectyml">dbt_project.yml</h2>
+<ul>
+<li>Every dbt project needs a <code>dbt_project.yml</code> file — this is how dbt knows a directory is a dbt project. It also contains important information that tells dbt how to operate your project.</li>
+<li>By default, dbt will look for <code>dbt_project.yml</code> in your current working directory and its parents, but you can set a different directory using the <code>--project-dir</code> flag or the <code>DBT_PROJECT_DIR</code> environment variable.</li>
+<li>you can&rsquo;t set up a &ldquo;property&rdquo; in the <code>dbt_project.yml</code> file if it&rsquo;s not a config (an example is macros). This applies to all types of resources.</li>
+<li>The following example is a list of all available configurations in the dbt_project.yml file:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">config-version</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">version</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">profile</span>: <span style="color:#ae81ff">profilename</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">model-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">seed-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">test-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">analysis-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">macro-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">snapshot-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">docs-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">asset-paths</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">target-path</span>: <span style="color:#ae81ff">directorypath</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">log-path</span>: <span style="color:#ae81ff">directorypath</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">packages-install-path</span>: <span style="color:#ae81ff">directorypath</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">clean-targets</span>: [<span style="color:#ae81ff">directorypath]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">query-comment</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">require-dbt-version</span>: <span style="color:#ae81ff">version-range | [version-range]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dbt-cloud</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">project-id</span>: <span style="color:#ae81ff">project_id</span> <span style="color:#75715e"># Required</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">defer-env-id</span>: <span style="color:#ae81ff">environment_id</span> <span style="color:#75715e"># Optional</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">quoting</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">database</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">schema</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">identifier</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metrics</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;metric-configs&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">models</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;model-configs&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">seeds</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;seed-configs&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">semantic-models</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;semantic-model-configs&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">snapshots</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;snapshot-configs&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">sources</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;source-configs&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tests</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;test-configs&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">&lt;variables&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on-run-start</span>: <span style="color:#ae81ff">sql-statement | [sql-statement]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on-run-end</span>: <span style="color:#ae81ff">sql-statement | [sql-statement]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dispatch</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">macro_namespace</span>: <span style="color:#ae81ff">packagename</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">search_order</span>: [<span style="color:#ae81ff">packagename]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">restrict-access</span>: <span style="color:#66d9ef">true</span> <span style="color:#ae81ff">| false</span>
+</span></span></code></pre></div><hr>
 <h1 id="dbt-commands-cheatsheet">DBT Commands Cheatsheet</h1>
+<ul>
+<li>By default, <code>dbt run</code> executes all of the models in the dependency graph; <code>dbt seed</code> creates all seeds, <code>dbt snapshot</code> performs every snapshot. The <code>--select</code> flag is used to specify a subset of nodes to execute.</li>
+<li>Select resources to build (run, test, seed, snapshot) or check freshness: <code>--select</code>, <code>-s</code></li>
+<li>&hellip;. <a href="https://docs.getdbt.com/reference/node-selection/syntax">https://docs.getdbt.com/reference/node-selection/syntax</a></li>
+</ul>
 <h2 id="dbt-generic-commands">dbt generic commands</h2>
 <p><code>dbt init project_name</code><br>
 Performs several actions necessary to create a new dbt project.</p>
@@ -617,7 +762,7 @@ Specifies a list of models to exclude from running, including modelname, models 
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		2854 words in this page.
+		3400 words in this page.
 	</div>
 </div>
 
