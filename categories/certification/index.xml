@@ -6,10 +6,480 @@
     <description>Recent content in certification on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Feb 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/certification/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Path to DBT Analytics Engineering</title>
+      <link>https://ayushsubedi.github.io/posts/path_to_dbt_analytics_engieering/</link>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/path_to_dbt_analytics_engieering/</guid>
+      <description>&lt;h1 id=&#34;dbt&#34;&gt;DBT&lt;/h1&gt;
+&lt;h3 id=&#34;data-warehousing&#34;&gt;Data Warehousing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;There have been multiple modeling paradigms since the advent of database technology. Many of these are classified as normalized modeling.&lt;/li&gt;
+&lt;li&gt;Normalized modeling techniques were designed when storage was expensive and computational power was not as affordable as it is today.&lt;/li&gt;
+&lt;li&gt;With a modern cloud-based data warehouse, we can approach analytics differently in an agile or ad hoc modeling technique. This is often referred to as denormalized modeling.&lt;/li&gt;
+&lt;li&gt;dbt can build your data warehouse into any of these schemas. dbt is a tool for how to build these rather than enforcing what to build. dbt removes DDL and DML ..&lt;/li&gt;
+&lt;li&gt;DDL (Data Definition Language)/DML (Data Manipulation Language)/DQL (Data Query Language)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.geeksforgeeks.org/wp-content/uploads/20210920153429/new.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kimball, Inmon, and Data Vault are three popular methodologies used in data warehousing, each with its own approach and principles.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kimball Methodology&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Developed by Ralph Kimball, this methodology focuses on building data warehouses using a dimensional modeling approach.&lt;/li&gt;
+&lt;li&gt;It emphasizes the creation of star schemas or snowflake schemas for organizing data into facts (measurable events) and dimensions (descriptive attributes).&lt;/li&gt;
+&lt;li&gt;Kimball&amp;rsquo;s approach is more bottom-up, meaning it starts with identifying business processes and building data marts that serve specific business functions.&lt;/li&gt;
+&lt;li&gt;It emphasizes simplicity, agility, and business user accessibility.&lt;/li&gt;
+&lt;li&gt;The Kimball methodology is more suited for smaller to medium-sized data warehousing projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inmon Methodology&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Created by Bill Inmon, this methodology advocates for the construction of a centralized data warehouse known as the &amp;ldquo;Corporate Information Factory&amp;rdquo; (CIF).&lt;/li&gt;
+&lt;li&gt;Inmon&amp;rsquo;s approach focuses on the normalization of data before it&amp;rsquo;s loaded into the data warehouse, aiming to reduce redundancy and ensure data consistency.&lt;/li&gt;
+&lt;li&gt;It emphasizes a top-down approach, starting with integrating all data into a single, enterprise-wide data model before creating data marts.&lt;/li&gt;
+&lt;li&gt;The Inmon methodology prioritizes data integration and consistency across the entire organization.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s often considered more suitable for large enterprises with complex data integration needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Vault&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Data Vault is a methodology developed by Dan Linstedt, focusing on the construction of a flexible, scalable, and auditable data warehousing architecture.&lt;/li&gt;
+&lt;li&gt;It employs a hub-and-spoke architecture, where raw data (hubs) are connected through relationships (links) and descriptive metadata (satellites).&lt;/li&gt;
+&lt;li&gt;Data Vault modeling enables easy scalability and adaptability to changing business requirements, making it suitable for agile environments.&lt;/li&gt;
+&lt;li&gt;It emphasizes historical tracking of data changes, making it particularly useful for compliance and auditing purposes.&lt;/li&gt;
+&lt;li&gt;Data Vault is often seen as a hybrid approach, complementing either Kimball or Inmon methodologies, or even used standalone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;dbt-1&#34;&gt;DBT&lt;/h1&gt;
+&lt;p&gt;dbt is an open-source command line tool that helps analysts and engineers transform data in their warehouse more effectively. dbt is a SQL-first transformation workflow that lets teams quickly and collaboratively deploy analytics code following software engineering best practices like modularity, portability, CI/CD, and documentation. Now anyone on the data team can safely contribute to production-grade data pipelines.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.getdbt.com/ui/img/png/carousel-bg-img.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dbt-viewpoint&#34;&gt;DBT viewpoint&lt;/h2&gt;
+&lt;p&gt;The landscape of analytics has evolved, with a shift towards modular and collaborative solutions comprising data integration tools, analytic databases, programming languages like SQL, R, Python, and visualization tools. Despite this progress, analytics teams face challenges in delivering high-quality, timely analyses due to workflow inefficiencies such as isolated operations, redundant work, and inconsistent methodologies. Drawing parallels from software engineering practices, there&amp;rsquo;s a call to adopt collaborative features in analytics workflows, including version control, quality assurance, documentation, and modularity. Additionally, recognizing analytic code as a valuable asset, emphasis is placed on protecting and enhancing investments through features like multiple environments, service level guarantees, design for maintainability, and automated tools to streamline workflows. The vision is to establish an open set of tools and processes to facilitate efficient and effective analytics operations.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;dbt-fundamentals&#34;&gt;DBT Fundamentals&lt;/h2&gt;
+&lt;h3 id=&#34;traditional-data-teams&#34;&gt;Traditional Data Teams&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Data engineers are responsible for maintaining data infrastructure and the ETL process for creating tables and views.&lt;/li&gt;
+&lt;li&gt;Data analysts focus on querying tables and views to drive business insights for stakeholders.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;etl-vs-elt&#34;&gt;ETL vs ELT&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ETL (extract transform load) is the process of creating new database objects by extracting data from multiple data sources, transforming it on a local or third party machine, and loading the transformed data into a data warehouse.&lt;/li&gt;
+&lt;li&gt;ELT (extract load transform) is a more recent process of creating new database objects by first extracting and loading raw data into a data warehouse and then transforming that data directly in the warehouse.&lt;/li&gt;
+&lt;li&gt;The new ELT process is made possible by the introduction of cloud-based data warehouse technologies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.montecarlodata.com/wp-content/uploads/2022/08/ETL-vs-ELT-630-%C3%97-418-px.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;analytics-engineering&#34;&gt;Analytics Engineering&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Analytics engineers focus on the transformation of raw data into transformed data that is ready for analysis. This new role on the data team changes the responsibilities of data engineers and data analysts.&lt;/li&gt;
+&lt;li&gt;Data engineers can focus on larger data architecture and the EL in ELT.&lt;/li&gt;
+&lt;li&gt;Data analysts can focus on insight and dashboard work using the transformed data.&lt;/li&gt;
+&lt;li&gt;Note: At a small company, a data team of one may own all three of these roles and responsibilities. As your team grows, the lines between these roles will remain blurry.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;models&#34;&gt;Models&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Models are .sql files that live in the models folder.&lt;/li&gt;
+&lt;li&gt;Models are simply written as select statements - there is no DDL/DML that needs to be written around this. This allows the developer to focus on the logic.&lt;/li&gt;
+&lt;li&gt;After constructing a model, dbt run in the command line will actually materialize the models into the data warehouse. The default materialization is a view.&lt;/li&gt;
+&lt;li&gt;The materialization can be configured as a table with the following configuration block at the top of the model file:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{ &lt;span style=&#34;color:#ae81ff&#34;&gt;config(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;materialized=&amp;#39;table&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;) }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;The same applies for configuring a model as a view:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{{ &lt;span style=&#34;color:#ae81ff&#34;&gt;config(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;materialized=&amp;#39;view&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;) }}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;When dbt run is executing, dbt is wrapping the select statement in the correct DDL/DML to build that model as a table/view. If that model already exists in the data warehouse, dbt will automatically drop that table or view before building the new database object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;models&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;model_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;columns&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;column_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;data_type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;markdown_string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;quote&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;tests&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;tags&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;another_column&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;modularity&#34;&gt;Modularity&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We could build each of our final models in a single model as we did with &lt;code&gt;dim_customers&lt;/code&gt;, however with dbt we can create our final data products using modularity.&lt;/li&gt;
+&lt;li&gt;Modularity is the degree to which a system&amp;rsquo;s components may be separated and recombined, often with the benefit of flexibility and variety in use.&lt;/li&gt;
+&lt;li&gt;This allows us to build data artifacts in logical steps.&lt;/li&gt;
+&lt;li&gt;For example, we can stage the raw customers and orders data to shape it into what we want it to look like. Then we can build a model that references both of these to build the final &lt;code&gt;dim_customers&lt;/code&gt; model.&lt;/li&gt;
+&lt;li&gt;Thinking modularly is how software engineers build applications. Models can be leveraged to apply this modular thinking to analytics engineering.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ref-macro&#34;&gt;ref Macro&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Models can be written to reference the underlying tables and views that were building the data warehouse (e.g. &lt;code&gt;analytics.dbt_jsmith.stg_customers&lt;/code&gt;). This hard codes the table names and makes it difficult to share code between developers.&lt;/li&gt;
+&lt;li&gt;The ref function allows us to build dependencies between models in a flexible way that can be shared in a common code base. The ref function compiles to the name of the database object as it has been created on the most recent execution of dbt run in the particular development environment. This is determined by the environment configuration that was set up when the project was created.&lt;/li&gt;
+&lt;li&gt;Example: &lt;code&gt;{{ ref(&#39;stg_customers&#39;) }}&lt;/code&gt; compiles to &lt;code&gt;analytics.dbt_jsmith.stg_customers&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The ref function also builds a lineage graph like the one shown below. dbt is able to determine dependencies between models and takes those into account to build models in the correct order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://files.cdn.thinkific.com/file_uploads/342803/images/07a/64f/d1f/DAG.png?width=1920&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;naming-conventions&#34;&gt;Naming Conventions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sources&lt;/strong&gt; (src) refer to the raw table data that have been built in the warehouse through a loading process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Staging&lt;/strong&gt; (stg) refers to models that are built directly on top of sources. These have a one-to-one relationship with sources tables. These are used for very light transformations that shape the data into what you want it to be. These models are used to clean and standardize the data before transforming data downstream. Note: These are typically materialized as views.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Intermediate&lt;/strong&gt; (int) refers to any models that exist between final fact and dimension tables. These should be built on staging models rather than directly on sources to leverage the data cleaning that was done in staging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fact&lt;/strong&gt; (fct) refers to any data that represents something that occurred or is occurring. Examples include sessions, transactions, orders, stories, votes. These are typically skinny, long tables.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dimension&lt;/strong&gt; (dim) refers to data that represents a person, place or thing. Examples include customers, products, candidates, buildings, employees.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;project-organization&#34;&gt;Project Organization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;When dbt run is executed, dbt will automatically run every model in the models directory.&lt;/li&gt;
+&lt;li&gt;The subfolder structure within the models directory can be leveraged for organizing the project as the data team sees fit.&lt;/li&gt;
+&lt;li&gt;This can then be leveraged to select certain folders with dbt run and the model selector.&lt;/li&gt;
+&lt;li&gt;Example: If &lt;code&gt;dbt run -s staging&lt;/code&gt; will run all models that exist in models/staging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Marts&lt;/strong&gt; folder: All intermediate, fact, and dimension models can be stored here. Further subfolders can be used to separate data by business function (e.g. marketing, finance)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Staging&lt;/strong&gt; folder: All staging models and source configurations can be stored here. Further subfolders can be used to separate data by data source (e.g. Stripe, Segment, Salesforce). (We will cover configuring Sources in the Sources module)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://files.cdn.thinkific.com/file_uploads/342803/images/37a/954/943/models.png?width=1920&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;sources&#34;&gt;Sources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sources represent the raw data that is loaded into the data warehouse.&lt;/li&gt;
+&lt;li&gt;We can reference tables in our models with an explicit table name (&lt;code&gt;raw.jaffle_shop.customers&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;However, setting up Sources in dbt and referring to them with the source function enables a few important tools.
+&lt;ul&gt;
+&lt;li&gt;Multiple tables from a single source can be configured in one place.&lt;/li&gt;
+&lt;li&gt;Sources are easily identified as green nodes in the Lineage Graph.&lt;/li&gt;
+&lt;li&gt;You can use dbt source freshness to check the freshness of raw tables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Sources are configured in YML files in the models directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;sources&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;source_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;tables&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;table_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;columns&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;column_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;markdown_string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;data_type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;quote&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;tests&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;tags&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;another_column&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;The ref function is used to build dependencies between models.&lt;/li&gt;
+&lt;li&gt;Similarly, the source function is used to build the dependency of one model to a source.&lt;/li&gt;
+&lt;li&gt;Given the source configuration above, the snippet &lt;code&gt;{{ source(&#39;jaffle_shop&#39;,&#39;customers&#39;) }}&lt;/code&gt; in a model file will compile to raw.&lt;code&gt;jaffle_shop.customers&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The Lineage Graph will represent the sources in green.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://files.cdn.thinkific.com/file_uploads/342803/images/ea4/909/31e/DAG_sources.png?width=1920&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Freshness thresholds can be set in the YML file where sources are configured. For each table, the keys loaded_at_field and freshness must be configured.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;sources&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jaffle_shop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;database&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;raw&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;schema&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;jaffle_shop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;tables&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;orders&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;loaded_at_field&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;_etl_loaded_at&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;freshness&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;warn_after&lt;/span&gt;: {&lt;span style=&#34;color:#f92672&#34;&gt;count: 12, period&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;hour}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#f92672&#34;&gt;error_after&lt;/span&gt;: {&lt;span style=&#34;color:#f92672&#34;&gt;count: 24, period&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;hour}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;A threshold can be configured for giving a warning and an error with the keys &lt;code&gt;warn_after&lt;/code&gt; and &lt;code&gt;error_after&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The freshness of sources can then be determined with the command &lt;code&gt;dbt source&lt;/code&gt; freshness.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;seeds&#34;&gt;Seeds&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;seeds&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;seed_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;columns&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;column_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;markdown_string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;data_type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;quote&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;tests&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;tags&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;another_column&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;snapshots&#34;&gt;Snapshots&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;snapshots&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;snapshot_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;columns&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;column_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;markdown_string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;data_type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;quote&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;tests&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;tags&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;another_column&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;analyses&#34;&gt;Analyses&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;analyses&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;analysis_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;columns&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;column_name&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;description&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;markdown_string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;data_type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;another_column&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;testing&#34;&gt;Testing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Testing is used in software engineering to make sure that the code does what we expect it to.&lt;/li&gt;
+&lt;li&gt;In Analytics Engineering, testing allows us to make sure that the SQL transformations we write produce a model that meets our assertions.&lt;/li&gt;
+&lt;li&gt;In dbt, tests are written as select statements. These select statements are run against your materialized models to ensure they meet your assertions.&lt;/li&gt;
+&lt;li&gt;In dbt, there are two types of tests - generic tests and singular tests
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Generic tests&lt;/strong&gt; are written in YAML and return the number of records that do not meet your assertions. These are run on specific columns in a model.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Singular tests&lt;/strong&gt; are specific queries that you run against your models. These are run on the entire model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;dbt ships with four built in tests: unique, not null, accepted values, relationships.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unique&lt;/strong&gt; tests to see if every value in a column is unique&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not_null&lt;/strong&gt; tests to see if every value in a column is not null&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accepted_values&lt;/strong&gt; tests to make sure every value in a column is equal to a value in a provided list&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Relationships&lt;/strong&gt; tests to ensure that every value in a column exists in a column in another model (see: referential integrity)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Generic tests are configured in a YAML file, whereas singular tests are stored as select statements in the tests folder.&lt;/li&gt;
+&lt;li&gt;Tests can be run against your current project using a range of commands
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dbt test runs all tests in the dbt project&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dbt test --select test_type:generic&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dbt test --select test_type:singular&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dbt test --select one_specific_model&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;documentation&#34;&gt;Documentation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation is essential for an analytics team to work effectively and efficiently. Strong documentation empowers users to self-service questions about data and enables new team members to on-board quickly.&lt;/li&gt;
+&lt;li&gt;Documentation often lags behind the code it is meant to describe. This can happen because documentation is a separate process from the coding itself that lives in another tool.&lt;/li&gt;
+&lt;li&gt;Therefore, documentation should be as automated as possible and happen as close as possible to the coding.&lt;/li&gt;
+&lt;li&gt;In dbt, models are built in SQL files. These models are documented in YML files that live in the same folder as the models.&lt;/li&gt;
+&lt;li&gt;Documentation of models occurs in the YML files (where generic tests also live) inside the models directory. It is helpful to store the YML file in the same subfolder as the models you are documenting.&lt;/li&gt;
+&lt;li&gt;For models, descriptions can happen at the model, source, or column level.&lt;/li&gt;
+&lt;li&gt;If a longer form, more styled version of text would provide a strong description, &lt;em&gt;doc blocks&lt;/em&gt; can be used to render markdown in the generated documentation.&lt;/li&gt;
+&lt;li&gt;In the command line section, an updated version of documentation can be generated through the command dbt docs generate. This will refresh the &lt;code&gt;view docs&lt;/code&gt; link in the top left corner of the Cloud IDE.&lt;/li&gt;
+&lt;li&gt;The generated documentation includes the following:
+&lt;ul&gt;
+&lt;li&gt;Lineage Graph&lt;/li&gt;
+&lt;li&gt;Model, source, and column descriptions&lt;/li&gt;
+&lt;li&gt;Generic tests added to a column&lt;/li&gt;
+&lt;li&gt;The underlying SQL code for each model&lt;/li&gt;
+&lt;li&gt;and more&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;source-properties&#34;&gt;Source Properties&lt;/h2&gt;
+&lt;p&gt;Source properties can be declared in any &lt;code&gt;properties.yml&lt;/code&gt; file in your models/ directory (as defined by the &lt;code&gt;model-paths&lt;/code&gt; config). Source properties are &amp;ldquo;special properties&amp;rdquo; in that you can&amp;rsquo;t configure them in the &lt;code&gt;dbt_project.yml&lt;/code&gt; file or using config() blocks.
+You can name these files &lt;code&gt;whatever_you_want.yml&lt;/code&gt;, and nest them arbitrarily deeply in subfolders within the models/ directory:&lt;/p&gt;
+&lt;h2 id=&#34;dbt_projectyml&#34;&gt;dbt_project.yml&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Every dbt project needs a &lt;code&gt;dbt_project.yml&lt;/code&gt; file — this is how dbt knows a directory is a dbt project. It also contains important information that tells dbt how to operate your project.&lt;/li&gt;
+&lt;li&gt;By default, dbt will look for &lt;code&gt;dbt_project.yml&lt;/code&gt; in your current working directory and its parents, but you can set a different directory using the &lt;code&gt;--project-dir&lt;/code&gt; flag or the &lt;code&gt;DBT_PROJECT_DIR&lt;/code&gt; environment variable.&lt;/li&gt;
+&lt;li&gt;you can&amp;rsquo;t set up a &amp;ldquo;property&amp;rdquo; in the &lt;code&gt;dbt_project.yml&lt;/code&gt; file if it&amp;rsquo;s not a config (an example is macros). This applies to all types of resources.&lt;/li&gt;
+&lt;li&gt;The following example is a list of all available configurations in the dbt_project.yml file:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;config-version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;version&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;profile&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;profilename&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;model-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;seed-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;test-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;analysis-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;macro-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;snapshot-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;docs-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;asset-paths&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;target-path&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;log-path&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;packages-install-path&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;clean-targets&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;directorypath]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;query-comment&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;require-dbt-version&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;version-range | [version-range]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;dbt-cloud&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;project-id&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;project_id&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# Required&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;defer-env-id&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;environment_id&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# Optional&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;quoting&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;database&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;schema&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;identifier&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;metrics&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;metric-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;models&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;model-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;seeds&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;seed-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;semantic-models&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;semantic-model-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;snapshots&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;snapshot-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;sources&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;source-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;tests&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;test-configs&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;vars&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;lt;variables&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;on-run-start&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;sql-statement | [sql-statement]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;on-run-end&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;sql-statement | [sql-statement]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;dispatch&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;macro_namespace&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;packagename&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;search_order&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;packagename]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;restrict-access&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;| false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;dbt-commands-cheatsheet&#34;&gt;DBT Commands Cheatsheet&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;By default, &lt;code&gt;dbt run&lt;/code&gt; executes all of the models in the dependency graph; &lt;code&gt;dbt seed&lt;/code&gt; creates all seeds, &lt;code&gt;dbt snapshot&lt;/code&gt; performs every snapshot. The &lt;code&gt;--select&lt;/code&gt; flag is used to specify a subset of nodes to execute.&lt;/li&gt;
+&lt;li&gt;Select resources to build (run, test, seed, snapshot) or check freshness: &lt;code&gt;--select&lt;/code&gt;, &lt;code&gt;-s&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;. &lt;a href=&#34;https://docs.getdbt.com/reference/node-selection/syntax&#34;&gt;https://docs.getdbt.com/reference/node-selection/syntax&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dbt-generic-commands&#34;&gt;dbt generic commands&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;dbt init project_name&lt;/code&gt;&lt;br&gt;
+Performs several actions necessary to create a new dbt project.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt deps&lt;/code&gt;&lt;br&gt;
+Install the dbt dependencies from packages.yml file.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt clean&lt;/code&gt;&lt;br&gt;
+Removes the /dbt_modules (populated when you run deps) and /target folder (populated when models are run).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run&lt;/code&gt;&lt;br&gt;
+Regular run. Will run all models based on hierarchy.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --full-refresh&lt;/code&gt;&lt;br&gt;
+Refreshes incremental models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test&lt;/code&gt;&lt;br&gt;
+Runs custom data tests and schema tests.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt seed&lt;/code&gt;&lt;br&gt;
+Loads CSV files specified in the data-paths directory into the data warehouse.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt compile&lt;/code&gt;&lt;br&gt;
+Compiles all models. This isn’t a command you will need to run regularly. dbt will compile the models when you run any models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt snapshot&lt;/code&gt;&lt;br&gt;
+Executes all the snapshots defined in your project.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt clean&lt;/code&gt;&lt;br&gt;
+A utility function that deletes all folders specified in the clean-targets list specified in dbt_project.yml. It is useful for deleting the dbt_modules and target directories.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt debug&lt;/code&gt;&lt;br&gt;
+Ensures your connection, config file, and dbt dependencies are good.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run threads 2&lt;/code&gt;&lt;br&gt;
+Runs all models in 2 threads and also overrides the threads in profiles.yml.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;running-based-on-the-model-name&#34;&gt;Running based on the model name&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models modelname&lt;/code&gt;&lt;br&gt;
+Will only run the specified modelname.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models +modelname&lt;/code&gt;&lt;br&gt;
+Will run the specified modelname and all of its parent models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models modelname+&lt;/code&gt;&lt;br&gt;
+Will run the specified modelname and all of its child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models +modelname+&lt;/code&gt;&lt;br&gt;
+Will run the specified modelname, and all of its parent and child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models @modelname&lt;/code&gt;&lt;br&gt;
+Will run the specified modelname, all of its parent models, all of its child models, and all parents of its child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --exclude modelname&lt;/code&gt;&lt;br&gt;
+Will run all models except the specified modelname.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;running-based-on-the-folder-name&#34;&gt;Running based on the folder name&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models folder&lt;/code&gt;&lt;br&gt;
+Will run all models in the specified folder.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models folder.subfolder&lt;/code&gt;&lt;br&gt;
+Will run all models in the specified subfolder.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models +folder.subfolder&lt;/code&gt;&lt;br&gt;
+Will run all models in the specified subfolder and all of its parent models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models folder.subfolder+&lt;/code&gt;&lt;br&gt;
+Will run all models in the specified subfolder and all of its child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models +folder.subfolder+&lt;/code&gt;&lt;br&gt;
+Will run all models in the specified subfolder, all of its parent models, and all of its child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --models @folder.subfolder&lt;/code&gt;&lt;br&gt;
+Will run all models in the specified subfolder, all of its parent models, all of its child models, and all parents of its child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --exclude folder&lt;/code&gt;&lt;br&gt;
+Will run all models except those in the specified folder.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;running-based-on-tag&#34;&gt;Running based on tag&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;dbt run -m tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run only models tagged with the specified tagname.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run -m +tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run models tagged with the specified tagname and all of their parent models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run -m tag:tagname+&lt;/code&gt;&lt;br&gt;
+Will run models tagged with the specified tagname and all of their child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run -m +tag:tagname+&lt;/code&gt;&lt;br&gt;
+Will run models tagged with the specified tagname, all of their parent models, and all of their child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run -m @tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run models tagged with the specified tagname, all of their parent models, all of their child models, and all parents of their child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --exclude tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run all models except those tagged with the specified tagname.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test -m tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run tests only for models tagged with the specified tagname.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test -m +tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run tests for models tagged with the specified tagname and all of their parent models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test -m tag:tagname+&lt;/code&gt;&lt;br&gt;
+Will run tests for models tagged with the specified tagname and all of their child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test -m +tag:tagname+&lt;/code&gt;&lt;br&gt;
+Will run tests for models tagged with the specified tagname, all of their parent models, and all of their child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test -m @tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run tests for models tagged with the specified tagname, all of their parent models, all of their child models, and all parents of their child models.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt test --exclude tag:tagname&lt;/code&gt;&lt;br&gt;
+Will run tests for all models except those tagged with the specified tagname.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;multiple-model-inputs-in-dbt-command&#34;&gt;Multiple model inputs in dbt command&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;dbt run -m modelname+ folder @tag:tagname modelname&lt;/code&gt;&lt;br&gt;
+Specifies a list of models to run, including modelname and all of its children, models in the folder, models tagged with tagname, and modelname itself.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dbt run --exclude modelname folder tag:tagname modelname&lt;/code&gt;&lt;br&gt;
+Specifies a list of models to exclude from running, including modelname, models in the folder, and models tagged with tagname.&lt;/p&gt;
+&lt;h2 id=&#34;sources-1&#34;&gt;Sources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://datacaffee.com/dbt-data-built-tool-commands-cheat-sheet/&#34;&gt;https://datacaffee.com/dbt-data-built-tool-commands-cheat-sheet/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://courses.getdbt.com/courses/fundamentals&#34;&gt;https://courses.getdbt.com/courses/fundamentals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Term Frequecy Inverse Document Frequency (TFIDF)</title>
