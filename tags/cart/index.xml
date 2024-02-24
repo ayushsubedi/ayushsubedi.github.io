@@ -27,7 +27,17 @@
 &lt;blockquote&gt;
 &lt;p&gt;Published on 2001&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://www2.math.uu.se/~thulin/mm/breiman.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://www2.math.uu.se/~thulin/mm/breiman.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h1 id=&#34;leo-breiman&#34;&gt;Leo Breiman&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://statistics.berkeley.edu/sites/default/files/styles/inline_max_325/public/2020-11/leo.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leo Breiman was an influential American statistician and professor, best known for his significant contributions to the field of statistics and machine learning.&lt;/li&gt;
+&lt;li&gt;Breiman made significant contributions to various areas of statistics, including classification and regression trees, ensemble learning methods, and random forests.&lt;/li&gt;
+&lt;li&gt;One of Breiman&amp;rsquo;s most notable contributions is the development of the Random Forest algorithm, introduced in his seminal paper &amp;ldquo;Random Forests&amp;rdquo; published in 2001.&lt;/li&gt;
+&lt;li&gt;His ideas continue to be studied, extended, and applied in various domains, contributing to the advancement of data science and predictive modeling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;random-forest&#34;&gt;Random Forest&lt;/h2&gt;
+</description>
     </item>
     
   </channel>
