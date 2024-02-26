@@ -163,7 +163,7 @@ onload='renderMathInElement(document.body);'></script>
 <iframe width="100%" height ="1024" src="https://www2.math.uu.se/~thulin/mm/breiman.pdf#toolbar=0"></iframe>
 <hr>
 <h1 id="leo-breiman">Leo Breiman</h1>
-<p><img src="https://statistics.berkeley.edu/sites/default/files/styles/inline_max_325/public/2020-11/leo.jpg" alt=""></p>
+<p><img src="/img/leo.png" alt=""></p>
 <ul>
 <li>Leo Breiman was an influential American statistician and professor, best known for his significant contributions to the field of statistics and machine learning.</li>
 <li>Breiman made significant contributions to various areas of statistics, including classification and regression trees, ensemble learning methods, and random forests.</li>
@@ -171,10 +171,34 @@ onload='renderMathInElement(document.body);'></script>
 <li>His ideas continue to be studied, extended, and applied in various domains, contributing to the advancement of data science and predictive modeling.</li>
 </ul>
 <h1 id="the-two-cultures">The Two Cultures</h1>
-<p><img src="https://healthyalgorithms.files.wordpress.com/2011/06/two-stats-cultures.png" alt=""></p>
+<ul>
+<li><strong>Statistics start with data</strong></li>
+<li>Nature functions to associate the predictor variables with the response variables</li>
+<li>There are two goals in analyzing the data:
+<ul>
+<li><strong>Prediction</strong>: To be able to predict what the responses are going to be to future input variables</li>
+<li><strong>Information</strong>: To extract some information about how nature is associating the response variables to the input variables.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/data_cultures.png" alt=""></p>
 <h2 id="the-data-modeling-culture">The Data Modeling Culture</h2>
+<ul>
+<li>The analysis in this culture starts with assuming a stochastic data model for the inside of the black box</li>
+<li>Response variables = f(predictor variables, random noise, parameters)</li>
+<li>The values of the parameters are estimated from the data and the model then used for information and/or prediction.</li>
+<li>Model validation. Yes–no using goodness-of-fit tests and residual examination.</li>
+<li>Estimated culture population. 98% of all statisticians.</li>
+</ul>
 <h2 id="the-algorithmic-modeling-culture">The Algorithmic Modeling Culture</h2>
+<ul>
+<li>The analysis in this culture considers the inside of the box complex and unknown.</li>
+<li>Their approach is to find a function fx—an algorithm that operates on x to predict the responses y.</li>
+<li>Model validation. Measured by predictive accuracy.</li>
+<li>Estimated culture population. 2% of statisticians, many in other fields.</li>
+</ul>
 <h1 id="motivation-why-review-this-paper">Motivation (Why review this paper?)</h1>
+<p><img src="/img/stats.png" alt=""></p>
 <ul>
 <li>I graduated with a Bachelors in Mathematics when the algorithmic modeling culture was not commonplace.</li>
 <li>I graduated with a Masters in Machine Learning at a time where the algorithmic modeling culture everywhere.</li>
@@ -182,29 +206,44 @@ onload='renderMathInElement(document.body);'></script>
 <li>I work with students in Nepal who want to implement Large Language Models, sophisticated Deep Learning Models, but do not want to learn about foundational statistics/linear algebra/calculus/optimization.</li>
 <li>In many ways, I am currently trying to ask students in Nepal to do the exact opposite of what Breiman had to do with this paper. The 98%-2% might have flipped on its head. I do not like it.</li>
 </ul>
-<h2 id="the-data-modeling-culture-1">The Data Modeling Culture</h2>
-<h3 id="linear-regression">Linear Regression</h3>
-<h3 id="logistic-regression">Logistic Regression</h3>
-<h3 id="cox-model">Cox Model</h3>
-<h2 id="the-algorithmic-modeling-culture-1">The Algorithmic Modeling Culture</h2>
-<h3 id="decision-trees-cart">Decision Trees (CART)</h3>
-<h3 id="random-forest">Random Forest</h3>
-<h3 id="support-vector-machines">Support Vector Machines</h3>
-<h3 id="neural-nets">Neural Nets</h3>
-<h1 id="terminology">Terminology</h1>
+<h1 id="breimans-call-to-statisticians-to-join-the-2">Breiman&rsquo;s call to statisticians to join the 2%</h1>
 <ul>
-<li>Data Models</li>
-<li>Algorithmic Model</li>
-<li>Stochastic</li>
-<li>Occam Razor</li>
-<li>Curse of Dimensionality</li>
-<li>Infinite test set error</li>
-<li>Generalization error</li>
-<li>Predictive accuracy</li>
-<li>Trees and nodes</li>
-<li>Bagging</li>
-<li>Boosting</li>
+<li>Breiman argues that the focus in the statistical community on data models has:
+<ul>
+<li>Led to irrelevant theory and questionable scientific conclusions</li>
+<li>Kept statisticians from using more suitable algorithmic models</li>
+<li>Prevented statisticians from working on exciting new problems</li>
 </ul>
+</li>
+</ul>
+<h1 id="breiman-as-a-consultant">Breiman as a consultant</h1>
+<ul>
+<li>Breiman&rsquo;s experiences as a consultant formed his views about algorithmic modeling</li>
+<li>Breiman&rsquo;s perceptions on Statistical Analysis:
+<ul>
+<li>Focus on finding a good solution—that’s what consultants get paid for.</li>
+<li>Live with the data before you plunge into modeling.</li>
+<li>Search for a model that gives a good solution, either algorithmic or data.</li>
+<li>Predictive accuracy on test sets is the criterion for how good the model is.</li>
+<li>Computers are an indispensable partner</li>
+</ul>
+</li>
+</ul>
+<h1 id="breiman-after-returning-to-university">Breiman after returning to University</h1>
+<blockquote>
+<p>I had one tip about what research in the university was like. A friend of mine, a prominent statistician from the Berkeley Statistics Department, visited me in Los Angeles in the late 1970s. After I described the decision tree method to him, his first question was, “What’s the model for the data?”</p>
+</blockquote>
+<blockquote>
+<p>Upon my return, I started reading the Annals of Statistics, the flagship journal of theoretical statistics, and was bemused. Every article started with: Assume that the data are generated by the following model: &hellip;</p>
+</blockquote>
+<h1 id="rashomon-effect-and-the-data-modeling-culture">Rashomon Effect and the Data Modeling Culture</h1>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*nyCVLZBd0QV1Y8Ce.jpg" alt=""></p>
+<h1 id="occams-razor-and-the-data-modeling-culture">Occam&rsquo;s razor and the Data Modeling Culture</h1>
+<p>Occam&rsquo;s razor is a principle often attributed to 14th–century friar William of Ockham that says that if you have two competing ideas to explain the same phenomenon, you should prefer the simpler one.</p>
+<p><img src="https://kjtradingsystems.com/uploads/3/4/0/2/34026855/newimage23_orig.jpg" alt=""></p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/1*hf-SRyQ9md812DJYe0gt7Q.png" alt=""></p>
+<h1 id="the-curse-of-dimensionality-the-data-modeling-culture">The curse of dimensionality the Data Modeling Culture</h1>
+<p><img src="https://media.licdn.com/dms/image/D5612AQEY-PKOO7BIjw/article-cover_image-shrink_423_752/0/1679070475922?e=1714608000&amp;v=beta&amp;t=nMGAkY5DJcxc3dc5mBZEuySm0wrKHVqNnBbd6j2zaVU" alt=""></p>
 </div>
 	</section>
 
@@ -360,7 +399,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		439 words in this page.
+		821 words in this page.
 	</div>
 </div>
 
