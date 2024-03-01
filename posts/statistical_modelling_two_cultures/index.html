@@ -204,7 +204,11 @@ onload='renderMathInElement(document.body);'></script>
 <li>I graduated with a Masters in Machine Learning at a time where the algorithmic modeling culture everywhere.</li>
 <li>I work in a company that delivers Deep Learning solutions, but requires data modeling culture for its own solution-ing (experimentation, distribution, sampling, etc.).</li>
 <li>I work with students in Nepal who want to implement Large Language Models, sophisticated Deep Learning Models, but do not want to learn about foundational statistics/linear algebra/calculus/optimization.</li>
-<li>In many ways, I am currently trying to ask students in Nepal to do the exact opposite of what Breiman had to do with this paper. The 98%-2% might have flipped on its head. I do not like it.</li>
+<li>In many ways, I am currently trying to ask students in Nepal to do the exact opposite of what Breiman had to do with this paper. The 98%-2% might have flipped on its head. I do not like it.
+<blockquote>
+<p>For the last point, I am not implying that prediction accuracy is not important, or should not be pursued. I am implying that it is not the only thing to be pursued. That persuasion has several shortcuts with the advancement of ML packages. This not only makes the data model a black box, but also make the machine learning implementation a black box.</p>
+</blockquote>
+</li>
 </ul>
 <h1 id="breimans-call-to-statisticians-to-join-the-2">Breiman&rsquo;s call to statisticians to join the 2%</h1>
 <ul>
@@ -242,8 +246,22 @@ onload='renderMathInElement(document.body);'></script>
 <p>Occam&rsquo;s razor is a principle often attributed to 14th–century friar William of Ockham that says that if you have two competing ideas to explain the same phenomenon, you should prefer the simpler one.</p>
 <p><img src="https://kjtradingsystems.com/uploads/3/4/0/2/34026855/newimage23_orig.jpg" alt=""></p>
 <p><img src="https://miro.medium.com/v2/resize:fit:1400/1*hf-SRyQ9md812DJYe0gt7Q.png" alt=""></p>
+<blockquote>
+<p>Side note. Check this <a href="https://fs.blog/mental-models/">amazing article on mental models</a></p>
+</blockquote>
 <h1 id="the-curse-of-dimensionality-the-data-modeling-culture">The curse of dimensionality the Data Modeling Culture</h1>
-<p><img src="https://media.licdn.com/dms/image/D5612AQEY-PKOO7BIjw/article-cover_image-shrink_423_752/0/1679070475922?e=1714608000&amp;v=beta&amp;t=nMGAkY5DJcxc3dc5mBZEuySm0wrKHVqNnBbd6j2zaVU" alt=""></p>
+<blockquote>
+<p>As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially!</p>
+</blockquote>
+<p><img src="/img/distance_dimension.png" alt=""></p>
+<p>As distance between observations increases with the dimensions, the sample size required for learning a model drastically increases.</p>
+<ol>
+<li><strong>Increased Sparsity:</strong>  In higher dimensions, the available data points are spread out more thinly across the space. This means that data points become farther apart from each other, making it challenging to find meaningful clusters or patterns. It&rsquo;s like having a lot of points scattered in a large, high-dimensional space, and they&rsquo;re so spread out that it&rsquo;s difficult to identify any consistent relationships.</li>
+<li><strong>More Data Needed:</strong>  With higher-dimensional data, you need a disproportionately larger amount of data to capture the underlying patterns accurately. When the data is sparse, it&rsquo;s harder to generalize from the observed points to make accurate predictions or draw conclusions. As the dimensionality increases, you might need exponentially more data to maintain the same level of accuracy in your models.</li>
+<li><strong>Impact on Complexity:</strong>  The complexity of machine learning models increases with dimensionality. More dimensions mean more parameters to estimate, which can lead to overfitting – a situation where a model fits the training data too closely and fails to generalize well to new data.</li>
+<li><strong>Increased Computational Demands:</strong>  Processing and analyzing high-dimensional data require more computational resources and time. Many algorithms become slower and more memory-intensive as the number of dimensions grows. This can make experimentation and model training more challenging and time-consuming.</li>
+<li><strong>Difficulties in Visualization:</strong>  Our ability to visualize data effectively diminishes as the number of dimensions increases. We are accustomed to thinking in 2D and 3D space, but visualizing data in, say, 10 dimensions is practically impossible. This can make it hard to understand the structure of the data and the relationships between variables.</li>
+</ol>
 <h2 id="conclusion">Conclusion</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
@@ -411,7 +429,7 @@ onload='renderMathInElement(document.body);'></script>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		859 words in this page.
+		1226 words in this page.
 	</div>
 </div>
 
