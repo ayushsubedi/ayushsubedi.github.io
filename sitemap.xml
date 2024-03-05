@@ -2,11 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ayushsubedi.github.io/posts/statistical_modelling_two_cultures/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2024-02-14T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/cart/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
-    <lastmod>2024-02-14T00:00:00+00:00</lastmod>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/ml/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/paper/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/paper-exploration/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/certification/</loc>
     <lastmod>2024-02-14T00:00:00+00:00</lastmod>
@@ -20,22 +41,7 @@
     <loc>https://ayushsubedi.github.io/posts/path_to_dbt_analytics_engieering/</loc>
     <lastmod>2024-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2024-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
-    <lastmod>2024-02-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/posts/smote_paper_exploration/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/ml/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/paper/</loc>
-    <lastmod>2024-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/paper-exploration/</loc>
     <lastmod>2024-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/roc/</loc>
@@ -125,13 +131,13 @@
     <loc>https://ayushsubedi.github.io/tags/tucker_decomposition/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://ayushsubedi.github.io/posts/shap_exploration/</loc>
+    <lastmod>2023-09-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/tags/explainability/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/game-theory/</loc>
-    <lastmod>2023-09-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/shap_exploration/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/shap/</loc>

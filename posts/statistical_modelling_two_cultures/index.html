@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | [Paper Exploration] Statistical Modeling: The Two Cultures</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.121.2">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+		
+	<title>Ayush Subedi</title>
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://subedi.ml/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://subedi.ml/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://subedi.ml/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://subedi.ml/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+	
+	
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-177424799-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+	
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">[Paper Exploration] Statistical Modeling: The Two Cultures</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Statistical Modeling: The Two Cultures is an influential essay by Leo Breiman that delineates two approaches to statistical modeling: the &#34;data modeling&#34; culture, which emphasizes formal statistical inference and model fitting, and the &#34;algorithmic modeling&#34; culture, which prioritizes predictive accuracy and computational efficiency. Breiman argues for a shift towards the latter culture, advocating for the development and use of robust algorithms and machine learning techniques that focus on prediction rather than solely on theoretical statistical inference.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/paper-exploration'>paper-exploration</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/cart'>cart</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/paper'>paper</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/ml'>ml</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2024-02-22">2024-02-22</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="paper-exploration-statistical-modeling-the-two-cultures">[Paper Exploration] Statistical Modeling: The Two Cultures</h1>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>There are <strong>two cultures in the use of statistical modeling</strong> to reach conclusions from data. One assumes that the data are generated by a given <strong>stochastic data model</strong>. The other uses <strong>algorithmic models</strong> and treats the data mechanism as unknown. The statistical community has been committed to the almost exclusive use of data models. This commitment has led to irrelevant theory, questionable conclusions, and has kept statisticians from working on a large range of interesting current problems. Algorithmic modeling, both in theory and practice, has developed rapidly in fields outside statistics. It can be used both on large complex data sets and as a more accurate and informative alternative to data modeling on smaller data sets. <strong>If our goal as a field is to use data to solve problems, then we need to move away from exclusive dependence on data models and adopt a more diverse set of tools.</strong></p>
+</blockquote>
+<blockquote>
+<p>Author: Leo Breiman</p>
+</blockquote>
+<blockquote>
+<p>Published on 2001</p>
+</blockquote>
+<iframe width="100%" height ="1024" src="https://www2.math.uu.se/~thulin/mm/breiman.pdf#toolbar=0"></iframe>
+<hr>
+<h1 id="leo-breiman">Leo Breiman</h1>
+<p><img src="/img/leo.png" alt=""></p>
+<ul>
+<li>Leo Breiman was an influential American statistician and professor, best known for his significant contributions to the field of statistics and machine learning.</li>
+<li>Breiman made significant contributions to various areas of statistics, including classification and regression trees, ensemble learning methods, and random forests.</li>
+<li>One of Breiman&rsquo;s most notable contributions is the development of the Random Forest algorithm, introduced in his seminal paper &ldquo;Random Forests&rdquo; published in 2001.</li>
+<li>His ideas continue to be studied, extended, and applied in various domains, contributing to the advancement of data science and predictive modeling.</li>
+</ul>
+<h1 id="the-two-cultures">The Two Cultures</h1>
+<ul>
+<li><strong>Statistics start with data</strong></li>
+<li>Nature functions to associate the predictor variables with the response variables</li>
+<li>There are two goals in analyzing the data:
+<ul>
+<li><strong>Prediction</strong>: To be able to predict what the responses are going to be to future input variables</li>
+<li><strong>Information</strong>: To extract some information about how nature is associating the response variables to the input variables.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/data_cultures.png" alt=""></p>
+<h2 id="the-data-modeling-culture">The Data Modeling Culture</h2>
+<ul>
+<li>The analysis in this culture starts with assuming a stochastic data model for the inside of the black box</li>
+<li>Response variables = f(predictor variables, random noise, parameters)</li>
+<li>The values of the parameters are estimated from the data and the model then used for information and/or prediction.</li>
+<li>Model validation. Yes–no using goodness-of-fit tests and residual examination.</li>
+<li>Estimated culture population. 98% of all statisticians.</li>
+</ul>
+<h2 id="the-algorithmic-modeling-culture">The Algorithmic Modeling Culture</h2>
+<ul>
+<li>The analysis in this culture considers the inside of the box complex and unknown.</li>
+<li>Their approach is to find a function fx—an algorithm that operates on x to predict the responses y.</li>
+<li>Model validation. Measured by predictive accuracy.</li>
+<li>Estimated culture population. 2% of statisticians, many in other fields.</li>
+</ul>
+<h1 id="motivation-why-review-this-paper">Motivation (Why review this paper?)</h1>
+<p><img src="/img/stats.png" alt=""></p>
+<ul>
+<li>I graduated with a Bachelors in Mathematics when the algorithmic modeling culture was not commonplace.</li>
+<li>I graduated with a Masters in Machine Learning at a time where the algorithmic modeling culture everywhere.</li>
+<li>I work in a company that delivers Deep Learning solutions, but requires data modeling culture for its own solution-ing (experimentation, distribution, sampling, etc.).</li>
+<li>I work with students in Nepal who want to implement Large Language Models, sophisticated Deep Learning Models, but do not want to learn about foundational statistics/linear algebra/calculus/optimization.</li>
+<li>In many ways, I am currently trying to ask students in Nepal to do the exact opposite of what Breiman had to do with this paper. The 98%-2% might have flipped on its head. I do not like it.
+<blockquote>
+<p>For the last point, I am not implying that prediction accuracy is not important, or should not be pursued. I am implying that it is not the only thing to be pursued. That persuasion has several shortcuts with the advancement of ML packages. This not only makes the data model a black box, but also make the machine learning implementation a black box.</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="breimans-call-to-statisticians-to-join-the-2">Breiman&rsquo;s call to statisticians to join the 2%</h1>
+<ul>
+<li>Breiman argues that the focus in the statistical community on data models has:
+<ul>
+<li>Led to irrelevant theory and questionable scientific conclusions</li>
+<li>Kept statisticians from using more suitable algorithmic models</li>
+<li>Prevented statisticians from working on exciting new problems</li>
+</ul>
+</li>
+</ul>
+<h1 id="breiman-as-a-consultant">Breiman as a consultant</h1>
+<ul>
+<li>Breiman&rsquo;s experiences as a consultant formed his views about algorithmic modeling</li>
+<li>Breiman&rsquo;s perceptions on Statistical Analysis:
+<ul>
+<li>Focus on finding a good solution—that’s what consultants get paid for.</li>
+<li>Live with the data before you plunge into modeling.</li>
+<li>Search for a model that gives a good solution, either algorithmic or data.</li>
+<li>Predictive accuracy on test sets is the criterion for how good the model is.</li>
+<li>Computers are an indispensable partner</li>
+</ul>
+</li>
+</ul>
+<h1 id="breiman-after-returning-to-university">Breiman after returning to University</h1>
+<blockquote>
+<p>I had one tip about what research in the university was like. A friend of mine, a prominent statistician from the Berkeley Statistics Department, visited me in Los Angeles in the late 1970s. After I described the decision tree method to him, his first question was, “What’s the model for the data?”</p>
+</blockquote>
+<blockquote>
+<p>Upon my return, I started reading the Annals of Statistics, the flagship journal of theoretical statistics, and was bemused. Every article started with: Assume that the data are generated by the following model: &hellip;</p>
+</blockquote>
+<h1 id="rashomon-effect-and-the-data-modeling-culture">Rashomon Effect and the Data Modeling Culture</h1>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*nyCVLZBd0QV1Y8Ce.jpg" alt=""></p>
+<h1 id="occams-razor-and-the-data-modeling-culture">Occam&rsquo;s razor and the Data Modeling Culture</h1>
+<p>Occam&rsquo;s razor is a principle often attributed to 14th–century friar William of Ockham that says that if you have two competing ideas to explain the same phenomenon, you should prefer the simpler one.</p>
+<p><img src="https://kjtradingsystems.com/uploads/3/4/0/2/34026855/newimage23_orig.jpg" alt=""></p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/1*hf-SRyQ9md812DJYe0gt7Q.png" alt=""></p>
+<blockquote>
+<p>Side note. Check this <a href="https://fs.blog/mental-models/">amazing article on mental models</a></p>
+</blockquote>
+<h1 id="the-curse-of-dimensionality-the-data-modeling-culture">The curse of dimensionality the Data Modeling Culture</h1>
+<blockquote>
+<p>As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially!</p>
+</blockquote>
+<p><img src="/img/distance_dimension.png" alt=""></p>
+<p>As distance between observations increases with the dimensions, the sample size required for learning a model drastically increases.</p>
+<ol>
+<li><strong>Increased Sparsity:</strong>  In higher dimensions, the available data points are spread out more thinly across the space. This means that data points become farther apart from each other, making it challenging to find meaningful clusters or patterns. It&rsquo;s like having a lot of points scattered in a large, high-dimensional space, and they&rsquo;re so spread out that it&rsquo;s difficult to identify any consistent relationships.</li>
+<li><strong>More Data Needed:</strong>  With higher-dimensional data, you need a disproportionately larger amount of data to capture the underlying patterns accurately. When the data is sparse, it&rsquo;s harder to generalize from the observed points to make accurate predictions or draw conclusions. As the dimensionality increases, you might need exponentially more data to maintain the same level of accuracy in your models.</li>
+<li><strong>Impact on Complexity:</strong>  The complexity of machine learning models increases with dimensionality. More dimensions mean more parameters to estimate, which can lead to overfitting – a situation where a model fits the training data too closely and fails to generalize well to new data.</li>
+<li><strong>Increased Computational Demands:</strong>  Processing and analyzing high-dimensional data require more computational resources and time. Many algorithms become slower and more memory-intensive as the number of dimensions grows. This can make experimentation and model training more challenging and time-consuming.</li>
+<li><strong>Difficulties in Visualization:</strong>  Our ability to visualize data effectively diminishes as the number of dimensions increases. We are accustomed to thinking in 2D and 3D space, but visualizing data in, say, 10 dimensions is practically impossible. This can make it hard to understand the structure of the data and the relationships between variables.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> accuracy_score
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>random_forest <span style="color:#f92672">=</span> RandomForestClassifier(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>random_forest<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>y_pred <span style="color:#f92672">=</span> random_forest<span style="color:#f92672">.</span>predict(X_test)
+</span></span><span style="display:flex;"><span>accuracy <span style="color:#f92672">=</span> accuracy_score(y_test, y_pred)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Accuracy:&#34;</span>, accuracy)
+</span></span></code></pre></div></div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/ml_glossary/" title="ML Glossary page" >
+			ML Glossary
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		1226 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/path_to_dbt_analytics_engieering/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Path to DBT Analytics Engineering
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/smote_paper_exploration/">[Paper Exploration] SMOTE: Synthetic Minority Over-sampling Technique</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/transformers_for_image_paper_exploration/">[Paper exploration] An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/shap_exploration/">[Paper Exploration] A Unified Approach to Interpreting Model Predictions</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/cheers_ai_demo/">Diabetic Retinopathy and Glaucoma Detection (Cheers AI Demo)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/fraud_detection/">Fraud Detection</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/bird_plane_superman/">Birds, Plane, Superman</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
