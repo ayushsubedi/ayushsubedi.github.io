@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data-science notes on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/data-science-notes/</link>
+    <description>Recent content in data-science notes on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Mar 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/data-science-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Science notes on Operations Research</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_operations_research/</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_operations_research/</guid>
+      <description>&lt;h1 id=&#34;data-science-notes-on-operations-research&#34;&gt;Data Science notes on Operations Research&lt;/h1&gt;
+&lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
+&lt;h2 id=&#34;optimization-problem&#34;&gt;Optimization problem&lt;/h2&gt;
+&lt;h3 id=&#34;classification-of-optimization-problems&#34;&gt;Classification of optimization problems&lt;/h3&gt;
+&lt;h3 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h3&gt;
+&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mega Data Science notes</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Algorithmic Models</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_algorithmic_models/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_algorithmic_models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Bayesian Stats</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_bayesian/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Data Models</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_data_models/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_data_models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Experiments</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_experiments/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Graph Theory</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_graph/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Text Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_text_mining/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_text_mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Time Series Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_time_series/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_time_series/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

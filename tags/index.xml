@@ -6,10 +6,64 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>calculus</title>
+      <link>https://ayushsubedi.github.io/tags/calculus/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradient descent</title>
+      <link>https://ayushsubedi.github.io/tags/gradient-descent/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/gradient-descent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>https://ayushsubedi.github.io/tags/optimization/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic gradient descent</title>
+      <link>https://ayushsubedi.github.io/tags/stochastic-gradient-descent/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/stochastic-gradient-descent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>simulation</title>
+      <link>https://ayushsubedi.github.io/tags/simulation/</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/simulation/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cart</title>
@@ -62,6 +116,15 @@
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/smote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wip</title>
+      <link>https://ayushsubedi.github.io/tags/wip/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/wip/</guid>
       <description></description>
     </item>
     
@@ -161,15 +224,6 @@
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/lasso/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>optimization</title>
-      <link>https://ayushsubedi.github.io/tags/optimization/</link>
-      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
       <description></description>
     </item>
     
@@ -345,15 +399,6 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
-      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
-      <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>random-forest</title>
       <link>https://ayushsubedi.github.io/tags/random-forest/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
@@ -476,15 +521,6 @@
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/trading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>calculus</title>
-      <link>https://ayushsubedi.github.io/tags/calculus/</link>
-      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/calculus/</guid>
       <description></description>
     </item>
     

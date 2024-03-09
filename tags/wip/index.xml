@@ -6,17 +6,80 @@
     <description>Recent content in wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jan 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>SimPy Explorations (WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/simpy_explorations/</link>
-      <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
+      <title>Mega Data Science notes</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/simpy_explorations/</guid>
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Algorithmic Models</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_algorithmic_models/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_algorithmic_models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Bayesian Stats</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_bayesian/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Data Models</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_data_models/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_data_models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Experiments</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_experiments/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Graph Theory</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_graph/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Text Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_text_mining/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_text_mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Time Series Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_time_series/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_time_series/</guid>
       <description></description>
     </item>
     

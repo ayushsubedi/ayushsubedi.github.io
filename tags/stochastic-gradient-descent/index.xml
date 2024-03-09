@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stochastic gradient descent on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/stochastic-gradient-descent/</link>
+    <description>Recent content in stochastic gradient descent on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/stochastic-gradient-descent/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Paper Review] Adam: A Method for Stochastic Optimization</title>
+      <link>https://ayushsubedi.github.io/posts/adam/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/adam/</guid>
+      <description>&lt;h1 id=&#34;paper-review-adam-a-method-for-stochastic-optimization&#34;&gt;[Paper Review] Adam: A Method for Stochastic Optimization&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Diederik P. Kingma, Jimmy Ba&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2014&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1106.1813.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
