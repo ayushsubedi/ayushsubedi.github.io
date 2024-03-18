@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data-science notes on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/data-science-notes/</link>
+    <description>Recent content in data-science notes on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Mar 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/data-science-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Science notes on Operations Research</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_operations_research/</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_operations_research/</guid>
+      <description>&lt;h1 id=&#34;data-science-notes-on-operations-research&#34;&gt;Data Science notes on Operations Research&lt;/h1&gt;
+&lt;p&gt;For my masters program, I was required to take one class on Operations Research (out of the two offered for the Georgia Tech&amp;rsquo;s Master in Analytics). While I was aware of some of the topics in the classes, the term &amp;ldquo;Operations Research&amp;rdquo; was new to me. Apparently, Georgia Tech ranks #1 in Operation Research. Among the two, I opted for &lt;a href=&#34;https://ayushsubedi.github.io/posts/deterministic_optimization/&#34;&gt;Deterministic Optimization&lt;/a&gt; since I had some experience in Simulation (the other course) from work. At a later semester, I also took &lt;a href=&#34;https://ayushsubedi.github.io/posts/topics_on_high_dimensional_data_analytics/&#34;&gt;High Dimensional Data Analytics&lt;/a&gt;, which had several common modules with this course. Overall, I really enjoyed Operations Research.&lt;/p&gt;
+&lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
+&lt;p&gt;The goal of optimization is to minimize some function, given some constraints.&lt;/p&gt;
+&lt;p&gt;$min$ $f(x)$ $s.t.$ $x \in X $&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
+&lt;li&gt;The function $f$ is the objective function&lt;/li&gt;
+&lt;li&gt;A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints&lt;/li&gt;
+&lt;li&gt;$X$ is the set of inequality constraints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mathematical-ingredients&#34;&gt;Mathematical ingredients:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Encode decisions/actions as &lt;strong&gt;decision variables&lt;/strong&gt; whose values we are seeking&lt;/li&gt;
+&lt;li&gt;Identify the relevant &lt;strong&gt;problem data&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Express &lt;strong&gt;constraints&lt;/strong&gt; on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data&lt;/li&gt;
+&lt;li&gt;Express the &lt;strong&gt;objective function&lt;/strong&gt; as a function of the decision variables and the problem data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;min or max f(x1, x2, .... , xn)
+subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m 
+        xj is continuous or discrete    j = 1,....,n
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;the-problem-setting&#34;&gt;The problem setting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Finite number of decision variables&lt;/li&gt;
+&lt;li&gt;A single objective function of decision variables and problem data
+&lt;ul&gt;
+&lt;li&gt;Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data&lt;/li&gt;
+&lt;li&gt;There may be domain restrictions (continuous or discrete) on some of the variables&lt;/li&gt;
+&lt;li&gt;The functions defining the objective and constraints are algebraic (typically with rational coefficients)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;minimization-vs-maximization&#34;&gt;Minimization vs Maximization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision:&lt;/strong&gt; $x$ = how much to cut from each of the corners?&lt;br/&gt;
+&lt;strong&gt;Alternatives:&lt;/strong&gt; $0&amp;lt;=x&amp;lt;=1/2$&lt;br/&gt;
+&lt;strong&gt;Best:&lt;/strong&gt; Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; $max$ $x(1-2x)^2$ subject to $0&amp;lt;=x&amp;lt;=1/2$ (which are the constraints in this case)&lt;br/&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.desmos.com/calculator/ily45jyfsv?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
+&lt;p&gt;This is an unconstrained optimization problem since the constraint is a simple bound based.&lt;/p&gt;
+&lt;h3 id=&#34;example-data-fitting&#34;&gt;Example: Data Fitting:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given $N$ data points $(y_1, x_1)&amp;hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: All $n$-dimensional vectors and scalars&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Minimize the sum of squared errors&lt;br/&gt;
+&lt;strong&gt;Optimization formulation&lt;/strong&gt;:
+$\begin{array}{ll}\min &amp;amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp;amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$&lt;/p&gt;
+&lt;p&gt;This is also an unconstrained optimization problem.&lt;/p&gt;
+&lt;h3 id=&#34;example-product-mix&#34;&gt;Example: Product Mix:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: how much of each product to make&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: defined by the resource limits&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize profits&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; &lt;br/&gt;
+Sum notation: $\begin{array}{lll}\max &amp;amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp;amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp;amp; \forall j=1, \ldots, m \ &amp;amp; x_i \geq 0 &amp;amp; \forall i=1, \ldots, n\end{array}$ &lt;br/&gt;
+Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &amp;amp; R x \leq u \ &amp;amp; x \geq 0\end{array}$&lt;/p&gt;
+&lt;h3 id=&#34;example-project-investment&#34;&gt;Example: Project investment&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; A firm is considering investing in $n$ different R&amp;amp;D projects. Project $j$ requires an investment of $c_j$ dollars and promises a return of $r_j$ dollars. The firm has a budget of $B$ dollars. Which projects should the firm invest in?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: Whether or not to invest in project&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: Defined by budget&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize return on investment&lt;br/&gt;
+Sum notation: $\begin{aligned} \max &amp;amp; \sum_{j=1}^n r_j x_j \ \text { s.t. } &amp;amp; \sum_{j=1}^n c_j x_j \leq B \ &amp;amp; x_j \in{0,1} \forall j=1, \ldots, n\end{aligned}$ &lt;br/&gt;
+Matrix notation: $\begin{aligned} \max  &amp;amp; r^{\top} x \ \text { s.t. } &amp;amp; c^{\top} x \leq B \ &amp;amp; x \in{0,1}^n\end{aligned}$&lt;/p&gt;
+&lt;p&gt;This is not an unconstrained problem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mega Data Science notes</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Algorithmic Models</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_algorithmic_models/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_algorithmic_models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Bayesian Stats</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_bayesian/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Data Models</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_data_models/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_data_models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Experiments</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_experiments/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Graph Theory</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_graph/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Text Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_text_mining/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_text_mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science notes on Time Series Analysis</title>
+      <link>https://ayushsubedi.github.io/posts/mega_data_science_time_series/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mega_data_science_time_series/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

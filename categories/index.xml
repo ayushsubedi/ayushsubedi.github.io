@@ -6,17 +6,35 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>codefornepal</title>
+      <link>https://ayushsubedi.github.io/categories/codefornepal/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/codefornepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>paper-exploration</title>
       <link>https://ayushsubedi.github.io/categories/paper-exploration/</link>
-      <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/paper-exploration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-science notes</title>
+      <link>https://ayushsubedi.github.io/categories/data-science-notes/</link>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/data-science-notes/</guid>
       <description></description>
     </item>
     
@@ -80,15 +98,6 @@
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/hci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>codefornepal</title>
-      <link>https://ayushsubedi.github.io/categories/codefornepal/</link>
-      <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/codefornepal/</guid>
       <description></description>
     </item>
     

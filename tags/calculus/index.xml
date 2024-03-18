@@ -6,10 +6,192 @@
     <description>Recent content in calculus on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/calculus/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Paper Review] Adam: A Method for Stochastic Optimization</title>
+      <link>https://ayushsubedi.github.io/posts/adam/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/adam/</guid>
+      <description>&lt;h1 id=&#34;paper-review-adam-a-method-for-stochastic-optimization&#34;&gt;[Paper Review] Adam: A Method for Stochastic Optimization&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Diederik P. Kingma, Jimmy Ba&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2014&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
+&lt;p&gt;The goal of optimization is to minimize some function, given some constraints.&lt;/p&gt;
+&lt;p&gt;$min$ $f(x)$ $s.t.$ $x \in X $&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
+&lt;li&gt;The function $f$ is the objective function&lt;/li&gt;
+&lt;li&gt;A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints&lt;/li&gt;
+&lt;li&gt;$X$ is the set of inequality constraints&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mathematical-ingredients&#34;&gt;Mathematical ingredients:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Encode decisions/actions as &lt;strong&gt;decision variables&lt;/strong&gt; whose values we are seeking&lt;/li&gt;
+&lt;li&gt;Identify the relevant &lt;strong&gt;problem data&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Express &lt;strong&gt;constraints&lt;/strong&gt; on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data&lt;/li&gt;
+&lt;li&gt;Express the &lt;strong&gt;objective function&lt;/strong&gt; as a function of the decision variables and the problem data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;min or max f(x1, x2, .... , xn)
+subject to gi(x1, x2, ...., ) &amp;lt;= bi     i = 1,....,m 
+        xj is continuous or discrete    j = 1,....,n
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;the-problem-setting&#34;&gt;The problem setting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Finite number of decision variables&lt;/li&gt;
+&lt;li&gt;A single objective function of decision variables and problem data
+&lt;ul&gt;
+&lt;li&gt;Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data&lt;/li&gt;
+&lt;li&gt;There may be domain restrictions (continuous or discrete) on some of the variables&lt;/li&gt;
+&lt;li&gt;The functions defining the objective and constraints are algebraic (typically with rational coefficients)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;minimization-vs-maximization&#34;&gt;Minimization vs Maximization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-designing-a-box&#34;&gt;Example: Designing a box:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision:&lt;/strong&gt; $x$ = how much to cut from each of the corners?&lt;br/&gt;
+&lt;strong&gt;Alternatives:&lt;/strong&gt; $0&amp;lt;=x&amp;lt;=1/2$&lt;br/&gt;
+&lt;strong&gt;Best:&lt;/strong&gt; Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; $max$ $x(1-2x)^2$ subject to $0&amp;lt;=x&amp;lt;=1/2$ (which are the constraints in this case)&lt;br/&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://www.desmos.com/calculator/ily45jyfsv?embed&#34; width=&#34;100%&#34; height=&#34;500&#34; style=&#34;border: 1px solid #ccc&#34; frameborder=0&gt;&lt;/iframe&gt;
+&lt;p&gt;This is an unconstrained optimization problem since the constraint is a simple bound based.&lt;/p&gt;
+&lt;h3 id=&#34;example-data-fitting&#34;&gt;Example: Data Fitting:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Given $N$ data points $(y_1, x_1)&amp;hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: All $n$-dimensional vectors and scalars&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Minimize the sum of squared errors&lt;br/&gt;
+&lt;strong&gt;Optimization formulation&lt;/strong&gt;:
+$\begin{array}{ll}\min &amp;amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp;amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$&lt;/p&gt;
+&lt;p&gt;This is also an unconstrained optimization problem.&lt;/p&gt;
+&lt;h3 id=&#34;example-product-mix&#34;&gt;Example: Product Mix:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?&lt;/strong&gt;&lt;br/&gt;
+&lt;strong&gt;Decision&lt;/strong&gt;: how much of each product to make&lt;br/&gt;
+&lt;strong&gt;Alternatives&lt;/strong&gt;: defined by the resource limits&lt;br/&gt;
+&lt;strong&gt;Best&lt;/strong&gt;: Maximize profits&lt;br/&gt;
+&lt;strong&gt;Optimization formulation:&lt;/strong&gt; &lt;br/&gt;
+Sum notation: $\begin{array}{lll}\max &amp;amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp;amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp;amp; \forall j=1, \ldots, m \ &amp;amp; x_i \geq 0 &amp;amp; \forall i=1, \ldots, n\end{array}$ &lt;br/&gt;
+Matrix notation: $\begin{array}{cl}\max &amp;amp; p^{\top} x \ \text { s.t. } &amp;amp; R x \leq u \ &amp;amp; x \geq 0\end{array}$&lt;/p&gt;
+&lt;h2 id=&#34;classification-of-optimization-problems&#34;&gt;Classification of optimization problems&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Optimization Problem&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Difficulty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Linear Programming&lt;/td&gt;
+&lt;td&gt;A linear programming problem involves maximizing or minimizing a linear objective function subject to a set of linear constraints&lt;/td&gt;
+&lt;td&gt;Easy to moderate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nonlinear Programming&lt;/td&gt;
+&lt;td&gt;A nonlinear programming problem involves optimizing a function that is not linear, subject to a set of nonlinear constraints&lt;/td&gt;
+&lt;td&gt;Moderate to hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quadratic Programming&lt;/td&gt;
+&lt;td&gt;A quadratic programming problem involves optimizing a quadratic objective function subject to a set of linear constraints&lt;/td&gt;
+&lt;td&gt;Moderate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Convex Optimization&lt;/td&gt;
+&lt;td&gt;A convex optimization problem involves optimizing a convex function subject to a set of linear or convex constraints&lt;/td&gt;
+&lt;td&gt;Easy to moderate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Integer Programming&lt;/td&gt;
+&lt;td&gt;An integer programming problem involves optimizing a linear or nonlinear objective function subject to a set of linear or nonlinear constraints, where some or all of the variables are restricted to integer values&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mixed-integer Programming&lt;/td&gt;
+&lt;td&gt;A mixed-integer programming problem is a generalization of integer programming where some or all of the variables can be restricted to integer values or continuous values&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Global Optimization&lt;/td&gt;
+&lt;td&gt;A global optimization problem involves finding the global optimum of a function subject to a set of constraints, which may be nonlinear or non-convex&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stochastic Optimization&lt;/td&gt;
+&lt;td&gt;A stochastic optimization problem involves optimizing an objective function that depends on random variables, subject to a set of constraints&lt;/td&gt;
+&lt;td&gt;Hard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;convex-function-why-this-matters&#34;&gt;Convex Function (Why this matters?)&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Function value at the average is less than the average of the function values&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;For a convex function the first order Taylor&amp;rsquo;s approximation is a global under estimator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://qph.cf2.quoracdn.net/main-qimg-fe4b143cc53abb5a89049a01831686ab&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A convex optimization problem has a convex objective and convex set of solutions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:970/format:webp/0*eWqIxBooYQS_sVe9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.&lt;/li&gt;
+&lt;li&gt;A twice differentiable univariate function is convex if $f^{&amp;rsquo;&amp;rsquo;}(x)&amp;gt;=0$ for all $x \in R$&lt;/li&gt;
+&lt;li&gt;To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.&lt;/li&gt;
+&lt;li&gt;A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sylvester&amp;rsquo;s criterion&lt;/strong&gt; is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;two-steps-of-optimization&#34;&gt;Two steps of optimization&lt;/h2&gt;
+&lt;p&gt;Most optimization algorithms have two main steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Initialization&lt;/strong&gt;: Create first solution to pick values for all of the variables (usually done randomly)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Repeat&lt;/strong&gt; a simple two-stage process:
+&lt;ul&gt;
+&lt;li&gt;Starting with current solution, find a vector of relative changes to make to each variable. That is often called an improving direction.&lt;/li&gt;
+&lt;li&gt;Make changes in that improving direction some amount, and that amount is called the step size.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;first-order-methods&#34;&gt;First Order Methods&lt;/h2&gt;
+&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
+&lt;h3 id=&#34;accelerated-gradient-descent&#34;&gt;Accelerated Gradient Descent&lt;/h3&gt;
+&lt;h3 id=&#34;stochastic-gradient-descent&#34;&gt;Stochastic Gradient Descent&lt;/h3&gt;
+&lt;h3 id=&#34;adam&#34;&gt;ADAM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Moments&lt;/li&gt;
+&lt;li&gt;Update Rule&lt;/li&gt;
+&lt;li&gt;Bias Correction&lt;/li&gt;
+&lt;li&gt;Convergence analysis&lt;/li&gt;
+&lt;li&gt;RMSProp&lt;/li&gt;
+&lt;li&gt;AdaGrad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;second-order-methods&#34;&gt;Second Order Methods&lt;/h2&gt;
+&lt;h3 id=&#34;newton-method&#34;&gt;Newton Method&lt;/h3&gt;
+</description>
+    </item>
     
     <item>
       <title>Deterministic Optimization</title>

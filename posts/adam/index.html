@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | [Paper Review] Adam: A Method for Stochastic Optimization</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.121.2">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+		
+	<title>Ayush Subedi</title>
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://subedi.ml/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://subedi.ml/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://subedi.ml/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://subedi.ml/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+	
+	
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-177424799-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+	
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">[Paper Review] Adam: A Method for Stochastic Optimization</h1>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/paper-exploration'>paper-exploration</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/calculus'>calculus</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/optimization'>optimization</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/gradient-descent'>gradient descent</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/stochastic-gradient-descent'>stochastic gradient descent</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/machine-learning'>machine learning</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2024-03-06">2024-03-06</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="paper-review-adam-a-method-for-stochastic-optimization">[Paper Review] Adam: A Method for Stochastic Optimization</h1>
+<blockquote>
+<p>Author: Diederik P. Kingma, Jimmy Ba</p>
+</blockquote>
+<blockquote>
+<p>Published on 2014</p>
+</blockquote>
+<h1 id="optimization">Optimization</h1>
+<p>The goal of optimization is to minimize some function, given some constraints.</p>
+<p>$min$ $f(x)$ $s.t.$ $x \in X $</p>
+<ul>
+<li>The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem</li>
+<li>The function $f$ is the objective function</li>
+<li>A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints</li>
+<li>$X$ is the set of inequality constraints</li>
+</ul>
+<h3 id="mathematical-ingredients">Mathematical ingredients:</h3>
+<ul>
+<li>Encode decisions/actions as <strong>decision variables</strong> whose values we are seeking</li>
+<li>Identify the relevant <strong>problem data</strong></li>
+<li>Express <strong>constraints</strong> on the values of the decision variables as mathematical relationships (inequalities) between the variables and problem data</li>
+<li>Express the <strong>objective function</strong> as a function of the decision variables and the problem data.</li>
+</ul>
+<pre tabindex="0"><code>min or max f(x1, x2, .... , xn)
+subject to gi(x1, x2, ...., ) &lt;= bi     i = 1,....,m 
+        xj is continuous or discrete    j = 1,....,n
+</code></pre><h3 id="the-problem-setting">The problem setting</h3>
+<ul>
+<li>Finite number of decision variables</li>
+<li>A single objective function of decision variables and problem data
+<ul>
+<li>Multiple objective functions are handled by either taking a weighted combination of them or by optimizing one of the objectives while ensuring the other objectives meet target requirements.</li>
+</ul>
+</li>
+<li>The constraints are defined by a finite number of inequalities or equalities involving functions of the decision variables and problem data</li>
+<li>There may be domain restrictions (continuous or discrete) on some of the variables</li>
+<li>The functions defining the objective and constraints are algebraic (typically with rational coefficients)</li>
+</ul>
+<h3 id="minimization-vs-maximization">Minimization vs Maximization</h3>
+<ul>
+<li>Without the loss of generality, it is sufficient to consider a minimization objective since maximization of objective function is minimization of the negation of the objective function</li>
+</ul>
+<h3 id="example-designing-a-box">Example: Designing a box:</h3>
+<p><strong>Given a $1$ feet by $1$ feet piece of cardboard, cut out corners and fold to make a box of maximum volume:</strong><br/>
+<strong>Decision:</strong> $x$ = how much to cut from each of the corners?<br/>
+<strong>Alternatives:</strong> $0&lt;=x&lt;=1/2$<br/>
+<strong>Best:</strong> Maximize volume: $V(x) = x(1-2x)^2$ ($x$ is the height and $(1-2x)^2$ is the base, and their product is the volume)<br/>
+<strong>Optimization formulation:</strong> $max$ $x(1-2x)^2$ subject to $0&lt;=x&lt;=1/2$ (which are the constraints in this case)<br/></p>
+<iframe src="https://www.desmos.com/calculator/ily45jyfsv?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<p>This is an unconstrained optimization problem since the constraint is a simple bound based.</p>
+<h3 id="example-data-fitting">Example: Data Fitting:</h3>
+<p><strong>Given $N$ data points $(y_1, x_1)&hellip;(y_N, x_N)$ where $y_i$ belongs to $\mathbb{R}$ and $x_i$ belongs to $\mathbb{R}^n$, for all $i = 1..N$, find a line $y = a^Tx+b$ that best fits the data.</strong><br/>
+<strong>Decision</strong>: A vector $a$ that belongs to $\mathbb{R}^n$ and a scalar $b$ that belongs to $\mathbb{R}$<br/>
+<strong>Alternatives</strong>: All $n$-dimensional vectors and scalars<br/>
+<strong>Best</strong>: Minimize the sum of squared errors<br/>
+<strong>Optimization formulation</strong>:
+$\begin{array}{ll}\min &amp; \sum_{i=1}^N\left(y_i-a^{\top} x_i-b\right)^2 \ \text { s.t. } &amp; a \in \mathbb{R}^n, b \in \mathbb{R}\end{array}$</p>
+<p>This is also an unconstrained optimization problem.</p>
+<h3 id="example-product-mix">Example: Product Mix:</h3>
+<p><strong>A firm make $n$ different products using $m$ types of resources. Each unit of product $i$ generates $p_i$ dollars of profit, and requires $r_{ij}$ units of resource $j$. The firm has $u_j$ units of resource $j$ available. How much of each product should the firm make to maximize profits?</strong><br/>
+<strong>Decision</strong>: how much of each product to make<br/>
+<strong>Alternatives</strong>: defined by the resource limits<br/>
+<strong>Best</strong>: Maximize profits<br/>
+<strong>Optimization formulation:</strong> <br/>
+Sum notation: $\begin{array}{lll}\max &amp; \sum_{i=1}^n p_i x_i \ \text { s.t. } &amp; \sum_{i=1}^n r_{i j} x_i \leq u_j &amp; \forall j=1, \ldots, m \ &amp; x_i \geq 0 &amp; \forall i=1, \ldots, n\end{array}$ <br/>
+Matrix notation: $\begin{array}{cl}\max &amp; p^{\top} x \ \text { s.t. } &amp; R x \leq u \ &amp; x \geq 0\end{array}$</p>
+<h2 id="classification-of-optimization-problems">Classification of optimization problems</h2>
+<ul>
+<li>The tractability of a large scale optimization problem depends on the structure of the functions that make up the objective and constraints, and the domain restrictions on the variables.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Optimization Problem</th>
+<th>Description</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear Programming</td>
+<td>A linear programming problem involves maximizing or minimizing a linear objective function subject to a set of linear constraints</td>
+<td>Easy to moderate</td>
+</tr>
+<tr>
+<td>Nonlinear Programming</td>
+<td>A nonlinear programming problem involves optimizing a function that is not linear, subject to a set of nonlinear constraints</td>
+<td>Moderate to hard</td>
+</tr>
+<tr>
+<td>Quadratic Programming</td>
+<td>A quadratic programming problem involves optimizing a quadratic objective function subject to a set of linear constraints</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Convex Optimization</td>
+<td>A convex optimization problem involves optimizing a convex function subject to a set of linear or convex constraints</td>
+<td>Easy to moderate</td>
+</tr>
+<tr>
+<td>Integer Programming</td>
+<td>An integer programming problem involves optimizing a linear or nonlinear objective function subject to a set of linear or nonlinear constraints, where some or all of the variables are restricted to integer values</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Mixed-integer Programming</td>
+<td>A mixed-integer programming problem is a generalization of integer programming where some or all of the variables can be restricted to integer values or continuous values</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Global Optimization</td>
+<td>A global optimization problem involves finding the global optimum of a function subject to a set of constraints, which may be nonlinear or non-convex</td>
+<td>Hard</td>
+</tr>
+<tr>
+<td>Stochastic Optimization</td>
+<td>A stochastic optimization problem involves optimizing an objective function that depends on random variables, subject to a set of constraints</td>
+<td>Hard</td>
+</tr>
+</tbody>
+</table>
+<h2 id="convex-function-why-this-matters">Convex Function (Why this matters?)</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ConvexFunction.svg/1280px-ConvexFunction.svg.png" alt=""></p>
+<ul>
+<li><strong>&ldquo;Function value at the average is less than the average of the function values&rdquo;</strong></li>
+<li>For a convex function the first order Taylor&rsquo;s approximation is a global under estimator</li>
+</ul>
+<p><img src="https://qph.cf2.quoracdn.net/main-qimg-fe4b143cc53abb5a89049a01831686ab" alt=""></p>
+<ul>
+<li>
+<p>A function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is convex if
+$$
+f(\lambda \mathbf{x}+(1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x})+(1-\lambda) f(\mathbf{y}) \quad \forall \mathbf{x}, \mathbf{y} \in \mathbb{R}^n \text { and } \lambda \in[0,1]
+$$</p>
+</li>
+<li>
+<p>A convex optimization problem has a convex objective and convex set of solutions.</p>
+</li>
+</ul>
+<p><img src="https://miro.medium.com/v2/resize:fit:970/format:webp/0*eWqIxBooYQS_sVe9.png" alt=""></p>
+<ul>
+<li>Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.</li>
+<li>A twice differentiable univariate function is convex if $f^{&rsquo;&rsquo;}(x)&gt;=0$ for all $x \in R$</li>
+<li>To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.</li>
+<li>A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.</li>
+<li><strong>Sylvester&rsquo;s criterion</strong> is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
+</ul>
+<h2 id="two-steps-of-optimization">Two steps of optimization</h2>
+<p>Most optimization algorithms have two main steps:</p>
+<ul>
+<li><strong>Initialization</strong>: Create first solution to pick values for all of the variables (usually done randomly)</li>
+<li><strong>Repeat</strong> a simple two-stage process:
+<ul>
+<li>Starting with current solution, find a vector of relative changes to make to each variable. That is often called an improving direction.</li>
+<li>Make changes in that improving direction some amount, and that amount is called the step size.</li>
+</ul>
+</li>
+</ul>
+<h2 id="first-order-methods">First Order Methods</h2>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<h3 id="accelerated-gradient-descent">Accelerated Gradient Descent</h3>
+<h3 id="stochastic-gradient-descent">Stochastic Gradient Descent</h3>
+<h3 id="adam">ADAM</h3>
+<ul>
+<li>Moments</li>
+<li>Update Rule</li>
+<li>Bias Correction</li>
+<li>Convergence analysis</li>
+<li>RMSProp</li>
+<li>AdaGrad</li>
+</ul>
+<h2 id="second-order-methods">Second Order Methods</h2>
+<h3 id="newton-method">Newton Method</h3>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		1298 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/mega_data_science_operations_research/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Data Science notes on Operations Research
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/posts/code_for_nepal_data_fellowship_2023/">
+        Code for Nepal and DataCamp Donates: Data Fellowship 2023
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/mega_data_science_operations_research/">Data Science notes on Operations Research</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/deterministic_optimization/">Deterministic Optimization</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/topics_on_high_dimensional_data_analytics/">Topics on High-Dimensional Data Analytics (Machine Learning 2)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/ride_hailing_analytics/">Analytics for Ride Hailing Services</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
