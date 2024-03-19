@@ -368,7 +368,8 @@ $&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_adam, slope_adam
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;3.4382879476383574&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4.0255351076360855&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;sources&#34;&gt;Sources:&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/adam_.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;sources&#34;&gt;Sources:&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ruder.io/optimizing-gradient-descent/&#34;&gt;https://www.ruder.io/optimizing-gradient-descent/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c&#34;&gt;https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c&lt;/a&gt;&lt;/li&gt;
