@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>[Paper Review] Adam: A Method for Stochastic Optimization</title>
+      <title>[Paper Exploration] Adam: A Method for Stochastic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/adam/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/adam/</guid>
-      <description>&lt;h1 id=&#34;paper-review-adam-a-method-for-stochastic-optimization&#34;&gt;[Paper Review] Adam: A Method for Stochastic Optimization&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;paper-exploration-adam-a-method-for-stochastic-optimization&#34;&gt;[Paper Exploration] Adam: A Method for Stochastic Optimization&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Author: Diederik P. Kingma, Jimmy Ba&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -27,7 +27,7 @@
 &lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1412.6980.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.&lt;/p&gt;
+&lt;p&gt;We introduce Adam, an algorithm for &lt;strong&gt;first-order gradient-based optimization&lt;/strong&gt; of stochastic objective functions, based on adaptive estimates of &lt;strong&gt;lower-order moments&lt;/strong&gt;. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
 &lt;p&gt;The goal of optimization is to minimize some function, given some constraints.&lt;/p&gt;

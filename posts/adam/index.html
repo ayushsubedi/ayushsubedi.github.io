@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | [Paper Review] Adam: A Method for Stochastic Optimization</title>
+	<title>Ayush Subedi  | [Paper Exploration] Adam: A Method for Stochastic Optimization</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.102.3" />
 	
@@ -102,7 +102,7 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">[Paper Review] Adam: A Method for Stochastic Optimization</h1>
+<h1 class="pt-2">[Paper Exploration] Adam: A Method for Stochastic Optimization</h1>
 
 <h3 class="text-java-700 font-normal leading-relaxed pt-2">From optimization, to convex optimization, to first order optimization, to gradient descent, to accelerated gradient descent, to AdaGrad, to Adam.</h3>
 
@@ -152,7 +152,7 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="paper-review-adam-a-method-for-stochastic-optimization">[Paper Review] Adam: A Method for Stochastic Optimization</h1>
+		<div class="c-rich-text"><h1 id="paper-exploration-adam-a-method-for-stochastic-optimization">[Paper Exploration] Adam: A Method for Stochastic Optimization</h1>
 <blockquote>
 <p>Author: Diederik P. Kingma, Jimmy Ba</p>
 </blockquote>
@@ -162,7 +162,7 @@ onload='renderMathInElement(document.body);'></script>
 <iframe width="100%" height ="1024" src="https://arxiv.org/pdf/1412.6980.pdf#toolbar=0"></iframe>
 <h2 id="abstract">Abstract</h2>
 <blockquote>
-<p>We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.</p>
+<p>We introduce Adam, an algorithm for <strong>first-order gradient-based optimization</strong> of stochastic objective functions, based on adaptive estimates of <strong>lower-order moments</strong>. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.</p>
 </blockquote>
 <h1 id="optimization">Optimization</h1>
 <p>The goal of optimization is to minimize some function, given some constraints.</p>
