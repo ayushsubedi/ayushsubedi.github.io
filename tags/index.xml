@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>wip</title>
+      <link>https://ayushsubedi.github.io/tags/wip/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/wip/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>calculus</title>
@@ -773,15 +782,6 @@
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wip</title>
-      <link>https://ayushsubedi.github.io/tags/wip/</link>
-      <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/wip/</guid>
       <description></description>
     </item>
     
