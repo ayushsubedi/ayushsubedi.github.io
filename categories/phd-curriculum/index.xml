@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phd curriculum on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/phd-curriculum/</link>
+    <description>Recent content in phd curriculum on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/phd-curriculum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Self Study Series: Optimization (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_experimentation/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_experimentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Optimization (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_nlp/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Optimization (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_optimization/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Pytorch (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_pytorch/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_pytorch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Statistical Learning (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Statistics (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_stats/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_stats/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
