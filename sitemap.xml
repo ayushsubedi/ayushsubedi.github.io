@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ayushsubedi.github.io/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/phd-curriculum/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_experimentation/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_nlp/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_optimization/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_stats/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_pytorch/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/semester-1/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/wip/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/posts/wasserstein_gan/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -65,13 +104,7 @@
     <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/calculus/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/certification/</loc>
@@ -143,13 +176,7 @@
     <loc>https://ayushsubedi.github.io/categories/paper-exploration/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/categories/phd-curriculum/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/pipelines/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/quicksight/</loc>
@@ -173,43 +200,16 @@
     <loc>https://ayushsubedi.github.io/tags/sagemaker-debugger/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_experimentation/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_nlp/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_optimization/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_pytorch/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_stats/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/semester-1/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/spark/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/step-function/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/types-of-data/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/unbalanced-data/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/wip/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/adam/</loc>
