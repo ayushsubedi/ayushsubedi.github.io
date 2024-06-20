@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rnns on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/rnns/</link>
+    <description>Recent content in rnns on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/rnns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Self Study Series: NLP (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_nlp/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_nlp/</guid>
+      <description>&lt;h1 id=&#34;self-study-series-nlp&#34;&gt;Self Study Series: NLP&lt;/h1&gt;
+&lt;h1 id=&#34;why-nlp-has-made-progress-in-strides-recently&#34;&gt;Why NLP has made progress in strides recently?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Attention is all you need, published by a team of google researchers introduced the Transformer architecture, and crushed previous architectures that were based on RNNs&lt;/li&gt;
+&lt;li&gt;Availability of pre trained data&lt;/li&gt;
+&lt;li&gt;Model hubs like Hugging Face&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;introduction-to-transformer&#34;&gt;Introduction to Transformer&lt;/h1&gt;
+&lt;h1 id=&#34;text-classification&#34;&gt;Text Classification&lt;/h1&gt;
+&lt;h1 id=&#34;transformer-architecture&#34;&gt;Transformer Architecture&lt;/h1&gt;
+&lt;h1 id=&#34;token-classification-problem&#34;&gt;Token Classification Problem&lt;/h1&gt;
+&lt;h1 id=&#34;text-generation&#34;&gt;Text Generation&lt;/h1&gt;
+&lt;h1 id=&#34;summarization&#34;&gt;Summarization&lt;/h1&gt;
+&lt;h1 id=&#34;question-answering&#34;&gt;Question Answering&lt;/h1&gt;
+&lt;h1 id=&#34;production&#34;&gt;Production&lt;/h1&gt;
+&lt;h1 id=&#34;few-to-no-labels&#34;&gt;Few to no Labels&lt;/h1&gt;
+&lt;h1 id=&#34;training-transformers-from-scratch&#34;&gt;Training Transformers from Scratch&lt;/h1&gt;
+&lt;h1 id=&#34;future-directions&#34;&gt;Future Directions&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

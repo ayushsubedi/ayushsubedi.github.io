@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pyomo on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/pyomo/</link>
+    <description>Recent content in pyomo on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/pyomo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Self Study Series: Optimization (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_optimization/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_optimization/</guid>
+      <description>&lt;h1 id=&#34;self-study-series-optimization&#34;&gt;Self Study Series: Optimization&lt;/h1&gt;
+&lt;h2 id=&#34;convex-sets&#34;&gt;Convex sets&lt;/h2&gt;
+&lt;h2 id=&#34;convex-functions&#34;&gt;Convex functions&lt;/h2&gt;
+&lt;h2 id=&#34;convex-optimization-problems&#34;&gt;Convex optimization problems&lt;/h2&gt;
+&lt;h2 id=&#34;duality&#34;&gt;Duality&lt;/h2&gt;
+&lt;h2 id=&#34;approximation-and-fitting&#34;&gt;Approximation and fitting&lt;/h2&gt;
+&lt;h2 id=&#34;statistical-estimation&#34;&gt;Statistical estimation&lt;/h2&gt;
+&lt;h2 id=&#34;geometric-problems&#34;&gt;Geometric problems&lt;/h2&gt;
+&lt;h2 id=&#34;unconstrained-minimization&#34;&gt;Unconstrained minimization&lt;/h2&gt;
+&lt;h2 id=&#34;equality-constrained-minimization&#34;&gt;Equality constrained minimization&lt;/h2&gt;
+&lt;h2 id=&#34;interior-point-methods&#34;&gt;Interior point methods&lt;/h2&gt;
+&lt;h2 id=&#34;example-with-pyomo&#34;&gt;Example with Pyomo&lt;/h2&gt;
+&lt;h2 id=&#34;modeling-with-pyomo&#34;&gt;Modeling with Pyomo&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

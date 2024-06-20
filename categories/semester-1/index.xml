@@ -6,63 +6,160 @@
     <description>Recent content in semester 1 on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 31 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/semester-1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Self Study Series: Graduate Level Experimentation (WIP)</title>
+      <title>Self Study Series: Experimentation (WIP)</title>
       <link>https://ayushsubedi.github.io/posts/self_study_experimentation/</link>
-      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/self_study_experimentation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Self Study Series: Graduate Level NLP (WIP)</title>
+      <title>Self Study Series: NLP (WIP)</title>
       <link>https://ayushsubedi.github.io/posts/self_study_nlp/</link>
-      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/self_study_nlp/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;self-study-series-nlp&#34;&gt;Self Study Series: NLP&lt;/h1&gt;
+&lt;h1 id=&#34;why-nlp-has-made-progress-in-strides-recently&#34;&gt;Why NLP has made progress in strides recently?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Attention is all you need, published by a team of google researchers introduced the Transformer architecture, and crushed previous architectures that were based on RNNs&lt;/li&gt;
+&lt;li&gt;Availability of pre trained data&lt;/li&gt;
+&lt;li&gt;Model hubs like Hugging Face&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;introduction-to-transformer&#34;&gt;Introduction to Transformer&lt;/h1&gt;
+&lt;h1 id=&#34;text-classification&#34;&gt;Text Classification&lt;/h1&gt;
+&lt;h1 id=&#34;transformer-architecture&#34;&gt;Transformer Architecture&lt;/h1&gt;
+&lt;h1 id=&#34;token-classification-problem&#34;&gt;Token Classification Problem&lt;/h1&gt;
+&lt;h1 id=&#34;text-generation&#34;&gt;Text Generation&lt;/h1&gt;
+&lt;h1 id=&#34;summarization&#34;&gt;Summarization&lt;/h1&gt;
+&lt;h1 id=&#34;question-answering&#34;&gt;Question Answering&lt;/h1&gt;
+&lt;h1 id=&#34;production&#34;&gt;Production&lt;/h1&gt;
+&lt;h1 id=&#34;few-to-no-labels&#34;&gt;Few to no Labels&lt;/h1&gt;
+&lt;h1 id=&#34;training-transformers-from-scratch&#34;&gt;Training Transformers from Scratch&lt;/h1&gt;
+&lt;h1 id=&#34;future-directions&#34;&gt;Future Directions&lt;/h1&gt;
+</description>
     </item>
     
     <item>
-      <title>Self Study Series: Graduate Level Optimization (WIP)</title>
+      <title>Self Study Series: Optimization (WIP)</title>
       <link>https://ayushsubedi.github.io/posts/self_study_optimization/</link>
-      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/self_study_optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Self Study Series: Graduate Level Statistical Learning (WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</link>
-      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Self Study Series: Graduate Level Statistics (WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/self_study_stats/</link>
-      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/self_study_stats/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;self-study-series-optimization&#34;&gt;Self Study Series: Optimization&lt;/h1&gt;
+&lt;h2 id=&#34;convex-sets&#34;&gt;Convex sets&lt;/h2&gt;
+&lt;h2 id=&#34;convex-functions&#34;&gt;Convex functions&lt;/h2&gt;
+&lt;h2 id=&#34;convex-optimization-problems&#34;&gt;Convex optimization problems&lt;/h2&gt;
+&lt;h2 id=&#34;duality&#34;&gt;Duality&lt;/h2&gt;
+&lt;h2 id=&#34;approximation-and-fitting&#34;&gt;Approximation and fitting&lt;/h2&gt;
+&lt;h2 id=&#34;statistical-estimation&#34;&gt;Statistical estimation&lt;/h2&gt;
+&lt;h2 id=&#34;geometric-problems&#34;&gt;Geometric problems&lt;/h2&gt;
+&lt;h2 id=&#34;unconstrained-minimization&#34;&gt;Unconstrained minimization&lt;/h2&gt;
+&lt;h2 id=&#34;equality-constrained-minimization&#34;&gt;Equality constrained minimization&lt;/h2&gt;
+&lt;h2 id=&#34;interior-point-methods&#34;&gt;Interior point methods&lt;/h2&gt;
+&lt;h2 id=&#34;example-with-pyomo&#34;&gt;Example with Pyomo&lt;/h2&gt;
+&lt;h2 id=&#34;modeling-with-pyomo&#34;&gt;Modeling with Pyomo&lt;/h2&gt;
+</description>
     </item>
     
     <item>
       <title>Self Study Series: Pytorch (WIP)</title>
       <link>https://ayushsubedi.github.io/posts/self_study_pytorch/</link>
-      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/self_study_pytorch/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;self-study-series-pytorch&#34;&gt;Self Study Series: Pytorch&lt;/h1&gt;
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Python library for deep learning computing created and released by Facebook&lt;/li&gt;
+&lt;li&gt;It has the capability to train a deep learning model and as well as run a model in inference mode.&lt;/li&gt;
+&lt;li&gt;Pytorch is a Python-based scientific computing package that serves two specific purposes:
+&lt;ul&gt;
+&lt;li&gt;replacement for NumPy to use the power of GPUs&lt;/li&gt;
+&lt;li&gt;designed for neural networks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pytorch utilizes tensors. Tensors are generalizations of matrices to N-dimensional space&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://hkilter.com/images/7/7a/Tensors.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;simple-mlp-model&#34;&gt;Simple MLP model&lt;/h2&gt;
+&lt;h2 id=&#34;training-a-pytorch-model&#34;&gt;Training a PyTorch Model&lt;/h2&gt;
+&lt;h2 id=&#34;using-a-pytorch-model-for-inference&#34;&gt;Using a PyTorch Model for Inference&lt;/h2&gt;
+&lt;h2 id=&#34;loading-data-from-torchvision&#34;&gt;Loading Data from Torchvision&lt;/h2&gt;
+&lt;h2 id=&#34;using-pytorch-dataloader&#34;&gt;Using Pytorch DataLoader&lt;/h2&gt;
+&lt;h2 id=&#34;convolutional-neural-network&#34;&gt;Convolutional Neural Network&lt;/h2&gt;
+&lt;h2 id=&#34;train-and-image-classifier&#34;&gt;Train and Image Classifier&lt;/h2&gt;
+&lt;h2 id=&#34;train-with-gpus&#34;&gt;Train with GPUs&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Statistical Learning (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</guid>
+      <description>&lt;h1 id=&#34;self-study-series-statistical-learning&#34;&gt;Self Study Series: Statistical Learning&lt;/h1&gt;
+&lt;h2 id=&#34;supervised-learning&#34;&gt;Supervised Learning&lt;/h2&gt;
+&lt;h2 id=&#34;regression&#34;&gt;Regression&lt;/h2&gt;
+&lt;h2 id=&#34;classification&#34;&gt;Classification&lt;/h2&gt;
+&lt;h2 id=&#34;regularization&#34;&gt;Regularization&lt;/h2&gt;
+&lt;h2 id=&#34;kernel-smoothing&#34;&gt;Kernel Smoothing&lt;/h2&gt;
+&lt;h2 id=&#34;model-selection&#34;&gt;Model Selection&lt;/h2&gt;
+&lt;h2 id=&#34;model-inference&#34;&gt;Model Inference&lt;/h2&gt;
+&lt;h2 id=&#34;additive-models&#34;&gt;Additive Models&lt;/h2&gt;
+&lt;h2 id=&#34;boosting&#34;&gt;Boosting&lt;/h2&gt;
+&lt;h2 id=&#34;neural-nets&#34;&gt;Neural Nets&lt;/h2&gt;
+&lt;h2 id=&#34;svm&#34;&gt;SVM&lt;/h2&gt;
+&lt;h2 id=&#34;nearest-neighbors&#34;&gt;Nearest Neighbors&lt;/h2&gt;
+&lt;h2 id=&#34;unsupervised-learning&#34;&gt;Unsupervised Learning&lt;/h2&gt;
+&lt;h2 id=&#34;random-forest&#34;&gt;Random Forest&lt;/h2&gt;
+&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Self Study Series: Statistics (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/self_study_stats/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/self_study_stats/</guid>
+      <description>&lt;h1 id=&#34;self-study-series-statistics&#34;&gt;Self Study Series: Statistics&lt;/h1&gt;
+&lt;h1 id=&#34;probability&#34;&gt;Probability&lt;/h1&gt;
+&lt;h2 id=&#34;probability-1&#34;&gt;Probability&lt;/h2&gt;
+&lt;h2 id=&#34;random-variables&#34;&gt;Random Variables&lt;/h2&gt;
+&lt;h2 id=&#34;expectation&#34;&gt;Expectation&lt;/h2&gt;
+&lt;h2 id=&#34;inequalities&#34;&gt;Inequalities&lt;/h2&gt;
+&lt;h2 id=&#34;convergence-of-random-variables&#34;&gt;Convergence of Random Variables&lt;/h2&gt;
+&lt;h1 id=&#34;statistical-inference&#34;&gt;Statistical Inference&lt;/h1&gt;
+&lt;h2 id=&#34;models-statistical-inference-and-learning&#34;&gt;Models, Statistical Inference and Learning&lt;/h2&gt;
+&lt;h2 id=&#34;estimation-of-the-cdf-and-statistical-functionals&#34;&gt;Estimation of the CDF and Statistical Functionals&lt;/h2&gt;
+&lt;h2 id=&#34;the-bootstrap&#34;&gt;The Bootstrap&lt;/h2&gt;
+&lt;h2 id=&#34;parametric-inference&#34;&gt;Parametric Inference&lt;/h2&gt;
+&lt;h2 id=&#34;hypothesis-testing-and-p-values&#34;&gt;Hypothesis Testing and p-values&lt;/h2&gt;
+&lt;h2 id=&#34;bayesian-inference&#34;&gt;Bayesian Inference&lt;/h2&gt;
+&lt;h2 id=&#34;statistical-decision-theory&#34;&gt;Statistical Decision Theory&lt;/h2&gt;
+&lt;h1 id=&#34;statistical-models-and-methods&#34;&gt;Statistical Models and Methods&lt;/h1&gt;
+&lt;h2 id=&#34;linear-and-logistic-regression&#34;&gt;Linear and Logistic Regression&lt;/h2&gt;
+&lt;h2 id=&#34;multivariate-models&#34;&gt;Multivariate Models&lt;/h2&gt;
+&lt;h2 id=&#34;inference-about-independence&#34;&gt;Inference About Independence&lt;/h2&gt;
+&lt;h2 id=&#34;casual-inference&#34;&gt;Casual Inference&lt;/h2&gt;
+&lt;h2 id=&#34;directed-graphs-and-conditional-independence&#34;&gt;Directed Graphs and Conditional Independence&lt;/h2&gt;
+&lt;h2 id=&#34;undirected-graphs&#34;&gt;Undirected Graphs&lt;/h2&gt;
+&lt;h2 id=&#34;log-linear-models&#34;&gt;Log-Linear Models&lt;/h2&gt;
+&lt;h2 id=&#34;nonparametric-curve-estimation&#34;&gt;Nonparametric Curve Estimation&lt;/h2&gt;
+&lt;h2 id=&#34;smoothing-using-orthogonal-functions&#34;&gt;Smoothing Using Orthogonal Functions&lt;/h2&gt;
+&lt;h2 id=&#34;classification&#34;&gt;Classification&lt;/h2&gt;
+&lt;h2 id=&#34;probability-redux-stochastic-processesses&#34;&gt;Probability Redux: Stochastic Processesses&lt;/h2&gt;
+&lt;h2 id=&#34;simulation-methods&#34;&gt;Simulation Methods&lt;/h2&gt;
+</description>
     </item>
     
   </channel>

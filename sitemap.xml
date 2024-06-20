@@ -2,50 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ayushsubedi.github.io/posts/zero-shot-classification/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/categories/phd-curriculum/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+    <loc>https://ayushsubedi.github.io/tags/classification/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/nlp/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/paper-exploration/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_experimentation/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_nlp/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_optimization/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_stats/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/self_study_pytorch/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/semester-1/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/wip/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+    <loc>https://ayushsubedi.github.io/tags/zero-shot/</loc>
+    <lastmod>2024-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/wasserstein_gan/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/yolov3/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/calculus/</loc>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/gan/</loc>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/gradient-descent/</loc>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/machine-learning/</loc>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/optimization/</loc>
+    <lastmod>2024-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/optimization/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/phd-curriculum/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/pyomo/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/rnns/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_experimentation/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_nlp/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_optimization/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_pytorch/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_statistical_learning/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/self_study_stats/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/semester-1/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/transformer/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/wip/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/amazon-comprehend/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
@@ -104,9 +146,6 @@
     <loc>https://ayushsubedi.github.io/posts/aws_ml_speciality_ml/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/calculus/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/certification/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -140,13 +179,7 @@
     <loc>https://ayushsubedi.github.io/tags/feature-engineering/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/gan/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/glue/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/gradient-descent/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/greengrass/</loc>
@@ -164,16 +197,7 @@
     <loc>https://ayushsubedi.github.io/tags/machine-learning-implementation-and-operations/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/machine-learning/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/tags/modeling/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/optimization/</loc>
-    <lastmod>2024-05-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/paper-exploration/</loc>
     <lastmod>2024-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/pipelines/</loc>
@@ -828,9 +852,6 @@
     <lastmod>2018-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/bird_plane_superman/</loc>
-    <lastmod>2018-02-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/classification/</loc>
     <lastmod>2018-02-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/pytorch/</loc>
