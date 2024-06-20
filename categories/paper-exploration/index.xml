@@ -125,46 +125,6 @@
     </item>
     
     <item>
-      <title>[Paper Exploration] Wasserstein GAN (WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/wasserstein_gan/</link>
-      <pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/wasserstein_gan/</guid>
-      <description>&lt;h1 id=&#34;paper-exploration-wasserstein-gan&#34;&gt;[Paper Exploration] Wasserstein GAN&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Author: Martin Arjovsky, Soumith Chintala and L´eon Bottou&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Published on 2017&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1701.07875v3#toolbar=0&#34;&gt;&lt;/iframe&gt;
-&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</title>
-      <link>https://ayushsubedi.github.io/posts/yolov3/</link>
-      <pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/yolov3/</guid>
-      <description>&lt;h1 id=&#34;paper-exploration-yolov3-an-incremental-improvementwip&#34;&gt;[Paper Exploration] Yolov3: An Incremental Improvement(WIP)&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Author: Joseph Redmon, Ali Farhadi&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Published on 2018&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1804.02767#toolbar=0&#34;&gt;&lt;/iframe&gt;
-&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
       <title>[Paper Exploration] Adam: A Method for Stochastic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/adam/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
@@ -1419,6 +1379,46 @@ weighted avg       0.82      0.82      0.82       178
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Shapley_value&#34;&gt;https://en.wikipedia.org/wiki/Shapley_value&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Lloyd_Shapley&#34;&gt;https://en.wikipedia.org/wiki/Lloyd_Shapley&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Paper Exploration] Wasserstein GAN (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/wasserstein_gan/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/wasserstein_gan/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-wasserstein-gan&#34;&gt;[Paper Exploration] Wasserstein GAN&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Martin Arjovsky, Soumith Chintala and L´eon Bottou&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2017&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1701.07875v3#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/yolov3/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/yolov3/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-yolov3-an-incremental-improvementwip&#34;&gt;[Paper Exploration] Yolov3: An Incremental Improvement(WIP)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Joseph Redmon, Ali Farhadi&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2018&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1804.02767#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
