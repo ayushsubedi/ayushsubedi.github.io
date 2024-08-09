@@ -6,10 +6,645 @@
     <description>Recent content in Deep Learning on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Paper Exploration] Deep Residual Learning for Image Recognition</title>
+      <link>https://ayushsubedi.github.io/posts/resnets/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/resnets/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-deep-residual-learning-for-image-recognition&#34;&gt;[Paper Exploration] Deep Residual Learning for Image Recognition&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2015&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- &lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1412.6980.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt; --&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers&amp;mdash;8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC &amp;amp; COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/resnets.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;timeline&#34;&gt;Timeline&lt;/h2&gt;
+&lt;br/&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+    &lt;title&gt;Neural Network Historical Timeline&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            background-color: white;
+            border-left: 4px solid #512b81;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .timeline-item:nth-child(even) {
+            border-left: 4px solid #Ad5acc;
+        }
+        .timeline-item:nth-child(odd) {
+            border-left: 4px solid #0b0118;
+        }
+        .timeline-item h2 {
+            margin-top: 0;
+            color: #512b81;
+        }
+        .timeline-item p {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            .timeline-item {
+                padding: 10px;
+                border-left: none;
+                border-bottom: 4px solid #512b81;
+            }
+            .timeline-item:nth-child(even) {
+                border-bottom: 4px solid #Ad5acc;
+            }
+            .timeline-item:nth-child(odd) {
+                border-bottom: 4px solid #0b0118;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&#34;timeline&#34;&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;1943&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Artificial Neurons:&lt;/strong&gt; Warren McCulloch and Walter Pitts propose the first mathematical model of artificial neurons, laying the foundation for neural network theory. Their work introduces the concept of a simplified model of a neuron and its computational capabilities.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;1958&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Perceptron:&lt;/strong&gt; Frank Rosenblatt develops the perceptron, a type of artificial neural network capable of learning simple patterns through supervised learning. It marks one of the first practical implementations of neural network concepts.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;1960s-1970s&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Neural Network Winter:&lt;/strong&gt; Interest in neural networks declines due to the limitations of perceptrons, including their inability to solve non-linearly separable problems. This period sees reduced funding and research in neural network technologies.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;1980&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Neocognitron:&lt;/strong&gt; Kunihiko Fukushima introduces the neocognitron, a hierarchical multilayered network designed for visual pattern recognition. It serves as a precursor to modern convolutional neural networks (CNNs).&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;1986&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Backpropagation:&lt;/strong&gt; David Rumelhart, Geoffrey Hinton, and Ronald Williams popularize backpropagation, an algorithm that enables the training of multilayer neural networks by efficiently calculating gradients and updating weights.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;1998&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;LeNet-5:&lt;/strong&gt; Yann LeCun et al. develop LeNet-5, a convolutional neural network designed for handwritten digit recognition. It demonstrates the practical effectiveness of CNNs and their potential in image classification tasks.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2006&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Deep Belief Networks:&lt;/strong&gt; Geoffrey Hinton et al. introduce deep belief networks, a type of deep neural network trained using unsupervised learning methods. This work marks a significant advancement in the deep learning era.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2012&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;AlexNet:&lt;/strong&gt; Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton win the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) with AlexNet. This deep convolutional neural network achieves a dramatic improvement in image classification performance and sparks widespread adoption of deep learning.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2014&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;VGGNet:&lt;/strong&gt; Karen Simonyan and Andrew Zisserman introduce VGGNet, which further deepens CNN architectures with a consistent design. VGGNet achieves state-of-the-art performance on ImageNet and influences subsequent network designs.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2015&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;ResNet:&lt;/strong&gt; Kaiming He et al. introduce Residual Networks (ResNet), a groundbreaking architecture that allows for training extremely deep networks (over 100 layers) by using residual connections to address the vanishing gradient problem.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2016&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;DenseNet:&lt;/strong&gt; Gao Huang et al. introduce DenseNet, which improves gradient flow and network efficiency by connecting each layer to every other layer in a feed-forward fashion, thereby enhancing feature reuse and reducing the number of parameters.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2017&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Transformer:&lt;/strong&gt; Ashish Vaswani et al. introduce the Transformer architecture in &#34;Attention Is All You Need,&#34; revolutionizing natural language processing by relying solely on self-attention mechanisms, leading to improved performance in various NLP tasks.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2018&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;BERT:&lt;/strong&gt; Jacob Devlin et al. introduce BERT (Bidirectional Encoder Representations from Transformers), which achieves state-of-the-art results on a range of NLP tasks by pre-training deep bidirectional representations and fine-tuning on specific tasks.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2019&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;EfficientNet:&lt;/strong&gt; Mingxing Tan and Quoc V. Le introduce EfficientNet, a family of models that use a compound scaling method to optimize the balance between network depth, width, and resolution, improving both efficiency and accuracy.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2020&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;GPT-3:&lt;/strong&gt; OpenAI releases GPT-3 (Generative Pre-trained Transformer 3), a language model with 175 billion parameters. GPT-3 demonstrates impressive capabilities in generating coherent and contextually relevant text across diverse applications.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2021&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Vision Transformer (ViT):&lt;/strong&gt; Alexey Dosovitskiy et al. introduce Vision Transformers, applying the Transformer architecture to image recognition tasks and achieving competitive performance with traditional CNNs by leveraging self-attention mechanisms.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2022&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;DALL-E 2:&lt;/strong&gt; OpenAI releases DALL-E 2, an advanced generative model capable of creating highly realistic images from textual descriptions, showcasing the power of combining transformers with generative modeling.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-item&#34;&gt;
+            &lt;h2&gt;2023&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;Further Advancements:&lt;/strong&gt; Continued research and development in neural networks, with ongoing improvements in model efficiency, interpretability, and applications across various domains, including healthcare, autonomous systems, and beyond.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;h2 id=&#34;glossary&#34;&gt;Glossary&lt;/h2&gt;
+&lt;h3 id=&#34;imagenet&#34;&gt;ImageNet:&lt;/h3&gt;
+&lt;p&gt;A large visual database used for visual object recognition software research. It is a benchmark dataset in computer vision, consisting of millions of labeled images categorized into thousands of classes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;pascal-and-ms-coco&#34;&gt;PASCAL and MS COCO&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;PASCAL Visual Object Classes (VOC):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; The PASCAL VOC dataset is designed for object recognition and detection tasks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Content:&lt;/strong&gt; It contains images from various categories, such as people, animals, and vehicles. The dataset includes annotations for object classes, bounding boxes, and segmentation masks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Challenges:&lt;/strong&gt; The dataset is known for the PASCAL VOC challenges, which are annual competitions that focus on evaluating the performance of different algorithms on object detection, classification, and segmentation tasks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Categories:&lt;/strong&gt; There are 20 object classes in PASCAL VOC, such as person, bicycle, bird, cat, cow, and more.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; It is widely used for benchmarking and training models in object detection and segmentation tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.researchgate.net/publication/221368944/figure/fig4/AS:668838140067847@1536474847482/Concepts-of-the-PASCAL-Visual-Object-Challenge-2007-used-in-the-image-benchmark-of.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Microsoft Common Objects in Context (COCO):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Purpose:&lt;/strong&gt; The MS COCO dataset is used for a variety of computer vision tasks, including object detection, segmentation, keypoint detection, and image captioning.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Content:&lt;/strong&gt; It contains a large number of images with objects in natural and complex scenes, along with annotations for object classes, segmentation masks, keypoints (for human pose estimation), and image captions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Challenges:&lt;/strong&gt; The COCO challenges, held annually, evaluate models on tasks such as object detection, instance segmentation, and image captioning.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Categories:&lt;/strong&gt; There are 80 object categories in COCO, such as person, bicycle, car, dog, bottle, and more.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; COCO is one of the most comprehensive and widely used datasets in computer vision, known for its diversity and the complexity of its scenes. It is used for training and benchmarking models across various tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.researchgate.net/publication/344601010/figure/fig3/AS:945595862745089@1602459030487/Sample-images-from-the-COCO-dataset.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;state-of-the-art-sota&#34;&gt;State-of-the-Art (SOTA):&lt;/h3&gt;
+&lt;p&gt;Refers to the highest level of development or the best performance achieved in a particular field at a given time.&lt;/p&gt;
+&lt;h3 id=&#34;vgg-nets&#34;&gt;VGG Nets&lt;/h3&gt;
+&lt;p&gt;VGG nets are a type of convolutional neural network architecture known for their simplicity and depth. Developed by the Visual Geometry Group at the University of Oxford, VGG networks consist of very small (3x3) convolution filters and are characterized by their uniform architecture. They have been widely used in image recognition tasks.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+*&lt;/p&gt;
+&lt;h3 id=&#34;degradation-problem&#34;&gt;Degradation Problem&lt;/h3&gt;
+&lt;p&gt;The degradation problem in deep learning refers to the phenomenon where adding more layers to a deep neural network leads to a higher training error and test error, contrary to what one might expect. This issue arises due to difficulties in training very deep networks.&lt;/p&gt;
+&lt;h3 id=&#34;overfitting&#34;&gt;Overfitting&lt;/h3&gt;
+&lt;p&gt;Overfitting occurs when a machine learning model learns the training data too well, including the noise and outliers, leading to poor performance on new, unseen data. This happens when the model is too complex relative to the amount of training data.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png&#34; alt=&#34;Overfitting&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;identity-mapping&#34;&gt;Identity Mapping&lt;/h3&gt;
+&lt;p&gt;Identity mapping is a technique used in neural networks, particularly in residual networks, where the input to a layer is passed directly to a subsequent layer without any transformation. This helps in addressing the degradation problem by ensuring that layers can learn identity mappings if they do not improve the objective.&lt;/p&gt;
+&lt;h3 id=&#34;map&#34;&gt;mAP&lt;/h3&gt;
+&lt;p&gt;mAP (mean Average Precision) is a metric used to evaluate the accuracy of object detection models. It is the mean of the average precision scores for each class, providing a single number that reflects the model&amp;rsquo;s ability to detect objects of various classes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.prod.website-files.com/614c82ed388d53640613982e/64876df5c42ecf0cf93f549d_mean%20average%20precision%20formula.webp&#34; alt=&#34;mAP&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vanishing-gradient-problem&#34;&gt;Vanishing Gradient Problem:&lt;/h3&gt;
+&lt;p&gt;A difficulty encountered during the training of deep neural networks, where the gradients of the loss function with respect to the parameters become very small, effectively preventing the weights from updating.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aiml.com/wp-content/uploads/2023/11/vanishing-and-exploding-gradient-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;residual-block&#34;&gt;Residual Block&lt;/h3&gt;
+&lt;p&gt;A residual block is a fundamental component of residual neural networks (ResNets) designed to solve the degradation problem by allowing the network to skip one or more layers. The input to a residual block is added to the output of the block&amp;rsquo;s layers, which helps in training very deep networks.&lt;/p&gt;
+&lt;h3 id=&#34;bottleneck-residual-block&#34;&gt;Bottleneck Residual Block&lt;/h3&gt;
+&lt;p&gt;A bottleneck residual block is a variation of the residual block used in deep residual networks to reduce the number of parameters and computation. It consists of three layers: a 1x1 convolution that reduces the dimensions, a 3x3 convolution, and another 1x1 convolution that restores the dimensions. This structure helps in making the network deeper while keeping the computational cost manageable.&lt;/p&gt;
+&lt;h3 id=&#34;transformer-block&#34;&gt;Transformer Block&lt;/h3&gt;
+&lt;p&gt;A transformer block is a key component of the transformer architecture, used extensively in natural language processing tasks. It consists of a multi-head self-attention mechanism followed by a position-wise feed-forward network. This architecture allows the model to capture complex dependencies in the data.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.sstatic.net/eAKQu.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;core-concepts&#34;&gt;Core concepts&lt;/h1&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objective:&lt;/strong&gt; To address the degradation problem in deep neural networks and improve image recognition performance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Degradation Problem:&lt;/strong&gt; As the depth of neural networks increases, accuracy saturates and then degrades.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://qph.cf2.quoracdn.net/main-qimg-e148d117f06700fbc474f425c01e3f5e-pjlq&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
+&lt;h3 id=&#34;residual-learning&#34;&gt;Residual Learning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduced the concept of residual learning to facilitate the training of deep networks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Residual Block:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Consists of a series of layers where the input is directly added to the output of the stacked layers.&lt;/li&gt;
+&lt;li&gt;Formulated as: $y = \mathcal{F}(x, {W_i}) + x$
+where $(\mathcal{F}(x, {W_i}))$ represents the residual mapping.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:570/1*D0F3UitQ2l5Q0Ak-tjEdJg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
+&lt;h3 id=&#34;resnet-architecture&#34;&gt;ResNet Architecture&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Built networks with depths of 34, 50, 101, and 152 layers.&lt;/li&gt;
+&lt;li&gt;Demonstrated significant improvements over traditional networks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C8jf92MeHZnxnbpMkz6jkQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bottleneck-design&#34;&gt;Bottleneck Design&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for deeper architectures.&lt;/li&gt;
+&lt;li&gt;Consists of three layers:
+&lt;ul&gt;
+&lt;li&gt;1x1 convolutions&lt;/li&gt;
+&lt;li&gt;3x3 convolutions&lt;/li&gt;
+&lt;li&gt;1x1 convolutions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.sstatic.net/kbiIG.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;experiments-and-results&#34;&gt;Experiments and Results&lt;/h2&gt;
+&lt;h3 id=&#34;datasets&#34;&gt;Datasets&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Evaluated on ImageNet, CIFAR-10, and COCO.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;imagenet-results&#34;&gt;ImageNet Results&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Achieved top-5 error rates of 3.57% and 3.6% with 152-layer and 101-layer ResNets, respectively.&lt;/li&gt;
+&lt;li&gt;ResNet-152 outperformed VGG-19 by 8.4%.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;coco-detection&#34;&gt;COCO Detection&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrated with Faster R-CNN.&lt;/li&gt;
+&lt;li&gt;Achieved improvements in object detection and segmentation tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;generalization&#34;&gt;Generalization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Demonstrated that residual networks generalize well across various datasets and tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;insights&#34;&gt;Insights&lt;/h2&gt;
+&lt;h3 id=&#34;vanishing-gradient&#34;&gt;Vanishing Gradient&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Residual learning mitigates the vanishing gradient problem, allowing deeper networks to be trained.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ease-of-optimization&#34;&gt;Ease of Optimization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Residual networks are easier to optimize than their plain counterparts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;identity-mapping-1&#34;&gt;Identity Mapping&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Identity shortcuts help in retaining the essential identity mappings in the networks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h3 id=&#34;impact&#34;&gt;Impact&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Residual networks have become a standard in deep learning, influencing subsequent research and applications.&lt;/li&gt;
+&lt;li&gt;Demonstrated the ability to train extremely deep networks without performance degradation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;future-work&#34;&gt;Future Work&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Suggested exploring the integration of residual learning with other network architectures and tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;supplementary-contributions&#34;&gt;Supplementary Contributions&lt;/h2&gt;
+&lt;h3 id=&#34;residual-blocks-variants&#34;&gt;Residual Blocks Variants&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigated different variants of residual blocks to study their effects on performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;training-strategies&#34;&gt;Training Strategies&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Discussed training strategies to efficiently train deep networks with residual blocks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;key-takeaways&#34;&gt;Key Takeaways&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Residual learning allows for the effective training of very deep networks.&lt;/li&gt;
+&lt;li&gt;ResNets significantly improve performance across various image recognition tasks.&lt;/li&gt;
+&lt;li&gt;The methodology can be generalized to other domains and applications in deep learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;pytorch-implementation&#34;&gt;Pytorch Implementation&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch.nn &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; nn
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torchvision
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torchvision.transforms &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; transforms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; torch.utils.data &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; DataLoader
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; torch.backends &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cudnn
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cudnn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;benchmark &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use_cuda &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cuda&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;is_available()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Image Preprocessing&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;transform &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; transforms&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Compose([
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    transforms&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Resize(&lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    transforms&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;RandomHorizontalFlip(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    transforms&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;RandomCrop(&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    transforms&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ToTensor()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# CIFAR-10 Dataset&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;train_dataset &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torchvision&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datasets&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CIFAR10(root&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./data&amp;#39;&lt;/span&gt;, train&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;, transform&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;transform, download&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test_dataset &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torchvision&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datasets&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CIFAR10(root&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./data&amp;#39;&lt;/span&gt;, train&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, transform&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;transforms&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ToTensor())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Data Loader&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;train_loader &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DataLoader(dataset&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;train_dataset, batch_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, shuffle&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test_loader &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DataLoader(dataset&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;test_dataset, batch_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, shuffle&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Simple CNN Model&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SimpleCNN&lt;/span&gt;(nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Module):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self, num_classes&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        super(SimpleCNN, self)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;__init__()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Sequential(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Conv2d(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;, kernel_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, padding&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;BatchNorm2d(&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ReLU(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MaxPool2d(kernel_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, stride&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Sequential(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Conv2d(&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;, kernel_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, padding&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;BatchNorm2d(&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ReLU(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MaxPool2d(kernel_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, stride&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Linear(&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;, num_classes)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;forward&lt;/span&gt;(self, x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer1(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer2(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; out&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;view(out&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fc(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; out
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Residual Block&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;conv3x3&lt;/span&gt;(in_channels, out_channels, stride&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;3x3 convolution with padding&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Conv2d(in_channels, out_channels, kernel_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, stride&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;stride, padding&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, bias&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ResidualBlock&lt;/span&gt;(nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Module):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self, in_channels, out_channels, stride&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, downsample&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        super(ResidualBlock, self)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;__init__()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;conv1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; conv3x3(in_channels, out_channels, stride)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bn1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;BatchNorm2d(out_channels)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;relu &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ReLU(inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;conv2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; conv3x3(out_channels, out_channels)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bn2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;BatchNorm2d(out_channels)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;downsample &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; downsample
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;forward&lt;/span&gt;(self, x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        residual &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; x
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;conv1(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bn1(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;relu(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;conv2(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bn2(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;downsample:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            residual &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;downsample(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; residual
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;relu(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; out
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ResNet Model&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ResNet&lt;/span&gt;(nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Module):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; __init__(self, block, layers, num_classes&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        super(ResNet, self)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;__init__()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;in_channels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;conv &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; conv3x3(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;BatchNorm2d(&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;relu &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ReLU(inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;make_layer(block, &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;, layers[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;make_layer(block, &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;, layers[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer3 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;make_layer(block, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;, layers[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;avg_pool &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;AvgPool2d(&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Linear(&lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;, num_classes)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;make_layer&lt;/span&gt;(self, block, out_channels, blocks, stride&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        downsample &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (stride &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;or&lt;/span&gt; (self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;in_channels &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; out_channels):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            downsample &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Sequential(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                conv3x3(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;in_channels, out_channels, stride),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;BatchNorm2d(out_channels)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        layers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        layers&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;in_channels, out_channels, stride, downsample))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;in_channels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; out_channels
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, blocks):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            layers&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(block(out_channels, out_channels))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Sequential(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;layers)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;forward&lt;/span&gt;(self, x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;conv(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bn(out)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;relu(out)  &lt;span style=&#34;color:#75715e&#34;&gt;# 32 x 32 x 16&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer1(out)  &lt;span style=&#34;color:#75715e&#34;&gt;# 32 x 32 x 16&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer2(out)  &lt;span style=&#34;color:#75715e&#34;&gt;# 16 x 16 x 32&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;layer3(out)  &lt;span style=&#34;color:#75715e&#34;&gt;# 8 x 8 x 64&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;avg_pool(out)  &lt;span style=&#34;color:#75715e&#34;&gt;# 1 x 1 x 64&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; out&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;view(out&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;# None x 64&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        out &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fc(out)  &lt;span style=&#34;color:#75715e&#34;&gt;# None x 10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; out
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initialize models&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;device &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;device(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cuda&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cuda&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;is_available() &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cpu&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;simple_cnn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; SimpleCNN()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to(device)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;resnet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ResNet(ResidualBlock, [&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;])&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to(device)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Loss and optimizer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;criterion &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; nn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CrossEntropyLoss()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;optimizer_simple_cnn &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;optim&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Adam(simple_cnn&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;parameters(), lr&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.001&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;optimizer_resnet &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;optim&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Adam(resnet&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;parameters(), lr&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.001&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;Resnet&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Training function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;train&lt;/span&gt;(model, optimizer, num_epochs&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;train()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; epoch &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(num_epochs):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        running_loss &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i, (images, labels) &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(train_loader):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            images, labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; images&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to(device), labels&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to(device)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;# Forward pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            outputs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; model(images)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            loss &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; criterion(outputs, labels)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;# Backward and optimize&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            optimizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zero_grad()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            loss&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;backward()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            optimizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;step()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            running_loss &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; loss&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;item()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (i &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Epoch [&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;epoch &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;num_epochs&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;], Step [&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;i &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;len(train_loader)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;], Loss: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;loss&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;item()&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.4f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Epoch [&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;epoch &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;num_epochs&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;], Loss: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;running_loss &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; len(train_loader)&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.4f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Testing function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;test&lt;/span&gt;(model):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;eval()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    correct &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    total &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;no_grad():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; images, labels &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; test_loader:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            images, labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; images&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to(device), labels&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to(device)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            outputs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; model(images)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            _, predicted &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;max(outputs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;data, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            total &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; labels&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;size(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            correct &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; (predicted &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; labels)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;item()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Accuracy of the model on the 10000 test images: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; correct &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; total&lt;span style=&#34;color:#e6db74&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.2f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Train and test SimpleCNN&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Training SimpleCNN&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;train(simple_cnn, optimizer_simple_cnn)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Testing SimpleCNN&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test(simple_cnn)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Train and test ResNet&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Training ResNet&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;train(resnet, optimizer_resnet)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Testing ResNet&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test(resnet)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Training SimpleCNN
+Epoch [1/10], Step [100/500], Loss: 1.2978
+Epoch [1/10], Step [200/500], Loss: 1.3175
+Epoch [1/10], Step [300/500], Loss: 1.1620
+Epoch [1/10], Step [400/500], Loss: 1.1292
+Epoch [1/10], Step [500/500], Loss: 1.1444
+Epoch [1/10], Loss: 1.2770
+Epoch [2/10], Step [100/500], Loss: 1.0181
+Epoch [2/10], Step [200/500], Loss: 1.0906
+Epoch [2/10], Step [300/500], Loss: 0.9453
+Epoch [2/10], Step [400/500], Loss: 1.1281
+Epoch [2/10], Step [500/500], Loss: 1.1890
+Epoch [2/10], Loss: 1.1697
+Epoch [3/10], Step [100/500], Loss: 0.9400
+Epoch [3/10], Step [200/500], Loss: 1.0746
+Epoch [3/10], Step [300/500], Loss: 1.0551
+Epoch [3/10], Step [400/500], Loss: 1.0406
+Epoch [3/10], Step [500/500], Loss: 0.9414
+Epoch [3/10], Loss: 1.1119
+Epoch [4/10], Step [100/500], Loss: 0.9787
+Epoch [4/10], Step [200/500], Loss: 1.1228
+Epoch [4/10], Step [300/500], Loss: 1.0656
+Epoch [4/10], Step [400/500], Loss: 0.8739
+Epoch [4/10], Step [500/500], Loss: 0.9911
+Epoch [4/10], Loss: 1.0867
+Epoch [5/10], Step [100/500], Loss: 1.1093
+Epoch [5/10], Step [200/500], Loss: 1.0494
+Epoch [5/10], Step [300/500], Loss: 1.1796
+Epoch [5/10], Step [400/500], Loss: 1.1727
+Epoch [5/10], Step [500/500], Loss: 0.8257
+Epoch [5/10], Loss: 1.0568
+Epoch [6/10], Step [100/500], Loss: 1.1401
+Epoch [6/10], Step [200/500], Loss: 0.9372
+Epoch [6/10], Step [300/500], Loss: 0.9893
+Epoch [6/10], Step [400/500], Loss: 0.7880
+Epoch [6/10], Step [500/500], Loss: 0.9031
+Epoch [6/10], Loss: 1.0365
+Epoch [7/10], Step [100/500], Loss: 1.2074
+Epoch [7/10], Step [200/500], Loss: 0.9227
+Epoch [7/10], Step [300/500], Loss: 1.0585
+Epoch [7/10], Step [400/500], Loss: 1.0177
+Epoch [7/10], Step [500/500], Loss: 1.0659
+Epoch [7/10], Loss: 1.0098
+Epoch [8/10], Step [100/500], Loss: 0.9883
+Epoch [8/10], Step [200/500], Loss: 0.9500
+Epoch [8/10], Step [300/500], Loss: 0.9642
+Epoch [8/10], Step [400/500], Loss: 0.8540
+Epoch [8/10], Step [500/500], Loss: 1.0021
+Epoch [8/10], Loss: 0.9926
+Epoch [9/10], Step [100/500], Loss: 0.9815
+Epoch [9/10], Step [200/500], Loss: 1.0014
+Epoch [9/10], Step [300/500], Loss: 0.9835
+Epoch [9/10], Step [400/500], Loss: 0.8745
+Epoch [9/10], Step [500/500], Loss: 0.9122
+Epoch [9/10], Loss: 0.9786
+Epoch [10/10], Step [100/500], Loss: 1.1003
+Epoch [10/10], Step [200/500], Loss: 0.9819
+Epoch [10/10], Step [300/500], Loss: 1.0853
+Epoch [10/10], Step [400/500], Loss: 1.0723
+Epoch [10/10], Step [500/500], Loss: 0.7785
+Epoch [10/10], Loss: 0.9672
+Testing SimpleCNN
+Accuracy of the model on the 10000 test images: 62.53%
+Training ResNet
+Epoch [1/10], Step [100/500], Loss: 1.1892
+Epoch [1/10], Step [200/500], Loss: 1.0114
+Epoch [1/10], Step [300/500], Loss: 1.0300
+Epoch [1/10], Step [400/500], Loss: 0.9715
+Epoch [1/10], Step [500/500], Loss: 1.0377
+Epoch [1/10], Loss: 1.0426
+Epoch [2/10], Step [100/500], Loss: 0.8975
+Epoch [2/10], Step [200/500], Loss: 0.9486
+Epoch [2/10], Step [300/500], Loss: 0.9703
+Epoch [2/10], Step [400/500], Loss: 0.8699
+Epoch [2/10], Step [500/500], Loss: 0.7683
+Epoch [2/10], Loss: 0.8947
+Epoch [3/10], Step [100/500], Loss: 0.7991
+Epoch [3/10], Step [200/500], Loss: 0.7637
+Epoch [3/10], Step [300/500], Loss: 0.8086
+Epoch [3/10], Step [400/500], Loss: 0.6720
+Epoch [3/10], Step [500/500], Loss: 0.6858
+Epoch [3/10], Loss: 0.7990
+Epoch [4/10], Step [100/500], Loss: 0.7963
+Epoch [4/10], Step [200/500], Loss: 0.7246
+Epoch [4/10], Step [300/500], Loss: 0.5814
+Epoch [4/10], Step [400/500], Loss: 0.8705
+Epoch [4/10], Step [500/500], Loss: 0.7726
+Epoch [4/10], Loss: 0.7340
+Epoch [5/10], Step [100/500], Loss: 0.7007
+Epoch [5/10], Step [200/500], Loss: 0.7134
+Epoch [5/10], Step [300/500], Loss: 0.6847
+Epoch [5/10], Step [400/500], Loss: 0.8029
+Epoch [5/10], Step [500/500], Loss: 0.6260
+Epoch [5/10], Loss: 0.6778
+Epoch [6/10], Step [100/500], Loss: 0.8832
+Epoch [6/10], Step [200/500], Loss: 0.6445
+Epoch [6/10], Step [300/500], Loss: 0.6671
+Epoch [6/10], Step [400/500], Loss: 0.4728
+Epoch [6/10], Step [500/500], Loss: 0.7115
+Epoch [6/10], Loss: 0.6414
+Epoch [7/10], Step [100/500], Loss: 0.7021
+Epoch [7/10], Step [200/500], Loss: 0.7717
+Epoch [7/10], Step [300/500], Loss: 0.4920
+Epoch [7/10], Step [400/500], Loss: 0.6622
+Epoch [7/10], Step [500/500], Loss: 0.5240
+Epoch [7/10], Loss: 0.6059
+Epoch [8/10], Step [100/500], Loss: 0.5715
+Epoch [8/10], Step [200/500], Loss: 0.5650
+Epoch [8/10], Step [300/500], Loss: 0.4841
+Epoch [8/10], Step [400/500], Loss: 0.7781
+Epoch [8/10], Step [500/500], Loss: 0.4514
+Epoch [8/10], Loss: 0.5774
+Epoch [9/10], Step [100/500], Loss: 0.4952
+Epoch [9/10], Step [200/500], Loss: 0.4070
+Epoch [9/10], Step [300/500], Loss: 0.5137
+Epoch [9/10], Step [400/500], Loss: 0.4824
+Epoch [9/10], Step [500/500], Loss: 0.5795
+Epoch [9/10], Loss: 0.5528
+Epoch [10/10], Step [100/500], Loss: 0.4072
+Epoch [10/10], Step [200/500], Loss: 0.6239
+Epoch [10/10], Step [300/500], Loss: 0.5173
+Epoch [10/10], Step [400/500], Loss: 0.4408
+Epoch [10/10], Step [500/500], Loss: 0.5978
+Epoch [10/10], Loss: 0.5323
+Testing ResNet
+Accuracy of the model on the 10000 test images: 70.57%
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;sources&#34;&gt;Sources:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Krizhevsky, A., Sutskever, I., &amp;amp; Hinton, G. E. (2012). &amp;ldquo;ImageNet classification with deep convolutional neural networks.&amp;rdquo; &lt;em&gt;Advances in Neural Information Processing Systems&lt;/em&gt;, 25, 1097-1105.&lt;/li&gt;
+&lt;li&gt;Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J., &amp;amp; Zisserman, A. (2010). &amp;ldquo;The Pascal Visual Object Classes (VOC) challenge.&amp;rdquo; &lt;em&gt;International Journal of Computer Vision&lt;/em&gt;, 88(2), 303-338.&lt;/li&gt;
+&lt;li&gt;Lin, T. Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., &amp;hellip; &amp;amp; Zitnick, C. L. (2014). &amp;ldquo;Microsoft COCO: Common objects in context.&amp;rdquo; &lt;em&gt;European Conference on Computer Vision&lt;/em&gt;, 740-755.&lt;/li&gt;
+&lt;li&gt;Glorot, X., Bordes, A., &amp;amp; Bengio, Y. (2011). &amp;ldquo;Deep sparse rectifier neural networks.&amp;rdquo; &lt;em&gt;Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics&lt;/em&gt;, 315-323.&lt;/li&gt;
+&lt;li&gt;Simonyan, K., &amp;amp; Zisserman, A. (2015). &amp;ldquo;Very deep convolutional networks for large-scale image recognition.&amp;rdquo; &lt;em&gt;International Conference on Learning Representations&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;He, K., Zhang, X., Ren, S., &amp;amp; Sun, J. (2016). &amp;ldquo;Deep residual learning for image recognition.&amp;rdquo; &lt;em&gt;Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition&lt;/em&gt;, 770-778.&lt;/li&gt;
+&lt;li&gt;Papers with Code. &amp;ldquo;ImageNet.&amp;rdquo; Retrieved from &lt;a href=&#34;https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg&#34;&gt;https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ResearchGate. &amp;ldquo;Concepts of the PASCAL Visual Object Challenge 2007.&amp;rdquo; Retrieved from &lt;a href=&#34;https://www.researchgate.net/publication/221368944/figure/fig4/AS:668838140067847@1536474847482/Concepts-of-the-PASCAL-Visual-Object-Challenge-2007-used-in-the-image-benchmark-of.png&#34;&gt;https://www.researchgate.net/publication/221368944/figure/fig4/AS:668838140067847@1536474847482/Concepts-of-the-PASCAL-Visual-Object-Challenge-2007-used-in-the-image-benchmark-of.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ResearchGate. &amp;ldquo;Sample images from the COCO dataset.&amp;rdquo; Retrieved from &lt;a href=&#34;https://www.researchgate.net/publication/344601010/figure/fig3/AS:945595862745089@1602459030487/Sample-images-from-the-COCO-dataset.png&#34;&gt;https://www.researchgate.net/publication/344601010/figure/fig3/AS:945595862745089@1602459030487/Sample-images-from-the-COCO-dataset.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;LinkedIn. &amp;ldquo;Forward Propagation.&amp;rdquo; Retrieved from &lt;a href=&#34;https://media.licdn.com/dms/image/D5612AQGNjUevxbUE_A/article-cover_image-shrink_720_1280/0/1677211887007?e=1728518400&amp;amp;v=beta&amp;amp;t=5If5-6JzeWUD_QoyivK3Q0l10oelax0NVqTdj8OIYDk&#34;&gt;https://media.licdn.com/dms/image/D5612AQGNjUevxbUE_A/article-cover_image-shrink_720_1280/0/1677211887007?e=1728518400&amp;amp;v=beta&amp;amp;t=5If5-6JzeWUD_QoyivK3Q0l10oelax0NVqTdj8OIYDk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Medium. &amp;ldquo;ReLU Function.&amp;rdquo; Retrieved from &lt;a href=&#34;https://miro.medium.com/v2/resize:fit:1400/1*XxxiA0jJvPrHEJHD4z893g.png&#34;&gt;https://miro.medium.com/v2/resize:fit:1400/1*XxxiA0jJvPrHEJHD4z893g.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Papers with Code. &amp;ldquo;VGG Net.&amp;rdquo; Retrieved from &lt;a href=&#34;https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png&#34;&gt;https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kaggle. &amp;ldquo;Overfitting.&amp;rdquo; Retrieved from &lt;a href=&#34;https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png&#34;&gt;https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AIML.com. &amp;ldquo;Vanishing and Exploding Gradient.&amp;rdquo; Retrieved from &lt;a href=&#34;https://aiml.com/wp-content/uploads/2023/11/vanishing-and-exploding-gradient-1.png&#34;&gt;https://aiml.com/wp-content/uploads/2023/11/vanishing-and-exploding-gradient-1.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub. &amp;ldquo;mAP Formula.&amp;rdquo; Retrieved from &lt;a href=&#34;https://cdn.prod.website-files.com/614c82ed388d53640613982e/64876df5c42ecf0cf93f549d_mean%20average%20precision%20formula.webp&#34;&gt;https://cdn.prod.website-files.com/614c82ed388d53640613982e/64876df5c42ecf0cf93f549d_mean%20average%20precision%20formula.webp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Quora. &amp;ldquo;Degradation Problem in Neural Networks.&amp;rdquo; Retrieved from &lt;a href=&#34;https://qph.cf2.quoracdn.net/main-qimg-e148d117f06700fbc474f425c01e3f5e-pjlq&#34;&gt;https://qph.cf2.quoracdn.net/main-qimg-e148d117f06700fbc474f425c01e3f5e-pjlq&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Medium. &amp;ldquo;Residual Block.&amp;rdquo; Retrieved from &lt;a href=&#34;https://miro.medium.com/v2/resize:fit:570/1*D0F3UitQ2l5Q0Ak-tjEdJg.png&#34;&gt;https://miro.medium.com/v2/resize:fit:570/1*D0F3UitQ2l5Q0Ak-tjEdJg.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Medium. &amp;ldquo;ResNet Architecture.&amp;rdquo; Retrieved from &lt;a href=&#34;https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C8jf92MeHZnxnbpMkz6jkQ.png&#34;&gt;https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C8jf92MeHZnxnbpMkz6jkQ.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Stack Exchange. &amp;ldquo;Bottleneck Design.&amp;rdquo; Retrieved from &lt;a href=&#34;https://i.sstatic.net/kbiIG.png&#34;&gt;https://i.sstatic.net/kbiIG.png&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Resnet Code from &lt;a href=&#34;https://gist.github.com/jiweibo/dd2d4f21fe4dcf4404c0b7b271c32afa&#34;&gt;this github gist&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Flight delay prediction and exploration in the United States</title>

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Ayush Subedi  | [Paper Review] Adam: A Method for Stochastic Optimization</title>
+	<title>Ayush Subedi  | [Paper Exploration] Adam: A Method for Stochastic Optimization</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.121.2">
 	
@@ -46,20 +46,7 @@
 	
 
 	
-	
-	
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-177424799-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-	
 	
 	
 
@@ -102,7 +89,9 @@ onload='renderMathInElement(document.body);'></script>
 		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
 	</h2>
 </div>
-<h1 class="pt-2">[Paper Review] Adam: A Method for Stochastic Optimization</h1>
+<h1 class="pt-2">[Paper Exploration] Adam: A Method for Stochastic Optimization</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">From optimization, to convex optimization, to first order optimization, to gradient descent, to accelerated gradient descent, to AdaGrad, to Adam.</h3>
 
 <div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
 	
@@ -133,15 +122,12 @@ onload='renderMathInElement(document.body);'></script>
 		href='/tags/gradient-descent'>gradient descent</a>&nbsp;&#47;
 	
 	<a class="post-taxonomy-tag text-eucalyptus-500"
-		href='/tags/stochastic-gradient-descent'>stochastic gradient descent</a>&nbsp;&#47;
-	
-	<a class="post-taxonomy-tag text-eucalyptus-500"
 		href='/tags/machine-learning'>machine learning</a>
 	
 	
 	
 </div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
-		datetime="2024-03-06">2024-03-06</time>
+		datetime="2024-03-19">2024-03-19</time>
 </div>
 
 <hr />
@@ -153,12 +139,17 @@ onload='renderMathInElement(document.body);'></script>
 
 <article>
 	<section class="mx-auto content">
-		<div class="c-rich-text"><h1 id="paper-review-adam-a-method-for-stochastic-optimization">[Paper Review] Adam: A Method for Stochastic Optimization</h1>
+		<div class="c-rich-text"><h1 id="paper-exploration-adam-a-method-for-stochastic-optimization">[Paper Exploration] Adam: A Method for Stochastic Optimization</h1>
 <blockquote>
 <p>Author: Diederik P. Kingma, Jimmy Ba</p>
 </blockquote>
 <blockquote>
 <p>Published on 2014</p>
+</blockquote>
+<iframe width="100%" height ="1024" src="https://arxiv.org/pdf/1412.6980.pdf#toolbar=0"></iframe>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>We introduce Adam, an algorithm for <strong>first-order gradient-based optimization</strong> of stochastic objective functions, based on adaptive estimates of <strong>lower-order moments</strong>. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.</p>
 </blockquote>
 <h1 id="optimization">Optimization</h1>
 <p>The goal of optimization is to minimize some function, given some constraints.</p>
@@ -166,7 +157,7 @@ onload='renderMathInElement(document.body);'></script>
 <ul>
 <li>The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem</li>
 <li>The function $f$ is the objective function</li>
-<li>A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints</li>
+<li>A vector $x$ is called optimal, of the problem, if it has the smallest objective value among all vectors that satisfy the constraints. Among all the feasible solutions (i.e., solutions that satisfy the constraints), an optimal solution is the one that achieves the best objective value (smallest for minimization problems, largest for maximization problems).</li>
 <li>$X$ is the set of inequality constraints</li>
 </ul>
 <h3 id="mathematical-ingredients">Mathematical ingredients:</h3>
@@ -297,8 +288,10 @@ $$</p>
 <li>Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.</li>
 <li>A twice differentiable univariate function is convex if $f^{&rsquo;&rsquo;}(x)&gt;=0$ for all $x \in R$</li>
 <li>To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.</li>
+<li>The Hessian matrix of a function $f(x)$ with respect to the variables $x = (x_1, x_2, \ldots, x_n)$ is given by:
+<img src="https://i.stack.imgur.com/YIJQj.png" alt=""></li>
 <li>A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.</li>
-<li><strong>Sylvester&rsquo;s criterion</strong> is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.</li>
+<li>$Hv=\lambda v$ (Remember this?)</li>
 </ul>
 <h2 id="two-steps-of-optimization">Two steps of optimization</h2>
 <p>Most optimization algorithms have two main steps:</p>
@@ -310,22 +303,200 @@ $$</p>
 <li>Make changes in that improving direction some amount, and that amount is called the step size.</li>
 </ul>
 </li>
+<li>If the function is convex, it is guaranteed to find the minimal (since local is global)</li>
 </ul>
-<h2 id="first-order-methods">First Order Methods</h2>
-<h3 id="gradient-descent">Gradient Descent</h3>
-<h3 id="accelerated-gradient-descent">Accelerated Gradient Descent</h3>
-<h3 id="stochastic-gradient-descent">Stochastic Gradient Descent</h3>
-<h3 id="adam">ADAM</h3>
+<h2 id="gradient-descent">Gradient Descent</h2>
 <ul>
-<li>Moments</li>
-<li>Update Rule</li>
-<li>Bias Correction</li>
-<li>Convergence analysis</li>
-<li>RMSProp</li>
-<li>AdaGrad</li>
+<li>Iterative optimization algorithm used to find the minimum of a function, to update the parameters of a model during training.</li>
+<li>basic idea behind gradient descent is to adjust the parameters in the direction of steepest descent (negative gradient) to minimize a cost or loss function.</li>
 </ul>
-<h2 id="second-order-methods">Second Order Methods</h2>
-<h3 id="newton-method">Newton Method</h3>
+<p><strong>Objective Function</strong> : (also called a cost or loss function) that we want to minimize. Let&rsquo;s denote the objective function as $J(θ)$, where $θ$ represents a vector of parameters that we want to optimize.</p>
+<p><strong>Initialization</strong> : Start by initializing the parameter vector θ with some arbitrary values (often with random values). This is the starting point of the optimization process.</p>
+<p><strong>Gradient Calculation</strong> : Calculate the gradient of the objective function with respect to the parameters. The gradient is a vector that points in the direction of the steepest increase in the function. Mathematically, the gradient is represented as:</p>
+<p>$(\nabla J(\theta) = \left[\frac{\partial J(\theta)}{\partial \theta_1}, \frac{\partial J(\theta)}{\partial \theta_2}, \ldots, \frac{\partial J(\theta)}{\partial \theta_n}\right])
+$</p>
+<p>Here, $∂J(θ)/∂θ_i$ represents the partial derivative of $J(θ)$ with respect to the i-th parameter $θ_i$.</p>
+<p><strong>Update Parameters</strong> : Update the parameters θ using the gradient. The update rule is as follows:</p>
+<p>$θ_{new} = θ_{old} - α * ∇J(θ_{old})$</p>
+<p>Where:</p>
+<ul>
+<li>$θ_{new}$ is the updated parameter vector.</li>
+<li>$θ_{old}$ is the current parameter vector.</li>
+<li>$α$ (alpha) is the learning rate, a hyperparameter that controls the step size or how much to move in the direction of the gradient. It&rsquo;s a small positive value typically chosen in advance.</li>
+</ul>
+<p>This step is performed iteratively until a stopping criterion is met.</p>
+<p>$\theta_{\text{ols}} = (X^T X)^{-1} X^T y$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> X <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_b <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>c_[np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)), X]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>theta_ols <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(X_b<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(X_b))<span style="color:#f92672">.</span>dot(X_b<span style="color:#f92672">.</span>T)<span style="color:#f92672">.</span>dot(y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_ols <span style="color:#f92672">=</span> theta_ols[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>slope_ols <span style="color:#f92672">=</span> theta_ols[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_ols, slope_ols
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;</span> (<span style="color:#ae81ff">3.9999999999999987</span>, <span style="color:#ae81ff">3.0000000000000004</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span>n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>theta_gd <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(n_iterations):
+</span></span><span style="display:flex;"><span>    gradients <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> X_b<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(X_b<span style="color:#f92672">.</span>dot(theta_gd) <span style="color:#f92672">-</span> y)
+</span></span><span style="display:flex;"><span>    theta_gd <span style="color:#f92672">=</span> theta_gd <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> gradients
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_gd <span style="color:#f92672">=</span> theta_gd[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>slope_gd <span style="color:#f92672">=</span> theta_gd[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_gd, slope_gd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;</span> (<span style="color:#ae81ff">4.102812626133385</span>, <span style="color:#ae81ff">2.8119438961303405</span>)
+</span></span></code></pre></div><h3 id="accelerated-gradient-descent">Accelerated Gradient Descent</h3>
+<ul>
+<li>Add momentum to the mix</li>
+<li><code>previous_gradient</code>: holds the accumulated gradient from previous iterations. It is initialized as zeros or a vector of the same shape as the gradients.</li>
+<li>keeping track of the sum of gradient</li>
+<li>Momentum might help escape local minima</li>
+</ul>
+<p><img src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*zVi4ayX9u0MQQwa90CnxVg.gif" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> X <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_b <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>c_[np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)), X]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span>n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>momentum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.9</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>theta_gd <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>previous_gradient <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(theta_gd) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(n_iterations):
+</span></span><span style="display:flex;"><span>    gradients <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> X_b<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(X_b<span style="color:#f92672">.</span>dot(theta_gd) <span style="color:#f92672">-</span> y)
+</span></span><span style="display:flex;"><span>    previous_gradient <span style="color:#f92672">=</span> momentum <span style="color:#f92672">*</span> previous_gradient <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> momentum) <span style="color:#f92672">*</span> gradients
+</span></span><span style="display:flex;"><span>    theta_gd <span style="color:#f92672">=</span> theta_gd <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> previous_gradient
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_gd <span style="color:#f92672">=</span> theta_gd[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>slope_gd <span style="color:#f92672">=</span> theta_gd[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_gd, slope_gd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;</span> (<span style="color:#ae81ff">4.209787975619119</span>, <span style="color:#ae81ff">2.619482953146455</span>)<span style="color:#960050;background-color:#1e0010">​</span>
+</span></span></code></pre></div><h3 id="adagrad">AdaGrad</h3>
+<ul>
+<li>Adaptive Gradient algorithm</li>
+<li>Adagrad adapts the learning rate of each parameter based on the historical squared gradients. It scales the learning rate inversely proportional to the square root of the sum of squared gradients accumulated over time for each parameter.</li>
+<li>Adaptive learning rate for each parameter, allowing for larger updates for infrequent parameters and smaller updates for frequent parameters.</li>
+<li>Keep track of the sum of gradient squared and uses that to adapt the gradient in different directions</li>
+<li>The more you have updated a feature already, the less you will update it in the future, thus giving a chance for the others features (for example, the sparse features) to catch up.</li>
+<li>This property allows AdaGrad to escape a saddle point much better. AdaGrad will take a straight path, whereas gradient descent (or relatedly, Momentum) takes the approach of “let me slide down the steep slope first and maybe worry about the slower direction later”. Sometimes, vanilla gradient descent might just stop at the saddle point where gradients in both directions are 0 and be perfectly content there.</li>
+<li>Can become too aggressive in reducing the learning rate, causing premature convergence.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> X <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_b <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>c_[np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)), X]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>theta_adagrad <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>G <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(theta_adagrad) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(n_iterations):
+</span></span><span style="display:flex;"><span>    gradients <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> X_b<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(X_b<span style="color:#f92672">.</span>dot(theta_adagrad) <span style="color:#f92672">-</span> y)
+</span></span><span style="display:flex;"><span>    G <span style="color:#f92672">+=</span> gradients <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    adjusted_gradients <span style="color:#f92672">=</span> gradients <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sqrt(G)
+</span></span><span style="display:flex;"><span>    theta_adagrad <span style="color:#f92672">=</span> theta_adagrad <span style="color:#f92672">-</span> adjusted_gradients
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_adagrad <span style="color:#f92672">=</span> theta_adagrad[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>slope_adagrad <span style="color:#f92672">=</span> theta_adagrad[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_adagrad, slope_adagrad
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;</span> (<span style="color:#ae81ff">3.9999984750713753</span>, <span style="color:#ae81ff">3.0000027084018033</span>)
+</span></span></code></pre></div><h3 id="rmsprop">RMSProp</h3>
+<ul>
+<li>It uses a moving average of squared gradients to normalize the learning rate for each parameter.</li>
+<li>Instead of accumulating all past squared gradients, it uses an exponentially decaying average of past squared gradients.</li>
+<li>Mitigates the overly aggressive learning rate decay problem of Adagrad by using a decaying average of past squared gradients.</li>
+<li>Adagrad accumulates all past squared gradients, which can require more memory compared to RMSProp, which uses a decaying average.</li>
+<li>RMSProp is often preferred over Adagrad due to its better stability and performance</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> X <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_b <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>c_[np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)), X]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>decay_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.8</span>
+</span></span><span style="display:flex;"><span>theta_rmsprop <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>G <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(theta_rmsprop)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(n_iterations):
+</span></span><span style="display:flex;"><span>    gradients <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> X_b<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(X_b<span style="color:#f92672">.</span>dot(theta_rmsprop) <span style="color:#f92672">-</span> y)
+</span></span><span style="display:flex;"><span>    G <span style="color:#f92672">=</span> decay_rate <span style="color:#f92672">*</span> G <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> decay_rate) <span style="color:#f92672">*</span> gradients <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    adjusted_gradients <span style="color:#f92672">=</span> gradients <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sqrt(G)
+</span></span><span style="display:flex;"><span>    theta_rmsprop <span style="color:#f92672">=</span> theta_rmsprop <span style="color:#f92672">-</span> adjusted_gradients
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_rmsprop <span style="color:#f92672">=</span> theta_rmsprop[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>slope_rmsprop <span style="color:#f92672">=</span> theta_rmsprop[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_rmsprop, slope_rmsprop
+</span></span></code></pre></div><h3 id="adam">ADAM</h3>
+<ul>
+<li>Adaptive Moment Estimation</li>
+<li>Takes the best of both worlds of Momentum and RMSProp</li>
+<li>Adam gets the speed from momentum and the ability to adapt gradients in different directions from RMSProp</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> X <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_b <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>c_[np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">1</span>)), X]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n_iterations <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>beta1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.9</span>
+</span></span><span style="display:flex;"><span>beta2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.999</span>
+</span></span><span style="display:flex;"><span>learning_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span>theta_adam <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(theta_adam)
+</span></span><span style="display:flex;"><span>v <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros_like(theta_adam)
+</span></span><span style="display:flex;"><span>t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iteration <span style="color:#f92672">in</span> range(n_iterations):
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    gradients <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> X_b<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(X_b<span style="color:#f92672">.</span>dot(theta_adam) <span style="color:#f92672">-</span> y)
+</span></span><span style="display:flex;"><span>    m <span style="color:#f92672">=</span> beta1 <span style="color:#f92672">*</span> m <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> beta1) <span style="color:#f92672">*</span> gradients
+</span></span><span style="display:flex;"><span>    v <span style="color:#f92672">=</span> beta2 <span style="color:#f92672">*</span> v <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> beta2) <span style="color:#f92672">*</span> (gradients <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    m_hat <span style="color:#f92672">=</span> m <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> beta1 <span style="color:#f92672">**</span> t)  
+</span></span><span style="display:flex;"><span>    v_hat <span style="color:#f92672">=</span> v <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> beta2 <span style="color:#f92672">**</span> t)  
+</span></span><span style="display:flex;"><span>    theta_adam <span style="color:#f92672">=</span> theta_adam <span style="color:#f92672">-</span> learning_rate <span style="color:#f92672">*</span> m_hat <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sqrt(v_hat)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_adam <span style="color:#f92672">=</span> theta_adam[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>slope_adam <span style="color:#f92672">=</span> theta_adam[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>intercept_adam, slope_adam
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;</span> (<span style="color:#ae81ff">3.4382879476383574</span>, <span style="color:#ae81ff">4.0255351076360855</span>)
+</span></span></code></pre></div><p><img src="/img/adam_.png" alt=""></p>
+<h1 id="sources">Sources:</h1>
+<ul>
+<li><a href="https://www.ruder.io/optimizing-gradient-descent/">https://www.ruder.io/optimizing-gradient-descent/</a></li>
+<li><a href="https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c">https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Gradient_descent#Momentum_or_heavy_ball_method">https://en.wikipedia.org/wiki/Gradient_descent#Momentum_or_heavy_ball_method</a></li>
+</ul>
 </div>
 	</section>
 
@@ -475,7 +646,7 @@ $$</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		1298 words in this page.
+		2451 words in this page.
 	</div>
 </div>
 
@@ -486,17 +657,17 @@ $$</p>
 <hr class="" />
 <div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
     
-    <a class="flex-grow-0" href="/posts/mega_data_science_operations_research/">
+    <a class="flex-grow-0" href="/posts/code_for_nepal_data_fellowship_2023/">
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
-        Data Science notes on Operations Research
+        Code for Nepal and DataCamp Donates: Data Fellowship 2023
     </a>
     
     
-    <a class="flex-grow-0" href="/posts/code_for_nepal_data_fellowship_2023/">
-        Code for Nepal and DataCamp Donates: Data Fellowship 2023
+    <a class="flex-grow-0" href="/posts/zero-shot-classification/">
+        [Paper Exploration] Train Once, Test Anywhere: Zero-Shot Learning for Text Classification
         <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
             height="24">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -511,7 +682,9 @@ $$</p>
 	<span class="heading pr-6 leading-loose">Related</span>
 	<span >
 		
-			<a href="/posts/mega_data_science_operations_research/">Data Science notes on Operations Research</a>&nbsp;&nbsp;&#47;&nbsp;
+			<a href="/posts/wasserstein_gan/">[Paper Exploration] Wasserstein GAN (WIP)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/yolov3/">[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</a>&nbsp;&nbsp;&#47;&nbsp;
 		
 			<a href="/posts/deterministic_optimization/">Deterministic Optimization</a>&nbsp;&nbsp;&#47;&nbsp;
 		

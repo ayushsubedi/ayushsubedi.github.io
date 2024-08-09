@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | [Paper Exploration] Deep Residual Learning for Image Recognition</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.121.2">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+		
+	<title>Ayush Subedi</title>
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://subedi.ml/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://subedi.ml/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://subedi.ml/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://subedi.ml/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">[Paper Exploration] Deep Residual Learning for Image Recognition</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">The paper introduces a novel architecture called residual networks (ResNets), which significantly improves deep neural network training by using skip connections to mitigate the vanishing gradient problem. This approach achieved state-of-the-art performance on several benchmarks, including the ImageNet dataset, and has become foundational in modern deep learning applications.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/paper-exploration'>paper-exploration</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/sota'>sota</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/gradient-descent'>gradient descent</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/machine-learning'>machine learning</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/deep-learning'>deep learning</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/resnet'>resnet</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2024-08-07">2024-08-07</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="paper-exploration-deep-residual-learning-for-image-recognition">[Paper Exploration] Deep Residual Learning for Image Recognition</h1>
+<blockquote>
+<p>Author: Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun</p>
+</blockquote>
+<blockquote>
+<p>Published on 2015</p>
+</blockquote>
+<!-- <iframe width="100%" height ="1024" src="https://arxiv.org/pdf/1412.6980.pdf#toolbar=0"></iframe> -->
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers&mdash;8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers.</p>
+</blockquote>
+<blockquote>
+<p>The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC &amp; COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.</p>
+</blockquote>
+<iframe width="100%" height ="1024" src="/pdfs/resnets.pdf#toolbar=0"></iframe>
+<h2 id="timeline">Timeline</h2>
+<br/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Historical Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            background-color: white;
+            border-left: 4px solid #512b81;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .timeline-item:nth-child(even) {
+            border-left: 4px solid #Ad5acc;
+        }
+        .timeline-item:nth-child(odd) {
+            border-left: 4px solid #0b0118;
+        }
+        .timeline-item h2 {
+            margin-top: 0;
+            color: #512b81;
+        }
+        .timeline-item p {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            .timeline-item {
+                padding: 10px;
+                border-left: none;
+                border-bottom: 4px solid #512b81;
+            }
+            .timeline-item:nth-child(even) {
+                border-bottom: 4px solid #Ad5acc;
+            }
+            .timeline-item:nth-child(odd) {
+                border-bottom: 4px solid #0b0118;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h2>1943</h2>
+            <p><strong>Artificial Neurons:</strong> Warren McCulloch and Walter Pitts propose the first mathematical model of artificial neurons, laying the foundation for neural network theory. Their work introduces the concept of a simplified model of a neuron and its computational capabilities.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>1958</h2>
+            <p><strong>Perceptron:</strong> Frank Rosenblatt develops the perceptron, a type of artificial neural network capable of learning simple patterns through supervised learning. It marks one of the first practical implementations of neural network concepts.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>1960s-1970s</h2>
+            <p><strong>Neural Network Winter:</strong> Interest in neural networks declines due to the limitations of perceptrons, including their inability to solve non-linearly separable problems. This period sees reduced funding and research in neural network technologies.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>1980</h2>
+            <p><strong>Neocognitron:</strong> Kunihiko Fukushima introduces the neocognitron, a hierarchical multilayered network designed for visual pattern recognition. It serves as a precursor to modern convolutional neural networks (CNNs).</p>
+        </div>
+        <div class="timeline-item">
+            <h2>1986</h2>
+            <p><strong>Backpropagation:</strong> David Rumelhart, Geoffrey Hinton, and Ronald Williams popularize backpropagation, an algorithm that enables the training of multilayer neural networks by efficiently calculating gradients and updating weights.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>1998</h2>
+            <p><strong>LeNet-5:</strong> Yann LeCun et al. develop LeNet-5, a convolutional neural network designed for handwritten digit recognition. It demonstrates the practical effectiveness of CNNs and their potential in image classification tasks.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2006</h2>
+            <p><strong>Deep Belief Networks:</strong> Geoffrey Hinton et al. introduce deep belief networks, a type of deep neural network trained using unsupervised learning methods. This work marks a significant advancement in the deep learning era.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2012</h2>
+            <p><strong>AlexNet:</strong> Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton win the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) with AlexNet. This deep convolutional neural network achieves a dramatic improvement in image classification performance and sparks widespread adoption of deep learning.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2014</h2>
+            <p><strong>VGGNet:</strong> Karen Simonyan and Andrew Zisserman introduce VGGNet, which further deepens CNN architectures with a consistent design. VGGNet achieves state-of-the-art performance on ImageNet and influences subsequent network designs.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2015</h2>
+            <p><strong>ResNet:</strong> Kaiming He et al. introduce Residual Networks (ResNet), a groundbreaking architecture that allows for training extremely deep networks (over 100 layers) by using residual connections to address the vanishing gradient problem.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2016</h2>
+            <p><strong>DenseNet:</strong> Gao Huang et al. introduce DenseNet, which improves gradient flow and network efficiency by connecting each layer to every other layer in a feed-forward fashion, thereby enhancing feature reuse and reducing the number of parameters.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2017</h2>
+            <p><strong>Transformer:</strong> Ashish Vaswani et al. introduce the Transformer architecture in "Attention Is All You Need," revolutionizing natural language processing by relying solely on self-attention mechanisms, leading to improved performance in various NLP tasks.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2018</h2>
+            <p><strong>BERT:</strong> Jacob Devlin et al. introduce BERT (Bidirectional Encoder Representations from Transformers), which achieves state-of-the-art results on a range of NLP tasks by pre-training deep bidirectional representations and fine-tuning on specific tasks.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2019</h2>
+            <p><strong>EfficientNet:</strong> Mingxing Tan and Quoc V. Le introduce EfficientNet, a family of models that use a compound scaling method to optimize the balance between network depth, width, and resolution, improving both efficiency and accuracy.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2020</h2>
+            <p><strong>GPT-3:</strong> OpenAI releases GPT-3 (Generative Pre-trained Transformer 3), a language model with 175 billion parameters. GPT-3 demonstrates impressive capabilities in generating coherent and contextually relevant text across diverse applications.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2021</h2>
+            <p><strong>Vision Transformer (ViT):</strong> Alexey Dosovitskiy et al. introduce Vision Transformers, applying the Transformer architecture to image recognition tasks and achieving competitive performance with traditional CNNs by leveraging self-attention mechanisms.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2022</h2>
+            <p><strong>DALL-E 2:</strong> OpenAI releases DALL-E 2, an advanced generative model capable of creating highly realistic images from textual descriptions, showcasing the power of combining transformers with generative modeling.</p>
+        </div>
+        <div class="timeline-item">
+            <h2>2023</h2>
+            <p><strong>Further Advancements:</strong> Continued research and development in neural networks, with ongoing improvements in model efficiency, interpretability, and applications across various domains, including healthcare, autonomous systems, and beyond.</p>
+        </div>
+    </div>
+</body>
+</html>
+<h2 id="glossary">Glossary</h2>
+<h3 id="imagenet">ImageNet:</h3>
+<p>A large visual database used for visual object recognition software research. It is a benchmark dataset in computer vision, consisting of millions of labeled images categorized into thousands of classes.</p>
+<p><img src="https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg" alt=""></p>
+<h3 id="pascal-and-ms-coco">PASCAL and MS COCO</h3>
+<p><strong>PASCAL Visual Object Classes (VOC):</strong></p>
+<ul>
+<li><strong>Purpose:</strong> The PASCAL VOC dataset is designed for object recognition and detection tasks.</li>
+<li><strong>Content:</strong> It contains images from various categories, such as people, animals, and vehicles. The dataset includes annotations for object classes, bounding boxes, and segmentation masks.</li>
+<li><strong>Challenges:</strong> The dataset is known for the PASCAL VOC challenges, which are annual competitions that focus on evaluating the performance of different algorithms on object detection, classification, and segmentation tasks.</li>
+<li><strong>Categories:</strong> There are 20 object classes in PASCAL VOC, such as person, bicycle, bird, cat, cow, and more.</li>
+<li><strong>Usage:</strong> It is widely used for benchmarking and training models in object detection and segmentation tasks.</li>
+</ul>
+<p><img src="https://www.researchgate.net/publication/221368944/figure/fig4/AS:668838140067847@1536474847482/Concepts-of-the-PASCAL-Visual-Object-Challenge-2007-used-in-the-image-benchmark-of.png" alt=""></p>
+<p><strong>Microsoft Common Objects in Context (COCO):</strong></p>
+<ul>
+<li><strong>Purpose:</strong> The MS COCO dataset is used for a variety of computer vision tasks, including object detection, segmentation, keypoint detection, and image captioning.</li>
+<li><strong>Content:</strong> It contains a large number of images with objects in natural and complex scenes, along with annotations for object classes, segmentation masks, keypoints (for human pose estimation), and image captions.</li>
+<li><strong>Challenges:</strong> The COCO challenges, held annually, evaluate models on tasks such as object detection, instance segmentation, and image captioning.</li>
+<li><strong>Categories:</strong> There are 80 object categories in COCO, such as person, bicycle, car, dog, bottle, and more.</li>
+<li><strong>Usage:</strong> COCO is one of the most comprehensive and widely used datasets in computer vision, known for its diversity and the complexity of its scenes. It is used for training and benchmarking models across various tasks.</li>
+</ul>
+<p><img src="https://www.researchgate.net/publication/344601010/figure/fig3/AS:945595862745089@1602459030487/Sample-images-from-the-COCO-dataset.png" alt=""></p>
+<h3 id="state-of-the-art-sota">State-of-the-Art (SOTA):</h3>
+<p>Refers to the highest level of development or the best performance achieved in a particular field at a given time.</p>
+<h3 id="vgg-nets">VGG Nets</h3>
+<p>VGG nets are a type of convolutional neural network architecture known for their simplicity and depth. Developed by the Visual Geometry Group at the University of Oxford, VGG networks consist of very small (3x3) convolution filters and are characterized by their uniform architecture. They have been widely used in image recognition tasks.</p>
+<p><img src="https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png" alt=""><br>
+*</p>
+<h3 id="degradation-problem">Degradation Problem</h3>
+<p>The degradation problem in deep learning refers to the phenomenon where adding more layers to a deep neural network leads to a higher training error and test error, contrary to what one might expect. This issue arises due to difficulties in training very deep networks.</p>
+<h3 id="overfitting">Overfitting</h3>
+<p>Overfitting occurs when a machine learning model learns the training data too well, including the noise and outliers, leading to poor performance on new, unseen data. This happens when the model is too complex relative to the amount of training data.</p>
+<p><img src="https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png" alt="Overfitting"></p>
+<h3 id="identity-mapping">Identity Mapping</h3>
+<p>Identity mapping is a technique used in neural networks, particularly in residual networks, where the input to a layer is passed directly to a subsequent layer without any transformation. This helps in addressing the degradation problem by ensuring that layers can learn identity mappings if they do not improve the objective.</p>
+<h3 id="map">mAP</h3>
+<p>mAP (mean Average Precision) is a metric used to evaluate the accuracy of object detection models. It is the mean of the average precision scores for each class, providing a single number that reflects the model&rsquo;s ability to detect objects of various classes.</p>
+<p><img src="https://cdn.prod.website-files.com/614c82ed388d53640613982e/64876df5c42ecf0cf93f549d_mean%20average%20precision%20formula.webp" alt="mAP"></p>
+<h3 id="vanishing-gradient-problem">Vanishing Gradient Problem:</h3>
+<p>A difficulty encountered during the training of deep neural networks, where the gradients of the loss function with respect to the parameters become very small, effectively preventing the weights from updating.</p>
+<p><img src="https://aiml.com/wp-content/uploads/2023/11/vanishing-and-exploding-gradient-1.png" alt=""></p>
+<h3 id="residual-block">Residual Block</h3>
+<p>A residual block is a fundamental component of residual neural networks (ResNets) designed to solve the degradation problem by allowing the network to skip one or more layers. The input to a residual block is added to the output of the block&rsquo;s layers, which helps in training very deep networks.</p>
+<h3 id="bottleneck-residual-block">Bottleneck Residual Block</h3>
+<p>A bottleneck residual block is a variation of the residual block used in deep residual networks to reduce the number of parameters and computation. It consists of three layers: a 1x1 convolution that reduces the dimensions, a 3x3 convolution, and another 1x1 convolution that restores the dimensions. This structure helps in making the network deeper while keeping the computational cost manageable.</p>
+<h3 id="transformer-block">Transformer Block</h3>
+<p>A transformer block is a key component of the transformer architecture, used extensively in natural language processing tasks. It consists of a multi-head self-attention mechanism followed by a position-wise feed-forward network. This architecture allows the model to capture complex dependencies in the data.</p>
+<p><img src="https://i.sstatic.net/eAKQu.png" alt=""></p>
+<h1 id="core-concepts">Core concepts</h1>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><strong>Objective:</strong> To address the degradation problem in deep neural networks and improve image recognition performance.</li>
+<li><strong>Degradation Problem:</strong> As the depth of neural networks increases, accuracy saturates and then degrades.</li>
+</ul>
+<p><img src="https://qph.cf2.quoracdn.net/main-qimg-e148d117f06700fbc474f425c01e3f5e-pjlq" alt=""></p>
+<h2 id="methodology">Methodology</h2>
+<h3 id="residual-learning">Residual Learning</h3>
+<ul>
+<li>Introduced the concept of residual learning to facilitate the training of deep networks.</li>
+<li><strong>Residual Block:</strong>
+<ul>
+<li>Consists of a series of layers where the input is directly added to the output of the stacked layers.</li>
+<li>Formulated as: $y = \mathcal{F}(x, {W_i}) + x$
+where $(\mathcal{F}(x, {W_i}))$ represents the residual mapping.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://miro.medium.com/v2/resize:fit:570/1*D0F3UitQ2l5Q0Ak-tjEdJg.png" alt=""></p>
+<h2 id="architecture">Architecture</h2>
+<h3 id="resnet-architecture">ResNet Architecture</h3>
+<ul>
+<li>Built networks with depths of 34, 50, 101, and 152 layers.</li>
+<li>Demonstrated significant improvements over traditional networks.</li>
+</ul>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C8jf92MeHZnxnbpMkz6jkQ.png" alt=""></p>
+<h3 id="bottleneck-design">Bottleneck Design</h3>
+<ul>
+<li>Used for deeper architectures.</li>
+<li>Consists of three layers:
+<ul>
+<li>1x1 convolutions</li>
+<li>3x3 convolutions</li>
+<li>1x1 convolutions</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.sstatic.net/kbiIG.png" alt=""></p>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<h3 id="datasets">Datasets</h3>
+<ul>
+<li>Evaluated on ImageNet, CIFAR-10, and COCO.</li>
+</ul>
+<h3 id="imagenet-results">ImageNet Results</h3>
+<ul>
+<li>Achieved top-5 error rates of 3.57% and 3.6% with 152-layer and 101-layer ResNets, respectively.</li>
+<li>ResNet-152 outperformed VGG-19 by 8.4%.</li>
+</ul>
+<h3 id="coco-detection">COCO Detection</h3>
+<ul>
+<li>Integrated with Faster R-CNN.</li>
+<li>Achieved improvements in object detection and segmentation tasks.</li>
+</ul>
+<h3 id="generalization">Generalization</h3>
+<ul>
+<li>Demonstrated that residual networks generalize well across various datasets and tasks.</li>
+</ul>
+<h2 id="insights">Insights</h2>
+<h3 id="vanishing-gradient">Vanishing Gradient</h3>
+<ul>
+<li>Residual learning mitigates the vanishing gradient problem, allowing deeper networks to be trained.</li>
+</ul>
+<h3 id="ease-of-optimization">Ease of Optimization</h3>
+<ul>
+<li>Residual networks are easier to optimize than their plain counterparts.</li>
+</ul>
+<h3 id="identity-mapping-1">Identity Mapping</h3>
+<ul>
+<li>Identity shortcuts help in retaining the essential identity mappings in the networks.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<h3 id="impact">Impact</h3>
+<ul>
+<li>Residual networks have become a standard in deep learning, influencing subsequent research and applications.</li>
+<li>Demonstrated the ability to train extremely deep networks without performance degradation.</li>
+</ul>
+<h3 id="future-work">Future Work</h3>
+<ul>
+<li>Suggested exploring the integration of residual learning with other network architectures and tasks.</li>
+</ul>
+<h2 id="supplementary-contributions">Supplementary Contributions</h2>
+<h3 id="residual-blocks-variants">Residual Blocks Variants</h3>
+<ul>
+<li>Investigated different variants of residual blocks to study their effects on performance.</li>
+</ul>
+<h3 id="training-strategies">Training Strategies</h3>
+<ul>
+<li>Discussed training strategies to efficiently train deep networks with residual blocks.</li>
+</ul>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Residual learning allows for the effective training of very deep networks.</li>
+<li>ResNets significantly improve performance across various image recognition tasks.</li>
+<li>The methodology can be generalized to other domains and applications in deep learning.</li>
+</ul>
+<h2 id="pytorch-implementation">Pytorch Implementation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torchvision
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torchvision.transforms <span style="color:#66d9ef">as</span> transforms
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> torch.utils.data <span style="color:#f92672">import</span> DataLoader
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> torch.backends <span style="color:#f92672">import</span> cudnn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cudnn<span style="color:#f92672">.</span>benchmark <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>use_cuda <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>is_available()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Image Preprocessing</span>
+</span></span><span style="display:flex;"><span>transform <span style="color:#f92672">=</span> transforms<span style="color:#f92672">.</span>Compose([
+</span></span><span style="display:flex;"><span>    transforms<span style="color:#f92672">.</span>Resize(<span style="color:#ae81ff">40</span>),
+</span></span><span style="display:flex;"><span>    transforms<span style="color:#f92672">.</span>RandomHorizontalFlip(),
+</span></span><span style="display:flex;"><span>    transforms<span style="color:#f92672">.</span>RandomCrop(<span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>    transforms<span style="color:#f92672">.</span>ToTensor()
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># CIFAR-10 Dataset</span>
+</span></span><span style="display:flex;"><span>train_dataset <span style="color:#f92672">=</span> torchvision<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>CIFAR10(root<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./data&#39;</span>, train<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, transform<span style="color:#f92672">=</span>transform, download<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>test_dataset <span style="color:#f92672">=</span> torchvision<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>CIFAR10(root<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./data&#39;</span>, train<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, transform<span style="color:#f92672">=</span>transforms<span style="color:#f92672">.</span>ToTensor())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Data Loader</span>
+</span></span><span style="display:flex;"><span>train_loader <span style="color:#f92672">=</span> DataLoader(dataset<span style="color:#f92672">=</span>train_dataset, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>test_loader <span style="color:#f92672">=</span> DataLoader(dataset<span style="color:#f92672">=</span>test_dataset, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Simple CNN Model</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SimpleCNN</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, num_classes<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>        super(SimpleCNN, self)<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>layer1 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">16</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>BatchNorm2d(<span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>ReLU(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>MaxPool2d(kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>layer2 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>Conv2d(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">32</span>, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>BatchNorm2d(<span style="color:#ae81ff">32</span>),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>ReLU(),
+</span></span><span style="display:flex;"><span>            nn<span style="color:#f92672">.</span>MaxPool2d(kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>fc <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">32</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">8</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">8</span>, num_classes)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer1(x)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer2(out)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>view(out<span style="color:#f92672">.</span>size(<span style="color:#ae81ff">0</span>), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>fc(out)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Residual Block</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">conv3x3</span>(in_channels, out_channels, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;3x3 convolution with padding&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> nn<span style="color:#f92672">.</span>Conv2d(in_channels, out_channels, kernel_size<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, stride<span style="color:#f92672">=</span>stride, padding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResidualBlock</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, in_channels, out_channels, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, downsample<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        super(ResidualBlock, self)<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>conv1 <span style="color:#f92672">=</span> conv3x3(in_channels, out_channels, stride)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bn1 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>BatchNorm2d(out_channels)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>relu <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>ReLU(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>conv2 <span style="color:#f92672">=</span> conv3x3(out_channels, out_channels)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bn2 <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>BatchNorm2d(out_channels)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>downsample <span style="color:#f92672">=</span> downsample
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
+</span></span><span style="display:flex;"><span>        residual <span style="color:#f92672">=</span> x
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>conv1(x)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>bn1(out)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>relu(out)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>conv2(out)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>bn2(out)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>downsample:
+</span></span><span style="display:flex;"><span>            residual <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>downsample(x)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">+=</span> residual
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>relu(out)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ResNet Model</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResNet</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, block, layers, num_classes<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>        super(ResNet, self)<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>in_channels <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>conv <span style="color:#f92672">=</span> conv3x3(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bn <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>BatchNorm2d(<span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>relu <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>ReLU(inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>layer1 <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>make_layer(block, <span style="color:#ae81ff">16</span>, layers[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>layer2 <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>make_layer(block, <span style="color:#ae81ff">32</span>, layers[<span style="color:#ae81ff">1</span>], <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>layer3 <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>make_layer(block, <span style="color:#ae81ff">64</span>, layers[<span style="color:#ae81ff">2</span>], <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>avg_pool <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>AvgPool2d(<span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>fc <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(<span style="color:#ae81ff">64</span>, num_classes)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_layer</span>(self, block, out_channels, blocks, stride<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        downsample <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (stride <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">or</span> (self<span style="color:#f92672">.</span>in_channels <span style="color:#f92672">!=</span> out_channels):
+</span></span><span style="display:flex;"><span>            downsample <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Sequential(
+</span></span><span style="display:flex;"><span>                conv3x3(self<span style="color:#f92672">.</span>in_channels, out_channels, stride),
+</span></span><span style="display:flex;"><span>                nn<span style="color:#f92672">.</span>BatchNorm2d(out_channels)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        layers <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        layers<span style="color:#f92672">.</span>append(block(self<span style="color:#f92672">.</span>in_channels, out_channels, stride, downsample))
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>in_channels <span style="color:#f92672">=</span> out_channels
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, blocks):
+</span></span><span style="display:flex;"><span>            layers<span style="color:#f92672">.</span>append(block(out_channels, out_channels))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> nn<span style="color:#f92672">.</span>Sequential(<span style="color:#f92672">*</span>layers)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, x):
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>conv(x)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>bn(out)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>relu(out)  <span style="color:#75715e"># 32 x 32 x 16</span>
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer1(out)  <span style="color:#75715e"># 32 x 32 x 16</span>
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer2(out)  <span style="color:#75715e"># 16 x 16 x 32</span>
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>layer3(out)  <span style="color:#75715e"># 8 x 8 x 64</span>
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>avg_pool(out)  <span style="color:#75715e"># 1 x 1 x 64</span>
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>view(out<span style="color:#f92672">.</span>size(<span style="color:#ae81ff">0</span>), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)  <span style="color:#75715e"># None x 64</span>
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>fc(out)  <span style="color:#75715e"># None x 10</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize models</span>
+</span></span><span style="display:flex;"><span>device <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#34;cuda&#34;</span> <span style="color:#66d9ef">if</span> torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>is_available() <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;cpu&#34;</span>)
+</span></span><span style="display:flex;"><span>simple_cnn <span style="color:#f92672">=</span> SimpleCNN()<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>resnet <span style="color:#f92672">=</span> ResNet(ResidualBlock, [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>])<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Loss and optimizer</span>
+</span></span><span style="display:flex;"><span>criterion <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>CrossEntropyLoss()
+</span></span><span style="display:flex;"><span>optimizer_simple_cnn <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>Adam(simple_cnn<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span><span style="color:#ae81ff">0.001</span>)
+</span></span><span style="display:flex;"><span>optimizer_resnet <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>Adam(resnet<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span><span style="color:#ae81ff">0.001</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Resnet&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Training function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train</span>(model, optimizer, num_epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>train()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(num_epochs):
+</span></span><span style="display:flex;"><span>        running_loss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i, (images, labels) <span style="color:#f92672">in</span> enumerate(train_loader):
+</span></span><span style="display:flex;"><span>            images, labels <span style="color:#f92672">=</span> images<span style="color:#f92672">.</span>to(device), labels<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Forward pass</span>
+</span></span><span style="display:flex;"><span>            outputs <span style="color:#f92672">=</span> model(images)
+</span></span><span style="display:flex;"><span>            loss <span style="color:#f92672">=</span> criterion(outputs, labels)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Backward and optimize</span>
+</span></span><span style="display:flex;"><span>            optimizer<span style="color:#f92672">.</span>zero_grad()
+</span></span><span style="display:flex;"><span>            loss<span style="color:#f92672">.</span>backward()
+</span></span><span style="display:flex;"><span>            optimizer<span style="color:#f92672">.</span>step()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            running_loss <span style="color:#f92672">+=</span> loss<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Epoch [</span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>num_epochs<span style="color:#e6db74">}</span><span style="color:#e6db74">], Step [</span><span style="color:#e6db74">{</span>i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>len(train_loader)<span style="color:#e6db74">}</span><span style="color:#e6db74">], Loss: </span><span style="color:#e6db74">{</span>loss<span style="color:#f92672">.</span>item()<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Epoch [</span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>num_epochs<span style="color:#e6db74">}</span><span style="color:#e6db74">], Loss: </span><span style="color:#e6db74">{</span>running_loss <span style="color:#f92672">/</span> len(train_loader)<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Testing function</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(model):
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span>    correct <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> images, labels <span style="color:#f92672">in</span> test_loader:
+</span></span><span style="display:flex;"><span>            images, labels <span style="color:#f92672">=</span> images<span style="color:#f92672">.</span>to(device), labels<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>            outputs <span style="color:#f92672">=</span> model(images)
+</span></span><span style="display:flex;"><span>            _, predicted <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(outputs<span style="color:#f92672">.</span>data, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            total <span style="color:#f92672">+=</span> labels<span style="color:#f92672">.</span>size(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            correct <span style="color:#f92672">+=</span> (predicted <span style="color:#f92672">==</span> labels)<span style="color:#f92672">.</span>sum()<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Accuracy of the model on the 10000 test images: </span><span style="color:#e6db74">{</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> correct <span style="color:#f92672">/</span> total<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Train and test SimpleCNN</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Training SimpleCNN&#34;</span>)
+</span></span><span style="display:flex;"><span>train(simple_cnn, optimizer_simple_cnn)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Testing SimpleCNN&#34;</span>)
+</span></span><span style="display:flex;"><span>test(simple_cnn)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Train and test ResNet</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Training ResNet&#34;</span>)
+</span></span><span style="display:flex;"><span>train(resnet, optimizer_resnet)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Testing ResNet&#34;</span>)
+</span></span><span style="display:flex;"><span>test(resnet)
+</span></span></code></pre></div><h2 id="results">Results</h2>
+<pre tabindex="0"><code>Training SimpleCNN
+Epoch [1/10], Step [100/500], Loss: 1.2978
+Epoch [1/10], Step [200/500], Loss: 1.3175
+Epoch [1/10], Step [300/500], Loss: 1.1620
+Epoch [1/10], Step [400/500], Loss: 1.1292
+Epoch [1/10], Step [500/500], Loss: 1.1444
+Epoch [1/10], Loss: 1.2770
+Epoch [2/10], Step [100/500], Loss: 1.0181
+Epoch [2/10], Step [200/500], Loss: 1.0906
+Epoch [2/10], Step [300/500], Loss: 0.9453
+Epoch [2/10], Step [400/500], Loss: 1.1281
+Epoch [2/10], Step [500/500], Loss: 1.1890
+Epoch [2/10], Loss: 1.1697
+Epoch [3/10], Step [100/500], Loss: 0.9400
+Epoch [3/10], Step [200/500], Loss: 1.0746
+Epoch [3/10], Step [300/500], Loss: 1.0551
+Epoch [3/10], Step [400/500], Loss: 1.0406
+Epoch [3/10], Step [500/500], Loss: 0.9414
+Epoch [3/10], Loss: 1.1119
+Epoch [4/10], Step [100/500], Loss: 0.9787
+Epoch [4/10], Step [200/500], Loss: 1.1228
+Epoch [4/10], Step [300/500], Loss: 1.0656
+Epoch [4/10], Step [400/500], Loss: 0.8739
+Epoch [4/10], Step [500/500], Loss: 0.9911
+Epoch [4/10], Loss: 1.0867
+Epoch [5/10], Step [100/500], Loss: 1.1093
+Epoch [5/10], Step [200/500], Loss: 1.0494
+Epoch [5/10], Step [300/500], Loss: 1.1796
+Epoch [5/10], Step [400/500], Loss: 1.1727
+Epoch [5/10], Step [500/500], Loss: 0.8257
+Epoch [5/10], Loss: 1.0568
+Epoch [6/10], Step [100/500], Loss: 1.1401
+Epoch [6/10], Step [200/500], Loss: 0.9372
+Epoch [6/10], Step [300/500], Loss: 0.9893
+Epoch [6/10], Step [400/500], Loss: 0.7880
+Epoch [6/10], Step [500/500], Loss: 0.9031
+Epoch [6/10], Loss: 1.0365
+Epoch [7/10], Step [100/500], Loss: 1.2074
+Epoch [7/10], Step [200/500], Loss: 0.9227
+Epoch [7/10], Step [300/500], Loss: 1.0585
+Epoch [7/10], Step [400/500], Loss: 1.0177
+Epoch [7/10], Step [500/500], Loss: 1.0659
+Epoch [7/10], Loss: 1.0098
+Epoch [8/10], Step [100/500], Loss: 0.9883
+Epoch [8/10], Step [200/500], Loss: 0.9500
+Epoch [8/10], Step [300/500], Loss: 0.9642
+Epoch [8/10], Step [400/500], Loss: 0.8540
+Epoch [8/10], Step [500/500], Loss: 1.0021
+Epoch [8/10], Loss: 0.9926
+Epoch [9/10], Step [100/500], Loss: 0.9815
+Epoch [9/10], Step [200/500], Loss: 1.0014
+Epoch [9/10], Step [300/500], Loss: 0.9835
+Epoch [9/10], Step [400/500], Loss: 0.8745
+Epoch [9/10], Step [500/500], Loss: 0.9122
+Epoch [9/10], Loss: 0.9786
+Epoch [10/10], Step [100/500], Loss: 1.1003
+Epoch [10/10], Step [200/500], Loss: 0.9819
+Epoch [10/10], Step [300/500], Loss: 1.0853
+Epoch [10/10], Step [400/500], Loss: 1.0723
+Epoch [10/10], Step [500/500], Loss: 0.7785
+Epoch [10/10], Loss: 0.9672
+Testing SimpleCNN
+Accuracy of the model on the 10000 test images: 62.53%
+Training ResNet
+Epoch [1/10], Step [100/500], Loss: 1.1892
+Epoch [1/10], Step [200/500], Loss: 1.0114
+Epoch [1/10], Step [300/500], Loss: 1.0300
+Epoch [1/10], Step [400/500], Loss: 0.9715
+Epoch [1/10], Step [500/500], Loss: 1.0377
+Epoch [1/10], Loss: 1.0426
+Epoch [2/10], Step [100/500], Loss: 0.8975
+Epoch [2/10], Step [200/500], Loss: 0.9486
+Epoch [2/10], Step [300/500], Loss: 0.9703
+Epoch [2/10], Step [400/500], Loss: 0.8699
+Epoch [2/10], Step [500/500], Loss: 0.7683
+Epoch [2/10], Loss: 0.8947
+Epoch [3/10], Step [100/500], Loss: 0.7991
+Epoch [3/10], Step [200/500], Loss: 0.7637
+Epoch [3/10], Step [300/500], Loss: 0.8086
+Epoch [3/10], Step [400/500], Loss: 0.6720
+Epoch [3/10], Step [500/500], Loss: 0.6858
+Epoch [3/10], Loss: 0.7990
+Epoch [4/10], Step [100/500], Loss: 0.7963
+Epoch [4/10], Step [200/500], Loss: 0.7246
+Epoch [4/10], Step [300/500], Loss: 0.5814
+Epoch [4/10], Step [400/500], Loss: 0.8705
+Epoch [4/10], Step [500/500], Loss: 0.7726
+Epoch [4/10], Loss: 0.7340
+Epoch [5/10], Step [100/500], Loss: 0.7007
+Epoch [5/10], Step [200/500], Loss: 0.7134
+Epoch [5/10], Step [300/500], Loss: 0.6847
+Epoch [5/10], Step [400/500], Loss: 0.8029
+Epoch [5/10], Step [500/500], Loss: 0.6260
+Epoch [5/10], Loss: 0.6778
+Epoch [6/10], Step [100/500], Loss: 0.8832
+Epoch [6/10], Step [200/500], Loss: 0.6445
+Epoch [6/10], Step [300/500], Loss: 0.6671
+Epoch [6/10], Step [400/500], Loss: 0.4728
+Epoch [6/10], Step [500/500], Loss: 0.7115
+Epoch [6/10], Loss: 0.6414
+Epoch [7/10], Step [100/500], Loss: 0.7021
+Epoch [7/10], Step [200/500], Loss: 0.7717
+Epoch [7/10], Step [300/500], Loss: 0.4920
+Epoch [7/10], Step [400/500], Loss: 0.6622
+Epoch [7/10], Step [500/500], Loss: 0.5240
+Epoch [7/10], Loss: 0.6059
+Epoch [8/10], Step [100/500], Loss: 0.5715
+Epoch [8/10], Step [200/500], Loss: 0.5650
+Epoch [8/10], Step [300/500], Loss: 0.4841
+Epoch [8/10], Step [400/500], Loss: 0.7781
+Epoch [8/10], Step [500/500], Loss: 0.4514
+Epoch [8/10], Loss: 0.5774
+Epoch [9/10], Step [100/500], Loss: 0.4952
+Epoch [9/10], Step [200/500], Loss: 0.4070
+Epoch [9/10], Step [300/500], Loss: 0.5137
+Epoch [9/10], Step [400/500], Loss: 0.4824
+Epoch [9/10], Step [500/500], Loss: 0.5795
+Epoch [9/10], Loss: 0.5528
+Epoch [10/10], Step [100/500], Loss: 0.4072
+Epoch [10/10], Step [200/500], Loss: 0.6239
+Epoch [10/10], Step [300/500], Loss: 0.5173
+Epoch [10/10], Step [400/500], Loss: 0.4408
+Epoch [10/10], Step [500/500], Loss: 0.5978
+Epoch [10/10], Loss: 0.5323
+Testing ResNet
+Accuracy of the model on the 10000 test images: 70.57%
+</code></pre><h1 id="sources">Sources:</h1>
+<ul>
+<li>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). &ldquo;ImageNet classification with deep convolutional neural networks.&rdquo; <em>Advances in Neural Information Processing Systems</em>, 25, 1097-1105.</li>
+<li>Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J., &amp; Zisserman, A. (2010). &ldquo;The Pascal Visual Object Classes (VOC) challenge.&rdquo; <em>International Journal of Computer Vision</em>, 88(2), 303-338.</li>
+<li>Lin, T. Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., &hellip; &amp; Zitnick, C. L. (2014). &ldquo;Microsoft COCO: Common objects in context.&rdquo; <em>European Conference on Computer Vision</em>, 740-755.</li>
+<li>Glorot, X., Bordes, A., &amp; Bengio, Y. (2011). &ldquo;Deep sparse rectifier neural networks.&rdquo; <em>Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics</em>, 315-323.</li>
+<li>Simonyan, K., &amp; Zisserman, A. (2015). &ldquo;Very deep convolutional networks for large-scale image recognition.&rdquo; <em>International Conference on Learning Representations</em>.</li>
+<li>He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). &ldquo;Deep residual learning for image recognition.&rdquo; <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>, 770-778.</li>
+<li>Papers with Code. &ldquo;ImageNet.&rdquo; Retrieved from <a href="https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg">https://production-media.paperswithcode.com/datasets/ImageNet-0000000008-f2e87edd_Y0fT5zg.jpg</a></li>
+<li>ResearchGate. &ldquo;Concepts of the PASCAL Visual Object Challenge 2007.&rdquo; Retrieved from <a href="https://www.researchgate.net/publication/221368944/figure/fig4/AS:668838140067847@1536474847482/Concepts-of-the-PASCAL-Visual-Object-Challenge-2007-used-in-the-image-benchmark-of.png">https://www.researchgate.net/publication/221368944/figure/fig4/AS:668838140067847@1536474847482/Concepts-of-the-PASCAL-Visual-Object-Challenge-2007-used-in-the-image-benchmark-of.png</a></li>
+<li>ResearchGate. &ldquo;Sample images from the COCO dataset.&rdquo; Retrieved from <a href="https://www.researchgate.net/publication/344601010/figure/fig3/AS:945595862745089@1602459030487/Sample-images-from-the-COCO-dataset.png">https://www.researchgate.net/publication/344601010/figure/fig3/AS:945595862745089@1602459030487/Sample-images-from-the-COCO-dataset.png</a></li>
+<li>LinkedIn. &ldquo;Forward Propagation.&rdquo; Retrieved from <a href="https://media.licdn.com/dms/image/D5612AQGNjUevxbUE_A/article-cover_image-shrink_720_1280/0/1677211887007?e=1728518400&amp;v=beta&amp;t=5If5-6JzeWUD_QoyivK3Q0l10oelax0NVqTdj8OIYDk">https://media.licdn.com/dms/image/D5612AQGNjUevxbUE_A/article-cover_image-shrink_720_1280/0/1677211887007?e=1728518400&amp;v=beta&amp;t=5If5-6JzeWUD_QoyivK3Q0l10oelax0NVqTdj8OIYDk</a></li>
+<li>Medium. &ldquo;ReLU Function.&rdquo; Retrieved from <a href="https://miro.medium.com/v2/resize:fit:1400/1*XxxiA0jJvPrHEJHD4z893g.png">https://miro.medium.com/v2/resize:fit:1400/1*XxxiA0jJvPrHEJHD4z893g.png</a></li>
+<li>Papers with Code. &ldquo;VGG Net.&rdquo; Retrieved from <a href="https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png">https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png</a></li>
+<li>Kaggle. &ldquo;Overfitting.&rdquo; Retrieved from <a href="https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png">https://storage.googleapis.com/kaggle-media/learn/images/eP0gppr.png</a></li>
+<li>AIML.com. &ldquo;Vanishing and Exploding Gradient.&rdquo; Retrieved from <a href="https://aiml.com/wp-content/uploads/2023/11/vanishing-and-exploding-gradient-1.png">https://aiml.com/wp-content/uploads/2023/11/vanishing-and-exploding-gradient-1.png</a></li>
+<li>GitHub. &ldquo;mAP Formula.&rdquo; Retrieved from <a href="https://cdn.prod.website-files.com/614c82ed388d53640613982e/64876df5c42ecf0cf93f549d_mean%20average%20precision%20formula.webp">https://cdn.prod.website-files.com/614c82ed388d53640613982e/64876df5c42ecf0cf93f549d_mean%20average%20precision%20formula.webp</a></li>
+<li>Quora. &ldquo;Degradation Problem in Neural Networks.&rdquo; Retrieved from <a href="https://qph.cf2.quoracdn.net/main-qimg-e148d117f06700fbc474f425c01e3f5e-pjlq">https://qph.cf2.quoracdn.net/main-qimg-e148d117f06700fbc474f425c01e3f5e-pjlq</a></li>
+<li>Medium. &ldquo;Residual Block.&rdquo; Retrieved from <a href="https://miro.medium.com/v2/resize:fit:570/1*D0F3UitQ2l5Q0Ak-tjEdJg.png">https://miro.medium.com/v2/resize:fit:570/1*D0F3UitQ2l5Q0Ak-tjEdJg.png</a></li>
+<li>Medium. &ldquo;ResNet Architecture.&rdquo; Retrieved from <a href="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C8jf92MeHZnxnbpMkz6jkQ.png">https://miro.medium.com/v2/resize:fit:1400/format:webp/1*C8jf92MeHZnxnbpMkz6jkQ.png</a></li>
+<li>Stack Exchange. &ldquo;Bottleneck Design.&rdquo; Retrieved from <a href="https://i.sstatic.net/kbiIG.png">https://i.sstatic.net/kbiIG.png</a></li>
+<li>Resnet Code from <a href="https://gist.github.com/jiweibo/dd2d4f21fe4dcf4404c0b7b271c32afa">this github gist</a></li>
+</ul>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		3399 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/zero-shot-classification/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        [Paper Exploration] Train Once, Test Anywhere: Zero-Shot Learning for Text Classification
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/adam/">[Paper Exploration] Adam: A Method for Stochastic Optimization</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/wasserstein_gan/">[Paper Exploration] Wasserstein GAN (WIP)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/yolov3/">[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>

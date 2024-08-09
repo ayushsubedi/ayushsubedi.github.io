@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gan on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/gan/</link>
+    <description>Recent content in gan on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 19 Jun 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/gan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Paper Exploration] Wasserstein GAN (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/wasserstein_gan/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/wasserstein_gan/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-wasserstein-gan&#34;&gt;[Paper Exploration] Wasserstein GAN&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Martin Arjovsky, Soumith Chintala and L´eon Bottou&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2017&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1701.07875v3#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/yolov3/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/yolov3/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-yolov3-an-incremental-improvementwip&#34;&gt;[Paper Exploration] Yolov3: An Incremental Improvement(WIP)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Joseph Redmon, Ali Farhadi&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2018&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1804.02767#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

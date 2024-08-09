@@ -6,23 +6,28 @@
     <description>Recent content in calculus on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/calculus/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>[Paper Review] Adam: A Method for Stochastic Optimization</title>
+      <title>[Paper Exploration] Adam: A Method for Stochastic Optimization</title>
       <link>https://ayushsubedi.github.io/posts/adam/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/adam/</guid>
-      <description>&lt;h1 id=&#34;paper-review-adam-a-method-for-stochastic-optimization&#34;&gt;[Paper Review] Adam: A Method for Stochastic Optimization&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;paper-exploration-adam-a-method-for-stochastic-optimization&#34;&gt;[Paper Exploration] Adam: A Method for Stochastic Optimization&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Author: Diederik P. Kingma, Jimmy Ba&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Published on 2014&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1412.6980.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We introduce Adam, an algorithm for &lt;strong&gt;first-order gradient-based optimization&lt;/strong&gt; of stochastic objective functions, based on adaptive estimates of &lt;strong&gt;lower-order moments&lt;/strong&gt;. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;optimization&#34;&gt;Optimization&lt;/h1&gt;
 &lt;p&gt;The goal of optimization is to minimize some function, given some constraints.&lt;/p&gt;
@@ -30,7 +35,7 @@
 &lt;ul&gt;
 &lt;li&gt;The vector $x = (x_1, . . . , x_n)$ is the optimization variable (or decision variable) of the problem&lt;/li&gt;
 &lt;li&gt;The function $f$ is the objective function&lt;/li&gt;
-&lt;li&gt;A vector $x$ is called optimal, or a solution (not optimal solution) of the problem, if it has the smallest objective value among all vectors that satisfy the constraints&lt;/li&gt;
+&lt;li&gt;A vector $x$ is called optimal, of the problem, if it has the smallest objective value among all vectors that satisfy the constraints. Among all the feasible solutions (i.e., solutions that satisfy the constraints), an optimal solution is the one that achieves the best objective value (smallest for minimization problems, largest for maximization problems).&lt;/li&gt;
 &lt;li&gt;$X$ is the set of inequality constraints&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;mathematical-ingredients&#34;&gt;Mathematical ingredients:&lt;/h3&gt;
@@ -161,8 +166,10 @@ $$&lt;/p&gt;
 &lt;li&gt;Linear programs (LPs) can be seen as a special case of convex optimization problems. In an LP, the objective function and constraints are linear, which means that the feasible region defined by the constraints is a convex set. As a result, the optimal solution to an LP is guaranteed to be at a vertex (corner) of the feasible region, which makes it a convex optimization problem.&lt;/li&gt;
 &lt;li&gt;A twice differentiable univariate function is convex if $f^{&amp;rsquo;&amp;rsquo;}(x)&amp;gt;=0$ for all $x \in R$&lt;/li&gt;
 &lt;li&gt;To generalize, a twice differentiable function is convex if and only if the Hessian matrix is positive semi definite.&lt;/li&gt;
+&lt;li&gt;The Hessian matrix of a function $f(x)$ with respect to the variables $x = (x_1, x_2, \ldots, x_n)$ is given by:
+&lt;img src=&#34;https://i.stack.imgur.com/YIJQj.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;li&gt;A positive semi-definite (PSD) matrix is a matrix that is symmetric and has non-negative eigenvalues. In the context of a Hessian matrix, it represents the second-order partial derivatives of a multivariate function and reflects the curvature of the function. If the Hessian is PSD, it indicates that the function is locally convex, meaning that it has a minimum value in the vicinity of that point. On the other hand, if the Hessian is not PSD, the function may have a saddle point or be locally non-convex. The PSD property of a Hessian matrix is important in optimization, as it guarantees the existence of a minimum value for the function.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sylvester&amp;rsquo;s criterion&lt;/strong&gt; is a method for determining if a matrix is positive definite or positive semi-definite. The criterion states that a real symmetric matrix is positive definite if and only if all of its leading principal minors (i.e. determinants of the submatrices formed by taking the first few rows and columns of the matrix) are positive. If all the leading principal minors are non-negative, then the matrix is positive semi-definite.&lt;/li&gt;
+&lt;li&gt;$Hv=\lambda v$ (Remember this?)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;two-steps-of-optimization&#34;&gt;Two steps of optimization&lt;/h2&gt;
 &lt;p&gt;Most optimization algorithms have two main steps:&lt;/p&gt;
@@ -174,22 +181,240 @@ $$&lt;/p&gt;
 &lt;li&gt;Make changes in that improving direction some amount, and that amount is called the step size.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;If the function is convex, it is guaranteed to find the minimal (since local is global)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;first-order-methods&#34;&gt;First Order Methods&lt;/h2&gt;
-&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
-&lt;h3 id=&#34;accelerated-gradient-descent&#34;&gt;Accelerated Gradient Descent&lt;/h3&gt;
-&lt;h3 id=&#34;stochastic-gradient-descent&#34;&gt;Stochastic Gradient Descent&lt;/h3&gt;
-&lt;h3 id=&#34;adam&#34;&gt;ADAM&lt;/h3&gt;
+&lt;h2 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Moments&lt;/li&gt;
-&lt;li&gt;Update Rule&lt;/li&gt;
-&lt;li&gt;Bias Correction&lt;/li&gt;
-&lt;li&gt;Convergence analysis&lt;/li&gt;
-&lt;li&gt;RMSProp&lt;/li&gt;
-&lt;li&gt;AdaGrad&lt;/li&gt;
+&lt;li&gt;Iterative optimization algorithm used to find the minimum of a function, to update the parameters of a model during training.&lt;/li&gt;
+&lt;li&gt;basic idea behind gradient descent is to adjust the parameters in the direction of steepest descent (negative gradient) to minimize a cost or loss function.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;second-order-methods&#34;&gt;Second Order Methods&lt;/h2&gt;
-&lt;h3 id=&#34;newton-method&#34;&gt;Newton Method&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Objective Function&lt;/strong&gt; : (also called a cost or loss function) that we want to minimize. Let&amp;rsquo;s denote the objective function as $J(θ)$, where $θ$ represents a vector of parameters that we want to optimize.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Initialization&lt;/strong&gt; : Start by initializing the parameter vector θ with some arbitrary values (often with random values). This is the starting point of the optimization process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gradient Calculation&lt;/strong&gt; : Calculate the gradient of the objective function with respect to the parameters. The gradient is a vector that points in the direction of the steepest increase in the function. Mathematically, the gradient is represented as:&lt;/p&gt;
+&lt;p&gt;$(\nabla J(\theta) = \left[\frac{\partial J(\theta)}{\partial \theta_1}, \frac{\partial J(\theta)}{\partial \theta_2}, \ldots, \frac{\partial J(\theta)}{\partial \theta_n}\right])
+$&lt;/p&gt;
+&lt;p&gt;Here, $∂J(θ)/∂θ_i$ represents the partial derivative of $J(θ)$ with respect to the i-th parameter $θ_i$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update Parameters&lt;/strong&gt; : Update the parameters θ using the gradient. The update rule is as follows:&lt;/p&gt;
+&lt;p&gt;$θ_{new} = θ_{old} - α * ∇J(θ_{old})$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$θ_{new}$ is the updated parameter vector.&lt;/li&gt;
+&lt;li&gt;$θ_{old}$ is the current parameter vector.&lt;/li&gt;
+&lt;li&gt;$α$ (alpha) is the learning rate, a hyperparameter that controls the step size or how much to move in the direction of the gradient. It&amp;rsquo;s a small positive value typically chosen in advance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This step is performed iteratively until a stopping criterion is met.&lt;/p&gt;
+&lt;p&gt;$\theta_{\text{ols}} = (X^T X)^{-1} X^T y$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X_b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;c_[np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)), X]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta_ols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;linalg&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;inv(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b))&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_ols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_ols[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slope_ols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_ols[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_ols, slope_ols
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;3.9999999999999987&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3.0000000000000004&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.01&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n_iterations &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(n_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(theta_gd) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_gd &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradients
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_gd[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slope_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_gd[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_gd, slope_gd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;4.102812626133385&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2.8119438961303405&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;accelerated-gradient-descent&#34;&gt;Accelerated Gradient Descent&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add momentum to the mix&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;previous_gradient&lt;/code&gt;: holds the accumulated gradient from previous iterations. It is initialized as zeros or a vector of the same shape as the gradients.&lt;/li&gt;
+&lt;li&gt;keeping track of the sum of gradient&lt;/li&gt;
+&lt;li&gt;Momentum might help escape local minima&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:2000/format:webp/1*zVi4ayX9u0MQQwa90CnxVg.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X_b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;c_[np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)), X]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.01&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n_iterations &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;momentum &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;previous_gradient &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros_like(theta_gd) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(n_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(theta_gd) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    previous_gradient &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; momentum &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; previous_gradient &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; momentum) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradients
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_gd &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; previous_gradient
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_gd[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slope_gd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_gd[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_gd, slope_gd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;4.209787975619119&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2.619482953146455&lt;/span&gt;)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;adagrad&#34;&gt;AdaGrad&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Adaptive Gradient algorithm&lt;/li&gt;
+&lt;li&gt;Adagrad adapts the learning rate of each parameter based on the historical squared gradients. It scales the learning rate inversely proportional to the square root of the sum of squared gradients accumulated over time for each parameter.&lt;/li&gt;
+&lt;li&gt;Adaptive learning rate for each parameter, allowing for larger updates for infrequent parameters and smaller updates for frequent parameters.&lt;/li&gt;
+&lt;li&gt;Keep track of the sum of gradient squared and uses that to adapt the gradient in different directions&lt;/li&gt;
+&lt;li&gt;The more you have updated a feature already, the less you will update it in the future, thus giving a chance for the others features (for example, the sparse features) to catch up.&lt;/li&gt;
+&lt;li&gt;This property allows AdaGrad to escape a saddle point much better. AdaGrad will take a straight path, whereas gradient descent (or relatedly, Momentum) takes the approach of “let me slide down the steep slope first and maybe worry about the slower direction later”. Sometimes, vanilla gradient descent might just stop at the saddle point where gradients in both directions are 0 and be perfectly content there.&lt;/li&gt;
+&lt;li&gt;Can become too aggressive in reducing the learning rate, causing premature convergence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X_b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;c_[np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)), X]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n_iterations &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta_adagrad &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;G &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros_like(theta_adagrad) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(n_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(theta_adagrad) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    G &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; gradients &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    adjusted_gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gradients &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sqrt(G)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta_adagrad &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_adagrad &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; adjusted_gradients
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_adagrad &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_adagrad[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slope_adagrad &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_adagrad[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_adagrad, slope_adagrad
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;3.9999984750713753&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3.0000027084018033&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rmsprop&#34;&gt;RMSProp&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It uses a moving average of squared gradients to normalize the learning rate for each parameter.&lt;/li&gt;
+&lt;li&gt;Instead of accumulating all past squared gradients, it uses an exponentially decaying average of past squared gradients.&lt;/li&gt;
+&lt;li&gt;Mitigates the overly aggressive learning rate decay problem of Adagrad by using a decaying average of past squared gradients.&lt;/li&gt;
+&lt;li&gt;Adagrad accumulates all past squared gradients, which can require more memory compared to RMSProp, which uses a decaying average.&lt;/li&gt;
+&lt;li&gt;RMSProp is often preferred over Adagrad due to its better stability and performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X_b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;c_[np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)), X]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n_iterations &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;decay_rate &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta_rmsprop &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;G &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros_like(theta_rmsprop)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(n_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(theta_rmsprop) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    G &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; decay_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; G &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; decay_rate) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradients &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    adjusted_gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; gradients &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sqrt(G)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta_rmsprop &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_rmsprop &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; adjusted_gradients
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_rmsprop &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_rmsprop[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slope_rmsprop &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_rmsprop[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_rmsprop, slope_rmsprop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;adam&#34;&gt;ADAM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Adaptive Moment Estimation&lt;/li&gt;
+&lt;li&gt;Takes the best of both worlds of Momentum and RMSProp&lt;/li&gt;
+&lt;li&gt;Adam gets the speed from momentum and the ability to adapt gradients in different directions from RMSProp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand(&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X_b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;c_[np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)), X]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n_iterations &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;beta1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;beta2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.999&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.01&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta_adam &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randn(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;m &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros_like(theta_adam)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;v &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros_like(theta_adam)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; iteration &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(n_iterations):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    t &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    gradients &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;T&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(X_b&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(theta_adam) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    m &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; beta1 &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; beta1) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; gradients
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    v &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; beta2 &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; v &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; beta2) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; (gradients &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    m_hat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; beta1 &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; t)  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    v_hat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; v &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; beta2 &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; t)  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    theta_adam &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_adam &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; learning_rate &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; m_hat &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sqrt(v_hat)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_adam &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_adam[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;slope_adam &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; theta_adam[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;intercept_adam, slope_adam
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;3.4382879476383574&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4.0255351076360855&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/adam_.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;sources&#34;&gt;Sources:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ruder.io/optimizing-gradient-descent/&#34;&gt;https://www.ruder.io/optimizing-gradient-descent/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c&#34;&gt;https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Gradient_descent#Momentum_or_heavy_ball_method&#34;&gt;https://en.wikipedia.org/wiki/Gradient_descent#Momentum_or_heavy_ball_method&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Paper Exploration] Wasserstein GAN (WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/wasserstein_gan/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/wasserstein_gan/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-wasserstein-gan&#34;&gt;[Paper Exploration] Wasserstein GAN&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Martin Arjovsky, Soumith Chintala and L´eon Bottou&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2017&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1701.07875v3#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</title>
+      <link>https://ayushsubedi.github.io/posts/yolov3/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/yolov3/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-yolov3-an-incremental-improvementwip&#34;&gt;[Paper Exploration] Yolov3: An Incremental Improvement(WIP)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Joseph Redmon, Ali Farhadi&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2018&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1804.02767#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

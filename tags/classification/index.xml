@@ -6,10 +6,123 @@
     <description>Recent content in classification on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/classification/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Paper Exploration] Train Once, Test Anywhere: Zero-Shot Learning for Text Classification</title>
+      <link>https://ayushsubedi.github.io/posts/zero-shot-classification/</link>
+      <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/zero-shot-classification/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-train-once-test-anywhere-zero-shot-learning-for-text-classification&#34;&gt;[Paper Exploration] Train Once, Test Anywhere: Zero-Shot Learning for Text Classification&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Author: Pushpankar Kumar Pushp, Muktabh Mayank Srivastava&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Published on 2017&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://arxiv.org/pdf/1712.05972#toolbar=0&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Zero-shot Learners are models capable of predicting unseen classes. In this work, we propose a Zero-shot Learning approach for text categorization. Our method involves training model on a large corpus of sentences to learn the relationship between a sentence and embedding of sentence&amp;rsquo;s tags. Learning such relationship makes the model generalize to unseen sentences, tags, and even new datasets provided they can be put into same embedding space. The model learns to predict whether a given sentence is related to a tag or not; unlike other classifiers that learn to classify the sentence as one of the possible classes. We propose three different neural networks for the task and report their accuracy on the test set of the dataset used for training them as well as two other standard datasets for which no retraining was done. We show that our models generalize well across new unseen classes in both cases. Although the models do not achieve the accuracy level of the state of the art supervised models, yet it evidently is a step forward towards general intelligence in natural language processing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In this work, we introduce techniques and models that can be used for zero-shot classification in text. We show that our models can get better than random classification accuracies on datasets without seeing even one example. We can say that this technique learns the concept of relatedness between a sentence and a word that can be extended beyond datasets. That said, the levels of accuracy leave a lot of scope for future work.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;glossary&#34;&gt;Glossary&lt;/h1&gt;
+&lt;h2 id=&#34;text-classification&#34;&gt;Text Classification&lt;/h2&gt;
+&lt;p&gt;The process of assigning predefined categories or labels to text documents based on their content. Common applications include sentiment analysis, spam detection, and topic categorization.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:920/1*CS-OYdiRLCBMBiOpEURy0g.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;zero-shot-learning&#34;&gt;Zero-Shot Learning&lt;/h2&gt;
+&lt;p&gt;A machine learning paradigm where a model is trained on certain tasks and then applied to new, unseen tasks without additional training. It leverages generalizable knowledge to perform well on tasks it has not explicitly encountered during training. (an instance og transfer learning)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; transformers &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pipeline
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pipe &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pipeline(model&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;facebook/bart-large-mnli&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pipe(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;I have a problem with my iphone that needs to be resolved asap!&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    candidate_labels&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;urgent&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;not urgent&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;phone&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;tablet&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;computer&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;sequence&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;I have a problem with my iphone that needs to be resolved asap!!&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;labels&amp;#39;&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;urgent&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;phone&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;computer&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;not urgent&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;tablet&amp;#39;&lt;/span&gt;], &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;scores&amp;#39;&lt;/span&gt;: [&lt;span style=&#34;color:#ae81ff&#34;&gt;0.504&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.479&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.013&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.003&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0.002&lt;/span&gt;]}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pre-trained-language-model&#34;&gt;Pre-trained Language Model&lt;/h2&gt;
+&lt;p&gt;A language model that has been previously trained on a large corpus of text data. Examples include BERT, GPT, and RoBERTa. These models capture rich linguistic information and can be fine-tuned for specific tasks.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.baeldung.com/wp-content/uploads/sites/4/2024/01/llm_tree-scaled.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;embedding&#34;&gt;Embedding&lt;/h2&gt;
+&lt;p&gt;A dense vector representation of text (words, sentences, documents) where semantically similar texts are represented by similar vectors. Embeddings are obtained using models like Word2Vec, GloVe, or BERT.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://causewriter.ai/wp-content/uploads/2023/08/image-2-1024x483.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;contextual-embeddings&#34;&gt;Contextual Embeddings&lt;/h2&gt;
+&lt;p&gt;Embeddings that capture the meaning of a word based on its context within a sentence. Unlike static embeddings (e.g., Word2Vec), contextual embeddings vary depending on the surrounding text.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ai.stanford.edu/blog/assets/img/posts/2020-03-24-contextual/contextual_mouse_transparent_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;similarity-function&#34;&gt;Similarity Function&lt;/h2&gt;
+&lt;p&gt;A function that measures the similarity between two vectors (e.g., text embeddings). Common similarity functions include cosine similarity, Euclidean distance, and dot product.&lt;/p&gt;
+&lt;h2 id=&#34;cosine-similarity&#34;&gt;Cosine Similarity&lt;/h2&gt;
+&lt;p&gt;A measure of similarity between two non-zero vectors that calculates the cosine of the angle between them. It is defined as:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LfW66-WsYkFqWc4XYJbEJg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;cross-entropy-loss&#34;&gt;Cross-Entropy Loss&lt;/h2&gt;
+&lt;p&gt;A loss function used for classification tasks. It measures the performance of a classification model whose output is a probability value between 0 and 1.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;back-to-paper&#34;&gt;Back to Paper&lt;/h1&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Addresses limitations of traditional text classification models requiring large annotated datasets for each new task.&lt;/li&gt;
+&lt;li&gt;Zero-shot learning aims to eliminate the need for task-specific training by leveraging generalizable knowledge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;proposed-approach&#34;&gt;Proposed Approach&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduces a zero-shot text classification method using pre-trained language models to classify text without task-specific fine-tuning.&lt;/li&gt;
+&lt;li&gt;Model incorporates task descriptions (in natural language) along with input text to predict the correct class.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Problem Definition&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Given a set of classes  $C$ and a text input $x$, assign $x$ to one of the classes in $C$ without having seen examples from $C$ during training.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Model Architecture&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use a pre-trained language model  $\phi$ (e.g., BERT) to obtain contextual embeddings.&lt;/li&gt;
+&lt;li&gt;For a text input $x$, the embedding is denoted as $\mathbf{h}_x = \phi(x)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Task Descriptions&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each class $ c \in C $ is associated with a natural language description $d_c$.&lt;/li&gt;
+&lt;li&gt;The description $d_c$ is also embedded using the same pre-trained model: $\mathbf{h}_{d_c} = \phi(d_c)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Classification is based on the similarity between the embeddings of the input text $x$ and each class description $d_c$.&lt;/li&gt;
+&lt;li&gt;A similarity function measures this similarity. Common choices include cosine similarity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Prediction&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The predicted class $\hat{c}$ for an input $x$ is the one with the highest similarity score:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Training&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The model learns to produce embeddings that capture the semantic content of both inputs and class descriptions.&lt;/li&gt;
+&lt;li&gt;Training objective can be a standard classification loss, such as cross-entropy, adapted to use the similarity scores&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;experiments-and-results&#34;&gt;Experiments and Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Evaluated on several text classification benchmarks, comparing zero-shot performance with traditional supervised learning models.&lt;/li&gt;
+&lt;li&gt;Metrics: accuracy, precision, recall, F1-score.&lt;/li&gt;
+&lt;li&gt;Results show competitive performance, sometimes outperforming supervised models, indicating generalization capability across tasks and domains.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;advantages&#34;&gt;Advantages&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduces the need for large annotated datasets for each specific task.&lt;/li&gt;
+&lt;li&gt;Enables rapid deployment and adaptation to new tasks without additional training.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;limitations-and-future-work&#34;&gt;Limitations and Future Work&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Dependency on the quality of task descriptions.&lt;/li&gt;
+&lt;li&gt;Potential reduced performance in highly specialized tasks.&lt;/li&gt;
+&lt;li&gt;Future research includes improving task descriptions and exploring zero-shot learning for other NLP tasks.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Birds, Plane, Superman</title>

@@ -6,10 +6,100 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://ayushsubedi.github.io/tags/deep-learning/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradient descent</title>
+      <link>https://ayushsubedi.github.io/tags/gradient-descent/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/gradient-descent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>resnet</title>
+      <link>https://ayushsubedi.github.io/tags/resnet/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/resnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sota</title>
+      <link>https://ayushsubedi.github.io/tags/sota/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/sota/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classification</title>
+      <link>https://ayushsubedi.github.io/tags/classification/</link>
+      <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nlp</title>
+      <link>https://ayushsubedi.github.io/tags/nlp/</link>
+      <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zero-shot</title>
+      <link>https://ayushsubedi.github.io/tags/zero-shot/</link>
+      <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/zero-shot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>calculus</title>
+      <link>https://ayushsubedi.github.io/tags/calculus/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>https://ayushsubedi.github.io/tags/optimization/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>careerdevelopment</title>
@@ -129,60 +219,6 @@
     </item>
     
     <item>
-      <title>calculus</title>
-      <link>https://ayushsubedi.github.io/tags/calculus/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/calculus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gradient descent</title>
-      <link>https://ayushsubedi.github.io/tags/gradient-descent/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/gradient-descent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine-learning</title>
-      <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>optimization</title>
-      <link>https://ayushsubedi.github.io/tags/optimization/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stochastic gradient descent</title>
-      <link>https://ayushsubedi.github.io/tags/stochastic-gradient-descent/</link>
-      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/stochastic-gradient-descent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>simulation</title>
-      <link>https://ayushsubedi.github.io/tags/simulation/</link>
-      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/simulation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cart</title>
       <link>https://ayushsubedi.github.io/tags/cart/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
@@ -233,15 +269,6 @@
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/smote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wip</title>
-      <link>https://ayushsubedi.github.io/tags/wip/</link>
-      <pubDate>Tue, 02 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/wip/</guid>
       <description></description>
     </item>
     
@@ -534,6 +561,15 @@
     </item>
     
     <item>
+      <title>gan</title>
+      <link>https://ayushsubedi.github.io/tags/gan/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/gan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>algorithmic-trading</title>
       <link>https://ayushsubedi.github.io/tags/algorithmic-trading/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
@@ -818,15 +854,6 @@
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/adaboost/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>https://ayushsubedi.github.io/tags/deep-learning/</link>
-      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/deep-learning/</guid>
       <description></description>
     </item>
     
@@ -1286,15 +1313,6 @@
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/maps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>classification</title>
-      <link>https://ayushsubedi.github.io/tags/classification/</link>
-      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/classification/</guid>
       <description></description>
     </item>
     
