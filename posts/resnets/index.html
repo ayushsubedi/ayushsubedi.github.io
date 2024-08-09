@@ -745,7 +745,167 @@ Epoch [10/10], Step [500/500], Loss: 0.5978
 Epoch [10/10], Loss: 0.5323
 Testing ResNet
 Accuracy of the model on the 10000 test images: 70.57%
-</code></pre><h1 id="sources">Sources:</h1>
+</code></pre><hr>
+<p><strong>1. What is the primary motivation behind the development of ResNet?</strong></p>
+<ul>
+<li>a) To improve the computational efficiency of CNNs</li>
+<li>b) <strong>To address the problem of vanishing gradients in deep networks</strong> (Answer)</li>
+<li>c) To introduce new types of activation functions</li>
+<li>d) To reduce the memory footprint of neural networks</li>
+</ul>
+<hr>
+<p><strong>2. What is a &ldquo;residual block&rdquo; in the context of ResNet?</strong></p>
+<ul>
+<li>a) A standard convolutional block with batch normalization</li>
+<li>b) A block with convolutional layers followed by a fully connected layer</li>
+<li>c) <strong>A block with a shortcut connection that bypasses one or more layers</strong> (Answer)</li>
+<li>d) A block that only contains ReLU activation functions</li>
+</ul>
+<hr>
+<p><strong>3. What is the main advantage of using residual connections in deep networks?</strong></p>
+<ul>
+<li>a) They reduce the number of parameters</li>
+<li>b) They make the network more interpretable</li>
+<li>c) <strong>They allow for the training of much deeper networks by mitigating the vanishing gradient problem</strong> (Answer)</li>
+<li>d) They decrease the overall training time</li>
+</ul>
+<hr>
+<p><strong>4. In ResNet, what does the shortcut connection typically do in terms of computation?</strong></p>
+<ul>
+<li>a) It performs a downsampling operation</li>
+<li>b) <strong>It adds the output of a residual block to the input</strong> (Answer)</li>
+<li>c) It multiplies the output of a residual block by a constant</li>
+<li>d) It passes the input through a fully connected layer</li>
+</ul>
+<hr>
+<p><strong>5. How did ResNet perform on the ImageNet classification task compared to previous models?</strong></p>
+<ul>
+<li>a) It achieved lower accuracy but with fewer parameters</li>
+<li>b) <strong>It achieved higher accuracy and won the ILSVRC 2015 competition</strong> (Answer)</li>
+<li>c) It had similar accuracy but was faster to train</li>
+<li>d) It underperformed compared to VGGNet</li>
+</ul>
+<hr>
+<p><strong>6. What is the depth of the deepest ResNet model discussed in the original paper?</strong></p>
+<ul>
+<li>a) 34 layers</li>
+<li>b) 50 layers</li>
+<li>c) 101 layers</li>
+<li>d) <strong>152 layers</strong> (Answer)</li>
+</ul>
+<hr>
+<p><strong>7. What kind of operation is used in ResNet to deal with the increasing depth of the network?</strong></p>
+<ul>
+<li>a) Max pooling</li>
+<li>b) Average pooling</li>
+<li>c) <strong>Batch normalization</strong> (Answer)</li>
+<li>d) Gradient clipping</li>
+</ul>
+<hr>
+<p><strong>8. Which of the following techniques is <strong>NOT</strong> used in the original ResNet architecture?</strong></p>
+<ul>
+<li>a) Batch normalization</li>
+<li>b) ReLU activation</li>
+<li>c) <strong>Dropout</strong> (Answer)</li>
+<li>d) Shortcut connections</li>
+</ul>
+<hr>
+<p><strong>9. What kind of problem did the authors demonstrate ResNet could solve more effectively than traditional deep networks?</strong></p>
+<ul>
+<li>a) Object detection</li>
+<li>b) Semantic segmentation</li>
+<li>c) <strong>Image classification on very deep networks</strong> (Answer)</li>
+<li>d) Language modeling</li>
+</ul>
+<hr>
+<p><strong>10. What was a key architectural innovation that distinguished ResNet from previous deep convolutional networks?</strong></p>
+<ul>
+<li>a) The use of 3x3 convolutions</li>
+<li>b) <strong>The introduction of residual learning with identity mappings</strong> (Answer)</li>
+<li>c) The integration of attention mechanisms</li>
+<li>d) The use of LSTM layers</li>
+</ul>
+<hr>
+<p><strong>11. How does ResNet address the degradation problem in deep networks?</strong></p>
+<ul>
+<li>a) By reducing the learning rate</li>
+<li>b) By adding more fully connected layers</li>
+<li>c) <strong>By introducing residual connections that help optimize the network</strong> (Answer)</li>
+<li>d) By using smaller convolutional filters</li>
+</ul>
+<hr>
+<p><strong>12. Which of the following statements is true about the identity mapping in ResNet?</strong></p>
+<ul>
+<li>a) It multiplies the input by a constant factor</li>
+<li>b) It passes the input through an additional convolutional layer</li>
+<li>c) <strong>It skips a layer by adding the input directly to the output of the next layer</strong> (Answer)</li>
+<li>d) It subtracts the input from the output of the layer</li>
+</ul>
+<hr>
+<p><strong>13. What is the main benefit of using deeper ResNet models like ResNet-152?</strong></p>
+<ul>
+<li>a) They achieve lower accuracy but are more computationally efficient</li>
+<li>b) <strong>They improve the representation learning capability, leading to better performance on complex tasks</strong> (Answer)</li>
+<li>c) They require less memory compared to shallower models</li>
+<li>d) They eliminate the need for data augmentation</li>
+</ul>
+<hr>
+<p><strong>14. What type of skip connection is used in the original ResNet architecture?</strong></p>
+<ul>
+<li>a) Concatenation of input and output</li>
+<li>b) Element-wise multiplication of input and output</li>
+<li>c) <strong>Element-wise addition of input and output</strong> (Answer)</li>
+<li>d) Concatenation followed by a convolutional layer</li>
+</ul>
+<hr>
+<p><strong>15. In ResNet, what is the role of the 1x1 convolution in the bottleneck architecture?</strong></p>
+<ul>
+<li>a) <strong>To reduce dimensionality</strong> (Answer)</li>
+<li>b) To increase the receptive field</li>
+<li>c) To add non-linearity</li>
+<li>d) To perform max pooling</li>
+</ul>
+<hr>
+<p><strong>16. Which of the following is a characteristic of the ResNet bottleneck architecture?</strong></p>
+<ul>
+<li>a) It uses a single 3x3 convolution per block</li>
+<li>b) <strong>It uses a sequence of 1x1, 3x3, and 1x1 convolutions</strong> (Answer)</li>
+<li>c) It removes batch normalization from the network</li>
+<li>d) It avoids using any non-linear activation functions</li>
+</ul>
+<hr>
+<p><strong>17. What is the primary reason for using a bottleneck design in deeper ResNet models?</strong></p>
+<ul>
+<li>a) <strong>To reduce the number of parameters while maintaining model capacity</strong> (Answer)</li>
+<li>b) To simplify the training process</li>
+<li>c) To increase the number of activations per layer</li>
+<li>d) To avoid overfitting</li>
+</ul>
+<hr>
+<p><strong>18. In ResNet, how are shortcut connections typically implemented when the dimensions of the input and output differ?</strong></p>
+<ul>
+<li>a) By using average pooling</li>
+<li>b) By adding zero-padding to the input</li>
+<li>c) <strong>By using a 1x1 convolution to match dimensions</strong> (Answer)</li>
+<li>d) By ignoring the input and only using the output</li>
+</ul>
+<hr>
+<p><strong>19. What problem does the &ldquo;vanishing gradient&rdquo; refer to in the context of training deep neural networks?</strong></p>
+<ul>
+<li>a) Gradients become too large, leading to instability during training</li>
+<li>b) <strong>Gradients become too small, causing slow convergence and difficulty in training deep networks</strong> (Answer)</li>
+<li>c) The loss function does not converge</li>
+<li>d) The network fails to generalize to new data</li>
+</ul>
+<hr>
+<p><strong>20. How does ResNet compare with VGGNet in terms of network depth and performance?</strong></p>
+<ul>
+<li>a) ResNet is shallower and less accurate than VGGNet</li>
+<li>b) <strong>ResNet is deeper and more accurate than VGGNet</strong> (Answer)</li>
+<li>c) ResNet is deeper but less accurate than VGGNet</li>
+<li>d) ResNet is similar in depth but more accurate than VGGNet</li>
+</ul>
+<h1 id="sources">Sources:</h1>
 <ul>
 <li>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). &ldquo;ImageNet classification with deep convolutional neural networks.&rdquo; <em>Advances in Neural Information Processing Systems</em>, 25, 1097-1105.</li>
 <li>Everingham, M., Van Gool, L., Williams, C. K. I., Winn, J., &amp; Zisserman, A. (2010). &ldquo;The Pascal Visual Object Classes (VOC) challenge.&rdquo; <em>International Journal of Computer Vision</em>, 88(2), 303-338.</li>
@@ -917,7 +1077,7 @@ Accuracy of the model on the 10000 test images: 70.57%
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		3399 words in this page.
+		4312 words in this page.
 	</div>
 </div>
 
