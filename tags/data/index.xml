@@ -6,10 +6,22 @@
     <description>Recent content in Data on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tedx Talk: Nepal in the Loop</title>
+      <link>https://ayushsubedi.github.io/posts/nepal_in_the_loop/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/nepal_in_the_loop/</guid>
+      <description>&lt;h1 id=&#34;tedx-talk-nepal-in-the-loop&#34;&gt;Tedx Talk: Nepal in the Loop&lt;/h1&gt;
+&lt;p&gt;I spoke at &lt;a href=&#34;https://www.ted.com/tedx/events/58705&#34;&gt;TEDx (DWIT College)&lt;/a&gt; on &amp;ldquo;Nepal in the Loop.&amp;rdquo; The talk focused on the remarkable role Nepal is playing—and can play—in the global data landscape.&lt;/p&gt;
+&lt;p&gt;From data annotators to ML engineers, Nepal has the talent and the drive to be a vital component in the AI ecosystem. I shared the stories of our growing data community, our innovative spirit, and the potential that lies ahead.&lt;/p&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;1024&#34; src=&#34;https://ayushsubedi.github.io/pdfs/NepalintheLoop.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
     
     <item>
       <title>Nepal Data Literacy Program</title>
