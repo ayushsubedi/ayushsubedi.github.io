@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/data-science/</link>
+    <description>Recent content in Data Science on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sampling Methodology</title>
+      <link>https://ayushsubedi.github.io/posts/sampling/</link>
+      <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/sampling/</guid>
+      <description>&lt;h1 id=&#34;sampling-methodology&#34;&gt;Sampling Methodology&lt;/h1&gt;
+&lt;p&gt;Sampling is the process of selecting a subset from a larger population to make inferences about the whole. Basically, it allows us to estimate characteristics of the whole population by examining only a part of it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example: We have 1000 student assignments. Instead of reviewing all, we sample a subset to infer the quality of all assignments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;types-of-sampling-methods&#34;&gt;Types of Sampling Methods&lt;/h2&gt;
+&lt;h3 id=&#34;probability-sampling&#34;&gt;Probability Sampling&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.geeksforgeeks.org/wp-content/uploads/20231016135311/Probability-sampling.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Simple Random Sampling:&lt;/strong&gt; Every item has an equal chance of being selected.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We use a random number generator to pick 50 assignments out of 1000.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Systematic Sampling:&lt;/strong&gt; Select every nth item from a list.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We choose every 20th assignment from a list of 1000.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stratified Sampling:&lt;/strong&gt; Divide the population into strata and sample from each.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We group by assignment type (e.g., essays, quizzes) and sample from each group.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cluster Sampling:&lt;/strong&gt; Divide into clusters, then sample entire clusters.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We randomly select a few classes and review all assignments from those classes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;non-probability-sampling&#34;&gt;Non-Probability Sampling&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Convenience Sampling:&lt;/strong&gt; Select items that are easiest to access.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We review assignments from students who submitted them early.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Judgmental Sampling:&lt;/strong&gt; Use expert judgment to select representative items.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We choose assignments of varying difficulty levels.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sample-size-determination&#34;&gt;Sample Size Determination&lt;/h2&gt;
+&lt;p&gt;Desired confidence level, margin of error, and population size.&lt;/p&gt;
+&lt;h3 id=&#34;confidence-level&#34;&gt;Confidence Level&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;confidence level&lt;/strong&gt; is the probability that the confidence interval contains the true population parameter. It reflects the certainty that the true parameter is captured by the sample&amp;rsquo;s estimate.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If we select a confidence level of 95%, this means we are 95% confident that the true proportion of errors in all student assignments is within our sample&amp;rsquo;s calculated range.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;margin-of-error-e&#34;&gt;Margin of Error (E)&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;margin of error&lt;/strong&gt; is the range within which the true population parameter is expected to lie, given the confidence level. It represents the uncertainty associated with the sample estimate.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If the estimated proportion of assignments with errors is 60% and the margin of error is ±5%, then the true proportion of assignments with errors is expected to be between 55% and 65%.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$E = Z \times \sqrt{\frac{p(1 - p)}{n}}$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;z-score&#34;&gt;Z-Score&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;z-score&lt;/strong&gt; corresponds to the critical value from the standard normal distribution for a given confidence level. It indicates how many standard deviations a point is from the mean.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For a 95% confidence level, the z-score is 1.96. This means that 95% of the possible sample estimates lie within 1.96 standard deviations of the true proportion of assignments with errors.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For 90% confidence: $Z = 1.645$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For 95% confidence: $Z = 1.96$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For 99% confidence: $Z = 2.576$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;proportion-p&#34;&gt;Proportion (p)&lt;/h3&gt;
+&lt;h4 id=&#34;worst-case-scenario-unknown-case&#34;&gt;Worst-Case Scenario (Unknown Case)&lt;/h4&gt;
+&lt;p&gt;When the true population proportion is unknown, the most conservative estimate assumes $p = 0.5$, maximizing variability and resulting in the largest required sample size.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If we have no prior information about the proportion of student assignments with errors, we assume $p = 0.5$ to account for the highest uncertainty.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;known-case&#34;&gt;Known Case&lt;/h4&gt;
+&lt;p&gt;When the population proportion is known or estimated from prior studies, this value can be directly used in sample size calculations.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If previous data shows that 40% of assignments contain errors, we use $p = 0.4$ to calculate a more specific sample size.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;sample-size-formula&#34;&gt;Sample Size Formula&lt;/h3&gt;
+&lt;p&gt;The sample size needed to estimate a population proportion with a desired confidence level and margin of error can be calculated as:&lt;/p&gt;
+&lt;p&gt;$$ n = \frac{Z^2 \cdot p(1 - p)}{E^2} $$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$n$ is the sample size&lt;/li&gt;
+&lt;li&gt;$Z$ is the z-score corresponding to the confidence level&lt;/li&gt;
+&lt;li&gt;$p$ is the estimated population proportion&lt;/li&gt;
+&lt;li&gt;$E$ is the margin of error&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To estimate the proportion of assignments with errors with a 95% confidence level ($Z = 1.96$) and a margin of error of 5% ($E = 0.05$), assuming no prior knowledge about the proportion ($p = 0.5$), the required sample size would be:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$$ n = \frac{(1.96)^2 \cdot 0.5(1 - 0.5)}{(0.05)^2} = 384.16 $$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This means we would need to sample approximately 385 student assignments. However, this does not account for population size because it is typically used when the population is &lt;strong&gt;infinite&lt;/strong&gt; or very large. In such cases, the effect of population size on sample size is minimal, so the population size isn&amp;rsquo;t explicitly included.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;However, when the population is &lt;strong&gt;finite&lt;/strong&gt;, the sample size needs to be adjusted using the &lt;strong&gt;finite population correction (FPC)&lt;/strong&gt;. The formula for this is:&lt;/p&gt;
+&lt;p&gt;$$ n_{adj} = \frac{n}{1 + \frac{n - 1}{N}} $$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$n_{adj}$ is the adjusted sample size for a finite population,&lt;/li&gt;
+&lt;li&gt;$n$ is the initial sample size calculated using the original formula,&lt;/li&gt;
+&lt;li&gt;$N$ is the population size.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This adjustment accounts for the fact that sampling a larger proportion of a smaller population reduces variability, thus requiring a smaller sample size.&lt;/p&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example:&lt;/h3&gt;
+&lt;p&gt;If we calculate a sample size of 385 using the original formula for a large population, but the actual population is 1000 student assignments, the adjusted sample size would be:&lt;/p&gt;
+&lt;p&gt;$$ n_{adj} = \frac{385}{1 + \frac{385 - 1}{1000}} \approx 278 $$&lt;/p&gt;
+&lt;p&gt;Thus, if the population size is finite, we would only need to sample 278 assignments instead of 385.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;online-sample-size-calculator&#34;&gt;Online sample size calculator&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sample2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sample3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sample4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sample1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sampling-bias-and-error&#34;&gt;Sampling Bias and Error&lt;/h2&gt;
+&lt;h3 id=&#34;types-of-bias&#34;&gt;Types of Bias:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Selection Bias:&lt;/strong&gt; Occurs when the sample is not representative of the population.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example: Sampling only high-performing students leads to a biased understanding of overall student performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Response Bias:&lt;/strong&gt; Arises when participants respond inaccurately, either intentionally or unintentionally.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example: Students might not fully complete their assignments, leading to misleading insights.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://images.prismic.io/sketchplanations/f2fdb7cb-f126-4897-ad78-4fd11c743172_SP+723+-+Sampling+bias.png&#34; alt=&#34;Sampling Bias&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;minimizing-bias&#34;&gt;Minimizing Bias:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use Random Sampling Methods:&lt;/strong&gt; Ensure every student or assignment has an equal chance of being selected.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ensure Sample Representation:&lt;/strong&gt; Account for diversity in assignment types, student abilities, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Avoid sampling only high-performing students to get a representative view.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;selecting-each-students-work-as-a-sample&#34;&gt;Selecting Each Student&amp;rsquo;s Work as a Sample:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Benefit:&lt;/strong&gt; Ensures that every student is represented, allowing for an inclusive and complete understanding of overall performance.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example: By selecting at least one assignment from each student, we capture a broader range of abilities and work styles, and ensure each student&amp;rsquo;s work contributes to the overall analysis. This is also useful in providing feedback to each student.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Risk:&lt;/strong&gt; The quality of work may vary depending on the assignment. Some students might put more effort into one assignment than another, which may not reflect their overall abilities.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Example: A student might perform exceptionally well on one assignment but poorly on others. Sampling only one assignment could give an incomplete picture of their performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-to-sample-if-we-have-60-unique-students-and-a-required-sample-size-of-278-assignments-out-of-1000-assignments-if-all-60-students-need-to-be-represented-in-the-sample&#34;&gt;How to Sample if We Have 60 Unique Students and a Required Sample Size of 278 Assignments Out of 1000 Assignments, If All 60 Students Need to Be Represented in the Sample&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Determine the number of assignments to sample from each student to ensure that every student is represented. Since we have 60 students, a basic approach is to start by sampling a minimum number of assignments per student.&lt;/li&gt;
+&lt;li&gt;Allocate assignments to each student such that all students are included in the sample. For example, start with sampling at least one assignment from each student.&lt;/li&gt;
+&lt;li&gt;After ensuring that each student is represented, calculate the remaining number of assignments needed to reach the total sample size of 278.&lt;/li&gt;
+&lt;li&gt;Randomly select additional assignments from the students to meet the required sample size. Ensure that the total number of sampled assignments equals 278.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sources&#34;&gt;Sources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://media.geeksforgeeks.org/wp-content/uploads/20231016135311/Probability-sampling.png&#34;&gt;Probability Sampling Image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://images.prismic.io/sketchplanations/f2fdb7cb-f126-4897-ad78-4fd11c743172_SP+723+-+Sampling+bias.png&#34;&gt;Sampling Bias Image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.surveymonkey.com/mp/sample-size-calculator&#34;&gt;Survey Monkey Sample Size Calculator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
