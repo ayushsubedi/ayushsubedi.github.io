@@ -1,0 +1,93 @@
+
+## 1. Problem Formulation
+
+In image segmentation, the task is to partition an image into different regions or objects. Mathematically, given an image $I \in \mathbb{R}^{H \times W \times 3}$, where $H$ and $W$ are the height and width, the goal is to generate a mask $M \in \{0,1\}^{H \times W}$ for each object or region.
+
+### Segment Anything Objective:
+
+The objective of SAM is to generalize across diverse segmentation tasks, where the input can be various forms of **prompts**: text, points, bounding boxes, or even free-form scribbles. The task then is to predict the segmentation mask based on these prompts.
+
+Let the input image be $I$, and the prompt $P$, the segmentation mask is predicted by:
+
+$$
+M = f(I, P; \theta)
+$$
+
+Where $f$ is the SAM model, parameterized by $\theta$, that predicts the mask $M$ given the image $I$ and prompt $P$.
+
+## 2. SAM Architecture
+
+### Encoder:
+
+SAM's encoder is a deep neural network that takes the input image $I$ and processes it into a feature map representation $F$. This can be expressed as:
+
+$$
+F = \text{Encoder}(I; \theta_{enc})
+$$
+
+The encoder uses a **Vision Transformer (ViT)**, which is particularly well-suited for handling large and diverse datasets because of its attention-based mechanism. The ViT splits the image into patches and applies self-attention:
+
+1. **Patch embedding**:
+   Divide the input image $I$ into $N$ patches, each of size $P \times P$:
+
+   $$
+   I \rightarrow \{P_1, P_2, ..., P_N\}
+   $$
+
+2. **Self-attention mechanism**:
+   Each patch is embedded into a fixed-dimensional latent space $Z \in \mathbb{R}^{N \times D}$, where $D$ is the embedding dimension:
+
+   $$
+   Z = \text{softmax}\left(\frac{Q K^T}{\sqrt{d}}\right) V
+   $$
+
+   where $Q, K, V$ are the query, key, and value matrices computed from the patch embeddings, and $d$ is a scaling factor to normalize the dot products.
+
+### Prompt Interaction:
+
+Given the feature map $F$, the prompt $P$ is projected into the same latent space. Let $P_{\text{latent}}$ be the prompt embedding:
+
+$$
+P_{\text{latent}} = \text{Embed}(P; \theta_{P})
+$$
+
+The interaction between $F$ and $P_{\text{latent}}$ is learned via cross-attention mechanisms. The cross-attention operation can be written as:
+
+$$
+\text{CrossAttn}(F, P_{\text{latent}}) = \text{softmax}\left(\frac{F P_{\text{latent}}^T}{\sqrt{d}}\right) P_{\text{latent}}
+$$
+
+### Decoder:
+
+The decoder takes the refined feature map $F'$ from the encoder and the prompt interaction to produce the final segmentation mask. This is done by upscaling the latent features back to the image resolution. Mathematically:
+
+$$
+M = \text{Decoder}(F', P_{\text{latent}}; \theta_{dec})
+$$
+
+## 3. Loss Function
+
+SAM is trained using a combination of loss functions to ensure both pixel-wise accuracy and boundary precision. The typical losses used are:
+
+1. **Cross-Entropy Loss**:  
+   Used for pixel-wise classification:
+   
+   $$
+   L_{\text{CE}} = - \sum_{i,j} M_{i,j} \log(\hat{M}_{i,j})
+   $$
+
+   where $\hat{M}_{i,j}$ is the predicted mask probability for pixel $(i, j)$.
+
+2. **Dice Loss**:  
+   Focuses on the overlap between the predicted and ground-truth masks:
+   
+   $$
+   L_{\text{Dice}} = 1 - \frac{2 \sum M \cdot \hat{M}}{\sum M + \sum \hat{M}}
+   $$
+
+3. **Total Loss**:  
+   The total loss function combines both:
+   
+   $$
+   L = L_{\text{CE}} + \lambda L_{\text{Dice}}
+   $$

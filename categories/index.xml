@@ -6,10 +6,64 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 22 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computer Vision</title>
+      <link>https://ayushsubedi.github.io/categories/computer-vision/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://ayushsubedi.github.io/categories/deep-learning/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta Ai</title>
+      <link>https://ayushsubedi.github.io/categories/meta-ai/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/meta-ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Model Analysis</title>
+      <link>https://ayushsubedi.github.io/categories/model-analysis/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/model-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paper-Exploration</title>
+      <link>https://ayushsubedi.github.io/categories/paper-exploration/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/paper-exploration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>https://ayushsubedi.github.io/categories/research/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/research/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Guide</title>
@@ -53,15 +107,6 @@
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/categories/tedx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Paper-Exploration</title>
-      <link>https://ayushsubedi.github.io/categories/paper-exploration/</link>
-      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/categories/paper-exploration/</guid>
       <description></description>
     </item>
     

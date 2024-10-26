@@ -2,233 +2,96 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wip on Ayush Subedi</title>
-    <link>http://localhost:64530/categories/wip/</link>
+    <link>http://localhost:1313/categories/wip/</link>
     <description>Recent content in Wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:64530/categories/wip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Exploring Discrete Event Simulation: A Deep Dive</title>
-      <link>http://localhost:64530/posts/simulation/</link>
-      <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+      <title>Segment Anything Model (SAM)</title>
+      <link>http://localhost:1313/posts/segment_anything/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:64530/posts/simulation/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Discrete Event Simulation (DES) is a pivotal technique in modeling and analyzing systems where changes occur at distinct, discrete moments due to specific events. Unlike continuous simulations that update at every instant, DES focuses on particular events that influence system states. This approach is particularly valuable for systems with sporadic, random behaviors such as customer service operations, manufacturing lines, and network traffic. This guide delves deeply into DES, exploring its mathematical foundations, practical applications, and the use of Python’s SimPy library for implementing simulations.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-discrete-event-simulation&#34;&gt;What is Discrete Event Simulation?&lt;/h2&gt;
-&lt;p&gt;Discrete Event Simulation models systems by simulating events that change the system state at discrete points in time. Unlike continuous simulations where changes happen continuously, DES focuses on modeling individual events and their impact on the system.&lt;/p&gt;
-&lt;h3 id=&#34;key-components-of-des&#34;&gt;Key Components of DES&lt;/h3&gt;
+      <guid>http://localhost:1313/posts/segment_anything/</guid>
+      <description>&lt;h1 id=&#34;segment-anything-model-sam&#34;&gt;Segment Anything Model (SAM)&lt;/h1&gt;
+&lt;p&gt;The &lt;strong&gt;Segment Anything Model (SAM)&lt;/strong&gt; was developed by Meta AI as a foundation model for image segmentation tasks. The goal of SAM is to create a universal model that can efficiently handle various segmentation tasks with minimal prompting.&lt;/p&gt;
+&lt;h2 id=&#34;1-problem-formulation&#34;&gt;1. Problem Formulation&lt;/h2&gt;
+&lt;p&gt;In image segmentation, the task is to partition an image into different regions or objects. Mathematically, given an image $I \in \mathbb{R}^{H \times W \times 3}$, where $H$ and $W$ are the height and width, the goal is to generate a mask $M \in {0,1}^{H \times W}$ for each object or region.&lt;/p&gt;
+&lt;h3 id=&#34;segment-anything-objective&#34;&gt;Segment Anything Objective:&lt;/h3&gt;
+&lt;p&gt;The objective of SAM is to generalize across diverse segmentation tasks, where the input can be various forms of &lt;strong&gt;prompts&lt;/strong&gt;: text, points, bounding boxes, or even free-form scribbles. The task then is to predict the segmentation mask based on these prompts.&lt;/p&gt;
+&lt;p&gt;Let the input image be $I$, and the prompt $P$, the segmentation mask is predicted by:&lt;/p&gt;
+&lt;p&gt;$$
+M = f(I, P; \theta)
+$$&lt;/p&gt;
+&lt;p&gt;Where $f$ is the SAM model, parameterized by $\theta$, that predicts the mask $M$ given the image $I$ and prompt $P$.&lt;/p&gt;
+&lt;h2 id=&#34;2-sam-architecture&#34;&gt;2. SAM Architecture&lt;/h2&gt;
+&lt;h3 id=&#34;encoder&#34;&gt;Encoder:&lt;/h3&gt;
+&lt;p&gt;SAM&amp;rsquo;s encoder is a deep neural network that takes the input image $I$ and processes it into a feature map representation $F$. This can be expressed as:&lt;/p&gt;
+&lt;p&gt;$$
+F = \text{Encoder}(I; \theta_{enc})
+$$&lt;/p&gt;
+&lt;p&gt;The encoder uses a &lt;strong&gt;Vision Transformer (ViT)&lt;/strong&gt;, which is particularly well-suited for handling large and diverse datasets because of its attention-based mechanism. The ViT splits the image into patches and applies self-attention:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Entities&lt;/strong&gt;: Objects or agents in the system that interact with components and each other. For instance, in a queuing system, entities could be customers, tasks, or products.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Patch embedding&lt;/strong&gt;:
+Divide the input image $I$ into $N$ patches, each of size $P \times P$:&lt;/p&gt;
+&lt;p&gt;$$
+I \rightarrow {P_1, P_2, &amp;hellip;, P_N}
+$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Events&lt;/strong&gt;: Actions that trigger changes in the system. Events are discrete occurrences that alter the state of the system. Examples include customer arrivals, service completions, or equipment failures.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Resources&lt;/strong&gt;: Limited assets required for processes. Resources could be servers, machinery, or personnel, and are crucial in understanding system capacity and performance.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Queues&lt;/strong&gt;: Structures where entities wait for resources when they are unavailable. Queues manage entities that cannot be immediately processed and are often analyzed to determine performance under different load conditions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Self-attention mechanism&lt;/strong&gt;:
+Each patch is embedded into a fixed-dimensional latent space $Z \in \mathbb{R}^{N \times D}$, where $D$ is the embedding dimension:&lt;/p&gt;
+&lt;p&gt;$$
+Z = \text{softmax}\left(\frac{Q K^T}{\sqrt{d}}\right) V
+$$&lt;/p&gt;
+&lt;p&gt;where $Q, K, V$ are the query, key, and value matrices computed from the patch embeddings, and $d$ is a scaling factor to normalize the dot products.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;mathematical-foundations-of-discrete-event-simulation&#34;&gt;Mathematical Foundations of Discrete Event Simulation&lt;/h2&gt;
-&lt;h3 id=&#34;queuing-theory&#34;&gt;Queuing Theory&lt;/h3&gt;
-&lt;p&gt;Queuing theory provides the mathematical framework for analyzing systems where entities wait for service. It helps in understanding performance metrics such as waiting times, queue lengths, and system utilization.&lt;/p&gt;
-&lt;h4 id=&#34;basic-queuing-models&#34;&gt;Basic Queuing Models&lt;/h4&gt;
+&lt;h3 id=&#34;prompt-interaction&#34;&gt;Prompt Interaction:&lt;/h3&gt;
+&lt;p&gt;Given the feature map $F$, the prompt $P$ is projected into the same latent space. Let $P_{\text{latent}}$ be the prompt embedding:&lt;/p&gt;
+&lt;p&gt;$$
+P_{\text{latent}} = \text{Embed}(P; \theta_{P})
+$$&lt;/p&gt;
+&lt;p&gt;The interaction between $F$ and $P_{\text{latent}}$ is learned via cross-attention mechanisms. The cross-attention operation can be written as:&lt;/p&gt;
+&lt;p&gt;$$
+\text{CrossAttn}(F, P_{\text{latent}}) = \text{softmax}\left(\frac{F P_{\text{latent}}^T}{\sqrt{d}}\right) P_{\text{latent}}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;decoder&#34;&gt;Decoder:&lt;/h3&gt;
+&lt;p&gt;The decoder takes the refined feature map $F&amp;rsquo;$ from the encoder and the prompt interaction to produce the final segmentation mask. This is done by upscaling the latent features back to the image resolution. Mathematically:&lt;/p&gt;
+&lt;p&gt;$$
+M = \text{Decoder}(F&amp;rsquo;, P_{\text{latent}}; \theta_{dec})
+$$&lt;/p&gt;
+&lt;h2 id=&#34;3-loss-function&#34;&gt;3. Loss Function&lt;/h2&gt;
+&lt;p&gt;SAM is trained using a combination of loss functions to ensure both pixel-wise accuracy and boundary precision. The typical losses used are:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;M/M/1 Queue&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The M/M/1 queue is a fundamental model where arrivals and service times are exponentially distributed, and there is a single server.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Arrival Rate&lt;/strong&gt; ($\lambda$): The rate at which entities arrive at the queue, following a Poisson process.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Service Rate&lt;/strong&gt; ($\mu$): The rate at which entities are serviced, following an exponential distribution.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Key Metrics:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Utilization Factor&lt;/strong&gt; ($\rho$):
-$$
-\rho = \frac{\lambda}{\mu}
-$$
-This represents the fraction of time the server is busy. If $\rho \geq 1$, the server is overloaded.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cross-Entropy Loss&lt;/strong&gt;:
+Used for pixel-wise classification:&lt;/p&gt;
+&lt;p&gt;$$
+\mathcal{L}&lt;em&gt;{\text{CE}} = - \sum&lt;/em&gt;{i,j} M_{i,j} \log(\hat{M}_{i,j})
+$$&lt;/p&gt;
+&lt;p&gt;where $\hat{M}_{i,j}$ is the predicted mask probability for pixel $(i, j)$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Probability of $n$ Entities in the System&lt;/strong&gt;:
-$$
-P(n) = (1 - \rho) \rho^n
+&lt;p&gt;&lt;strong&gt;Dice Loss&lt;/strong&gt;:
+Focuses on the overlap between the predicted and ground-truth masks:&lt;/p&gt;
+&lt;p&gt;$$
+\mathcal{L}_{\text{Dice}} = 1 - \frac{2 \sum M \cdot \hat{M}}{\sum M + \sum \hat{M}}
 $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Expected Number of Entities in the System&lt;/strong&gt;:
-$$
-E[N] = \frac{\rho}{1 - \rho}
+&lt;p&gt;&lt;strong&gt;Total Loss&lt;/strong&gt;:
+The total loss function combines both:&lt;/p&gt;
+&lt;p&gt;$$
+\mathcal{L} = \mathcal{L}&lt;em&gt;{\text{CE}} + \lambda \mathcal{L}&lt;/em&gt;{\text{Dice}}
 $$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Expected Waiting Time in the System&lt;/strong&gt;:
-$$
-E[W] = \frac{1}{\mu - \lambda}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;M/M/c Queue&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The M/M/c model generalizes the single-server queue to multiple servers.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;c Servers&lt;/strong&gt;: Multiple servers handle entities simultaneously.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Utilization Factor&lt;/strong&gt;:
-$$
-\rho = \frac{\lambda}{c \mu}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Probability of $n$ Entities in the System&lt;/strong&gt;:
-$$
-P_n = \frac{\frac{(c \rho)^c}{c!} \cdot \frac{1}{1 - \rho}}{\sum_{i=0}^{c-1} \frac{(c \rho)^i}{i!} + \frac{(c \rho)^c}{c!} \cdot \frac{1}{1 - \rho}}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;M/G/1 Queue&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The M/G/1 model extends M/M/1 by allowing a general service time distribution. The key metrics include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Average Waiting Time in the Queue&lt;/strong&gt;:
-$$
-E[W_q] = \frac{E[S^2]}{2 \cdot (1 - \rho)} + \frac{E[S]}{\mu - \lambda}
-$$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;where $E[S^2]$ is the second moment of the service time distribution.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;G/G/1 Queue&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The G/G/1 queue generalizes both arrival and service times to arbitrary distributions, suitable for more complex scenarios.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;stochastic-processes-and-markov-chains&#34;&gt;Stochastic Processes and Markov Chains&lt;/h3&gt;
-&lt;p&gt;Stochastic processes model systems that evolve over time with inherent randomness. Markov chains are a type of stochastic process where the future state depends only on the current state, not the history.&lt;/p&gt;
-&lt;h4 id=&#34;markov-chains&#34;&gt;Markov Chains&lt;/h4&gt;
-&lt;p&gt;Markov chains involve:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;States&lt;/strong&gt;: Distinct conditions or positions in the system.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Transition Probabilities&lt;/strong&gt;: Probabilities of moving from one state to another.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Transition Matrix&lt;/strong&gt; ($P$): A matrix where $P_{ij}$ denotes the probability of transitioning from state $i$ to state $j$:
-$$
-P_{ij} = \Pr(X_{n+1} = j \mid X_n = i)
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Steady-State Distribution&lt;/strong&gt; ($\pi$): Long-term probabilities of being in each state, satisfying:
-$$
-\pi_j = \sum_{i} \pi_i \cdot P_{ij}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Chapman-Kolmogorov Equations&lt;/strong&gt;: These describe the probability of being in a state at a future time given the current state.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;continuous-time-markov-chains-ctmc&#34;&gt;Continuous-Time Markov Chains (CTMC)&lt;/h4&gt;
-&lt;p&gt;CTMC models systems where changes occur continuously over time. They are characterized by:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Rate Matrix&lt;/strong&gt; ($Q$): Describes the rate of transitioning between states. The matrix is defined such that:
-$$
-Q_{ij} = \text{Rate of transition from state } i \text{ to state } j
-$$
-The diagonal elements are negative, and the off-diagonal elements are positive.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Kolmogorov Forward and Backward Equations&lt;/strong&gt;: These describe the probability distribution over time and are used to determine steady-state probabilities and transient behaviors.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;monte-carlo-simulation&#34;&gt;Monte Carlo Simulation&lt;/h3&gt;
-&lt;p&gt;Monte Carlo methods use random sampling to model complex systems and estimate performance metrics. These methods are crucial for systems with uncertainty and are applied as follows:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Generate Random Inputs&lt;/strong&gt;: Sample from probability distributions to simulate different scenarios. For instance, generate random arrival times and service durations.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Placeholder for random input generation code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Simulate the System&lt;/strong&gt;: Execute simulations with the generated inputs to observe system behavior over time. This involves running scenarios and recording outcomes.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Placeholder for system simulation code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Analyze Results&lt;/strong&gt;: Aggregate results from multiple simulations to estimate performance metrics like average waiting times, queue lengths, and system throughput. Analyze the variability and reliability of the system.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Placeholder for result analysis code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Monte Carlo simulations are particularly useful for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Estimating Performance Metrics&lt;/strong&gt;: By running simulations with varying inputs, you can estimate metrics such as average waiting time and queue length.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Scenario Analysis&lt;/strong&gt;: Explore how different scenarios impact system performance, helping in decision-making and planning.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Risk Assessment&lt;/strong&gt;: Evaluate the risk associated with different scenarios by examining variability in performance metrics.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;simpy-library-for-des&#34;&gt;SimPy Library for DES&lt;/h3&gt;
-&lt;p&gt;SimPy is a Python library designed for discrete-event simulation. It simplifies the process of modeling systems with discrete events and allows for efficient simulation of complex processes.&lt;/p&gt;
-&lt;h4 id=&#34;simpy-components&#34;&gt;SimPy Components&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Environment&lt;/strong&gt;: Manages simulation time and schedules events. It controls the progression of time and triggers events according to the simulation logic.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Processes&lt;/strong&gt;: Represent entities or activities in the system. Processes are modeled using Python generators that interact with resources and wait for events.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Resources&lt;/strong&gt;: Represent limited assets required for processes. Resources can be servers, machinery, or personnel, and are used to model resource allocation and usage.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Events&lt;/strong&gt;: Use events to schedule actions or delays. Events model the occurrence of specific actions or introduce delays in processes, allowing for accurate simulation of discrete events.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;practical-examples-of-des-with-simpy&#34;&gt;Practical Examples of DES with SimPy&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Single-Server Queue Simulation&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Simulate a single-server queue with exponential inter-arrival and service times. Model customer arrivals and service times to analyze performance metrics.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Multi-Server Queue Simulation&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Extend the single-server model to include multiple servers. Analyze the impact of increasing server capacity on system performance metrics such as average waiting time and queue length.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Priority Queue Simulation&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Model a queue with different priority levels, where high-priority customers are served before low-priority ones. This simulation helps understand the effects of prioritization on overall system performance.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Resource Allocation Simulation&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Simulate scenarios where resources are allocated to multiple processes. Analyze how resource allocation strategies affect system performance and identify optimal allocation policies.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;importance-and-relevance-of-simulation&#34;&gt;Importance and Relevance of Simulation&lt;/h2&gt;
-&lt;p&gt;Simulation provides a robust framework for analyzing systems with inherent randomness and uncertainty. It allows you to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Model Complex Systems&lt;/strong&gt;: Simulate intricate systems that are challenging to analyze analytically, such as customer service centers or manufacturing processes.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Analyze Performance&lt;/strong&gt;: Evaluate system performance metrics under various scenarios and conditions to identify bottlenecks and optimize performance.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Make Informed Decisions&lt;/strong&gt;: Use simulation results to guide decision-making and planning, especially in systems with uncertain or variable inputs.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Predict System Behavior&lt;/strong&gt;: Estimate future performance and assess the impact of different scenarios on system behavior, improving strategic planning and resource allocation.&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | [Paper Exploration] In-Depth Analysis of the Segment Anything Model (SAM)</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.128.2">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ayushsubedi.github.io/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ayushsubedi.github.io/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+
+
+
+<link rel="stylesheet" href='https://ayushsubedi.github.io/lib/katex.min.css' integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src='https://ayushsubedi.github.io/lib/katex.min.js' integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+
+<script defer src='https://ayushsubedi.github.io/lib/contrib/auto-render.min.js' integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+crossorigin="anonymous"
+onload='renderMathInElement(document.body);'></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io/" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">[Paper Exploration] In-Depth Analysis of the Segment Anything Model (SAM)</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">A comprehensive exploration of Meta AI&#39;s Segment Anything Model (SAM), a foundation model designed to generalize across various segmentation tasks with minimal prompting, zero-shot and few-shot learning capabilities, and applications in a wide range of domains.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/paper-exploration'>paper-exploration</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/deep-learning'>deep learning</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/computer-vision'>computer vision</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/meta-ai'>meta ai</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/model-analysis'>model analysis</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/research'>research</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/sota'>sota</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/zero-shot'>zero shot</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/few-shot'>few shot</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/machine-learning'>machine learning</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/deep-learning'>deep learning</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/sam'>sam</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/computer-vision'>computer vision</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/image-segmentation'>image segmentation</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/meta-ai'>meta ai</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2024-10-05">2024-10-05</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="paper-exploration-in-depth-analysis-of-the-segment-anything-model-sam">[Paper Exploration] In-Depth Analysis of the Segment Anything Model (SAM)</h1>
+<blockquote>
+<p>Authors: Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C. Berg, Wan-Yen Lo, Piotr Dollár, Ross Girshick</p>
+</blockquote>
+<blockquote>
+<p>Published on 2023</p>
+</blockquote>
+<p>The <strong>Segment Anything Model (SAM)</strong> was developed by Meta AI as a foundation model for image segmentation tasks. The goal of SAM is to create a universal model that can efficiently handle various segmentation tasks with minimal <strong>prompting</strong>.</p>
+<p><img src="https://uploads-ssl.webflow.com/641bc1f4cda8707686f07277/643d06676d8d2025ce33b806_ezgif.com-video-to-gif-2.gif" alt=""></p>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date (by far), with over 1 billion masks on 11M licensed and privacy respecting images. The model is designed and trained to be promptable, so it can transfer zero-shot to new image distributions and tasks. We evaluate its capabilities on numerous tasks and find that its zero-shot performance is impressive &ndash; often competitive with or even superior to prior fully supervised results. We are releasing the Segment Anything Model (SAM) and corresponding dataset (SA-1B) of 1B masks and 11M images at this https URL to foster research into foundation models for computer vision.</p>
+</blockquote>
+<iframe width="100%" height ="1024" src="/pdfs/sam.pdf#toolbar=0"></iframe>
+<h2 id="1-problem-formulation">1. Problem Formulation</h2>
+<p>In image segmentation, the task is to partition an image into different regions or objects. Mathematically, given an image $I \in \mathbb{R}^{H \times W \times 3}$, where $H$ and $W$ are the height and width, the goal is to generate a mask $M \in {0,1}^{H \times W}$ for each object or region.</p>
+<h3 id="segment-anything-objective">Segment Anything Objective:</h3>
+<p>The objective of SAM is to generalize across diverse segmentation tasks, where the input can be various forms of <strong>prompts</strong>: text, points, bounding boxes, or even free-form scribbles. The task then is to predict the segmentation mask based on these prompts.</p>
+<p>Let the input image be $I$, and the prompt $P$, the segmentation mask is predicted by:</p>
+<p>$$
+M = f(I, P; \theta)
+$$</p>
+<p>Where $f$ is the SAM model, parameterized by $\theta$, that predicts the mask $M$ given the image $I$ and prompt $P$.</p>
+<h2 id="2-sam-architecture">2. SAM Architecture</h2>
+<h3 id="encoder">Encoder:</h3>
+<p>SAM&rsquo;s encoder is a deep neural network that takes the input image $I$ and processes it into a feature map representation $F$. This can be expressed as:</p>
+<p>$$
+F = \text{Encoder}(I; \theta_{enc})
+$$</p>
+<p><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/model_doc/vit_architecture.jpg" alt=""></p>
+<p>The encoder uses a <strong>Vision Transformer (ViT)</strong>, which is particularly well-suited for handling large and diverse datasets because of its attention-based mechanism. The ViT splits the image into patches and applies self-attention:</p>
+<ol>
+<li>
+<p><strong>Patch embedding</strong>:
+Divide the input image $I$ into $N$ patches, each of size $P \times P$:</p>
+<p>$$
+I \rightarrow {P_1, P_2, &hellip;, P_N}
+$$</p>
+</li>
+</ol>
+<p><img src="https://www.researchgate.net/publication/366199197/figure/fig5/AS:11431281106824020@1670850470249/Patch-embedding-process.ppm" alt=""></p>
+<ol start="2">
+<li>
+<p><strong>Self-attention mechanism</strong>:
+Each patch is embedded into a fixed-dimensional latent space $Z \in \mathbb{R}^{N \times D}$, where $D$ is the embedding dimension:</p>
+<p>$$
+Z = \text{softmax}\left(\frac{Q K^T}{\sqrt{d}}\right) V
+$$</p>
+<p>where $Q, K, V$ are the query, key, and value matrices computed from the patch embeddings, and $d$ is a scaling factor to normalize the dot products.</p>
+</li>
+</ol>
+<h3 id="prompt-interaction">Prompt Interaction:</h3>
+<p>Given the feature map $F$, the prompt $P$ is projected into the same latent space. Let $P_{\text{latent}}$ be the prompt embedding:</p>
+<p>$$
+P_{\text{latent}} = \text{Embed}(P; \theta_{P})
+$$</p>
+<p>The interaction between $F$ and $P_{\text{latent}}$ is learned via cross-attention mechanisms. The cross-attention operation can be written as:</p>
+<p>$$
+\text{CrossAttn}(F, P_{\text{latent}}) = \text{softmax}\left(\frac{F P_{\text{latent}}^T}{\sqrt{d}}\right) P_{\text{latent}}
+$$</p>
+<h3 id="decoder">Decoder:</h3>
+<p>The decoder takes the refined feature map $F&rsquo;$ from the encoder and the prompt interaction to produce the final segmentation mask. This is done by upscaling the latent features back to the image resolution. Mathematically:</p>
+<p>$$
+M = \text{Decoder}(F&rsquo;, P_{\text{latent}}; \theta_{dec})
+$$</p>
+<h2 id="3-loss-function">3. Loss Function</h2>
+<p>SAM is trained using a combination of loss functions to ensure both pixel-wise accuracy and boundary precision. The typical losses used are:</p>
+<ol>
+<li>
+<p><strong>Cross-Entropy Loss</strong>:<br>
+Used for pixel-wise classification:</p>
+<p>$$
+L_{\text{CE}} = - \sum_{i,j} M_{i,j} \log(\hat{M}_{i,j})
+$$</p>
+<p>where $\hat{M}_{i,j}$ is the predicted mask probability for pixel $(i, j)$.</p>
+</li>
+<li>
+<p><strong>Dice Loss</strong>:<br>
+Focuses on the overlap between the predicted and ground-truth masks:</p>
+<p>$$
+L_{\text{Dice}} = 1 - \frac{2 \sum M \cdot \hat{M}}{\sum M + \sum \hat{M}}
+$$</p>
+<p><img src="https://www.determined.ai/assets/images/blogs/brain-mri-demo/dicevsiou2.png" alt=""></p>
+<p>The relationship between IoU and the Dice coefficient can be expressed as:</p>
+</li>
+</ol>
+<p>$$
+\text{Dice} = \frac{2 \times \text{IoU}}{1 + \text{IoU}}
+$$</p>
+<p>where,</p>
+<p>$$\text{IoU} = \frac{|A \cap B|}{|A \cup B|}$$</p>
+<ol start="3">
+<li>
+<p><strong>Total Loss</strong>:<br>
+The total loss function combines both:</p>
+<p>$$
+L = L_{\text{CE}} + \lambda L_{\text{Dice}}
+$$</p>
+</li>
+</ol>
+<h2 id="task-model-and-data-engine">Task, Model, and Data Engine</h2>
+<p>The successful implementation of the Segment Anything Model (SAM) relies on a well-defined framework encompassing the task, the model architecture, and the underlying data engine. Each component plays a crucial role in the overall performance and applicability of SAM across various segmentation tasks.</p>
+<h3 id="1-task">1. Task</h3>
+<p><img src="https://andlukyane.com/images/paper_reviews/sam/2023-04-07_08-33-02.jpg" alt=""></p>
+<p>The primary task of SAM is to perform image segmentation, which involves partitioning an image into distinct segments or regions that correspond to different objects or parts within the image. The versatility of SAM allows it to tackle a wide range of segmentation tasks, including but not limited to:</p>
+<p><img src="https://images.prismic.io/encord/9411df89-27df-4931-8f40-3b47e3422269_Panoptic+Segmentation+vs+Semantic+Segmentation.png?auto=compress,format" alt=""></p>
+<ul>
+<li><strong>Semantic Segmentation</strong>: Classifying each pixel in the image into a predefined category, providing a global understanding of the scene.</li>
+<li><strong>Instance Segmentation</strong>: Distinguishing between different instances of the same object category, enabling the model to identify and segment individual objects separately.</li>
+<li><strong>Panoptic Segmentation</strong>: A combination of semantic and instance segmentation that provides a comprehensive representation of the scene, identifying both object categories and individual instances.</li>
+</ul>
+<p>SAM&rsquo;s design allows it to adapt to these tasks with minimal prompting, making it a powerful tool for various applications.</p>
+<h3 id="2-model">2. Model</h3>
+<p><img src="https://andlukyane.com/images/paper_reviews/sam/2023-04-07_08-44-16.jpg" alt=""></p>
+<p>The SAM architecture is a sophisticated model built on the principles of foundation models and Vision Transformers (ViTs). Key characteristics of the SAM model include:</p>
+<ul>
+<li><strong>Pre-trained Architecture</strong>: SAM is trained on a large dataset (SA-1B) that encompasses diverse images and segmentation tasks, allowing it to generalize effectively across various domains.</li>
+<li><strong>Prompt-based Segmentation</strong>: SAM leverages user-provided prompts (such as points, bounding boxes, or text) to guide the segmentation process, facilitating a more interactive and flexible user experience.</li>
+<li><strong>Scalability</strong>: The model&rsquo;s architecture is designed to scale efficiently, accommodating various image sizes and complexities without significant degradation in performance.</li>
+</ul>
+<p>The combination of these features makes SAM an efficient and adaptable model for image segmentation tasks.</p>
+<h3 id="3-data-engine">3. Data Engine</h3>
+<p><img src="https://andlukyane.com/images/paper_reviews/sam/2023-04-07_15-16-35.jpg" alt=""></p>
+<p>The data engine plays a critical role in the training and evaluation of SAM. It encompasses the following aspects:</p>
+<ul>
+<li><strong>Dataset Quality</strong>: The performance of SAM is significantly influenced by the quality and diversity of the training dataset. The SA-1B dataset, consisting of over a billion segmented masks, provides a rich source of information for training the model on various objects and scenes.</li>
+<li><strong>Data Preprocessing</strong>: Effective data preprocessing techniques (e.g., normalization, augmentation) are essential to enhance the robustness of the model. These techniques help improve the model&rsquo;s performance by ensuring it can handle variations in input data.</li>
+<li><strong>Evaluation Metrics</strong>: Establishing clear evaluation metrics is vital for assessing the performance of SAM across different segmentation tasks. Common metrics include Intersection over Union (IoU), pixel accuracy, and F1 score, which provide insights into the model&rsquo;s effectiveness and areas for improvement.</li>
+</ul>
+<p>Together, the task, model, and data engine form a cohesive framework that enhances the functionality and effectiveness of the Segment Anything Model, allowing it to address a wide array of segmentation challenges.</p>
+<h2 id="appendix-extended-terminologies">Appendix: Extended Terminologies</h2>
+<h3 id="1-foundation-models">1. Foundation Models</h3>
+<p><strong>Foundation models</strong> are large, pre-trained models that can be fine-tuned for various downstream tasks. These models are typically trained on massive datasets, allowing them to generalize across tasks without being explicitly trained on each.</p>
+<p>Let $D_{\text{pretrain}}$ represent the large pre-training dataset and $\theta$ the model parameters. A foundation model is trained by minimizing the loss function $L$:</p>
+<p>$$
+\theta^* = \arg \min_\theta E_{(x,y) \sim D_{\text{pretrain}}} [L(f(x; \theta), y)]
+$$</p>
+<p>Where $f(x; \theta)$ is the model&rsquo;s prediction for input $x$.</p>
+<p>Foundation models allow for <strong>transfer learning</strong>, which means they can be adapted to new tasks by fine-tuning on specific datasets.</p>
+<h3 id="2-model-finetuning">2. Model Finetuning</h3>
+<p><strong>Model fine-tuning</strong> is the process of adapting a pre-trained model to a specific task or dataset. In the context of SAM, fine-tuning refers to using a pre-trained segmentation model and adapting it for specific segmentation tasks.</p>
+<p>For a fine-tuning dataset $D_{\text{fine}}$, the fine-tuned parameters $\theta_{\text{fine}}$ are obtained as:</p>
+<p>$$
+\theta_{\text{fine}} = \arg \min_\theta E_{(x,y) \sim D_{\text{fine}}} [L(f(x; \theta), y)]
+$$</p>
+<p>This method allows SAM to adapt its general segmentation ability to specialized tasks like medical imaging or satellite image segmentation.</p>
+<h3 id="3-human-in-the-loop-hitl-relevance">3. Human in the Loop (HITL) Relevance</h3>
+<p><img src="https://cdn.prod.website-files.com/5fb24a974499e90dae242d98/63492e0f10678129c531cf83_Human-in-the-Loop%20in%20Machine%20Learning_%20What%20is%20it%20and%20How%20Does%20it%20Work_.png" alt=""></p>
+<p><strong>Human-in-the-Loop (HITL)</strong> refers to involving humans at various stages of a machine learning system’s lifecycle to improve the model’s performance. In SAM, humans provide critical inputs in three main stages:</p>
+<ul>
+<li><strong>Data Annotation</strong>: Human annotators provide ground-truth masks for training data.</li>
+<li><strong>Interactive Segmentation</strong>: Users provide prompts (points, bounding boxes, scribbles) to guide SAM’s segmentation process.</li>
+<li><strong>Feedback and Fine-tuning</strong>: Corrections made by users on the generated masks are fed back into the system to further fine-tune the model.</li>
+</ul>
+<p>The model with human input can be represented as:</p>
+<p>$$
+M = f(I, P_{\text{human}}; \theta)
+$$</p>
+<p>Where $P_{\text{human}}$ is the human prompt, $I$ is the input image, and $\theta$ are the model parameters.</p>
+<h3 id="4-coco-and-other-datasets">4. COCO and Other Datasets</h3>
+<p><img src="https://production-media.paperswithcode.com/datasets/0daad4f0-886b-44ed-9b96-80d99e037f16.png" alt=""></p>
+<p><strong>COCO (Common Objects in Context)</strong> is a large-scale dataset commonly used for segmentation, detection, and captioning tasks. It includes annotations for objects in complex scenes.</p>
+<p>Let $\mathcal{D}_{\text{COCO}} = {(I_1, M_1), (I_2, M_2), \dots}$ represent the COCO dataset, where $I_i$ is an image and $M_i$ is the corresponding mask.</p>
+<p>Other important datasets used in segmentation tasks include <strong>ADE20K</strong>, <strong>LVIS</strong>, and <strong>ImageNet</strong>. These datasets help train models like SAM across diverse object categories.</p>
+<h3 id="5-zero-shot-and-few-shot-learning">5. Zero-shot and Few-shot Learning</h3>
+<ul>
+<li><strong>Zero-shot learning</strong> refers to the model&rsquo;s ability to generalize to unseen objects or tasks without any specific training examples. SAM is capable of performing zero-shot segmentation due to its extensive pre-training on diverse datasets.</li>
+</ul>
+<p>For a new object $O_{\text{new}}$, the model generates a mask $M$ without specific training examples:</p>
+<p>$$
+M = f(I, O_{\text{new}}; \theta)
+$$</p>
+<p><img src="https://amitness.com/posts/images/zero-shot-vs-transfer.png" alt=""></p>
+<ul>
+<li><strong>Few-shot learning</strong> involves training a model on a small number of labeled examples. SAM can fine-tune itself on a few labeled samples and still produce accurate masks for new data.</li>
+</ul>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/1*Wufqbrmtdt49Cmez5NnUaA.png" alt=""></p>
+<h3 id="6-flops-floating-point-operations">6. FLOPs (Floating Point Operations)</h3>
+<p><strong>FLOPs</strong> refer to the number of floating-point operations required to perform inference through the model. This gives a measure of the computational complexity of a neural network.</p>
+<p>For a convolutional layer with input dimensions $H \times W \times C_{\text{in}}$, kernel size $K \times K$, and output channels $C_{\text{out}}$, the FLOPs can be computed as:</p>
+<p>$$
+\text{FLOPs} = H \times W \times C_{\text{in}} \times K^2 \times C_{\text{out}}
+$$</p>
+<p>In a transformer model (like SAM), the self-attention mechanism contributes significantly to FLOPs. For a sequence length $N$ and embedding size $D$, the FLOPs for the self-attention mechanism is:</p>
+<p>$$
+\text{FLOPs} = 4ND^2 + 2N^2D
+$$</p>
+<h3 id="7-edge-detection">7. Edge Detection</h3>
+<p><strong>Edge detection</strong> identifies boundaries of objects in images by detecting areas of abrupt intensity changes. This can be achieved using image gradients, for instance with the <strong>Sobel</strong> or <strong>Canny</strong> edge detectors.</p>
+<p><img src="https://kr.mathworks.com/help/examples/android/win64/edge_detection_sobel.png" alt=""></p>
+<p>For an image $I$, the gradient magnitude $G$ is computed as:</p>
+<p>$$
+G = \sqrt{\left(\frac{\partial I}{\partial x}\right)^2 + \left(\frac{\partial I}{\partial y}\right)^2}
+$$</p>
+<p>Edge detection helps SAM refine the boundaries of the generated segmentation masks.</p>
+<h3 id="8-ablation-studies">8. Ablation Studies</h3>
+<p><strong>Ablation studies</strong> test the contribution of different components of a model by removing or altering them and measuring the effect on performance. For SAM, ablations can focus on testing different prompt types (points, bounding boxes) or removing attention layers.</p>
+<p>The performance difference due to an ablation is quantified as:</p>
+<p>$$
+\Delta L = L_{\text{full}} - L_{\text{ablated}}
+$$</p>
+<p>Where $L_{\text{full}}$ is the loss of the full model and $L_{\text{ablated}}$ is the loss of the ablated model.</p>
+<h3 id="9-compositionality">9. Compositionality</h3>
+<p><strong>Compositionality</strong> refers to the model&rsquo;s ability to understand and segment complex objects composed of multiple parts. SAM&rsquo;s compositionality enables it to combine segmentations of different parts into a coherent whole.</p>
+<p>Mathematically, if $M_1$ and $M_2$ are the masks for two parts of an object, the combined mask can be expressed as:</p>
+<p>$$
+M_{\text{combined}} = M_1 \cup M_2
+$$</p>
+<p>This allows SAM to handle multi-object segmentation effectively.</p>
+<h3 id="10-rai-responsible-ai-analysis">10. RAI (Responsible AI) Analysis</h3>
+<p><img src="https://h2o.ai/resources/data-sheet/responsible-ai-overview/_jcr_content/root/container/section_1441453307/par/advancedcolumncontro/columns1/image.coreimg.png/1674580925697/responsible-ai-ven-diagram-wide.png" alt=""></p>
+<p><strong>Responsible AI (RAI)</strong> involves ensuring that AI models are developed and used ethically and fairly. In the context of SAM, RAI considerations include:</p>
+<ul>
+<li><strong>Bias</strong>: Ensuring SAM performs equally well across different demographic groups.</li>
+<li><strong>Explainability</strong>: Understanding why SAM produces specific segmentation outputs.</li>
+<li><strong>Transparency</strong>: Making the model&rsquo;s decisions interpretable.</li>
+</ul>
+<p>Bias can be quantified by evaluating the difference in model performance across groups. Let $L_g$ be the loss for group $g$, the bias can be measured as:</p>
+<p>$$
+\text{Bias} = \max_g L_g - \min_g L_g
+$$</p>
+<h3 id="11-compositionality">11. Compositionality</h3>
+<p>Compositionality is the ability to understand and represent complex structures made of simpler parts. For example, if $M_1$ represents the mask for object part 1 and $M_2$ the mask for part 2, the compositional segmentation of the object is:</p>
+<p>$$
+M_{\text{composite}} = M_1 \cup M_2
+$$</p>
+<p>This helps SAM handle images with multiple overlapping objects.</p>
+<h2 id="limitations-of-sam">Limitations of SAM</h2>
+<p>While the Segment Anything Model (SAM) represents a significant advancement in image segmentation, it is important to acknowledge several limitations outlined by the authors:</p>
+<ol>
+<li>
+<p><strong>Generalization Challenges</strong>:
+Although SAM aims to generalize across diverse segmentation tasks, it may still struggle with specific domains or types of images that differ significantly from the training data. For instance, tasks requiring fine-grained segmentation in specialized fields (e.g., medical imaging) might not achieve optimal performance without additional fine-tuning.</p>
+</li>
+<li>
+<p><strong>Sensitivity to Prompts</strong>:
+The performance of SAM can be highly dependent on the quality and type of prompts provided. For instance, using less informative prompts may lead to suboptimal segmentation results. The model&rsquo;s effectiveness is influenced by how well the prompts convey the intended segmentation task.</p>
+</li>
+<li>
+<p><strong>Computational Cost</strong>:
+SAM&rsquo;s architecture, particularly its use of Vision Transformers, can lead to high computational costs during both training and inference. This may limit its applicability in real-time scenarios or on devices with constrained computational resources.</p>
+</li>
+<li>
+<p><strong>Dataset Bias</strong>:
+The performance of SAM is contingent on the data it was trained on. While it is built on a large and diverse dataset (SA-1B), any inherent biases or limitations in this dataset can propagate into the model&rsquo;s outputs, potentially affecting fairness and accuracy in various applications.</p>
+</li>
+<li>
+<p><strong>Lack of Fine-grained Control</strong>:
+While SAM is designed to handle a variety of segmentation tasks with minimal prompting, there may be scenarios where users require precise control over the segmentation process (e.g., specifying object boundaries). SAM&rsquo;s generalized approach might not always provide the level of control necessary for such tasks.</p>
+</li>
+<li>
+<p><strong>Zero-shot Performance Variability</strong>:
+Although SAM exhibits impressive zero-shot capabilities, its performance can vary significantly depending on the nature of the new tasks or image distributions it encounters. In some cases, performance may not match that of fully supervised models, particularly for complex or nuanced segmentation tasks.</p>
+</li>
+</ol>
+<h2 id="sources">Sources</h2>
+<ol>
+<li>
+<p><strong>Original Paper</strong>:</p>
+<ul>
+<li>Kirillov, A., Mintun, E., Ravi, N., Mao, H., Rolland, C., Gustafson, L., Xiao, T., Whitehead, S., Berg, A. C., Lo, W.-Y., Dollár, P., &amp; Girshick, R. (2023). <a href="https://arxiv.org/abs/2304.02699">Segment Anything</a>. Meta AI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Images</strong>:</p>
+<ul>
+<li>SAM Architecture Diagram: Source from Hugging Face.</li>
+<li>Segmentation Tasks: Source from Andlukyane.</li>
+<li>Semantic vs. Instance Segmentation: Source from Encord.</li>
+<li>Human in the Loop: Source from Levity AI</li>
+<li>Dice Loss: Source from Determined AI</li>
+<li>Responsible AI: Source from H20.AI</li>
+</ul>
+</li>
+</ol>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/certifications/" title="Certifications page" >
+			Certifications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube_fit/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		2497 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/simulation/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Exploring Discrete Event Simulation: A Deep Dive
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/resnets/">[Paper Exploration] Deep Residual Learning for Image Recognition</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/adam/">[Paper Exploration] Adam: A Method for Stochastic Optimization</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/wasserstein_gan/">[Paper Exploration] Wasserstein GAN (WIP)</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/yolov3/">[Paper Exploration] YOLOv3: An Incremental Improvement(WIP)</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
