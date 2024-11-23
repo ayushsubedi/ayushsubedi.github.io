@@ -667,37 +667,6 @@ flask run
     </item>
     
     <item>
-      <title>Choto</title>
-      <link>https://ayushsubedi.github.io/posts/choto/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/choto/</guid>
-      <description>&lt;h1 id=&#34;choto&#34;&gt;Choto&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;pip install choto&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/r203CswsNWHaThJmHLKgpVl60&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/r203CswsNWHaThJmHLKgpVl60.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If you spend most of your time on the terminal, and you need to update yourself on the news, use &amp;ldquo;choto&amp;rdquo;. Choto will summarize the news for you.&lt;/p&gt;
-&lt;p&gt;Python package: &lt;a href=&#34;https://pypi.org/project/choto/&#34;&gt;https://pypi.org/project/choto/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;installation-from-source&#34;&gt;Installation (from source)&lt;/h3&gt;
-&lt;h4 id=&#34;clone-the-repository&#34;&gt;Clone the repository&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;git clone https://github.com/ayushsubedi/choto&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&#34;cd-into-the-cloned-directory-and-create-a-virtualenv&#34;&gt;CD into the cloned directory and create a virtualenv&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;python -m venv env&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;enable-virtualenv&#34;&gt;Enable virtualenv&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;.\env\Scripts\activate&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;install-dependency-packages-from-requirementstxt&#34;&gt;Install dependency packages from requirements.txt&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-the-app&#34;&gt;Run the app&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;python choto.py --url=https://abc.xyz --ratio=0.5 --algorithm=bert&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Usage: choto.py [OPTIONS]&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Options:
---url TEXT                      Enter a valid URL
---ratio FLOAT                   Ratio to summarize to.
---algorithm [gensim|spacy|bert] Algorithm to use
---help                          Show this message and exit.
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
       <title>Affirmations with Flutter</title>
       <link>https://ayushsubedi.github.io/posts/affirmations_dev/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>

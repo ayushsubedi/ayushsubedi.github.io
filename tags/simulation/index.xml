@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simulation on Ayush Subedi</title>
-    <link>https://ayushsubedi.github.io/tags/simulation/</link>
+    <link>http://localhost:1313/tags/simulation/</link>
     <description>Recent content in Simulation on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 22 Sep 2024 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ayushsubedi.github.io/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Exploring Discrete Event Simulation: A Deep Dive</title>
-      <link>https://ayushsubedi.github.io/posts/simulation/</link>
+      <link>http://localhost:1313/posts/simulation/</link>
       <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/simulation/</guid>
+      <guid>http://localhost:1313/posts/simulation/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Discrete Event Simulation (DES) is a pivotal technique in modeling and analyzing systems where changes occur at distinct, discrete moments due to specific events. Unlike continuous simulations that update at every instant, DES focuses on particular events that influence system states. This approach is particularly valuable for systems with sporadic, random behaviors such as customer service operations, manufacturing lines, and network traffic. This guide delves deeply into DES, exploring its mathematical foundations, practical applications, and the use of Python’s SimPy library for implementing simulations.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-discrete-event-simulation&#34;&gt;What is Discrete Event Simulation?&lt;/h2&gt;

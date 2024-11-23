@@ -1126,44 +1126,6 @@ Recleaned Non Stratified: &lt;a href=&#34;https://www.kaggle.com/ayushsubedi/cle
     </item>
     
     <item>
-      <title>Cheers Hospital Analysis</title>
-      <link>https://ayushsubedi.github.io/posts/cheers_analysis/</link>
-      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/posts/cheers_analysis/</guid>
-      <description>&lt;h1 id=&#34;data-analysis-of-cheers-hospital&#34;&gt;Data analysis of Cheers hospital&lt;/h1&gt;
-&lt;p&gt;Since it’s inception, Hospital for Children Eye ENT and Rehabilitation Service (CHEERS) has amassed data from various sources such as all the software used in daily operations, research department and the finance department. With priority in budgeting which is always a significant factor, CHEERS wanted Moonlit Solutions to analyze the data from different sectors within the hospital and create forecasting models to help with their operational efficiency.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cheers.jpg&#34; alt=&#34;Cheers&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;scope-of-work&#34;&gt;Scope of work&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Data curation from different sectors of the hospital (but only limited to their Hospital Management Information System)&lt;/li&gt;
-&lt;li&gt;Data wrangling and principal component analysis&lt;/li&gt;
-&lt;li&gt;Exploratory data analysis&lt;/li&gt;
-&lt;li&gt;Creation and validation of different forecasting models&lt;/li&gt;
-&lt;li&gt;Assist in the creation of the forecasting section in the hospital master plan that is currently being developed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/13403428/38305927-fc5e91f6-380e-11e8-9e20-7bd866a034a5.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;After the acquisition stage, all analysis presented in notebooks followed the following methodology:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Gaining domain expertise&lt;/li&gt;
-&lt;li&gt;Data wrangling and cleaning (a lot of imputing using the domain knowledge and meeting stakeholders)&lt;/li&gt;
-&lt;li&gt;Exploratory Data Analysis&lt;/li&gt;
-&lt;li&gt;Forecasting with multiple models (AR, MA, ARIMA, SARIMA, Bayesian, Deep Learning)and different KPIs (Daily sales, Daily patient visits)&lt;/li&gt;
-&lt;li&gt;Optimization (Parameter tuning)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;outputs&#34;&gt;Outputs&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Robust forecasting models predicting future sales&lt;/li&gt;
-&lt;li&gt;A report document&lt;/li&gt;
-&lt;li&gt;Dashboard showcasing interactive charts and tables (and all analysis notebooks for research reproducibility)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/754/1*io2zk4HVTX8764K_fJAerw.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The exploratory data analysis and forecasts generated went through various levels of quality assurance to validate the correctness. Unfortunately, the COVID-19 epidemic and subsequent lockdowns was going to affect the business. The model created wasBAU (Business As Usual). It did not forecast out of the world scenarios like COVID-19 (a Black Swan event). However, it will create a benchmark for measuring the effects of COVID-19 in the future. The forecasting can still be used to understand the impact of COVID-19 on the business. The exploratory data on the other hand, provides significant insights for the hospital&amp;rsquo;s strategy development.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Fraud Detection</title>
       <link>https://ayushsubedi.github.io/posts/fraud_detection/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
