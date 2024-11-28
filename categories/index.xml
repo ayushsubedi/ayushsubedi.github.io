@@ -6,13 +6,22 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Computer Vision</title>
+      <title>wip</title>
+      <link>https://ayushsubedi.github.io/categories/wip/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/wip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>computer vision</title>
       <link>https://ayushsubedi.github.io/categories/computer-vision/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -21,7 +30,7 @@
     </item>
     
     <item>
-      <title>Deep Learning</title>
+      <title>deep learning</title>
       <link>https://ayushsubedi.github.io/categories/deep-learning/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -30,7 +39,7 @@
     </item>
     
     <item>
-      <title>Meta Ai</title>
+      <title>meta ai</title>
       <link>https://ayushsubedi.github.io/categories/meta-ai/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -39,7 +48,7 @@
     </item>
     
     <item>
-      <title>Model Analysis</title>
+      <title>model analysis</title>
       <link>https://ayushsubedi.github.io/categories/model-analysis/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -48,7 +57,7 @@
     </item>
     
     <item>
-      <title>Paper-Exploration</title>
+      <title>paper-exploration</title>
       <link>https://ayushsubedi.github.io/categories/paper-exploration/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -57,7 +66,7 @@
     </item>
     
     <item>
-      <title>Research</title>
+      <title>research</title>
       <link>https://ayushsubedi.github.io/categories/research/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -66,7 +75,7 @@
     </item>
     
     <item>
-      <title>Data Science</title>
+      <title>data science</title>
       <link>https://ayushsubedi.github.io/categories/data-science/</link>
       <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
       
@@ -75,7 +84,7 @@
     </item>
     
     <item>
-      <title>Statistics</title>
+      <title>statistics</title>
       <link>https://ayushsubedi.github.io/categories/statistics/</link>
       <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
       
@@ -84,7 +93,7 @@
     </item>
     
     <item>
-      <title>Tedx</title>
+      <title>tedx</title>
       <link>https://ayushsubedi.github.io/categories/tedx/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
       
@@ -93,7 +102,7 @@
     </item>
     
     <item>
-      <title>Codefornepal</title>
+      <title>codefornepal</title>
       <link>https://ayushsubedi.github.io/categories/codefornepal/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -102,7 +111,7 @@
     </item>
     
     <item>
-      <title>Certification</title>
+      <title>certification</title>
       <link>https://ayushsubedi.github.io/categories/certification/</link>
       <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
       
@@ -111,7 +120,7 @@
     </item>
     
     <item>
-      <title>Notes</title>
+      <title>notes</title>
       <link>https://ayushsubedi.github.io/categories/notes/</link>
       <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
       
@@ -120,7 +129,7 @@
     </item>
     
     <item>
-      <title>Gatech</title>
+      <title>gatech</title>
       <link>https://ayushsubedi.github.io/categories/gatech/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -129,7 +138,7 @@
     </item>
     
     <item>
-      <title>Capstone-Project</title>
+      <title>capstone-project</title>
       <link>https://ayushsubedi.github.io/categories/capstone-project/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -138,7 +147,7 @@
     </item>
     
     <item>
-      <title>Georgia-Tech</title>
+      <title>georgia-tech</title>
       <link>https://ayushsubedi.github.io/categories/georgia-tech/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -147,7 +156,7 @@
     </item>
     
     <item>
-      <title>Chatgpt</title>
+      <title>chatgpt</title>
       <link>https://ayushsubedi.github.io/categories/chatgpt/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -156,7 +165,7 @@
     </item>
     
     <item>
-      <title>Hci</title>
+      <title>hci</title>
       <link>https://ayushsubedi.github.io/categories/hci/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -165,7 +174,7 @@
     </item>
     
     <item>
-      <title>Ethics</title>
+      <title>ethics</title>
       <link>https://ayushsubedi.github.io/categories/ethics/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -174,7 +183,7 @@
     </item>
     
     <item>
-      <title>Analytics</title>
+      <title>analytics</title>
       <link>https://ayushsubedi.github.io/categories/analytics/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
@@ -192,11 +201,11 @@
     </item>
     
     <item>
-      <title>AWS Certified ML - Specialty Exam (MLS-C01)</title>
-      <link>https://ayushsubedi.github.io/categories/aws-certified-ml---specialty-exam-mls-c01/</link>
+      <title>AWS Certified ML - Specialty exam (MLS-C01)</title>
+      <link>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/categories/aws-certified-ml---specialty-exam-mls-c01/</guid>
+      <guid>https://ayushsubedi.github.io/categories/aws-certified-ml-specialty-exam-mls-c01/</guid>
       <description></description>
     </item>
     
@@ -210,7 +219,7 @@
     </item>
     
     <item>
-      <title>Machine-Learning</title>
+      <title>machine-learning</title>
       <link>https://ayushsubedi.github.io/categories/machine-learning/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
@@ -219,7 +228,7 @@
     </item>
     
     <item>
-      <title>Data Viz</title>
+      <title>data viz</title>
       <link>https://ayushsubedi.github.io/categories/data-viz/</link>
       <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
@@ -228,7 +237,7 @@
     </item>
     
     <item>
-      <title>Cheers Hospital</title>
+      <title>cheers hospital</title>
       <link>https://ayushsubedi.github.io/categories/cheers-hospital/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -237,7 +246,7 @@
     </item>
     
     <item>
-      <title>Tootle</title>
+      <title>tootle</title>
       <link>https://ayushsubedi.github.io/categories/tootle/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -246,7 +255,7 @@
     </item>
     
     <item>
-      <title>British College</title>
+      <title>british college</title>
       <link>https://ayushsubedi.github.io/categories/british-college/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
       
@@ -255,7 +264,7 @@
     </item>
     
     <item>
-      <title>Open Source</title>
+      <title>open source</title>
       <link>https://ayushsubedi.github.io/categories/open-source/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
@@ -264,7 +273,7 @@
     </item>
     
     <item>
-      <title>Pet Projects</title>
+      <title>pet projects</title>
       <link>https://ayushsubedi.github.io/categories/pet-projects/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
@@ -273,7 +282,7 @@
     </item>
     
     <item>
-      <title>Proof of Concept</title>
+      <title>proof of concept</title>
       <link>https://ayushsubedi.github.io/categories/proof-of-concept/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
@@ -282,7 +291,7 @@
     </item>
     
     <item>
-      <title>World Bank</title>
+      <title>world bank</title>
       <link>https://ayushsubedi.github.io/categories/world-bank/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -291,7 +300,7 @@
     </item>
     
     <item>
-      <title>Moonlit</title>
+      <title>moonlit</title>
       <link>https://ayushsubedi.github.io/categories/moonlit/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -300,7 +309,7 @@
     </item>
     
     <item>
-      <title>Community</title>
+      <title>community</title>
       <link>https://ayushsubedi.github.io/categories/community/</link>
       <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -309,7 +318,7 @@
     </item>
     
     <item>
-      <title>Trove</title>
+      <title>trove</title>
       <link>https://ayushsubedi.github.io/categories/trove/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
@@ -318,7 +327,7 @@
     </item>
     
     <item>
-      <title>Conceptual</title>
+      <title>conceptual</title>
       <link>https://ayushsubedi.github.io/categories/conceptual/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
@@ -327,7 +336,7 @@
     </item>
     
     <item>
-      <title>Three60</title>
+      <title>three60</title>
       <link>https://ayushsubedi.github.io/categories/three60/</link>
       <pubDate>Sat, 22 Oct 2016 00:00:00 +0000</pubDate>
       

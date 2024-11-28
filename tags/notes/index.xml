@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>notes on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/notes/</link>
+    <description>Recent content in notes on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The absolute genAI curriculum (wip)</title>
+      <link>https://ayushsubedi.github.io/posts/genai/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/genai/</guid>
+      <description>&lt;h1 id=&#34;a-little-intro-on-llms&#34;&gt;A little intro on LLMs&lt;/h1&gt;
+&lt;h1 id=&#34;the-original-transfromer-architecture&#34;&gt;The original Transfromer architecture&lt;/h1&gt;
+&lt;h1 id=&#34;input-preparation-and-embedding&#34;&gt;Input preparation and embedding&lt;/h1&gt;
+&lt;h2 id=&#34;normalization&#34;&gt;Normalization&lt;/h2&gt;
+&lt;h2 id=&#34;tokenization&#34;&gt;Tokenization&lt;/h2&gt;
+&lt;h2 id=&#34;embedding&#34;&gt;Embedding&lt;/h2&gt;
+&lt;h2 id=&#34;positional-embedding&#34;&gt;Positional Embedding&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

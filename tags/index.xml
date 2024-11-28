@@ -6,13 +6,31 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Computer Vision</title>
+      <title>genai</title>
+      <link>https://ayushsubedi.github.io/tags/genai/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/genai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notes</title>
+      <link>https://ayushsubedi.github.io/tags/notes/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>computer vision</title>
       <link>https://ayushsubedi.github.io/tags/computer-vision/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -30,7 +48,7 @@
     </item>
     
     <item>
-      <title>Few Shot</title>
+      <title>few shot</title>
       <link>https://ayushsubedi.github.io/tags/few-shot/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -39,7 +57,7 @@
     </item>
     
     <item>
-      <title>Image Segmentation</title>
+      <title>image segmentation</title>
       <link>https://ayushsubedi.github.io/tags/image-segmentation/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -48,7 +66,7 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
+      <title>machine learning</title>
       <link>https://ayushsubedi.github.io/tags/machine-learning/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -57,7 +75,7 @@
     </item>
     
     <item>
-      <title>Meta Ai</title>
+      <title>meta ai</title>
       <link>https://ayushsubedi.github.io/tags/meta-ai/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -66,7 +84,7 @@
     </item>
     
     <item>
-      <title>Sam</title>
+      <title>sam</title>
       <link>https://ayushsubedi.github.io/tags/sam/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -75,7 +93,7 @@
     </item>
     
     <item>
-      <title>Sota</title>
+      <title>sota</title>
       <link>https://ayushsubedi.github.io/tags/sota/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -84,7 +102,7 @@
     </item>
     
     <item>
-      <title>Zero-Shot</title>
+      <title>zero shot</title>
       <link>https://ayushsubedi.github.io/tags/zero-shot/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
@@ -93,7 +111,7 @@
     </item>
     
     <item>
-      <title>Data Analysis</title>
+      <title>data analysis</title>
       <link>https://ayushsubedi.github.io/tags/data-analysis/</link>
       <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
       
@@ -102,7 +120,7 @@
     </item>
     
     <item>
-      <title>Sampling</title>
+      <title>sampling</title>
       <link>https://ayushsubedi.github.io/tags/sampling/</link>
       <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
       
@@ -111,7 +129,7 @@
     </item>
     
     <item>
-      <title>Statistics</title>
+      <title>statistics</title>
       <link>https://ayushsubedi.github.io/tags/statistics/</link>
       <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
       
@@ -120,7 +138,7 @@
     </item>
     
     <item>
-      <title>Data</title>
+      <title>data</title>
       <link>https://ayushsubedi.github.io/tags/data/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
       
@@ -129,7 +147,7 @@
     </item>
     
     <item>
-      <title>Nepal</title>
+      <title>nepal</title>
       <link>https://ayushsubedi.github.io/tags/nepal/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
       
@@ -138,7 +156,7 @@
     </item>
     
     <item>
-      <title>Tedx</title>
+      <title>tedx</title>
       <link>https://ayushsubedi.github.io/tags/tedx/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
       
@@ -147,7 +165,7 @@
     </item>
     
     <item>
-      <title>Gradient Descent</title>
+      <title>gradient descent</title>
       <link>https://ayushsubedi.github.io/tags/gradient-descent/</link>
       <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
       
@@ -156,7 +174,7 @@
     </item>
     
     <item>
-      <title>Resnet</title>
+      <title>resnet</title>
       <link>https://ayushsubedi.github.io/tags/resnet/</link>
       <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
       
@@ -165,7 +183,7 @@
     </item>
     
     <item>
-      <title>Classification</title>
+      <title>classification</title>
       <link>https://ayushsubedi.github.io/tags/classification/</link>
       <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
       
@@ -174,7 +192,7 @@
     </item>
     
     <item>
-      <title>Nlp</title>
+      <title>nlp</title>
       <link>https://ayushsubedi.github.io/tags/nlp/</link>
       <pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
       
@@ -183,7 +201,7 @@
     </item>
     
     <item>
-      <title>Calculus</title>
+      <title>calculus</title>
       <link>https://ayushsubedi.github.io/tags/calculus/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -192,7 +210,7 @@
     </item>
     
     <item>
-      <title>Optimization</title>
+      <title>optimization</title>
       <link>https://ayushsubedi.github.io/tags/optimization/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -201,7 +219,7 @@
     </item>
     
     <item>
-      <title>Careerdevelopment</title>
+      <title>careerdevelopment</title>
       <link>https://ayushsubedi.github.io/tags/careerdevelopment/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -210,7 +228,7 @@
     </item>
     
     <item>
-      <title>Codefornepal</title>
+      <title>codefornepal</title>
       <link>https://ayushsubedi.github.io/tags/codefornepal/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -219,7 +237,7 @@
     </item>
     
     <item>
-      <title>Dataanalysis</title>
+      <title>dataanalysis</title>
       <link>https://ayushsubedi.github.io/tags/dataanalysis/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -228,7 +246,7 @@
     </item>
     
     <item>
-      <title>Datacamp</title>
+      <title>datacamp</title>
       <link>https://ayushsubedi.github.io/tags/datacamp/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -237,7 +255,7 @@
     </item>
     
     <item>
-      <title>Datascience</title>
+      <title>datascience</title>
       <link>https://ayushsubedi.github.io/tags/datascience/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -246,7 +264,7 @@
     </item>
     
     <item>
-      <title>Datavisualization</title>
+      <title>datavisualization</title>
       <link>https://ayushsubedi.github.io/tags/datavisualization/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -255,7 +273,7 @@
     </item>
     
     <item>
-      <title>Dcdonates</title>
+      <title>dcdonates</title>
       <link>https://ayushsubedi.github.io/tags/dcdonates/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -264,7 +282,7 @@
     </item>
     
     <item>
-      <title>Digitalliteracy</title>
+      <title>digitalliteracy</title>
       <link>https://ayushsubedi.github.io/tags/digitalliteracy/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -273,7 +291,7 @@
     </item>
     
     <item>
-      <title>Fellowshipprogram</title>
+      <title>fellowshipprogram</title>
       <link>https://ayushsubedi.github.io/tags/fellowshipprogram/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -282,7 +300,7 @@
     </item>
     
     <item>
-      <title>Machinelearning</title>
+      <title>machinelearning</title>
       <link>https://ayushsubedi.github.io/tags/machinelearning/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -291,7 +309,7 @@
     </item>
     
     <item>
-      <title>Pythonprogramming</title>
+      <title>pythonprogramming</title>
       <link>https://ayushsubedi.github.io/tags/pythonprogramming/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -300,7 +318,7 @@
     </item>
     
     <item>
-      <title>Socialimpact</title>
+      <title>socialimpact</title>
       <link>https://ayushsubedi.github.io/tags/socialimpact/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -309,7 +327,7 @@
     </item>
     
     <item>
-      <title>Sql</title>
+      <title>sql</title>
       <link>https://ayushsubedi.github.io/tags/sql/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
@@ -318,7 +336,7 @@
     </item>
     
     <item>
-      <title>Cart</title>
+      <title>cart</title>
       <link>https://ayushsubedi.github.io/tags/cart/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       
@@ -327,7 +345,7 @@
     </item>
     
     <item>
-      <title>Ml</title>
+      <title>ml</title>
       <link>https://ayushsubedi.github.io/tags/ml/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       
@@ -336,7 +354,7 @@
     </item>
     
     <item>
-      <title>Paper</title>
+      <title>paper</title>
       <link>https://ayushsubedi.github.io/tags/paper/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       
@@ -345,7 +363,7 @@
     </item>
     
     <item>
-      <title>Dbt</title>
+      <title>dbt</title>
       <link>https://ayushsubedi.github.io/tags/dbt/</link>
       <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
       
@@ -354,7 +372,7 @@
     </item>
     
     <item>
-      <title>Roc</title>
+      <title>roc</title>
       <link>https://ayushsubedi.github.io/tags/roc/</link>
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
@@ -363,7 +381,7 @@
     </item>
     
     <item>
-      <title>Smote</title>
+      <title>smote</title>
       <link>https://ayushsubedi.github.io/tags/smote/</link>
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
       
@@ -372,7 +390,7 @@
     </item>
     
     <item>
-      <title>Transformers</title>
+      <title>transformers</title>
       <link>https://ayushsubedi.github.io/tags/transformers/</link>
       <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
       
@@ -381,7 +399,7 @@
     </item>
     
     <item>
-      <title>Clustering</title>
+      <title>clustering</title>
       <link>https://ayushsubedi.github.io/tags/clustering/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -390,7 +408,7 @@
     </item>
     
     <item>
-      <title>Convolution</title>
+      <title>convolution</title>
       <link>https://ayushsubedi.github.io/tags/convolution/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -399,7 +417,7 @@
     </item>
     
     <item>
-      <title>Hadamard_product</title>
+      <title>hadamard_product</title>
       <link>https://ayushsubedi.github.io/tags/hadamard_product/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -408,7 +426,7 @@
     </item>
     
     <item>
-      <title>Image_analysis</title>
+      <title>image_analysis</title>
       <link>https://ayushsubedi.github.io/tags/image_analysis/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -417,7 +435,7 @@
     </item>
     
     <item>
-      <title>Khatri_rao_product</title>
+      <title>khatri_rao_product</title>
       <link>https://ayushsubedi.github.io/tags/khatri_rao_product/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -426,7 +444,7 @@
     </item>
     
     <item>
-      <title>Kirsch_operator</title>
+      <title>kirsch_operator</title>
       <link>https://ayushsubedi.github.io/tags/kirsch_operator/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -435,7 +453,7 @@
     </item>
     
     <item>
-      <title>Kmeans</title>
+      <title>kmeans</title>
       <link>https://ayushsubedi.github.io/tags/kmeans/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -444,7 +462,7 @@
     </item>
     
     <item>
-      <title>Knn</title>
+      <title>knn</title>
       <link>https://ayushsubedi.github.io/tags/knn/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -453,7 +471,7 @@
     </item>
     
     <item>
-      <title>Kronecker_product</title>
+      <title>kronecker_product</title>
       <link>https://ayushsubedi.github.io/tags/kronecker_product/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -462,7 +480,7 @@
     </item>
     
     <item>
-      <title>Lasso</title>
+      <title>lasso</title>
       <link>https://ayushsubedi.github.io/tags/lasso/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -471,7 +489,7 @@
     </item>
     
     <item>
-      <title>Pca</title>
+      <title>PCA</title>
       <link>https://ayushsubedi.github.io/tags/pca/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -480,7 +498,7 @@
     </item>
     
     <item>
-      <title>Polynomial_regression</title>
+      <title>polynomial_regression</title>
       <link>https://ayushsubedi.github.io/tags/polynomial_regression/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -489,7 +507,7 @@
     </item>
     
     <item>
-      <title>Rbfkernel</title>
+      <title>rbfkernel</title>
       <link>https://ayushsubedi.github.io/tags/rbfkernel/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -498,7 +516,7 @@
     </item>
     
     <item>
-      <title>Regression</title>
+      <title>regression</title>
       <link>https://ayushsubedi.github.io/tags/regression/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -507,7 +525,7 @@
     </item>
     
     <item>
-      <title>Regularization</title>
+      <title>regularization</title>
       <link>https://ayushsubedi.github.io/tags/regularization/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -516,7 +534,7 @@
     </item>
     
     <item>
-      <title>Ridge</title>
+      <title>ridge</title>
       <link>https://ayushsubedi.github.io/tags/ridge/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -525,7 +543,7 @@
     </item>
     
     <item>
-      <title>Segmentation</title>
+      <title>segmentation</title>
       <link>https://ayushsubedi.github.io/tags/segmentation/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -534,7 +552,7 @@
     </item>
     
     <item>
-      <title>Sobel_operator</title>
+      <title>sobel_operator</title>
       <link>https://ayushsubedi.github.io/tags/sobel_operator/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -543,7 +561,7 @@
     </item>
     
     <item>
-      <title>Splines</title>
+      <title>splines</title>
       <link>https://ayushsubedi.github.io/tags/splines/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -552,7 +570,7 @@
     </item>
     
     <item>
-      <title>Tensor_data_analysis</title>
+      <title>tensor_data_analysis</title>
       <link>https://ayushsubedi.github.io/tags/tensor_data_analysis/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -561,7 +579,7 @@
     </item>
     
     <item>
-      <title>Transformation</title>
+      <title>transformation</title>
       <link>https://ayushsubedi.github.io/tags/transformation/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -570,7 +588,7 @@
     </item>
     
     <item>
-      <title>Tucker_decomposition</title>
+      <title>tucker_decomposition</title>
       <link>https://ayushsubedi.github.io/tags/tucker_decomposition/</link>
       <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
@@ -579,7 +597,7 @@
     </item>
     
     <item>
-      <title>Explainability</title>
+      <title>explainability</title>
       <link>https://ayushsubedi.github.io/tags/explainability/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -588,7 +606,7 @@
     </item>
     
     <item>
-      <title>Game-Theory</title>
+      <title>game-theory</title>
       <link>https://ayushsubedi.github.io/tags/game-theory/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -597,7 +615,7 @@
     </item>
     
     <item>
-      <title>Shap</title>
+      <title>shap</title>
       <link>https://ayushsubedi.github.io/tags/shap/</link>
       <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
       
@@ -606,7 +624,7 @@
     </item>
     
     <item>
-      <title>Analytics</title>
+      <title>analytics</title>
       <link>https://ayushsubedi.github.io/tags/analytics/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -615,7 +633,7 @@
     </item>
     
     <item>
-      <title>Correlation</title>
+      <title>correlation</title>
       <link>https://ayushsubedi.github.io/tags/correlation/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -624,7 +642,7 @@
     </item>
     
     <item>
-      <title>Data-Viz</title>
+      <title>data-viz</title>
       <link>https://ayushsubedi.github.io/tags/data-viz/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -633,7 +651,7 @@
     </item>
     
     <item>
-      <title>Group-Project</title>
+      <title>group-project</title>
       <link>https://ayushsubedi.github.io/tags/group-project/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -642,7 +660,7 @@
     </item>
     
     <item>
-      <title>Random-Forest</title>
+      <title>random-forest</title>
       <link>https://ayushsubedi.github.io/tags/random-forest/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -651,7 +669,7 @@
     </item>
     
     <item>
-      <title>Xgboost</title>
+      <title>XGBoost</title>
       <link>https://ayushsubedi.github.io/tags/xgboost/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -660,7 +678,7 @@
     </item>
     
     <item>
-      <title>Algorithmic-Trading</title>
+      <title>algorithmic-trading</title>
       <link>https://ayushsubedi.github.io/tags/algorithmic-trading/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -669,7 +687,7 @@
     </item>
     
     <item>
-      <title>Alpha</title>
+      <title>alpha</title>
       <link>https://ayushsubedi.github.io/tags/alpha/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -678,7 +696,7 @@
     </item>
     
     <item>
-      <title>Beta</title>
+      <title>beta</title>
       <link>https://ayushsubedi.github.io/tags/beta/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -696,7 +714,7 @@
     </item>
     
     <item>
-      <title>Hedge-Funds</title>
+      <title>hedge-funds</title>
       <link>https://ayushsubedi.github.io/tags/hedge-funds/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -705,7 +723,7 @@
     </item>
     
     <item>
-      <title>Indicators</title>
+      <title>indicators</title>
       <link>https://ayushsubedi.github.io/tags/indicators/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -714,7 +732,7 @@
     </item>
     
     <item>
-      <title>Linear-Regression</title>
+      <title>linear-regression</title>
       <link>https://ayushsubedi.github.io/tags/linear-regression/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -723,7 +741,7 @@
     </item>
     
     <item>
-      <title>Ml4t</title>
+      <title>ml4t</title>
       <link>https://ayushsubedi.github.io/tags/ml4t/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -732,7 +750,7 @@
     </item>
     
     <item>
-      <title>Parametric</title>
+      <title>parametric</title>
       <link>https://ayushsubedi.github.io/tags/parametric/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -741,7 +759,7 @@
     </item>
     
     <item>
-      <title>Rolling-Statistics</title>
+      <title>rolling-statistics</title>
       <link>https://ayushsubedi.github.io/tags/rolling-statistics/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -750,7 +768,7 @@
     </item>
     
     <item>
-      <title>Technical-Analysis</title>
+      <title>technical-analysis</title>
       <link>https://ayushsubedi.github.io/tags/technical-analysis/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -759,7 +777,7 @@
     </item>
     
     <item>
-      <title>Trading</title>
+      <title>trading</title>
       <link>https://ayushsubedi.github.io/tags/trading/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
       
@@ -768,7 +786,7 @@
     </item>
     
     <item>
-      <title>Column-Generation</title>
+      <title>column-generation</title>
       <link>https://ayushsubedi.github.io/tags/column-generation/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -777,7 +795,7 @@
     </item>
     
     <item>
-      <title>Convex</title>
+      <title>convex</title>
       <link>https://ayushsubedi.github.io/tags/convex/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -786,7 +804,7 @@
     </item>
     
     <item>
-      <title>Cost-Function</title>
+      <title>cost-function</title>
       <link>https://ayushsubedi.github.io/tags/cost-function/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -795,7 +813,7 @@
     </item>
     
     <item>
-      <title>Integral</title>
+      <title>integral</title>
       <link>https://ayushsubedi.github.io/tags/integral/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -804,7 +822,7 @@
     </item>
     
     <item>
-      <title>Linear-Algebra</title>
+      <title>linear-algebra</title>
       <link>https://ayushsubedi.github.io/tags/linear-algebra/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -813,7 +831,7 @@
     </item>
     
     <item>
-      <title>Objective-Function</title>
+      <title>objective-function</title>
       <link>https://ayushsubedi.github.io/tags/objective-function/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -822,7 +840,7 @@
     </item>
     
     <item>
-      <title>Simplex</title>
+      <title>simplex</title>
       <link>https://ayushsubedi.github.io/tags/simplex/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
@@ -831,7 +849,7 @@
     </item>
     
     <item>
-      <title>Predictor-Model</title>
+      <title>predictor-model</title>
       <link>https://ayushsubedi.github.io/tags/predictor-model/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -840,7 +858,7 @@
     </item>
     
     <item>
-      <title>Processor-Mode</title>
+      <title>processor-mode</title>
       <link>https://ayushsubedi.github.io/tags/processor-mode/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -849,7 +867,7 @@
     </item>
     
     <item>
-      <title>User-Experience</title>
+      <title>user-experience</title>
       <link>https://ayushsubedi.github.io/tags/user-experience/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -858,7 +876,7 @@
     </item>
     
     <item>
-      <title>User-Interaction</title>
+      <title>user-interaction</title>
       <link>https://ayushsubedi.github.io/tags/user-interaction/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -867,7 +885,7 @@
     </item>
     
     <item>
-      <title>User-Interface</title>
+      <title>user-interface</title>
       <link>https://ayushsubedi.github.io/tags/user-interface/</link>
       <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -876,7 +894,7 @@
     </item>
     
     <item>
-      <title>Cs6750</title>
+      <title>cs6750</title>
       <link>https://ayushsubedi.github.io/tags/cs6750/</link>
       <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -885,7 +903,7 @@
     </item>
     
     <item>
-      <title>Certificate</title>
+      <title>certificate</title>
       <link>https://ayushsubedi.github.io/tags/certificate/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -894,7 +912,7 @@
     </item>
     
     <item>
-      <title>Hippa</title>
+      <title>hippa</title>
       <link>https://ayushsubedi.github.io/tags/hippa/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -903,7 +921,7 @@
     </item>
     
     <item>
-      <title>Learning</title>
+      <title>learning</title>
       <link>https://ayushsubedi.github.io/tags/learning/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -912,7 +930,7 @@
     </item>
     
     <item>
-      <title>Research</title>
+      <title>research</title>
       <link>https://ayushsubedi.github.io/tags/research/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
       
@@ -921,7 +939,7 @@
     </item>
     
     <item>
-      <title>Certification</title>
+      <title>certification</title>
       <link>https://ayushsubedi.github.io/tags/certification/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
@@ -930,7 +948,7 @@
     </item>
     
     <item>
-      <title>Tfidf</title>
+      <title>tfidf</title>
       <link>https://ayushsubedi.github.io/tags/tfidf/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
@@ -948,7 +966,7 @@
     </item>
     
     <item>
-      <title>Dimensionality Reduction</title>
+      <title>dimensionality reduction</title>
       <link>https://ayushsubedi.github.io/tags/dimensionality-reduction/</link>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       
@@ -1002,7 +1020,7 @@
     </item>
     
     <item>
-      <title>T-SNE</title>
+      <title>t-SNE</title>
       <link>https://ayushsubedi.github.io/tags/t-sne/</link>
       <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
       
@@ -1011,7 +1029,7 @@
     </item>
     
     <item>
-      <title>Ai</title>
+      <title>ai</title>
       <link>https://ayushsubedi.github.io/tags/ai/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -1020,7 +1038,7 @@
     </item>
     
     <item>
-      <title>Flask</title>
+      <title>flask</title>
       <link>https://ayushsubedi.github.io/tags/flask/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -1029,7 +1047,7 @@
     </item>
     
     <item>
-      <title>Python</title>
+      <title>python</title>
       <link>https://ayushsubedi.github.io/tags/python/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
@@ -1038,7 +1056,7 @@
     </item>
     
     <item>
-      <title>Cse-6040</title>
+      <title>cse-6040</title>
       <link>https://ayushsubedi.github.io/tags/cse-6040/</link>
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1047,7 +1065,7 @@
     </item>
     
     <item>
-      <title>Eda</title>
+      <title>eda</title>
       <link>https://ayushsubedi.github.io/tags/eda/</link>
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1056,7 +1074,7 @@
     </item>
     
     <item>
-      <title>Analytics in Ride Sharing</title>
+      <title>analytics in ride sharing</title>
       <link>https://ayushsubedi.github.io/tags/analytics-in-ride-sharing/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1065,7 +1083,7 @@
     </item>
     
     <item>
-      <title>Isye-6501</title>
+      <title>isye-6501</title>
       <link>https://ayushsubedi.github.io/tags/isye-6501/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1074,7 +1092,7 @@
     </item>
     
     <item>
-      <title>Ride Hailing</title>
+      <title>ride hailing</title>
       <link>https://ayushsubedi.github.io/tags/ride-hailing/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1083,7 +1101,7 @@
     </item>
     
     <item>
-      <title>Ride Sharing</title>
+      <title>ride sharing</title>
       <link>https://ayushsubedi.github.io/tags/ride-sharing/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1092,7 +1110,7 @@
     </item>
     
     <item>
-      <title>Tootle</title>
+      <title>tootle</title>
       <link>https://ayushsubedi.github.io/tags/tootle/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -1101,7 +1119,7 @@
     </item>
     
     <item>
-      <title>Synthetic</title>
+      <title>synthetic</title>
       <link>https://ayushsubedi.github.io/tags/synthetic/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
       
@@ -1110,7 +1128,7 @@
     </item>
     
     <item>
-      <title>Sentiment</title>
+      <title>sentiment</title>
       <link>https://ayushsubedi.github.io/tags/sentiment/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
@@ -1119,7 +1137,7 @@
     </item>
     
     <item>
-      <title>Twitter</title>
+      <title>twitter</title>
       <link>https://ayushsubedi.github.io/tags/twitter/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
@@ -1128,7 +1146,7 @@
     </item>
     
     <item>
-      <title>Bot</title>
+      <title>bot</title>
       <link>https://ayushsubedi.github.io/tags/bot/</link>
       <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
       
@@ -1137,7 +1155,7 @@
     </item>
     
     <item>
-      <title>Tableau</title>
+      <title>tableau</title>
       <link>https://ayushsubedi.github.io/tags/tableau/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
@@ -1146,7 +1164,7 @@
     </item>
     
     <item>
-      <title>Viz</title>
+      <title>viz</title>
       <link>https://ayushsubedi.github.io/tags/viz/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
       
@@ -1155,7 +1173,7 @@
     </item>
     
     <item>
-      <title>Analysis</title>
+      <title>analysis</title>
       <link>https://ayushsubedi.github.io/tags/analysis/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -1164,7 +1182,7 @@
     </item>
     
     <item>
-      <title>Proxy</title>
+      <title>proxy</title>
       <link>https://ayushsubedi.github.io/tags/proxy/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -1173,7 +1191,7 @@
     </item>
     
     <item>
-      <title>Cli</title>
+      <title>cli</title>
       <link>https://ayushsubedi.github.io/tags/cli/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -1182,7 +1200,7 @@
     </item>
     
     <item>
-      <title>Web App</title>
+      <title>web app</title>
       <link>https://ayushsubedi.github.io/tags/web-app/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -1191,7 +1209,7 @@
     </item>
     
     <item>
-      <title>Stackoverflow</title>
+      <title>stackoverflow</title>
       <link>https://ayushsubedi.github.io/tags/stackoverflow/</link>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
       
@@ -1200,7 +1218,7 @@
     </item>
     
     <item>
-      <title>Affirmations</title>
+      <title>affirmations</title>
       <link>https://ayushsubedi.github.io/tags/affirmations/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -1209,7 +1227,7 @@
     </item>
     
     <item>
-      <title>Android</title>
+      <title>android</title>
       <link>https://ayushsubedi.github.io/tags/android/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -1218,7 +1236,7 @@
     </item>
     
     <item>
-      <title>Flutter</title>
+      <title>flutter</title>
       <link>https://ayushsubedi.github.io/tags/flutter/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -1227,7 +1245,7 @@
     </item>
     
     <item>
-      <title>Pareto</title>
+      <title>pareto</title>
       <link>https://ayushsubedi.github.io/tags/pareto/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -1236,7 +1254,7 @@
     </item>
     
     <item>
-      <title>Literacy</title>
+      <title>literacy</title>
       <link>https://ayushsubedi.github.io/tags/literacy/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -1245,7 +1263,7 @@
     </item>
     
     <item>
-      <title>Teaching Materials</title>
+      <title>teaching materials</title>
       <link>https://ayushsubedi.github.io/tags/teaching-materials/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -1254,7 +1272,7 @@
     </item>
     
     <item>
-      <title>Bayes</title>
+      <title>bayes</title>
       <link>https://ayushsubedi.github.io/tags/bayes/</link>
       <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -1263,7 +1281,7 @@
     </item>
     
     <item>
-      <title>Community</title>
+      <title>community</title>
       <link>https://ayushsubedi.github.io/tags/community/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -1272,7 +1290,7 @@
     </item>
     
     <item>
-      <title>Mentorship</title>
+      <title>mentorship</title>
       <link>https://ayushsubedi.github.io/tags/mentorship/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -1281,7 +1299,7 @@
     </item>
     
     <item>
-      <title>Organizer</title>
+      <title>organizer</title>
       <link>https://ayushsubedi.github.io/tags/organizer/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -1290,7 +1308,7 @@
     </item>
     
     <item>
-      <title>Panels</title>
+      <title>panels</title>
       <link>https://ayushsubedi.github.io/tags/panels/</link>
       <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
@@ -1299,7 +1317,7 @@
     </item>
     
     <item>
-      <title>Blockchain</title>
+      <title>blockchain</title>
       <link>https://ayushsubedi.github.io/tags/blockchain/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       
@@ -1326,7 +1344,7 @@
     </item>
     
     <item>
-      <title>Sentiment-Analysis</title>
+      <title>sentiment-analysis</title>
       <link>https://ayushsubedi.github.io/tags/sentiment-analysis/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -1335,7 +1353,7 @@
     </item>
     
     <item>
-      <title>Voronoi</title>
+      <title>voronoi</title>
       <link>https://ayushsubedi.github.io/tags/voronoi/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -1344,7 +1362,7 @@
     </item>
     
     <item>
-      <title>Maps</title>
+      <title>maps</title>
       <link>https://ayushsubedi.github.io/tags/maps/</link>
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
@@ -1353,7 +1371,7 @@
     </item>
     
     <item>
-      <title>Pytorch</title>
+      <title>pytorch</title>
       <link>https://ayushsubedi.github.io/tags/pytorch/</link>
       <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
@@ -1362,7 +1380,7 @@
     </item>
     
     <item>
-      <title>Encryption</title>
+      <title>encryption</title>
       <link>https://ayushsubedi.github.io/tags/encryption/</link>
       <pubDate>Fri, 12 Jan 2018 00:00:00 +0000</pubDate>
       
@@ -1371,7 +1389,7 @@
     </item>
     
     <item>
-      <title>Product</title>
+      <title>product</title>
       <link>https://ayushsubedi.github.io/tags/product/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       
@@ -1380,7 +1398,7 @@
     </item>
     
     <item>
-      <title>Etymology</title>
+      <title>etymology</title>
       <link>https://ayushsubedi.github.io/tags/etymology/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
@@ -1389,7 +1407,7 @@
     </item>
     
     <item>
-      <title>Stanford</title>
+      <title>stanford</title>
       <link>https://ayushsubedi.github.io/tags/stanford/</link>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
       
@@ -1398,7 +1416,7 @@
     </item>
     
     <item>
-      <title>Monte Carlo</title>
+      <title>monte carlo</title>
       <link>https://ayushsubedi.github.io/tags/monte-carlo/</link>
       <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
       
@@ -1407,7 +1425,7 @@
     </item>
     
     <item>
-      <title>Probability</title>
+      <title>probability</title>
       <link>https://ayushsubedi.github.io/tags/probability/</link>
       <pubDate>Fri, 18 Apr 2014 00:00:00 +0000</pubDate>
       
@@ -1425,7 +1443,7 @@
     </item>
     
     <item>
-      <title>Mandelbrot</title>
+      <title>mandelbrot</title>
       <link>https://ayushsubedi.github.io/tags/mandelbrot/</link>
       <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
       
@@ -1434,7 +1452,7 @@
     </item>
     
     <item>
-      <title>Arduino</title>
+      <title>arduino</title>
       <link>https://ayushsubedi.github.io/tags/arduino/</link>
       <pubDate>Fri, 31 Jan 2014 00:00:00 +0000</pubDate>
       
@@ -1443,7 +1461,7 @@
     </item>
     
     <item>
-      <title>Java</title>
+      <title>java</title>
       <link>https://ayushsubedi.github.io/tags/java/</link>
       <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
       
@@ -1452,7 +1470,7 @@
     </item>
     
     <item>
-      <title>Markov Chains</title>
+      <title>markov chains</title>
       <link>https://ayushsubedi.github.io/tags/markov-chains/</link>
       <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
       
@@ -1461,7 +1479,7 @@
     </item>
     
     <item>
-      <title>Capstone</title>
+      <title>capstone</title>
       <link>https://ayushsubedi.github.io/tags/capstone/</link>
       <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
@@ -1470,7 +1488,7 @@
     </item>
     
     <item>
-      <title>Compiler</title>
+      <title>compiler</title>
       <link>https://ayushsubedi.github.io/tags/compiler/</link>
       <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
       
@@ -1479,7 +1497,7 @@
     </item>
     
     <item>
-      <title>Faro</title>
+      <title>faro</title>
       <link>https://ayushsubedi.github.io/tags/faro/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
@@ -1488,7 +1506,7 @@
     </item>
     
     <item>
-      <title>Group Theory</title>
+      <title>group theory</title>
       <link>https://ayushsubedi.github.io/tags/group-theory/</link>
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       

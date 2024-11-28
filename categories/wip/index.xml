@@ -1,97 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wip on Ayush Subedi</title>
-    <link>http://localhost:1313/categories/wip/</link>
-    <description>Recent content in Wip on Ayush Subedi</description>
+    <title>wip on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/wip/</link>
+    <description>Recent content in wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/wip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ayushsubedi.github.io/categories/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Segment Anything Model (SAM)</title>
-      <link>http://localhost:1313/posts/segment_anything/</link>
-      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      <title>The absolute genAI curriculum (wip)</title>
+      <link>https://ayushsubedi.github.io/posts/genai/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/segment_anything/</guid>
-      <description>&lt;h1 id=&#34;segment-anything-model-sam&#34;&gt;Segment Anything Model (SAM)&lt;/h1&gt;
-&lt;p&gt;The &lt;strong&gt;Segment Anything Model (SAM)&lt;/strong&gt; was developed by Meta AI as a foundation model for image segmentation tasks. The goal of SAM is to create a universal model that can efficiently handle various segmentation tasks with minimal prompting.&lt;/p&gt;
-&lt;h2 id=&#34;1-problem-formulation&#34;&gt;1. Problem Formulation&lt;/h2&gt;
-&lt;p&gt;In image segmentation, the task is to partition an image into different regions or objects. Mathematically, given an image $I \in \mathbb{R}^{H \times W \times 3}$, where $H$ and $W$ are the height and width, the goal is to generate a mask $M \in {0,1}^{H \times W}$ for each object or region.&lt;/p&gt;
-&lt;h3 id=&#34;segment-anything-objective&#34;&gt;Segment Anything Objective:&lt;/h3&gt;
-&lt;p&gt;The objective of SAM is to generalize across diverse segmentation tasks, where the input can be various forms of &lt;strong&gt;prompts&lt;/strong&gt;: text, points, bounding boxes, or even free-form scribbles. The task then is to predict the segmentation mask based on these prompts.&lt;/p&gt;
-&lt;p&gt;Let the input image be $I$, and the prompt $P$, the segmentation mask is predicted by:&lt;/p&gt;
-&lt;p&gt;$$
-M = f(I, P; \theta)
-$$&lt;/p&gt;
-&lt;p&gt;Where $f$ is the SAM model, parameterized by $\theta$, that predicts the mask $M$ given the image $I$ and prompt $P$.&lt;/p&gt;
-&lt;h2 id=&#34;2-sam-architecture&#34;&gt;2. SAM Architecture&lt;/h2&gt;
-&lt;h3 id=&#34;encoder&#34;&gt;Encoder:&lt;/h3&gt;
-&lt;p&gt;SAM&amp;rsquo;s encoder is a deep neural network that takes the input image $I$ and processes it into a feature map representation $F$. This can be expressed as:&lt;/p&gt;
-&lt;p&gt;$$
-F = \text{Encoder}(I; \theta_{enc})
-$$&lt;/p&gt;
-&lt;p&gt;The encoder uses a &lt;strong&gt;Vision Transformer (ViT)&lt;/strong&gt;, which is particularly well-suited for handling large and diverse datasets because of its attention-based mechanism. The ViT splits the image into patches and applies self-attention:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Patch embedding&lt;/strong&gt;:
-Divide the input image $I$ into $N$ patches, each of size $P \times P$:&lt;/p&gt;
-&lt;p&gt;$$
-I \rightarrow {P_1, P_2, &amp;hellip;, P_N}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Self-attention mechanism&lt;/strong&gt;:
-Each patch is embedded into a fixed-dimensional latent space $Z \in \mathbb{R}^{N \times D}$, where $D$ is the embedding dimension:&lt;/p&gt;
-&lt;p&gt;$$
-Z = \text{softmax}\left(\frac{Q K^T}{\sqrt{d}}\right) V
-$$&lt;/p&gt;
-&lt;p&gt;where $Q, K, V$ are the query, key, and value matrices computed from the patch embeddings, and $d$ is a scaling factor to normalize the dot products.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;prompt-interaction&#34;&gt;Prompt Interaction:&lt;/h3&gt;
-&lt;p&gt;Given the feature map $F$, the prompt $P$ is projected into the same latent space. Let $P_{\text{latent}}$ be the prompt embedding:&lt;/p&gt;
-&lt;p&gt;$$
-P_{\text{latent}} = \text{Embed}(P; \theta_{P})
-$$&lt;/p&gt;
-&lt;p&gt;The interaction between $F$ and $P_{\text{latent}}$ is learned via cross-attention mechanisms. The cross-attention operation can be written as:&lt;/p&gt;
-&lt;p&gt;$$
-\text{CrossAttn}(F, P_{\text{latent}}) = \text{softmax}\left(\frac{F P_{\text{latent}}^T}{\sqrt{d}}\right) P_{\text{latent}}
-$$&lt;/p&gt;
-&lt;h3 id=&#34;decoder&#34;&gt;Decoder:&lt;/h3&gt;
-&lt;p&gt;The decoder takes the refined feature map $F&amp;rsquo;$ from the encoder and the prompt interaction to produce the final segmentation mask. This is done by upscaling the latent features back to the image resolution. Mathematically:&lt;/p&gt;
-&lt;p&gt;$$
-M = \text{Decoder}(F&amp;rsquo;, P_{\text{latent}}; \theta_{dec})
-$$&lt;/p&gt;
-&lt;h2 id=&#34;3-loss-function&#34;&gt;3. Loss Function&lt;/h2&gt;
-&lt;p&gt;SAM is trained using a combination of loss functions to ensure both pixel-wise accuracy and boundary precision. The typical losses used are:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Cross-Entropy Loss&lt;/strong&gt;:
-Used for pixel-wise classification:&lt;/p&gt;
-&lt;p&gt;$$
-\mathcal{L}&lt;em&gt;{\text{CE}} = - \sum&lt;/em&gt;{i,j} M_{i,j} \log(\hat{M}_{i,j})
-$$&lt;/p&gt;
-&lt;p&gt;where $\hat{M}_{i,j}$ is the predicted mask probability for pixel $(i, j)$.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Dice Loss&lt;/strong&gt;:
-Focuses on the overlap between the predicted and ground-truth masks:&lt;/p&gt;
-&lt;p&gt;$$
-\mathcal{L}_{\text{Dice}} = 1 - \frac{2 \sum M \cdot \hat{M}}{\sum M + \sum \hat{M}}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Total Loss&lt;/strong&gt;:
-The total loss function combines both:&lt;/p&gt;
-&lt;p&gt;$$
-\mathcal{L} = \mathcal{L}&lt;em&gt;{\text{CE}} + \lambda \mathcal{L}&lt;/em&gt;{\text{Dice}}
-$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+      <guid>https://ayushsubedi.github.io/posts/genai/</guid>
+      <description>&lt;h1 id=&#34;a-little-intro-on-llms&#34;&gt;A little intro on LLMs&lt;/h1&gt;
+&lt;h1 id=&#34;the-original-transfromer-architecture&#34;&gt;The original Transfromer architecture&lt;/h1&gt;
+&lt;h1 id=&#34;input-preparation-and-embedding&#34;&gt;Input preparation and embedding&lt;/h1&gt;
+&lt;h2 id=&#34;normalization&#34;&gt;Normalization&lt;/h2&gt;
+&lt;h2 id=&#34;tokenization&#34;&gt;Tokenization&lt;/h2&gt;
+&lt;h2 id=&#34;embedding&#34;&gt;Embedding&lt;/h2&gt;
+&lt;h2 id=&#34;positional-embedding&#34;&gt;Positional Embedding&lt;/h2&gt;
 </description>
     </item>
     
