@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Ayush Subedi</title>
+    <link>http://localhost:1313/tags/notes/</link>
+    <description>Recent content in Notes on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Generative AI notes</title>
+      <link>http://localhost:1313/posts/genai_curriculum_development/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/genai_curriculum_development/</guid>
+      <description>&lt;h1 id=&#34;curriculum-on-llm-a-building-block-approach&#34;&gt;Curriculum on LLM: A Building-Block Approach&lt;/h1&gt;
+&lt;h2 id=&#34;1-foundational-models&#34;&gt;1. Foundational Models&lt;/h2&gt;
+&lt;p&gt;Understanding what LLMs are, their purpose, and their evolution forms the base for all future discussions.&lt;/p&gt;
+&lt;h2 id=&#34;2-transformer-architecture&#34;&gt;2. Transformer Architecture&lt;/h2&gt;
+&lt;p&gt;Dive into the mechanics of transformers, the backbone of LLMs, to set the stage for deeper topics.&lt;/p&gt;
+&lt;h2 id=&#34;3-self-attention-mechanism&#34;&gt;3. Self-Attention Mechanism&lt;/h2&gt;
+&lt;p&gt;Study the core innovation in transformers, enabling contextual understanding in LLMs.&lt;/p&gt;
+&lt;h2 id=&#34;4-training-large-language-models&#34;&gt;4. Training Large Language Models&lt;/h2&gt;
+&lt;p&gt;Explore the process of training LLMs, including dataset preparation and computational requirements.&lt;/p&gt;
+&lt;h2 id=&#34;5-pretraining-objectives&#34;&gt;5. Pretraining Objectives&lt;/h2&gt;
+&lt;p&gt;Learn the key objectives (e.g., masked language modeling, causal language modeling) that guide LLM training.&lt;/p&gt;
+&lt;h2 id=&#34;6-fine-tuning-techniques&#34;&gt;6. Fine-Tuning Techniques&lt;/h2&gt;
+&lt;p&gt;Build on pretraining knowledge to customize LLMs for specific tasks or domains.&lt;/p&gt;
+&lt;h2 id=&#34;7-few-shot-and-zero-shot-learning&#34;&gt;7. Few-Shot and Zero-Shot Learning&lt;/h2&gt;
+&lt;p&gt;Understand how LLMs generalize from minimal examples, relying on insights from fine-tuning.&lt;/p&gt;
+&lt;h2 id=&#34;8-prompt-engineering&#34;&gt;8. Prompt Engineering&lt;/h2&gt;
+&lt;p&gt;Apply knowledge of LLM outputs to design effective prompts for task-specific use.&lt;/p&gt;
+&lt;h2 id=&#34;9-instruction-tuning&#34;&gt;9. Instruction Tuning&lt;/h2&gt;
+&lt;p&gt;Enhance prompt engineering by studying how models are fine-tuned on instruction datasets.&lt;/p&gt;
+&lt;h2 id=&#34;10-reinforcement-learning-with-human-feedback-rlhf&#34;&gt;10. Reinforcement Learning with Human Feedback (RLHF)&lt;/h2&gt;
+&lt;p&gt;Introduce advanced methods to align LLM behavior with human values and preferences.&lt;/p&gt;
+&lt;h2 id=&#34;11-embeddings&#34;&gt;11. Embeddings&lt;/h2&gt;
+&lt;p&gt;Link back to foundational concepts by exploring how LLMs represent words, sentences, and documents in vector spaces.&lt;/p&gt;
+&lt;h2 id=&#34;12-semantic-search&#34;&gt;12. Semantic Search&lt;/h2&gt;
+&lt;p&gt;Leverage embeddings to implement semantic search solutions.&lt;/p&gt;
+&lt;h2 id=&#34;13-vector-databases&#34;&gt;13. Vector Databases&lt;/h2&gt;
+&lt;p&gt;Use knowledge of embeddings and search to organize and retrieve data efficiently.&lt;/p&gt;
+&lt;h2 id=&#34;14-indexing-methods-for-vector-search&#34;&gt;14. Indexing Methods for Vector Search&lt;/h2&gt;
+&lt;p&gt;Delve deeper into optimization strategies for vector-based retrieval systems.&lt;/p&gt;
+&lt;h2 id=&#34;15-hybrid-search-approaches&#34;&gt;15. Hybrid Search Approaches&lt;/h2&gt;
+&lt;p&gt;Combine vector and keyword search for comprehensive information retrieval.&lt;/p&gt;
+&lt;h2 id=&#34;16-ai-agents&#34;&gt;16. AI Agents&lt;/h2&gt;
+&lt;p&gt;Integrate prompt engineering, embeddings, and search concepts into autonomous systems.&lt;/p&gt;
+&lt;h2 id=&#34;17-memory-augmented-ai-systems&#34;&gt;17. Memory-Augmented AI Systems&lt;/h2&gt;
+&lt;p&gt;Build AI agents with long-term memory using vector databases and embeddings.&lt;/p&gt;
+&lt;h2 id=&#34;18-retrieval-augmented-generation-rag&#34;&gt;18. Retrieval-Augmented Generation (RAG)&lt;/h2&gt;
+&lt;p&gt;Combine memory-augmented systems with LLMs for context-aware generation.&lt;/p&gt;
+&lt;h2 id=&#34;19-domain-specific-models&#34;&gt;19. Domain-Specific Models&lt;/h2&gt;
+&lt;p&gt;Adapt foundational and fine-tuning techniques to create models tailored to specific industries.&lt;/p&gt;
+&lt;h2 id=&#34;20-multimodal-models&#34;&gt;20. Multimodal Models&lt;/h2&gt;
+&lt;p&gt;Expand on embeddings to explore models that integrate text, image, and audio data.&lt;/p&gt;
+&lt;h2 id=&#34;21-cross-lingual-llms&#34;&gt;21. Cross-Lingual LLMs&lt;/h2&gt;
+&lt;p&gt;Extend domain-specific and foundational knowledge to multilingual settings.&lt;/p&gt;
+&lt;h2 id=&#34;22-mlops-for-generative-ai&#34;&gt;22. MLOps for Generative AI&lt;/h2&gt;
+&lt;p&gt;Implement deployment and monitoring strategies to operationalize LLMs.&lt;/p&gt;
+&lt;h2 id=&#34;23-model-deployment&#34;&gt;23. Model Deployment&lt;/h2&gt;
+&lt;p&gt;Leverage previous MLOps knowledge to deploy LLMs efficiently.&lt;/p&gt;
+&lt;h2 id=&#34;24-optimizing-latency-for-llms&#34;&gt;24. Optimizing Latency for LLMs&lt;/h2&gt;
+&lt;p&gt;Refine deployment strategies to ensure real-time performance.&lt;/p&gt;
+&lt;h2 id=&#34;25-model-compression-quantization-distillation&#34;&gt;25. Model Compression (Quantization, Distillation)&lt;/h2&gt;
+&lt;p&gt;Optimize trained models for resource efficiency without sacrificing performance.&lt;/p&gt;
+&lt;h2 id=&#34;26-bias-and-fairness-in-llms&#34;&gt;26. Bias and Fairness in LLMs&lt;/h2&gt;
+&lt;p&gt;Apply insights from pretraining and RLHF to address ethical concerns.&lt;/p&gt;
+&lt;h2 id=&#34;27-safety-and-robustness-in-llm-outputs&#34;&gt;27. Safety and Robustness in LLM Outputs&lt;/h2&gt;
+&lt;p&gt;Enhance prompt and instruction design to ensure reliable outputs.&lt;/p&gt;
+&lt;h2 id=&#34;28-data-governance-and-privacy&#34;&gt;28. Data Governance and Privacy&lt;/h2&gt;
+&lt;p&gt;Learn how to curate and use datasets responsibly, tying back to training.&lt;/p&gt;
+&lt;h2 id=&#34;29-scaling-laws-for-llms&#34;&gt;29. Scaling Laws for LLMs&lt;/h2&gt;
+&lt;p&gt;Study the relationships between model size, data, and performance.&lt;/p&gt;
+&lt;h2 id=&#34;30-low-resource-language-processing&#34;&gt;30. Low-Resource Language Processing&lt;/h2&gt;
+&lt;p&gt;Adapt scaling insights to address challenges in underrepresented languages.&lt;/p&gt;
+&lt;h2 id=&#34;31-custom-pretraining-pipelines&#34;&gt;31. Custom Pretraining Pipelines&lt;/h2&gt;
+&lt;p&gt;Integrate data curation and pretraining objectives for tailored solutions.&lt;/p&gt;
+&lt;h2 id=&#34;32-open-source-llm-ecosystems&#34;&gt;32. Open-Source LLM Ecosystems&lt;/h2&gt;
+&lt;p&gt;Explore existing tools and frameworks to leverage community contributions.&lt;/p&gt;
+&lt;h2 id=&#34;33-knowledge-distillation-for-llms&#34;&gt;33. Knowledge Distillation for LLMs&lt;/h2&gt;
+&lt;p&gt;Use foundational knowledge to transfer knowledge between models effectively.&lt;/p&gt;
+&lt;h2 id=&#34;34-efficient-transformer-variants&#34;&gt;34. Efficient Transformer Variants&lt;/h2&gt;
+&lt;p&gt;Study innovations like BigBird and Performer to optimize transformer performance.&lt;/p&gt;
+&lt;h2 id=&#34;35-real-time-llm-applications&#34;&gt;35. Real-Time LLM Applications&lt;/h2&gt;
+&lt;p&gt;Combine deployment and optimization techniques for time-sensitive applications.&lt;/p&gt;
+&lt;h2 id=&#34;36-explainability-in-generative-ai&#34;&gt;36. Explainability in Generative AI&lt;/h2&gt;
+&lt;p&gt;Tie back to embeddings and pretraining to make models interpretable.&lt;/p&gt;
+&lt;h2 id=&#34;37-adversarial-robustness&#34;&gt;37. Adversarial Robustness&lt;/h2&gt;
+&lt;p&gt;Protect models against attacks using safety principles.&lt;/p&gt;
+&lt;h2 id=&#34;38-llm-evaluation-metrics&#34;&gt;38. LLM Evaluation Metrics&lt;/h2&gt;
+&lt;p&gt;Learn how to measure the success of LLMs using insights from pretraining and fine-tuning.&lt;/p&gt;
+&lt;h2 id=&#34;39-language-specific-tokenization&#34;&gt;39. Language-Specific Tokenization&lt;/h2&gt;
+&lt;p&gt;Adapt tokenization strategies to domain-specific or cross-lingual use cases.&lt;/p&gt;
+&lt;h2 id=&#34;40-large-scale-dataset-curation&#34;&gt;40. Large-Scale Dataset Curation&lt;/h2&gt;
+&lt;p&gt;Create datasets that align with ethical and governance standards.&lt;/p&gt;
+&lt;h2 id=&#34;41-interactive-ai-systems&#34;&gt;41. Interactive AI Systems&lt;/h2&gt;
+&lt;p&gt;Leverage embeddings, RAG, and memory for conversational agents.&lt;/p&gt;
+&lt;h2 id=&#34;42-conversational-ai&#34;&gt;42. Conversational AI&lt;/h2&gt;
+&lt;p&gt;Build on prompt engineering and interactive systems to create chatbots.&lt;/p&gt;
+&lt;h2 id=&#34;43-llms-in-healthcare&#34;&gt;43. LLMs in Healthcare&lt;/h2&gt;
+&lt;p&gt;Apply domain-specific knowledge to real-world scenarios.&lt;/p&gt;
+&lt;h2 id=&#34;44-llms-in-finance&#34;&gt;44. LLMs in Finance&lt;/h2&gt;
+&lt;p&gt;Adapt knowledge from healthcare applications to another industry.&lt;/p&gt;
+&lt;h2 id=&#34;45-content-moderation-with-llms&#34;&gt;45. Content Moderation with LLMs&lt;/h2&gt;
+&lt;p&gt;Develop solutions that rely on safety and robustness principles.&lt;/p&gt;
+&lt;h2 id=&#34;46-legal-and-ethical-implications&#34;&gt;46. Legal and Ethical Implications&lt;/h2&gt;
+&lt;p&gt;Apply insights from bias, fairness, and governance to legal compliance.&lt;/p&gt;
+&lt;h2 id=&#34;47-human-in-the-loop-systems&#34;&gt;47. Human-in-the-Loop Systems&lt;/h2&gt;
+&lt;p&gt;Design systems that combine human oversight with autonomous capabilities.&lt;/p&gt;
+&lt;h2 id=&#34;48-adaptive-learning-in-llms&#34;&gt;48. Adaptive Learning in LLMs&lt;/h2&gt;
+&lt;p&gt;Use RLHF and domain-specific models to make models adaptive.&lt;/p&gt;
+&lt;h2 id=&#34;49-multi-agent-systems&#34;&gt;49. Multi-Agent Systems&lt;/h2&gt;
+&lt;p&gt;Scale AI agents into collaborative multi-agent environments.&lt;/p&gt;
+&lt;h2 id=&#34;50-llm-cost-optimization&#34;&gt;50. LLM Cost Optimization&lt;/h2&gt;
+&lt;p&gt;Optimize scaling and deployment strategies for budget efficiency.&lt;/p&gt;
+&lt;h2 id=&#34;51-energy-efficiency-in-training&#34;&gt;51. Energy Efficiency in Training&lt;/h2&gt;
+&lt;p&gt;Build on cost optimization to address environmental concerns.&lt;/p&gt;
+&lt;h2 id=&#34;52-neural-search-engines&#34;&gt;52. Neural Search Engines&lt;/h2&gt;
+&lt;p&gt;Use vector search and embeddings to create advanced search solutions.&lt;/p&gt;
+&lt;h2 id=&#34;53-dynamic-context-management&#34;&gt;53. Dynamic Context Management&lt;/h2&gt;
+&lt;p&gt;Improve retrieval-augmented and memory-based systems.&lt;/p&gt;
+&lt;h2 id=&#34;54-llms-for-summarization&#34;&gt;54. LLMs for Summarization&lt;/h2&gt;
+&lt;p&gt;Apply generation techniques for concise content creation.&lt;/p&gt;
+&lt;h2 id=&#34;55-text-to-image-generation&#34;&gt;55. Text-to-Image Generation&lt;/h2&gt;
+&lt;p&gt;Explore multimodal extensions for creative applications.&lt;/p&gt;
+&lt;h2 id=&#34;56-text-to-video-generation&#34;&gt;56. Text-to-Video Generation&lt;/h2&gt;
+&lt;p&gt;Scale multimodal models to handle complex data types.&lt;/p&gt;
+&lt;h2 id=&#34;57-speech-to-text-with-llms&#34;&gt;57. Speech-to-Text with LLMs&lt;/h2&gt;
+&lt;p&gt;Extend embeddings to include audio representations.&lt;/p&gt;
+&lt;h2 id=&#34;58-augmented-creativity-tools&#34;&gt;58. Augmented Creativity Tools&lt;/h2&gt;
+&lt;p&gt;Combine generation, multimodal models, and semantic search for innovative applications.&lt;/p&gt;
+&lt;h2 id=&#34;59-data-augmentation-for-llm-training&#34;&gt;59. Data Augmentation for LLM Training&lt;/h2&gt;
+&lt;p&gt;Use dataset curation and governance principles to augment data.&lt;/p&gt;
+&lt;h2 id=&#34;60-continuous-learning-in-llms&#34;&gt;60. Continuous Learning in LLMs&lt;/h2&gt;
+&lt;p&gt;Build on adaptive and domain-specific techniques to ensure models evolve.&lt;/p&gt;
+&lt;h2 id=&#34;61-foundation-model-adaptation&#34;&gt;61. Foundation Model Adaptation&lt;/h2&gt;
+&lt;p&gt;Tailor pretraining pipelines to specific needs.&lt;/p&gt;
+&lt;h2 id=&#34;62-active-learning-for-data-curation&#34;&gt;62. Active Learning for Data Curation&lt;/h2&gt;
+&lt;p&gt;Optimize dataset creation through human-in-the-loop systems.&lt;/p&gt;
+&lt;h2 id=&#34;63-llms-for-scientific-discovery&#34;&gt;63. LLMs for Scientific Discovery&lt;/h2&gt;
+&lt;p&gt;Explore specialized applications in research.&lt;/p&gt;
+&lt;h2 id=&#34;64-llms-in-education&#34;&gt;64. LLMs in Education&lt;/h2&gt;
+&lt;p&gt;Design models for personalized learning experiences.&lt;/p&gt;
+&lt;h2 id=&#34;65-llms-for-personalization&#34;&gt;65. LLMs for Personalization&lt;/h2&gt;
+&lt;p&gt;Apply adaptive learning techniques for individualized outputs.&lt;/p&gt;
+&lt;h2 id=&#34;66-role-of-hardware-in-llm-performance&#34;&gt;66. Role of Hardware in LLM Performance&lt;/h2&gt;
+&lt;p&gt;Understand hardware-software co-optimization for better performance.&lt;/p&gt;
+&lt;h2 id=&#34;67-community-building-around-llms&#34;&gt;67. Community Building Around LLMs&lt;/h2&gt;
+&lt;p&gt;Foster open collaboration to drive innovation.&lt;/p&gt;
+&lt;h2 id=&#34;68-synthetic-data-generation&#34;&gt;68. Synthetic Data Generation&lt;/h2&gt;
+&lt;p&gt;Apply LLM generation capabilities to create new datasets.&lt;/p&gt;
+&lt;h2 id=&#34;69-model-interpretability&#34;&gt;69. Model Interpretability&lt;/h2&gt;
+&lt;p&gt;Enhance transparency in LLM operations.&lt;/p&gt;
+&lt;h2 id=&#34;70-real-world-llm-limitations&#34;&gt;70. Real-World LLM Limitations&lt;/h2&gt;
+&lt;p&gt;Understand the constraints and challenges in practical deployments.&lt;/p&gt;
+&lt;h2 id=&#34;71-future-trends-in-generative-ai&#34;&gt;71. Future Trends in Generative AI&lt;/h2&gt;
+&lt;p&gt;Explore emerging ideas and technologies shaping the field.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

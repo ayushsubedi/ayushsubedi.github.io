@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genai on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/genai/</link>
+    <description>Recent content in Genai on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/genai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Curriculum on LLM: A Building-Block Approach</title>
+      <link>https://ayushsubedi.github.io/posts/genai_curriculum_development/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/genai_curriculum_development/</guid>
+      <description>&lt;h1 id=&#34;curriculum-on-llm-a-building-block-approach&#34;&gt;Curriculum on LLM: A Building-Block Approach&lt;/h1&gt;
+&lt;h2 id=&#34;1-foundational-models&#34;&gt;1. Foundational Models&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-a-foundational-model&#34;&gt;What is a foundational model?&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;foundational model&lt;/strong&gt; is defined as a pre-trained neural network that serves as the basis for a wide range of downstream tasks. These models are generally pre-trained on vast corpora of data and can be fine-tuned for specific applications. In mathematical terms, a foundational model $M$ can be represented as a mapping:&lt;/p&gt;
+&lt;p&gt;$$ M: X \to Y $$&lt;/p&gt;
+&lt;p&gt;where $X$ is the input space and $Y$ is the output space. For language models, $X$ represents the set of tokenized inputs (such as words or subwords), and $Y$ represents the possible outputs (such as the predicted token). The underlying model architecture is typically a deep neural network, where parameters $\theta$ are learned through optimization methods such as stochastic gradient descent (SGD).&lt;/p&gt;
+&lt;h4 id=&#34;historical-context-of-foundational-models&#34;&gt;Historical context of foundational models&lt;/h4&gt;
+&lt;p&gt;The historical evolution of foundational models can be traced back to early neural network architectures like &lt;strong&gt;word embeddings&lt;/strong&gt; (e.g., Word2Vec, GloVe), which provided dense representations of words. These embeddings were foundational in shifting from simpler, task-specific models to more complex, pre-trained models that could be adapted for a wide range of tasks.&lt;/p&gt;
+&lt;h4 id=&#34;characteristics-of-foundational-models&#34;&gt;Characteristics of foundational models&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-training on large datasets&lt;/strong&gt;: Foundational models are typically pre-trained on large, diverse datasets. For example, models like GPT and BERT are trained on corpora like Wikipedia, BooksCorpus, and other web-based text.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Transferability&lt;/strong&gt;: These models are designed to be fine-tuned on smaller, task-specific datasets. The pre-trained weights provide a strong starting point for learning task-specific representations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: Foundational models scale effectively with increased data and computational power, often demonstrating improved performance as model size increases.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;differences-from-traditional-machine-learning-models&#34;&gt;Differences from traditional machine learning models&lt;/h4&gt;
+&lt;p&gt;Traditional machine learning models, such as decision trees or SVMs, are often trained on task-specific data and typically lack the generalization power exhibited by foundational models. In contrast, foundational models are &lt;strong&gt;pre-trained on large, generic datasets&lt;/strong&gt; and are capable of adapting to a wide range of downstream tasks through transfer learning.&lt;/p&gt;
+&lt;h3 id=&#34;evolution-of-foundational-models-in-ai&#34;&gt;Evolution of foundational models in AI&lt;/h3&gt;
+&lt;h4 id=&#34;early-milestones-in-foundational-models&#34;&gt;Early milestones in foundational models&lt;/h4&gt;
+&lt;p&gt;Early deep learning models like &lt;strong&gt;word embeddings&lt;/strong&gt; served as the initial foray into pre-training. These embeddings were learned using shallow neural networks and then applied to downstream tasks.&lt;/p&gt;
+&lt;p&gt;With the advent of &lt;strong&gt;deep neural networks&lt;/strong&gt; and the introduction of &lt;strong&gt;transformer models&lt;/strong&gt;, foundational models were able to leverage vast amounts of unstructured data (e.g., text, images) and achieve remarkable performance in various domains.&lt;/p&gt;
+&lt;h4 id=&#34;transition-from-task-specific-to-general-purpose-models&#34;&gt;Transition from task-specific to general-purpose models&lt;/h4&gt;
+&lt;p&gt;Previously, machine learning models were designed for specific tasks such as classification, regression, or language translation. However, with the advent of foundational models, a paradigm shift occurred, moving towards &lt;strong&gt;general-purpose models&lt;/strong&gt;. This shift was marked by the introduction of models like &lt;strong&gt;BERT&lt;/strong&gt; and &lt;strong&gt;GPT&lt;/strong&gt;, which can be fine-tuned for various tasks beyond their initial pre-training objective.&lt;/p&gt;
+&lt;h4 id=&#34;integration-of-foundational-models-in-various-industries&#34;&gt;Integration of foundational models in various industries&lt;/h4&gt;
+&lt;p&gt;Foundational models have been integrated across various industries, such as healthcare, finance, and entertainment. Their ability to understand and generate text, code, and images has led to their widespread adoption in fields ranging from &lt;strong&gt;natural language processing&lt;/strong&gt; (NLP) to &lt;strong&gt;computer vision&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;key-examples-gpt-bert-etc&#34;&gt;Key examples (GPT, BERT, etc.)&lt;/h3&gt;
+&lt;h4 id=&#34;gpt-family-evolution-from-gpt-1-to-gpt-4&#34;&gt;GPT family: Evolution from GPT-1 to GPT-4&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;GPT family&lt;/strong&gt; of models, introduced by OpenAI, represents a series of autoregressive transformer models. These models are trained to predict the next token in a sequence of text. Mathematically, the autoregressive nature of GPT can be described as:&lt;/p&gt;
+&lt;p&gt;$$ P(w_1, w_2, \dots, w_T) = \prod_{t=1}^{T} P(w_t | w_1, \dots, w_{t-1}) $$&lt;/p&gt;
+&lt;p&gt;where $w_t$ represents the $t$-th token in the sequence, and $P(w_t | w_1, \dots, w_{t-1})$ is the probability distribution of the next token, conditioned on the previous tokens.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GPT-1&lt;/strong&gt;: Introduced the transformer architecture and demonstrated that large-scale pre-training could improve performance on various downstream NLP tasks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GPT-2&lt;/strong&gt;: Increased the model size and training data, achieving significant improvements in text generation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GPT-3&lt;/strong&gt;: With 175 billion parameters, GPT-3 showed substantial advances in few-shot learning, where the model could generalize to tasks with minimal task-specific data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GPT-4&lt;/strong&gt;: Represents the latest iteration, with further improvements in language understanding and generation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;bert-and-its-variations-roberta-distilbert&#34;&gt;BERT and its variations (RoBERTa, DistilBERT)&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;BERT&lt;/strong&gt; (Bidirectional Encoder Representations from Transformers) introduced the concept of bidirectional context for pre-trained language models. BERT is trained by predicting missing words in a sentence, using the following objective function:&lt;/p&gt;
+&lt;p&gt;$$
+L_{\text{masked}} = - \sum_{i} \log P(w_i | \hat{w}_i)
+$$&lt;/p&gt;
+&lt;p&gt;where $w_i$ is the $i$-th token, and $\hat{w}_i$ is the masked token.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;RoBERTa&lt;/strong&gt;: A variant of BERT that improves on training by using more data, longer training, and dynamic masking.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DistilBERT&lt;/strong&gt;: A smaller, faster version of BERT that retains much of the original model’s performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;comparison-between-autoregressive-and-autoencoding-models&#34;&gt;Comparison between autoregressive and autoencoding models&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Autoregressive models&lt;/strong&gt; (e.g., GPT) predict tokens sequentially, conditioning on previous tokens. They are effective for generative tasks, such as text generation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Autoencoding models&lt;/strong&gt; (e.g., BERT) are trained to predict missing tokens in a sequence, allowing for bidirectional context understanding. These models excel at tasks requiring contextual comprehension, such as classification and question answering.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;applications-of-foundational-models&#34;&gt;Applications of foundational models&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Language generation and translation&lt;/strong&gt;: Models like GPT and T5 have revolutionized the field of natural language generation and translation. These models are used for text generation, machine translation, summarization, and more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Image captioning and visual question answering&lt;/strong&gt;: Vision-language models like &lt;strong&gt;CLIP&lt;/strong&gt; and &lt;strong&gt;DALL-E&lt;/strong&gt; have enabled systems to generate captions for images and answer questions about visual content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Biomedical research and drug discovery&lt;/strong&gt;: Foundational models are being used to analyze large biomedical datasets, predict protein structures, and assist in drug discovery.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Personalized recommendations and search engines&lt;/strong&gt;: Models like BERT and GPT are employed to power personalized search engines, recommendation systems, and conversational agents.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ethical-implications-and-considerations&#34;&gt;Ethical implications and considerations&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bias in training data and output&lt;/strong&gt;: Foundational models can inherit biases present in their training data. These biases can lead to unfair or discriminatory outputs. Techniques like &lt;strong&gt;bias mitigation&lt;/strong&gt; and &lt;strong&gt;adversarial training&lt;/strong&gt; are being explored to address these issues.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Environmental concerns of large-scale training&lt;/strong&gt;: Training large foundational models requires substantial computational resources, leading to concerns about their carbon footprint. Methods to optimize training efficiency and reduce energy consumption are a key area of ongoing research.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Misinformation and responsible AI usage&lt;/strong&gt;: The ability of models like GPT-3 to generate coherent and convincing text poses risks in the context of misinformation and fake news. Ensuring responsible usage and implementing safeguards is crucial for the responsible deployment of these technologies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sources&#34;&gt;Sources:&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
