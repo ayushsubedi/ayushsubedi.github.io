@@ -2,13 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ayushsubedi.github.io/posts/segment_anything/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+    <loc>https://ayushsubedi.github.io/posts/cloudfactory_reflections/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/ai/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/cloudfactory/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/cloudfactory/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/ds/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/mentoring/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/reflection/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/team/</loc>
+    <lastmod>2025-06-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/ds_to_ai_engineering/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/career/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/engineering/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/work/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/segment_anything/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/computer-vision/</loc>
@@ -44,9 +86,6 @@
     <loc>https://ayushsubedi.github.io/categories/paper-exploration/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/categories/research/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -54,9 +93,6 @@
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/sota/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/zero-shot/</loc>
@@ -488,9 +524,6 @@
     <loc>https://ayushsubedi.github.io/tags/t-sne/</loc>
     <lastmod>2022-04-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ayushsubedi.github.io/tags/ai/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ayushsubedi.github.io/categories/cheers-hospital/</loc>
     <lastmod>2022-01-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -706,12 +739,6 @@
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/maps/</loc>
     <lastmod>2018-08-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/posts/bird_plane_superman/</loc>
-    <lastmod>2018-02-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/pytorch/</loc>
-    <lastmod>2018-02-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/categories/conceptual/</loc>
     <lastmod>2018-01-12T00:00:00+00:00</lastmod>

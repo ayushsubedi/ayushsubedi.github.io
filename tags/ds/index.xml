@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ds on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/ds/</link>
+    <description>Recent content in Ds on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Jun 2025 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/ds/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adieu Cloudfactory</title>
+      <link>https://ayushsubedi.github.io/posts/cloudfactory_reflections/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/cloudfactory_reflections/</guid>
+      <description>&lt;h1 id=&#34;adieu-cloudfactory&#34;&gt;Adieu Cloudfactory&lt;/h1&gt;
+&lt;p&gt;I spent nearly four years at Cloudfactory, and every time I try to wrap my head around what it meant to me, I’m reminded that careers,like products or cities,aren’t made of logos or titles. They’re made of people, problems, alignment, late nights, bugs, breakthroughs, and sometimes… a baby.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cf1.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When I joined, I was already deep into data. I had built models, written pipelines, led teams. But Cloudfactory introduced a different kind of challenge: earning the trust of the business in those models. It wasn’t just about proving something worked,it was about influencing decision-makers to see the value in data-driven thinking. It was about guiding other data professionals too,helping them push for solutions that were not only technically sound, but practically adopted. Cloudfactory gave me a rare blend of freedom and responsibility, and it taught me that shaping decisions often matters more than shipping code.&lt;/p&gt;
+&lt;p&gt;At the time, the company was scaling fast. Our core platform was being rebuilt, our data infrastructure was stitched together from legacy systems, and core metrics,well, they depended on who you asked. One of my earliest tasks was reconciling two dashboards showing daily active workers. Both technically correct. Both contextually wrong. That was the first of many fires I learned to enjoy putting out.&lt;/p&gt;
+&lt;p&gt;Between those fires and the deeper rebuilds, we started growing a team. First, it was just a handful of engineers across scattered projects. Then came the analysts, the scientists, the PMs. Eventually, I was leading a 25-person organization across data science, engineering, and research, including a focused team of eight working on AV Lidar, simulation, fraud detection, unsupervised learning, and workforce modeling. Shaping that team and helping it grow into its own identity was one of the most fulfilling parts of my journey.&lt;/p&gt;
+&lt;p&gt;And of course, there were people. So many brilliant, humble, and absurdly kind people. Folks like Prakash, who joined me in late-night rabbit holes to investigate annotation throughput spikes that made no sense. Reema, who brought rigor and process to our first serious data QA workflows. Suranjan, who debugged a production issue by literally drawing the logic upside down on a whiteboard,because sometimes you just have to look at a problem differently. It worked.&lt;/p&gt;
+&lt;p&gt;In parallel, life outside work was happening too. Somewhere along the way, I finished my Master’s in Analytics from Georgia Tech. I remember switching between stakeholder meetings and thesis work, from forecasting models to future-of-AI seminars. And then I became a father. Context-switching between machine learning infrastructure and diaper changes became the new rhythm of life.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cf3.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;There were moments of doubt too. Was the work we were doing impactful enough? Was I doing enough? But then I’d talk to a delivery owner in Kenya or a product manager in Reading and hear how our changes helped them improve SLAs or understand quality breakdowns. That’s when it hit me,good data work doesn’t scream. It hums quietly in the background, making the rest of the machine work better.&lt;/p&gt;
+&lt;p&gt;In the later chapters, we started leaning into LLMs,not for the buzz, but for real operational use. We built early systems that flagged potential fraud, extracted and classified topics from agent conversations, and surfaced actionable themes hidden in text feedback. It was buggy, early, and exciting. Alongside that, I was also working on prescriptive analytics, simlation frameworks, pricing models, and experimentation strategies to help the business make better, faster decisions. These tools helped us derisk client engagements and secure new contracts, while also shifting the mindset from dashboards to predictions, and from insights to actions.&lt;/p&gt;
+&lt;p&gt;I also had the chance to pay it forward, whether by mentoring early-career scientists, co-leading events like AI for Managers and Data Career Mapping, or hiring and onboarding associates who reminded me exactly why I chose this field. In our onboarding tradition, we were asked to share a favorite quote. I chose: “Be who you needed when you were younger.” Four years later, that quote means even more. If I managed to live by that during my time here, I’m leaving fulfilled.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cf4.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I don’t work at Cloudfactory anymore, but I carry it with me,the late nights, the post-mortems, the product councils, the joy of finally getting a Prefect DAG to not crash on Mondays. And most of all, the people. They say you don’t remember tasks,you remember how people made you feel. If that’s true, Cloudfactory felt like a place that demanded growth, nurtured curiosity, and let you bring your full self to the table, every single day.&lt;/p&gt;
+&lt;p&gt;Talent is everywhere. Opportunity is not. And I’ll keep doing my part to bridge that gap, just as Cloudfactory taught me to.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cf2.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

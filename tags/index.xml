@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jun 2025 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI</title>
+      <link>https://ayushsubedi.github.io/tags/ai/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloudfactory</title>
+      <link>https://ayushsubedi.github.io/tags/cloudfactory/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/cloudfactory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ds</title>
+      <link>https://ayushsubedi.github.io/tags/ds/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/ds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mentoring</title>
+      <link>https://ayushsubedi.github.io/tags/mentoring/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/mentoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Team</title>
+      <link>https://ayushsubedi.github.io/tags/team/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/team/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Career</title>
+      <link>https://ayushsubedi.github.io/tags/career/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering</title>
+      <link>https://ayushsubedi.github.io/tags/engineering/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/engineering/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Computer Vision</title>
@@ -1011,15 +1074,6 @@
     </item>
     
     <item>
-      <title>Ai</title>
-      <link>https://ayushsubedi.github.io/tags/ai/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Flask</title>
       <link>https://ayushsubedi.github.io/tags/flask/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
@@ -1349,15 +1403,6 @@
       <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/maps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pytorch</title>
-      <link>https://ayushsubedi.github.io/tags/pytorch/</link>
-      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/pytorch/</guid>
       <description></description>
     </item>
     

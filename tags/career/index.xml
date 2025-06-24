@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Career on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/career/</link>
+    <description>Recent content in Career on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A reflection on the journey from Data Science to AI engineering</title>
+      <link>https://ayushsubedi.github.io/posts/ds_to_ai_engineering/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ds_to_ai_engineering/</guid>
+      <description>&lt;h1 id=&#34;a-reflection-on-the-journey-from-data-science-to-ai-engineering&#34;&gt;A reflection on the journey from Data Science to AI engineering&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; A lot has changed, but no change has been too troublesome. In fact, I sometimes miss the quiet nuances of data science.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/a/a3/Gradient_descent.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;These days, I spend most of my time building AI systems. Not just models, but agents, automations, workflows that talk to vector databases, orchestrate multiple LLMs, route decisions, and invoke tools, real tools, to take action. I am tuning base models, stacking retrieval pipelines, experimenting with synthetic data, and wrestling with the latency, memory, and quality triangle that comes with building anything remotely intelligent.&lt;/p&gt;
+&lt;p&gt;But it was not always this way.&lt;/p&gt;
+&lt;p&gt;For most of my career, I lived in the world of data science. It was a quieter kind of work. A Jupyter-notebook-shaped world where progress looked like cleaner metrics, better coverage, tighter confidence intervals, and slowly building trust with stakeholders. It was not about agents reasoning or hallucinating. It was about making sense of the mess, methodically and often manually. And oddly enough, I miss that sometimes.&lt;/p&gt;
+&lt;p&gt;In data science, nuance was the whole game. You did not just care about whether the model worked. You cared about whether it was fair, stable, interpretable, and whether the metric matched what the business actually needed. You obsessed over leakage, feature drift, and baseline comparisons. You wrote SQL slowly, like poetry. You explained why precision mattered more than recall, or why a dashboard should lag by a day to avoid false alarms. There was something beautiful about that kind of care.&lt;/p&gt;
+&lt;p&gt;Then LLMs exploded. And like many others, I moved.&lt;/p&gt;
+&lt;p&gt;What started with basic embeddings and zero-shot prompts quickly turned into full-fledged systems. Retrieval augmented generation, function calling, evaluation frameworks, autonomous agents, memory stores, and even fine-tuning workflows. What fascinates me now is not just what these models can say, but what they can do. They are not just answering questions anymore, they are rewriting the workflows themselves.&lt;/p&gt;
+&lt;p&gt;And yet, despite the excitement, I have realized something important. The further you go into AI engineering, the easier it becomes to lose the rigor that data science forced you to have. It is easier to chase demos over decisions. Easier to fall in love with the illusion of intelligence instead of questioning what is underneath. The best of both worlds, AI that works and makes sense, still requires the discipline I learned back in the data science trenches.&lt;/p&gt;
+&lt;p&gt;What has been most fulfilling, though, is seeing how the two worlds meet. How all the thinking around metrics, inference patterns, experimentation, and stakeholder communication still shows up, just with different tools and different failure modes. I find myself explaining vector search precision the way I used to explain ROC curves. I still write post-mortems. I still obsess over edge cases. And I still believe that trust is the real deliverable.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So what changed?&lt;/strong&gt;&lt;br&gt;
+A lot.&lt;br&gt;
+But nothing that made me feel out of place.&lt;/p&gt;
+&lt;p&gt;If anything, this new chapter has deepened my appreciation for the last one. Data science gave me the instincts. AI engineering is giving me the playground. And between the two, I feel like I am finally building systems that both work and matter.&lt;/p&gt;
+&lt;p&gt;Onward.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

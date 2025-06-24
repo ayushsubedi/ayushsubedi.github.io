@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jun 2025 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cloudfactory</title>
+      <link>https://ayushsubedi.github.io/categories/cloudfactory/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/cloudfactory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reflection</title>
+      <link>https://ayushsubedi.github.io/categories/reflection/</link>
+      <pubDate>Tue, 24 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/reflection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Work</title>
+      <link>https://ayushsubedi.github.io/categories/work/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/categories/work/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Computer Vision</title>
