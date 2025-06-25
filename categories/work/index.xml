@@ -19,7 +19,7 @@
       <guid>https://ayushsubedi.github.io/posts/ds_to_ai_engineering/</guid>
       <description>&lt;h1 id=&#34;a-reflection-on-the-journey-from-data-science-to-ai-engineering&#34;&gt;A reflection on the journey from Data Science to AI engineering&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; A lot has changed, but no change has been too troublesome. In fact, I sometimes miss the quiet nuances of data science.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/a/a3/Gradient_descent.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/dstoai.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;These days, I spend most of my time building AI systems. Not just models, but agents, automations, workflows that talk to vector databases, orchestrate multiple LLMs, route decisions, and invoke tools, real tools, to take action. I am tuning base models, stacking retrieval pipelines, experimenting with synthetic data, and wrestling with the latency, memory, and quality triangle that comes with building anything remotely intelligent.&lt;/p&gt;
 &lt;p&gt;But it was not always this way.&lt;/p&gt;
 &lt;p&gt;For most of my career, I lived in the world of data science. It was a quieter kind of work. A Jupyter-notebook-shaped world where progress looked like cleaner metrics, better coverage, tighter confidence intervals, and slowly building trust with stakeholders. It was not about agents reasoning or hallucinating. It was about making sense of the mess, methodically and often manually. And oddly enough, I miss that sometimes.&lt;/p&gt;
@@ -33,6 +33,10 @@ A lot.&lt;br&gt;
 But nothing that made me feel out of place.&lt;/p&gt;
 &lt;p&gt;If anything, this new chapter has deepened my appreciation for the last one. Data science gave me the instincts. AI engineering is giving me the playground. And between the two, I feel like I am finally building systems that both work and matter.&lt;/p&gt;
 &lt;p&gt;Onward.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;or gradient descent?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/a/a3/Gradient_descent.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
