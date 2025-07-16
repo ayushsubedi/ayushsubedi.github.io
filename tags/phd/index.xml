@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHD on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/phd/</link>
+    <description>Recent content in PHD on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/phd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AI with rigor</title>
+      <link>https://ayushsubedi.github.io/posts/ai_notes/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/ai_notes/</guid>
+      <description>&lt;h1 id=&#34;ai-with-rigor&#34;&gt;AI with rigor&lt;/h1&gt;
+&lt;h2 id=&#34;maximum-likelihood&#34;&gt;Maximum Likelihood&lt;/h2&gt;
+&lt;p&gt;Maximum likelihood estimation (MLE) finds the parameter values that maximize the likelihood function&lt;/p&gt;
+&lt;p&gt;$$
+L(\theta) = P(\mathbf{x}|\theta)
+$$&lt;/p&gt;
+&lt;p&gt;given observed data $\mathbf{x} = {x_1, x_2, \ldots, x_n}$ and parameter vector $\theta$.&lt;/p&gt;
+&lt;p&gt;For independent observations, the likelihood becomes&lt;/p&gt;
+&lt;p&gt;$$
+L(\theta) = \prod_{i=1}^n P(x_i|\theta)
+$$&lt;/p&gt;
+&lt;p&gt;and the MLE estimator is&lt;/p&gt;
+&lt;div&gt;
+$$
+\hat{\theta}_{MLE} = \arg\max_{\theta} \prod_{i=1}^n P(x_i \mid \theta)
+$$
+&lt;/div&gt;
+&lt;p&gt;In NLP, MLE is used to train
+language models by maximizing the probability of observed text sequences under the model parameters.&lt;/p&gt;
+&lt;p&gt;For a language model with parameters $\theta$, the MLE objective over a corpus of sequences ${w^{(1)}, w^{(2)}, \ldots, w^{(M)}}$ is&lt;/p&gt;
+&lt;p&gt;$$
+\hat{\theta} = \arg\max_{\theta} \prod_{m=1}^M P(w^{(m)}|\theta)
+$$&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Language Model Training&lt;/strong&gt;
+Given corpus: [&amp;ldquo;the cat&amp;rdquo;, &amp;ldquo;the dog&amp;rdquo;, &amp;ldquo;a cat&amp;rdquo;]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bigram model parameters: $P(\text{cat}|\text{the})$, $P(\text{dog}|\text{the})$, etc.&lt;/li&gt;
+&lt;li&gt;MLE: $\hat{\theta} = \arg\max_{\theta} P(\text{the cat}|\theta) \times P(\text{the dog}|\theta) \times P(\text{a cat}|\theta)$&lt;/li&gt;
+&lt;li&gt;Solution: $P(\text{cat}|\text{the}) = \frac{1}{2}$, $P(\text{dog}|\text{the}) = \frac{1}{2}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Neural Language Model&lt;/strong&gt;
+For sequence &amp;ldquo;hello world&amp;rdquo; with vocabulary $V$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model outputs: $P(w_t|w_{&amp;lt;t}, \theta)$ for each position $t$&lt;/li&gt;
+&lt;li&gt;Likelihood: $L(\theta) = P(\text{hello}|\theta) \times P(\text{world}|\text{hello}, \theta)$&lt;/li&gt;
+&lt;li&gt;MLE trains $\theta$ to maximize this probability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Coin Flip Analogy&lt;/strong&gt;
+Observed data: 7 heads, 3 tails in 10 flips&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Parameter: $p$ (probability of heads)&lt;/li&gt;
+&lt;li&gt;Likelihood: $L(p) = \binom{10}{7} p^7 (1-p)^3$&lt;/li&gt;
+&lt;li&gt;MLE solution: $\hat{p} = \frac{7}{10} = 0.7$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;maximum-log-likelihood&#34;&gt;Maximum Log-Likelihood&lt;/h2&gt;
+&lt;p&gt;Maximum log-likelihood estimation transforms the likelihood maximization problem into a more computationally tractable form by taking the logarithm: $$\hat{\theta} = \arg\max_{\theta} \log L(\theta) = \arg\max_{\theta} \log \prod_{i=1}^n P(x_i|\theta) = \arg\max_{\theta} \sum_{i=1}^n \log P(x_i|\theta)$$&lt;/p&gt;
+&lt;p&gt;The logarithm converts products to sums, preventing numerical underflow and making derivatives easier to compute. For language models, the negative log-likelihood (NLL) loss is commonly minimized: $$\mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^N \log P(w_i|w_{&amp;lt;i}, \theta)$$&lt;/p&gt;
+&lt;p&gt;where $N$ is the total number of tokens. This is equivalent to minimizing cross-entropy between the true distribution and model predictions. The log-likelihood objective is strictly concave for exponential family distributions, ensuring a unique global maximum.&lt;/p&gt;
+&lt;h2 id=&#34;examples-1&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Numerical Stability&lt;/strong&gt;
+Without log-likelihood:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$P(w_1|\theta) = 0.1$, $P(w_2|\theta) = 0.05$, $P(w_3|\theta) = 0.02$&lt;/li&gt;
+&lt;li&gt;Likelihood: $L(\theta) = 0.1 \times 0.05 \times 0.02 = 0.0001$ (underflow risk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With log-likelihood:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\log L(\theta) = \log(0.1) + \log(0.05) + \log(0.02) = -2.3 + (-3.0) + (-3.9) = -9.2$&lt;/li&gt;
+&lt;li&gt;Numerically stable and easier to optimize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Cross-Entropy Loss&lt;/strong&gt;
+True next word: &amp;ldquo;cat&amp;rdquo; (index 5 in vocabulary)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model output: $[0.1, 0.05, 0.15, 0.2, 0.1, 0.3, 0.1]$ (softmax probabilities)&lt;/li&gt;
+&lt;li&gt;Log-likelihood: $\log P(\text{cat}) = \log(0.3) = -1.204$&lt;/li&gt;
+&lt;li&gt;NLL loss: $-\log(0.3) = 1.204$ (lower is better)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Training Objective&lt;/strong&gt;
+For transformer language model on sequence &amp;ldquo;the cat sat&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Token probabilities: $P(\text{the}) = 0.8$, $P(\text{cat}|\text{the}) = 0.6$, $P(\text{sat}|\text{the cat}) = 0.4$&lt;/li&gt;
+&lt;li&gt;Log-likelihood: $\log(0.8) + \log(0.6) + \log(0.4) = -0.223 + (-0.511) + (-0.916) = -1.65$&lt;/li&gt;
+&lt;li&gt;Training maximizes this value (minimizes NLL = 1.65)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;n-gram&#34;&gt;N-gram&lt;/h2&gt;
+&lt;p&gt;An n-gram is a contiguous sequence of $n$ items from a given sequence of text or speech, where items are typically words, characters, or tokens. For a sequence $w_1, w_2, \ldots, w_m$, the set of all n-grams is ${w_i, w_{i+1}, \ldots, w_{i+n-1} : 1 \leq i \leq m-n+1}$.&lt;/p&gt;
+&lt;p&gt;In probabilistic language modeling, n-gram models estimate the probability of a word given the previous $n-1$ words using the Markov assumption:&lt;/p&gt;
+&lt;p&gt;$$
+P(w_i | w_1, \ldots, w_{i-1}) \approx P(w_i | w_{i-n+1}, \ldots, w_{i-1})
+$$&lt;/p&gt;
+&lt;p&gt;The maximum likelihood estimate for an n-gram probability is&lt;/p&gt;
+&lt;p&gt;$$
+P(w_i | w_{i-n+1}, \ldots, w_{i-1}) = \frac{C(w_{i-n+1}, \ldots, w_i)}{C(w_{i-n+1}, \ldots, w_{i-1})}
+$$&lt;/p&gt;
+&lt;p&gt;where $C(\cdot)$ denotes the count function.&lt;/p&gt;
+&lt;h3 id=&#34;examples-2&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Word N-grams from &amp;ldquo;The cat sat on the mat&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unigrams (1-grams): [&amp;ldquo;The&amp;rdquo;, &amp;ldquo;cat&amp;rdquo;, &amp;ldquo;sat&amp;rdquo;, &amp;ldquo;on&amp;rdquo;, &amp;ldquo;the&amp;rdquo;, &amp;ldquo;mat&amp;rdquo;]&lt;/li&gt;
+&lt;li&gt;Bigrams (2-grams): [&amp;ldquo;The cat&amp;rdquo;, &amp;ldquo;cat sat&amp;rdquo;, &amp;ldquo;sat on&amp;rdquo;, &amp;ldquo;on the&amp;rdquo;, &amp;ldquo;the mat&amp;rdquo;]&lt;/li&gt;
+&lt;li&gt;Trigrams (3-grams): [&amp;ldquo;The cat sat&amp;rdquo;, &amp;ldquo;cat sat on&amp;rdquo;, &amp;ldquo;sat on the&amp;rdquo;, &amp;ldquo;on the mat&amp;rdquo;]&lt;/li&gt;
+&lt;li&gt;4-grams: [&amp;ldquo;The cat sat on&amp;rdquo;, &amp;ldquo;cat sat on the&amp;rdquo;, &amp;ldquo;sat on the mat&amp;rdquo;]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Character N-grams from &amp;ldquo;hello&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Character bigrams: [&amp;ldquo;he&amp;rdquo;, &amp;ldquo;el&amp;rdquo;, &amp;ldquo;ll&amp;rdquo;, &amp;ldquo;lo&amp;rdquo;]&lt;/li&gt;
+&lt;li&gt;Character trigrams: [&amp;ldquo;hel&amp;rdquo;, &amp;ldquo;ell&amp;rdquo;, &amp;ldquo;llo&amp;rdquo;]&lt;/li&gt;
+&lt;li&gt;Useful for morphological analysis and handling out-of-vocabulary words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Probability Calculation&lt;/strong&gt;
+Given corpus with bigram counts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$C(\text{&amp;ldquo;the cat&amp;rdquo;}) = 15$, $C(\text{&amp;ldquo;the&amp;rdquo;}) = 100$&lt;/li&gt;
+&lt;li&gt;$P(\text{cat} | \text{the}) = \frac{C(\text{&amp;ldquo;the cat&amp;rdquo;})}{C(\text{&amp;ldquo;the&amp;rdquo;})} = \frac{15}{100} = 0.15$&lt;/li&gt;
+&lt;li&gt;For sentence probability: $P(\text{&amp;ldquo;the cat sat&amp;rdquo;}) = P(\text{the}) \times P(\text{cat} | \text{the}) \times P(\text{sat} | \text{cat})$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;dot-product&#34;&gt;Dot Product&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://swdevnotes.com/images/python/2021/0110/dot-product-2d.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The dot product (or inner product) of two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ is defined as&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+$$.&lt;/p&gt;
+&lt;p&gt;Geometrically, it equals&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}| |\mathbf{v}| \cos \theta
+$$&lt;/p&gt;
+&lt;p&gt;where $\theta$ is the angle between the vectors and $|\cdot|$ denotes the Euclidean norm. The dot product is commutative, distributive, and satisfies&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{u} \cdot \mathbf{u} = |\mathbf{u}|^2
+$$&lt;/p&gt;
+&lt;p&gt;In NLP, it serves as a fundamental similarity measure and is the core operation in attention mechanisms, where&lt;/p&gt;
+&lt;p&gt;$$
+\text{score}(\mathbf{q}, \mathbf{k}) = \mathbf{q}^T \mathbf{k}
+$$&lt;/p&gt;
+&lt;p&gt;computes compatibility between query and key vectors.&lt;/p&gt;
+&lt;h3 id=&#34;examples-3&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Word Embedding Similarity&lt;/strong&gt;
+Given word embeddings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbf{v}_{\text{king}} = [0.2, 0.8, -0.1, 0.3]$&lt;/li&gt;
+&lt;li&gt;$\mathbf{v}_{\text{queen}} = [0.1, 0.7, -0.2, 0.4]$&lt;/li&gt;
+&lt;li&gt;Similarity = $\mathbf{u} \cdot \mathbf{v} = (0.2)(0.1) + (0.8)(0.7) + (-0.1)(-0.2) + (0.3)(0.4) = 0.72$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Attention Score Computation&lt;/strong&gt;
+In transformer attention:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Query: $\mathbf{q} = [1, 2, 0]$&lt;/li&gt;
+&lt;li&gt;Key: $\mathbf{k} = [2, 1, 3]$&lt;/li&gt;
+&lt;li&gt;Raw attention score = $\mathbf{q} \cdot \mathbf{k} = (1)(2) + (2)(1) + (0)(3) = 4$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Cosine Similarity Foundation&lt;/strong&gt;
+For vectors $\mathbf{u} = [3, 4]$ and $\mathbf{v} = [1, 2]$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbf{u} \cdot \mathbf{v} = 3 \cdot 1 + 4 \cdot 2 = 11$&lt;/li&gt;
+&lt;li&gt;$\cos \theta = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{u}| |\mathbf{v}|} = \frac{11}{\sqrt{25} \sqrt{5}} = \frac{11}{5\sqrt{5}} \approx 0.98$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;cosine-similarity&#34;&gt;Cosine Similarity&lt;/h2&gt;
+&lt;p&gt;Cosine similarity measures the cosine of the angle between two non-zero vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$, defined as&lt;/p&gt;
+&lt;p&gt;$$
+\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{u}| |\mathbf{v}|} = \frac{\sum_{i=1}^{n} u_i v_i}{\sqrt{\sum_{i=1}^{n} u_i^2} \sqrt{\sum_{i=1}^{n} v_i^2}}
+$$&lt;/p&gt;
+&lt;p&gt;The similarity ranges from -1 (completely opposite) to 1 (identical direction), with 0 indicating orthogonality. Unlike Euclidean distance, cosine similarity is invariant to vector magnitude and focuses purely on orientation, making it ideal for high-dimensional sparse data like text embeddings. It is equivalent to the dot product of the L2-normalized vectors:&lt;/p&gt;
+&lt;p&gt;$$
+\cos(\theta) = \frac{\mathbf{u}}{|\mathbf{u}|} \cdot \frac{\mathbf{v}}{|\mathbf{v}|}
+$$
+.&lt;/p&gt;
+&lt;h3 id=&#34;examples-4&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Document Similarity&lt;/strong&gt;
+Given TF-IDF vectors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Document A: $\mathbf{d_A} = [3, 1, 0, 2]$&lt;/li&gt;
+&lt;li&gt;Document B: $\mathbf{d_B} = [1, 2, 1, 0]$&lt;/li&gt;
+&lt;li&gt;$\cos(\theta) = \frac{(3)(1) + (1)(2) + (0)(1) + (2)(0)}{\sqrt{9+1+0+4} \sqrt{1+4+1+0}} = \frac{5}{\sqrt{14} \sqrt{6}} = \frac{5}{\sqrt{84}} \approx 0.545$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Word Embedding Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbf{v}_{happy} = [0.8, 0.3, -0.1]$&lt;/li&gt;
+&lt;li&gt;$\mathbf{v}_{joyful} = [0.7, 0.4, -0.2]$&lt;/li&gt;
+&lt;li&gt;$\cos(\theta) = \frac{(0.8)(0.7) + (0.3)(0.4) + (-0.1)(-0.2)}{\sqrt{0.64+0.09+0.01} \sqrt{0.49+0.16+0.04}} = \frac{0.56 + 0.12 + 0.02}{\sqrt{0.74} \sqrt{0.69}} \approx 0.98$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Sentence Similarity in Practice&lt;/strong&gt;
+Two sentences with BERT embeddings (768-dimensional):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sentence 1: &amp;ldquo;The cat is sleeping&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Sentence 2: &amp;ldquo;A cat is napping&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;If cosine similarity = 0.85, this indicates high semantic similarity despite different words&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;perplexity&#34;&gt;Perplexity&lt;/h2&gt;
+&lt;p&gt;Perplexity is the exponentiated cross-entropy of a probability distribution, formally defined as&lt;/p&gt;
+&lt;p&gt;$$
+PP(W) = 2^{H(W)}
+$$&lt;/p&gt;
+&lt;p&gt;where $H(W)$ is the entropy of the word sequence $W$. For a language model with probability distribution $P$ over a test set of $N$ words, perplexity is computed as&lt;/p&gt;
+&lt;p&gt;$$PP = 2^{-\frac{1}{N} \sum_{i=1}^{N} \log_2 P(w_i | w_{&amp;lt;i})}$$&lt;/p&gt;
+&lt;p&gt;Equivalently, it can be expressed as the geometric mean of the reciprocal probabilities:&lt;/p&gt;
+&lt;p&gt;$$PP = \sqrt[N]{\prod_{i=1}^{N} \frac{1}{P(w_i | w_{&amp;lt;i})}}$$&lt;/p&gt;
+&lt;p&gt;Lower perplexity indicates better predictive performance, with a perfect model achieving perplexity of 1.&lt;/p&gt;
+&lt;h3 id=&#34;examples-5&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Simple Bigram Model&lt;/strong&gt;
+Given the sentence &amp;ldquo;the cat sat&amp;rdquo; and a bigram model:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$P(\text{cat} | \text{the}) = 0.3$&lt;/li&gt;
+&lt;li&gt;$P(\text{sat} | \text{cat}) = 0.2$&lt;/li&gt;
+&lt;li&gt;Perplexity = $\sqrt{\frac{1}{0.3} \times \frac{1}{0.2}} = \sqrt{16.67} \approx 4.08$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Comparative Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model A: Perplexity = 50 on test set&lt;/li&gt;
+&lt;li&gt;Model B: Perplexity = 25 on test set&lt;/li&gt;
+&lt;li&gt;Model B is better, as it&amp;rsquo;s less &amp;ldquo;perplexed&amp;rdquo; by the test data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Practical Context&lt;/strong&gt;
+State-of-the-art language models typically achieve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Penn Treebank: ~50-60 perplexity&lt;/li&gt;
+&lt;li&gt;WikiText-2: ~30-40 perplexity&lt;/li&gt;
+&lt;li&gt;Large transformer models can achieve much lower perplexity on these benchmarks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;transformer-model&#34;&gt;Transformer Model&lt;/h2&gt;
+&lt;p&gt;The original Transformer is a sequence-to-sequence model based entirely on attention mechanisms, eschewing recurrence and convolution. The model consists of an encoder-decoder architecture where the encoder maps an input sequence $(x_1, \ldots, x_n)$ to a sequence of continuous representations $\mathbf{z} = (z_1, \ldots, z_n)$, and the decoder generates an output sequence $(y_1, \ldots, y_m)$ one element at a time given $\mathbf{z}$ and previously generated symbols. Each encoder and decoder layer contains multi-head self-attention and position-wise feed-forward networks with residual connections and layer normalization. The model&amp;rsquo;s core innovation is the scaled dot-product attention mechanism:&lt;/p&gt;
+&lt;p&gt;$$
+\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;examples-6&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Translation Task&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input: &amp;ldquo;Hello world&amp;rdquo; → Encoder processes with self-attention&lt;/li&gt;
+&lt;li&gt;Encoder output: Contextual representations $[\mathbf{z}_1, \mathbf{z}_2]$&lt;/li&gt;
+&lt;li&gt;Decoder generates: &amp;ldquo;Bonjour&amp;rdquo; (attending to encoder states), then &amp;ldquo;monde&amp;rdquo; (attending to encoder + &amp;ldquo;Bonjour&amp;rdquo;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Architecture Dimensions&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model dimension $d_{model} = 512$&lt;/li&gt;
+&lt;li&gt;6 encoder layers, 6 decoder layers&lt;/li&gt;
+&lt;li&gt;8 attention heads with $d_k = d_v = 64$&lt;/li&gt;
+&lt;li&gt;Feed-forward dimension $d_{ff} = 2048$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Attention Pattern&lt;/strong&gt;
+In &amp;ldquo;The cat sat on the mat&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Word &amp;ldquo;sat&amp;rdquo; attends strongly to &amp;ldquo;cat&amp;rdquo; (subject-verb relation)&lt;/li&gt;
+&lt;li&gt;Word &amp;ldquo;mat&amp;rdquo; attends to &amp;ldquo;the&amp;rdquo; (determiner-noun relation)&lt;/li&gt;
+&lt;li&gt;Self-attention captures these dependencies without recurrence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;self-attention&#34;&gt;Self-Attention&lt;/h2&gt;
+&lt;p&gt;Self-attention is an attention mechanism where queries, keys, and values are all derived from the same input sequence $\mathbf{X} \in \mathbb{R}^{n \times d}$, computed as&lt;/p&gt;
+&lt;p&gt;$\mathbf{Q} = \mathbf{X}\mathbf{W}^Q$, $\mathbf{K} = \mathbf{X}\mathbf{W}^K$, $\mathbf{V} = \mathbf{X}\mathbf{W}^V$&lt;/p&gt;
+&lt;p&gt;where $\mathbf{W}^Q, \mathbf{W}^K, \mathbf{W}^V \in \mathbb{R}^{d \times d_k}$ are learned parameter matrices.&lt;/p&gt;
+&lt;p&gt;The attention output is $Z = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$, where each output position $z_i$ is a weighted combination of all input positions. The attention weights&lt;/p&gt;
+&lt;p&gt;$$
+\alpha_{ij} = \frac{\exp(q_i^T k_j / \sqrt{d_k})}{\sum_{l=1}^n \exp(q_i^T k_l / \sqrt{d_k})}
+$$&lt;/p&gt;
+&lt;p&gt;represent how much position $i$ attends to position $j$.&lt;/p&gt;
+&lt;p&gt;This mechanism allows each position to attend to all positions in the input sequence, capturing long-range dependencies in a single layer.&lt;/p&gt;
+&lt;h3 id=&#34;examples-7&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Pronoun Resolution&lt;/strong&gt;
+Input: &amp;ldquo;The cat ate its food&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When processing &amp;ldquo;its&amp;rdquo;, self-attention assigns high weight to &amp;ldquo;cat&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Attention weights: $\alpha_{\text{its},\text{cat}} = 0.8$, $\alpha_{\text{its},\text{food}} = 0.15$&lt;/li&gt;
+&lt;li&gt;Output representation of &amp;ldquo;its&amp;rdquo; incorporates information from &amp;ldquo;cat&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Computation for Short Sequence&lt;/strong&gt;
+Input embeddings: $\mathbf{X} = [\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3]^T$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbf{Q} = \mathbf{X}\mathbf{W}^Q$, $\mathbf{K} = \mathbf{X}\mathbf{W}^K$, $\mathbf{V} = \mathbf{X}\mathbf{W}^V$&lt;/li&gt;
+&lt;li&gt;Attention matrix: $\mathbf{A} = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right) \in \mathbb{R}^{3 \times 3}$&lt;/li&gt;
+&lt;li&gt;Each row sums to 1, showing how each position attends to all positions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Syntactic Dependencies&lt;/strong&gt;
+In &amp;ldquo;The quick brown fox jumps&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;fox&amp;rdquo; (position 4) attends to &amp;ldquo;The&amp;rdquo; (0.1), &amp;ldquo;quick&amp;rdquo; (0.3), &amp;ldquo;brown&amp;rdquo; (0.6)&lt;/li&gt;
+&lt;li&gt;Self-attention learns that adjectives modify the noun without explicit syntax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;multi-head-attention&#34;&gt;Multi-Head Attention&lt;/h2&gt;
+&lt;p&gt;Multi-head attention performs $h$ different attention computations in parallel, each with different learned projections, formally defined as&lt;/p&gt;
+&lt;p&gt;$$
+\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)\mathbf{W}^O
+$$&lt;/p&gt;
+&lt;p&gt;where&lt;/p&gt;
+&lt;p&gt;$$\text{head}_i = \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W}_i^K, \mathbf{V}\mathbf{W}_i^V)$$&lt;/p&gt;
+&lt;p&gt;Each head has parameter matrices $$W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{model} \times d_k}$$ where typically $$d_k = d_v = d_{model}/h$$ and $$W^O \in \mathbb{R}^{hd_v \times d_{model}}$$ is the output projection.&lt;/p&gt;
+&lt;p&gt;This allows the model to jointly attend to information from different representation subspaces at different positions, with each head potentially capturing different types of relationships (syntactic, semantic, positional). The computational complexity remains $O(n^2 d)$ where $n$ is sequence length and $d$ is model dimension.&lt;/p&gt;
+&lt;h3 id=&#34;examples-8&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Different Head Specializations&lt;/strong&gt;
+In &amp;ldquo;The cat sat on the mat&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Head 1: Focuses on subject-verb relationships (cat ↔ sat)&lt;/li&gt;
+&lt;li&gt;Head 2: Captures determiner-noun pairs (The ↔ cat, the ↔ mat)&lt;/li&gt;
+&lt;li&gt;Head 3: Handles prepositional phrases (sat ↔ on, on ↔ mat)&lt;/li&gt;
+&lt;li&gt;Head 4: Long-range dependencies (cat ↔ mat)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Dimensional Example&lt;/strong&gt;
+For $d_{model} = 512$ and $h = 8$ heads:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each head: $d_k = d_v = 512/8 = 64$&lt;/li&gt;
+&lt;li&gt;Head computations: $\mathbf{Q}_i, \mathbf{K}_i, \mathbf{V}_i \in \mathbb{R}^{n \times 64}$&lt;/li&gt;
+&lt;li&gt;Concatenated output: $\mathbb{R}^{n \times 512}$ before final projection&lt;/li&gt;
+&lt;li&gt;Total parameters per layer: $4 \times 512 \times 512 = 1,048,576$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Attention Pattern Analysis&lt;/strong&gt;
+Given sentence &amp;ldquo;She gave him the book&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Head 1 attention weights: she→gave (0.9), him→gave (0.8)&lt;/li&gt;
+&lt;li&gt;Head 2 attention weights: book→the (0.7), book→gave (0.6)&lt;/li&gt;
+&lt;li&gt;Combined representation captures both grammatical and semantic relationships&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;add--norm&#34;&gt;Add &amp;amp; Norm&lt;/h2&gt;
+&lt;p&gt;Add &amp;amp; Norm refers to the residual connection followed by layer normalization applied around each sub-layer in the Transformer, formally expressed as $$\text{LayerNorm}(\mathbf{x} + \text{Sublayer}(\mathbf{x}))$$&lt;/p&gt;
+&lt;p&gt;where $\text{Sublayer}(\mathbf{x})$ is the output of the sub-layer (attention or feed-forward). Layer normalization is defined as $$\text{LayerNorm}(\mathbf{x}) = \frac{\mathbf{x} - \boldsymbol{\mu}}{\boldsymbol{\sigma}} \odot \boldsymbol{\gamma} + \boldsymbol{\beta}$$ where $$\boldsymbol{\mu} = \frac{1}{d}\sum_{i=1}^d x_i$$&lt;/p&gt;
+&lt;p&gt;$$\boldsymbol{\sigma} = \sqrt{\frac{1}{d}\sum_{i=1}^d (x_i - \mu)^2}$$&lt;/p&gt;
+&lt;p&gt;and $\boldsymbol{\gamma}, \boldsymbol{\beta} \in \mathbb{R}^d$ are learnable parameters. The residual connection enables gradient flow through deep networks by providing a direct path, while layer normalization stabilizes training by normalizing activations across the feature dimension for each sample independently.&lt;/p&gt;
+&lt;h3 id=&#34;examples-9&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Residual Connection Impact&lt;/strong&gt;
+Input: $\mathbf{x} = [1.0, 2.0, 0.5]$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multi-head attention output: $\text{MHA}(\mathbf{x}) = [0.2, -0.3, 0.8]$&lt;/li&gt;
+&lt;li&gt;After residual: $\mathbf{x} + \text{MHA}(\mathbf{x}) = [1.2, 1.7, 1.3]$&lt;/li&gt;
+&lt;li&gt;Preserves original information while adding learned representations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Layer Normalization Computation&lt;/strong&gt;
+For vector $\mathbf{h} = [2.0, 4.0, 1.0, 3.0]$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mean: $\mu = \frac{2+4+1+3}{4} = 2.5$&lt;/li&gt;
+&lt;li&gt;Variance: $\sigma^2 = \frac{(2-2.5)^2+(4-2.5)^2+(1-2.5)^2+(3-2.5)^2}{4} = 1.25$&lt;/li&gt;
+&lt;li&gt;Normalized: $\frac{[2,4,1,3] - 2.5}{\sqrt{1.25}} = [-0.45, 1.34, -1.34, 0.45]$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Training Stability&lt;/strong&gt;
+Without Add &amp;amp; Norm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gradients can vanish in deep networks (50+ layers)&lt;/li&gt;
+&lt;li&gt;Activation distributions shift during training
+With Add &amp;amp; Norm:&lt;/li&gt;
+&lt;li&gt;Enables training of very deep Transformers (100+ layers)&lt;/li&gt;
+&lt;li&gt;Stable gradients and faster convergence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;feed-forward&#34;&gt;Feed Forward&lt;/h2&gt;
+&lt;p&gt;The position-wise feed-forward network (FFN) in Transformers is a two-layer fully connected network with ReLU activation, applied identically to each position:&lt;/p&gt;
+&lt;p&gt;$$
+\text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
+$$&lt;/p&gt;
+&lt;p&gt;where $$W_1 \in \mathbb{R}^{d_{model} \times d_{ff}}$$&lt;/p&gt;
+&lt;p&gt;$$W_2 \in \mathbb{R}^{d_{ff} \times d_{model}}$$&lt;/p&gt;
+&lt;p&gt;$$b_1 \in \mathbb{R}^{d_{ff}}$$&lt;/p&gt;
+&lt;p&gt;$$b_2 \in \mathbb{R}^{d_{model}}$$
+are learnable parameters.&lt;/p&gt;
+&lt;p&gt;The inner dimension $d_{ff}$ is typically $4 \times d_{model}$, creating a bottleneck architecture that first expands then compresses the representation. This component processes each position independently, providing the model with non-linear transformation capabilities and increasing representational capacity. The FFN accounts for approximately two-thirds of the model&amp;rsquo;s parameters.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Dimensional Transformation&lt;/strong&gt;
+For $d_{model} = 512$ and $d_{ff} = 2048$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input: $\mathbf{x} \in \mathbb{R}^{512}$&lt;/li&gt;
+&lt;li&gt;After first layer: $\mathbf{h} = \text{ReLU}(\mathbf{x}\mathbf{W}_1 + \mathbf{b}_1) \in \mathbb{R}^{2048}$&lt;/li&gt;
+&lt;li&gt;After second layer: $\text{FFN}(\mathbf{x}) = \mathbf{h}\mathbf{W}_2 + \mathbf{b}_2 \in \mathbb{R}^{512}$&lt;/li&gt;
+&lt;li&gt;Parameters: $512 \times 2048 + 2048 \times 512 = 2,097,152$ weights&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Position-wise Processing&lt;/strong&gt;
+Input sequence: $\mathbf{X} = [\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3] \in \mathbb{R}^{3 \times 512}$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each position processed independently: $\text{FFN}(\mathbf{x}_i)$ for $i = 1,2,3$&lt;/li&gt;
+&lt;li&gt;Same parameters $\mathbf{W}_1, \mathbf{W}_2$ applied to all positions&lt;/li&gt;
+&lt;li&gt;Output: $[\text{FFN}(\mathbf{x}_1), \text{FFN}(\mathbf{x}_2), \text{FFN}(\mathbf{x}_3)]$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Non-linear Transformation&lt;/strong&gt;
+Input: $\mathbf{x} = [0.5, -0.3, 0.8]$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First layer: $\mathbf{h} = \text{ReLU}([\mathbf{x}\mathbf{W}_1 + \mathbf{b}_1]) = [2.1, 0.0, 1.4, 0.7]$&lt;/li&gt;
+&lt;li&gt;Second layer: $\text{FFN}(\mathbf{x}) = \mathbf{h}\mathbf{W}_2 + \mathbf{b}_2 = [0.9, -0.1, 1.2]$&lt;/li&gt;
+&lt;li&gt;Provides non-linear processing between attention layers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;softmax&#34;&gt;Softmax&lt;/h2&gt;
+&lt;p&gt;The softmax function transforms a vector of real numbers into a probability distribution, defined as&lt;/p&gt;
+&lt;p&gt;$$\text{softmax}(z_i) =\frac{\exp(z_i)}{\sum_{j=1}^K \exp(z_j)}$$&lt;/p&gt;
+&lt;p&gt;$$\text{for i = 1, 2, &amp;hellip;, K}$$ where $$z = [z_1, z_2, &amp;hellip;, z_K]^T$$&lt;/p&gt;
+&lt;p&gt;The output satisfies $$\sum_{i=1}^K \text{softmax}(z)_i = 1$$ and $$\text{softmax}(z)_i &amp;gt; 0$$ for all $i$, making it a valid probability distribution.&lt;/p&gt;
+&lt;p&gt;In Transformers, softmax is applied to attention scores $\frac{QK^T}{\sqrt{d_k}}$ to obtain attention weights, and to final layer outputs for classification tasks. The function is temperature-controlled: $\text{softmax}(z/\tau)$ where $\tau &amp;gt; 0$ controls the sharpness of the distribution.&lt;/p&gt;
+&lt;h3 id=&#34;examples-10&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Attention Weight Computation&lt;/strong&gt;
+Raw attention scores: $\mathbf{s} = [2.0, 1.0, 3.0]$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exponentials: $[\exp(2.0), \exp(1.0), \exp(3.0)] = [7.39, 2.72, 20.09]$&lt;/li&gt;
+&lt;li&gt;Sum: $7.39 + 2.72 + 20.09 = 30.20$&lt;/li&gt;
+&lt;li&gt;Softmax: $[7.39/30.20, 2.72/30.20, 20.09/30.20] = [0.245, 0.090, 0.665]$&lt;/li&gt;
+&lt;li&gt;Highest score gets most attention weight&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Temperature Effect&lt;/strong&gt;
+Logits: $\mathbf{z} = [1.0, 2.0, 3.0]$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\tau = 1.0$: $\text{softmax}(\mathbf{z}) = [0.090, 0.244, 0.666]$&lt;/li&gt;
+&lt;li&gt;$\tau = 0.5$: $\text{softmax}(\mathbf{z}/0.5) = [0.018, 0.118, 0.864]$ (sharper)&lt;/li&gt;
+&lt;li&gt;$\tau = 2.0$: $\text{softmax}(\mathbf{z}/2.0) = [0.186, 0.307, 0.507]$ (smoother)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Numerical Stability&lt;/strong&gt;
+Unstable: $\mathbf{z} = [1000, 1001, 1002]$ causes overflow&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stable computation: $\mathbf{z}&amp;rsquo; = \mathbf{z} - \max(\mathbf{z}) = [0, 1, 2]$&lt;/li&gt;
+&lt;li&gt;$\text{softmax}(\mathbf{z}&amp;rsquo;) = [0.090, 0.244, 0.666]$&lt;/li&gt;
+&lt;li&gt;Subtracting maximum prevents numerical overflow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;positional-embeddings&#34;&gt;Positional Embeddings&lt;/h2&gt;
+&lt;p&gt;Positional embeddings provide sequence position information to the Transformer, which lacks inherent position awareness due to the permutation-invariant nature of attention. The original Transformer uses sinusoidal positional encoding: $$PE_{(pos,2i)} = \sin(pos/10000^{2i/d_{model}})$$ and $$PE_{(pos,2i+1)} = \cos(pos/10000^{2i/d_{model}})$$ where $pos$ is the position and $i$ is the dimension index.&lt;/p&gt;
+&lt;p&gt;These encodings are added to input embeddings:&lt;/p&gt;
+&lt;div&gt;
+$$\mathbf{x}_{input} = \mathbf{x}_{embed} + \mathbf{x}_{pos}$$ 
+&lt;/div&gt;
+where both have dimension $d_{model}$. The sinusoidal functions with different frequencies allow the model to learn relative positions, as $PE_{pos+k}$ can be expressed as a linear combination of $PE_{pos}$. Alternatively, learned positional embeddings treat position as a lookup table with trainable parameters.
+&lt;h3 id=&#34;examples-11&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Sinusoidal Encoding Values&lt;/strong&gt;
+For $d_{model} = 4$ and positions 0, 1, 2:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Position 0: $[0, 1, 0, 1]$ (sin(0), cos(0), sin(0), cos(0))&lt;/li&gt;
+&lt;li&gt;Position 1: $[0.841, 0.540, 0.010, 0.9999]$&lt;/li&gt;
+&lt;li&gt;Position 2: $[0.909, -0.416, 0.020, 0.9998]$&lt;/li&gt;
+&lt;li&gt;Each position has unique encoding pattern&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Frequency Pattern&lt;/strong&gt;
+For dimension $i = 0, 1, 2, 3$ in $d_{model} = 512$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$i = 0$: frequency $= 1/10000^{0/512} = 1.0$ (high frequency)&lt;/li&gt;
+&lt;li&gt;$i = 256$: frequency $= 1/10000^{256/512} = 0.1$ (medium frequency)&lt;/li&gt;
+&lt;li&gt;$i = 511$: frequency $= 1/10000^{511/512} \approx 0.0001$ (low frequency)&lt;/li&gt;
+&lt;li&gt;Different dimensions capture different temporal scales&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Learned vs Fixed Embeddings&lt;/strong&gt;
+Input: &amp;ldquo;The cat sat&amp;rdquo; (positions 0, 1, 2)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed sinusoidal: Same encoding for all models and training runs&lt;/li&gt;
+&lt;li&gt;Learned embeddings often perform slightly better but less interpretable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;queries-keys-values&#34;&gt;Queries, Keys, Values&lt;/h2&gt;
+&lt;p&gt;Queries (Q), Keys (K), and Values (V) are the fundamental components of attention mechanisms, derived from input representations through learned linear transformations:&lt;/p&gt;
+&lt;p&gt;$$\mathbf{Q} = \mathbf{X}\mathbf{W}^Q$$&lt;/p&gt;
+&lt;p&gt;$$\mathbf{K} = \mathbf{X}\mathbf{W}^K$$&lt;/p&gt;
+&lt;p&gt;$$\mathbf{V} = \mathbf{X}\mathbf{W}^V$$&lt;/p&gt;
+&lt;p&gt;where $$\mathbf{X} \in \mathbb{R}^{n \times d}$$ is the input and $$\mathbf{W}^Q, \mathbf{W}^K, \mathbf{W}^V \in \mathbb{R}^{d \times d_k}$$ are parameter matrices. The attention mechanism computes similarity between queries and keys to determine attention weights:&lt;/p&gt;
+&lt;div&gt;
+$$
+\text{score}(\mathbf{q}_i, \mathbf{k}_j) = \mathbf{q}_i^T\mathbf{k}_j
+$$
+&lt;/div&gt;
+then uses these weights to combine values: $$\mathbf{o}_i = \sum_{j=1}^n \alpha_{ij}\mathbf{v}_j$$ where $$\alpha_{ij} = \text{softmax}(\text{score}(\mathbf{q}_i, \mathbf{k}_j))$$
+&lt;p&gt;This design enables flexible attention patterns where each query can attend to any key-value pair based on learned similarity.&lt;/p&gt;
+&lt;h3 id=&#34;examples-12&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Information Retrieval Analogy&lt;/strong&gt;
+Query: &amp;ldquo;Find papers about neural networks&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keys: Paper titles/abstracts in database&lt;/li&gt;
+&lt;li&gt;Values: Full paper content or metadata&lt;/li&gt;
+&lt;li&gt;Attention: Compute similarity between query and all keys&lt;/li&gt;
+&lt;li&gt;Output: Weighted combination of values based on relevance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Self-Attention Computation&lt;/strong&gt;
+Input: $\mathbf{X} = [\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3]$ representing &amp;ldquo;cat sat mat&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbf{Q} = \mathbf{K} = \mathbf{V} = \mathbf{X}\mathbf{W}$ (same source)&lt;/li&gt;
+&lt;li&gt;Query &amp;ldquo;sat&amp;rdquo; ($\mathbf{q}_2$) computes similarity with all keys&lt;/li&gt;
+&lt;li&gt;High similarity with &amp;ldquo;cat&amp;rdquo; key → high attention weight&lt;/li&gt;
+&lt;li&gt;Output combines values weighted by attention&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Cross-Attention in Decoder&lt;/strong&gt;
+Encoder outputs: $\mathbf{Z} = [\mathbf{z}_1, \mathbf{z}_2, \mathbf{z}_3]$ (&amp;ldquo;Hello world&amp;rdquo;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keys and Values: $\mathbf{K} = \mathbf{V} = \mathbf{Z}\mathbf{W}$ (from encoder)&lt;/li&gt;
+&lt;li&gt;Query: $\mathbf{Q} = \mathbf{Y}\mathbf{W}^Q$ (from decoder, e.g., &amp;ldquo;Bonjour&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Decoder attends to relevant encoder positions for translation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;residual-connection&#34;&gt;Residual Connection&lt;/h2&gt;
+&lt;p&gt;A residual connection, also known as a skip connection, adds the input of a layer directly to its output, formally expressed as $$\mathbf{y} = \mathbf{x} + F(\mathbf{x})$$ where  $\mathbf{x}$ is the input, $F(\mathbf{x})$ is the layer&amp;rsquo;s transformation, and $\mathbf{y}$ is the final output.&lt;/p&gt;
+&lt;p&gt;In Transformers, residual connections are applied around both multi-head attention and feed-forward sublayers:&lt;/p&gt;
+&lt;div&gt;
+$$\mathbf{x}_{l+1} = \mathbf{x}_l + \text{MultiHead}(\mathbf{x}_l)$$
+&lt;/div&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;div&gt;
+$$\mathbf{x}_{l+2} = \mathbf{x}_{l+1} + \text{FFN}(\mathbf{x}_{l+1})$$
+&lt;/div&gt;
+This design addresses the vanishing gradient problem by providing a direct gradient path through the network, enabling training of very deep models. The residual connection also acts as a form of ensemble learning, combining the original representation with the learned transformation.
+&lt;h3 id=&#34;examples-13&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Gradient Flow&lt;/strong&gt;
+Deep network without residuals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gradient:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;
+$$
+\frac{\partial L}{\partial \mathbf{x}_1} = \frac{\partial L}{\partial \mathbf{x}_L} \prod_{i=1}^{L-1} \frac{\partial \mathbf{x}_{i+1}}{\partial \mathbf{x}_i}$$ 
+&lt;/div&gt;
+- Product can vanish (→ 0) or explode (→ ∞)
+&lt;p&gt;With residuals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gradient: $$\frac{\partial \mathbf{x}_{i+1}}{\partial \mathbf{x}_i} = \mathbf{I} + \frac{\partial F(\mathbf{x}_i)}{\partial \mathbf{x}_i}$$&lt;/li&gt;
+&lt;li&gt;Identity matrix ensures gradient flow even if $F$ contributes little&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Concrete Computation&lt;/strong&gt;
+Input: $\mathbf{x} = [1.0, 2.0, 0.5]$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Attention output: $\text{Attention}(\mathbf{x}) = [0.3, -0.1, 0.8]$&lt;/li&gt;
+&lt;li&gt;With residual: $\mathbf{y} = [1.0, 2.0, 0.5] + [0.3, -0.1, 0.8] = [1.3, 1.9, 1.3]$&lt;/li&gt;
+&lt;li&gt;Preserves original information while adding learned features&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Training Dynamics&lt;/strong&gt;
+Early training: $F(\mathbf{x}) \approx \mathbf{0}$ (random initialization)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Output: $\mathbf{y} = \mathbf{x} + \mathbf{0} = \mathbf{x}$ (identity function)&lt;/li&gt;
+&lt;li&gt;Model can learn incrementally from identity baseline
+Later training: $F(\mathbf{x})$ becomes more meaningful&lt;/li&gt;
+&lt;li&gt;Model learns to add useful transformations to the residual stream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;encoder-decoder&#34;&gt;Encoder-Decoder&lt;/h2&gt;
+&lt;p&gt;The encoder-decoder architecture consists of two main components: an encoder that maps input sequence $\mathbf{x} = (x_1, \ldots, x_n)$ to continuous representations $\mathbf{z} = (z_1, \ldots, z_n)$, and a decoder that generates output sequence $\mathbf{y} = (y_1, \ldots, y_m)$ conditioned on $\mathbf{z}$.&lt;/p&gt;
+&lt;p&gt;The encoder uses self-attention layers: $$\mathbf{z}^{(l)} = \text{EncoderLayer}^{(l)}(\mathbf{z}^{(l-1)})$$ for $l = 1, \ldots, L$, while the decoder combines masked self-attention and cross-attention: $$\mathbf{h}^{(l)} = \text{DecoderLayer}^{(l)}(\mathbf{h}^{(l-1)}, \mathbf{z}^{(L)})$$. The decoder generates outputs autoregressively: $$P(\mathbf{y} | \mathbf{x}) = \prod_{t=1}^m P(y_t | y_{&amp;lt;t}, \mathbf{z})$$ where $y_{&amp;lt;t}$ represents previously generated tokens. Cross-attention in the decoder allows each output position to attend to all encoder positions, enabling flexible alignment between input and output sequences.&lt;/p&gt;
+&lt;h3 id=&#34;examples-14&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Machine Translation&lt;/strong&gt;
+Input: &amp;ldquo;Je suis étudiant&amp;rdquo; (encoder processes entire sequence)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Encoder: Generates contextual representations for each French word&lt;/li&gt;
+&lt;li&gt;Decoder step 1: Generates &amp;ldquo;I&amp;rdquo; (attending to &amp;ldquo;Je&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Decoder step 2: Generates &amp;ldquo;am&amp;rdquo; (attending to &amp;ldquo;suis&amp;rdquo;, aware of &amp;ldquo;I&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Decoder step 3: Generates &amp;ldquo;student&amp;rdquo; (attending to &amp;ldquo;étudiant&amp;rdquo;, aware of &amp;ldquo;I am&amp;rdquo;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Attention Patterns&lt;/strong&gt;
+Encoder self-attention: Each French word attends to all French words&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;étudiant&amp;rdquo; attends to &amp;ldquo;Je&amp;rdquo; (0.3), &amp;ldquo;suis&amp;rdquo; (0.2), &amp;ldquo;étudiant&amp;rdquo; (0.5)
+Decoder cross-attention: Each English word attends to all French words&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;student&amp;rdquo; attends to &amp;ldquo;Je&amp;rdquo; (0.1), &amp;ldquo;suis&amp;rdquo; (0.1), &amp;ldquo;étudiant&amp;rdquo; (0.8)
+Decoder self-attention: Each English word attends to previous English words&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;student&amp;rdquo; attends to &amp;ldquo;I&amp;rdquo; (0.4), &amp;ldquo;am&amp;rdquo; (0.6), masked from future&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Computational Flow&lt;/strong&gt;
+Encoder: $\mathbf{X} \rightarrow \mathbf{Z}$ (parallel processing)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All positions processed simultaneously&lt;/li&gt;
+&lt;li&gt;Bidirectional context (each position sees all others)
+Decoder: $\mathbf{Z}, \mathbf{Y}_{&amp;lt;t} \rightarrow y_t$ (sequential generation)&lt;/li&gt;
+&lt;li&gt;Autoregressive: must generate tokens one by one&lt;/li&gt;
+&lt;li&gt;Causal masking: position $t$ only sees positions $&amp;lt; t$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;scaled-dot-product-attention&#34;&gt;Scaled Dot-Product Attention&lt;/h2&gt;
+&lt;p&gt;Scaled dot-product attention is the core attention mechanism in Transformers, defined as $$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}$$ where $$\mathbf{Q} \in \mathbb{R}^{n \times d_k}$$ $$\mathbf{K} \in \mathbb{R}^{m \times d_k}$$ and $$\mathbf{V} \in \mathbb{R}^{m \times d_v}$$ are query, key, and value matrices respectively.&lt;/p&gt;
+&lt;p&gt;The scaling factor $\sqrt{d_k}$ prevents the dot products from becoming too large, which would push the softmax function into regions with extremely small gradients. The attention weights $$\mathbf{A} = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right) \in \mathbb{R}^{n \times m}$$ represent how much each query position attends to each key position. The computational complexity is $O(n^2 d_k + nmd_v)$ where $n$ is the sequence length.&lt;/p&gt;
+&lt;h3 id=&#34;examples-15&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Scaling Factor Importance&lt;/strong&gt;
+Without scaling ($d_k = 64$):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dot product: $\mathbf{q}^T\mathbf{k} = 8.0$ (typical magnitude)&lt;/li&gt;
+&lt;li&gt;Softmax input: $[8.0, 2.0, 1.0]$&lt;/li&gt;
+&lt;li&gt;Softmax output: $[0.997, 0.002, 0.001]$ (too sharp)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With scaling:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scaled dot product: $\mathbf{q}^T\mathbf{k} / \sqrt{64} = 1.0$&lt;/li&gt;
+&lt;li&gt;Softmax input: $[1.0, 0.25, 0.125]$&lt;/li&gt;
+&lt;li&gt;Softmax output: $[0.576, 0.261, 0.163]$ (balanced)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Step-by-Step Computation&lt;/strong&gt;
+Given $\mathbf{Q} = \begin{bmatrix} 1 &amp;amp; 2 \ 0 &amp;amp; 1 \end{bmatrix}$, $\mathbf{K} = \begin{bmatrix} 2 &amp;amp; 1 \ 1 &amp;amp; 3 \end{bmatrix}$, $\mathbf{V} = \begin{bmatrix} 0.5 &amp;amp; 1.0 \ 1.5 &amp;amp; 0.5 \end{bmatrix}$, $d_k = 2$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\mathbf{Q}\mathbf{K}^T = \begin{bmatrix} 4 &amp;amp; 7 \ 1 &amp;amp; 3 \end{bmatrix}$&lt;/li&gt;
+&lt;li&gt;Scaled: $\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{2}} = \begin{bmatrix} 2.83 &amp;amp; 4.95 \ 0.71 &amp;amp; 2.12 \end{bmatrix}$&lt;/li&gt;
+&lt;li&gt;Softmax: $\mathbf{A} = \begin{bmatrix} 0.23 &amp;amp; 0.77 \ 0.24 &amp;amp; 0.76 \end{bmatrix}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sequence-to-sequence-seq2seq&#34;&gt;Sequence-to-Sequence (Seq2Seq)&lt;/h2&gt;
+&lt;p&gt;Sequence-to-sequence models map input sequences $$X = (x_1, x_2, \ldots, x_T)$$&lt;/p&gt;
+&lt;p&gt;to output sequences $$Y = (y_1, y_2, \ldots, y_{T&amp;rsquo;})$$ of potentially different lengths, using an encoder-decoder framework with the conditional probability $$P(Y|X) = \prod_{t=1}^{T&amp;rsquo;} P(y_t | y_{&amp;lt;t}, X)$$&lt;/p&gt;
+&lt;p&gt;The encoder computes a fixed-size context vector $$c = f(x_1, x_2, \ldots, x_T)$$ that summarizes the input sequence, while the decoder generates outputs autoregressively: $$P(y_t | y_{&amp;lt;t}, X) = g(y_{t-1}, s_t, c)$$ where $s_t$ is the decoder hidden state. In RNN-based seq2seq, the encoder final state initializes the decoder: $$s_0 = h_T^{enc}$$ and $$s_t = f_{dec}(y_{t-1}, s_{t-1}, c)$$&lt;/p&gt;
+&lt;p&gt;Modern implementations use attention mechanisms to replace the fixed context vector with dynamic context: $$c_t = \sum_{i=1}^T \alpha_{ti} h_i^{enc}$$ where attention weights $$\alpha_{ti}$$ focus on relevant encoder positions.&lt;/p&gt;
+&lt;h2 id=&#34;examples-16&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Machine Translation&lt;/strong&gt;
+Input (English): &amp;ldquo;I love cats&amp;rdquo; → $X = [x_1, x_2, x_3]$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Encoder: Processes entire English sentence → context vector $c$&lt;/li&gt;
+&lt;li&gt;Decoder step 1: $P(y_1|c) =$ &amp;ldquo;J&amp;rsquo;&amp;rdquo; (French for &amp;ldquo;I&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Decoder step 2: $P(y_2|y_1, c) =$ &amp;ldquo;aime&amp;rdquo; (given &amp;ldquo;J&amp;rsquo;&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Decoder step 3: $P(y_3|y_1, y_2, c) =$ &amp;ldquo;les&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Output: &amp;ldquo;J&amp;rsquo;aime les chats&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Text Summarization&lt;/strong&gt;
+Input: Long news article (500 tokens)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Encoder: $h_1, h_2, \ldots, h_{500}$ (bidirectional LSTM states)&lt;/li&gt;
+&lt;li&gt;Context: $c = \text{mean}(h_1, \ldots, h_{500})$ or $c = h_{500}^{forward} + h_1^{backward}$&lt;/li&gt;
+&lt;li&gt;Decoder: Generates summary tokens one by one&lt;/li&gt;
+&lt;li&gt;Output: Short summary (50 tokens)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Attention-Based Seq2Seq&lt;/strong&gt;
+Input: &amp;ldquo;The quick brown fox&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Encoder states: $[h_1^{enc}, h_2^{enc}, h_3^{enc}, h_4^{enc}]$&lt;/li&gt;
+&lt;li&gt;Decoder at timestep $t$: Computes attention over all encoder states&lt;/li&gt;
+&lt;li&gt;$\alpha_{t1} = 0.1, \alpha_{t2} = 0.6, \alpha_{t3} = 0.2, \alpha_{t4} = 0.1$&lt;/li&gt;
+&lt;li&gt;Dynamic context: $c_t = 0.1 \cdot h_1 + 0.6 \cdot h_2 + 0.2 \cdot h_3 + 0.1 \cdot h_4$&lt;/li&gt;
+&lt;li&gt;Allows decoder to focus on relevant input parts for each output&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,32 +6,42 @@
     <description>Recent content in Wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A reflection on the journey from Data Science to AI engineering</title>
-      <link>http://localhost:1313/posts/ds_to_ai_engineering/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <title>ai</title>
+      <link>http://localhost:1313/posts/ai_notes/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/ds_to_ai_engineering/</guid>
-      <description>&lt;h1 id=&#34;wip-a-reflection-on-the-journey-from-data-science-to-ai-engineering&#34;&gt;(WIP) A reflection on the journey from Data Science to AI engineering&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;TLDR: A lot of changes, but no change too troublesome; in fact, I miss the nuances in DS&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Memories of Cloudfactory</title>
-      <link>http://localhost:1313/posts/cloudfactory_reflections/</link>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/cloudfactory_reflections/</guid>
-      <description>&lt;h1 id=&#34;wip-reflections-on-cf&#34;&gt;(WIP) Reflections on CF&lt;/h1&gt;
-</description>
+      <guid>http://localhost:1313/posts/ai_notes/</guid>
+      <description>&lt;h1 id=&#34;perplexity&#34;&gt;Perplexity&lt;/h1&gt;
+&lt;h2 id=&#34;mathematical-definition&#34;&gt;Mathematical Definition&lt;/h2&gt;
+&lt;p&gt;Perplexity is the exponentiated cross-entropy of a probability distribution, formally defined as $PP(W) = 2^{H(W)}$ where $H(W)$ is the entropy of the word sequence $W$. For a language model with probability distribution $P$ over a test set of $N$ words, perplexity is computed as $PP = 2^{-\frac{1}{N} \sum_{i=1}^{N} \log_2 P(w_i | w_{&amp;lt;i})}$. Equivalently, it can be expressed as the geometric mean of the reciprocal probabilities: $PP = \sqrt[N]{\prod_{i=1}^{N} \frac{1}{P(w_i | w_{&amp;lt;i})}}$. Lower perplexity indicates better predictive performance, with a perfect model achieving perplexity of 1.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Example 1: Simple Bigram Model&lt;/strong&gt;
+Given the sentence &amp;ldquo;the cat sat&amp;rdquo; and a bigram model:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$P(\text{cat} | \text{the}) = 0.3$&lt;/li&gt;
+&lt;li&gt;$P(\text{sat} | \text{cat}) = 0.2$&lt;/li&gt;
+&lt;li&gt;Perplexity = $\sqrt{\frac{1}{0.3} \times \frac{1}{0.2}} = \sqrt{16.67} \approx 4.08$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 2: Comparative Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model A: Perplexity = 50 on test set&lt;/li&gt;
+&lt;li&gt;Model B: Perplexity = 25 on test set&lt;/li&gt;
+&lt;li&gt;Model B is better, as it&amp;rsquo;s less &amp;ldquo;perplexed&amp;rdquo; by the test data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example 3: Practical Context&lt;/strong&gt;
+State-of-the-art language models typically achieve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Penn Treebank: ~50-60 perplexity&lt;/li&gt;
+&lt;li&gt;WikiText-2: ~30-40 perplexity&lt;/li&gt;
+&lt;li&gt;Large transformer models can achieve much lower perplexity on these benchmarks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

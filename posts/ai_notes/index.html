@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | AI with rigor</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.128.2">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ayushsubedi.github.io/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ayushsubedi.github.io/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+<link rel="stylesheet" href="https://ayushsubedi.github.io/lib/katex.min.css"
+      integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+      crossorigin="anonymous">
+
+
+<script defer src="https://ayushsubedi.github.io/lib/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+
+
+<script defer src="https://ayushsubedi.github.io/lib/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+        crossorigin="anonymous"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io/" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">AI with rigor</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Pre-PHD level notes on NLP. This is supposed to serve as a primer, but this is not meant to be read top to bottom.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/ai'>AI</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/nlp'>NLP</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/phd'>PHD</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/ai'>AI</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/nlp'>NLP</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/phd'>PHD</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2025-07-15">2025-07-15</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="ai-with-rigor">AI with rigor</h1>
+<h2 id="maximum-likelihood">Maximum Likelihood</h2>
+<p>Maximum likelihood estimation (MLE) finds the parameter values that maximize the likelihood function</p>
+<p>$$
+L(\theta) = P(\mathbf{x}|\theta)
+$$</p>
+<p>given observed data $\mathbf{x} = {x_1, x_2, \ldots, x_n}$ and parameter vector $\theta$.</p>
+<p>For independent observations, the likelihood becomes</p>
+<p>$$
+L(\theta) = \prod_{i=1}^n P(x_i|\theta)
+$$</p>
+<p>and the MLE estimator is</p>
+<div>
+$$
+\hat{\theta}_{MLE} = \arg\max_{\theta} \prod_{i=1}^n P(x_i \mid \theta)
+$$
+</div>
+<p>In NLP, MLE is used to train
+language models by maximizing the probability of observed text sequences under the model parameters.</p>
+<p>For a language model with parameters $\theta$, the MLE objective over a corpus of sequences ${w^{(1)}, w^{(2)}, \ldots, w^{(M)}}$ is</p>
+<p>$$
+\hat{\theta} = \arg\max_{\theta} \prod_{m=1}^M P(w^{(m)}|\theta)
+$$</p>
+<h2 id="examples">Examples</h2>
+<p><strong>Example 1: Language Model Training</strong>
+Given corpus: [&ldquo;the cat&rdquo;, &ldquo;the dog&rdquo;, &ldquo;a cat&rdquo;]</p>
+<ul>
+<li>Bigram model parameters: $P(\text{cat}|\text{the})$, $P(\text{dog}|\text{the})$, etc.</li>
+<li>MLE: $\hat{\theta} = \arg\max_{\theta} P(\text{the cat}|\theta) \times P(\text{the dog}|\theta) \times P(\text{a cat}|\theta)$</li>
+<li>Solution: $P(\text{cat}|\text{the}) = \frac{1}{2}$, $P(\text{dog}|\text{the}) = \frac{1}{2}$</li>
+</ul>
+<p><strong>Example 2: Neural Language Model</strong>
+For sequence &ldquo;hello world&rdquo; with vocabulary $V$:</p>
+<ul>
+<li>Model outputs: $P(w_t|w_{&lt;t}, \theta)$ for each position $t$</li>
+<li>Likelihood: $L(\theta) = P(\text{hello}|\theta) \times P(\text{world}|\text{hello}, \theta)$</li>
+<li>MLE trains $\theta$ to maximize this probability</li>
+</ul>
+<p><strong>Example 3: Coin Flip Analogy</strong>
+Observed data: 7 heads, 3 tails in 10 flips</p>
+<ul>
+<li>Parameter: $p$ (probability of heads)</li>
+<li>Likelihood: $L(p) = \binom{10}{7} p^7 (1-p)^3$</li>
+<li>MLE solution: $\hat{p} = \frac{7}{10} = 0.7$</li>
+</ul>
+<hr>
+<h2 id="maximum-log-likelihood">Maximum Log-Likelihood</h2>
+<p>Maximum log-likelihood estimation transforms the likelihood maximization problem into a more computationally tractable form by taking the logarithm: $$\hat{\theta} = \arg\max_{\theta} \log L(\theta) = \arg\max_{\theta} \log \prod_{i=1}^n P(x_i|\theta) = \arg\max_{\theta} \sum_{i=1}^n \log P(x_i|\theta)$$</p>
+<p>The logarithm converts products to sums, preventing numerical underflow and making derivatives easier to compute. For language models, the negative log-likelihood (NLL) loss is commonly minimized: $$\mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^N \log P(w_i|w_{&lt;i}, \theta)$$</p>
+<p>where $N$ is the total number of tokens. This is equivalent to minimizing cross-entropy between the true distribution and model predictions. The log-likelihood objective is strictly concave for exponential family distributions, ensuring a unique global maximum.</p>
+<h2 id="examples-1">Examples</h2>
+<p><strong>Example 1: Numerical Stability</strong>
+Without log-likelihood:</p>
+<ul>
+<li>$P(w_1|\theta) = 0.1$, $P(w_2|\theta) = 0.05$, $P(w_3|\theta) = 0.02$</li>
+<li>Likelihood: $L(\theta) = 0.1 \times 0.05 \times 0.02 = 0.0001$ (underflow risk)</li>
+</ul>
+<p>With log-likelihood:</p>
+<ul>
+<li>$\log L(\theta) = \log(0.1) + \log(0.05) + \log(0.02) = -2.3 + (-3.0) + (-3.9) = -9.2$</li>
+<li>Numerically stable and easier to optimize</li>
+</ul>
+<p><strong>Example 2: Cross-Entropy Loss</strong>
+True next word: &ldquo;cat&rdquo; (index 5 in vocabulary)</p>
+<ul>
+<li>Model output: $[0.1, 0.05, 0.15, 0.2, 0.1, 0.3, 0.1]$ (softmax probabilities)</li>
+<li>Log-likelihood: $\log P(\text{cat}) = \log(0.3) = -1.204$</li>
+<li>NLL loss: $-\log(0.3) = 1.204$ (lower is better)</li>
+</ul>
+<p><strong>Example 3: Training Objective</strong>
+For transformer language model on sequence &ldquo;the cat sat&rdquo;:</p>
+<ul>
+<li>Token probabilities: $P(\text{the}) = 0.8$, $P(\text{cat}|\text{the}) = 0.6$, $P(\text{sat}|\text{the cat}) = 0.4$</li>
+<li>Log-likelihood: $\log(0.8) + \log(0.6) + \log(0.4) = -0.223 + (-0.511) + (-0.916) = -1.65$</li>
+<li>Training maximizes this value (minimizes NLL = 1.65)</li>
+</ul>
+<hr>
+<h2 id="n-gram">N-gram</h2>
+<p>An n-gram is a contiguous sequence of $n$ items from a given sequence of text or speech, where items are typically words, characters, or tokens. For a sequence $w_1, w_2, \ldots, w_m$, the set of all n-grams is ${w_i, w_{i+1}, \ldots, w_{i+n-1} : 1 \leq i \leq m-n+1}$.</p>
+<p>In probabilistic language modeling, n-gram models estimate the probability of a word given the previous $n-1$ words using the Markov assumption:</p>
+<p>$$
+P(w_i | w_1, \ldots, w_{i-1}) \approx P(w_i | w_{i-n+1}, \ldots, w_{i-1})
+$$</p>
+<p>The maximum likelihood estimate for an n-gram probability is</p>
+<p>$$
+P(w_i | w_{i-n+1}, \ldots, w_{i-1}) = \frac{C(w_{i-n+1}, \ldots, w_i)}{C(w_{i-n+1}, \ldots, w_{i-1})}
+$$</p>
+<p>where $C(\cdot)$ denotes the count function.</p>
+<h3 id="examples-2">Examples</h3>
+<p><strong>Example 1: Word N-grams from &ldquo;The cat sat on the mat&rdquo;</strong></p>
+<ul>
+<li>Unigrams (1-grams): [&ldquo;The&rdquo;, &ldquo;cat&rdquo;, &ldquo;sat&rdquo;, &ldquo;on&rdquo;, &ldquo;the&rdquo;, &ldquo;mat&rdquo;]</li>
+<li>Bigrams (2-grams): [&ldquo;The cat&rdquo;, &ldquo;cat sat&rdquo;, &ldquo;sat on&rdquo;, &ldquo;on the&rdquo;, &ldquo;the mat&rdquo;]</li>
+<li>Trigrams (3-grams): [&ldquo;The cat sat&rdquo;, &ldquo;cat sat on&rdquo;, &ldquo;sat on the&rdquo;, &ldquo;on the mat&rdquo;]</li>
+<li>4-grams: [&ldquo;The cat sat on&rdquo;, &ldquo;cat sat on the&rdquo;, &ldquo;sat on the mat&rdquo;]</li>
+</ul>
+<p><strong>Example 2: Character N-grams from &ldquo;hello&rdquo;</strong></p>
+<ul>
+<li>Character bigrams: [&ldquo;he&rdquo;, &ldquo;el&rdquo;, &ldquo;ll&rdquo;, &ldquo;lo&rdquo;]</li>
+<li>Character trigrams: [&ldquo;hel&rdquo;, &ldquo;ell&rdquo;, &ldquo;llo&rdquo;]</li>
+<li>Useful for morphological analysis and handling out-of-vocabulary words</li>
+</ul>
+<p><strong>Example 3: Probability Calculation</strong>
+Given corpus with bigram counts:</p>
+<ul>
+<li>$C(\text{&ldquo;the cat&rdquo;}) = 15$, $C(\text{&ldquo;the&rdquo;}) = 100$</li>
+<li>$P(\text{cat} | \text{the}) = \frac{C(\text{&ldquo;the cat&rdquo;})}{C(\text{&ldquo;the&rdquo;})} = \frac{15}{100} = 0.15$</li>
+<li>For sentence probability: $P(\text{&ldquo;the cat sat&rdquo;}) = P(\text{the}) \times P(\text{cat} | \text{the}) \times P(\text{sat} | \text{cat})$</li>
+</ul>
+<hr>
+<h2 id="dot-product">Dot Product</h2>
+<p><img src="https://swdevnotes.com/images/python/2021/0110/dot-product-2d.png" alt=""></p>
+<p>The dot product (or inner product) of two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$ is defined as</p>
+<p>$$
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+$$.</p>
+<p>Geometrically, it equals</p>
+<p>$$
+\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}| |\mathbf{v}| \cos \theta
+$$</p>
+<p>where $\theta$ is the angle between the vectors and $|\cdot|$ denotes the Euclidean norm. The dot product is commutative, distributive, and satisfies</p>
+<p>$$
+\mathbf{u} \cdot \mathbf{u} = |\mathbf{u}|^2
+$$</p>
+<p>In NLP, it serves as a fundamental similarity measure and is the core operation in attention mechanisms, where</p>
+<p>$$
+\text{score}(\mathbf{q}, \mathbf{k}) = \mathbf{q}^T \mathbf{k}
+$$</p>
+<p>computes compatibility between query and key vectors.</p>
+<h3 id="examples-3">Examples</h3>
+<p><strong>Example 1: Word Embedding Similarity</strong>
+Given word embeddings:</p>
+<ul>
+<li>$\mathbf{v}_{\text{king}} = [0.2, 0.8, -0.1, 0.3]$</li>
+<li>$\mathbf{v}_{\text{queen}} = [0.1, 0.7, -0.2, 0.4]$</li>
+<li>Similarity = $\mathbf{u} \cdot \mathbf{v} = (0.2)(0.1) + (0.8)(0.7) + (-0.1)(-0.2) + (0.3)(0.4) = 0.72$</li>
+</ul>
+<p><strong>Example 2: Attention Score Computation</strong>
+In transformer attention:</p>
+<ul>
+<li>Query: $\mathbf{q} = [1, 2, 0]$</li>
+<li>Key: $\mathbf{k} = [2, 1, 3]$</li>
+<li>Raw attention score = $\mathbf{q} \cdot \mathbf{k} = (1)(2) + (2)(1) + (0)(3) = 4$</li>
+</ul>
+<p><strong>Example 3: Cosine Similarity Foundation</strong>
+For vectors $\mathbf{u} = [3, 4]$ and $\mathbf{v} = [1, 2]$:</p>
+<ul>
+<li>$\mathbf{u} \cdot \mathbf{v} = 3 \cdot 1 + 4 \cdot 2 = 11$</li>
+<li>$\cos \theta = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{u}| |\mathbf{v}|} = \frac{11}{\sqrt{25} \sqrt{5}} = \frac{11}{5\sqrt{5}} \approx 0.98$</li>
+</ul>
+<hr>
+<h2 id="cosine-similarity">Cosine Similarity</h2>
+<p>Cosine similarity measures the cosine of the angle between two non-zero vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$, defined as</p>
+<p>$$
+\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{u}| |\mathbf{v}|} = \frac{\sum_{i=1}^{n} u_i v_i}{\sqrt{\sum_{i=1}^{n} u_i^2} \sqrt{\sum_{i=1}^{n} v_i^2}}
+$$</p>
+<p>The similarity ranges from -1 (completely opposite) to 1 (identical direction), with 0 indicating orthogonality. Unlike Euclidean distance, cosine similarity is invariant to vector magnitude and focuses purely on orientation, making it ideal for high-dimensional sparse data like text embeddings. It is equivalent to the dot product of the L2-normalized vectors:</p>
+<p>$$
+\cos(\theta) = \frac{\mathbf{u}}{|\mathbf{u}|} \cdot \frac{\mathbf{v}}{|\mathbf{v}|}
+$$
+.</p>
+<h3 id="examples-4">Examples</h3>
+<p><strong>Example 1: Document Similarity</strong>
+Given TF-IDF vectors:</p>
+<ul>
+<li>Document A: $\mathbf{d_A} = [3, 1, 0, 2]$</li>
+<li>Document B: $\mathbf{d_B} = [1, 2, 1, 0]$</li>
+<li>$\cos(\theta) = \frac{(3)(1) + (1)(2) + (0)(1) + (2)(0)}{\sqrt{9+1+0+4} \sqrt{1+4+1+0}} = \frac{5}{\sqrt{14} \sqrt{6}} = \frac{5}{\sqrt{84}} \approx 0.545$</li>
+</ul>
+<p><strong>Example 2: Word Embedding Comparison</strong></p>
+<ul>
+<li>$\mathbf{v}_{happy} = [0.8, 0.3, -0.1]$</li>
+<li>$\mathbf{v}_{joyful} = [0.7, 0.4, -0.2]$</li>
+<li>$\cos(\theta) = \frac{(0.8)(0.7) + (0.3)(0.4) + (-0.1)(-0.2)}{\sqrt{0.64+0.09+0.01} \sqrt{0.49+0.16+0.04}} = \frac{0.56 + 0.12 + 0.02}{\sqrt{0.74} \sqrt{0.69}} \approx 0.98$</li>
+</ul>
+<p><strong>Example 3: Sentence Similarity in Practice</strong>
+Two sentences with BERT embeddings (768-dimensional):</p>
+<ul>
+<li>Sentence 1: &ldquo;The cat is sleeping&rdquo;</li>
+<li>Sentence 2: &ldquo;A cat is napping&rdquo;</li>
+<li>If cosine similarity = 0.85, this indicates high semantic similarity despite different words</li>
+</ul>
+<hr>
+<h2 id="perplexity">Perplexity</h2>
+<p>Perplexity is the exponentiated cross-entropy of a probability distribution, formally defined as</p>
+<p>$$
+PP(W) = 2^{H(W)}
+$$</p>
+<p>where $H(W)$ is the entropy of the word sequence $W$. For a language model with probability distribution $P$ over a test set of $N$ words, perplexity is computed as</p>
+<p>$$PP = 2^{-\frac{1}{N} \sum_{i=1}^{N} \log_2 P(w_i | w_{&lt;i})}$$</p>
+<p>Equivalently, it can be expressed as the geometric mean of the reciprocal probabilities:</p>
+<p>$$PP = \sqrt[N]{\prod_{i=1}^{N} \frac{1}{P(w_i | w_{&lt;i})}}$$</p>
+<p>Lower perplexity indicates better predictive performance, with a perfect model achieving perplexity of 1.</p>
+<h3 id="examples-5">Examples</h3>
+<p><strong>Example 1: Simple Bigram Model</strong>
+Given the sentence &ldquo;the cat sat&rdquo; and a bigram model:</p>
+<ul>
+<li>$P(\text{cat} | \text{the}) = 0.3$</li>
+<li>$P(\text{sat} | \text{cat}) = 0.2$</li>
+<li>Perplexity = $\sqrt{\frac{1}{0.3} \times \frac{1}{0.2}} = \sqrt{16.67} \approx 4.08$</li>
+</ul>
+<p><strong>Example 2: Comparative Analysis</strong></p>
+<ul>
+<li>Model A: Perplexity = 50 on test set</li>
+<li>Model B: Perplexity = 25 on test set</li>
+<li>Model B is better, as it&rsquo;s less &ldquo;perplexed&rdquo; by the test data</li>
+</ul>
+<p><strong>Example 3: Practical Context</strong>
+State-of-the-art language models typically achieve:</p>
+<ul>
+<li>Penn Treebank: ~50-60 perplexity</li>
+<li>WikiText-2: ~30-40 perplexity</li>
+<li>Large transformer models can achieve much lower perplexity on these benchmarks</li>
+</ul>
+<hr>
+<h2 id="transformer-model">Transformer Model</h2>
+<p>The original Transformer is a sequence-to-sequence model based entirely on attention mechanisms, eschewing recurrence and convolution. The model consists of an encoder-decoder architecture where the encoder maps an input sequence $(x_1, \ldots, x_n)$ to a sequence of continuous representations $\mathbf{z} = (z_1, \ldots, z_n)$, and the decoder generates an output sequence $(y_1, \ldots, y_m)$ one element at a time given $\mathbf{z}$ and previously generated symbols. Each encoder and decoder layer contains multi-head self-attention and position-wise feed-forward networks with residual connections and layer normalization. The model&rsquo;s core innovation is the scaled dot-product attention mechanism:</p>
+<p>$$
+\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}
+$$</p>
+<h3 id="examples-6">Examples</h3>
+<p><strong>Example 1: Translation Task</strong></p>
+<ul>
+<li>Input: &ldquo;Hello world&rdquo; → Encoder processes with self-attention</li>
+<li>Encoder output: Contextual representations $[\mathbf{z}_1, \mathbf{z}_2]$</li>
+<li>Decoder generates: &ldquo;Bonjour&rdquo; (attending to encoder states), then &ldquo;monde&rdquo; (attending to encoder + &ldquo;Bonjour&rdquo;)</li>
+</ul>
+<p><strong>Example 2: Architecture Dimensions</strong></p>
+<ul>
+<li>Model dimension $d_{model} = 512$</li>
+<li>6 encoder layers, 6 decoder layers</li>
+<li>8 attention heads with $d_k = d_v = 64$</li>
+<li>Feed-forward dimension $d_{ff} = 2048$</li>
+</ul>
+<p><strong>Example 3: Attention Pattern</strong>
+In &ldquo;The cat sat on the mat&rdquo;:</p>
+<ul>
+<li>Word &ldquo;sat&rdquo; attends strongly to &ldquo;cat&rdquo; (subject-verb relation)</li>
+<li>Word &ldquo;mat&rdquo; attends to &ldquo;the&rdquo; (determiner-noun relation)</li>
+<li>Self-attention captures these dependencies without recurrence</li>
+</ul>
+<hr>
+<h2 id="self-attention">Self-Attention</h2>
+<p>Self-attention is an attention mechanism where queries, keys, and values are all derived from the same input sequence $\mathbf{X} \in \mathbb{R}^{n \times d}$, computed as</p>
+<p>$\mathbf{Q} = \mathbf{X}\mathbf{W}^Q$, $\mathbf{K} = \mathbf{X}\mathbf{W}^K$, $\mathbf{V} = \mathbf{X}\mathbf{W}^V$</p>
+<p>where $\mathbf{W}^Q, \mathbf{W}^K, \mathbf{W}^V \in \mathbb{R}^{d \times d_k}$ are learned parameter matrices.</p>
+<p>The attention output is $Z = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$, where each output position $z_i$ is a weighted combination of all input positions. The attention weights</p>
+<p>$$
+\alpha_{ij} = \frac{\exp(q_i^T k_j / \sqrt{d_k})}{\sum_{l=1}^n \exp(q_i^T k_l / \sqrt{d_k})}
+$$</p>
+<p>represent how much position $i$ attends to position $j$.</p>
+<p>This mechanism allows each position to attend to all positions in the input sequence, capturing long-range dependencies in a single layer.</p>
+<h3 id="examples-7">Examples</h3>
+<p><strong>Example 1: Pronoun Resolution</strong>
+Input: &ldquo;The cat ate its food&rdquo;</p>
+<ul>
+<li>When processing &ldquo;its&rdquo;, self-attention assigns high weight to &ldquo;cat&rdquo;</li>
+<li>Attention weights: $\alpha_{\text{its},\text{cat}} = 0.8$, $\alpha_{\text{its},\text{food}} = 0.15$</li>
+<li>Output representation of &ldquo;its&rdquo; incorporates information from &ldquo;cat&rdquo;</li>
+</ul>
+<p><strong>Example 2: Computation for Short Sequence</strong>
+Input embeddings: $\mathbf{X} = [\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3]^T$</p>
+<ul>
+<li>$\mathbf{Q} = \mathbf{X}\mathbf{W}^Q$, $\mathbf{K} = \mathbf{X}\mathbf{W}^K$, $\mathbf{V} = \mathbf{X}\mathbf{W}^V$</li>
+<li>Attention matrix: $\mathbf{A} = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right) \in \mathbb{R}^{3 \times 3}$</li>
+<li>Each row sums to 1, showing how each position attends to all positions</li>
+</ul>
+<p><strong>Example 3: Syntactic Dependencies</strong>
+In &ldquo;The quick brown fox jumps&rdquo;:</p>
+<ul>
+<li>&ldquo;fox&rdquo; (position 4) attends to &ldquo;The&rdquo; (0.1), &ldquo;quick&rdquo; (0.3), &ldquo;brown&rdquo; (0.6)</li>
+<li>Self-attention learns that adjectives modify the noun without explicit syntax</li>
+</ul>
+<hr>
+<h2 id="multi-head-attention">Multi-Head Attention</h2>
+<p>Multi-head attention performs $h$ different attention computations in parallel, each with different learned projections, formally defined as</p>
+<p>$$
+\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)\mathbf{W}^O
+$$</p>
+<p>where</p>
+<p>$$\text{head}_i = \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W}_i^K, \mathbf{V}\mathbf{W}_i^V)$$</p>
+<p>Each head has parameter matrices $$W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{model} \times d_k}$$ where typically $$d_k = d_v = d_{model}/h$$ and $$W^O \in \mathbb{R}^{hd_v \times d_{model}}$$ is the output projection.</p>
+<p>This allows the model to jointly attend to information from different representation subspaces at different positions, with each head potentially capturing different types of relationships (syntactic, semantic, positional). The computational complexity remains $O(n^2 d)$ where $n$ is sequence length and $d$ is model dimension.</p>
+<h3 id="examples-8">Examples</h3>
+<p><strong>Example 1: Different Head Specializations</strong>
+In &ldquo;The cat sat on the mat&rdquo;:</p>
+<ul>
+<li>Head 1: Focuses on subject-verb relationships (cat ↔ sat)</li>
+<li>Head 2: Captures determiner-noun pairs (The ↔ cat, the ↔ mat)</li>
+<li>Head 3: Handles prepositional phrases (sat ↔ on, on ↔ mat)</li>
+<li>Head 4: Long-range dependencies (cat ↔ mat)</li>
+</ul>
+<p><strong>Example 2: Dimensional Example</strong>
+For $d_{model} = 512$ and $h = 8$ heads:</p>
+<ul>
+<li>Each head: $d_k = d_v = 512/8 = 64$</li>
+<li>Head computations: $\mathbf{Q}_i, \mathbf{K}_i, \mathbf{V}_i \in \mathbb{R}^{n \times 64}$</li>
+<li>Concatenated output: $\mathbb{R}^{n \times 512}$ before final projection</li>
+<li>Total parameters per layer: $4 \times 512 \times 512 = 1,048,576$</li>
+</ul>
+<p><strong>Example 3: Attention Pattern Analysis</strong>
+Given sentence &ldquo;She gave him the book&rdquo;:</p>
+<ul>
+<li>Head 1 attention weights: she→gave (0.9), him→gave (0.8)</li>
+<li>Head 2 attention weights: book→the (0.7), book→gave (0.6)</li>
+<li>Combined representation captures both grammatical and semantic relationships</li>
+</ul>
+<hr>
+<h2 id="add--norm">Add &amp; Norm</h2>
+<p>Add &amp; Norm refers to the residual connection followed by layer normalization applied around each sub-layer in the Transformer, formally expressed as $$\text{LayerNorm}(\mathbf{x} + \text{Sublayer}(\mathbf{x}))$$</p>
+<p>where $\text{Sublayer}(\mathbf{x})$ is the output of the sub-layer (attention or feed-forward). Layer normalization is defined as $$\text{LayerNorm}(\mathbf{x}) = \frac{\mathbf{x} - \boldsymbol{\mu}}{\boldsymbol{\sigma}} \odot \boldsymbol{\gamma} + \boldsymbol{\beta}$$ where $$\boldsymbol{\mu} = \frac{1}{d}\sum_{i=1}^d x_i$$</p>
+<p>$$\boldsymbol{\sigma} = \sqrt{\frac{1}{d}\sum_{i=1}^d (x_i - \mu)^2}$$</p>
+<p>and $\boldsymbol{\gamma}, \boldsymbol{\beta} \in \mathbb{R}^d$ are learnable parameters. The residual connection enables gradient flow through deep networks by providing a direct path, while layer normalization stabilizes training by normalizing activations across the feature dimension for each sample independently.</p>
+<h3 id="examples-9">Examples</h3>
+<p><strong>Example 1: Residual Connection Impact</strong>
+Input: $\mathbf{x} = [1.0, 2.0, 0.5]$</p>
+<ul>
+<li>Multi-head attention output: $\text{MHA}(\mathbf{x}) = [0.2, -0.3, 0.8]$</li>
+<li>After residual: $\mathbf{x} + \text{MHA}(\mathbf{x}) = [1.2, 1.7, 1.3]$</li>
+<li>Preserves original information while adding learned representations</li>
+</ul>
+<p><strong>Example 2: Layer Normalization Computation</strong>
+For vector $\mathbf{h} = [2.0, 4.0, 1.0, 3.0]$:</p>
+<ul>
+<li>Mean: $\mu = \frac{2+4+1+3}{4} = 2.5$</li>
+<li>Variance: $\sigma^2 = \frac{(2-2.5)^2+(4-2.5)^2+(1-2.5)^2+(3-2.5)^2}{4} = 1.25$</li>
+<li>Normalized: $\frac{[2,4,1,3] - 2.5}{\sqrt{1.25}} = [-0.45, 1.34, -1.34, 0.45]$</li>
+</ul>
+<p><strong>Example 3: Training Stability</strong>
+Without Add &amp; Norm:</p>
+<ul>
+<li>Gradients can vanish in deep networks (50+ layers)</li>
+<li>Activation distributions shift during training
+With Add &amp; Norm:</li>
+<li>Enables training of very deep Transformers (100+ layers)</li>
+<li>Stable gradients and faster convergence</li>
+</ul>
+<hr>
+<h2 id="feed-forward">Feed Forward</h2>
+<p>The position-wise feed-forward network (FFN) in Transformers is a two-layer fully connected network with ReLU activation, applied identically to each position:</p>
+<p>$$
+\text{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
+$$</p>
+<p>where $$W_1 \in \mathbb{R}^{d_{model} \times d_{ff}}$$</p>
+<p>$$W_2 \in \mathbb{R}^{d_{ff} \times d_{model}}$$</p>
+<p>$$b_1 \in \mathbb{R}^{d_{ff}}$$</p>
+<p>$$b_2 \in \mathbb{R}^{d_{model}}$$
+are learnable parameters.</p>
+<p>The inner dimension $d_{ff}$ is typically $4 \times d_{model}$, creating a bottleneck architecture that first expands then compresses the representation. This component processes each position independently, providing the model with non-linear transformation capabilities and increasing representational capacity. The FFN accounts for approximately two-thirds of the model&rsquo;s parameters.</p>
+<p><strong>Example 1: Dimensional Transformation</strong>
+For $d_{model} = 512$ and $d_{ff} = 2048$:</p>
+<ul>
+<li>Input: $\mathbf{x} \in \mathbb{R}^{512}$</li>
+<li>After first layer: $\mathbf{h} = \text{ReLU}(\mathbf{x}\mathbf{W}_1 + \mathbf{b}_1) \in \mathbb{R}^{2048}$</li>
+<li>After second layer: $\text{FFN}(\mathbf{x}) = \mathbf{h}\mathbf{W}_2 + \mathbf{b}_2 \in \mathbb{R}^{512}$</li>
+<li>Parameters: $512 \times 2048 + 2048 \times 512 = 2,097,152$ weights</li>
+</ul>
+<p><strong>Example 2: Position-wise Processing</strong>
+Input sequence: $\mathbf{X} = [\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3] \in \mathbb{R}^{3 \times 512}$</p>
+<ul>
+<li>Each position processed independently: $\text{FFN}(\mathbf{x}_i)$ for $i = 1,2,3$</li>
+<li>Same parameters $\mathbf{W}_1, \mathbf{W}_2$ applied to all positions</li>
+<li>Output: $[\text{FFN}(\mathbf{x}_1), \text{FFN}(\mathbf{x}_2), \text{FFN}(\mathbf{x}_3)]$</li>
+</ul>
+<p><strong>Example 3: Non-linear Transformation</strong>
+Input: $\mathbf{x} = [0.5, -0.3, 0.8]$</p>
+<ul>
+<li>First layer: $\mathbf{h} = \text{ReLU}([\mathbf{x}\mathbf{W}_1 + \mathbf{b}_1]) = [2.1, 0.0, 1.4, 0.7]$</li>
+<li>Second layer: $\text{FFN}(\mathbf{x}) = \mathbf{h}\mathbf{W}_2 + \mathbf{b}_2 = [0.9, -0.1, 1.2]$</li>
+<li>Provides non-linear processing between attention layers</li>
+</ul>
+<hr>
+<h2 id="softmax">Softmax</h2>
+<p>The softmax function transforms a vector of real numbers into a probability distribution, defined as</p>
+<p>$$\text{softmax}(z_i) =\frac{\exp(z_i)}{\sum_{j=1}^K \exp(z_j)}$$</p>
+<p>$$\text{for i = 1, 2, &hellip;, K}$$ where $$z = [z_1, z_2, &hellip;, z_K]^T$$</p>
+<p>The output satisfies $$\sum_{i=1}^K \text{softmax}(z)_i = 1$$ and $$\text{softmax}(z)_i &gt; 0$$ for all $i$, making it a valid probability distribution.</p>
+<p>In Transformers, softmax is applied to attention scores $\frac{QK^T}{\sqrt{d_k}}$ to obtain attention weights, and to final layer outputs for classification tasks. The function is temperature-controlled: $\text{softmax}(z/\tau)$ where $\tau &gt; 0$ controls the sharpness of the distribution.</p>
+<h3 id="examples-10">Examples</h3>
+<p><strong>Example 1: Attention Weight Computation</strong>
+Raw attention scores: $\mathbf{s} = [2.0, 1.0, 3.0]$</p>
+<ul>
+<li>Exponentials: $[\exp(2.0), \exp(1.0), \exp(3.0)] = [7.39, 2.72, 20.09]$</li>
+<li>Sum: $7.39 + 2.72 + 20.09 = 30.20$</li>
+<li>Softmax: $[7.39/30.20, 2.72/30.20, 20.09/30.20] = [0.245, 0.090, 0.665]$</li>
+<li>Highest score gets most attention weight</li>
+</ul>
+<p><strong>Example 2: Temperature Effect</strong>
+Logits: $\mathbf{z} = [1.0, 2.0, 3.0]$</p>
+<ul>
+<li>$\tau = 1.0$: $\text{softmax}(\mathbf{z}) = [0.090, 0.244, 0.666]$</li>
+<li>$\tau = 0.5$: $\text{softmax}(\mathbf{z}/0.5) = [0.018, 0.118, 0.864]$ (sharper)</li>
+<li>$\tau = 2.0$: $\text{softmax}(\mathbf{z}/2.0) = [0.186, 0.307, 0.507]$ (smoother)</li>
+</ul>
+<p><strong>Example 3: Numerical Stability</strong>
+Unstable: $\mathbf{z} = [1000, 1001, 1002]$ causes overflow</p>
+<ul>
+<li>Stable computation: $\mathbf{z}&rsquo; = \mathbf{z} - \max(\mathbf{z}) = [0, 1, 2]$</li>
+<li>$\text{softmax}(\mathbf{z}&rsquo;) = [0.090, 0.244, 0.666]$</li>
+<li>Subtracting maximum prevents numerical overflow</li>
+</ul>
+<hr>
+<h2 id="positional-embeddings">Positional Embeddings</h2>
+<p>Positional embeddings provide sequence position information to the Transformer, which lacks inherent position awareness due to the permutation-invariant nature of attention. The original Transformer uses sinusoidal positional encoding: $$PE_{(pos,2i)} = \sin(pos/10000^{2i/d_{model}})$$ and $$PE_{(pos,2i+1)} = \cos(pos/10000^{2i/d_{model}})$$ where $pos$ is the position and $i$ is the dimension index.</p>
+<p>These encodings are added to input embeddings:</p>
+<div>
+$$\mathbf{x}_{input} = \mathbf{x}_{embed} + \mathbf{x}_{pos}$$ 
+</div>
+where both have dimension $d_{model}$. The sinusoidal functions with different frequencies allow the model to learn relative positions, as $PE_{pos+k}$ can be expressed as a linear combination of $PE_{pos}$. Alternatively, learned positional embeddings treat position as a lookup table with trainable parameters.
+<h3 id="examples-11">Examples</h3>
+<p><strong>Example 1: Sinusoidal Encoding Values</strong>
+For $d_{model} = 4$ and positions 0, 1, 2:</p>
+<ul>
+<li>Position 0: $[0, 1, 0, 1]$ (sin(0), cos(0), sin(0), cos(0))</li>
+<li>Position 1: $[0.841, 0.540, 0.010, 0.9999]$</li>
+<li>Position 2: $[0.909, -0.416, 0.020, 0.9998]$</li>
+<li>Each position has unique encoding pattern</li>
+</ul>
+<p><strong>Example 2: Frequency Pattern</strong>
+For dimension $i = 0, 1, 2, 3$ in $d_{model} = 512$:</p>
+<ul>
+<li>$i = 0$: frequency $= 1/10000^{0/512} = 1.0$ (high frequency)</li>
+<li>$i = 256$: frequency $= 1/10000^{256/512} = 0.1$ (medium frequency)</li>
+<li>$i = 511$: frequency $= 1/10000^{511/512} \approx 0.0001$ (low frequency)</li>
+<li>Different dimensions capture different temporal scales</li>
+</ul>
+<p><strong>Example 3: Learned vs Fixed Embeddings</strong>
+Input: &ldquo;The cat sat&rdquo; (positions 0, 1, 2)</p>
+<ul>
+<li>Fixed sinusoidal: Same encoding for all models and training runs</li>
+<li>Learned embeddings often perform slightly better but less interpretable</li>
+</ul>
+<hr>
+<h2 id="queries-keys-values">Queries, Keys, Values</h2>
+<p>Queries (Q), Keys (K), and Values (V) are the fundamental components of attention mechanisms, derived from input representations through learned linear transformations:</p>
+<p>$$\mathbf{Q} = \mathbf{X}\mathbf{W}^Q$$</p>
+<p>$$\mathbf{K} = \mathbf{X}\mathbf{W}^K$$</p>
+<p>$$\mathbf{V} = \mathbf{X}\mathbf{W}^V$$</p>
+<p>where $$\mathbf{X} \in \mathbb{R}^{n \times d}$$ is the input and $$\mathbf{W}^Q, \mathbf{W}^K, \mathbf{W}^V \in \mathbb{R}^{d \times d_k}$$ are parameter matrices. The attention mechanism computes similarity between queries and keys to determine attention weights:</p>
+<div>
+$$
+\text{score}(\mathbf{q}_i, \mathbf{k}_j) = \mathbf{q}_i^T\mathbf{k}_j
+$$
+</div>
+then uses these weights to combine values: $$\mathbf{o}_i = \sum_{j=1}^n \alpha_{ij}\mathbf{v}_j$$ where $$\alpha_{ij} = \text{softmax}(\text{score}(\mathbf{q}_i, \mathbf{k}_j))$$
+<p>This design enables flexible attention patterns where each query can attend to any key-value pair based on learned similarity.</p>
+<h3 id="examples-12">Examples</h3>
+<p><strong>Example 1: Information Retrieval Analogy</strong>
+Query: &ldquo;Find papers about neural networks&rdquo;</p>
+<ul>
+<li>Keys: Paper titles/abstracts in database</li>
+<li>Values: Full paper content or metadata</li>
+<li>Attention: Compute similarity between query and all keys</li>
+<li>Output: Weighted combination of values based on relevance</li>
+</ul>
+<p><strong>Example 2: Self-Attention Computation</strong>
+Input: $\mathbf{X} = [\mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3]$ representing &ldquo;cat sat mat&rdquo;</p>
+<ul>
+<li>$\mathbf{Q} = \mathbf{K} = \mathbf{V} = \mathbf{X}\mathbf{W}$ (same source)</li>
+<li>Query &ldquo;sat&rdquo; ($\mathbf{q}_2$) computes similarity with all keys</li>
+<li>High similarity with &ldquo;cat&rdquo; key → high attention weight</li>
+<li>Output combines values weighted by attention</li>
+</ul>
+<p><strong>Example 3: Cross-Attention in Decoder</strong>
+Encoder outputs: $\mathbf{Z} = [\mathbf{z}_1, \mathbf{z}_2, \mathbf{z}_3]$ (&ldquo;Hello world&rdquo;)</p>
+<ul>
+<li>Keys and Values: $\mathbf{K} = \mathbf{V} = \mathbf{Z}\mathbf{W}$ (from encoder)</li>
+<li>Query: $\mathbf{Q} = \mathbf{Y}\mathbf{W}^Q$ (from decoder, e.g., &ldquo;Bonjour&rdquo;)</li>
+<li>Decoder attends to relevant encoder positions for translation</li>
+</ul>
+<hr>
+<h2 id="residual-connection">Residual Connection</h2>
+<p>A residual connection, also known as a skip connection, adds the input of a layer directly to its output, formally expressed as $$\mathbf{y} = \mathbf{x} + F(\mathbf{x})$$ where  $\mathbf{x}$ is the input, $F(\mathbf{x})$ is the layer&rsquo;s transformation, and $\mathbf{y}$ is the final output.</p>
+<p>In Transformers, residual connections are applied around both multi-head attention and feed-forward sublayers:</p>
+<div>
+$$\mathbf{x}_{l+1} = \mathbf{x}_l + \text{MultiHead}(\mathbf{x}_l)$$
+</div>
+<p>and</p>
+<div>
+$$\mathbf{x}_{l+2} = \mathbf{x}_{l+1} + \text{FFN}(\mathbf{x}_{l+1})$$
+</div>
+This design addresses the vanishing gradient problem by providing a direct gradient path through the network, enabling training of very deep models. The residual connection also acts as a form of ensemble learning, combining the original representation with the learned transformation.
+<h3 id="examples-13">Examples</h3>
+<p><strong>Example 1: Gradient Flow</strong>
+Deep network without residuals:</p>
+<ul>
+<li>Gradient:</li>
+</ul>
+<div>
+$$
+\frac{\partial L}{\partial \mathbf{x}_1} = \frac{\partial L}{\partial \mathbf{x}_L} \prod_{i=1}^{L-1} \frac{\partial \mathbf{x}_{i+1}}{\partial \mathbf{x}_i}$$ 
+</div>
+- Product can vanish (→ 0) or explode (→ ∞)
+<p>With residuals:</p>
+<ul>
+<li>Gradient: $$\frac{\partial \mathbf{x}_{i+1}}{\partial \mathbf{x}_i} = \mathbf{I} + \frac{\partial F(\mathbf{x}_i)}{\partial \mathbf{x}_i}$$</li>
+<li>Identity matrix ensures gradient flow even if $F$ contributes little</li>
+</ul>
+<p><strong>Example 2: Concrete Computation</strong>
+Input: $\mathbf{x} = [1.0, 2.0, 0.5]$</p>
+<ul>
+<li>Attention output: $\text{Attention}(\mathbf{x}) = [0.3, -0.1, 0.8]$</li>
+<li>With residual: $\mathbf{y} = [1.0, 2.0, 0.5] + [0.3, -0.1, 0.8] = [1.3, 1.9, 1.3]$</li>
+<li>Preserves original information while adding learned features</li>
+</ul>
+<p><strong>Example 3: Training Dynamics</strong>
+Early training: $F(\mathbf{x}) \approx \mathbf{0}$ (random initialization)</p>
+<ul>
+<li>Output: $\mathbf{y} = \mathbf{x} + \mathbf{0} = \mathbf{x}$ (identity function)</li>
+<li>Model can learn incrementally from identity baseline
+Later training: $F(\mathbf{x})$ becomes more meaningful</li>
+<li>Model learns to add useful transformations to the residual stream</li>
+</ul>
+<hr>
+<h2 id="encoder-decoder">Encoder-Decoder</h2>
+<p>The encoder-decoder architecture consists of two main components: an encoder that maps input sequence $\mathbf{x} = (x_1, \ldots, x_n)$ to continuous representations $\mathbf{z} = (z_1, \ldots, z_n)$, and a decoder that generates output sequence $\mathbf{y} = (y_1, \ldots, y_m)$ conditioned on $\mathbf{z}$.</p>
+<p>The encoder uses self-attention layers: $$\mathbf{z}^{(l)} = \text{EncoderLayer}^{(l)}(\mathbf{z}^{(l-1)})$$ for $l = 1, \ldots, L$, while the decoder combines masked self-attention and cross-attention: $$\mathbf{h}^{(l)} = \text{DecoderLayer}^{(l)}(\mathbf{h}^{(l-1)}, \mathbf{z}^{(L)})$$. The decoder generates outputs autoregressively: $$P(\mathbf{y} | \mathbf{x}) = \prod_{t=1}^m P(y_t | y_{&lt;t}, \mathbf{z})$$ where $y_{&lt;t}$ represents previously generated tokens. Cross-attention in the decoder allows each output position to attend to all encoder positions, enabling flexible alignment between input and output sequences.</p>
+<h3 id="examples-14">Examples</h3>
+<p><strong>Example 1: Machine Translation</strong>
+Input: &ldquo;Je suis étudiant&rdquo; (encoder processes entire sequence)</p>
+<ul>
+<li>Encoder: Generates contextual representations for each French word</li>
+<li>Decoder step 1: Generates &ldquo;I&rdquo; (attending to &ldquo;Je&rdquo;)</li>
+<li>Decoder step 2: Generates &ldquo;am&rdquo; (attending to &ldquo;suis&rdquo;, aware of &ldquo;I&rdquo;)</li>
+<li>Decoder step 3: Generates &ldquo;student&rdquo; (attending to &ldquo;étudiant&rdquo;, aware of &ldquo;I am&rdquo;)</li>
+</ul>
+<p><strong>Example 2: Attention Patterns</strong>
+Encoder self-attention: Each French word attends to all French words</p>
+<ul>
+<li>&ldquo;étudiant&rdquo; attends to &ldquo;Je&rdquo; (0.3), &ldquo;suis&rdquo; (0.2), &ldquo;étudiant&rdquo; (0.5)
+Decoder cross-attention: Each English word attends to all French words</li>
+<li>&ldquo;student&rdquo; attends to &ldquo;Je&rdquo; (0.1), &ldquo;suis&rdquo; (0.1), &ldquo;étudiant&rdquo; (0.8)
+Decoder self-attention: Each English word attends to previous English words</li>
+<li>&ldquo;student&rdquo; attends to &ldquo;I&rdquo; (0.4), &ldquo;am&rdquo; (0.6), masked from future</li>
+</ul>
+<p><strong>Example 3: Computational Flow</strong>
+Encoder: $\mathbf{X} \rightarrow \mathbf{Z}$ (parallel processing)</p>
+<ul>
+<li>All positions processed simultaneously</li>
+<li>Bidirectional context (each position sees all others)
+Decoder: $\mathbf{Z}, \mathbf{Y}_{&lt;t} \rightarrow y_t$ (sequential generation)</li>
+<li>Autoregressive: must generate tokens one by one</li>
+<li>Causal masking: position $t$ only sees positions $&lt; t$</li>
+</ul>
+<hr>
+<h2 id="scaled-dot-product-attention">Scaled Dot-Product Attention</h2>
+<p>Scaled dot-product attention is the core attention mechanism in Transformers, defined as $$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}$$ where $$\mathbf{Q} \in \mathbb{R}^{n \times d_k}$$ $$\mathbf{K} \in \mathbb{R}^{m \times d_k}$$ and $$\mathbf{V} \in \mathbb{R}^{m \times d_v}$$ are query, key, and value matrices respectively.</p>
+<p>The scaling factor $\sqrt{d_k}$ prevents the dot products from becoming too large, which would push the softmax function into regions with extremely small gradients. The attention weights $$\mathbf{A} = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right) \in \mathbb{R}^{n \times m}$$ represent how much each query position attends to each key position. The computational complexity is $O(n^2 d_k + nmd_v)$ where $n$ is the sequence length.</p>
+<h3 id="examples-15">Examples</h3>
+<p><strong>Example 1: Scaling Factor Importance</strong>
+Without scaling ($d_k = 64$):</p>
+<ul>
+<li>Dot product: $\mathbf{q}^T\mathbf{k} = 8.0$ (typical magnitude)</li>
+<li>Softmax input: $[8.0, 2.0, 1.0]$</li>
+<li>Softmax output: $[0.997, 0.002, 0.001]$ (too sharp)</li>
+</ul>
+<p>With scaling:</p>
+<ul>
+<li>Scaled dot product: $\mathbf{q}^T\mathbf{k} / \sqrt{64} = 1.0$</li>
+<li>Softmax input: $[1.0, 0.25, 0.125]$</li>
+<li>Softmax output: $[0.576, 0.261, 0.163]$ (balanced)</li>
+</ul>
+<p><strong>Example 2: Step-by-Step Computation</strong>
+Given $\mathbf{Q} = \begin{bmatrix} 1 &amp; 2 \ 0 &amp; 1 \end{bmatrix}$, $\mathbf{K} = \begin{bmatrix} 2 &amp; 1 \ 1 &amp; 3 \end{bmatrix}$, $\mathbf{V} = \begin{bmatrix} 0.5 &amp; 1.0 \ 1.5 &amp; 0.5 \end{bmatrix}$, $d_k = 2$:</p>
+<ul>
+<li>$\mathbf{Q}\mathbf{K}^T = \begin{bmatrix} 4 &amp; 7 \ 1 &amp; 3 \end{bmatrix}$</li>
+<li>Scaled: $\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{2}} = \begin{bmatrix} 2.83 &amp; 4.95 \ 0.71 &amp; 2.12 \end{bmatrix}$</li>
+<li>Softmax: $\mathbf{A} = \begin{bmatrix} 0.23 &amp; 0.77 \ 0.24 &amp; 0.76 \end{bmatrix}$</li>
+</ul>
+<hr>
+<h2 id="sequence-to-sequence-seq2seq">Sequence-to-Sequence (Seq2Seq)</h2>
+<p>Sequence-to-sequence models map input sequences $$X = (x_1, x_2, \ldots, x_T)$$</p>
+<p>to output sequences $$Y = (y_1, y_2, \ldots, y_{T&rsquo;})$$ of potentially different lengths, using an encoder-decoder framework with the conditional probability $$P(Y|X) = \prod_{t=1}^{T&rsquo;} P(y_t | y_{&lt;t}, X)$$</p>
+<p>The encoder computes a fixed-size context vector $$c = f(x_1, x_2, \ldots, x_T)$$ that summarizes the input sequence, while the decoder generates outputs autoregressively: $$P(y_t | y_{&lt;t}, X) = g(y_{t-1}, s_t, c)$$ where $s_t$ is the decoder hidden state. In RNN-based seq2seq, the encoder final state initializes the decoder: $$s_0 = h_T^{enc}$$ and $$s_t = f_{dec}(y_{t-1}, s_{t-1}, c)$$</p>
+<p>Modern implementations use attention mechanisms to replace the fixed context vector with dynamic context: $$c_t = \sum_{i=1}^T \alpha_{ti} h_i^{enc}$$ where attention weights $$\alpha_{ti}$$ focus on relevant encoder positions.</p>
+<h2 id="examples-16">Examples</h2>
+<p><strong>Example 1: Machine Translation</strong>
+Input (English): &ldquo;I love cats&rdquo; → $X = [x_1, x_2, x_3]$</p>
+<ul>
+<li>Encoder: Processes entire English sentence → context vector $c$</li>
+<li>Decoder step 1: $P(y_1|c) =$ &ldquo;J&rsquo;&rdquo; (French for &ldquo;I&rdquo;)</li>
+<li>Decoder step 2: $P(y_2|y_1, c) =$ &ldquo;aime&rdquo; (given &ldquo;J&rsquo;&rdquo;)</li>
+<li>Decoder step 3: $P(y_3|y_1, y_2, c) =$ &ldquo;les&rdquo;</li>
+<li>Output: &ldquo;J&rsquo;aime les chats&rdquo;</li>
+</ul>
+<p><strong>Example 2: Text Summarization</strong>
+Input: Long news article (500 tokens)</p>
+<ul>
+<li>Encoder: $h_1, h_2, \ldots, h_{500}$ (bidirectional LSTM states)</li>
+<li>Context: $c = \text{mean}(h_1, \ldots, h_{500})$ or $c = h_{500}^{forward} + h_1^{backward}$</li>
+<li>Decoder: Generates summary tokens one by one</li>
+<li>Output: Short summary (50 tokens)</li>
+</ul>
+<p><strong>Example 3: Attention-Based Seq2Seq</strong>
+Input: &ldquo;The quick brown fox&rdquo;</p>
+<ul>
+<li>Encoder states: $[h_1^{enc}, h_2^{enc}, h_3^{enc}, h_4^{enc}]$</li>
+<li>Decoder at timestep $t$: Computes attention over all encoder states</li>
+<li>$\alpha_{t1} = 0.1, \alpha_{t2} = 0.6, \alpha_{t3} = 0.2, \alpha_{t4} = 0.1$</li>
+<li>Dynamic context: $c_t = 0.1 \cdot h_1 + 0.6 \cdot h_2 + 0.2 \cdot h_3 + 0.1 \cdot h_4$</li>
+<li>Allows decoder to focus on relevant input parts for each output</li>
+</ul>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube_fit/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		4102 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/cloudfactory_reflections/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Adieu Cloudfactory
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/ds_to_ai_engineering/">A reflection on the journey from Data Science to AI engineering</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
