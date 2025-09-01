@@ -920,10 +920,6 @@ details.toc hr:after {
 	font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
-.font-serif {
-	font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif
-}
-
 .font-cursive {
 	font-family: FancyTitleFont, "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif
 }
