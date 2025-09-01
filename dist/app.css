@@ -359,7 +359,7 @@ video {
 
 .heading,
 h1 {
-	font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif;
+	/* font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif; */
 	font-weight: 600;
 	line-height: 1.25;
 	letter-spacing: -0.025em;
@@ -379,7 +379,7 @@ h1 {
 }
 
 h2 {
-	font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif;
+	/* font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif; */
 	font-weight: 600;
 	line-height: 1.25;
 	letter-spacing: -0.025em;
@@ -396,7 +396,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif;
+	/* font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif; */
 	font-weight: 500;
 	line-height: 1.25;
 	--text-opacity: 1;
@@ -408,7 +408,7 @@ h3 {
 h4,
 h5,
 h6 {
-	font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif;
+	/* font-family: "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", Songti SC, STSong, AR PL New Sung, AR PL SungtiL GB, NSimSun, SimSun, TW-Sung, WenQuanYi Bitmap Song, AR PL UMing CN, AR PL UMing HK, AR PL UMing TW, AR PL UMing TW MBE, PMingLiU, MingLiU, serif; */
 	font-weight: 500;
 	line-height: 1.25;
 	--text-opacity: 1;
