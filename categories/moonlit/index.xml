@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Moonlit on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/categories/moonlit/</link>
+    <description>Recent content in Moonlit on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/categories/moonlit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Devs in Nepal</title>
+      <link>https://ayushsubedi.github.io/posts/devs_in_nepal/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/devs_in_nepal/</guid>
+      <description>&lt;h1 id=&#34;developers-in-nepal-vs-the-world&#34;&gt;Developers in Nepal vs the world&lt;/h1&gt;
+&lt;p&gt;Link to the dashboard: &lt;a href=&#34;https://devsinnepal.github.io/&#34;&gt;https://devsinnepal.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This dashboard facilitates a comparative study of the coding landscape in Nepal with the rest of the world. This tool will help visualize and understand developers, their demographic and geographic profile, motivation, education, coding preference and several other factors.&lt;/p&gt;
+&lt;p&gt;The survey data has been utilized from &lt;a href=&#34;https://stackoverflow.com/&#34;&gt;StackOverflow&lt;/a&gt;. For almost a decade, StackOverflow&amp;rsquo;s annual Developer Survey has been the largest survey of people who code around the world. The survey is taken by nearly 65,000 people in 2020. 242 people participated from Nepal.&lt;/p&gt;
+&lt;p&gt;While Stackoverflow also publishes its analysis on the survey annually, it primarily has a wide focus on aggregated global trends.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/devsinnepal.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;insights&#34;&gt;Insights&lt;/h2&gt;
+&lt;h2 id=&#34;nepal-is-one-of-the-top-destination-to-outsource-technology&#34;&gt;Nepal is one of the top destination to outsource technology.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/median_compensation.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As we can see in the chart below, the annual median developer remuneration is the lowest in Nepal ($6300). It is still more than 6 times the&lt;a href=&#34;https://news.gallup.com/poll/166211/worldwide-median-household-income-000.aspx&#34;&gt; median per capita income in Nepal&lt;/a&gt;. Even with fairly low remuneration, productivity is &lt;a href=&#34;https://archive.nepalitimes.com/article/Nepali-Times-Buzz/it-is-all-about-it-in-nepal,3887&#34;&gt;notably high&lt;/a&gt;. In the last 20 yrs, the quality of technology services these pool of talents can/have built is very close to the international standards.&lt;/p&gt;
+&lt;p&gt;The annual median remuneration in the US is USD. 115,000.
+Broken into hourly pay (40 hours in a week, 52 weeks in a year), a Nepali developer makes USD. 3.03 an hour whereas a developer in the US makes USD 55.30 an hour. There is a stark difference in the pay between the developers in US vs. Nepal which suggests that there is a great value for employers in outsourcing technology in Nepal. It&amp;rsquo;s a win-win for both, promotes high-paying growth-oriented jobs for talented Nepali developers and quality service at a lower cost for employers.&lt;/p&gt;
+&lt;p&gt;Similar to other countries as well.&lt;/p&gt;
+&lt;h2 id=&#34;the-trend-of-developers-participating-in-stackoverflow-survey-from-nepal-has-increased-over-the-years&#34;&gt;The trend of developers participating in StackOverflow Survey from Nepal has increased over the years.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/nep_devs.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This implies growing popularity of Stackoverflow among the developers and a possibility of more inclusive and accurate results.&lt;/p&gt;
+&lt;p&gt;In the trend below, a certain spike is seen during 2018. However, the number is not largely deviated. Considering, 2018 as an outlier, we can see a growing trend.&lt;/p&gt;
+&lt;h2 id=&#34;javascript-and-python-are-the-two-most-desired-language-among-developers-of-nepal&#34;&gt;JavaScript and Python are the two most desired language among developers of Nepal.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/desired.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CURRENTLY USED LANGUAGE&lt;/th&gt;
+&lt;th&gt;DESIRED LANGUAGE&lt;/th&gt;
+&lt;th&gt;NUMBER OF DEVELOPERS&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML/CSS&lt;/td&gt;
+&lt;td&gt;JavaScript&lt;/td&gt;
+&lt;td&gt;86&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JavaScript&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;83&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML/CSS&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;82&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SQL&lt;/td&gt;
+&lt;td&gt;Python&lt;/td&gt;
+&lt;td&gt;62&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This analysis also shows that most of the developers are currently familiar with HTML/CSS . However, most developers desire to learn JavaScript in future.&lt;/p&gt;
+&lt;p&gt;Furthermore, most developers who have worked with JavaScript and HTML/CSS desire to learn Python indicating its popularity amongst the community too.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Synthetic data based on pareto principle</title>
+      <link>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/synthetic_data_pareto/</guid>
+      <description>&lt;h1 id=&#34;synthetic-data-based-on-pareto-principle&#34;&gt;Synthetic data based on pareto principle&lt;/h1&gt;
+&lt;p&gt;Nowadays, the phrase &amp;ldquo;data is the new oil&amp;rdquo; seems a little cliche. However, it is true. The demand for data has grown significantly, as people and businesses have realized the possibilities of leveraging data for informed decision making. Often, it is not possible to get data to our specific needs. As a ML teacher, I have heard my students claim that it is really challenging for them to find data to their specifications for several of the projects that they want to pursue (in this case for learning data science or for school projects). In other cases, where confidentiality is crucial, the possibility of open data is minimal (anonamized data is there but that is another difficult avenue). Synthetic data can help solve these issues. Synthetic data is &amp;ldquo;any production data applicable to a given situation that are not obtained by direct measurement&amp;rdquo; according to the McGraw-Hill Dictionary of Scientific and Technical Terms. However, synthetic does not imply random. The patterns in synthetic data should mimic real world patterns. This is a priliminary exercise.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.teodesk.com/wp-content/uploads/2018/12/2.jpg&#34; alt=&#34;Pareto&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;creating-a-synthetic-dataset-for-users-and-users-transactions-that-demonstrate-the-pareto-principle-compulsory-fields-include-basic-demographic-information-email-address-phone-number-item-number-and-price&#34;&gt;Creating a synthetic dataset for users and users transactions that demonstrate the Pareto principle. Compulsory fields include basic demographic information, email address, phone number, item number and price.&lt;/h3&gt;
+&lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; pandas &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; pd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; numpy.random
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; plt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;brute-force-solution&#34;&gt;Brute Force Solution&lt;/h1&gt;
+&lt;p&gt;Brute Force Assumption: All ticket size the same, Customers only purchase once.&lt;/p&gt;
+&lt;h3 id=&#34;create-a-naive-list-for-users&#34;&gt;Create a naive list for users&lt;/h3&gt;
+&lt;p&gt;This will be modified to look real soon. In real world case, this can be thought of user/client table with incremental id.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;final_dataframe_size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# in this case, these are the 1000 customers who have bought something.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Generate users&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;users &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [x &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range (&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;users[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# shuffle the original list&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;shuffle(users)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;users[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;[8815, 2924, 6563, 3568, 3604, 6821, 1466, 9813, 3153, 6637]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;sampling-random-1000-users-who-have-transacted-this-is-because-of-the-assumption-that-not-every-user-will-have-transacted&#34;&gt;Sampling random 1000 users who have transacted. This is because of the assumption that not every user will have transacted.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tran_users &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sample(users, final_dataframe_size)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print (len(tran_users))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print (tran_users[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;1000
+[6113, 5352, 4711, 2600, 5643, 3009, 7765, 7301, 1399, 2336]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pareto_tran_users &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sample(tran_users, int(&lt;span style=&#34;color:#ae81ff&#34;&gt;.2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; final_dataframe_size))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;len(pareto_tran_users)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DataFrame({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;: tran_users})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;6113&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;5352&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;4711&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2600&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5643&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;If the sum of all transactions is 100000,&lt;/p&gt;
+&lt;p&gt;pareto users = 0.8*100000 = 80000 to be divided into 200 users, each user gets = 400&lt;/p&gt;
+&lt;p&gt;non pareto users = .2*100000 = 20000 to be divided into 800 users, each user gets = 25&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;assign_amount&lt;/span&gt;(val):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; val &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; pareto_tran_users:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;400&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transaction&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;user&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(assign_amount)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# validate pareto&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transaction&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(int(&lt;span style=&#34;color:#ae81ff&#34;&gt;.2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; final_dataframe_size))&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;user           0.20033
+transaction    0.80000
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we see 20 percen generating 80 percent of the revenue.&lt;/p&gt;
+&lt;h2 id=&#34;improvement-1&#34;&gt;Improvement 1&lt;/h2&gt;
+&lt;h3 id=&#34;make-the-sales-figure--more-dynamic-instead-of-25-and-400&#34;&gt;Make the sales figure  more dynamic (instead of 25 and 400)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum_to_x&lt;/span&gt;(n, x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    values &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;, x] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; list(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uniform(low&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;,high&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;x,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    values&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [values[i&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; values[i] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(n)]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;copy()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2_p &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df2[df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;user&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isin(pareto_tran_users)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2_p_n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df2[&lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;user&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isin(pareto_tran_users)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# .apply(sum_to_x(20000, 80000))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2_p[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transaction&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sum_to_x(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;80000&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2_p_n[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transaction&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; sum_to_x(&lt;span style=&#34;color:#ae81ff&#34;&gt;800&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20000&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df2_p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(df2_p_n)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user&lt;/th&gt;
+      &lt;th&gt;transaction&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5643&lt;/td&gt;
+      &lt;td&gt;271.252382&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;1403&lt;/td&gt;
+      &lt;td&gt;64.145236&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;2671&lt;/td&gt;
+      &lt;td&gt;150.894671&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;27&lt;/th&gt;
+      &lt;td&gt;1881&lt;/td&gt;
+      &lt;td&gt;3.295457&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;29&lt;/th&gt;
+      &lt;td&gt;4574&lt;/td&gt;
+      &lt;td&gt;129.600777&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;991&lt;/th&gt;
+      &lt;td&gt;7792&lt;/td&gt;
+      &lt;td&gt;58.155219&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;992&lt;/th&gt;
+      &lt;td&gt;4682&lt;/td&gt;
+      &lt;td&gt;18.239724&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;994&lt;/th&gt;
+      &lt;td&gt;5986&lt;/td&gt;
+      &lt;td&gt;4.711870&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;996&lt;/th&gt;
+      &lt;td&gt;8145&lt;/td&gt;
+      &lt;td&gt;0.914484&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;998&lt;/th&gt;
+      &lt;td&gt;4102&lt;/td&gt;
+      &lt;td&gt;20.064127&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;1000 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;user           5553121.0
+transaction     100000.0
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# validate pareto&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;transaction&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;apply(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;%.3f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; x)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;user           1136745.000
+transaction      82287.864
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;upload-some-data&#34;&gt;Upload some data&lt;/h2&gt;
+&lt;h4 id=&#34;to-make-the-data-more-realistic-we-can-add-more-features-in-this-case-mockaroo-was-used-to-create-the-features&#34;&gt;To make the data more realistic, we can add more features. In this case, mockaroo was used to create the features.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_users &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;synthetic_users.csv&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_users&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;first_name&lt;/th&gt;
+      &lt;th&gt;last_name&lt;/th&gt;
+      &lt;th&gt;email&lt;/th&gt;
+      &lt;th&gt;gender&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Gage&lt;/td&gt;
+      &lt;td&gt;Opdenorth&lt;/td&gt;
+      &lt;td&gt;gopdenorth1@hugedomains.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Raquel&lt;/td&gt;
+      &lt;td&gt;Gabriel&lt;/td&gt;
+      &lt;td&gt;rgabriel2@studiopress.com&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Matti&lt;/td&gt;
+      &lt;td&gt;Sullly&lt;/td&gt;
+      &lt;td&gt;msullly3@soundcloud.com&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Zita&lt;/td&gt;
+      &lt;td&gt;Doggart&lt;/td&gt;
+      &lt;td&gt;zdoggart4@ftc.gov&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;the-client-table-seems-complete-let-us-create-an-item-table-which-follows-normal-distribution&#34;&gt;The client table seems complete. Let us create an item table which follows normal distribution.&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;synthetic_items_catalog.csv&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;drop_duplicates(subset&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;product&amp;#39;&lt;/span&gt;], keep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;first&amp;#39;&lt;/span&gt;, inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;product&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1001&lt;/td&gt;
+      &lt;td&gt;Bread Ww Cluster&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1002&lt;/td&gt;
+      &lt;td&gt;Glove - Cutting&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1003&lt;/td&gt;
+      &lt;td&gt;Ice Cream - Super Sandwich&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1004&lt;/td&gt;
+      &lt;td&gt;Wine - Chateau Bonnet&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1005&lt;/td&gt;
+      &lt;td&gt;Ecolab - Ster Bac&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;992&lt;/th&gt;
+      &lt;td&gt;1993&lt;/td&gt;
+      &lt;td&gt;Table Cloth 53x53 White&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;993&lt;/th&gt;
+      &lt;td&gt;1994&lt;/td&gt;
+      &lt;td&gt;Durian Fruit&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;995&lt;/th&gt;
+      &lt;td&gt;1996&lt;/td&gt;
+      &lt;td&gt;Chinese Foods - Plain Fried Rice&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;996&lt;/th&gt;
+      &lt;td&gt;1997&lt;/td&gt;
+      &lt;td&gt;Wine - White, Ej Gallo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;998&lt;/th&gt;
+      &lt;td&gt;1999&lt;/td&gt;
+      &lt;td&gt;Sugar - Fine&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;836 rows × 2 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;prices &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;normal(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;836&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; prices
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;where(df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;2.0&lt;/span&gt;, df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; round(df_items[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;describe()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;prices&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;count&lt;/th&gt;
+      &lt;td&gt;836.000000&lt;/td&gt;
+      &lt;td&gt;836.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;mean&lt;/th&gt;
+      &lt;td&gt;1469.366029&lt;/td&gt;
+      &lt;td&gt;50.340909&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;std&lt;/th&gt;
+      &lt;td&gt;285.036373&lt;/td&gt;
+      &lt;td&gt;20.400653&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;min&lt;/th&gt;
+      &lt;td&gt;1001.000000&lt;/td&gt;
+      &lt;td&gt;2.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25%&lt;/th&gt;
+      &lt;td&gt;1220.500000&lt;/td&gt;
+      &lt;td&gt;36.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;50%&lt;/th&gt;
+      &lt;td&gt;1460.500000&lt;/td&gt;
+      &lt;td&gt;50.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;75%&lt;/th&gt;
+      &lt;td&gt;1710.250000&lt;/td&gt;
+      &lt;td&gt;64.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;max&lt;/th&gt;
+      &lt;td&gt;1999.000000&lt;/td&gt;
+      &lt;td&gt;120.000000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Now we have users and product table. The product table consists of items that are uniformly distributed.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;normal(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;array([ 0.7365823 ,  0.18626006, -0.10850225, -0.8307533 ,  0.18490917,
+        0.51846682, -1.20012347,  0.31953487, -0.12546108,  0.75146225])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Could not figure out how to generate normal distribution frame, &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## so opting out for uniform distribution&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# weights_users = np.random.normal(1000, 1000, len(df_users.id))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;weights_items &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;normal(&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, len(df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;id))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tran_user &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choices(random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sample(list(df_users&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;id), &lt;span style=&#34;color:#ae81ff&#34;&gt;268&lt;/span&gt;), k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tran_items &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choices(list(df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;id), weights &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; weights_items, k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pd&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DataFrame&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;from_dict({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user_id&amp;#39;&lt;/span&gt;: tran_user, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;item_id&amp;#39;&lt;/span&gt;: tran_items})\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;item_id&amp;#39;&lt;/span&gt;)\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_ &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user_id&amp;#39;&lt;/span&gt;)[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;describe()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;prices&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;count&lt;/th&gt;
+      &lt;td&gt;268.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;mean&lt;/th&gt;
+      &lt;td&gt;1889.985075&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;std&lt;/th&gt;
+      &lt;td&gt;343.707196&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;min&lt;/th&gt;
+      &lt;td&gt;1161.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25%&lt;/th&gt;
+      &lt;td&gt;1649.750000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;50%&lt;/th&gt;
+      &lt;td&gt;1896.500000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;75%&lt;/th&gt;
+      &lt;td&gt;2114.500000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;max&lt;/th&gt;
+      &lt;td&gt;2860.000000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# validate pareto&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# regardless of transaction table, hamro users 200 jana&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;reset_index(inplace&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(df_&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum())&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;df_&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;user_id    0.732714
+prices     0.803493
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;merged &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;reset_index()\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user_id&amp;#39;&lt;/span&gt;)\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(df_users&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;set_index(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;), how&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;outer&amp;#39;&lt;/span&gt;)\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;reset_index()\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rename(columns&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;product_id&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;level_0&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user_id&amp;#39;&lt;/span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;merged
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user_id&lt;/th&gt;
+      &lt;th&gt;product_id&lt;/th&gt;
+      &lt;th&gt;product&lt;/th&gt;
+      &lt;th&gt;prices&lt;/th&gt;
+      &lt;th&gt;first_name&lt;/th&gt;
+      &lt;th&gt;last_name&lt;/th&gt;
+      &lt;th&gt;email&lt;/th&gt;
+      &lt;th&gt;gender&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1013.0&lt;/td&gt;
+      &lt;td&gt;Shrimp - Black Tiger 13/15&lt;/td&gt;
+      &lt;td&gt;78.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1025.0&lt;/td&gt;
+      &lt;td&gt;Longos - Lasagna Veg&lt;/td&gt;
+      &lt;td&gt;48.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1032.0&lt;/td&gt;
+      &lt;td&gt;Wine - Pinot Grigio Collavini&lt;/td&gt;
+      &lt;td&gt;54.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1067.0&lt;/td&gt;
+      &lt;td&gt;Shiro Miso&lt;/td&gt;
+      &lt;td&gt;85.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1073.0&lt;/td&gt;
+      &lt;td&gt;Pea - Snow&lt;/td&gt;
+      &lt;td&gt;69.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10727&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1866.0&lt;/td&gt;
+      &lt;td&gt;Figs&lt;/td&gt;
+      &lt;td&gt;56.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10728&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1902.0&lt;/td&gt;
+      &lt;td&gt;Wine - Harrow Estates, Vidal&lt;/td&gt;
+      &lt;td&gt;62.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10729&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1924.0&lt;/td&gt;
+      &lt;td&gt;Pancetta&lt;/td&gt;
+      &lt;td&gt;25.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10730&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1933.0&lt;/td&gt;
+      &lt;td&gt;Vodka - Smirnoff&lt;/td&gt;
+      &lt;td&gt;23.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10731&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1994.0&lt;/td&gt;
+      &lt;td&gt;Durian Fruit&lt;/td&gt;
+      &lt;td&gt;51.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;10732 rows × 8 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;merged&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;groupby(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user_id&amp;#39;&lt;/span&gt;)[[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sort_values(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;, ascending&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;head(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;merged[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prices&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;prices    0.803493
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;merged&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;merged.csv&amp;#39;&lt;/span&gt;, index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_users&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;users.csv&amp;#39;&lt;/span&gt;, index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;to_csv(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;items.csv&amp;#39;&lt;/span&gt;, index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;merged
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user_id&lt;/th&gt;
+      &lt;th&gt;product_id&lt;/th&gt;
+      &lt;th&gt;product&lt;/th&gt;
+      &lt;th&gt;prices&lt;/th&gt;
+      &lt;th&gt;first_name&lt;/th&gt;
+      &lt;th&gt;last_name&lt;/th&gt;
+      &lt;th&gt;email&lt;/th&gt;
+      &lt;th&gt;gender&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1013.0&lt;/td&gt;
+      &lt;td&gt;Shrimp - Black Tiger 13/15&lt;/td&gt;
+      &lt;td&gt;78.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1025.0&lt;/td&gt;
+      &lt;td&gt;Longos - Lasagna Veg&lt;/td&gt;
+      &lt;td&gt;48.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1032.0&lt;/td&gt;
+      &lt;td&gt;Wine - Pinot Grigio Collavini&lt;/td&gt;
+      &lt;td&gt;54.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1067.0&lt;/td&gt;
+      &lt;td&gt;Shiro Miso&lt;/td&gt;
+      &lt;td&gt;85.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1073.0&lt;/td&gt;
+      &lt;td&gt;Pea - Snow&lt;/td&gt;
+      &lt;td&gt;69.0&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10727&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1866.0&lt;/td&gt;
+      &lt;td&gt;Figs&lt;/td&gt;
+      &lt;td&gt;56.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10728&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1902.0&lt;/td&gt;
+      &lt;td&gt;Wine - Harrow Estates, Vidal&lt;/td&gt;
+      &lt;td&gt;62.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10729&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1924.0&lt;/td&gt;
+      &lt;td&gt;Pancetta&lt;/td&gt;
+      &lt;td&gt;25.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10730&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1933.0&lt;/td&gt;
+      &lt;td&gt;Vodka - Smirnoff&lt;/td&gt;
+      &lt;td&gt;23.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10731&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;1994.0&lt;/td&gt;
+      &lt;td&gt;Durian Fruit&lt;/td&gt;
+      &lt;td&gt;51.0&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;10732 rows × 8 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_users
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;first_name&lt;/th&gt;
+      &lt;th&gt;last_name&lt;/th&gt;
+      &lt;th&gt;email&lt;/th&gt;
+      &lt;th&gt;gender&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Pierette&lt;/td&gt;
+      &lt;td&gt;Deners&lt;/td&gt;
+      &lt;td&gt;pdeners0@1und1.de&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Gage&lt;/td&gt;
+      &lt;td&gt;Opdenorth&lt;/td&gt;
+      &lt;td&gt;gopdenorth1@hugedomains.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Raquel&lt;/td&gt;
+      &lt;td&gt;Gabriel&lt;/td&gt;
+      &lt;td&gt;rgabriel2@studiopress.com&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Matti&lt;/td&gt;
+      &lt;td&gt;Sullly&lt;/td&gt;
+      &lt;td&gt;msullly3@soundcloud.com&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Zita&lt;/td&gt;
+      &lt;td&gt;Doggart&lt;/td&gt;
+      &lt;td&gt;zdoggart4@ftc.gov&lt;/td&gt;
+      &lt;td&gt;Female&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;995&lt;/th&gt;
+      &lt;td&gt;996&lt;/td&gt;
+      &lt;td&gt;Web&lt;/td&gt;
+      &lt;td&gt;Beauly&lt;/td&gt;
+      &lt;td&gt;wbeaulyrn@drupal.org&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;996&lt;/th&gt;
+      &lt;td&gt;997&lt;/td&gt;
+      &lt;td&gt;Joachim&lt;/td&gt;
+      &lt;td&gt;Silber&lt;/td&gt;
+      &lt;td&gt;jsilberro@cam.ac.uk&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;997&lt;/th&gt;
+      &lt;td&gt;998&lt;/td&gt;
+      &lt;td&gt;Kearney&lt;/td&gt;
+      &lt;td&gt;Huntly&lt;/td&gt;
+      &lt;td&gt;khuntlyrp@hud.gov&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;998&lt;/th&gt;
+      &lt;td&gt;999&lt;/td&gt;
+      &lt;td&gt;Robb&lt;/td&gt;
+      &lt;td&gt;Eads&lt;/td&gt;
+      &lt;td&gt;readsrq@sfgate.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;999&lt;/th&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;Hillery&lt;/td&gt;
+      &lt;td&gt;Dickings&lt;/td&gt;
+      &lt;td&gt;hdickingsrr@gizmodo.com&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;1000 rows × 5 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df_items
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;product&lt;/th&gt;
+      &lt;th&gt;prices&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1001&lt;/td&gt;
+      &lt;td&gt;Bread Ww Cluster&lt;/td&gt;
+      &lt;td&gt;55.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1002&lt;/td&gt;
+      &lt;td&gt;Glove - Cutting&lt;/td&gt;
+      &lt;td&gt;34.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1003&lt;/td&gt;
+      &lt;td&gt;Ice Cream - Super Sandwich&lt;/td&gt;
+      &lt;td&gt;26.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1004&lt;/td&gt;
+      &lt;td&gt;Wine - Chateau Bonnet&lt;/td&gt;
+      &lt;td&gt;52.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1005&lt;/td&gt;
+      &lt;td&gt;Ecolab - Ster Bac&lt;/td&gt;
+      &lt;td&gt;46.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;992&lt;/th&gt;
+      &lt;td&gt;1993&lt;/td&gt;
+      &lt;td&gt;Table Cloth 53x53 White&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;993&lt;/th&gt;
+      &lt;td&gt;1994&lt;/td&gt;
+      &lt;td&gt;Durian Fruit&lt;/td&gt;
+      &lt;td&gt;51.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;995&lt;/th&gt;
+      &lt;td&gt;1996&lt;/td&gt;
+      &lt;td&gt;Chinese Foods - Plain Fried Rice&lt;/td&gt;
+      &lt;td&gt;23.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;996&lt;/th&gt;
+      &lt;td&gt;1997&lt;/td&gt;
+      &lt;td&gt;Wine - White, Ej Gallo&lt;/td&gt;
+      &lt;td&gt;57.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;998&lt;/th&gt;
+      &lt;td&gt;1999&lt;/td&gt;
+      &lt;td&gt;Sugar - Fine&lt;/td&gt;
+      &lt;td&gt;84.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;836 rows × 3 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>You vs Bezos - Weber Fencher law</title>
+      <link>https://ayushsubedi.github.io/posts/bezos/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/bezos/</guid>
+      <description>&lt;p&gt;1 million seconds equal 11.5 days, whereas 1 billion seconds equal 31.75 years. Very large numbers are baffling to us, humans. From an evolutionary point of view, we  never had to deal with anything colossal. With the recent news of Amazon boss Jeff Bezos now being worth about as much as New Zealand’s economy, it is quite interesting to see how he compares to rest of the celebrities we consider rich. It is absolutely shocking that the wealth difference between Elon Musk and YOU is smaller than between Elon Musk and Jeff Bezos.&lt;/p&gt;
+&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1599480108593&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;https:&amp;#47;&amp;#47;moonlitplayground.ml&amp;#47;bezos&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;WIPbezos&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;WI&amp;#47;WIPbezos&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;language&#39; value=&#39;en&#39; /&gt;&lt;param name=&#39;filter&#39; value=&#39;publish=yes&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&#39;viz1599480108593&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    vizElement.style.width=&#39;750px&#39;;vizElement.style.height=&#39;904px&#39;;                    var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fraud Detection</title>
+      <link>https://ayushsubedi.github.io/posts/fraud_detection/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/fraud_detection/</guid>
+      <description>&lt;h1 id=&#34;fraud-detection&#34;&gt;Fraud Detection&lt;/h1&gt;
+&lt;h4 id=&#34;research-items&#34;&gt;Research Items&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Sets&lt;/li&gt;
+&lt;li&gt;Relevant Papers&lt;/li&gt;
+&lt;li&gt;Available Solutions&lt;/li&gt;
+&lt;li&gt;Machine learning
+&lt;ul&gt;
+&lt;li&gt;Pre-processing&lt;/li&gt;
+&lt;li&gt;Features analysis&lt;/li&gt;
+&lt;li&gt;Modelling&lt;/li&gt;
+&lt;li&gt;Evaluation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Suggested Solution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-data-sets&#34;&gt;1. Data Sets&lt;/h2&gt;
+&lt;p&gt;The first step is to find fraud data sets for modeling purposes. Unfortunately, fraud data sets are really difficult to find publicly because of the confidential information that they contain. Listed below are some of the data sets found and notes on them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Real world data set from Kaggle (ULB)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kaggle.com/mlg-ulb/creditcardfraud&#34;&gt;https://www.kaggle.com/mlg-ulb/creditcardfraud&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data set contains labelled credit card transactions labeled as fraudulent or genuine. Unfortunately, the column labels do not make sense because PCA has been applied for dimensional reduction. Therefore, it is very difficult to understand what each of the columns represent. Nonetheless, it is real world data.  The data sets contains transactions made by credit cards in September 2013 by European cardholders. This data set presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. &lt;strong&gt;The data set is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This data set has been analysed and models have been created below in the document, with F1 score of 94%.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Synthetic data set from Kaggle (NTNU)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.kaggle.com/ntnu-testimon/paysim1&#34;&gt;https://www.kaggle.com/ntnu-testimon/paysim1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data set contains synthetic (created) transaction data. The advantage of using this data set is that PCA has not been pre-performed, thus allowing extraction of all useful information. However, the data set is scaled down to 1/4th of the original data set.&lt;/p&gt;
+&lt;h2 id=&#34;2-papers&#34;&gt;2. Papers:&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Link&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Title&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Summary&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf&#34;&gt;https://www.aaai.org/Papers/KDD/1998/KDD98-026.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Toward Scalable Learning with Non-uniform Class and Cost Distributions: A Case Study in Credit Card Fraud Detection&lt;/td&gt;
+&lt;td&gt;Handling skewed datasets, compares credit card fraud detection models, and evaluate how the different sets of features have an impact on the results with the help of a real credit card fraud dataset provided by a large European card processing company (the dataset above). The results show an average increase in savings of 13% by including the proposed periodic features into the methods. &lt;br&gt;&lt;br&gt;Using 50-50 split in fraud, non-fraud leads to better models.&lt;br&gt;&lt;br&gt;von Mises distribution: &lt;a href=&#34;https://en.wikipedia.org/wiki/Von_Mises_distribution&#34;&gt;https://en.wikipedia.org/wiki/Von_Mises_distribution&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf&#34;&gt;https://www.aaai.org/Papers/Workshops/1997/WS-97-07/WS97-07-015.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Credit Card Fraud Detection using Meta-Learning: Issues and Initials Results&lt;/td&gt;
+&lt;td&gt;Apart from the finding like above (using balanced training), the paper talks about using metrics other than accuracy for model evaluation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466&#34;&gt;http://journal.utem.edu.my/index.php/jtec/article/view/3571/2466&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Credit Card Fraud Detection Using Machine Learning As Data Mining Technique&lt;/td&gt;
+&lt;td&gt;95% accuracy based on Naive based derivatives.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.jair.org/index.php/jair/article/view/10302/24590&#34;&gt;https://www.jair.org/index.php/jair/article/view/10302/24590&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;SMOTE: Synthetic Minority Over-sampling Technique&lt;/td&gt;
+&lt;td&gt;Using SMOTE method as described in the paper is another alternative of getting around the skewness problem.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;3-research-on-available-solutions&#34;&gt;3. Research on available solutions:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Airbnb&lt;/strong&gt;
+&lt;a href=&#34;https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60&#34;&gt;https://medium.com/airbnb-engineering/architecting-a-machine-learning-system-for-risk-941abbba5a60&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ways to mitigate potential bad actors to carry out different types of attacks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Product changes: 2FA, email verification, etc etc&lt;/li&gt;
+&lt;li&gt;Anomaly detection: Scripted attacks that can cause anomaly&lt;/li&gt;
+&lt;li&gt;heuristics/machine learning model based on different factors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Framework&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fast and robust&lt;/li&gt;
+&lt;li&gt;Agile (catch up game)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PMML: Predictive model markup language
+Openscoring: encodes several common types of machine learning models&lt;/p&gt;
+&lt;p&gt;They do not provide fraud detection as a service.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paypal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/&#34;&gt;https://venturebeat.com/2018/06/21/paypal-to-acquire-machine-learning-powered-fraud-detection-startup-simility/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Paypal recently acquired Simility for fraud detection.&lt;/p&gt;
+&lt;p&gt;Simility looks at various session, device, and behavioral bio-metrics and builds a profile for what constitutes “normal” user login behavior; if an anomaly is spotted, it can act to prevent the action.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0&#34;&gt;https://www.dropbox.com/s/ft3wu5ix15xukhc/Mobile%20Fintech%20Fraud.pdf?dl=0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stripe&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://stripe.com/us/radar&#34;&gt;https://stripe.com/us/radar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Even if a card is new to your business, there’s an 89% chance it’s been seen before on the Stripe network.&lt;/p&gt;
+&lt;h2 id=&#34;4-machine-learning&#34;&gt;4. Machine Learning&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Supervised learning was applied to the PCA data set discussed in the data sets section.&lt;/li&gt;
+&lt;li&gt;Different ensemble machine learning algorithms were tested, rather than using one particular algorithm for modelling.&lt;/li&gt;
+&lt;li&gt;Metrics like Precision, Recall, F1 score were used to evaluate the model and get a better understanding of True Positives, True Negatives, False Positive and False Negatives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ayushsubedi/fraud_detection/blob/master/PCA_applied_dataset.ipynb&#34;&gt;Link to complete notebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Random Forest&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Random Forest : 0.9538461538461539
+Precision score Random Forest : 0.98
+Recall score Random Forest : 0.9245283018867925
+F1 score Random Forest : 0.9514563106796116
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bagging&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Bagging : 0.963076923076923
+Precision score Bagging : 0.9867549668874173
+Recall score Bagging : 0.9371069182389937
+F1 score Bagging : 0.9612903225806452
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;AdaBoost&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy score for Ada Boost Classifier : 0.9446153846153846
+Precision score Ada Boost Classifier : 0.9795918367346939
+Recall score Ada Boost Classifier : 0.9056603773584906
+F1 score Ada Boost Classifier : 0.9411764705882353
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;False Positives vs False Negatives&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uc29b242eafa0323079c59de5fc0.previews.dropboxusercontent.com/p/thumb/AA6wvSlgpVw_UCQieCOAFCnCY7-pM3DqJHXKMIImW212qOFwUAphNe5k_qajpfHMLtsf6neHowUSn7aMPUrwwhlgxD3j9AfUAD7CsTD961sQ6gaht6kn2wfdJYm46GwQwW8DncIuzVtzwh8q169uEdp7Fw_0uBaBxCNJbQoqt-YVRI1f8nskTqVx_NrLJyVybhA5lW_dc02Iqhrql5kbv35sLLsCN_B9D0CdV3Dxdup3twa-YtsUF1xBqwXki83c3dtM4dnkbsNMiwk3w6MHXlu6T-Yyn-VuPVFOnNRWYapLlpWZMz-Q9F7TMz1ISka9udXN4jDlJF-gucN_RAECXwB0wpP5XZI35aWjvtyhXrPhubrOFzBHDQN_51eiGbuAvpceW6J8UKBaGzOZgsLl5jwK/p.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Feasibility study with sentiment analysis and voronoi</title>
+      <link>https://ayushsubedi.github.io/posts/feasibility_study_vs/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/feasibility_study_vs/</guid>
+      <description>&lt;h2 id=&#34;voronoi-analysis-and-sentiment-analysis-in-business-feasibility-study&#34;&gt;Voronoi analysis and Sentiment Analysis in Business Feasibility study&lt;/h2&gt;
+&lt;p&gt;Apart from the conventional research methodology (convenience sampling, likert questionnaire, interview questions, swot analysis for competitions etc.) we tested two unconventional paradigms when a client approached us for feasibility of a business in Kathmandu.&lt;/p&gt;
+&lt;p&gt;First of all, we looked into finding an ideal place for the business using voronoi diagrams. This was useful to avoid areas where competitions were prominent, and also to tap into neighbourhoods where demands were not met. Of course, factors such as population density, and similar business tending to sprout in close proximity needed to be considered, but voronoi diagrams was only used as a small piece in a very large puzzle.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/kbar.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Secondly, we tried to understand people&amp;rsquo;s sentiment on the value the business was trying to sell, and also on current value providers. For this we used Twitter API to collect business relevant tweets from Kathmandu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sentiment.png&#34; alt=&#34;voronoi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Apart from an aggregated view of the sentiments, we were able to gain insights on what was and was not working with services provided by current market players. This would allow our client to position their services by converting the weakness of their competition as their strength.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/algorithm/</link>
+    <description>Recent content in algorithm on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Nov 2021 11:11:16 +0545</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Louvian Algorithm</title>
+      <link>https://ayushsubedi.github.io/posts/louvian_algorithm/</link>
+      <pubDate>Tue, 23 Nov 2021 11:11:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/louvian_algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parametric vs Non Parametric</title>
+      <link>https://ayushsubedi.github.io/posts/parametric_non_parametric/</link>
+      <pubDate>Mon, 22 Nov 2021 00:19:10 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/parametric_non_parametric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The math behind clustering algorithm</title>
+      <link>https://ayushsubedi.github.io/posts/clustering/</link>
+      <pubDate>Tue, 02 Nov 2021 10:09:16 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The math behind logistic regression</title>
+      <link>https://ayushsubedi.github.io/posts/logistic_regression/</link>
+      <pubDate>Mon, 11 Oct 2021 16:23:20 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/logistic_regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The math behind linear regression</title>
+      <link>https://ayushsubedi.github.io/posts/linear_regression/</link>
+      <pubDate>Sun, 10 Oct 2021 16:23:20 +0545</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/linear_regression/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

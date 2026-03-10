@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dcdonates on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/dcdonates/</link>
+    <description>Recent content in Dcdonates on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/dcdonates/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Code for Nepal and DataCamp Donates: Data Fellowship 2023</title>
+      <link>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship_2023/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/code_for_nepal_data_fellowship_2023/</guid>
+      <description>&lt;h1 id=&#34;code-for-nepal-and-datacamp-donates-data-fellowship-2023&#34;&gt;Code for Nepal and DataCamp Donates: Data Fellowship 2023&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&#34;2023-a-year-in-review&#34;&gt;2023, A year in review&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/cfn_group.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codefornepal.org/&#34;&gt;Code for Nepal&lt;/a&gt; continues its mission to enhance digital literacy and technology access in Nepal. Our focus remains on providing training, resources, and advocating for technology education and accessibility. Moreover, we aim to leverage technology to address societal issues and improve the lives of Nepali citizens.&lt;/p&gt;
+&lt;p&gt;In 2020, we initiated the Code for Nepal Data Fellowship, which has become one of our flagship programs. Through our partnership with &lt;a href=&#34;https://www.datacamp.com/donates&#34;&gt;DataCamp Donates&lt;/a&gt; , fellows gain access to a robust learning platform offering interactive courses in data science, analytics, and programming. Alongside, they join a supportive community, collaborate with peers, and receive guidance from experienced mentors. This program offers a unique opportunity for individuals to develop skills and contribute to Nepal&amp;rsquo;s tech landscape and beyond.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This article summarizes our success with DataCamp Donates for the year 2023.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;key-statistics&#34;&gt;Key Statistics&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/datacamp_adoption_2023.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;table width=&#34;100%&#34;&gt;
+  &lt;tr style=&#34;font-size: large;&#34;&gt;
+    &lt;td&gt;&lt;img src=&#34;https://img.icons8.com/ios/50/000000/graduation-cap.png&#34; width=&#34;20&#34;/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;421 learners on DataCamp&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&#34;font-size: large;&#34;&gt;
+    &lt;td&gt;&lt;img src=&#34;https://img.icons8.com/ios/50/000000/checkmark.png&#34; width=&#34;20&#34;/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;Adoption score of 91%&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&#34;font-size: large;&#34;&gt;
+    &lt;td&gt;&lt;img src=&#34;https://img.icons8.com/ios/50/000000/diamond--v1.png&#34; width=&#34;20&#34;/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;1.3 million XPs from top 10 learners&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&#34;font-size: large;&#34;&gt;
+    &lt;td&gt;&lt;img src=&#34;https://img.icons8.com/material-outlined/50/000000/calendar--v1.png&#34; width=&#34;20&#34;/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;6 major meetups&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&#34;font-size: large;&#34;&gt;
+    &lt;td&gt;&lt;img src=&#34;https://img.icons8.com/ios/50/000000/plus--v1.png&#34; width=&#34;20&#34;/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;25+ Jobs/Internships acheived&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&#34;font-size: large;&#34;&gt;
+    &lt;td&gt;&lt;img src=&#34;https://img.icons8.com/ios/50/000000/star--v1.png&#34; width=&#34;20&#34;/&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;1 amazing year&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;application&#34;&gt;Application&lt;/h2&gt;
+&lt;iframe src=&#34;https://www.linkedin.com/embed/feed/update/urn:li:share:7070992351090933760&#34; height=&#34;1127&#34; width=&#34;100%&#34; frameborder=&#34;0&#34; allowfullscreen=&#34;&#34; title=&#34;Embedded post&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;in-person-meetups&#34;&gt;In Person Meetups&lt;/h2&gt;
+&lt;p&gt;The Code for Nepal fellows meetup in 2023 was a huge success. It wasn&amp;rsquo;t an average gathering - it was a lively event where fellows got to have insightful discussions with accomplished young data professionals like Suranjan Rana Magar, Prakash Dhakal, Labbi Karmacharya, Subritt Burlakoti, and Sunny Shah. These talks weren&amp;rsquo;t just about saying hello; they were opportunities for fellows to dig deep into data science, analysis, and engineering. Each conversation allowed them to ask important questions, share ideas, and gain valuable insights for their future work. They discussed DataCamp, job opportunities, academic papers, machine learning, reality of job market etc.&lt;/p&gt;
+&lt;p&gt;Beyond just sharing knowledge, the meetup was a bustling place for networking and community building. It helped forge lasting connections and partnerships that go beyond geographical boundaries and career paths.&lt;/p&gt;
+&lt;p&gt;Special thanks to Dibyesh Giri, for sharing his inspiring journey with Oho Cake, and Roshan Ghimire, for sharing the incredible origin story of Code For Nepal.&lt;/p&gt;
+&lt;div id=&#34;myslider2&#34; style=&#34;width:100%; height:600px&#34;&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/dc1.jpeg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/dc2.jpeg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/group_hackathon.png&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/cfn_get_together.png&#34;&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+  simpleslider.getSlider({
+    container: document.getElementById(&#39;myslider2&#39;),
+    transitionTime:1,
+    delay:1.5
+  });
+&lt;/script&gt;
+&lt;h2 id=&#34;virtual-event&#34;&gt;Virtual Event&lt;/h2&gt;
+&lt;h3 id=&#34;code-for-nepal-fellows-network-with-nirmal-budhatholi-senior-data-scientist-microsoft&#34;&gt;Code for Nepal fellows network with Nirmal Budhatholi, Senior Data Scientist, Microsoft&lt;/h3&gt;
+&lt;p&gt;Our virtual event featured Nirmal Budhathoki, a seasoned professional with diverse experience in tech, including work with the US government and as a US Army veteran. Nirmal shared valuable insights on data science toolkit and essential skills, engaging in an interactive Q&amp;amp;A session, providing guidance for aspiring data scientists. He shared valuable insights on the Data Science Toolkit, Top Skills for Data Science, including T-shaped and Pi-shaped skills. Our interactive Q&amp;amp;A session with attendees was both engaging and enlightening. &lt;strong&gt;Our fellows loved him !!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/nirmal.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div id=&#34;myslider1&#34; style=&#34;width:100%; height:400px&#34;&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/nb1.jpeg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/nb2.jpeg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/nb3.jpeg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/nb4.jpeg&#34;/&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+  simpleslider.getSlider({
+    container: document.getElementById(&#39;myslider1&#39;),
+    transitionTime:1,
+    delay:1.5
+  });
+&lt;/script&gt;
+&lt;h2 id=&#34;articles-written-by-the-fellows&#34;&gt;Articles written by the fellows&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/12/27/decoding-trends-of-nepse-stock-data.html&#34;&gt;Decoding Trends of NEPSE stock data&lt;/a&gt; by Mijahla Shakya&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/12/20/comprehensive-analysis-of-superstore-sales-trends-and-performance-analysis.html&#34;&gt;Comprehensive Examination of Superstore Sales Trends and Performance Analysis&lt;/a&gt; by Ayush Adhikari&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/12/18/ml-red-wine-quality.html&#34;&gt;Using Machine Learning for Finding out the Red Wine Quality&lt;/a&gt; by Prabesh Bashyal&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/12/18/deciphering-trends-in-ev-adoption.html&#34;&gt;Deciphering Trends and Patterns in Electric Vehicle Adoption, A Comprehensive Analysis&lt;/a&gt; by Pradipti Simkhada&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/07/06/getting-started-with-GreatAPI.html&#34;&gt;Getting Started with GreatAPI - A Comprehensive Tutorial&lt;/a&gt; by Sahaj Raj Malla&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/07/06/exploring-nepals-export.html&#34;&gt;Exploring Nepal’s Exports: Building an Interactive Dashboard for Easy Data Access&lt;/a&gt; by Anupam Bajra&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/06/24/analysis-of-growth-and-distribution-of-registered-companies-in-nepal.html&#34;&gt;Analysis of the growth and distribution of registered companies in Nepal&lt;/a&gt;  by Piyush Rimal&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/05/24/harnessing-data-science-for-agricultural-crops-prediction.html&#34;&gt;Harnessing Data Science For Agricultural Crops Prediction&lt;/a&gt; by Sadhana Panthi&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/04/12/building-my-own-imdb-dataset-using-scrapy.html&#34;&gt;Building my own IMDB movies dataset using Scrapy&lt;/a&gt; by Shyamron Dongol&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/03/28/survey-form-deployment.html&#34;&gt;Survey Form Deployment and Data Pipeline&lt;/a&gt; by Sudip Shrestha&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/03/27/workflow-of-data-engineering-on-aws.html&#34;&gt;Workflow of Data Engineering Project on AWS&lt;/a&gt; by Ravi Pandit&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/03/16/A-B-testing-implementation-using-python.html&#34;&gt;A/B testing Implementation Using Python&lt;/a&gt; by Sakar Mainali&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/02/21/data-pipeline-with-apache-airflow-and-fast-api.html&#34;&gt;Data Pipeline with Apache Airflow and Fast API&lt;/a&gt; by Prashant Manandhar&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/02/16/use-of-transfer-learning-in-early-pneumonia-detection.html&#34;&gt;Use of Transfer Learning in Early Pneumonia Detection&lt;/a&gt; by Arisha Prasai&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codefornepal.org/2023/02/16/analysis-of-the-trend-of-internet-usage-in-nepal.html&#34;&gt;Analysis of the trend of internet usage in Nepal&lt;/a&gt; by Pujan Oli&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;hackathon&#34;&gt;Hackathon&lt;/h2&gt;
+&lt;h3 id=&#34;data-crunch-2024&#34;&gt;Data Crunch 2024&lt;/h3&gt;
+&lt;div id=&#34;myslider3&#34; style=&#34;width:100%; height:400px&#34;&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk1.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk2.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk3.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk4.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk5.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk6.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk7.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk8.jpg&#34;/&gt;
+  &lt;img src=&#34;https://ayushsubedi.github.io/img/hk9.jpg&#34;/&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+  simpleslider.getSlider({
+    container: document.getElementById(&#39;myslider3&#39;),
+    transitionTime:1,
+    delay:1.5
+  });
+&lt;/script&gt;
+&lt;p&gt;Data Crunch 2024 was another major success for us this year. Most of the participants were previous or present Code For Nepal fellows. The team comprised a dynamic mix ranging from seasoned professionals to budding enthusiasts, with many of them being engineering, AI, and data students (We also had a team with a eighth grader). They all delivered amazing projects, showcasing the immense potential of data-driven solutions in addressing Nepal&amp;rsquo;s most pressing challenges. The event saw the convergence of creativity and technology as teams delved into diverse domains such as environment, healthcare, transportation, and beyond. From dynamic dashboards, amazing statistical models, to intricate Machine Learning models, the projects presented at Data Crunch 2024 were both diverse and impactful.&lt;/p&gt;
+&lt;p&gt;With NRs. 50,000 for the first-place winners, NRs. 30,000 for the second-place team, and NRs. 20,000 for the third-place recipients, Data Crunch 2024 provided not only recognition but also tangible support for further development and refinement of the ideas presented. We had a budget of NRs. 100,000 for this hackathon, and we are proud to have spent all of it as cash prizes. A very special shoutout to Cloudfactory, for providing us the venue and delicious meal to our participants.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;first-prize-winning-project&#34;&gt;First Prize Winning Project&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CodeforNepal/khetala-server&#34;&gt;Khetala&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Khetala is a crop recommendation service with a primary aim of helping farmers decide which crops to plant based on different factors including yield, soil profile, weather and market price.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;second-prize-winning-project&#34;&gt;Second Prize Winning Project&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CodeforNepal/gw-predictor&#34;&gt;Ground Water Predictor&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GW-predictor is a research project written in Python that aims to predict the groundwater discharge potential at any coordinate specified. At the moment, the project is trained for Kathmandu Valley and ready to use for predicting discharge within Kathmandu. Training and testing of Gaussian Process Model is implemented in jupyter lab interface with the use of python package GPy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;third-prize-winning-project&#34;&gt;Third Prize Winning Project&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CodeforNepal/wild-watch&#34;&gt;Wild Watch&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This project aims to boost safety along Nepal&amp;rsquo;s wildlife habitats bordering human settlements using object detection technique. It spots dangerous animals and alerts authorities or nearby communities for swift action, focusing on areas near national parks, wildlife reserves, and forests.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;A fork of these projects are in Code For Nepal repository. Anyone can open a PR to contribute more.&lt;/p&gt;
+&lt;h1 id=&#34;datacamp-donates&#34;&gt;DataCamp Donates&lt;/h1&gt;
+&lt;p&gt;Our partnership with DataCamp aligns with our organization&amp;rsquo;s mission to democratize access to data literacy, particularly within marginalized communities. We have witnessed the transformative impact of providing data skills to underserved populations in enabling them to navigate an increasingly data-driven world. Through our past partnership with DataCamp Donates, we have seen tangible benefits for numerous individuals who have gained valuable skills and opportunities for personal and professional growth.&lt;/p&gt;
+&lt;p&gt;The success stories emerging from our partnership with DataCamp Donates are truly inspiring. From individuals securing new job opportunities to others using their newfound skills to drive innovation within their communities, the ripple effects of this collaboration are profound. &lt;strong&gt;Code For Nepal is immensely grateful for this partnership.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;testimonials-from-our-fellows&#34;&gt;Testimonials from our fellows&lt;/h2&gt;
+&lt;h3 id=&#34;sadhana-panthihttpswwwlinkedincominsadhana-panthi-746561257&#34;&gt;&lt;a href=&#34;https://www.linkedin.com/in/sadhana-panthi-746561257/&#34;&gt;Sadhana Panthi&lt;/a&gt;&lt;/h3&gt;
+&lt;table style=&#34;width: 100%&#34;&gt;
+    &lt;colgroup&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 20%;&#34;&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 80%;&#34;&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sadhana.jpeg&#34; height=&#34;100&#34; width=&#34;100&#34;/&gt;&lt;/td&gt;&lt;td&gt;The DataCamp Donates scholarship played a pivotal role in my journey as a freelancer in machine learning and data science tasks. The interactive tutorials and coding workspace provided a conducive environment for learning and practicing.&lt;/td&gt;
+&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;ujjwal-khadka&#34;&gt;Ujjwal Khadka&lt;/h3&gt;
+&lt;table style=&#34;width: 100%&#34;&gt;
+    &lt;colgroup&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 20%;&#34;&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 80%;&#34;&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg&#34; height=&#34;100&#34; width=&#34;100&#34;/&gt;&lt;/td&gt;&lt;td&gt;DataCamp provided me with the necessary skills in data engineering which helped me secure a full-time job as a Data Engineer.&lt;/td&gt;
+&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;sachin-shrestha&#34;&gt;Sachin Shrestha&lt;/h3&gt;
+&lt;table style=&#34;width: 100%&#34;&gt;
+    &lt;colgroup&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 20%;&#34;&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 80%;&#34;&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://st3.depositphotos.com/9998432/13335/v/450/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg&#34; height=&#34;100&#34; width=&#34;100&#34;/&gt;&lt;/td&gt;&lt;td&gt;I used DataCamp to learn data analysis, primarily focusing on Excel and Python. The interactive learning platform and engaging content helped me gain valuable skills, enabling me to secure a full-time job as a Data Analyst.&lt;/td&gt;
+&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;sujan-gauchanhttpswwwlinkedincominsujan-gauchan-613242147&#34;&gt;&lt;a href=&#34;https://www.linkedin.com/in/sujan-gauchan-613242147/&#34;&gt;Sujan Gauchan&lt;/a&gt;&lt;/h3&gt;
+&lt;table style=&#34;width: 100%&#34;&gt;
+    &lt;colgroup&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 20%;&#34;&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 80%;&#34;&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/sujan.jpeg&#34; height=&#34;100&#34; width=&#34;100&#34;/&gt;&lt;/td&gt;&lt;td&gt;Before gaining access to DataCamp through Code For Nepal, I had no knowledge of coding with Python or statistics required in Data Science. The courses provided a structured learning path, making it easier for me to grasp Python and build a foundation for my journey in Data Science.&lt;/td&gt;
+&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;shreesh-bhattaraihttpswwwlinkedincominshreesh-bhattarai-746561257&#34;&gt;&lt;a href=&#34;https://www.linkedin.com/in/shreesh-bhattarai-746561257/&#34;&gt;Shreesh Bhattarai&lt;/a&gt;&lt;/h3&gt;
+&lt;table style=&#34;width: 100%&#34;&gt;
+    &lt;colgroup&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 20%;&#34;&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 80%;&#34;&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/shreesh.jpeg&#34; height=&#34;100&#34; width=&#34;100&#34;/&gt;&lt;/td&gt;&lt;td&gt;DataCamp provided me with the perfect platform to pursue my interest in data science and mathematics. The courses offered a comprehensive learning experience, allowing me to build a strong foundation in probability, statistics, and data science concepts.&lt;/td&gt;
+&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;manjul-tamrakarhttpswwwlinkedincominmanjul-tamrakar&#34;&gt;&lt;a href=&#34;https://www.linkedin.com/in/manjul-tamrakar/&#34;&gt;Manjul Tamrakar&lt;/a&gt;&lt;/h3&gt;
+&lt;table style=&#34;width: 100%&#34;&gt;
+    &lt;colgroup&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 20%;&#34;&gt;
+       &lt;col span=&#34;1&#34; style=&#34;width: 80%;&#34;&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/manjul.jpeg&#34; height=&#34;100&#34; width=&#34;100&#34;/&gt;&lt;/td&gt;&lt;td&gt;DataCamp Donates scholarship played a pivotal role in my journey and our team&#39;s success in AICrusade 2023 hackathon. The scholarship ignited my passion for data science, and the courses I took instilled in me valuable problem-solving and teamwork skills. These skills proved invaluable as I collaborated with my teammates, who handled the model training. I focused on designing a user-friendly and intuitive UI, utilising Next.js as a frontend framework, ensuring the project was accessible and engaging for users. DataCamp&#39;s comprehensive courses equipped me with the knowledge and confidence to tackle this challenge effectively, and I&#39;m incredibly proud of our team&#39;s achievement in winning the environment track.&lt;/td&gt;
+&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;job-placements-internships-freelance-part-time-and-full-time&#34;&gt;Job Placements (Internships, Freelance, Part time and Full time)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.aiscorp.com/&#34;&gt;Aegis Software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://akbeducationfoundation.org.np/&#34;&gt;AKB Education Foundation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nepalhospitalinfo.com/hospital/bharosa-hospital/&#34;&gt;Bharosa Hospital&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cedargate.com/&#34;&gt;Cedargate Technologies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.codsoft.in/&#34;&gt;Codsoft&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fintech.com.np/&#34;&gt;Fintech Solutions PVT. LTD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ices.edu.np/&#34;&gt;iCES&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lisnepal.com.np/&#34;&gt;LIS Nepal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.numericmind.com/&#34;&gt;Numeric Mind&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;new-job-titles&#34;&gt;New Job Titles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Engineer&lt;/li&gt;
+&lt;li&gt;Researcher&lt;/li&gt;
+&lt;li&gt;Clinical Data Analyst&lt;/li&gt;
+&lt;li&gt;Quality Assurance Engineer&lt;/li&gt;
+&lt;li&gt;Organizer of Datathon&lt;/li&gt;
+&lt;li&gt;Machine Learning Engineer&lt;/li&gt;
+&lt;li&gt;Data Analyst&lt;/li&gt;
+&lt;li&gt;Monitoring and Evaluation Officer&lt;/li&gt;
+&lt;li&gt;Associate Software Engineer&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Code for Nepal and DataCamp Partnership: Empowering Data Literacy and Career Growth</title>
+      <link>https://ayushsubedi.github.io/posts/code_for_nepal/</link>
+      <pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/code_for_nepal/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://codefornepal.org/&#34;&gt;Code for Nepal&lt;/a&gt; is a non-profit organization that aims to increase digital literacy and access to technology in Nepal. We focus on providing training and resources for coding and data literacy, as well as advocating for policies and programs that support technology education and access. Code for Nepal also works to promote the use of technology to address social issues and improve the lives of Nepali people.&lt;/p&gt;
+&lt;p&gt;We introduced the Code for Nepal Data Fellowship in 2020, and this has been one of our success stories. Our partnership with  &lt;a href=&#34;https://www.datacamp.com/donates&#34;&gt;DataCamp Donates&lt;/a&gt;  enables our fellows access to an amazing learning platform that offers interactive courses in data science, analytics, and programming. Additionally, as part of the fellowship they also join a supportive community, collaborate with like-minded individuals, receive guidance from experienced mentors, and even earn an income. Fellows have the opportunity to share their knowledge and insights by writing blogs. We believe this program offers a unique chance for individuals to develop their skills and contribute to the tech industry in Nepal and globally.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/data_fellowship_2023.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/mentor.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/group_photo.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.datacamp.com/courses-all?utm_source=c4n&amp;amp;utm_medium=partner&amp;amp;utm_campaign=000000_1-partner_2-na_3-nepal_4-na_5-bl_6-na_7-do_8-ptnr-pn_9-na_10-na_11-renewal&#34;&gt;DataCamp provides a range of courses&lt;/a&gt; on topics such as Python programming, data analysis, data visualization, machine learning, and many more. DataCamp courses are interactive and include hands-on coding exercises, quizzes, and projects that allow learners to apply their skills in real-world scenarios. The platform is designed to be user-friendly and accessible to learners of all levels, from beginners to experts. Additionally, DataCamp offers &lt;a href=&#34;https://www.datacamp.com/tracks/career?utm_source=c4n&amp;amp;utm_medium=partner&amp;amp;utm_campaign=000000_1-partner_2-na_3-nepal_4-na_5-bl_6-na_7-do_8-ptnr-pn_9-na_10-na_11-renewal&#34;&gt;career tracks&lt;/a&gt;, &lt;a href=&#34;https://www.datacamp.com/signal?utm_source=c4n&amp;amp;utm_medium=partner&amp;amp;utm_campaign=000000_1-partner_2-na_3-nepal_4-na_5-bl_6-na_7-do_8-ptnr-pn_9-na_10-na_11-renewal&#34;&gt;skill assessments&lt;/a&gt;, and a personalized learning experience through its adaptive learning technology.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://res.cloudinary.com/dyd911kmh/f_auto,c_limit,w_1080,q_auto/Marketing/Screenshots/screenshot-campus-encoding-time.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Recently, we surveyed our alumni to request information regarding if the Code for Nepal partnership with DataCamp helped them kickstart their career in data.&lt;/p&gt;
+&lt;p&gt;Most of the respondents stated that DataCamp helped them to learn or enhance their programming skills, specifically in Python, SQL, and data analysis. Some respondents are students who are still learning and looking for internships, while others secured jobs or internships after completing DataCamp courses. A few respondents also mentioned that DataCamp provided them with a platform to learn about AI/ML and big data. One respondent mentioned that DataCamp has been a crucial resource for them in developing their data analysis skills, and they were able to secure a full-time position at a clinical tech company.&lt;/p&gt;
+&lt;p&gt;From the survey responses, the following companies were mentioned where participants secured jobs or internships after learning through DataCamp:  &lt;a href=&#34;https://www.accenture.com/&#34;&gt;Accenture&lt;/a&gt;,  &lt;a href=&#34;https://fusemachines.com/&#34;&gt;Fusemachines&lt;/a&gt;,  &lt;a href=&#34;https://www.cloudfactory.com/&#34;&gt;Cloudfactory,&lt;/a&gt; &lt;a href=&#34;https://www.cotiviti.com/&#34;&gt;Cotiviti Nepal&lt;/a&gt;,  &lt;a href=&#34;https://www.plieger.nl/&#34;&gt;Plieger Group&lt;/a&gt;,  &lt;a href=&#34;https://mediflowsolutions.com/&#34;&gt;Mediflow Solutions&lt;/a&gt;, and  &lt;a href=&#34;https://www.nimble-cr.com/&#34;&gt;Nimble Clinical Research&lt;/a&gt;. However, some participants did not mention the companies they secured jobs/internships with or were still seeking opportunities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ayushsubedi.github.io/img/internship.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The responses provided by different individuals suggest that the partnership has helped them in various ways to enhance their knowledge and skills in the field of data science, engineering, and analysis. Many individuals reported that DataCamp helped them to learn Python programming language, which is widely used in the field of data science, and also introduced them to various tools and modules available in Python, such as Numpy, Pandas, and Matplotlib.&lt;/p&gt;
+&lt;p&gt;Some individuals mentioned that DataCamp helped them gain SQL skills and provided them with a brief overview of the field of data engineering. Others reported that DataCamp helped them to hone their AI/ML skills, learn important concepts such as data manipulation, data visualization, machine learning algorithms, and deep learning techniques, and build practical projects to showcase their abilities to potential employers.&lt;/p&gt;
+&lt;p&gt;Many individuals expressed their gratitude towards DataCamp for providing them with an excellent platform to learn and improve their skills in data science, engineering, and analysis. They appreciated the interactive and impactful nature of the courses and projects, which helped them to test their understanding of the material and identify their areas of weakness. Some individuals also mentioned that DataCamp helped them to advance in their careers in data science and analysis.&lt;/p&gt;
+&lt;p&gt;The responses suggest that DataCamp has been a valuable resource for individuals interested in data science, engineering, and analysis, providing them with the necessary tools and knowledge to succeed in these fields.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

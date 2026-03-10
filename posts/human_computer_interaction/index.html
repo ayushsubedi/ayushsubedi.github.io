@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | Human-Computer Interaction</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.123.7">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ayushsubedi.github.io/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ayushsubedi.github.io/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+<link rel="stylesheet" href="https://ayushsubedi.github.io/lib/katex.min.css"
+      integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+      crossorigin="anonymous">
+
+
+<script defer src="https://ayushsubedi.github.io/lib/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+
+
+<script defer src="https://ayushsubedi.github.io/lib/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+        crossorigin="anonymous"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io/" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">Human-Computer Interaction</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">This is my note for CS6750. The learning goals are to understand the common principles in HCI, design life cycle, and importance of iteration, current applications of HCI, and where it is heading. And the expected learning outcomes are to design effective interactions between humans and computers, design: applying known principles to a new problem and interactive processing of needfinding, prototyping and evaluation, effectiveness: usability, research, change, design interactions, not interfaces (shift on emphasis).</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/gatech'>gatech</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/hci'>hci</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/user-interface'>user-interface</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/user-interaction'>user-interaction</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/user-experience'>user-experience</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/processor-mode'>processor-mode</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/predictor-model'>predictor-model</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2023-04-25">2023-04-25</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="human-computer-interaction">Human-Computer Interaction</h1>
+<h1 id="introduction-to-hci">Introduction to HCI</h1>
+<ul>
+<li><strong>The goal is to create a scenario where user spends as much time as possible to accomplish the task, while the interface kind of vanishes during that interaction.</strong></li>
+<li>A video game, as an example gives the user an experience of being in the game, not tinkering with the controller.</li>
+<li>We might be experts at interacting with computers, but that does not make us experts at designing interactions between other humans and computers.</li>
+<li>HCI is a subset of Human Factors Engineering (Industrial Design, HCI, Product Design).</li>
+<li>UI Design and UX Design and Interaction Design are a subset of HCI.</li>
+<li>Many principle of HCI come from Human Factors Engineering applied to computers.</li>
+<li>Tha gap between HCI and Interaction Design is shrinking (as computers become ubiquitous).</li>
+<li>HCI is about understanding the interaction between users and computers, and UX design is about dictating the interaction between users and computer. The relationship is however, deeply symbiotic.</li>
+<li>Human Factors Engineering is a merger of Engineering and Psychology.</li>
+<li>Psychology and HCI are also deeply symbiotic.</li>
+<li>HCI is about research (needfinding, prototyping, evaluation) and design (distributed cognition, mental models, universal design).</li>
+<li>HCI at its core: Research informs Design and Design informs Research.</li>
+</ul>
+<h1 id="exploring-hci">Exploring HCI</h1>
+<p>Three main application areas:</p>
+<ul>
+<li><strong>Technologies</strong>: Virtual Reality, Augmented Reality, UbiComp and Wearables, Robotics, Mobile</li>
+<li><strong>Ideas</strong>: Context-Sensitive Computing (equipping user interfaces with historical, geographical, or other forms of contextual knowledge), Gesture-Based Interaction (interacting with interfaces using hand or body gestures), Pen-and Touch-Based Interaction, Information Visualization (representing abstract data visually to help humans understand it), CSCW (Computer Supported Cooperative Work) Interaction (Distributed Team, Distributed Work, Temporal and Geographical dimension): Example: Slack, Online course, etc., Social Computing</li>
+<li><strong>Domain</strong>: Special Needs (example: communicating data using sound for visually impaired people), Education (you might not always want to make something super easy), Healthcare (fitbit, virtual
+reality), Security (for security to be useful, it has to be usable). Captcha has become easy now with a checkbox, Games (topics of HCI are super salient here)</li>
+</ul>
+<hr/>
+<h1 id="introduction-to-principles">Introduction to Principles</h1>
+<ul>
+<li>User uses interfaces to accomplish a task</li>
+<li>Need to understand the user goals and the task</li>
+<li>Focusing on task and not the interface, allows us to come up with something amazing (nest instead of iteration on thermostat)</li>
+<li>How to identify a task?
+<ol>
+<li><strong>Watch real users</strong> - get people and ask them to work with you</li>
+<li><strong>Talk to them</strong> - talk through the user</li>
+<li><strong>Start small</strong> - find small task which user performs</li>
+<li><strong>Abstract up</strong> - keep asking why till you reach beyond scope of design (small + small + big - series of why)</li>
+<li><strong>You are not your user</strong></li>
+</ol>
+</li>
+<li>Goals of HCI:
+<ul>
+<li><strong>Useful</strong></li>
+<li><strong>Usable</strong> (the big concern)</li>
+</ul>
+</li>
+<li>If we were focusing on building better maps, we would not add navigation (think about what the user wants)</li>
+<li><strong>Ex situ</strong> - in a controlled or otherwise inauthentic environment</li>
+<li><strong>In situ</strong> - within the authentic context</li>
+</ul>
+<h2 id="viewrole-of-a-human-within-a-system">View/Role of a human within a system</h2>
+<h2 id="processor">Processor</h2>
+<ul>
+<li>Nothing more than Sensory processor, take input and spit output out, like another computer in the system, interface must fit within known human limits: (what humans can sense, what they can store in memory, and what they can physically do in the world)</li>
+<li>usability: interface is physically usable (users can see colors, touch the buttons etc.)</li>
+<li>evaluated by quantitative methods/experiments. - - &ldquo;Behaviorism&rdquo; from psychology</li>
+<li>how quickly can the user complete the task?, how quickly can they react to incoming stimulus?</li>
+<li>not the one generally taken when talking about good design.</li>
+<li>The processor model is concerned with objective, measurable outcomes, so noting the efficiency with which you can accomplish different tasks is relevant here.</li>
+<li>Control study</li>
+<li>interfaces and get the timing</li>
+<li>Pros
+<ul>
+<li>Use existing data.</li>
+<li>Objective comparison (text v/s voice).</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Reason is not visible</li>
+<li>why text is not better than voice.</li>
+<li>cannot differentiate by expertise.</li>
+</ul>
+</li>
+<li>Suitable for only evaluation and optimization, not redesign.</li>
+</ul>
+<h2 id="predictor">Predictor</h2>
+<ul>
+<li>Ask interviews and focus groups</li>
+<li>Get full details on textual description</li>
+<li>Why use different interfaces at different time</li>
+<li>why choice, why particular option</li>
+<li>&ldquo;Cognitivism&rdquo; from psychology</li>
+<li>here we care about the users knowledge, experience, expectation and thought process, we want users to predict what will happen, what are they thinking, interface must fit with knowledge, evaluated by qualitative studies.</li>
+<li>The predictor model is concerned with what you predict will be the outcome of your action, and whether you can interpret whether the outcome matched your prediction, so focus on how the user perceives and interprets what they should do and whether it was successful.</li>
+<li>The predictor model is not about interfaces predicting users intentions. The predictor model is about paying attention to what the user predicts the outcome of their action will be, and how they will interpret what they see after their action is complete.</li>
+<li>Pros
+<ul>
+<li>More complete picture of interaction</li>
+<li>Caters for experts and novices</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Analysis is costly</li>
+<li>Bias in analysis. Focus on specific set of data points.</li>
+<li>Ignore broader context. Example: Only person and interface. Example maps in driving vs map in labs. *5 sec disappearance of search bar</li>
+</ul>
+</li>
+</ul>
+<h2 id="participant">Participant</h2>
+<ul>
+<li>Consider broader activity</li>
+<li>not just inside their head but outside world, interface must fit with context, evaluated by in-situ studies (evaluated in the real world).</li>
+<li>&ldquo;Functionalism/Systems Psychology&rdquo; from psychology</li>
+<li>Pros
+<ul>
+<li>Evaluates interaction in context</li>
+<li>Capture authentic user attentions</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Expensive to perform and analyze both</li>
+<li>Requires real functional interfaces, no prototypes</li>
+<li>Hard to use when starting fresh</li>
+<li>Lots of uncontrollable variables</li>
+</ul>
+</li>
+<li><strong>Each design informs one another</strong></li>
+</ul>
+<p><img src="/img/difference_models.png" alt=""></p>
+<h2 id="user-experience-sans-design">User experience, Sans Design</h2>
+<ul>
+<li>There is always user experience</li>
+<li>UX design focuses on dictating users experience</li>
+<li>It comes due to humans and tasks</li>
+<li>Scope of user experience:
+<ul>
+<li><strong>Individual</strong> - Feels of design like vs dislike</li>
+<li><strong>Group</strong> - FB keeps people in touch</li>
+<li><strong>Societal</strong> - Twitter and Arab Spring</li>
+</ul>
+</li>
+</ul>
+<h1 id="feedback-cycles">Feedback Cycles</h1>
+<ul>
+<li>Way in which people interact with the world and get feedback on the results of those interactions</li>
+<li>Feedback cycles are hallmark of AI</li>
+<li>All of HCI can be interpreted as an application of feedback cycles</li>
+<li>The Gulf of Execution is a term used in the field of human-computer interaction to describe the gap between a user&rsquo;s goals or
+intentions and the actions they must take in order to achieve those goals using a computer system.</li>
+<li>The Gulf of Execution refers to the difficulty or complexity a user may experience in understanding and using the system to accomplish their task.</li>
+</ul>
+<h2 id="gulf-of-execution">Gulf of Execution</h2>
+<ul>
+<li>The distance between user&rsquo;s goals and the execution of the actions required to realize those goals
+<ul>
+<li>How do the users know what they can do?</li>
+<li>How do the users figure out how to make those goals a reality?</li>
+<li>How do they figure out what actions to take to make the state of the system match their goal state?</li>
+<li>How hard is it to do in the interface what is necessary to accomplish the goals?</li>
+<li>What is the difference between what the user thinks they have to do vs what they actually have to do?</li>
+</ul>
+</li>
+<li>Phases:
+<ol>
+<li><strong>Identify Intentions</strong> (what their goal is) <strong>in the context of the system</strong></li>
+<li><strong>Identify Actions</strong> necessary to make the goal a reality</li>
+<li><strong>Execute in Interface</strong></li>
+</ol>
+</li>
+</ul>
+<h2 id="tips-for-gulf-of-execution">Tips for Gulf of Execution</h2>
+<ol>
+<li>Make functions discoverable</li>
+<li>Let the user mess around</li>
+<li>Be consistent with other tools - Ctrl+C for Copy, Ctrl+P for Paste</li>
+<li>Know your user - command line vs UI</li>
+<li>Feed-forward - Feedforward (give what will happen if you keep doing same thing, refresh icon on facebook timeline when users drag down)</li>
+</ol>
+<h2 id="gulf-of-evaluation">Gulf of evaluation</h2>
+<ul>
+<li>The distance between the effects of those actions and the user&rsquo;s understanding of the results</li>
+<li>The output of the action that the user took</li>
+<li>Phases:
+<ol>
+<li><strong>Interface output</strong> - What did it do upon action (audio/video).</li>
+<li><strong>Interpretation</strong> - Can user interpret meaning of output?</li>
+<li><strong>Evaluation</strong> - Evaluate the interpretation to check if goals was realized or not.</li>
+</ol>
+</li>
+</ul>
+<h2 id="tips-for-gulf-of-evaluation">Tips for Gulf of evaluation</h2>
+<ol>
+<li>Give feedback constantly: Give feedback at every step of the process</li>
+<li>Give feedback immediately: Let users know they have been heard (greying out icons when you click)</li>
+<li>Match the feedback to the action (Subtle action, subtle feedback; signification action, significant feedback )</li>
+<li>Vary your feedback (auditory, haptic etc.)</li>
+<li>Leverage direct manipulation (dragging in UI, pulling things around etc.)</li>
+</ol>
+<h2 id="normans-feedback-cycle-stage">Norman&rsquo;s Feedback Cycle Stage</h2>
+<ol>
+<li><strong>The goal</strong>: What do I want to accomplish and why?</li>
+<li><strong>Plan</strong>: How can I do it?</li>
+<li><strong>Specify</strong>: What options do I have?</li>
+<li><strong>Perform</strong>: What can I do now?</li>
+<li><strong>Perceive</strong>: What just happened?</li>
+<li><strong>Interpret</strong>: What does it mean?</li>
+<li><strong>Compare</strong>: Is this okay? Have I accomplished my goal?</li>
+</ol>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img2.PNG" alt=""></p>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img3.PNG" alt=""></p>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img4.PNG" alt=""></p>
+<h1 id="direct-manipulation">Direct Manipulation</h1>
+<ul>
+<li>Direct manipulation in Human-Computer Interaction (HCI) refers to a style of user interface design where the user interacts with graphical objects on the screen directly and immediately, as opposed to indirectly or through a separate command language. The goal of direct manipulation is to make the interface more intuitive and easier to use by allowing users to manipulate objects and see the results of their actions in real-time. Examples of direct manipulation interfaces include desktop environments like Microsoft Windows and Apple&rsquo;s MacOS, as well as mobile operating systems like Apple&rsquo;s iOS and Google&rsquo;s Android.</li>
+<li>Invisible interface</li>
+<li>Directly manipulating to perform a task (touch screen allowing for zooming with hand gesture)</li>
+<li>Direct manipulation is a powerful method for shortening gulfs.</li>
+<li>VR is also allowing for direct manipulation</li>
+</ul>
+<h2 id="don-normans-paper-on-direct-manipulation">Don Normans paper on direct manipulation</h2>
+<p>Some lessons from the <em>Direct Manipulation Interfaces</em> paper:</p>
+<ol>
+<li><strong>Distance</strong> - the distance between users goals and the system itself. The greater the cognitive load required to use the system, the less direct to the interaction with the system actually feels. Distance can be broken into:
+<ol>
+<li><strong>Semantic distance</strong> - distance between users goals and their expression in the system, i.e., how hard it is to know what to do?</li>
+<li><strong>Articulatory distance</strong> - distance between that expression and its execution, i.e., how hard it is to actually do what you know to do?</li>
+</ol>
+</li>
+<li><strong>Direct engagement</strong> - systems that best exemplify direct manipulation all give the qualitative feeling that one is engaged with the control of the objects - not with the programs, not with the computer, but with the semantic object of our goals and intentions</li>
+</ol>
+<p><img src="/img/direct_manipulation.png" alt=""></p>
+<h2 id="invisibility-by-learning">Invisibility by learning</h2>
+<ul>
+<li>Cars are an example</li>
+<li>Leveraging prior expectation and providing quick feedback</li>
+</ul>
+<h2 id="tips-for-invisible-interfaces">Tips for invisible interfaces:</h2>
+<ul>
+<li><strong>Use affordances</strong>: Places where visual design suggest how its supposed to be used: buttons for pressing etc.</li>
+<li><strong>Know your user</strong>: Invisible means different things to different users.</li>
+<li><strong>Differentiate your user</strong>: Allow multiple ways of accomplishing something.</li>
+<li><strong>Let your interface teach</strong>: Teach users more efficient ways of doing something.</li>
+<li><strong>Talk to your user</strong>: Ask them what the users are thinking (if they are talking about the interface, do they talk about the task or the interface, if they talk about the interface, it is pretty visible).</li>
+</ul>
+<h1 id="human-abilities">Human abilities</h1>
+<ul>
+<li>Who the human is and what they are capable of doing?</li>
+<li>Input, processing and output</li>
+<li>Input, and how humans react</li>
+<li>Average person can sense and perceive (eyes: color and movement)
+<ul>
+<li>Visual</li>
+<li>Auditory</li>
+<li>Haptic Feedback</li>
+</ul>
+</li>
+<li>Use recognition over recall</li>
+</ul>
+<h2 id="sensation-and-perception---visual">Sensation and Perception - Visual</h2>
+<ul>
+<li>Visual system is important for cognition</li>
+<li>HCI is majorly connected to visual perception</li>
+<li>Center - Color</li>
+<li>Periphery - Tracking movement</li>
+<li>Old audiences - Fonts, visual acuity drop</li>
+</ul>
+<h2 id="sensation-and-perception---auditory">Sensation and Perception - Auditory</h2>
+<ul>
+<li>Noises - pitch and loudness</li>
+<li>Ears - Localize sounds <em>near vs far</em></li>
+<li>Cant process ears (move around)</li>
+</ul>
+<h2 id="sensation-and-perception---skin">Sensation and Perception - Skin</h2>
+<ul>
+<li>Pressure, vibration and temperature.</li>
+<li>Cant filter touch, like listening</li>
+<li>Its only used for personal feedback</li>
+</ul>
+<h2 id="memory">Memory</h2>
+<ul>
+<li><strong>Chunking</strong> - chunking is a grouping together several bits of information into one chunk</li>
+<li><strong>Perceptual store</strong> - very short term memory lasting less than a second.
+<ul>
+<li>Baddley - Hitch memory model
+<ul>
+<li>Visuospatial Sketchpad - stores visual information</li>
+<li>Phonologic loop - (verbal/ auditory information)</li>
+<li>Episodic Buffer - (integrating information from other system)</li>
+<li>Central Executive</li>
+<li>Expertise delays forgetting in perceptual buffer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Short-term memory</strong> - memory that is able to hold about four to five chunks at a time
+<ul>
+<li>Chunking is grouping bits of information</li>
+<li>Focus on recognizing things rather than recall them</li>
+<li>Effect of HCI
+<ul>
+<li>Recognition vs Recall - Minibar (recognize the icons)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Long-term memory</strong> - seemingly unlimited store of memories; it is harder to put things into long-term memory than short-term memory
+<ul>
+<li>Put short term memory system</li>
+<li>Reminder experiment - David&rsquo;s card idea</li>
+</ul>
+</li>
+</ul>
+<h2 id="cognition">Cognition</h2>
+<ul>
+<li>One of the elements of cognition is <em>learning</em>, there are two types:</li>
+<li>Interfaces should teach them how to learn.
+<ol>
+<li><strong>Procedural learning</strong> - how to do something. We do this HCI. Unconsciously competent (Cant translate them to declarative knowledge, as we don&rsquo;t know). Easy for us to use hard for others.</li>
+<li><strong>Declarative learning</strong> - knowledge about something</li>
+</ol>
+</li>
+</ul>
+<h2 id="cognitive-load">Cognitive Load</h2>
+<p>When designing user interfaces, cognitive load comes into play as follows:</p>
+<ol>
+<li>We want to reduce the cognitive load posed by the interface so the user can focus on the task</li>
+<li>We want to understand the context of what else is going on while users are using our interface</li>
+<li>Example - IDE error checking in programming</li>
+</ol>
+<h2 id="reducing-cognitive-load">Reducing cognitive load</h2>
+<ul>
+<li>
+<p>Tips:</p>
+<ul>
+<li>Use multiple modalities - Visual and Verbal</li>
+<li>Let the modalities complement each other</li>
+<li>Give the user control of the pace</li>
+<li>Emphasize essential content and avoid the clutter</li>
+<li>Offload tasks (to the interface)</li>
+</ul>
+</li>
+<li>
+<p><strong>Perception</strong> - main ways people perceive the world around them through sight, sound, and touch.</p>
+</li>
+<li>
+<p><strong>Cognition</strong> - memory and learning</p>
+</li>
+<li>
+<p><strong>Motor system</strong> - how the person interacts with the world around them</p>
+</li>
+</ul>
+<h1 id="design-principles-and-heuristics">Design Principles and Heuristics</h1>
+<p><img src="/img/dp.png" alt=""></p>
+<h2 id="discoverability">Discoverability</h2>
+<ul>
+<li>Relevant function should be made visible so the user can discover them as opposed to having to read about them in some documentation or learn them through some tutorials</li>
+<li>When user doesn&rsquo;t know what to do, they should be able to figure out what to do</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img7.PNG" alt=""></p>
+<h2 id="simplicity">Simplicity</h2>
+<ul>
+<li>There is often tension between discoverability and simplicity. One argues to be seen and on argues to keep the interface simple, a balance between these two is often required.</li>
+<li>Use of design is easy to understand, regardless of user&rsquo;s experience, knowledge, language skills, or current concentration level</li>
+<li>User should be given only whats needed.</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img8.PNG" alt=""></p>
+<h2 id="affordances">Affordances</h2>
+<ul>
+<li>The design of the thing affords or hints at the way it&rsquo;s suppose to be used.</li>
+<li>Signifiers are meant to close the gap between the affordance of an object (how the object suggests it should be used) and the perceived affordance (what the user thinks on how the object should be used).</li>
+<li><strong>Affordance</strong> - Inherent property of device. We cant introduce it.</li>
+<li><strong>Perceived</strong> - What human perceives. But it can be wrong.</li>
+<li><strong>Signifier</strong> - It helps perceived affordance = Affordance</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img9.PNG" alt=""></p>
+<h2 id="mapping">Mapping</h2>
+<ul>
+<li>Relationship between two things.</li>
+<li>Mapping user - worlds (cut copy paste)</li>
+<li>Refers to creating interfaces where the design makes it clear what the effect will be when using them (this is different than affordances where affordances suggests how to use objects)</li>
+<li>(think about multiple monitors)</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img10.PNG" alt=""></p>
+<h2 id="mapping-vs-affordance">Mapping vs Affordance</h2>
+<ul>
+<li>Affordance - design suggests what to do</li>
+<li>Mapping - design shows what the effects will be
+<ul>
+<li>Ex - Light switch
+<ul>
+<li>Whats the effect?</li>
+<li>Dials on stove (icon for burners). More clear.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="perceptibility">Perceptibility</h2>
+<ul>
+<li>Refers to the user&rsquo;s ability to perceive the current state of the system.</li>
+<li>(On or off in switch). Problem in David&rsquo;s cieling fan</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img11.PNG" alt=""></p>
+<h2 id="consistency">Consistency</h2>
+<ul>
+<li>We should be consistent both within and across interfaces to minimize the amount of learn the user needs to do to learn our interface; in this way we create affordances on our own.
+<ul>
+<li>URL in blue in wiki page.</li>
+<li>Common functions across interfaces.</li>
+<li>Ordering menus/ Shortcuts in PPT.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img12.PNG" alt=""></p>
+<h2 id="flexibility">Flexibility</h2>
+<ul>
+<li>Wherever possible, we should support the different interactions in which people engage naturally, rather than forcing them into one against their expertise or against their preference</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img13.PNG" alt=""></p>
+<h2 id="equity">Equity</h2>
+<ul>
+<li>Complementary to flexibility, helping all users have the same user experience.</li>
+<li>Avoid segregation and stigmatization.</li>
+<li>In the image below, it might look it they are competing, but no.</li>
+<li>Design is useful and marketable to people with diverse abilities.</li>
+<li>Equity is all about making sure users have similar user experience, and flexibility allows for the means to get there.</li>
+<li>Think Password resets settings</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img14.PNG" alt=""></p>
+<h2 id="ease-and-comfort">Ease and comfort</h2>
+<ul>
+<li>Ease: the design can be used efficiently an comfortably and with a minimum of fatigue;</li>
+<li>Comfort: appropriate size and space is provided for approach, reach, manipulation, and use regardless of user&rsquo;s body size, posture, or mobility</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img15.PNG" alt=""></p>
+<h2 id="structure">Structure</h2>
+<ul>
+<li>We should organize our user interfaces in ways that helps the user&rsquo;s mental model match the actual content of the task</li>
+<li>Wall Street website vs print version</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img16.PNG" alt=""></p>
+<h2 id="constraints">Constraints</h2>
+<ul>
+<li>Preventing the user from putting an input that wasn&rsquo;t going to work anyway. UI design is transparent. Constraint is visible.</li>
+<li>Limitting the set of possible actions (to make sure users do not use wrong input, and help users with right input)</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img18.PNG" alt=""></p>
+<ul>
+<li>Norman&rsquo;s four types of constraints:
+<ol>
+<li><strong>Physical</strong> - Physically prevent wrong action. USB sticks.</li>
+<li><strong>Cultural</strong> - Line in escalator in Japan.</li>
+<li><strong>Semantic</strong> - Inherent to situation. Purpose of rare view mirror. Must reflect behind.</li>
+<li><strong>Logical</strong> - Self evident based on situation at hand. One hole to one screw.</li>
+</ol>
+</li>
+<li>How do we deal with constraints? There are two ways:
+<ul>
+<li><strong>Tolerance</strong> - users shouldn&rsquo;t be at risk of causing too much trouble accidentally. Undo and Redo. The design should be flexible and tolerant.</li>
+<li><strong>Feedback</strong> - user should be informed on why the error happened and how to avoid it in the future. Worst example: blue screen of death.
+<img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img19.PNG" alt=""></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/manikandan-ravikiran/HCI_Notes/raw/master/Test%201/Notes/img20.PNG" alt=""></p>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>even though it&rsquo;s better if the system can be used without documentation, it may be necessary to provide help and documentation.</li>
+<li>Any such information should be easy to search, focused on the user&rsquo;s task, list concrete steps to be carried out, and not be too large</li>
+<li>Avoid this all together, but good to have</li>
+</ul>
+<h1 id="mental-models-and-representations">Mental Models and Representations</h1>
+<h2 id="mental-models">Mental Models</h2>
+<ul>
+<li>Understanding to the world around you, that you hold in your head</li>
+<li><strong>Mental model</strong> - an internal, simulatable understanding of external reality. Good interface will give good mental models.
+<ul>
+<li>Is a person understanding of real word working - processes relationship and connection in real systems</li>
+<li>Predict and check outcome of mental model. Basket ball example. Simulate the event to make prediction</li>
+<li>When reality does match? why is mental model wrong? discomfort, curious? frustration and never will get it.</li>
+<li>Match users models and interface
+<ul>
+<li>Design systems that acts how its expected or teach people how they act.</li>
+</ul>
+</li>
+<li>Mental models are not unique to HCI. Also in Edtech.</li>
+<li>Good representation show how system works. But very challenging</li>
+</ul>
+</li>
+<li>Five Principals
+<ol>
+<li><strong>Predictability</strong> - User should be able to predict what will happen before perform it.</li>
+<li><strong>Synthesizability</strong> - But you should know the process on how you reached current state. Log of commands in CLI.</li>
+<li><strong>Familiarity</strong> - Leverage actions with user is familiar. Like affordance.</li>
+<li><strong>Generalizability</strong> - Knowledge of one user interface should generalize to others.</li>
+<li><strong>Consistency</strong> - Single action and consistent. Ctrl+X for cut only.</li>
+</ol>
+</li>
+</ul>
+<h2 id="representations">Representations</h2>
+<ul>
+<li>Internal symbols for an external reality. Helps users learners to use our interface quickly.</li>
+<li>Make the solution self evident.</li>
+<li>Here are some characteristics of good representations:
+<ol>
+<li><strong>Depicts explicit relationships</strong> - Laying thing out helps easy understanding</li>
+<li><strong>Brings objects and relationships together</strong> - Objects and relationships are explicit.</li>
+<li><strong>No extraneous information</strong> - Say only left to right, left out stupid information.</li>
+<li><strong>Expose natural constraints</strong> - Brings environment into pictures.</li>
+</ol>
+</li>
+</ul>
+<h2 id="analogies-and-metaphors">Analogies And Metaphors</h2>
+<ul>
+<li>If you can ground your interface in something users already know, you can get a solid foundation in teaching them how to use your interface. Ex - Wall street website and paper are similar.</li>
+<li>However, when you use analogies to other interfaces, users may not know where the analogy ends. Therefore, we should pay special attention to misconceptions analogies introduce.</li>
+<li>Analogies make the interface more learnable, but they may restrict the interface to outdated constraints.</li>
+<li>Metaphors and analogies - used to create good representations.</li>
+</ul>
+<h2 id="design-principles-revisited">Design Principles Revisited</h2>
+<ul>
+<li>How do mental models and representations tie into HCI design principles?
+<ul>
+<li>Analogies and metaphors - <strong>Principle of consistency</strong></li>
+<li>Interfaces should teach the user how the system works - <strong>Principle of affordances</strong></li>
+<li>Representations map the interface to the task at hand - <strong>Principle of mapping</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="learning-curve">Learning Curve</h2>
+<ul>
+<li>Expertise vs Experience. Above line of proficiency.</li>
+<li>Rapid Learning curve with limited experience</li>
+<li>Difficult interface have slower learning curves</li>
+<li>Consistency with analogies and representations</li>
+</ul>
+<h2 id="slips">Slips</h2>
+<ul>
+<li>The user has the right mental model, but does the wrong thing anyway</li>
+<li>Norman&rsquo;s division:
+<ul>
+<li><strong>Action-based</strong> - Places where the user performs the wrong action, or performs the right action on the wrong object, even though they knew the correct action</li>
+<li><strong>Memory lapse</strong> - Occurs when the user forgets something they knew to do</li>
+</ul>
+</li>
+</ul>
+<h2 id="mistakes">Mistakes</h2>
+<ul>
+<li>The user has the wrong mental model, and does the wrong thing as a result</li>
+<li>Norman&rsquo;s division:
+<ul>
+<li><strong>Rule-based</strong> - occurs when the user correctly assesses the state of the world but makes the wrong decision based on it</li>
+<li><strong>Knowledge-based</strong> - occur when the user incorrectly assesses the state of the world in the first place</li>
+<li><strong>Memory lapse</strong> - similar to memory lapse slips but focuses on forgetting to fully execute a plan</li>
+</ul>
+</li>
+</ul>
+<h2 id="learned-helplessness">Learned Helplessness</h2>
+<ul>
+<li>A user&rsquo;s sense that they are helpless to accomplish their goals in an interface. Window hang while reading large dataset.</li>
+<li>It&rsquo;s related to educational technology.</li>
+</ul>
+<h2 id="expert-blind-spot">Expert Blind Spot</h2>
+<ul>
+<li>When you are an expert in something there are parts of the task that you do subconsciously without even thinking about them.</li>
+<li><strong>I am not my user.</strong></li>
+</ul>
+<h1 id="task-analysis">Task Analysis</h1>
+<ul>
+<li>Human information processor model</li>
+<li>Cognitive Task analysis (similar to the predictor model)</li>
+</ul>
+<h2 id="human-information-processor-model">Human information processor model</h2>
+<p>A human information processor model; it builds off the processor model of the human&rsquo;s role in a system. One of the human information processor model is teh GOMS model. There are four categories in the GOMS model:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Elements_of_a_GOMS_model.svg/220px-Elements_of_a_GOMS_model.svg.png" alt=""></p>
+<ol>
+<li><strong>Goals</strong> - users goals in the system</li>
+<li><strong>Operators</strong> - user operations to carry out method</li>
+<li><strong>Methods</strong> - user can use to complete (Methods - Operator 1&mdash;n)</li>
+<li><strong>Selection rules</strong> - which to select among different methods</li>
+</ol>
+<p>This model proposes that a human has a set of <em>goals</em> and <em>methods</em> they can choose from to accomplish those goals. Each method is comprised of a series of <em>operators</em> which help carry out that method. Lastly, they use some set of <em>selection rules</em> to help decide what method to choose from.</p>
+<p>Example - Transfer information to coworkers - Email, chat, In person, etc.</p>
+<p><img src="/img/goms.png" alt=""></p>
+<h2 id="strengths-and-weaknesses-of-goms">Strengths And Weaknesses Of GOMS</h2>
+<ul>
+<li>Weaknesses of GOMS model:
+<ol>
+<li><strong>Does not address complexity</strong> - There are many methods and sub-methods. Standard GOMS rules this out.</li>
+<li><strong>Assumes user is an expert</strong> - GOMS doesn&rsquo;t account for novices and user errors. I don&rsquo;t know highway in USA.</li>
+</ol>
+</li>
+<li>Strengths of GOMS model:
+<ol>
+<li><strong>Formalize user interaction into steps</strong> - Interaction steps to measure for efficiency. Helps to narrow down the time for each steps. Finding areas of improvement. Count time for each operator, easy to get keychain while holding something in hand.</li>
+</ol>
+</li>
+</ul>
+<h3 id="types-of-goms">Types of GOMS</h3>
+<ul>
+<li><strong>KLM-GOMS</strong> -&gt; Keystroke level model
+<ul>
+<li>here operator + execution time - efficiency determination</li>
+<li>original work had 6 types of operators, won&rsquo;t work on modern ideas</li>
+</ul>
+</li>
+<li><strong>CMN GOMS</strong> -&gt; Card, Moran and Newell GOMS
+<ul>
+<li>Hierarchical Goals and choose multiple goals</li>
+<li>Very low level goals (moving text, delete phrases)</li>
+<li>Model how long each individual GOMS to take
+<ul>
+<li>Find place which we can cut out</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>NGOMSL</strong> - Natural language GOMS
+<ul>
+<li>Working memory if exploited can be identified</li>
+<li>lends itself for human interpretation.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-tips-developing-goms-models">5 Tips: Developing GOMS Models</h2>
+<ol>
+<li>Focus on small goals
+<ul>
+<li>GOMS should be small, abstract up from there.</li>
+<li>Example - Navigating end of document</li>
+</ul>
+</li>
+<li>Nest goals, not operators
+<ul>
+<li>GOMS of Navigation
+<ul>
+<li>GOMS for changing lanes and plotting routes</li>
+<li>Operators are smallest atoms of GOMS models. Don&rsquo;t breakdown further</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Differentiate descriptive <em>What people do?</em> and prescriptive <em>What they wanna do?</em>
+<ul>
+<li>GOMS of former doesn&rsquo;t mean they will do later. They will not do that?</li>
+</ul>
+</li>
+<li>Assign costs to operators
+<ul>
+<li>Measurement of operators will take.</li>
+</ul>
+</li>
+<li>Use GOMS to trim waste
+<ul>
+<li>Use GOMS to cut cost by reducing operators.</li>
+</ul>
+</li>
+</ol>
+<h2 id="goms-to-cognitive-task-analysis">GOMS to Cognitive Task Analysis</h2>
+<ul>
+<li>The GOMS model assumes the human is an input-output machine (processor model).</li>
+<li>However, human reasoning may be too nuanced and complex to be so simplified.</li>
+<li>Cognitive task analysis is another way of examining tasks but it puts a much higher emphasis on things like memory, attention, and cognitive load (predictor model).</li>
+<li>Behaviorism vs Cognitivism
+<ul>
+<li>Observable of things</li>
+<li>Get into mind</li>
+</ul>
+</li>
+</ul>
+<h2 id="cognitive-task-analysis">Cognitive Task Analysis</h2>
+<p>Its collection of methods focus on what we cant see.</p>
+<p>Cognitive task analysis are concerned with the underlying thought process associated with performing a task. Most methods follow a particular common sequence:</p>
+<ul>
+<li>Collecting preliminary knowledge
+<ul>
+<li>No experts needed, but need some familiarity (observe people performing tasks)</li>
+</ul>
+</li>
+<li>Identify knowledge representations
+<ul>
+<li>What does user know what they need to complete a task. Ex: Ordering of tasks/ Memorization etc.</li>
+<li>For navigation, monitoring and sequence of actions.</li>
+</ul>
+</li>
+<li>Apply focused knowledge elicitation methods
+<ul>
+<li>Identify task, knowledge by think out loud about it.</li>
+<li>Get user to tell us what they have in mind.</li>
+<li>What changed their approach, what did they do in prior and what they do after change.</li>
+</ul>
+</li>
+<li>Analyze and verify data acquired
+<ul>
+<li>Confirming if understanding is correct</li>
+</ul>
+</li>
+<li>Format results for intend application
+<ul>
+<li>We take results and models user</li>
+</ul>
+</li>
+</ul>
+<p><strong>Result looks like a flow chart, with various tasks in each box.</strong></p>
+<h2 id="hierarchical-task-analysis">Hierarchical Task Analysis</h2>
+<p><img src="/img/hta.png" alt=""></p>
+<ul>
+<li>Tasks could be broken and small tasks could be reused. In the image above, Checkout can be represented as a subtask.</li>
+<li>This form of task analysis helps us understand what tools might already be available to accomplish certain portions of our task, or how we might design certain things to transfer between different tasks and different contexts.</li>
+<li><strong>Hierarchical task analysis process</strong>:
+<ol>
+<li>Abstracting out unnecessary details for a certain level of abstraction.</li>
+<li>Modularizing designs or principles so that they can be transferred between different tasks or different contexts.</li>
+<li>Organizing the cognitive task analysis in a way that makes it easier to understand and reason over.</li>
+</ol>
+</li>
+</ul>
+<h2 id="cognitive-task-analysis-strengths-and-weaknesses">Cognitive Task Analysis Strengths And Weaknesses</h2>
+<ul>
+<li>Like the GOMS model, cognitive task analysis also have strengths and weaknesses.</li>
+<li>Strengths:
+<ol>
+<li><strong>Emphasizes mental processes:</strong> Unlike GOMS, emphasis on whats goes on users head</li>
+<li><strong>Formal enough to for interface design:</strong> Easy to communicate and compare</li>
+</ol>
+</li>
+<li>Weaknesses:
+<ol>
+<li><strong>Time-intensive</strong> - They involve talking and systematic analysis of data</li>
+<li><strong>May deemphasize context</strong> - Role of artifacts and details in world</li>
+<li><strong>Ill-suited for novices</strong> - Who is trying to use an interface.</li>
+</ol>
+</li>
+</ul>
+<h3 id="other-task-analysis">Other task analysis</h3>
+<p><strong>Human information</strong></p>
+<ul>
+<li>KLM - Keystroke level model</li>
+<li>TLM - Touch level model</li>
+<li>MLP - Model human processor</li>
+<li>CPM-GOMS - Parallel tasks.</li>
+<li>NGOMSL - Natural language.</li>
+</ul>
+<p><strong>Cognitive Models</strong></p>
+<ul>
+<li>CDM - Critical decision model - Focus on critical decision</li>
+<li>TKS - Task knowledge structures - Focus on user knowledge.</li>
+<li>CFM - Cognitive function model - Focus on complexity</li>
+<li>Applied CTA</li>
+<li>Skilled CTA</li>
+</ul>
+<h1 id="distributed-cognition">Distributed Cognition</h1>
+<ul>
+<li>Distributed cognition suggests models of cognition should be extended outside the mind.</li>
+<li>An example is you can either add large numbers in your head (much more difficult) or add large numbers on a piece of paper.</li>
+<li>Each object in the the process can be said to extend the cognitive process. Don&rsquo;t get smarter by pen and paper, cognition got distributed among the artifacts.</li>
+</ul>
+<h2 id="how-a-cockpit-remembers-its-speeds">How A Cockpit Remembers Its Speeds</h2>
+<p>Given the dynamic nature of flight, how does a cockpit remember its speeds?</p>
+<p><img src="/img/pilots.png" alt=""></p>
+<p>The paper references to a cockpit and not one individual component as the cockpit comprises of more than one cognitive component to remember speeds:</p>
+<ol>
+<li><strong>Long-term memory</strong>: a library of configurations (booklet)</li>
+<li><strong>Short-term memory</strong>: a specific configuration (one sheet)</li>
+<li><strong>Working memory</strong>: use of speed bugs on a dial</li>
+<li><strong>Deliberation</strong>: the two pilots in the cockpit</li>
+</ol>
+<ul>
+<li>Each one of these components helps in remembering the speed of a plane by serving as an individual cognitive component in the cognitive system.</li>
+<li>Distributed Cognition To Cognition Load
+<ul>
+<li>Artifacts are extra memory to brain. Driving example is cognitive overload. GPS is a approach. Cruise control. Offload tasks to artifacts</li>
+</ul>
+</li>
+<li>Distributed Cognition as Lens
+<ul>
+<li>A way of approaching/looking at the problem/design. Separation of monitors.</li>
+</ul>
+</li>
+</ul>
+<h2 id="distributed-cognition-to-social-cognition">Distributed Cognition To Social Cognition</h2>
+<ul>
+<li>Distributed cognition is concerned with how the mind can be extended by relations with other artifacts and other individuals.</li>
+<li>Social cognition is concerned with distributing cognition across individuals. Example : map reading during driving in old days.</li>
+</ul>
+<h2 id="social-cognition">Social Cognition</h2>
+<ul>
+<li>Social cognition is about how social connections create systems that can, together, accomplish tasks. For example, you and your friend navigating to a place.</li>
+<li>Social cognition is also concerned with the cognitive underpinning of social interactions themselves. it is interested in how perception, memory and learning relate to social phenomenon. (Think designing social media)</li>
+</ul>
+<h2 id="situated-action">Situated Action</h2>
+<ul>
+<li>Situated action is strongly concerned with the context within which people interact.</li>
+<li>However, situation action is not interested in the long-term and enduring permanent interactions amongst these things.</li>
+<li>Situated action is interested in the kinds of novel situational problems that arise all the time. How do we find out more about these problems?
+<ol>
+<li>We must examine the interfaces we design within the context in which they&rsquo;re used</li>
+<li>We must understand the task the user performs grows out of interaction with the interface</li>
+<li>The task doesn&rsquo;t exist until the user gets started, and once they start, they define the task</li>
+</ol>
+</li>
+</ul>
+<h2 id="situated-action-and-memory">Situated Action And Memory</h2>
+<ul>
+<li>Memory is context dependent. People will often remember e.g., a list of personal tasks because it is part of a larger narrative versus remembering a list of tasks someone else gave them.</li>
+</ul>
+<h2 id="activity-theory">Activity Theory</h2>
+<ul>
+<li>A massive and well-developed set of theories regarding interaction between various pieces of an activity.</li>
+<li>This theory predates HCI and there are some contributions of activity theory to HCI we should be aware of:</li>
+<li>Task to Activity theory
+<ul>
+<li>Why we see task and then design</li>
+<li>Up and down hierarchy - due to learning.</li>
+</ul>
+</li>
+<li>It predates HCI</li>
+</ul>
+<ol>
+<li>Activity theory generalizes our unit of analysis from the task to the activity; we&rsquo;re not just interested in what users doing but why users are doing it</li>
+<li>Activity theory puts an emphasis on the idea that we can create low level operations from higher level actions</li>
+<li>Activity theory points out that actions by the user can actually move up and down a hierarchy</li>
+</ol>
+<ul>
+<li>There are several similarities between Activity Theory and Distributed Cognition (both are focused on goals, where as Situated Action is focused on improvisation)</li>
+</ul>
+<h1 id="interfaces-and-politics">Interfaces and Politics</h1>
+<p>Designing for change, and anticipating the change from our design.</p>
+<h3 id="change-a-third-motivation">Change: A Third Motivation</h3>
+<p>There are three goals of HCI:</p>
+<ol>
+<li><strong>Help</strong> a user do a task</li>
+<li><strong>Understand</strong> how a user does a task</li>
+<li><strong>Change</strong> the way the user does a task</li>
+</ol>
+<p>Car - Seatbelt example - Not usability but safety.</p>
+<h3 id="paper---do-artifacts-have-politics">Paper - Do artifacts have politics?</h3>
+<ul>
+<li>Nuclear Power
+<ul>
+<li>Can be used in Totalitarian. Push for tech carries politics</li>
+<li>Solar power equalitarian society</li>
+</ul>
+</li>
+</ul>
+<h3 id="two-types">Two types</h3>
+<ul>
+<li><strong>Inherently political</strong>
+<ul>
+<li>Nuclear power (top down)-  Authoritarian</li>
+<li>Solar Power (distributed) - Egalitarian society</li>
+</ul>
+</li>
+<li><strong>Technical arrangements as forms of order</strong>
+<ul>
+<li>Technology can change social order - Context and purpose - Busting unions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="change-by-design">Change By Design</h2>
+<ul>
+<li>Ability of interfaces to change behavior can be abused.</li>
+<li>Normal designs with underlying politics
+<ul>
+<li>People can design things to intentionally create a negative (designing bridges too low so that it&rsquo;s harder for poor people to go to a destination) or positive change (Facebook&rsquo;s <em>like</em> button).</li>
+<li>Wealthy people can go to park, low bridges for poor people (social order),</li>
+<li>Net neutrality</li>
+<li>Positive interactions: Like button and emotions in Facebook. Societal trend.</li>
+</ul>
+</li>
+</ul>
+<h2 id="change-by-happenstance">Change By Happenstance</h2>
+<ul>
+<li>Need not always by design. Bicycle - Societal change
+<ul>
+<li>Women using cycle instead relying on someone, wardrobe change.</li>
+</ul>
+</li>
+<li>While people could intentionally create a positive or negative design, this could happen unintentionally as well for positive (the bicycle giving women freedom to travel independently) and negative (internet access) cases.</li>
+<li>Existing Infrastructure and Internet</li>
+</ul>
+<h2 id="value-sensitive-design">Value-sensitive Design</h2>
+<ul>
+<li>Value-sensitive design seeks to provide theory and method to account for human values in a principled and systematic manner throughout the design process.</li>
+<li>Another dimension to consider while designing: Usable, Useful and Value sensitive</li>
+<li>Privacy by design - Privacy is the value. Preserve value.</li>
+</ul>
+<h2 id="value-sensitive-design-and-information-systems">Value-sensitive Design and Information Systems</h2>
+<ul>
+<li>Conceptual Investigations - Thought experiments, role value play in stakeholders</li>
+<li>Empirical Investigations - target users - exploring how they make sense of values</li>
+<li>Technical Investigation - target systems -</li>
+</ul>
+<p>Fundamental feature - Proactive, usability vs human values,</p>
+<h2 id="value-sensitive-design-across-cultures">Value-sensitive Design Across Cultures</h2>
+<p>One of the challenges of value-sensitive design is that values are different across cultures (culture that values privacy vs cultures that value frees speech due to censorship).</p>
+<ul>
+<li>Right to be forgotten, value held by EU. Google was not developed based on that.</li>
+<li>Not universally shared.</li>
+<li>Privacy vs Free speech.</li>
+</ul>
+<h2 id="5-tips-value-sensitive-design">5 Tips: Value-sensitive Design</h2>
+<ol>
+<li><strong>Start early</strong> - Identify values early on design process and check throughout</li>
+<li><strong>Know your users</strong> - Know user&rsquo;s values. Challenges are to be identified.</li>
+<li><strong>Consider both direct and indirect stakeholder</strong> - People who don&rsquo;t user but affected by it. Bank UI.</li>
+<li><strong>Brainstorm the interface&rsquo;s possibilities</strong> - How it could be used. Tracking hours - unjust call for termination.</li>
+<li><strong>Choose carefully between supporting values and prescribing values</strong> - We should not prescribe values for everyone. Be careful about support and change.</li>
+</ol>
+<h2 id="reversing-the-relationship">Reversing The Relationship</h2>
+<ul>
+<li>Technology changes society but society could also change technology too (e.g., demand for single platform to link to others for TV subscriptions).</li>
+<li>Bulbs - florescent bulbs vs Electricity Bill
+<ul>
+<li>Satisfaction of politics, preserve power of organization.</li>
+</ul>
+</li>
+</ul>
+<h1 id="conclusion-to-principles">Conclusion To Principles</h1>
+<ul>
+<li><strong>Human As Processor</strong>: At the narrowest level, we might view HCI as the interaction between a person and an interface. This view is shared by models such as the GOMS model.</li>
+<li><strong>Human As Predictor</strong>: Most of the time we are viewing HCI as the user interacting through some interface to accomplish some task. At this level we can look interactions in terms of the gulf of execution and evaluation. We can use tools like cognitive task analysis and hierarchical task analysis to understand things like user&rsquo;s mental models, errors, and mappings between representations and the underlying tasks. Design principles are made.</li>
+<li><strong>Human As Participant</strong>: At the highest level, we are interested in how interactions occurs beyond just the individual, interface, and task. At this level we can look at interactions in terms of activity theory where interactions include elements of the context surrounding the task. We could also look at how artifacts combine to accomplish a task through distributed cognition. Other times we can look at deeply understanding the situated context in which a person is acting through situated action. Additionally, we could also look at how users integrate through norms and relations with social cognition. There are times where we should keep in mind the intended and unintended positive and negative changes our designs might have on society during design.</li>
+</ul>
+<h2 id="5-tips-on-screen-ui-design">5 Tips: On-Screen UI Design</h2>
+<ol>
+<li>Use a grid</li>
+<li>Use a whitespace</li>
+<li>Know your Gestalt principles - how user perceive and group projects.</li>
+<li>Reduce clutter - #1-#3 helps in this.</li>
+<li>Design in grey-scale</li>
+</ol>
+<h2 id="gestalt-principles">Gestalt principles</h2>
+<p>The following are the key Gestalt principles:</p>
+<ul>
+<li><strong>Law of proximity</strong>: This principle states that objects that are near each other tend to be grouped together.</li>
+<li><strong>Law of similarity</strong>: This principle states that objects that share similar characteristics, such as shape, color, or texture, tend to be grouped together.</li>
+<li><strong>Law of closure</strong>: This principle states that people tend to perceive incomplete shapes or forms as complete objects by filling in the missing information.</li>
+<li><strong>Law of symmetry</strong>: This principle states that people tend to perceive objects that are symmetrical as a single unit or figure.</li>
+<li><strong>Law of continuity</strong>: This principle states that people tend to perceive objects as continuous and flowing, even when they are interrupted by other objects.</li>
+<li><strong>Law of figure-ground</strong>: This principle states that people tend to perceive objects in a scene as either figures (the objects of focus) or the background against which they are seen.</li>
+</ul>
+<p><img src="https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1112591/retina_1708x683_cover-gestalt-principles-of-design-45cb1b7e7cada357ab317284e9a79a77.png" alt=""></p>
+<hr/>
+<h1 id="introduction-to-methods">Introduction to Methods</h1>
+<h2 id="research-methods">Research Methods</h2>
+<ul>
+<li>Design better than existing design</li>
+<li>In order to design interactions that are better than existing designs, it is important to take into consideration the user needs at each stage of the design process</li>
+<li>New way to old task</li>
+<li>Novelty should have the purpose, and understand the users task</li>
+</ul>
+<h2 id="user-centered-design">User Centered Design</h2>
+<ul>
+<li>Prioritizing user needs while recognizing we do not know their needs</li>
+<li>Design is often done to meet some functional specification, instead of meeting the user&rsquo;s need</li>
+<li><strong>You are not your user</strong></li>
+</ul>
+<h2 id="principles-of-user-centered-design">Principles of User-Centered Design</h2>
+<ul>
+<li>There are six principles of user-centered design:
+<ol>
+<li>The design is based upon an explicit understanding of users, tasks, and environments - <strong>Do needfinding</strong> Leverage this knowledge throughout the design process.</li>
+<li>Users are involved throughout design and development - <strong>Interviews, Surveys, working on design team etc</strong>.</li>
+<li>The design is driven and refined by user-centered evaluation. <strong>Real users evaluate the prototype</strong>.</li>
+<li>The process is iterative - <strong>No single shot results</strong>. Even after being realesed.</li>
+<li>The design addresses the whole user experience - <strong>Entire experience is to be considered</strong>.</li>
+<li>The design team includes multidisciplinary skills and perspectives - <strong>CS Scientists, Pyschologists, Designer, Domain experts and more</strong>.</li>
+</ol>
+</li>
+</ul>
+<h2 id="stakeholders">Stakeholders</h2>
+<ul>
+<li>There are many types of stakeholders who user or are impacted by our interface:
+<ul>
+<li><strong>Primary</strong> - Our user who uses the interface directly. Grade book tool - Teachers send progress reports to parents</li>
+<li><strong>Secondary</strong> - are people who don&rsquo;t use our system directly but who might interact with the output of it in some way. - Grade book tool Parents receive the output.</li>
+<li><strong>Tertiary</strong> - are people who never interact with the tool or output but who are nonetheless impacted by the existence of the tool. Grade book tool - Students</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-design-life-cycle">The Design Life Cycle</h2>
+<ul>
+<li>User-centered design is about integrating the user into every phase of the design life cycle. We need to know two things:
+<ol>
+<li>What the design life cycle is?</li>
+<li>How to integrate the user into each phase?</li>
+</ol>
+</li>
+<li>The design life cycle in four phase:
+<ul>
+<li><strong>Needfinding</strong>: gather comprehensive understanding of task the user is are trying to perform: who the user is, what the context of the task is, why they are doing the task, and any other information</li>
+<li><strong>Design alternatives</strong> (early ideas on different ways to perform a task)</li>
+<li><strong>Prototyping</strong> (low fidelity to improved, so that we can put it in front of our users)</li>
+<li><strong>Evaluation</strong> (put them in front of our users)</li>
+</ul>
+</li>
+<li>The cycle does not end at product launch.</li>
+</ul>
+<p><img src="/img/design_lifecycle.png" alt=""></p>
+<h2 id="quantitative-data">Quantitative data</h2>
+<ul>
+<li><strong>Descriptions, Measurements</strong></li>
+<li>Observations described or summarized numerically</li>
+<li>Supports formal tests, comparisons, and conclusions</li>
+<li>Is strong for a small class of things</li>
+<li>Captures narrow view of what we might be interested in examining</li>
+<li><strong>What</strong></li>
+</ul>
+<h2 id="qualitative-data">Qualitative data</h2>
+<ul>
+<li><strong>Preferences, Performances</strong></li>
+<li>Observations described or summarized non-numerically</li>
+<li>Supports any kind of response or observation</li>
+<li>Covers a broader picture of what we&rsquo;re examining</li>
+<li>More flexible, but it is more prone to biases</li>
+<li>Description, observations, natural language</li>
+<li>Convert qualitative to quantitative data.</li>
+<li><strong>How and Why</strong></li>
+</ul>
+<p><strong>Mixed method</strong>: A mixture of qualitative and quantitative data from same participants.</p>
+<h2 id="types-of-nominal-data">Types Of Nominal Data</h2>
+<p>There are four main types of quantitative data:</p>
+<ol>
+<li><strong>Nominal</strong> - Categorical - Number of instances of different categories
+<ul>
+<li>Single nominal - One category</li>
+<li>Multiple nominal -  More than one category</li>
+<li>Binary (yes/no) and Non binary</li>
+</ul>
+</li>
+<li><strong>Ordinal</strong> - Similar to nominal, but there is explicit ordering. Scale of 1-5. Gap is unclear.
+<ul>
+<li>It can be multinominal</li>
+<li>Binary (Fail/Pass) and Non binary</li>
+</ul>
+</li>
+<li><strong>Interval</strong> - We do know exact difference between value. Commuting between 4-6am. 64 degree celcius is not twice as warm as 32. Can be Discrete or Continious.</li>
+<li><strong>Ratio</strong> - Ratio data. Absolute value and ratio could be established. Can be Discrete or Continious.</li>
+</ol>
+<p><img src="https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/old-blog-uploads/four-levels-of-measurement-data.jpg" alt=""></p>
+<p><img src="https://thebiologynotes.com/wp-content/uploads/2019/03/Nominal-Ordinal-Interval-and-Ratio-Data.jpg" alt=""></p>
+<h2 id="types-of-qualitative-data">Types Of Qualitative Data</h2>
+<ul>
+<li>Depends on how its gathered</li>
+<li>There are many types of qualitative data, below are some examples:
+<ol>
+<li>Transcripts - Interview/Focus group</li>
+<li>Field notes - Participant Observation</li>
+<li>Artifacts - Reviews for Existing interfaces</li>
+<li>Others - Many more/ Not mentioned</li>
+</ol>
+</li>
+<li>Span is a lot larger</li>
+<li>Expensive to analyze, interpretation bias</li>
+<li>Qualitative data -to- Quantitative using <strong>coding</strong>
+<ul>
+<li>We don&rsquo;t loose, only transformation</li>
+<li>Documented methodology is obtained (for review purposes/reproducibility)</li>
+<li>Always mix qualitative and quantitative data in HCI</li>
+<li>Typically these transformed data are nominal</li>
+</ul>
+</li>
+</ul>
+<h1 id="ethics-and-human-research">Ethics and Human Research</h1>
+<h2 id="origin-of-institutional-review-board">Origin Of Institutional Review Board</h2>
+<ul>
+<li>Due to unethical experiments such as the <em>Milgram Experiment</em>, <em>Tuskegee Syphilis Experiment</em>, and <em>Stanford Prison Experiment</em> the <em>National Research Act</em> was enacted (1974). This led to the creation of institutional review boards to oversee research at universities.</li>
+<li>In general, the benefits to society must outweigh the risks to the subjects in the case of these experiments.</li>
+<li><strong>Belmont Report</strong> - summarizes basic ethical principles that research must follow in order to receive government support.
+<ul>
+<li>demanded rigorous consent procedures</li>
+<li>positive outweighed negatives and rights are always preserved</li>
+<li>benefits of study should outweighs risk to participants</li>
+<li>Fair selection of subjects</li>
+</ul>
+</li>
+</ul>
+<h2 id="value-of-research-ethics">Value of Research Ethics</h2>
+<ul>
+<li>Benefits are worth the risk and are significant in nature.</li>
+<li>IRB is sensitive about coercions when participants feel coerced, it impacts our results.</li>
+<li>Inherent bias on participants, effect on results.</li>
+<li>Not just ethical, but doing good research.</li>
+<li>IRB also monitors the research is sound and <strong>useful</strong>.</li>
+</ul>
+<h2 id="irb-protocol">IRB Protocol</h2>
+<ul>
+<li><strong>Protocol is a description regarding a project</strong></li>
+<li>Status: Approved, New Waiting for PI, Withdrawn, Waiting for Sign-Off</li>
+<li>Add research personnel</li>
+<li>Protocol title</li>
+<li>Select role</li>
+<li>Certification is needed</li>
+<li>Primary Investigator (PI) will be always first, and must be a faculty</li>
+<li>How to create a protocol in IRBWISE
+<ul>
+<li>Protocol description covers study at high level.</li>
+<li>Research design and methodology (what users will experience and in what order)</li>
+<li>Experimental designs</li>
+<li>Duration of participation</li>
+<li>Data collection methods</li>
+<li>Benefits outweigh the risk</li>
+<li>Risks are to be added.</li>
+<li>Statistical Analysis (Qualitative research might not have this)</li>
+<li>Start and End dates</li>
+</ul>
+</li>
+</ul>
+<h2 id="human-subject-interaction-details">Human Subject Interaction details</h2>
+<ul>
+<li>Will directly involve direct interaction</li>
+<li>describe subjects and data we plan to collect (are we being fair to all genders)</li>
+<li>Vulnerable population - special accommodation is to be needed (they might not have the ability to give full consent)</li>
+<li>Scientific justification is needed for no of participants</li>
+<li>Effect size is needed</li>
+<li>Inclusion and Exclusion status</li>
+<li>Subjects age ranges</li>
+<li>Recruitment plan - (how are we going to find our subjects)</li>
+<li>Compensation provision</li>
+</ul>
+<h2 id="irb-consent-procedure">IRB Consent Procedure</h2>
+<ul>
+<li>What kind of consent is received? Written or Waiver
+<ul>
+<li>Some narrow circumstances - Now direct effect</li>
+</ul>
+</li>
+<li>Waiver of documentation of consent
+<ul>
+<li>Written consent is only identity of participant</li>
+<li>Implied consent and can withdraw anytime</li>
+</ul>
+</li>
+<li>Justification is needed for consent waiver</li>
+<li>At risk population needs more information</li>
+<li>Concealment, deception - Temporary prototype is needed</li>
+<li>Upload concent form</li>
+</ul>
+<h2 id="data-management-question">Data Management Question</h2>
+<ul>
+<li>Clinical research and Biological research</li>
+<li>How do we keep data safe</li>
+<li>DoD, Radiation and Nano tech - Involvement</li>
+<li>Interview script, recruitment script, survey etc.</li>
+<li>No conflict of Interest and submit to PI.</li>
+</ul>
+<h1 id="needfinding-and-requirements-gathering">Needfinding and Requirements Gathering</h1>
+<h2 id="introduction-to-needfinding">Introduction to Needfinding</h2>
+<ul>
+<li>Avoid preconceived notions (if all you have is a hammer, everything looks like a nail)</li>
+<li>Defining general questions about the user</li>
+<li>Generating answers about the user</li>
+<li>Formalizing models of the users</li>
+</ul>
+<h2 id="data-inventory">Data Inventory</h2>
+<p>Some understanding of the data we want to gather. These are the questions we want to answer:</p>
+<ul>
+<li><strong>Who are the users?</strong> Age, gender, level of expertise etc</li>
+<li><strong>Where are the users?</strong> What is their environment?</li>
+<li><strong>What is the context of the task?</strong> What is competing for user attention?</li>
+<li><strong>What are their goals?</strong> What are they trying to accomplish?</li>
+<li><strong>What do they need?</strong> What are the physical objects/information/collaborators they need?</li>
+<li><strong>What are their tasks?</strong> What are they doing physically, cognitively, socially?</li>
+<li><strong>What are their subtasks?</strong> How do they accomplish those subtasks?</li>
+</ul>
+<h2 id="the-problem-space">The Problem Space</h2>
+<ul>
+<li>Where is the task occurring? What else is going on, what are the user&rsquo;s explicit and implicit needs?</li>
+<li>broader view of the problem space</li>
+<li>start with general types and observations and move through progressively more targeted types of need finding.</li>
+</ul>
+<h2 id="user-types">User Types</h2>
+<ul>
+<li>Full range of users for which we are designing</li>
+<li>Task is usually the same for both, but the audience, their motivation and their needs are different</li>
+<li>Identify different types of user and perform needfinding exercise on all of them
+<ul>
+<li>Kid vs Adults</li>
+<li>Experts vs Novices</li>
+</ul>
+</li>
+</ul>
+<h2 id="avoiding-bias-in-needfinding">Avoiding Bias in Needfinding</h2>
+<ul>
+<li><strong>Confirmation bias</strong>: we see what we want to see, preconceived ideas, test empirically, keep samples covered, involve multiple individuals in needfinding process</li>
+<li><strong>Observer bias</strong>: Subconsciously bias the users. Avoid leading questions</li>
+<li><strong>Social desirability bias</strong>: Make naturalistic observations, record objective bias.</li>
+<li><strong>Voluntary response bias</strong>: Oversampling. Reduce survey shown.</li>
+<li><strong>Recall bias</strong>: Misleading and incorrect recall, resulting in faulty data, people are not good what they did during activity done in past.</li>
+</ul>
+<h2 id="naturalistic-observation">Naturalistic Observation</h2>
+<ul>
+<li>Observing people in their natural context</li>
+<li>Cannot interact with users directly</li>
+<li>Not sure what those users are thinking</li>
+<li>Tips on Naturalistic Observation
+<ul>
+<li>Take notes</li>
+<li>Start specific, and then abstract (do not summarize too soon)</li>
+<li>Spread out your sessions</li>
+<li>Find a partner</li>
+<li>Look for questions</li>
+</ul>
+</li>
+<li>Five tips to use during observation:
+<ol>
+<li><strong>Take notes</strong> - Gather targeted information and observation about what you see.</li>
+<li><strong>Start specific, then abstract</strong> - Risk Tunnel vision. Write down individual action, do not summarize/analyze from the beginning</li>
+<li><strong>Spread out your sessions</strong></li>
+<li><strong>Find a partner</strong> - Take notes and compare with partners</li>
+<li><strong>Look for questions</strong> - Should inform questions what you need during targeted needfinding</li>
+</ol>
+</li>
+</ul>
+<h2 id="participant-observation">Participant Observation</h2>
+<ul>
+<li>Although you are not your user, you can act as a participant</li>
+<li>Do not overrepresented your own experience</li>
+</ul>
+<h2 id="hacks-and-workarounds">Hacks and Workarounds</h2>
+<ul>
+<li>How do users use hacks/workarounds to accomplish a task?</li>
+<li>But ask them why they use the hacks</li>
+</ul>
+<h2 id="errors">Errors</h2>
+<ul>
+<li>Slips or mistakes that users frequently make while performing the task within the interface</li>
+<li>Errors happen because of weak mental models</li>
+</ul>
+<h2 id="apprenticeship-and-ethnography">Apprenticeship and Ethnography</h2>
+<ul>
+<li>Researching a community by becoming a participant in it (become an expert in it: pretty much)</li>
+</ul>
+<h2 id="interviews-and-focus-groups">Interviews and Focus Groups</h2>
+<ul>
+<li>Just talk to them</li>
+<li>Focus group can lead to convergent thinking</li>
+<li>5 Tips for effective interviews:
+<ol>
+<li>Focus on the 6 W&rsquo;s (who, what, where, when, why and how), open ended semi structured questions, Avoid yes and no, use openended and semiphrases questions</li>
+<li>Be aware of bias</li>
+<li>Listen</li>
+<li>Organize the interview (introduction, lighter qn for trust gathering, summary at end for the user to understand the purpose)</li>
+<li>Practice</li>
+</ol>
+</li>
+</ul>
+<h2 id="think-aloud">Think-Aloud</h2>
+<ul>
+<li>Asking user to think out loud while in the context of the task</li>
+<li>Useful because we get info that user might forget later, but thinking out loud might cause them to act differently</li>
+<li>Post-Event Protocol (is better option)</li>
+</ul>
+<h2 id="surveys">Surveys</h2>
+<ul>
+<li>Larger number of questions/surveyors</li>
+<li>Not as through, but powerful to get large number of data</li>
+<li>Also helpful in identifying what to ask during interviews</li>
+<li>Tips:
+<ol>
+<li>Less is more</li>
+<li>Be aware of bias</li>
+<li>Tie them to inventory</li>
+<li>Test them out</li>
+<li>Iterate</li>
+</ol>
+</li>
+<li>Questions in survey:
+<ol>
+<li><strong>Be clear</strong>: Code numbers with what they mean (likert), don&rsquo;t ask overlapping range, time box frequency based questions</li>
+<li><strong>Be concise</strong>: Might be a tradeoff with clear, ask in plain language</li>
+<li><strong>Be specific</strong>: Avoid double barrel questions, avoid questions that allow internal conflict, avoid questions on super big ideas</li>
+<li><strong>Be expressive</strong>: Allow users to be expressive, emphasize users opinions, user ranges instead of yes/no questions, give levels of frequency or agreement, allow users to add nominal categories</li>
+<li><strong>Be unbiased</strong>: Leave open ended question open, avoid loaded questions (wasted vs spent)</li>
+<li><strong>Be usable</strong>: Provide progress bar, page length consistency, order your questions logically with a flow, alert users about unanswered questions, preview survey yourself.</li>
+</ol>
+</li>
+</ul>
+<h2 id="other-data-gathering">Other Data Gathering</h2>
+<ul>
+<li>Logs, Product Reviews, Already existing reviews (critique already existing interface) etc.</li>
+</ul>
+<p><img src="/img/needfinding.png" alt=""></p>
+<h2 id="iterative-needfinding">Iterative Needfinding</h2>
+<ul>
+<li>Needfinding on its own can be a cycle</li>
+</ul>
+<p><img src="/img/iterative_needfinding.png" alt=""></p>
+<h2 id="revisiting-the-inventory">Revisiting the inventory</h2>
+<p>Revisit these:</p>
+<ul>
+<li><strong>Who are the users?</strong> Age, gender, level of expertise etc</li>
+<li><strong>Where are the users?</strong> What is their environment?</li>
+<li><strong>What is the context of the task?</strong> What is competing for user attention?</li>
+<li><strong>What are their goals?</strong> What are they trying to accomplish?</li>
+<li><strong>What do they need?</strong> What are the physical objects/information/collaborators they need?</li>
+<li><strong>What are their tasks?</strong> What are they doing physically, cognitively, socially?</li>
+<li><strong>What are their subtasks?</strong> How do they accomplish those subtasks?</li>
+</ul>
+<h2 id="representing-the-need">Representing the Need</h2>
+<ul>
+<li>User needs can be formulated to something usable</li>
+<li>Task and subtasks, hierarchy, flowchart with decisions, diagram of structural relationships between the components in the system and how they interact.</li>
+<li>summarize to task analysis (data gathered can summarize task analysis)</li>
+</ul>
+<h2 id="defining-the-requirements">Defining the Requirements</h2>
+<ul>
+<li>They should be specific and evaluative</li>
+<li>Functionality, usability, learnability, accessibility</li>
+<li>Compatibility, compliance, cost</li>
+<li>Used to evaluate the interface going forward</li>
+</ul>
+<h1 id="design-alternatives">Design Alternatives</h1>
+<ul>
+<li>The biggest mistake a designer can make is jumping straight to designing an interface without understanding the users or understanding the task.</li>
+<li>The second biggest mistake is settling on a single design idea or a single genre of design ideas too early.</li>
+<li>After having a good understanding of needs of our user, brainstorm on task we have been investigating</li>
+<li>The settling on a single idea can take on multiple forms:
+<ul>
+<li>Staying too allegiant to existing designs or products</li>
+<li>Focusing too strongly on one alternative from the very beginning</li>
+</ul>
+</li>
+<li><strong>Tunnel vision</strong>: focusing on one alternative from the very beginning</li>
+<li><strong>Design space</strong>: the area in which we design our solution</li>
+<li>Our goal during the design alternative phase is to explore the possible design space. We do not want to narrow down the design space too early.</li>
+</ul>
+<h2 id="brainstorming">Brainstorming</h2>
+<ul>
+<li>Explore possible design space (brainstorm lots of potential spaces)</li>
+<li><strong>Start with individual brainstorming</strong></li>
+<li>Generate lots of ideas</li>
+<li>Groups tend to coalesce around conclusion earlier</li>
+<li>Tips on individual brainstorming
+<ul>
+<li>Write down the core problem</li>
+<li>Constrain yourself</li>
+<li>Aim for 20</li>
+<li>Take a break</li>
+<li>Divide and conquer</li>
+</ul>
+</li>
+</ul>
+<h2 id="challenges-in-group-brainstorming">Challenges in Group Brainstorming</h2>
+<ul>
+<li>The challenges are:
+<ul>
+<li><strong>Social loafing</strong> - the tendency to exert less effort working in groups than working alone</li>
+<li><strong>Conformity</strong> - the tendency to agree with or follow the group&rsquo;s reasoning and ideas</li>
+<li><strong>Production blocking</strong> - the tendency of some individuals in discussions to block other individual&rsquo;s participation</li>
+<li><strong>Performance matching</strong> - the tendency to match one&rsquo;s level of performance to other collaborators</li>
+<li><strong>Power dynamics</strong> - the tendency to defer to more senior individuals, or to overpower less senior individuals (gender, race, etc.)</li>
+</ul>
+</li>
+<li>Rules for Group Brainstorming
+<ol>
+<li><strong>Expressiveness</strong> - Any idea that comes out share out loud</li>
+<li><strong>Non-evaluation</strong> - No evaluation</li>
+<li><strong>Quantity</strong> - More ideas better</li>
+<li><strong>Building</strong> - Build on the other ideas</li>
+</ol>
+</li>
+<li>There are four additional rules:
+<ol>
+<li><strong>Stay focused</strong> - keep goal in mind</li>
+<li><strong>No explaining ideas</strong> - Say idea and move on</li>
+<li><strong>Revisit the problem</strong> - Hit a road block and revisit</li>
+<li><strong>encourage others</strong> - Encourage them to do so.</li>
+</ol>
+</li>
+<li>5 Tips for group brainstorming
+<ol>
+<li>Go through every individual idea</li>
+<li>Find the optimal size</li>
+<li>Set clear rules for communication - Set timer and no one can block others</li>
+<li>Set clear expectations - How long session wil go? set an expectation</li>
+<li>End with ideas, not decisions - several ideas and come back to pursue</li>
+</ol>
+</li>
+</ul>
+<h2 id="fleshing-out-ideas">Fleshing out ideas</h2>
+<ul>
+<li>
+<p>some ideas can be dismissed easily, which is fine</p>
+</li>
+<li>
+<p>combine multiple ideas, dismiss with some analysis</p>
+</li>
+<li>
+<p>Here are methods to flesh out ideas:</p>
+<ul>
+<li><strong>Personas</strong> - create actual characters to represent our users. Emphatic reasoning.</li>
+<li><strong>User profiles</strong> - defining a number of different variables about our users and possibilities within each - Expertise, Motivation, Usage Frequency, Literacy etc.</li>
+<li><strong>Timelines/Journey Maps</strong> - Take a persona and stretch out over time. What does a user do before/during/after the task? What action lead to the task? What do they do later? What are they thinking when they are doing the task?</li>
+<li><strong>Scenarios and Storyboards</strong> - Examining the specific scenarios users will encounter while using our interfaces (a more specific approach). Timelines tend to be pretty general, scenarios are more specific. Particular user, particular events, while performing particular task. Ambulance/Audiobook example. Pretty close to mockups.</li>
+<li><strong>User modeling</strong> - Where personas are personal and will give us an empathetic view of the UX, user models are more objective and meant to give us measurable and comparable view of the UX. GOMS model. How does the user achieve a goal? Identification of phases and efficiencies.</li>
+</ul>
+<p><img src="/img/fleshing.png" alt=""></p>
+</li>
+</ul>
+<h1 id="prototyping">Prototyping</h1>
+<h2 id="basics-of-prototyping">Basics Of Prototyping</h2>
+<p>Some basics to prototyping:</p>
+<ol>
+<li><strong>Early prototyping</strong> - rapid revision on preliminary ideas</li>
+<li><strong>Late prototyping</strong> - finishing touches on final design/revising already live design</li>
+</ol>
+<h3 id="representation-types">Representation (Types)</h3>
+<p>Different prototype representations from early (low-fidelity) to late (high fidelity):</p>
+<ul>
+<li><strong>Verbal prototype</strong>: A verbal prototype is a concept or idea that is described in words, without any visual or physical representation. It can be used to quickly test and refine ideas without investing time or resources in creating a physical prototype.</li>
+<li><strong>Paper prototype</strong>: A paper prototype is a simple, low-fidelity mockup of a product that is made using paper or cardboard. It is used to test the layout and functionality of a design, and can be easily modified as needed.</li>
+<li><strong>Wizard of Oz prototype</strong>: A Wizard of Oz prototype is a type of interactive mockup that simulates the behavior of a fully functioning product by using human operators to perform the actions that would normally be performed by the product itself. This type of prototype can be used to test user interaction and identify usability issues before building a fully functional prototype.</li>
+<li><strong>Wireframe prototype</strong>: A wireframe prototype is a visual representation of a product that shows the layout and structure of the interface, without including detailed graphics or other design elements. It can be used to test the flow and functionality of a design.</li>
+<li><strong>Physical prototype</strong>: A physical prototype is a working model of a product that is built using real materials. It can be used to test the form and function of a design and identify any manufacturing or engineering issues that may need to be addressed.</li>
+<li><strong>Functional prototype</strong>: A functional prototype is a working model of a product that includes some or all of the features and functionality of the final product. It can be used to test the performance and usability of a design before beginning mass production.</li>
+<li><strong>Live prototype</strong>: A live prototype is a fully functional version of a product that is released to a limited audience for testing and feedback. It can be used to identify any remaining bugs or usability issues before launching the product to a wider audience.</li>
+</ul>
+<p><img src="/img/prototype.png" alt=""></p>
+<h3 id="fidelity">Fidelity</h3>
+<p>Fidelity - Completeness/Maturity of prototype. Far from being complete. Correlated to representation.</p>
+<h3 id="evaluation">Evaluation</h3>
+<ul>
+<li>Prototype evaluation from early to late:
+<ol>
+<li><strong>Function</strong> - Low fidelity - what button to press ? Can it do what it is meant to do? Can user figure out what to do by looking at it?</li>
+<li><strong>Interface</strong> -  Readability</li>
+<li><strong>Performance</strong> - Higher fidelity - working/closing to working output</li>
+</ol>
+</li>
+</ul>
+<h3 id="scope">Scope</h3>
+<ul>
+<li>Prototype scope from early to late:</li>
+<li><strong>Horizontal prototype</strong> - covers the design as a whole but in a more shallow way
+<ul>
+<li>Entire FB website</li>
+</ul>
+</li>
+<li><strong>Vertical prototype</strong> - great detail on a small portion of the interaction
+<ul>
+<li>Status posting screen</li>
+</ul>
+</li>
+</ul>
+<h2 id="tradeoffs-in-prototyping">Tradeoffs In Prototyping</h2>
+<p>We must note tradeoffs in prototyping:</p>
+<ul>
+<li>
+<p><strong>Low-fidelity prototypes</strong>:</p>
+<ul>
+<li><strong>Pros</strong>: easy to create and modify</li>
+<li><strong>Cons</strong>: not as effective for detailed comprehensive evaluations</li>
+</ul>
+</li>
+<li>
+<p><strong>High-fidelity prototypes</strong>:</p>
+<ul>
+<li><strong>Pros</strong>: can be used for detailed feedback and evaluation</li>
+<li><strong>Cons</strong>: difficult to actually put together</li>
+</ul>
+</li>
+<li>
+<p>Remember that we are designing to get more feedback.</p>
+</li>
+<li>
+<p>Start easy get ideas and move to higher fidelity.</p>
+</li>
+<li>
+<p>Not complete interfaces.</p>
+</li>
+</ul>
+<h2 id="5-tips-prototyping">5 Tips: Prototyping</h2>
+<ol>
+<li><strong>Keep prototypes easy to change</strong> - Enable rapid revision (paper vs code)</li>
+<li><strong>Make it clear that it&rsquo;s a prototype</strong> - Don&rsquo;t make too good, make it look like prototype</li>
+<li><strong>Be creative</strong> - Do whatever it takes to get feedback. Find ones that get feedback.</li>
+<li><strong>Evaluate risks</strong> - Minimize time spent on bad design by getting feedback early. Don&rsquo;t waste time.</li>
+<li><strong>Prototype for feedback</strong> - Goal of prototype is feedback. Prototype for kind of feedback.</li>
+</ol>
+<h3 id="design-life-cycle-revisited">Design Life Cycle Revisited</h3>
+<ul>
+<li>We do not just move to the evaluation stage after we are done with prototyping, rather a single prototype corresponds to a single iteration through the cycle.</li>
+<li>Success of prototype -&gt; Raise the fidelity</li>
+</ul>
+<h3 id="multi-level-prototyping">Multi-Level Prototyping</h3>
+<ul>
+<li>All prototypes do not have to be at the same level at the same time. Instead, prototyping can and should exist at multiple levels of fidelity.</li>
+<li>Don&rsquo;t do everything, part could be done from low to high fidelity.</li>
+</ul>
+<h1 id="evaluation-1">Evaluation</h1>
+<p><img src="/img/evaluations.png" alt=""></p>
+<h2 id="three-types-of-evaluation">Three Types Of Evaluation</h2>
+<ul>
+<li><strong>Qualitative evaluation</strong> - evaluation that emphasizes the totality of a phenomenon. Likes dislike need doesn&rsquo;t need, easy vs hard etc.</li>
+<li><strong>Empirical evaluation</strong> - evaluation based on numeric summaries or observations of a phenomenon. More participants and qualitative is done in prior.</li>
+<li><strong>Predictive evaluation</strong> - evaluation based on systematic application of pre-established principles and heuristics (no users).</li>
+</ul>
+<h2 id="evaluation-terminology">Evaluation Terminology</h2>
+<ul>
+<li><strong>Reliability</strong> - whether a measure consistently returns the same results for the same phenomenon.</li>
+<li><strong>Validity</strong> - whether a measure&rsquo;s results actually reflect the underlying phenomenon (reality and results)</li>
+<li><strong>Generalizability</strong> - whether a measure&rsquo;s results can be used to predict phenomena beyond what it measured. Broader Audience (may or may not be applicable to all).</li>
+<li><strong>Precision</strong> - the level of detail a measure supplies</li>
+</ul>
+<h2 id="5-tips-what-to-evaluate">5 Tips: What To Evaluate</h2>
+<ol>
+<li><strong>Efficiency</strong> - how long does user take to achieve text (Expert)</li>
+<li><strong>Accuracy</strong> - how many users does users commit while executing a task (Expert)</li>
+<li><strong>Learnability</strong> - How long does user take to reach expertise.</li>
+<li><strong>Memorability</strong> - users ability to remember on how to use interface over time.</li>
+<li><strong>Satisfaction</strong> - Cognitive load, how many actually download the app? - Social desirability bias.</li>
+</ol>
+<ul>
+<li>Important things needed to address the research:
+<ul>
+<li>What data are you gathering?</li>
+<li>What are you evaluating ?</li>
+<li>What approach will you use to evaluate?</li>
+</ul>
+</li>
+</ul>
+<h2 id="evaluation-timeline">Evaluation Timeline</h2>
+<p>Change in evaluation with time, The evaluation timeline usually is as follows:</p>
+<ul>
+<li>Regarding <strong>purpose</strong>:
+<ol>
+<li><strong>Formative</strong> - primary purpose is to help redesign and improve our interface (early)</li>
+<li><strong>Summative</strong> - the intention of conclusively saying at the end what the difference was (late, hopefully we only do formative)</li>
+</ol>
+</li>
+<li>Regarding <strong>approach</strong>: Ways to fullfil purpose
+<ol>
+<li><strong>Qualitative</strong> - the goal is to help us improve and understand tasks (early)</li>
+<li><strong>Predictive</strong> - inform how we revise and improve our interface over time (Similar to qualitative evaluation)</li>
+<li><strong>Empirical</strong> - the goal is to demonstrate or assess change (late)</li>
+</ol>
+</li>
+<li>Regarding <strong>data</strong>:
+<ol>
+<li><strong>Qualitative</strong> - always useful to improve our interfaces (early and late)</li>
+<li><strong>Quantitative</strong> - while always useful, can only arise when we have rigorous evaluations (late)</li>
+</ol>
+</li>
+<li>Regarding <strong>setting</strong>: where does it take place.
+<ol>
+<li><strong>Lab testing</strong> - helps us focus exclusively on the interface early on</li>
+<li><strong>Field testing</strong> - helps us focus more on the interface in context</li>
+</ol>
+</li>
+</ul>
+<h2 id="evaluation-design">Evaluation Design</h2>
+<ol>
+<li><strong>Define the task</strong> - very large or very small task.</li>
+<li><strong>Define performance measures</strong> - how are we going to measure this. Define it and avoid confirmation bias. Create metrics. Qualitative vs Quantitative.</li>
+<li><strong>Develop the experiment</strong> - How we find user performance on the measures. Survey or Interview/ What to control or vary empirically.</li>
+<li><strong>Recruit participants</strong> - Ethics - right awareness</li>
+<li><strong>Do the experiment</strong></li>
+<li><strong>Analyze the data</strong> - what data tells about performance measures. Do followups if you find something extra than expected.</li>
+<li><strong>Summarize the data</strong> - Informs ongoing process</li>
+</ol>
+<p><img src="/img/evaluations1.png" alt=""></p>
+<p><img src="/img/evaluations3.png" alt=""></p>
+<h2 id="qualitative-evaluation">Qualitative Evaluation</h2>
+<ul>
+<li>Get qualitative feedback about the interface.</li>
+<li>There are some questions we want to ask in this evaluation: (Similar to interviews)
+<ol>
+<li>What did you like/dislike?</li>
+<li>What were you thinking while using this interface?</li>
+<li>What was your goal when you took that particular action?</li>
+</ol>
+</li>
+<li>Methods - Interview/Survey/ Think out load protocol/Focus Groups</li>
+<li>Use these techniques to get feedback on how our prototype changes the task.</li>
+</ul>
+<h2 id="designing-a-qualitative-evaluation">Designing A Qualitative Evaluation</h2>
+<p>There are options when designing a qualitative evaluation:</p>
+<ol>
+<li>Prior experience or live demonstration? - bring user in to test. Mostly later case</li>
+<li>Synchronous or asynchronous? - watch live or complete and send</li>
+<li>One interface or multiple prototypes? - Vary the order based on bias.</li>
+<li>Think aloud protocol or post-event protocol? - explain while doing or do later at the end.</li>
+<li>Individuals or groups? - Focus groups (build and expand)/ Only source of knowledge (bad) but no bias.</li>
+</ol>
+<h2 id="capturing-qualitative-evaluation">Capturing Qualitative Evaluation</h2>
+<p>Options to capture qualitative evaluation:</p>
+<ul>
+<li><strong>Video recording</strong>
+<ul>
+<li><strong>Pros:</strong> Automated, comprehensive and passive (focus on administering)</li>
+<li><strong>Cons</strong>: Intrusive, non-analyzable and screen-less. Overwhelming on analyses.</li>
+</ul>
+</li>
+<li><strong>Note-taking</strong>
+<ul>
+<li><strong>Pros</strong>: Cheap, Non intrusive (Capture what we do/not everything) and Analyzable</li>
+<li><strong>Cons</strong>: Slow, Manual and Limited</li>
+</ul>
+</li>
+<li><strong>Software logging</strong>
+<ul>
+<li><strong>Pros</strong>: Automated, passive and analyzable</li>
+<li><strong>Cons</strong>: Limited (only some parts could be captured), Narrow and Tech Sensitive (prototype needs to reach certain level of fidelity)</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-tips-qualitative-evaluation">5 Tips: Qualitative Evaluation</h2>
+<ol>
+<li><strong>Run pilot studies</strong> - Recruiting is hard, gather useful data . Use friends and coworkers</li>
+<li><strong>Focus on feedback</strong> - Don&rsquo;t explain rationale, don&rsquo;t teach. Take it and design.</li>
+<li><strong>Use questions</strong> - when user get stuck? Guide user</li>
+<li><strong>Instruct users what to do, not how</strong> - Reduce bias</li>
+<li><strong>Capture satisfaction</strong> - Do they like it?</li>
+</ol>
+<h2 id="empirical-evaluation">Empirical Evaluation</h2>
+<ul>
+<li>Something numerical in evaluation. What layout of button is useful?</li>
+<li>Comparing design and showing improvement in industry.</li>
+<li>Build new theories (gesture has tuf curve than voice)</li>
+<li>How can we show there is a difference between these designs?</li>
+<li>The goal of empirical evaluation is to come up with strong conclusions. Most empirical evaluations are comparisons.</li>
+</ul>
+<h2 id="designing-empirical-evaluation">Designing Empirical Evaluation</h2>
+<ul>
+<li><strong>Treatment</strong> - what a participant does in an experiment. Difference interface or design and comparison between them. Difference between two logo should be based on design color should be only comparable.</li>
+<li><strong>Between subjects design</strong> - comparison between two groups of subjects receiving different treatments. What do participants do or both treatment?</li>
+<li><strong>Within subjects design</strong> - comparison within one group experiencing multiple treatments. Both treatments are given, what are seen first? order is randomized.</li>
+<li><strong>Random assignment</strong> - using random chance to decide what treatment each participant receives. Control bias.</li>
+</ul>
+<h2 id="hypothesis-testing">Hypothesis Testing</h2>
+<ul>
+<li>Reaction time study? Data is generated and compare this.</li>
+<li><strong>Hypothesis testing</strong> - testing whether or not the data allows us to conclude a difference exists.</li>
+<li><strong>Null</strong> - Assume oppose is true</li>
+<li>Alternative if data doesn&rsquo;t support that. Less than 5% chance.</li>
+</ul>
+<h2 id="quantitative-data-and-empirical-tests">Quantitative Data And Empirical Tests</h2>
+<p>Recall that there are a number of tests for quantitative data:</p>
+<ul>
+<li><strong>Nominal</strong>
+<ul>
+<li><strong>Recommended</strong> - Chi-squared test</li>
+<li><strong>Alternatively</strong>: Fisher&rsquo;s exact test, G-test</li>
+</ul>
+</li>
+<li><strong>Ordinal</strong>:
+<ul>
+<li><strong>Recommended</strong> - Kolmogorov-Smirnov test</li>
+<li><strong>Alternatively</strong> - Chi-squared test, median test</li>
+</ul>
+</li>
+<li><strong>Interval and ratio:</strong>
+<ul>
+<li><strong>Recommended</strong> - Student&rsquo;s <em>t</em>-test</li>
+<li><strong>Alternatively</strong> - MWW test, Kruskal-Wallis test</li>
+</ul>
+</li>
+</ul>
+<h2 id="special-test">Special Test</h2>
+<ul>
+<li>Three independent variable (hypothesis)</li>
+<li>Do pairwise
+<ul>
+<li>Repeated testing</li>
+<li>False positive</li>
+<li>Falsely reject null and agree alternative hypothesis.</li>
+</ul>
+</li>
+<li>Type I Error (False Positive): False rejection of null hypothesis</li>
+<li>Type II Error (False Negative): False retention of null hypothesis</li>
+<li>Fishers exact and G-test
+<ul>
+<li>Where is the difference?</li>
+</ul>
+</li>
+<li>ANOVA and Kruskal Wallis (Interval and Ratio)
+<ul>
+<li>Where is the difference?</li>
+</ul>
+</li>
+<li>Independent variable is mostly categorical. GPA is interval data.</li>
+<li>Binomial Data - Two sample binomial test</li>
+</ul>
+<h2 id="summary-of-empirical-tests">Summary Of Empirical Tests</h2>
+<p>Below is a summary of empirical tests:</p>
+<p><img src="/img/test.png" alt="Summary of Empirical Tests"></p>
+<h2 id="5-tips-empirical-evaluation">5 Tips: Empirical Evaluation</h2>
+<ol>
+<li><strong>Control what you can, document what you can&rsquo;t</strong> - Try to make treatments identical as possible</li>
+<li><strong>Limit your variables</strong> - Noisy data false conclusion and monitor handful of things at a point.</li>
+<li><strong>Work backwards</strong> in designing experiments - Decide what question you want to answer, the anaysis you want to use and the question you want to ask</li>
+<li><strong>Script your analyses in advance</strong> - Do not torture data.</li>
+<li><strong>Pay attention to power</strong> - Size of difference the test can detect.</li>
+</ol>
+<h2 id="predictive-evaluation">Predictive Evaluation</h2>
+<ul>
+<li>Predictive evaluation should only be used where we wouldn&rsquo;t otherwise be doing any evaluation.</li>
+<li>Rapid feedback, appropriately and when users are not available.</li>
+</ul>
+<h2 id="types-of-predictive-evaluation">Types Of Predictive Evaluation</h2>
+<ul>
+<li><strong>Heuristic evaluation</strong> - each individual evaluator inspects the interface alone, and identifies places where the interface violates some heuristic. Sit with an expert and get the report.
+<ul>
+<li><strong>Model-based evaluation</strong> - tracing through models in the context of the interface we designed (e.g., GOMS model). We can also compare interfaces. Also profiles of users could be used.</li>
+<li><strong>Simulation-based evaluation</strong> - where we might construct an AI agent that interacts with our interface in the way a human would.  The human project - IIIT Germany.</li>
+</ul>
+</li>
+</ul>
+<h2 id="cognitive-walkthrough">Cognitive Walkthrough</h2>
+<ul>
+<li>The most common type of predictive evaluation is actually cognitive walkthrough.</li>
+<li><strong>Cognitive walkthrough</strong> - stepping through the process of interacting with an interface, mentally simulating in each stage what the user is seeing and thinking and doing. To do this, we start with task and goal.
+<ul>
+<li>predict what action will user take</li>
+<li>Noting system response</li>
+<li>Investigate gulf for each step</li>
+<li>it may be fine for us, but we can put to user shoes we can identify something missing.</li>
+</ul>
+</li>
+</ul>
+<h2 id="evaluating-prototypes">Evaluating Prototypes</h2>
+<p>Our goal is to constantly apply multiple evaluation techniques to center our designs on the user.</p>
+<ul>
+<li>Qualitative evaluation.</li>
+<li>Some quantitative evaluation.</li>
+<li>For all the prototypes.</li>
+</ul>
+<p><img src="/img/evaluation_advantage.png" alt=""></p>
+<h1 id="hci-and-agile-development">HCI and Agile Development</h1>
+<p><img src="/img/agile.png" alt=""></p>
+<h2 id="the-demand-for-rapid-hci">The Demand For Rapid HCI</h2>
+<ul>
+<li>Before, costs for development, distribution, and feedback regarding software and products were expensive compared to now.
+<ul>
+<li>Specialized development skills</li>
+<li>Distribution is physical</li>
+<li>Fix was hard</li>
+<li>By have users to come into testing</li>
+</ul>
+</li>
+<li>How do we take the principles we have covered so far and apply them to a rapid agile development process?
+<ul>
+<li>Cheap development</li>
+<li>Internet distribution - Free and update</li>
+<li>Usage data is free and live. Lots of feedback</li>
+<li>More incentive to build and save</li>
+</ul>
+</li>
+</ul>
+<h2 id="when-to-go-agile">When To Go Agile?</h2>
+<p>We can make the decision to go agile by considering the following:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Traditional</th>
+<th>Agile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Criticality is&hellip;</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Requirements change..</td>
+<td>Rarely</td>
+<td>Frequently</td>
+</tr>
+<tr>
+<td>Team size is&hellip;</td>
+<td>Large</td>
+<td>Small</td>
+</tr>
+<tr>
+<td>Team embraces&hellip;</td>
+<td>Order</td>
+<td>Change</td>
+</tr>
+</tbody>
+</table>
+<h2 id="towards-a-framework-for-integrating-agile-development-and-user-centred-design-ucd">Towards a framework for integrating agile development and user-centred design (UCD).</h2>
+<p><strong>Similarities and Differences Between UCD and Agile Development</strong></p>
+<ul>
+<li>They rely on an iterative development process, building on empirical information from previous cycles or rounds. For instance, one of XP’s values is feedback, and the idea of refactoring code is an embodiment of this value. In UCD one of its founding principles is iterative design</li>
+<li>Agile techniques place an emphasis on the user, encouraging participation
+throughout the development process. For instance, in Scrum, user evaluation of the product is encouraged on a monthly basis as users are ideally present during the sprint review  and the “Product Owner” is responsible for the requirements and feature prioritization for the product. A second founding principle of UCD, is early and continual focus on users.</li>
+<li>Both approaches emphasis the importance of team coherence. Beck states that one of the purposes of the planning game is to “bring the team together”. One of the features of the UCD approach is that the whole team should have the user in mind while developing the product.</li>
+</ul>
+<p>The two main differences are:</p>
+<ol>
+<li>UCD advocates maintain that certain design products are required to support communication with developers, while agile methods seek minimal documentation.</li>
+<li>UCD encourages the team to understand their users as much as possible before the product build begins, whereas agile methods are largely against an up-front period of investigation at the expense of writing code.</li>
+</ol>
+<h2 id="live-prototyping">Live Prototyping</h2>
+<ul>
+<li>Optimizers - Drag and drop interface. Small revision its awesome. Benefit is high.</li>
+<li>Final interface vs Prototype</li>
+<li>Allows to get feedback</li>
+</ul>
+<h2 id="ab-testing">A/B Testing</h2>
+<ul>
+<li>Rapid software testing between two changes. B version to small users and change as positive before to all.</li>
+<li>Real user testing</li>
+</ul>
+<h2 id="agile-hci-in-the-design-life-cycle">Agile HCI In The Design Life Cycle</h2>
+<ul>
+<li>Agile development techniques don&rsquo;t replace the design life cycle, they just change the rate at which we go through it and the types of prototypes and evaluation that we actually do. We&rsquo;re still going to do the initial need-finding step.</li>
+</ul>
+<p><img src="/img/caffine.png" alt=""></p>
+<h2 id="5-tips-mitigating-risk-in-hci-and-agile-development">5 Tips: Mitigating Risk In HCI And Agile Development</h2>
+<ol>
+<li><strong>Start more traditional</strong> - Once you have something up and running, move to agile</li>
+<li><strong>Focus on small changes</strong> - Don&rsquo;t make huge change</li>
+<li><strong>Adopt a parallel track method</strong> - 2 week sprints, have HCI one sprint ahead</li>
+<li><strong>Be careful with consistency</strong> - Don&rsquo;t mess with user expectation</li>
+<li><strong>Nest your design cycles</strong> - Small cycles rapidly in Agile</li>
+</ol>
+<h2 id="approaches-to-user-centered-design">Approaches To User-Centered Design</h2>
+<p>There are different approaches to user-centered design:</p>
+<ol>
+<li><strong>Participatory design</strong> - all the stakeholders including the users themselves, are involved as part of the design team but we must be careful not to over represent the few users that are participating in the design with the rest of the users out there</li>
+<li><strong>Action research</strong> - addresses an immediate problem and researches it by trying to simultaneously solve it</li>
+<li><strong>Design-based research</strong> - similar to action research but it can be done by outside practitioners as well. Common in learning science research</li>
+</ol>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube_fit/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		11112 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/redesigning_goodreads/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Redesigning the Goodreads bookshelf interaction
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/posts/deterministic_optimization/">
+        Deterministic Optimization
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/redesigning_goodreads/">Redesigning the Goodreads bookshelf interaction</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
