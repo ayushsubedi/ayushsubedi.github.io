@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gaming on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/gaming/</link>
+    <description>Recent content in Gaming on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>झ्याप (Jhyaap): A Digital Tribute to Nepal&#39;s Beloved Card Game</title>
+      <link>https://ayushsubedi.github.io/posts/jhyaap_game/</link>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/jhyaap_game/</guid>
+      <description>&lt;h1 id=&#34;झयप-jhyaap-a-digital-tribute-to-nepals-beloved-card-game&#34;&gt;झ्याप (Jhyaap): A Digital Tribute to Nepal&amp;rsquo;s Beloved Card Game&lt;/h1&gt;
+&lt;p&gt;Growing up in Nepal, few things bring people together quite like a heated round of झ्याप (Jhyaap) — a fast-paced card game where quick thinking, strategic bluffing, and a bit of luck determine the winner. I built &lt;a href=&#34;https://ayushsubedi.github.io/jhyaap-game/&#34;&gt;this digital version&lt;/a&gt; as both a tribute to countless evenings spent playing with friends and family, and as an exploration of translating cultural traditions into interactive web experiences. The game captures the essence of Jhyaap&amp;rsquo;s simple yet addictive mechanics: players race to empty their hands by matching or beating the value of thrown cards, with the tension rising as the choice pile grows and someone inevitably shouts &amp;ldquo;झ्याप!&amp;rdquo; to claim it all. What makes this implementation special is how it preserves the social dynamics of the physical game — the anticipation of picking the choice pile, the satisfaction of a well-timed play, and that moment of triumph when you throw your last card. Building it reminded me that some of the best games don&amp;rsquo;t need complex graphics or elaborate storylines; they just need to capture that feeling of sitting around a table with people you care about, cards in hand, ready for the next round. Whether you&amp;rsquo;re Nepali and nostalgic for home, or simply curious about traditional card games from around the world, give it a try — just don&amp;rsquo;t blame me when you can&amp;rsquo;t stop playing &amp;ldquo;one more round.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://ayushsubedi.github.io/jhyaap-game/&#34;&gt;Play Jhyaap →&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Technical note: The game is built with vanilla JavaScript and handles multiplayer logic, card state management, and game flow entirely client-side. Future improvements could include real-time multiplayer via WebSockets, mobile-optimized controls, and sound effects for that authentic card-slapping experience.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

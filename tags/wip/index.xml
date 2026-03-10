@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wip on Ayush Subedi</title>
-    <link>https://ayushsubedi.github.io/tags/wip/</link>
+    <link>http://localhost:1313/tags/wip/</link>
     <description>Recent content in Wip on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 03 Nov 2025 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ayushsubedi.github.io/tags/wip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/wip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jhyaap Game Reinforcement Learning</title>
-      <link>https://ayushsubedi.github.io/posts/jhyaap_game_reinforcement_learning/</link>
+      <link>http://localhost:1313/posts/jhyaap_game_reinforcement_learning/</link>
       <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/jhyaap_game_reinforcement_learning/</guid>
+      <guid>http://localhost:1313/posts/jhyaap_game_reinforcement_learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jhyaap Game Statistical Analysis</title>
-      <link>https://ayushsubedi.github.io/posts/jhyaap_game_statistical_analysis/</link>
+      <link>http://localhost:1313/posts/jhyaap_game_statistical_analysis/</link>
       <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/jhyaap_game_statistical_analysis/</guid>
+      <guid>http://localhost:1313/posts/jhyaap_game_statistical_analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jhyaap Game</title>
-      <link>https://ayushsubedi.github.io/posts/jhyaap_game/</link>
+      <link>http://localhost:1313/posts/jhyaap_game/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://ayushsubedi.github.io/posts/jhyaap_game/</guid>
+      <guid>http://localhost:1313/posts/jhyaap_game/</guid>
       <description></description>
     </item>
     
