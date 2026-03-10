@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Information-Theory on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/information-theory/</link>
+    <description>Recent content in Information-Theory on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/information-theory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Paper Exploration] A Mathematical Theory of Communication</title>
+      <link>https://ayushsubedi.github.io/posts/mathematical_theory_of_communication/</link>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/mathematical_theory_of_communication/</guid>
+      <description>&lt;h1 id=&#34;paper-exploration-a-mathematical-theory-of-communication&#34;&gt;[Paper Exploration] A Mathematical Theory of Communication&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Paper Author&lt;/strong&gt;: Claude E. Shannon&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Published&lt;/strong&gt;: Bell System Technical Journal, July and October 1948&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Original Paper&lt;/strong&gt;: &lt;a href=&#34;https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf&#34;&gt;Bell System Technical Journal&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;exploration&#34;&gt;Exploration&lt;/h2&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Communication systems before 1948 were designed ad-hoc for specific applications without a unifying mathematical framework.&lt;/li&gt;
+&lt;li&gt;Engineers lacked theoretical limits on data transmission rates and compression capabilities.&lt;/li&gt;
+&lt;li&gt;No systematic understanding of how noise affects communication reliability.&lt;/li&gt;
+&lt;li&gt;Each communication medium (telegraph, telephone, radio) required separate analysis with no general principles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;proposed-solution-by-authors&#34;&gt;Proposed Solution by Authors&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Develop a &lt;strong&gt;mathematical theory of communication&lt;/strong&gt; that applies universally across all channels and message types.&lt;/li&gt;
+&lt;li&gt;Introduce the concept of &lt;strong&gt;information entropy&lt;/strong&gt; as a measure of uncertainty and information content.&lt;/li&gt;
+&lt;li&gt;Establish &lt;strong&gt;channel capacity&lt;/strong&gt; as the fundamental limit for reliable communication.&lt;/li&gt;
+&lt;li&gt;Prove the &lt;strong&gt;noisy-channel coding theorem&lt;/strong&gt;: reliable communication is possible at any rate below channel capacity.&lt;/li&gt;
+&lt;li&gt;Separate semantic meaning from the engineering problem of transmitting signals reliably.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;history-and-context&#34;&gt;History and Context&lt;/h2&gt;
+&lt;h3 id=&#34;claude-shannon&#34;&gt;Claude Shannon&lt;/h3&gt;
+&lt;p&gt;Claude Elwood Shannon (1916-2001) was an American mathematician, electrical engineer, and cryptographer who revolutionized communication theory. Working at Bell Labs, Shannon published his groundbreaking paper in 1948, which Scientific American called the &amp;ldquo;Magna Carta of the Information Age.&amp;rdquo; The paper is one of the most cited scientific works of all time and gave birth to the field of information theory.&lt;/p&gt;
+&lt;p&gt;Shannon&amp;rsquo;s genius was recognizing that communication signals must be treated in isolation from their semantic meaning. This abstraction allowed him to develop a general mathematical framework applicable to all forms of communication, from telegraph signals to modern digital networks.&lt;/p&gt;
+&lt;h2 id=&#34;the-communication-model&#34;&gt;The Communication Model&lt;/h2&gt;
+&lt;p&gt;Shannon defined a general communication system with five fundamental components:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Information Source&lt;/strong&gt;: Produces messages to be communicated&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transmitter&lt;/strong&gt;: Encodes the message into signals suitable for the channel&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Channel&lt;/strong&gt;: The medium through which signals are transmitted&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Receiver&lt;/strong&gt;: Decodes the received signal back into a message&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Destination&lt;/strong&gt;: The person or machine for whom the message is intended&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additionally, Shannon introduced the concept of &lt;strong&gt;noise&lt;/strong&gt; as any unwanted disturbance that can corrupt the signal during transmission.&lt;/p&gt;
+&lt;h2 id=&#34;key-concepts&#34;&gt;Key Concepts&lt;/h2&gt;
+&lt;h3 id=&#34;information-entropy&#34;&gt;Information Entropy&lt;/h3&gt;
+&lt;p&gt;Shannon introduced &lt;strong&gt;entropy&lt;/strong&gt; as a measure of information content and uncertainty. For a discrete random variable with possible outcomes $x_1, x_2, \ldots, x_n$ and probabilities $p_1, p_2, \ldots, p_n$, the entropy is:&lt;/p&gt;
+&lt;p&gt;$$H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i$$&lt;/p&gt;
+&lt;p&gt;Key properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entropy is maximized when all outcomes are equally likely (maximum uncertainty)&lt;/li&gt;
+&lt;li&gt;Entropy is zero when one outcome has probability 1 (no uncertainty)&lt;/li&gt;
+&lt;li&gt;Measured in &lt;strong&gt;bits&lt;/strong&gt; (binary digits) when using base-2 logarithm&lt;/li&gt;
+&lt;li&gt;The term &amp;ldquo;bit&amp;rdquo; was introduced in this paper, credited to John Tukey&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Physical Interpretation&lt;/strong&gt;: Entropy represents the average number of yes/no questions needed to determine which message was sent.&lt;/p&gt;
+&lt;h3 id=&#34;source-coding-theorem&#34;&gt;Source Coding Theorem&lt;/h3&gt;
+&lt;p&gt;The source coding theorem establishes the fundamental limit of lossless data compression:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data from a source with entropy $H$ can be compressed to no less than $H$ bits per symbol on average.&lt;/li&gt;
+&lt;li&gt;Attempting to compress below $H$ bits per symbol necessarily loses information.&lt;/li&gt;
+&lt;li&gt;This theorem provides the theoretical foundation for all compression algorithms (ZIP, MP3, JPEG).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Practical Implication&lt;/strong&gt;: If English text has approximately 1.3 bits of entropy per character, it can theoretically be compressed to about 16% of its original size.&lt;/p&gt;
+&lt;h3 id=&#34;channel-capacity&#34;&gt;Channel Capacity&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Channel capacity&lt;/strong&gt; $C$ is the maximum rate at which information can be reliably transmitted over a communication channel. It depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bandwidth of the channel&lt;/li&gt;
+&lt;li&gt;Signal-to-noise ratio (SNR)&lt;/li&gt;
+&lt;li&gt;Physical characteristics of the medium&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a continuous channel with Gaussian noise, the &lt;strong&gt;Shannon-Hartley theorem&lt;/strong&gt; gives:&lt;/p&gt;
+&lt;p&gt;$$C = B \log_2\left(1 + \frac{S}{N}\right)$$&lt;/p&gt;
+&lt;p&gt;where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$B$ = bandwidth in Hz&lt;/li&gt;
+&lt;li&gt;$S$ = signal power&lt;/li&gt;
+&lt;li&gt;$N$ = noise power&lt;/li&gt;
+&lt;li&gt;$S/N$ = signal-to-noise ratio&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Insight&lt;/strong&gt;: Channel capacity increases logarithmically with signal power but linearly with bandwidth.&lt;/p&gt;
+&lt;h3 id=&#34;noisy-channel-coding-theorem&#34;&gt;Noisy-Channel Coding Theorem&lt;/h3&gt;
+&lt;p&gt;Shannon&amp;rsquo;s most profound result: &lt;strong&gt;For any communication channel with capacity $C$ and any transmission rate $R &amp;lt; C$, there exists a coding scheme that allows information to be transmitted with arbitrarily small probability of error.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Conversely, if $R &amp;gt; C$, the probability of error approaches 1 as message length increases.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Revolutionary Implications&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reliable communication is possible even over noisy channels&lt;/li&gt;
+&lt;li&gt;Error-correcting codes can approach theoretical limits&lt;/li&gt;
+&lt;li&gt;Set the research agenda for the next 70+ years in coding theory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-separation-principle&#34;&gt;The Separation Principle&lt;/h3&gt;
+&lt;p&gt;Shannon showed that optimal communication system design can be separated into two independent problems:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Source Coding&lt;/strong&gt;: Compress the message as much as possible (up to entropy limit)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Channel Coding&lt;/strong&gt;: Add redundancy to protect against channel noise&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This separation simplifies system design without loss of optimality.&lt;/p&gt;
+&lt;h2 id=&#34;mathematical-framework&#34;&gt;Mathematical Framework&lt;/h2&gt;
+&lt;h3 id=&#34;discrete-memoryless-channel&#34;&gt;Discrete Memoryless Channel&lt;/h3&gt;
+&lt;p&gt;A channel where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input and output are discrete symbols&lt;/li&gt;
+&lt;li&gt;Each transmission is independent of previous transmissions&lt;/li&gt;
+&lt;li&gt;Characterized by transition probabilities $p(y|x)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Mutual Information&lt;/strong&gt;: The capacity is the maximum mutual information between input and output:&lt;/p&gt;
+&lt;p&gt;$$C = \max_{p(x)} I(X;Y)$$&lt;/p&gt;
+&lt;p&gt;where $I(X;Y) = H(Y) - H(Y|X)$ represents the reduction in uncertainty about the input after observing the output.&lt;/p&gt;
+&lt;h3 id=&#34;ergodic-sources&#34;&gt;Ergodic Sources&lt;/h3&gt;
+&lt;p&gt;Shannon introduced the concept of ergodic processes in information theory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Statistical properties are independent of which particular sequence is observed&lt;/li&gt;
+&lt;li&gt;Long sequences converge to average behavior&lt;/li&gt;
+&lt;li&gt;Enables application of law of large numbers and asymptotic analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;historical-impact&#34;&gt;Historical Impact&lt;/h2&gt;
+&lt;h3 id=&#34;immediate-impact-1948-1960s&#34;&gt;Immediate Impact (1948-1960s)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Established information theory as a fundamental scientific discipline&lt;/li&gt;
+&lt;li&gt;Provided theoretical foundation for digital communications&lt;/li&gt;
+&lt;li&gt;Influenced development of early computers and data storage systems&lt;/li&gt;
+&lt;li&gt;Created new research areas in mathematics, statistics, and engineering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;long-term-legacy&#34;&gt;Long-term Legacy&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Modern Communications&lt;/strong&gt;: All wireless standards (WiFi, 5G, satellite) are designed using Shannon&amp;rsquo;s principles&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Compression&lt;/strong&gt;: ZIP, MP3, JPEG, and all modern compression formats rely on entropy coding&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Error Correction&lt;/strong&gt;: Reed-Solomon codes, LDPC codes, and turbo codes approach Shannon limits&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cryptography&lt;/strong&gt;: Shannon&amp;rsquo;s contemporaneous work on cryptography defined perfect secrecy&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beyond Engineering&lt;/strong&gt;: Applications in biology, linguistics, neuroscience, economics, and ecology&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-shannon-limit-challenge&#34;&gt;The Shannon Limit Challenge&lt;/h3&gt;
+&lt;p&gt;For decades, engineers struggled to design codes that could approach Shannon&amp;rsquo;s theoretical limits. Major breakthroughs include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1990s: Turbo codes came within 0.5 dB of Shannon limit&lt;/li&gt;
+&lt;li&gt;2000s: LDPC codes achieved near-optimal performance&lt;/li&gt;
+&lt;li&gt;Modern systems routinely operate within 1 dB of theoretical capacity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;modern-relevance&#34;&gt;Modern Relevance&lt;/h2&gt;
+&lt;h3 id=&#34;deep-learning-and-information-theory&#34;&gt;Deep Learning and Information Theory&lt;/h3&gt;
+&lt;p&gt;Recent research connects information theory to deep learning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Information bottleneck theory explains deep neural network learning&lt;/li&gt;
+&lt;li&gt;Mutual information used to understand representation learning&lt;/li&gt;
+&lt;li&gt;Shannon entropy guides architecture design and regularization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;quantum-information-theory&#34;&gt;Quantum Information Theory&lt;/h3&gt;
+&lt;p&gt;Shannon&amp;rsquo;s framework extended to quantum mechanics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quantum channel capacity&lt;/li&gt;
+&lt;li&gt;Quantum entanglement as information resource&lt;/li&gt;
+&lt;li&gt;Quantum error correction codes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;data-science-applications&#34;&gt;Data Science Applications&lt;/h3&gt;
+&lt;p&gt;Information theory metrics are fundamental in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Feature selection (mutual information)&lt;/li&gt;
+&lt;li&gt;Clustering algorithms (information gain)&lt;/li&gt;
+&lt;li&gt;Model evaluation (KL divergence, cross-entropy)&lt;/li&gt;
+&lt;li&gt;Causal inference (transfer entropy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;key-insights-and-takeaways&#34;&gt;Key Insights and Takeaways&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Abstraction is Power&lt;/strong&gt;: Shannon&amp;rsquo;s success came from treating communication abstractly, separating engineering from semantics.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Theoretical Limits Guide Practice&lt;/strong&gt;: Knowing what&amp;rsquo;s possible (channel capacity) guides engineering toward optimal solutions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Randomness as Resource&lt;/strong&gt;: Shannon&amp;rsquo;s proof relied on random coding—counterintuitive but powerful.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Separation Simplifies&lt;/strong&gt;: The ability to separate source and channel coding simplified system design.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Mathematical Rigor&lt;/strong&gt;: Shannon provided not just intuitions but rigorous mathematical proofs with precise theorems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Universality&lt;/strong&gt;: The theory applies equally to telegraph, telephone, radio, fiber optics, and quantum channels.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;comparison-to-other-foundational-papers&#34;&gt;Comparison to Other Foundational Papers&lt;/h2&gt;
+&lt;p&gt;Shannon&amp;rsquo;s 1948 paper shares characteristics with other revolutionary scientific works:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Similar to Einstein&amp;rsquo;s 1905 Papers&lt;/strong&gt;: Multiple groundbreaking results in one work
+&lt;strong&gt;Similar to Turing&amp;rsquo;s 1936 Paper&lt;/strong&gt;: Created an entire field of study
+&lt;strong&gt;Similar to Watson &amp;amp; Crick 1953&lt;/strong&gt;: Simple model with profound implications&lt;/p&gt;
+&lt;p&gt;Historian James Gleick rated Shannon&amp;rsquo;s paper as the most important development of 1948, placing even the invention of the transistor second, emphasizing that Shannon&amp;rsquo;s work was &amp;ldquo;even more profound and more fundamental.&amp;rdquo;&lt;/p&gt;
+&lt;h2 id=&#34;practical-implications-today&#34;&gt;Practical Implications Today&lt;/h2&gt;
+&lt;p&gt;Every time you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stream video on Netflix or YouTube&lt;/li&gt;
+&lt;li&gt;Make a phone call over cellular network&lt;/li&gt;
+&lt;li&gt;Download a file over WiFi&lt;/li&gt;
+&lt;li&gt;Store data on SSD or hard drive&lt;/li&gt;
+&lt;li&gt;Send email or text message&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You are benefiting directly from Shannon&amp;rsquo;s 1948 insights. His theoretical framework enabled all modern digital communication and storage technologies.&lt;/p&gt;
+&lt;h2 id=&#34;the-papers-enduring-questions&#34;&gt;The Paper&amp;rsquo;s Enduring Questions&lt;/h2&gt;
+&lt;p&gt;While Shannon solved many fundamental problems, he opened new research directions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to construct codes that achieve capacity (mostly solved by 2000s)&lt;/li&gt;
+&lt;li&gt;Optimal codes for channels with feedback (partially solved)&lt;/li&gt;
+&lt;li&gt;Capacity of networks with multiple senders/receivers (ongoing research)&lt;/li&gt;
+&lt;li&gt;Quantum channel capacity (active research area)&lt;/li&gt;
+&lt;li&gt;Semantic communication (Shannon explicitly excluded this, still largely open)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;A Mathematical Theory of Communication&amp;rdquo; stands as one of the most influential papers in the history of science and engineering. Shannon&amp;rsquo;s framework transformed communication from an art into a science, providing the theoretical foundation for the entire Information Age.&lt;/p&gt;
+&lt;p&gt;The paper&amp;rsquo;s lasting impact comes from its perfect balance of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Practical relevance&lt;/strong&gt;: Solved real engineering problems&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mathematical rigor&lt;/strong&gt;: Precise theorems with proofs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conceptual clarity&lt;/strong&gt;: Clear definitions and elegant framework&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generality&lt;/strong&gt;: Applied to all forms of communication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;75 years later, Shannon&amp;rsquo;s insights remain as fresh and fundamental as when first published. Every engineer, computer scientist, and data scientist works daily with concepts Shannon introduced: bits, entropy, channel capacity, and information.&lt;/p&gt;
+&lt;p&gt;The digital world we inhabit today is, in large measure, the world that Claude Shannon mathematically predicted and enabled in 1948.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
