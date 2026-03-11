@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | The Counterexample to Euler&#39;s Conjecture on Sums of Like Powers</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.123.7">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ayushsubedi.github.io/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ayushsubedi.github.io/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+<link rel="stylesheet" href="https://ayushsubedi.github.io/lib/katex.min.css"
+      integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+      crossorigin="anonymous">
+
+
+<script defer src="https://ayushsubedi.github.io/lib/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+
+
+<script defer src="https://ayushsubedi.github.io/lib/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+        crossorigin="anonymous"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io/" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">The Counterexample to Euler&#39;s Conjecture on Sums of Like Powers</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">Exploring one of the shortest papers ever published - how a two-sentence proof demolished a 197-year-old conjecture by Leonhard Euler, and the mathematical landscape that emerged from its ruins.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/mathematics'>mathematics</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/number-theory'>number-theory</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/mathematics'>mathematics</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/number-theory'>number-theory</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/diophantine-equations'>diophantine-equations</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/euler'>euler</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/computational-mathematics'>computational-mathematics</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2026-03-10">2026-03-10</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="the-counterexample-to-eulers-conjecture-on-sums-of-like-powers">The Counterexample to Euler&rsquo;s Conjecture on Sums of Like Powers</h1>
+<h2 id="a-simple-question">A Simple Question</h2>
+<h2 id="the-mathematicians-behind-the-story">The Mathematicians Behind the Story</h2>
+<p>Before diving into the mathematics, let&rsquo;s meet the key players across three centuries:</p>
+<p><strong>Pierre de Fermat (1607-1665)</strong>: French lawyer and amateur mathematician who famously claimed to have proved that $a^n + b^n = c^n$ has no integer solutions for $n &gt; 2$, writing in a margin that he had &ldquo;a truly marvelous proof&rdquo; that was &ldquo;too large to fit.&rdquo; His claim went unproven for 358 years, becoming the most famous unsolved problem in mathematics.</p>
+<p><strong>Leonhard Euler (1707-1783)</strong>: Swiss mathematician and physicist, arguably the most prolific mathematician in history, who made fundamental contributions to almost every area of mathematics. Working primarily in St. Petersburg and Berlin, Euler published over 800 papers and books, introducing much of modern mathematical notation and proposing the conjecture that would bear his name for two centuries.</p>
+<p><strong>Andrew Wiles (1953- )</strong>: British mathematician who proved Fermat&rsquo;s Last Theorem in 1995 after seven years of secretive work, using sophisticated techniques from elliptic curves and modular forms. His proof, one of the most celebrated mathematical achievements of the 20th century, finally closed the door on Fermat&rsquo;s 358-year-old claim.</p>
+<p><strong>L.J. Lander &amp; T.R. Parkin (1960s)</strong>: American mathematicians who, using the CDC 6600 supercomputer, discovered the first counterexample to Euler&rsquo;s conjecture in 1966, publishing their result in what may be the shortest research paper in mathematical history - just two sentences that demolished nearly two centuries of belief.</p>
+<p><strong>Noam Elkies (1966- )</strong>: American mathematician at Harvard University who, at age 22, became the youngest full professor in Harvard&rsquo;s history. In 1988, Elkies revolutionized the study of Diophantine equations by constructing an infinite family of counterexamples to Euler&rsquo;s conjecture using elliptic curves, transforming a discrete arithmetic problem into elegant geometry.</p>
+<hr>
+<h2 id="a-simple-question-1">A Simple Question</h2>
+<p>Let&rsquo;s start with something that seems almost trivial:</p>
+<p>Can three perfect squares add up to another perfect square?</p>
+<p>Easy. The most famous example:</p>
+<p>$$3^2 + 4^2 = 5^2$$</p>
+<p>Or:</p>
+<p>$$9 + 16 = 25$$</p>
+<p>These are <strong>Pythagorean triples</strong>, and there are infinitely many of them. Humanity has known about them for over 2,000 years.</p>
+<p>Now, let&rsquo;s make it slightly harder:</p>
+<p><strong>Can three perfect <em>cubes</em> add up to another perfect cube?</strong></p>
+<p>Worth trying. Pick some numbers. Calculate some cubes.</p>
+<p>$$1^3 + 2^3 = 9 \quad \text{(not a cube)}$$</p>
+<p>$$2^3 + 3^3 = 35 \quad \text{(not a cube)}$$</p>
+<p>$$1^3 + 6^3 = 217 \quad \text{(not a cube)}$$</p>
+<p>Frustrating, isn&rsquo;t it?</p>
+<p>Here&rsquo;s the kicker: <strong>No one has ever found three cubes that sum to a cube</strong>. Not in 2,000+ years of trying.</p>
+<p>In fact, we now know (thanks to Andrew Wiles&rsquo; 1995 proof of Fermat&rsquo;s Last Theorem) that <strong>it&rsquo;s impossible</strong>. No matter how long you search, you&rsquo;ll never find:</p>
+<p>$$a^3 + b^3 = c^3$$</p>
+<p>where $a$, $b$, and $c$ are positive whole numbers.</p>
+<h2 id="the-lure-of-impossibility">The Lure of Impossibility</h2>
+<p>Mathematics is filled with questions that sound simple but turn out to be extraordinarily deep. Some remain unsolved for centuries. Let me give you a taste:</p>
+<h3 id="the-goldbach-conjecture-1742---unsolved">The Goldbach Conjecture (1742 - Unsolved)</h3>
+<p><em>Every even number greater than 2 is the sum of two prime numbers.</em></p>
+<p>Try it:</p>
+<ul>
+<li>$4 = 2 + 2$ ✓</li>
+<li>$6 = 3 + 3$ ✓</li>
+<li>$8 = 3 + 5$ ✓</li>
+<li>$100 = 47 + 53$ ✓</li>
+<li>$1000 = 29 + 971$ ✓</li>
+</ul>
+<p>Seems obvious, right? Verified for all even numbers up to $4 \times 10^{18}$. Still unproven after 283 years.</p>
+<h3 id="the-collatz-conjecture-1937---unsolved">The Collatz Conjecture (1937 - Unsolved)</h3>
+<p>Pick any positive integer. If it&rsquo;s even, divide by 2. If it&rsquo;s odd, multiply by 3 and add 1. Repeat.</p>
+<p><em>The conjecture: You&rsquo;ll always eventually reach 1.</em></p>
+<p>Try starting with 7:
+$$7 \to 22 \to 11 \to 34 \to 17 \to 52 \to 26 \to 13 \to 40 \to 20 \to 10 \to 5 \to 16 \to 8 \to 4 \to 2 \to 1$$</p>
+<p>It works! Try any number. It always seems to work. Tested for numbers up to $2^{68}$. Still unproven after 88 years.</p>
+<p>Paul Erdős said about the Collatz conjecture: <em>&ldquo;Mathematics may not be ready for such problems.&rdquo;</em></p>
+<h3 id="the-twin-prime-conjecture-ancient---unsolved">The Twin Prime Conjecture (Ancient - Unsolved)</h3>
+<p><em>There are infinitely many pairs of primes that differ by 2.</em></p>
+<p>Examples: $(3,5)$, $(5,7)$, $(11,13)$, $(17,19)$, $(29,31)$&hellip;</p>
+<p>Largest known twin primes: $2{,}996{,}863{,}034{,}895 \times 2^{1{,}290{,}000} \pm 1$ (388,342 digits each!)</p>
+<p>Still unproven whether there are infinitely many.</p>
+<h2 id="the-pattern-simple-to-state-hard-to-prove">The Pattern: Simple to State, Hard to Prove</h2>
+<p>Notice a pattern? These conjectures share something profound:</p>
+<ol>
+<li><strong>A child could understand the question</strong></li>
+<li><strong>A computer can verify millions of cases</strong></li>
+<li><strong>The world&rsquo;s greatest mathematicians can&rsquo;t prove them</strong></li>
+</ol>
+<p>This is the intoxicating beauty of mathematics. The simplest-sounding questions can hide the deepest mysteries.</p>
+<p>Today, we&rsquo;ll explore one such mystery - but with a twist. This one seemed obviously true for 197 years, resisted the efforts of mathematical giants, and then&hellip; <strong>fell apart in two sentences</strong>.</p>
+<h2 id="what-euler-thought-he-knew">What Euler Thought He Knew</h2>
+<p>In 1769, Leonhard Euler - arguably the greatest mathematician who ever lived - looked at the pattern we started with and made what seemed like a reasonable guess.</p>
+<p>He knew:</p>
+<ul>
+<li>Two squares can sum to a square: $3^2 + 4^2 = 5^2$</li>
+<li>Two cubes <strong>cannot</strong> sum to a cube: $a^3 + b^3 = c^3$ has no solutions</li>
+<li>Three cubes <strong>can</strong> sum to a cube: $3^3 + 4^3 + 5^3 = 6^3$</li>
+</ul>
+<p>He saw a pattern forming. And he made a bold conjecture.</p>
+<h2 id="the-conjecture">The Conjecture</h2>
+<p><strong>Euler&rsquo;s Big Idea</strong>: <em>To make an nth power by adding up other nth powers, one needs at least n terms.</em></p>
+<p>Let&rsquo;s unpack that:</p>
+<p><strong>For squares (power of 2):</strong></p>
+<ul>
+<li>Need at least 2 squares to make a square</li>
+<li>$3^2 + 4^2 = 5^2$ ✓ (uses 2 terms)</li>
+</ul>
+<p><strong>For cubes (power of 3):</strong></p>
+<ul>
+<li>Need at least 3 cubes to make a cube</li>
+<li>$3^3 + 4^3 + 5^3 = 6^3$ ✓ (uses 3 terms)</li>
+<li>$1^3 + 6^3 + 8^3 = 9^3$ ✓ (uses 3 terms)</li>
+</ul>
+<p><strong>For fourth powers:</strong></p>
+<ul>
+<li>Need at least 4 fourth powers to make a fourth power</li>
+<li>Haven&rsquo;t found one yet, but Euler believed you&rsquo;d need 4 terms minimum</li>
+</ul>
+<p><strong>For fifth powers:</strong></p>
+<ul>
+<li>Need at least 5 fifth powers to make a fifth power</li>
+<li>Same - no examples known, but should need 5 terms minimum</li>
+</ul>
+<p>Seems reasonable, right? There&rsquo;s a beautiful symmetry to it. It&rsquo;s the kind of pattern that makes mathematicians excited.</p>
+<p><strong>The formal statement</strong>: If you can write</p>
+<p>$$a_1^k + a_2^k + a_3^k + \cdots = b^k$$</p>
+<p>where all the letters are positive whole numbers and $k &gt; 2$, then you need <strong>at least $k$ terms</strong> on the left side.</p>
+<p>Euler proposed this in 1769. For nearly two centuries, it seemed obviously correct. Mathematicians checked countless examples. No counterexamples appeared.</p>
+<p>And then, in 1966&hellip;</p>
+<h2 id="the-shortest-research-paper-ever-written">The Shortest Research Paper Ever Written</h2>
+<p>In 1966, two mathematicians named L.J. Lander and T.R. Parkin published a paper in the <em>Bulletin of the American Mathematical Society</em>.</p>
+<p>The <strong>entire paper</strong> - and I mean the <em>entire</em> paper - consisted of <strong>two sentences</strong>:</p>
+<blockquote>
+<p><em>&ldquo;A direct search on the CDC 6600 yielded</em>
+$$27^5 + 84^5 + 110^5 + 133^5 = 144^5$$
+<em>as the smallest instance in which four fifth powers sum to a fifth power. This is a counterexample to a conjecture by Euler that at least $n$ $n$-th powers are required to sum to an $n$-th power, $n&gt;2$.&rdquo;</em></p>
+</blockquote>
+<p>That&rsquo;s it. Two sentences. One equation. 197 years of mathematical belief&hellip; demolished.</p>
+<h2 id="wait-lets-check-that">Wait, Let&rsquo;s Check That</h2>
+<p>The natural instinct: &ldquo;Really? Let&rsquo;s verify that ourselves.&rdquo;</p>
+<p>Good thinking! Here are the calculations:</p>
+<p>$$27^5 = 14{,}348{,}907$$
+$$84^5 = 4{,}182{,}119{,}424$$
+$$110^5 = 16{,}105{,}100{,}000$$
+$$133^5 = 41{,}615{,}795{,}893$$</p>
+<p>Add them up:</p>
+<p>$$14{,}348{,}907 + 4{,}182{,}119{,}424 + 16{,}105{,}100{,}000 + 41{,}615{,}795{,}893 = 61{,}917{,}364{,}224$$</p>
+<p>And on the right side:</p>
+<p>$$144^5 = 144 \times 144 \times 144 \times 144 \times 144 = 61{,}917{,}364{,}224$$</p>
+<p><strong>They match!</strong></p>
+<p>Euler said you&rsquo;d need <strong>5</strong> fifth powers to make a fifth power. But here are <strong>only 4</strong> fifth powers that do exactly that.</p>
+<p>Euler was wrong.</p>
+<h2 id="but-how-did-they-find-this">But How Did They Find This?</h2>
+<p>Here&rsquo;s where it gets interesting. In 1966, computers were rare, enormous, and expensive. The CDC 6600 (Control Data Corporation 6600) was:</p>
+<ul>
+<li>The <strong>fastest supercomputer in the world</strong> (1964-1969)</li>
+<li>Capable of <strong>3 million calculations per second</strong> (your phone does billions)</li>
+<li><strong>Cost</strong>: $7-10 million (about $80 million today)</li>
+<li><strong>Size</strong>: Filled multiple rooms, needed special cooling</li>
+</ul>
+<p>For context: A modern smartphone is roughly <strong>1,000 times faster</strong> than this revolutionary machine.</p>
+<p>Lander and Parkin programmed this behemoth to systematically check combinations of fifth powers. The search space was enormous, but the computer could explore it in ways humans never could.</p>
+<p>After checking millions (or billions) of combinations, it found: $27^5 + 84^5 + 110^5 + 133^5 = 144^5$</p>
+<p>And this was the <strong>smallest</strong> such example!</p>
+<h2 id="the-elegant-simplicity-of-disproof">The Elegant Simplicity of Disproof</h2>
+<p>Here&rsquo;s something beautiful about mathematics: <strong>To disprove a claim that says &ldquo;always,&rdquo; you only need one counterexample.</strong></p>
+<p>Euler claimed: &ldquo;You <strong>always</strong> need at least $k$ terms to make a $k$-th power.&rdquo;</p>
+<p>Lander and Parkin showed: &ldquo;Here&rsquo;s <strong>one case</strong> where you don&rsquo;t.&rdquo;</p>
+<p>Case closed. Conjecture disproved.</p>
+<p>No matter how famous Euler was. No matter how reasonable the conjecture seemed. No matter how many mathematicians believed it. One counterexample ends the debate.</p>
+<p>This is the brutally honest beauty of mathematics: Truth doesn&rsquo;t care about authority or intuition.</p>
+<h2 id="can-fourth-powers-work">Can Fourth Powers Work?</h2>
+<p>Now here&rsquo;s where it gets fun. After finding a counterexample for $k=5$ (fifth powers), the obvious next question was:</p>
+<p><strong>What about $k=4$ (fourth powers)?</strong></p>
+<p>The challenge: find four fourth powers that sum to a fourth power.</p>
+<p>$$a^4 + b^4 + c^4 = d^4$$</p>
+<p>Pick some numbers. Calculate some fourth powers. See if any combination works.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>Finding it hard? Everyone else did too - for 22 years after Lander and Parkin&rsquo;s discovery!</p>
+<h2 id="the-plot-thickens">The Plot Thickens</h2>
+<p>Between 1966 and 1988, mathematicians searched for a fourth-power counterexample. They used increasingly powerful computers. They checked millions of combinations.</p>
+<p>Nothing.</p>
+<p>Some began to wonder: Maybe Euler was <em>partially</em> right? Maybe the conjecture fails for fifth powers but holds for fourth powers?</p>
+<p>Then, in 1988, <strong>Noam Elkies</strong> of Harvard University did something extraordinary.</p>
+<p>He didn&rsquo;t just <em>find</em> a counterexample to the fourth-power case.</p>
+<p>He found <strong>infinitely many</strong> of them.</p>
+<h2 id="elkies-breakthrough-when-geometry-meets-number-theory">Elkies&rsquo; Breakthrough: When Geometry Meets Number Theory</h2>
+<p>Elkies discovered:</p>
+<p>$$2{,}682{,}440^4 + 15{,}365{,}639^4 + 18{,}796{,}760^4 = 20{,}615{,}673^4$$</p>
+<p>Let&rsquo;s verify the magnitudes (the actual numbers are huge):</p>
+<p>$$95800^4 ≈ 8.425 * 10^{19}$$
+$$217519^4 ≈ 2.241 \times 10^{21}$$
+$$414560^4 ≈ 2.952 \times 10^{22}$$</p>
+<p>Sum: approximately $3.185 \times 10^{22}$</p>
+<p>And $422481^4 \approx 3.185 \times 10^{22}$ ✓</p>
+<p>But what&rsquo;s remarkable isn&rsquo;t just that Elkies found this. It&rsquo;s <strong>how</strong> he found it.</p>
+<h3 id="the-trick-turn-arithmetic-into-geometry">The Trick: Turn Arithmetic into Geometry</h3>
+<p>Here&rsquo;s the key insight (and this is where things get sophisticated):</p>
+<p>The equation $a^4 + b^4 + c^4 = d^4$ looks like an arithmetic puzzle. But Elkies realized you can transform it into a <strong>geometric problem</strong>.</p>
+<p>Divide everything by $d^4$:</p>
+<p>$$\left(\frac{a}{d}\right)^4 + \left(\frac{b}{d}\right)^4 + \left(\frac{c}{d}\right)^4 = 1$$</p>
+<p>Let $r = a/d$, $s = b/d$, $t = c/d$. Now we&rsquo;re looking for <strong>rational numbers</strong> (fractions!) that satisfy:</p>
+<p>$$r^4 + s^4 + t^4 = 1$$</p>
+<p>This is an equation describing a <strong>surface</strong> in 3D space. Finding integer solutions to the original problem is equivalent to finding <strong>rational points</strong> (points with fractional coordinates) on this surface!</p>
+<h3 id="enter-elliptic-curves-graduate-level">Enter: Elliptic Curves (Graduate Level)</h3>
+<p>This is where it gets beautiful - and deep.</p>
+<p>Elkies used techniques from <strong>algebraic geometry</strong> to parametrize this surface. Through clever manipulations, he reduced the problem to finding points on a special type of curve called an <strong>elliptic curve</strong>:</p>
+<p>$$u^2 = 22030 + 28849v - 56158v^2 + 36941v^3 - 31790v^4$$</p>
+<p><strong>Why is this amazing?</strong></p>
+<p>Elliptic curves have a magical property: they have a <strong>group structure</strong>. If you have one rational point on an elliptic curve, you can use the &ldquo;group law&rdquo; to generate infinitely many more rational points!</p>
+<p>Elkies found one rational point: $v = -31/467$</p>
+<p>From this single seed, the group law generates infinitely many other points. Each point gives a new counterexample to Euler&rsquo;s conjecture!</p>
+<p>This wasn&rsquo;t brute-force computer search. This was <strong>pure mathematical insight</strong> transforming an arithmetic problem into geometry, then exploiting deep theorems about elliptic curves.</p>
+<h2 id="the-smallest-fourth-power-counterexample">The Smallest Fourth-Power Counterexample</h2>
+<p>The same year (1988), <strong>Roger Frye</strong> used Elkies&rsquo; theoretical insights combined with targeted computer search to find the <strong>smallest</strong> counterexample:</p>
+<p>$$\boxed{95{,}800^4 + 217{,}519^4 + 414{,}560^4 = 422{,}481^4}$$</p>
+<p>Let&rsquo;s verify this one carefully (using exact computation):</p>
+<p>$$95800^4 = 84{,}250{,}968{,}320{,}000{,}000$$
+$$217519^4 = 2{,}240{,}969{,}276{,}509{,}026{,}801$$
+$$414560^4 = 29{,}514{,}790{,}517{,}001{,}318{,}976{,}000$$</p>
+<p>Adding these up:</p>
+<p>$$\text{Sum} = 31{,}840{,}010{,}761{,}830{,}344{,}977{,}801$$</p>
+<p>And on the right:</p>
+<p>$$422481^4 = 31{,}840{,}010{,}761{,}830{,}344{,}977{,}801$$</p>
+<p>Perfect match! ✓</p>
+<p>This remains the <strong>only</strong> fourth-power counterexample with all numbers below one million.</p>
+<h2 id="the-current-landscape">The Current Landscape</h2>
+<p>Let&rsquo;s summarize what we now know:</p>
+<table>
+<thead>
+<tr>
+<th>Power ($k$)</th>
+<th>Euler&rsquo;s Conjecture Status</th>
+<th>Smallest Counterexample</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 (squares)</td>
+<td><strong>True</strong> (trivially)</td>
+<td>$3^2 + 4^2 = 5^2$ needs 2 terms</td>
+</tr>
+<tr>
+<td>3 (cubes)</td>
+<td><strong>False</strong> (trivially)</td>
+<td>$3^3 + 4^3 + 5^3 = 6^3$ needs 3 terms</td>
+</tr>
+<tr>
+<td>4 (fourth)</td>
+<td><strong>FALSE</strong> ✗</td>
+<td>$95800^4 + 217519^4 + 414560^4 = 422481^4$</td>
+</tr>
+<tr>
+<td>5 (fifth)</td>
+<td><strong>FALSE</strong> ✗</td>
+<td>$27^5 + 84^5 + 110^5 + 133^5 = 144^5$</td>
+</tr>
+<tr>
+<td>6 (sixth)</td>
+<td><strong>UNKNOWN</strong> ❓</td>
+<td><em>None found</em></td>
+</tr>
+<tr>
+<td>7 (seventh)</td>
+<td><strong>UNKNOWN</strong> ❓</td>
+<td><em>None found</em></td>
+</tr>
+<tr>
+<td>8+</td>
+<td><strong>UNKNOWN</strong> ❓</td>
+<td><em>None found</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="heres-where-it-gets-interesting">Here&rsquo;s Where It Gets Interesting</h2>
+<p>Remember the challenge to find three cubes that sum to a cube? Impossible.</p>
+<p><strong>Now try this: Find five sixth powers that sum to a sixth power.</strong></p>
+<p>$$a^6 + b^6 + c^6 + d^6 + e^6 = f^6$$</p>
+<p>Sounds reasonable, right? Counterexamples exist for fourth and fifth powers. Why not sixth?</p>
+<p><strong>Here&rsquo;s what makes this tantalizing:</strong></p>
+<ol>
+<li>
+<p><strong>The pattern suggests it should exist</strong>: Euler&rsquo;s conjecture has been broken for $k=4$ and $k=5$. Why would $k=6$ be different?</p>
+</li>
+<li>
+<p><strong>The search space is manageable</strong> (sort of): If there&rsquo;s a counterexample with $f &lt; 1{,}000{,}000$, modern computers could find it. None has been found.</p>
+</li>
+<li>
+<p><strong>But maybe the search hasn&rsquo;t gone far enough</strong>: Perhaps the smallest solution has $f &gt; 10{,}000{,}000$? Or $f &gt; 100{,}000{,}000$?</p>
+</li>
+<li>
+<p><strong>Or maybe Elkies&rsquo; geometric trick works here too</strong>: Perhaps there&rsquo;s a clever elliptic curve parametrization waiting to be discovered.</p>
+</li>
+</ol>
+<p><strong>Finding it would make mathematical history.</strong></p>
+<p>The discoverer&rsquo;s name would appear in mathematics papers forever. They&rsquo;d be the person who extended the pattern from $k=5$ to $k=6$.</p>
+<p>And here&rsquo;s the beautiful part: <strong>No PhD required.</strong></p>
+<p>Lander and Parkin weren&rsquo;t the world&rsquo;s most famous mathematicians. They had access to a computer and a good idea. That&rsquo;s it.</p>
+<p>Modern computers are millions of times more powerful than the CDC 6600. Programming languages make searching easy. The advantage of knowing what&rsquo;s been tried before is clear.</p>
+<p><strong>So&hellip; worth a shot?</strong></p>
+<h2 id="the-deep-mathematics">The Deep Mathematics</h2>
+<p>For those ready to dive deeper, let&rsquo;s explore the sophisticated machinery behind these counterexamples.</p>
+<h3 id="the-mordell-weil-theorem-and-elliptic-curves">The Mordell-Weil Theorem and Elliptic Curves</h3>
+<p><strong>Definition</strong>: An <strong>elliptic curve</strong> over $\mathbb{Q}$ is a smooth projective curve of genus 1 with a specified rational point, typically given in Weierstrass form:</p>
+<p>$$E: y^2 = x^3 + ax + b$$</p>
+<p>where $4a^3 + 27b^2 \neq 0$ (ensuring non-singularity).</p>
+<p><strong>The Mordell-Weil Theorem</strong> (1928): For an elliptic curve $E$ defined over $\mathbb{Q}$, the group of rational points $E(\mathbb{Q})$ is finitely generated:</p>
+<p>$$E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\text{tors}}$$</p>
+<p>where:</p>
+<ul>
+<li>$r$ is the <strong>rank</strong> (number of independent generators of infinite order)</li>
+<li>$E(\mathbb{Q})_{\text{tors}}$ is the finite <strong>torsion subgroup</strong></li>
+</ul>
+<p><strong>Implications</strong>: If $r \geq 1$, the curve has infinitely many rational points! The group law allows us to:</p>
+<ol>
+<li>Start with one rational point $P$</li>
+<li>&ldquo;Add&rdquo; it to itself: $2P, 3P, 4P, \ldots$ generates infinitely many points</li>
+<li>If we have two independent points $P, Q$, we get $mP + nQ$ for all integers $m, n$</li>
+</ol>
+<p>Elkies exploited this by showing that counterexamples to $a^4 + b^4 + c^4 = d^4$ correspond to rational points on an elliptic curve with positive rank!</p>
+<h3 id="elkies-parametrization-in-detail">Elkies&rsquo; Parametrization in Detail</h3>
+<p>Elkies constructed the parametric family:</p>
+<p>$$(85v^2 + 484v - 313)^4 + (68v^2 - 586v + 10)^4 + (2u)^4 = (357v^2 - 204v + 363)^4$$</p>
+<p>subject to the constraint:</p>
+<p>$$u^2 = 22030 + 28849v - 56158v^2 + 36941v^3 - 31790v^4$$</p>
+<p><strong>This is an elliptic curve!</strong> To see this, we need to convert it to Weierstrass form.</p>
+<p><strong>Step 1</strong>: Complete the square in $v$. This is a quartic in $v$, so we can reduce it to a cubic via the transformation:</p>
+<p>$$v = t - \frac{p}{4}$$</p>
+<p>where $p$ is the coefficient of $v^3$ after proper normalization.</p>
+<p><strong>Step 2</strong>: After this transformation and appropriate scaling, we obtain a Weierstrass equation:</p>
+<p>$$Y^2 = X^3 + AX + B$$</p>
+<p>for some constants $A, B$.</p>
+<p><strong>Step 3</strong>: The original rational point $v_1 = -31/467$ transforms to a rational point on this Weierstrass curve.</p>
+<p><strong>Step 4</strong>: Use the <strong>doubling formula</strong> on elliptic curves. For a point $P = (X_1, Y_1)$ on $y^2 = x^3 + ax + b$, the point $2P = (X_2, Y_2)$ is given by:</p>
+<p>$$\lambda = \frac{3X_1^2 + a}{2Y_1}$$</p>
+<p>$$X_2 = \lambda^2 - 2X_1$$</p>
+<p>$$Y_2 = \lambda(X_1 - X_2) - Y_1$$</p>
+<p>Iterating this process generates infinitely many rational points, each giving a counterexample!</p>
+<h3 id="why-this-doesnt-extend-to-all-powers-yet">Why This Doesn&rsquo;t Extend to All Powers (Yet)</h3>
+<p>You might wonder: If Elkies could parametrize $k=4$ with elliptic curves, why hasn&rsquo;t someone done the same for $k=6, 7, 8$?</p>
+<p><strong>The honest answer: We don&rsquo;t know how.</strong></p>
+<p>The geometry becomes exponentially more complex:</p>
+<ul>
+<li>For $k=4$: The surface $r^4 + s^4 + t^4 = 1$ has <strong>genus 0 or 1</strong> curves in certain cross-sections</li>
+<li>For $k=6$: The analogous surface has <strong>much higher genus</strong>, making parametrization far more difficult</li>
+<li><strong>Faltings&rsquo; Theorem</strong> (1983, formerly Mordell&rsquo;s Conjecture): Curves of genus $g \geq 2$ over $\mathbb{Q}$ have only finitely many rational points!</li>
+</ul>
+<p>This suggests that if counterexamples exist for higher powers, they might <strong>not</strong> admit nice parametric families like Elkies found.</p>
+<h2 id="the-lander-parkin-selfridge-refinement">The Lander-Parkin-Selfridge Refinement</h2>
+<p>After discovering the counterexample, Lander, Parkin, and Selfridge proposed a <strong>modified conjecture</strong> (1967):</p>
+<p><strong>LPS Conjecture</strong>: If</p>
+<p>$$\sum_{i=1}^{n} a_i^k = \sum_{j=1}^{m} b_j^k$$</p>
+<p>with $a_i \neq b_j$ for all $i, j$, then:</p>
+<p>$$m + n \geq k$$</p>
+<p><strong>Special case</strong> ($m=1$):</p>
+<p>$$\sum_{i=1}^{n} a_i^k = b^k \implies n \geq k-1$$</p>
+<p><strong>This fits all known counterexamples:</strong></p>
+<ul>
+<li>$k=4$: Three fourth powers sum to one, $3 = 4-1$ ✓</li>
+<li>$k=5$: Four fifth powers sum to one, $4 = 5-1$ ✓</li>
+</ul>
+<p><strong>Status</strong>: No counterexamples known! The LPS conjecture may be the &ldquo;correct&rdquo; statement.</p>
+<h3 id="proof-techniques-and-obstacles">Proof Techniques and Obstacles</h3>
+<p>Why is proving the LPS conjecture hard?</p>
+<p><strong>1. Hasse Principle Failures</strong>: Local-global principles that work for quadratic forms fail for higher degree equations.</p>
+<p><strong>2. Lack of Group Structure</strong>: Unlike elliptic curves (genus 1), higher genus curves don&rsquo;t have natural group laws.</p>
+<p><strong>3. Diophantine Approximation</strong>: The problem connects to deep questions about how well algebraic numbers can be approximated by rationals.</p>
+<p><strong>4. ABC Conjecture Connection</strong>: The abc conjecture predicts that equations like $a^k + b^k = c^k$ have only finitely many primitive solutions for fixed $k$. But extending this to sums of many terms is non-trivial.</p>
+<h2 id="connections-to-the-frontiers-of-mathematics">Connections to the Frontiers of Mathematics</h2>
+<h3 id="the-birch-and-swinnerton-dyer-conjecture">The Birch and Swinnerton-Dyer Conjecture</h3>
+<p>One of the <strong>Clay Millennium Prize Problems</strong> ($$1$ million reward), BSD concerns elliptic curves.</p>
+<p>For an elliptic curve $E$ over $\mathbb{Q}$ with L-function $L(E, s)$, the conjecture states:</p>
+<p>$$\text{ord}_{s=1} L(E, s) = \text{rank}(E(\mathbb{Q}))$$</p>
+<p><strong>Why relevant</strong>: Elkies&rsquo; method requires finding curves with positive rank. BSD would let us determine rank by analyzing L-functions - potentially a systematic way to search for counterexamples!</p>
+<h3 id="the-millennium-prize-problems">The Millennium Prize Problems</h3>
+<p>The Clay Mathematics Institute offers <strong>$$1 million</strong> for the solution of each of seven problems - the most important unsolved problems in mathematics as of the year 2000. Only one has been solved (the Poincaré Conjecture by Grigori Perelman in 2003, who declined the prize).</p>
+<p>The seven problems:</p>
+<ol>
+<li><strong>P vs NP</strong> - Can every problem whose solution can be verified quickly also be solved quickly?</li>
+<li><strong>Hodge Conjecture</strong> - On the structure of algebraic varieties</li>
+<li><strong>Riemann Hypothesis</strong> - On the zeros of the Riemann zeta function $\zeta(s)$ (connected to prime distribution)</li>
+<li><strong>Yang-Mills Existence and Mass Gap</strong> - From quantum field theory</li>
+<li><strong>Navier-Stokes Existence and Smoothness</strong> - On fluid dynamics equations</li>
+<li><strong>Birch and Swinnerton-Dyer Conjecture</strong> - On elliptic curves (discussed above)</li>
+<li><strong>Poincaré Conjecture</strong> - ✓ <strong>SOLVED</strong> by Perelman (2003)</li>
+</ol>
+<p><strong>Connection to Euler&rsquo;s Conjecture</strong>: Both the Riemann Hypothesis and BSD are directly connected to our story:</p>
+<ul>
+<li>The <strong>Riemann zeta function</strong> generalizes Euler&rsquo;s work on $\zeta(2) = \pi^2/6$ (the Basel problem) to complex values</li>
+<li><strong>BSD</strong> would provide tools to systematically find elliptic curves with positive rank - exactly what Elkies needed for his parametric solution</li>
+</ul>
+<p>The fact that a problem as &ldquo;elementary&rdquo; as Euler&rsquo;s conjecture connects to million-dollar prize problems shows the deep interconnectedness of mathematics.</p>
+<h3 id="fermats-last-theorem-and-modularity">Fermat&rsquo;s Last Theorem and Modularity</h3>
+<p><strong>Fermat&rsquo;s Last Theorem</strong> states $a^n + b^n = c^n$ has no positive integer solutions for $n &gt; 2$.</p>
+<p>Wiles&rsquo; proof (1995) showed that all elliptic curves over $\mathbb{Q}$ are modular, which implies FLT via the work of Frey, Ribet, and others.</p>
+<p><strong>Key insight</strong>: Adding more terms (going from $n=2$ in FLT to $n=k-1$ in Euler&rsquo;s conjecture) dramatically changes the problem&rsquo;s character. FLT is about <strong>impossibility</strong>; Euler&rsquo;s counterexamples show <strong>abundance</strong> with more terms.</p>
+<h3 id="the-generalized-fermat-equation">The Generalized Fermat Equation</h3>
+<p>The equation:</p>
+<p>$$\frac{1}{p} + \frac{1}{q} + \frac{1}{r} = 1$$</p>
+<p>with $p, q, r &gt; 1$ determines the geometry:</p>
+<ul>
+<li>$(2, 3, 6), (2, 4, 4), (3, 3, 3)$: Genus 0 (parametrizable)</li>
+<li>$(2, 3, 5), (2, 3, 4), (2, 2, n)$: Genus 1 (elliptic curves)</li>
+<li>All others: Genus $\geq 2$ (Faltings&rsquo; theorem applies)</li>
+</ul>
+<p>This explains why certain Diophantine equations are tractable while others aren&rsquo;t!</p>
+<h2 id="why-you-should-care-even-if-youre-not-a-mathematician">Why You Should Care (Even If You&rsquo;re Not a Mathematician)</h2>
+<h3 id="1-the-humility-lesson">1. The Humility Lesson</h3>
+<p>Even <strong>Leonhard Euler</strong> - one of history&rsquo;s greatest mathematical minds - made wrong conjectures that stood for 197 years.</p>
+<p>This teaches us:</p>
+<ul>
+<li><strong>Question authority</strong> (respectfully)</li>
+<li><strong>Verify claims</strong> (even from experts)</li>
+<li><strong>Update beliefs</strong> when evidence contradicts them</li>
+</ul>
+<h3 id="2-the-power-of-computation">2. The Power of Computation</h3>
+<p>Lander and Parkin&rsquo;s success came from combining:</p>
+<ul>
+<li>Mathematical insight (knowing what to search for)</li>
+<li>Computational power (ability to execute the search)</li>
+<li>Persistence (not giving up when searches took time)</li>
+</ul>
+<p>These same principles apply to modern data science, AI, and software engineering.</p>
+<h3 id="3-the-joy-of-discovery">3. The Joy of Discovery</h3>
+<p>There&rsquo;s something deeply satisfying about finding a counterexample. It&rsquo;s like solving a mystery.</p>
+<p>You don&rsquo;t need to be a professional mathematician to experience this. Play with numbers. Look for patterns. Try to break conjectures.</p>
+<p><strong>Mathematics is a playground, not a priesthood.</strong></p>
+<h3 id="4-unsolved-problems-are-everywhere">4. Unsolved Problems Are Everywhere</h3>
+<p>Even in 2025, we don&rsquo;t know if Euler&rsquo;s conjecture holds for $k \geq 6$.</p>
+<p>This isn&rsquo;t ancient history. This is <strong>active mathematics</strong>. The next breakthrough could come from:</p>
+<ul>
+<li>A computer scientist with a clever algorithm</li>
+<li>A high school student who notices a pattern</li>
+<li>An engineer applying machine learning to search strategies</li>
+<li><strong>You</strong></li>
+</ul>
+<h2 id="a-final-challenge">A Final Challenge</h2>
+<p>Here&rsquo;s the bottom line:</p>
+<p><strong>The $k=6$ counterexample might be out there, waiting.</strong></p>
+<p>To search for it:</p>
+<ol>
+<li><strong>Start simple</strong>: Check combinations where $f &lt; 10{,}000$</li>
+<li><strong>Get systematic</strong>: Write a program to check more efficiently</li>
+<li><strong>Study the pattern</strong>: Why do $k=4$ and $k=5$ have counterexamples around similar magnitudes?</li>
+<li><strong>Think geometrically</strong>: Can an elliptic curve parametrization be found for $k=6$?</li>
+</ol>
+<p>Or maybe there&rsquo;s <strong>no counterexample</strong> for $k=6$. Maybe Euler&rsquo;s conjecture holds from $k=6$ onward.</p>
+<p><strong>Proving</strong> that would be even more impressive than finding a counterexample!</p>
+<p>Either way, this problem sits at the intersection of:</p>
+<ul>
+<li>Elementary arithmetic (anyone can understand it)</li>
+<li>Computational exploration (accessible with modern tools)</li>
+<li>Deep mathematics (connects to cutting-edge research)</li>
+</ul>
+<p><strong>That&rsquo;s the beauty of mathematics</strong>: Simple questions. Deep answers. Infinite possibilities.</p>
+<h3 id="the-lander-parkin-selfridge-conjecture-1967">The Lander-Parkin-Selfridge Conjecture (1967)</h3>
+<p>Motivated by their counterexample, Lander, Parkin, and John Selfridge proposed a <strong>refined conjecture</strong> in 1967:</p>
+<p><strong>LPS Conjecture</strong>: If</p>
+<p>$$\sum_{i=1}^{n} a_i^k = \sum_{j=1}^{m} b_j^k$$</p>
+<p>where $a_i \neq b_j$ for all $i, j$, then:</p>
+<p>$$m + n \geq k$$</p>
+<p>In the special case $m=1$ (one term on the right), this reduces to:</p>
+<p>$$n \geq k-1$$</p>
+<p><strong>This is weaker than Euler&rsquo;s original conjecture</strong> (which required $n \geq k$), but it fits all known counterexamples:</p>
+<ul>
+<li>For $k=4$: We have $n=3$, and $3 = 4-1$ ✓</li>
+<li>For $k=5$: We have $n=4$, and $4 = 5-1$ ✓</li>
+</ul>
+<p><strong>Status</strong>: No counterexamples to the LPS conjecture are known! It may be the &ldquo;correct&rdquo; generalization of Fermat&rsquo;s Last Theorem.</p>
+<h3 id="the-extended-euler-conjecture">The Extended Euler Conjecture</h3>
+<p>R.L. Ekl proposed (1998) an even more general framework:</p>
+<p>If</p>
+<p>$$\sum_{i=1}^{n} a_i^k = \sum_{j=1}^{m} b_j^k$$</p>
+<p>Define:</p>
+<p>$$\delta(k) = \min(m+n)$$</p>
+<p>over all known solutions. Then the <strong>Extended Euler Conjecture</strong> states:</p>
+<p>$$\delta(k) \geq k$$</p>
+<p>Current values:</p>
+<table>
+<thead>
+<tr>
+<th>$k$</th>
+<th>$\delta(k)$</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>Equal to $k$</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>Equal to $k+1$</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>Equal to $k$</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>Equal to $k$</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>Greater than $k$</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8</td>
+<td>Equal to $k$</td>
+</tr>
+</tbody>
+</table>
+<p>No counterexamples known!</p>
+<h2 id="connections-to-other-famous-conjectures">Connections to Other Famous Conjectures</h2>
+<p>The techniques and ideas surrounding Euler&rsquo;s conjecture connect to numerous deep problems in mathematics:</p>
+<h3 id="1-fermats-last-theorem">1. Fermat&rsquo;s Last Theorem</h3>
+<p><strong>Fermat&rsquo;s Last Theorem</strong> (FLT): $a^n + b^n = c^n$ has no positive integer solutions for $n &gt; 2$.</p>
+<ul>
+<li>Proved by Andrew Wiles in 1995 after 358 years</li>
+<li>Uses elliptic curves and modular forms</li>
+<li>The counterexamples to Euler&rsquo;s conjecture show that allowing more terms <strong>completely changes</strong> the problem</li>
+</ul>
+<p><strong>Relationship</strong>: Euler&rsquo;s conjecture can be viewed as asking: <em>&ldquo;What happens if we relax FLT to allow more terms?&rdquo;</em> The answer: the problem becomes solvable!</p>
+<h3 id="2-warings-problem">2. Waring&rsquo;s Problem</h3>
+<p><strong>Waring&rsquo;s Problem</strong> (Hilbert, 1909): For each $k$, there exists a number $g(k)$ such that every positive integer can be expressed as a sum of at most $g(k)$ many $k$-th powers.</p>
+<p>Known values:</p>
+<ul>
+<li>$g(2) = 4$ (Lagrange&rsquo;s four-square theorem)</li>
+<li>$g(3) = 9$</li>
+<li>$g(4) = 19$</li>
+<li>$g(5) = 37$</li>
+</ul>
+<p><strong>Connection</strong>: While Waring&rsquo;s problem asks about representing <em>all</em> integers, Euler&rsquo;s conjecture asks about representing <strong>perfect powers</strong> specifically. The counterexamples show that perfect powers are &ldquo;easier&rdquo; to represent than Waring&rsquo;s problem might suggest.</p>
+<h3 id="3-the-abc-conjecture">3. The abc Conjecture</h3>
+<p>The <strong>abc conjecture</strong> (Masser-Oesterlé, 1985) states that for coprime integers $a, b, c$ with $a + b = c$:</p>
+<p>$$c &lt; \text{rad}(abc)^{1+\epsilon}$$</p>
+<p>for any $\epsilon &gt; 0$, where $\text{rad}(n)$ is the product of distinct prime factors of $n$.</p>
+<p><strong>Relationship</strong>: The abc conjecture implies that equations like $a^k + b^k = c^k$ have only finitely many primitive solutions for fixed $k$. The counterexamples to Euler&rsquo;s conjecture suggest that allowing more terms creates <em>many</em> more solutions - consistent with abc&rsquo;s predictions about sums of coprime terms.</p>
+<p><strong>Status</strong>: Claimed proof by Shinichi Mochizuki (2012) remains controversial and unverified.</p>
+<h3 id="4-catalans-conjecture-mihăilescus-theorem">4. Catalan&rsquo;s Conjecture (Mihăilescu&rsquo;s Theorem)</h3>
+<p><strong>Catalan&rsquo;s Conjecture</strong> (proved by Mihăilescu, 2002): The only solution to:</p>
+<p>$$x^p - y^q = 1$$</p>
+<p>in natural numbers $x, y, p, q &gt; 1$ is $3^2 - 2^3 = 1$.</p>
+<p><strong>Connection</strong>: Both problems concern Diophantine equations with powers, but Catalan&rsquo;s focuses on differences rather than sums. The techniques (elliptic curves, algebraic number theory) overlap significantly.</p>
+<h3 id="5-the-beal-conjecture">5. The Beal Conjecture</h3>
+<p><strong>Beal Conjecture</strong> (1993, $$1$ million prize): If</p>
+<p>$$a^x + b^y = c^z$$</p>
+<p>where $a, b, c, x, y, z$ are positive integers with $x, y, z &gt; 2$, then $a, b, c$ must have a common prime factor.</p>
+<p><strong>Relationship</strong>: This generalizes FLT to different exponents. Euler&rsquo;s conjecture concerns <em>equal</em> exponents, showing how constraining the problem to equal exponents makes it tractable.</p>
+<p><strong>Status</strong>: Unsolved. The prize remains unclaimed.</p>
+<h3 id="6-the-generalized-fermat-equation">6. The Generalized Fermat Equation</h3>
+<p>The equation:</p>
+<p>$$\frac{1}{x} + \frac{1}{y} = \frac{1}{z}$$</p>
+<p>has infinitely many integer solutions. But:</p>
+<p>$$\frac{1}{x^n} + \frac{1}{y^n} = \frac{1}{z^n}$$</p>
+<p>is conjectured to have only finitely many primitive solutions for each $n \geq 3$.</p>
+<p><strong>Connection</strong>: The counterexamples to Euler&rsquo;s conjecture show how adding terms (rather than taking reciprocals) affects solvability.</p>
+<h2 id="the-power-of-computational-mathematics">The Power of Computational Mathematics</h2>
+<h3 id="before-computers">Before Computers</h3>
+<p>Prior to the 1960s, searching for counterexamples meant:</p>
+<ul>
+<li><strong>Manual calculation</strong> of powers</li>
+<li><strong>Systematic but limited</strong> searches</li>
+<li><strong>Heavy reliance on theoretical constraints</strong> to narrow search spaces</li>
+</ul>
+<p>Euler himself computed numerous power sums, but the sheer magnitude of the search space made finding counterexamples essentially impossible.</p>
+<h3 id="the-cdc-6600-era">The CDC 6600 Era</h3>
+<p>The CDC 6600 enabled:</p>
+<ul>
+<li>Checking <strong>billions</strong> of combinations</li>
+<li><strong>Systematic exhaustive search</strong> within bounded regions</li>
+<li>Discovery of counterexamples that would take humans <strong>centuries</strong> to find by hand</li>
+</ul>
+<h3 id="modern-computational-searches">Modern Computational Searches</h3>
+<p>Today, <strong>distributed computing projects</strong> search for:</p>
+<ul>
+<li>Higher-power counterexamples (k ≥ 6)</li>
+<li>Smaller solutions for known cases</li>
+<li>Related Diophantine equations</li>
+</ul>
+<p>Projects like <a href="http://euler.free.fr/">Jean-Charles Meyrignac&rsquo;s computing project</a> systematically search for &ldquo;minimal equal sums of like powers.&rdquo;</p>
+<h2 id="why-this-matters">Why This Matters</h2>
+<h3 id="1-humility-in-mathematics">1. Humility in Mathematics</h3>
+<p>Even <strong>Leonhard Euler</strong> - arguably the greatest mathematician who ever lived - could make incorrect conjectures. Mathematics progresses through:</p>
+<ul>
+<li><strong>Bold conjectures</strong> (Euler)</li>
+<li><strong>Rigorous proof or disproof</strong> (Lander &amp; Parkin, Elkies)</li>
+<li><strong>Refined understanding</strong> (LPS conjecture)</li>
+</ul>
+<h3 id="2-the-role-of-computation">2. The Role of Computation</h3>
+<p>Lander and Parkin&rsquo;s paper demonstrates that <strong>computation is a legitimate mathematical tool</strong>:</p>
+<ul>
+<li>Disproof by counterexample is <strong>rigorous</strong></li>
+<li>Computers can explore spaces <strong>humans cannot</strong></li>
+<li>Computational discoveries often inspire <strong>new theory</strong> (like Elkies&rsquo; elliptic curve approach)</li>
+</ul>
+<h3 id="3-connections-between-fields">3. Connections Between Fields</h3>
+<p>Elkies&rsquo; solution shows how <strong>seemingly unrelated areas</strong> of mathematics connect:</p>
+<ul>
+<li><strong>Diophantine equations</strong> (number theory)</li>
+<li><strong>Elliptic curves</strong> (algebraic geometry)</li>
+<li><strong>Group theory</strong> (abstract algebra)</li>
+</ul>
+<p>This interconnectedness is a hallmark of deep mathematics.</p>
+<h3 id="4-open-problems-abound">4. Open Problems Abound</h3>
+<p>Despite 250+ years of study:</p>
+<ul>
+<li>We don&rsquo;t know if Euler&rsquo;s conjecture holds for <strong>any</strong> $k \geq 6$</li>
+<li>We don&rsquo;t know if the LPS conjecture is true</li>
+<li>We don&rsquo;t understand the <strong>density</strong> of solutions</li>
+</ul>
+<p>Mathematics remains full of accessible, well-formulated <strong>open problems</strong>.</p>
+<h2 id="a-challenge-for-you">A Challenge for You</h2>
+<p>Can you find a counterexample to Euler&rsquo;s conjecture for $k=6$?</p>
+<p>That is, find positive integers $a, b, c, d, e, f$ such that:</p>
+<p>$$a^6 + b^6 + c^6 + d^6 + e^6 = f^6$$</p>
+<p>If you do, <strong>you&rsquo;ll make mathematical history!</strong></p>
+<p>Current computational searches have checked values of $f$ up to the millions with no success. But perhaps there&rsquo;s a clever theoretical approach, like Elkies used for fourth powers&hellip;</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The story of Euler&rsquo;s conjecture encapsulates everything beautiful about mathematics:</p>
+<ul>
+<li><strong>Great minds</strong> proposing bold ideas</li>
+<li><strong>Centuries</strong> of investigation</li>
+<li><strong>Technology</strong> enabling breakthrough discoveries</li>
+<li><strong>Two sentences</strong> destroying 197 years of belief</li>
+<li><strong>New conjectures</strong> rising from the ruins</li>
+<li><strong>Open questions</strong> still beckoning</li>
+</ul>
+<p>The counterexample $27^5 + 84^5 + 110^5 + 133^5 = 144^5$ is not just a curious arithmetic identity - it&rsquo;s a reminder that in mathematics, <strong>nothing is certain until proven</strong>, and even our greatest heroes can be wrong.</p>
+<p>As for whether Euler&rsquo;s conjecture holds for sixth and higher powers? We simply <strong>don&rsquo;t know</strong>.</p>
+<p>And that&rsquo;s what makes mathematics endlessly fascinating.</p>
+<hr>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>
+<p><strong>Original Papers</strong>:</p>
+<ul>
+<li>Lander &amp; Parkin (1966): &ldquo;Counterexample to Euler&rsquo;s conjecture on sums of like powers&rdquo; - <em>Bull. Amer. Math. Soc.</em></li>
+<li>Elkies (1988): &ldquo;On $A^4 + B^4 + C^4 = D^4$&rdquo; - <em>Mathematics of Computation</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Books</strong>:</p>
+<ul>
+<li>Wiles (1995): &ldquo;Modular elliptic curves and Fermat&rsquo;s Last Theorem&rdquo;</li>
+<li>Dunham (1999): &ldquo;Euler: The Master of Us All&rdquo;</li>
+<li>Guy (2004): &ldquo;Unsolved Problems in Number Theory&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Online Resources</strong>:</p>
+<ul>
+<li><a href="http://euler.free.fr/">Jean-Charles Meyrignac&rsquo;s computational search</a></li>
+<li><a href="https://people.math.harvard.edu/~elkies/">Elkies&rsquo; catalog of elliptic curves</a></li>
+<li><a href="https://oeis.org/A347773">OEIS A347773</a>: Sequences related to sums of like powers</li>
+</ul>
+</li>
+</ul>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube_fit/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		4989 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/jhyaap_game/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        झ्याप (Jhyaap): A Digital Tribute to Nepal&#39;s Beloved Card Game
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/posts/basel_problem/">
+        The Basel Problem: Euler&#39;s Triumph and the Birth of Modern Analysis
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/basel_problem/">The Basel Problem: Euler&#39;s Triumph and the Birth of Modern Analysis</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/mathematical_theory_of_communication/">[Paper Exploration] A Mathematical Theory of Communication</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>

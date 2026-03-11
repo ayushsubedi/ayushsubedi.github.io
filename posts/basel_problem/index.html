@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | The Basel Problem: Euler&#39;s Triumph and the Birth of Modern Analysis</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.123.7">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ayushsubedi.github.io/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ayushsubedi.github.io/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+<link rel="stylesheet" href="https://ayushsubedi.github.io/lib/katex.min.css"
+      integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+      crossorigin="anonymous">
+
+
+<script defer src="https://ayushsubedi.github.io/lib/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+
+
+<script defer src="https://ayushsubedi.github.io/lib/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+        crossorigin="anonymous"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io/" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">The Basel Problem: Euler&#39;s Triumph and the Birth of Modern Analysis</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">A deep dive into one of mathematics&#39; most beautiful results - proving that the sum of reciprocal squares equals π²/6, exploring multiple proofs from Euler&#39;s original argument to modern Fourier analysis.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/mathematics'>mathematics</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/mathematics'>mathematics</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/analysis'>analysis</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/number-theory'>number-theory</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/euler'>euler</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/fourier-analysis'>fourier-analysis</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2026-03-10">2026-03-10</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="the-basel-problem-eulers-triumph-and-the-birth-of-modern-analysis">The Basel Problem: Euler&rsquo;s Triumph and the Birth of Modern Analysis</h1>
+<h2 id="the-problem-statement">The Problem Statement</h2>
+<p>In 1650, Italian mathematician Pietro Mengoli posed a deceptively simple question that would stump the greatest mathematical minds for nearly a century:</p>
+<p>$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \cdots = ?$$</p>
+<p>The series clearly converges (as Jakob Bernoulli proved in 1689), and numerical approximation yields approximately $1.644934\ldots$, but what is the <strong>exact</strong> value?</p>
+<p>This became known as the <strong>Basel Problem</strong>, named after the Swiss city that was home to both Leonhard Euler and the Bernoulli family.</p>
+<h2 id="historical-context">Historical Context</h2>
+<h3 id="the-failed-attempts">The Failed Attempts</h3>
+<p>Before Euler&rsquo;s breakthrough, the problem defeated formidable intellects:</p>
+<ul>
+<li><strong>Jakob Bernoulli</strong> (1654-1705): Proved convergence, bounded the sum between 1.5 and 2</li>
+<li><strong>Johann Bernoulli</strong> (1667-1748): Tried multiple approaches, all unsuccessful</li>
+<li><strong>Gottfried Wilhelm Leibniz</strong>: Applied his calculus techniques, no success</li>
+<li><strong>James Stirling</strong> and <strong>Abraham de Moivre</strong>: Both attempted and failed</li>
+</ul>
+<p>The difficulty was not just finding an approximation, but determining the <strong>exact closed form</strong> - and proving it rigorously.</p>
+<h3 id="eulers-moment-of-glory">Euler&rsquo;s Moment of Glory</h3>
+<p>In 1735, at age 28, Leonhard Euler announced his solution:</p>
+<p>$$\boxed{\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}}$$</p>
+<p>This unexpected connection between the discrete world of integers and the transcendental constant $\pi$ was revolutionary. Euler&rsquo;s solution brought him immediate fame throughout the mathematical community.</p>
+<p>On the day his brother Jakob died, Johann Bernoulli reportedly said: <em>&ldquo;If only my brother were alive now.&rdquo;</em></p>
+<h2 id="proof-1-eulers-original-approach-1735">Proof 1: Euler&rsquo;s Original Approach (1735)</h2>
+<p>Euler&rsquo;s first proof, while not rigorous by modern standards, demonstrated brilliant intuition that would later be vindicated.</p>
+<h3 id="the-taylor-series-foundation">The Taylor Series Foundation</h3>
+<p>We begin with the Maclaurin series for $\sin x$:</p>
+<p>$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$$</p>
+<p>Dividing both sides by $x$:</p>
+<p>$$\frac{\sin x}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdots \quad \quad (1)$$</p>
+<h3 id="the-product-representation">The Product Representation</h3>
+<p>Now comes Euler&rsquo;s bold leap. The function $\sin x$ has zeros at $x = 0, \pm \pi, \pm 2\pi, \pm 3\pi, \ldots$</p>
+<p>For $\frac{\sin x}{x}$, the zeros (excluding the removable singularity at $x=0$) are at $x = \pm \pi, \pm 2\pi, \pm 3\pi, \ldots$</p>
+<p>Euler reasoned that, like a polynomial, this function could be factored over its roots:</p>
+<p>$$\frac{\sin x}{x} = \left(1 - \frac{x}{\pi}\right)\left(1 + \frac{x}{\pi}\right)\left(1 - \frac{x}{2\pi}\right)\left(1 + \frac{x}{2\pi}\right)\left(1 - \frac{x}{3\pi}\right)\left(1 + \frac{x}{3\pi}\right) \cdots$$</p>
+<p>Pairing the factors:</p>
+<p>$$\frac{\sin x}{x} = \left(1 - \frac{x^2}{\pi^2}\right)\left(1 - \frac{x^2}{4\pi^2}\right)\left(1 - \frac{x^2}{9\pi^2}\right) \cdots$$</p>
+<p>Therefore:</p>
+<p>$$\frac{\sin x}{x} = \prod_{n=1}^{\infty} \left(1 - \frac{x^2}{n^2\pi^2}\right) \quad \quad (2)$$</p>
+<h3 id="extracting-the-coefficient">Extracting the Coefficient</h3>
+<p>Expanding the infinite product (2):</p>
+<p>$$\frac{\sin x}{x} = 1 - \left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots\right)x^2 + \text{(higher order terms)}$$</p>
+<p>$$\frac{\sin x}{x} = 1 - \frac{1}{\pi^2}\left(\sum_{n=1}^{\infty}\frac{1}{n^2}\right)x^2 + \text{(higher order terms)} \quad \quad (3)$$</p>
+<p>Comparing the coefficient of $x^2$ in equations (1) and (3):</p>
+<p>From (1): coefficient is $-\frac{1}{6}$</p>
+<p>From (3): coefficient is $-\frac{1}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}$</p>
+<p>Therefore:</p>
+<p>$$-\frac{1}{6} = -\frac{1}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}$$</p>
+<p>Solving for the sum:</p>
+<p>$$\boxed{\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}}$$</p>
+<h3 id="eulers-leap-and-later-validation">Euler&rsquo;s Leap and Later Validation</h3>
+<p>Euler&rsquo;s argument involved several unjustified steps by the standards of 1735:</p>
+<ol>
+<li>Can an infinite product be treated like a polynomial factorization?</li>
+<li>Can we expand an infinite product and compare coefficients term-by-term?</li>
+<li>Does the series representation converge uniformly?</li>
+</ol>
+<p>It took over 100 years and the development of complex analysis (particularly Weierstrass&rsquo;s theory of entire functions) to rigorously justify Euler&rsquo;s approach. The key result is the <strong>Weierstrass factorization theorem</strong>:</p>
+<p><strong>Theorem (Weierstrass)</strong>: Every entire function can be represented as a product involving its zeros.</p>
+<p>For $\sin(\pi z)$, this gives:</p>
+<p>$$\sin(\pi z) = \pi z \prod_{n=1}^{\infty}\left(1-\frac{z^2}{n^2}\right)$$</p>
+<p>This validates Euler&rsquo;s factorization exactly!</p>
+<h2 id="proof-2-rigorous-proof-via-fourier-analysis">Proof 2: Rigorous Proof via Fourier Analysis</h2>
+<p>We now present a completely rigorous proof using Parseval&rsquo;s identity from Fourier analysis.</p>
+<h3 id="fourier-series-preliminaries">Fourier Series Preliminaries</h3>
+<p><strong>Definition</strong>: For a function $f \in L^2[-\pi, \pi]$, the Fourier series is:</p>
+<p>$$f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty}\left(a_n\cos(nx) + b_n\sin(nx)\right)$$</p>
+<p>where the Fourier coefficients are:</p>
+<p>$$a_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos(nx),dx$$</p>
+<p>$$b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\sin(nx),dx$$</p>
+<h3 id="parsevals-identity">Parseval&rsquo;s Identity</h3>
+<p><strong>Theorem (Parseval&rsquo;s Identity)</strong>: If $f \in L^2[-\pi,\pi]$ with Fourier coefficients $a_n, b_n$, then:</p>
+<p>$$\frac{1}{\pi}\int_{-\pi}^{\pi}|f(x)|^2,dx = \frac{a_0^2}{2} + \sum_{n=1}^{\infty}(a_n^2 + b_n^2)$$</p>
+<p>This is the $L^2$ analogue of the Pythagorean theorem - the &ldquo;energy&rdquo; in the function equals the sum of &ldquo;energies&rdquo; in its frequency components.</p>
+<h3 id="application-to-fx--x">Application to $f(x) = x$</h3>
+<p>Consider $f(x) = x$ on $[-\pi, \pi]$.</p>
+<p><strong>Computing $a_n$</strong>:</p>
+<p>$$a_n = \frac{1}{\pi}\int_{-\pi}^{\pi} x\cos(nx),dx$$</p>
+<p>Since $x\cos(nx)$ is an odd function:</p>
+<p>$$a_n = 0 \quad \text{for all } n \geq 0$$</p>
+<p><strong>Computing $b_n$</strong>:</p>
+<p>$$b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} x\sin(nx),dx$$</p>
+<p>Using integration by parts with $u = x$, $dv = \sin(nx),dx$:</p>
+<p>$$b_n = \frac{1}{\pi}\left[\left.-\frac{x\cos(nx)}{n}\right|<em>{-\pi}^{\pi} + \frac{1}{n}\int</em>{-\pi}^{\pi}\cos(nx),dx\right]$$</p>
+<p>The integral of $\cos(nx)$ over a full period vanishes:</p>
+<p>$$b_n = \frac{1}{\pi}\left[-\frac{\pi\cos(n\pi)}{n} + \frac{\pi\cos(-n\pi)}{n}\right]$$</p>
+<p>$$b_n = \frac{1}{\pi} \cdot \frac{-2\pi\cos(n\pi)}{n} = \frac{-2\cos(n\pi)}{n} = \frac{2(-1)^{n+1}}{n}$$</p>
+<p>Therefore, the Fourier series for $f(x) = x$ is:</p>
+<p>$$x \sim 2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(nx)$$</p>
+<h3 id="applying-parsevals-identity">Applying Parseval&rsquo;s Identity</h3>
+<p>The left-hand side:</p>
+<p>$$\frac{1}{\pi}\int_{-\pi}^{\pi}x^2,dx = \frac{1}{\pi} \cdot \frac{2\pi^3}{3} = \frac{2\pi^2}{3}$$</p>
+<p>The right-hand side (with $a_n = 0$ for all $n$):</p>
+<p>$$\sum_{n=1}^{\infty}b_n^2 = \sum_{n=1}^{\infty}\left(\frac{2(-1)^{n+1}}{n}\right)^2 = 4\sum_{n=1}^{\infty}\frac{1}{n^2}$$</p>
+<p>By Parseval&rsquo;s identity:</p>
+<p>$$\frac{2\pi^2}{3} = 4\sum_{n=1}^{\infty}\frac{1}{n^2}$$</p>
+<p>Therefore:</p>
+<p>$$\boxed{\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}}$$</p>
+<h3 id="why-this-proof-is-rigorous">Why This Proof is Rigorous</h3>
+<p>This proof relies only on:</p>
+<ol>
+<li>Integration by parts (elementary calculus)</li>
+<li>Parseval&rsquo;s identity (proven rigorously in functional analysis)</li>
+<li>The convergence of Fourier series for $f(x) = x$ (well-established)</li>
+</ol>
+<p>No questionable manipulations of infinite products are required.</p>
+<h2 id="proof-3-complex-analysis-via-residues">Proof 3: Complex Analysis via Residues</h2>
+<p>For completeness, we sketch a proof using the calculus of residues.</p>
+<h3 id="the-cotangent-function">The Cotangent Function</h3>
+<p>Consider the function:</p>
+<p>$$g(z) = \frac{\pi \cot(\pi z)}{z^2}$$</p>
+<p>This function has:</p>
+<ul>
+<li>A pole of order 2 at $z = 0$</li>
+<li>Simple poles at $z = n$ for all $n \in \mathbb{Z} \setminus {0}$</li>
+</ul>
+<h3 id="residue-calculation">Residue Calculation</h3>
+<p>The residue at $z = n$ (for $n \neq 0$) is:</p>
+<p>$$\text{Res}<em>{z=n}(g) = \lim</em>{z \to n}(z-n)\frac{\pi\cot(\pi z)}{z^2} = \frac{1}{n^2}$$</p>
+<h3 id="contour-integration">Contour Integration</h3>
+<p>Consider a square contour $C_N$ with vertices at $(\pm N \pm Ni)\pi$ where $N$ is a half-integer.</p>
+<p>By the residue theorem:</p>
+<p>$$\oint_{C_N}g(z),dz = 2\pi i \sum_{\text{poles inside}} \text{Res}$$</p>
+<p>As $N \to \infty$, the integral over $C_N$ vanishes (which can be proven by bounding $|\cot(\pi z)|$), and we obtain:</p>
+<p>$$0 = 2\pi i \left(\text{Res}<em>{z=0} + 2\sum</em>{n=1}^{\infty}\frac{1}{n^2}\right)$$</p>
+<p>The residue at $z=0$ can be computed via Laurent expansion:</p>
+<p>$$\text{Res}_{z=0}(g) = -\frac{\pi^2}{3}$$</p>
+<p>Therefore:</p>
+<p>$$0 = 2\pi i\left(-\frac{\pi^2}{3} + 2\sum_{n=1}^{\infty}\frac{1}{n^2}\right)$$</p>
+<p>$$\boxed{\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}}$$</p>
+<h2 id="connection-to-the-riemann-zeta-function">Connection to the Riemann Zeta Function</h2>
+<p>The Basel problem is the special case $s=2$ of the <strong>Riemann zeta function</strong>:</p>
+<p>$$\zeta(s) = \sum_{n=1}^{\infty}\frac{1}{n^s} \quad \text{for } \Re(s) &gt; 1$$</p>
+<p>Thus:</p>
+<p>$$\zeta(2) = \frac{\pi^2}{6}$$</p>
+<h3 id="eulers-generalizations">Euler&rsquo;s Generalizations</h3>
+<p>Euler didn&rsquo;t stop at $\zeta(2)$. He computed:</p>
+<p>$$\zeta(4) = \sum_{n=1}^{\infty}\frac{1}{n^4} = \frac{\pi^4}{90}$$</p>
+<p>$$\zeta(6) = \sum_{n=1}^{\infty}\frac{1}{n^6} = \frac{\pi^6}{945}$$</p>
+<p>$$\zeta(8) = \sum_{n=1}^{\infty}\frac{1}{n^8} = \frac{\pi^8}{9450}$$</p>
+<p>In general, for even integers, Euler found:</p>
+<p>$$\zeta(2k) = \frac{(-1)^{k+1}(2\pi)^{2k}B_{2k}}{2(2k)!}$$</p>
+<p>where $B_{2k}$ are the <strong>Bernoulli numbers</strong>.</p>
+<h3 id="the-odd-zeta-values-mystery">The Odd Zeta Values Mystery</h3>
+<p>Remarkably, we still don&rsquo;t have closed forms for odd values! For instance:</p>
+<p>$$\zeta(3) = \sum_{n=1}^{\infty}\frac{1}{n^3} = 1.202056903159594\ldots$$</p>
+<p>This is <strong>Apéry&rsquo;s constant</strong>, proven irrational by Roger Apéry in 1979, but we don&rsquo;t know if it can be expressed in terms of $\pi$ and other known constants.</p>
+<p>The odd zeta values remain one of the deepest mysteries in number theory.</p>
+<h2 id="eulers-product-formula">Euler&rsquo;s Product Formula</h2>
+<p>Euler discovered a profound connection between $\zeta(s)$ and prime numbers:</p>
+<p>$$\zeta(s) = \prod_{p \text{ prime}}\frac{1}{1-p^{-s}}$$</p>
+<p>For $s=2$:</p>
+<p>$$\frac{\pi^2}{6} = \prod_{p \text{ prime}}\frac{1}{1-p^{-2}} = \frac{1}{1-2^{-2}} \cdot \frac{1}{1-3^{-2}} \cdot \frac{1}{1-5^{-2}} \cdots$$</p>
+<p>$$\frac{\pi^2}{6} = \frac{4}{3} \cdot \frac{9}{8} \cdot \frac{25}{24} \cdot \frac{49}{48} \cdots$$</p>
+<p>This equation connects:</p>
+<ul>
+<li>The transcendental number $\pi$</li>
+<li>All natural numbers (via $\sum 1/n^2$)</li>
+<li>All prime numbers (via the product)</li>
+</ul>
+<p>It&rsquo;s a statement of breathtaking unity in mathematics.</p>
+<h2 id="probability-interpretation">Probability Interpretation</h2>
+<p>The Basel problem has a beautiful probabilistic interpretation:</p>
+<p><strong>Theorem</strong>: The probability that two randomly chosen positive integers are coprime (share no common factors) is:</p>
+<p>$$P(\gcd(m,n)=1) = \frac{6}{\pi^2} \approx 0.6079$$</p>
+<p><strong>Proof Sketch</strong>: Using Euler&rsquo;s product:</p>
+<p>$$\frac{1}{\zeta(2)} = \prod_{p}\left(1-\frac{1}{p^2}\right)$$</p>
+<p>The probability that $p$ does not divide both $m$ and $n$ is $1-1/p^2$. For all primes:</p>
+<p>$$P(\gcd(m,n)=1) = \prod_p\left(1-\frac{1}{p^2}\right) = \frac{1}{\zeta(2)} = \frac{6}{\pi^2}$$</p>
+<p>Thus, $\pi$ appears in a purely discrete probability problem!</p>
+<h2 id="modern-significance">Modern Significance</h2>
+<h3 id="foundation-for-riemann-hypothesis">Foundation for Riemann Hypothesis</h3>
+<p>Euler&rsquo;s work directly inspired Riemann&rsquo;s 1859 paper extending $\zeta(s)$ to complex values. The <strong>Riemann Hypothesis</strong> - the most important unsolved problem in mathematics - concerns the zeros of $\zeta(s)$ in the complex plane.</p>
+<h3 id="applications">Applications</h3>
+<p>The techniques developed to solve the Basel problem are now fundamental to:</p>
+<ul>
+<li><strong>Analytic Number Theory</strong>: Distribution of primes</li>
+<li><strong>Quantum Field Theory</strong>: Regularization and renormalization</li>
+<li><strong>Statistical Mechanics</strong>: Partition functions</li>
+<li><strong>Random Matrix Theory</strong>: Eigenvalue distributions</li>
+<li><strong>Fourier Analysis</strong>: Signal processing and quantum mechanics</li>
+</ul>
+<h2 id="beautiful-consequences">Beautiful Consequences</h2>
+<h3 id="sum-of-odd-reciprocal-squares">Sum of Odd Reciprocal Squares</h3>
+<p>$$\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2} = \frac{\pi^2}{8}$$</p>
+<p><strong>Proof</strong>:</p>
+<p>$$\sum_{n=1}^{\infty}\frac{1}{n^2} = \sum_{n=1}^{\infty}\frac{1}{(2n)^2} + \sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}$$</p>
+<p>$$\frac{\pi^2}{6} = \frac{1}{4}\sum_{n=1}^{\infty}\frac{1}{n^2} + \sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}$$</p>
+<p>$$\frac{\pi^2}{6} = \frac{\pi^2}{24} + \sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}$$</p>
+<p>$$\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2} = \frac{\pi^2}{8}$$</p>
+<h3 id="alternating-series">Alternating Series</h3>
+<p>$$\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2} = \frac{\pi^2}{12}$$</p>
+<p>This follows from considering the Fourier series of $f(x) = x$ on $[0, \pi]$.</p>
+<h2 id="reflection-on-mathematical-beauty">Reflection on Mathematical Beauty</h2>
+<p>The Basel problem exemplifies mathematical beauty through:</p>
+<ol>
+<li>
+<p><strong>Unexpected Connections</strong>: Why should summing reciprocal squares involve $\pi$?</p>
+</li>
+<li>
+<p><strong>Multiple Pathways</strong>: The problem can be solved via analysis, algebra, complex analysis, probability, and Fourier theory - each revealing different insights.</p>
+</li>
+<li>
+<p><strong>Generative Power</strong>: Solving this one problem opened entirely new fields (Riemann zeta function, distribution of primes, modern analysis).</p>
+</li>
+<li>
+<p><strong>Elegance</strong>: The answer $\pi^2/6$ is shockingly simple given the infinite complexity of the sum.</p>
+</li>
+<li>
+<p><strong>Historical Drama</strong>: 90 years of failure by giants, then breakthrough by a 28-year-old.</p>
+</li>
+</ol>
+<p>As mathematician William Dunham wrote: <em>&ldquo;Euler&rsquo;s solution to the Basel problem is one of those little gems that brighten the history of mathematics.&rdquo;</em></p>
+<h2 id="computational-verification">Computational Verification</h2>
+<p>Modern computation confirms:</p>
+<p>$$\sum_{n=1}^{10^6}\frac{1}{n^2} \approx 1.644933$$</p>
+<p>$$\frac{\pi^2}{6} \approx 1.644934$$</p>
+<p>The series converges slowly - to get $k$ decimal places requires roughly $10^k$ terms. But Euler&rsquo;s formula gives infinite precision instantly.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Basel problem stands as a monument to human mathematical achievement. What began as Pietro Mengoli&rsquo;s curious question became:</p>
+<ul>
+<li>Euler&rsquo;s pathway to fame</li>
+<li>Foundation for the Riemann zeta function</li>
+<li>Inspiration for modern analysis and number theory</li>
+<li>A bridge between discrete and continuous mathematics</li>
+<li>One of the most beautiful results in all of mathematics</li>
+</ul>
+<p>The fact that:</p>
+<p>$$1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \frac{1}{25} + \cdots = \frac{\pi^2}{6}$$</p>
+<p>continues to inspire wonder in mathematicians and students alike, nearly 300 years after Euler&rsquo;s breakthrough.</p>
+<h2 id="further-exploration">Further Exploration</h2>
+<p><strong>For those wanting to go deeper:</strong></p>
+<ol>
+<li><strong>Prove</strong> $\zeta(4) = \pi^4/90$ using similar methods</li>
+<li><strong>Explore</strong> the functional equation of $\zeta(s)$</li>
+<li><strong>Study</strong> Bernoulli numbers and their connection to zeta values</li>
+<li><strong>Investigate</strong> why odd zeta values resist closed forms</li>
+<li><strong>Learn</strong> about L-functions and modern generalizations</li>
+</ol>
+<p>The Basel problem is not just a beautiful result - it&rsquo;s a gateway to some of the deepest mathematics ever developed.</p>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube_fit/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		1687 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/euler_conjecture/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        The Counterexample to Euler&#39;s Conjecture on Sums of Like Powers
+    </a>
+    
+    
+    <a class="flex-grow-0" href="/posts/mathematical_theory_of_communication/">
+        [Paper Exploration] A Mathematical Theory of Communication
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+<div class="font-serif pb-2 flex align-start leading-loose">
+	<span class="heading pr-6 leading-loose">Related</span>
+	<span >
+		
+			<a href="/posts/euler_conjecture/">The Counterexample to Euler&#39;s Conjecture on Sums of Like Powers</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/mathematical_theory_of_communication/">[Paper Exploration] A Mathematical Theory of Communication</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/data_in_news_revisited/">Data in News Revisited</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/devs_in_nepal/">Devs in Nepal</a>&nbsp;&nbsp;&#47;&nbsp;
+		
+			<a href="/posts/data_in_news/">Data in News</a>
+		
+</span>
+</div>
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>
