@@ -160,7 +160,6 @@
 <p><strong>Andrew Wiles (1953- )</strong>: British mathematician who proved Fermat&rsquo;s Last Theorem in 1995 after seven years of secretive work, using sophisticated techniques from elliptic curves and modular forms. His proof, one of the most celebrated mathematical achievements of the 20th century, finally closed the door on Fermat&rsquo;s 358-year-old claim.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Andrew_wiles1-3.jpg/500px-Andrew_wiles1-3.jpg" alt=""></p>
 <p><strong>L.J. Lander &amp; T.R. Parkin (1960s)</strong>: American mathematicians who, using the CDC 6600 supercomputer, discovered the first counterexample to Euler&rsquo;s conjecture in 1966, publishing their result in what may be the shortest research paper in mathematical history - just two sentences that demolished nearly two centuries of belief.</p>
-<p><img src="https://cdn8.openculture.com/wp-content/uploads/2015/04/shortest-math-paper.jpg" alt=""></p>
 <p><strong>Noam Elkies (1966- )</strong>: American mathematician at Harvard University who, at age 22, became the youngest full professor in Harvard&rsquo;s history. In 1988, Elkies revolutionized the study of Diophantine equations by constructing an infinite family of counterexamples to Euler&rsquo;s conjecture using elliptic curves, transforming a discrete arithmetic problem into elegant geometry.</p>
 <h2 id="httpsuploadwikimediaorgwikipediacommonsthumb22bnoam_elkiesjpg330px-noam_elkiesjpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Noam_Elkies.jpg/330px-Noam_Elkies.jpg" alt=""></h2>
 <h2 id="a-simple-question-1">A Simple Question</h2>
@@ -263,6 +262,7 @@ $$7 \to 22 \to 11 \to 34 \to 17 \to 52 \to 26 \to 13 \to 40 \to 20 \to 10 \to 5 
 $$27^5 + 84^5 + 110^5 + 133^5 = 144^5$$
 <em>as the smallest instance in which four fifth powers sum to a fifth power. This is a counterexample to a conjecture by Euler that at least $n$ $n$-th powers are required to sum to an $n$-th power, $n&gt;2$.&rdquo;</em></p>
 </blockquote>
+<p><img src="https://cdn8.openculture.com/wp-content/uploads/2015/04/shortest-math-paper.jpg" alt=""></p>
 <p>That&rsquo;s it. Two sentences. One equation. 197 years of mathematical belief&hellip; demolished.</p>
 <h2 id="wait-lets-check-that">Wait, Let&rsquo;s Check That</h2>
 <p>The natural instinct: &ldquo;Really? Let&rsquo;s verify that ourselves.&rdquo;</p>
@@ -317,16 +317,11 @@ $$133^5 = 41{,}615{,}795{,}893$$</p>
 <h2 id="elkies-breakthrough-when-geometry-meets-number-theory">Elkies&rsquo; Breakthrough: When Geometry Meets Number Theory</h2>
 <p>Elkies discovered:</p>
 <p>$$2{,}682{,}440^4 + 15{,}365{,}639^4 + 18{,}796{,}760^4 = 20{,}615{,}673^4$$</p>
-<p>Let&rsquo;s verify the magnitudes (the actual numbers are huge):</p>
-<p>$$95800^4 ≈ 8.425 * 10^{19}$$
-$$217519^4 ≈ 2.241 \times 10^{21}$$
-$$414560^4 ≈ 2.952 \times 10^{22}$$</p>
-<p>Sum: approximately $3.185 \times 10^{22}$</p>
-<p>And $422481^4 \approx 3.185 \times 10^{22}$ ✓</p>
 <p>But what&rsquo;s remarkable isn&rsquo;t just that Elkies found this. It&rsquo;s <strong>how</strong> he found it.</p>
 <h3 id="the-trick-turn-arithmetic-into-geometry">The Trick: Turn Arithmetic into Geometry</h3>
-<p>Here&rsquo;s the key insight (and this is where things get sophisticated):</p>
-<p>The equation $a^4 + b^4 + c^4 = d^4$ looks like an arithmetic puzzle. But Elkies realized you can transform it into a <strong>geometric problem</strong>.</p>
+<p>Here&rsquo;s the key insight (and this is where things get sophisticated):
+why
+The equation $a^4 + b^4 + c^4 = d^4$ looks like an arithmetic puzzle. But Elkies realized you can transform it into a <strong>geometric problem</strong>.</p>
 <p>Divide everything by $d^4$:</p>
 <p>$$\left(\frac{a}{d}\right)^4 + \left(\frac{b}{d}\right)^4 + \left(\frac{c}{d}\right)^4 = 1$$</p>
 <p>Let $r = a/d$, $s = b/d$, $t = c/d$. Now we&rsquo;re looking for <strong>rational numbers</strong> (fractions!) that satisfy:</p>
@@ -534,120 +529,6 @@ $$414560^4 = 29{,}514{,}790{,}517{,}001{,}318{,}976{,}000$$</p>
 <li>All others: Genus $\geq 2$ (Faltings&rsquo; theorem applies)</li>
 </ul>
 <p>This explains why certain Diophantine equations are tractable while others aren&rsquo;t!</p>
-<h2 id="why-you-should-care-even-if-youre-not-a-mathematician">Why You Should Care (Even If You&rsquo;re Not a Mathematician)</h2>
-<h3 id="1-the-humility-lesson">1. The Humility Lesson</h3>
-<p>Even <strong>Leonhard Euler</strong> - one of history&rsquo;s greatest mathematical minds - made wrong conjectures that stood for 197 years.</p>
-<p>This teaches us:</p>
-<ul>
-<li><strong>Question authority</strong> (respectfully)</li>
-<li><strong>Verify claims</strong> (even from experts)</li>
-<li><strong>Update beliefs</strong> when evidence contradicts them</li>
-</ul>
-<h3 id="2-the-power-of-computation">2. The Power of Computation</h3>
-<p>Lander and Parkin&rsquo;s success came from combining:</p>
-<ul>
-<li>Mathematical insight (knowing what to search for)</li>
-<li>Computational power (ability to execute the search)</li>
-<li>Persistence (not giving up when searches took time)</li>
-</ul>
-<p>These same principles apply to modern data science, AI, and software engineering.</p>
-<h3 id="3-the-joy-of-discovery">3. The Joy of Discovery</h3>
-<p>There&rsquo;s something deeply satisfying about finding a counterexample. It&rsquo;s like solving a mystery.</p>
-<p>You don&rsquo;t need to be a professional mathematician to experience this. Play with numbers. Look for patterns. Try to break conjectures.</p>
-<p><strong>Mathematics is a playground, not a priesthood.</strong></p>
-<h3 id="4-unsolved-problems-are-everywhere">4. Unsolved Problems Are Everywhere</h3>
-<p>Even in 2025, we don&rsquo;t know if Euler&rsquo;s conjecture holds for $k \geq 6$.</p>
-<p>This isn&rsquo;t ancient history. This is <strong>active mathematics</strong>. The next breakthrough could come from:</p>
-<ul>
-<li>A computer scientist with a clever algorithm</li>
-<li>A high school student who notices a pattern</li>
-<li>An engineer applying machine learning to search strategies</li>
-<li><strong>You</strong></li>
-</ul>
-<h2 id="a-final-challenge">A Final Challenge</h2>
-<p>Here&rsquo;s the bottom line:</p>
-<p><strong>The $k=6$ counterexample might be out there, waiting.</strong></p>
-<p>To search for it:</p>
-<ol>
-<li><strong>Start simple</strong>: Check combinations where $f &lt; 10{,}000$</li>
-<li><strong>Get systematic</strong>: Write a program to check more efficiently</li>
-<li><strong>Study the pattern</strong>: Why do $k=4$ and $k=5$ have counterexamples around similar magnitudes?</li>
-<li><strong>Think geometrically</strong>: Can an elliptic curve parametrization be found for $k=6$?</li>
-</ol>
-<p>Or maybe there&rsquo;s <strong>no counterexample</strong> for $k=6$. Maybe Euler&rsquo;s conjecture holds from $k=6$ onward.</p>
-<p><strong>Proving</strong> that would be even more impressive than finding a counterexample!</p>
-<p>Either way, this problem sits at the intersection of:</p>
-<ul>
-<li>Elementary arithmetic (anyone can understand it)</li>
-<li>Computational exploration (accessible with modern tools)</li>
-<li>Deep mathematics (connects to cutting-edge research)</li>
-</ul>
-<p><strong>That&rsquo;s the beauty of mathematics</strong>: Simple questions. Deep answers. Infinite possibilities.</p>
-<h3 id="the-lander-parkin-selfridge-conjecture-1967">The Lander-Parkin-Selfridge Conjecture (1967)</h3>
-<p>Motivated by their counterexample, Lander, Parkin, and John Selfridge proposed a <strong>refined conjecture</strong> in 1967:</p>
-<p><strong>LPS Conjecture</strong>: If</p>
-<p>$$\sum_{i=1}^{n} a_i^k = \sum_{j=1}^{m} b_j^k$$</p>
-<p>where $a_i \neq b_j$ for all $i, j$, then:</p>
-<p>$$m + n \geq k$$</p>
-<p>In the special case $m=1$ (one term on the right), this reduces to:</p>
-<p>$$n \geq k-1$$</p>
-<p><strong>This is weaker than Euler&rsquo;s original conjecture</strong> (which required $n \geq k$), but it fits all known counterexamples:</p>
-<ul>
-<li>For $k=4$: We have $n=3$, and $3 = 4-1$ ✓</li>
-<li>For $k=5$: We have $n=4$, and $4 = 5-1$ ✓</li>
-</ul>
-<p><strong>Status</strong>: No counterexamples to the LPS conjecture are known! It may be the &ldquo;correct&rdquo; generalization of Fermat&rsquo;s Last Theorem.</p>
-<h3 id="the-extended-euler-conjecture">The Extended Euler Conjecture</h3>
-<p>R.L. Ekl proposed (1998) an even more general framework:</p>
-<p>If</p>
-<p>$$\sum_{i=1}^{n} a_i^k = \sum_{j=1}^{m} b_j^k$$</p>
-<p>Define:</p>
-<p>$$\delta(k) = \min(m+n)$$</p>
-<p>over all known solutions. Then the <strong>Extended Euler Conjecture</strong> states:</p>
-<p>$$\delta(k) \geq k$$</p>
-<p>Current values:</p>
-<table>
-<thead>
-<tr>
-<th>$k$</th>
-<th>$\delta(k)$</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3</td>
-<td>6</td>
-<td>Equal to $k$</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5</td>
-<td>Equal to $k+1$</td>
-</tr>
-<tr>
-<td>5</td>
-<td>5</td>
-<td>Equal to $k$</td>
-</tr>
-<tr>
-<td>6</td>
-<td>6</td>
-<td>Equal to $k$</td>
-</tr>
-<tr>
-<td>7</td>
-<td>8</td>
-<td>Greater than $k$</td>
-</tr>
-<tr>
-<td>8</td>
-<td>8</td>
-<td>Equal to $k$</td>
-</tr>
-</tbody>
-</table>
-<p>No counterexamples known!</p>
 <h2 id="connections-to-other-famous-conjectures">Connections to Other Famous Conjectures</h2>
 <p>The techniques and ideas surrounding Euler&rsquo;s conjecture connect to numerous deep problems in mathematics:</p>
 <h3 id="1-fermats-last-theorem">1. Fermat&rsquo;s Last Theorem</h3>
@@ -692,107 +573,6 @@ $$414560^4 = 29{,}514{,}790{,}517{,}001{,}318{,}976{,}000$$</p>
 <p>$$\frac{1}{x^n} + \frac{1}{y^n} = \frac{1}{z^n}$$</p>
 <p>is conjectured to have only finitely many primitive solutions for each $n \geq 3$.</p>
 <p><strong>Connection</strong>: The counterexamples to Euler&rsquo;s conjecture show how adding terms (rather than taking reciprocals) affects solvability.</p>
-<h2 id="the-power-of-computational-mathematics">The Power of Computational Mathematics</h2>
-<h3 id="before-computers">Before Computers</h3>
-<p>Prior to the 1960s, searching for counterexamples meant:</p>
-<ul>
-<li><strong>Manual calculation</strong> of powers</li>
-<li><strong>Systematic but limited</strong> searches</li>
-<li><strong>Heavy reliance on theoretical constraints</strong> to narrow search spaces</li>
-</ul>
-<p>Euler himself computed numerous power sums, but the sheer magnitude of the search space made finding counterexamples essentially impossible.</p>
-<h3 id="the-cdc-6600-era">The CDC 6600 Era</h3>
-<p>The CDC 6600 enabled:</p>
-<ul>
-<li>Checking <strong>billions</strong> of combinations</li>
-<li><strong>Systematic exhaustive search</strong> within bounded regions</li>
-<li>Discovery of counterexamples that would take humans <strong>centuries</strong> to find by hand</li>
-</ul>
-<h3 id="modern-computational-searches">Modern Computational Searches</h3>
-<p>Today, <strong>distributed computing projects</strong> search for:</p>
-<ul>
-<li>Higher-power counterexamples (k ≥ 6)</li>
-<li>Smaller solutions for known cases</li>
-<li>Related Diophantine equations</li>
-</ul>
-<p>Projects like <a href="http://euler.free.fr/">Jean-Charles Meyrignac&rsquo;s computing project</a> systematically search for &ldquo;minimal equal sums of like powers.&rdquo;</p>
-<h2 id="why-this-matters">Why This Matters</h2>
-<h3 id="1-humility-in-mathematics">1. Humility in Mathematics</h3>
-<p>Even <strong>Leonhard Euler</strong> - arguably the greatest mathematician who ever lived - could make incorrect conjectures. Mathematics progresses through:</p>
-<ul>
-<li><strong>Bold conjectures</strong> (Euler)</li>
-<li><strong>Rigorous proof or disproof</strong> (Lander &amp; Parkin, Elkies)</li>
-<li><strong>Refined understanding</strong> (LPS conjecture)</li>
-</ul>
-<h3 id="2-the-role-of-computation">2. The Role of Computation</h3>
-<p>Lander and Parkin&rsquo;s paper demonstrates that <strong>computation is a legitimate mathematical tool</strong>:</p>
-<ul>
-<li>Disproof by counterexample is <strong>rigorous</strong></li>
-<li>Computers can explore spaces <strong>humans cannot</strong></li>
-<li>Computational discoveries often inspire <strong>new theory</strong> (like Elkies&rsquo; elliptic curve approach)</li>
-</ul>
-<h3 id="3-connections-between-fields">3. Connections Between Fields</h3>
-<p>Elkies&rsquo; solution shows how <strong>seemingly unrelated areas</strong> of mathematics connect:</p>
-<ul>
-<li><strong>Diophantine equations</strong> (number theory)</li>
-<li><strong>Elliptic curves</strong> (algebraic geometry)</li>
-<li><strong>Group theory</strong> (abstract algebra)</li>
-</ul>
-<p>This interconnectedness is a hallmark of deep mathematics.</p>
-<h3 id="4-open-problems-abound">4. Open Problems Abound</h3>
-<p>Despite 250+ years of study:</p>
-<ul>
-<li>We don&rsquo;t know if Euler&rsquo;s conjecture holds for <strong>any</strong> $k \geq 6$</li>
-<li>We don&rsquo;t know if the LPS conjecture is true</li>
-<li>We don&rsquo;t understand the <strong>density</strong> of solutions</li>
-</ul>
-<p>Mathematics remains full of accessible, well-formulated <strong>open problems</strong>.</p>
-<h2 id="a-challenge-for-you">A Challenge for You</h2>
-<p>Can you find a counterexample to Euler&rsquo;s conjecture for $k=6$?</p>
-<p>That is, find positive integers $a, b, c, d, e, f$ such that:</p>
-<p>$$a^6 + b^6 + c^6 + d^6 + e^6 = f^6$$</p>
-<p>If you do, <strong>you&rsquo;ll make mathematical history!</strong></p>
-<p>Current computational searches have checked values of $f$ up to the millions with no success. But perhaps there&rsquo;s a clever theoretical approach, like Elkies used for fourth powers&hellip;</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>The story of Euler&rsquo;s conjecture encapsulates everything beautiful about mathematics:</p>
-<ul>
-<li><strong>Great minds</strong> proposing bold ideas</li>
-<li><strong>Centuries</strong> of investigation</li>
-<li><strong>Technology</strong> enabling breakthrough discoveries</li>
-<li><strong>Two sentences</strong> destroying 197 years of belief</li>
-<li><strong>New conjectures</strong> rising from the ruins</li>
-<li><strong>Open questions</strong> still beckoning</li>
-</ul>
-<p>The counterexample $27^5 + 84^5 + 110^5 + 133^5 = 144^5$ is not just a curious arithmetic identity - it&rsquo;s a reminder that in mathematics, <strong>nothing is certain until proven</strong>, and even our greatest heroes can be wrong.</p>
-<p>As for whether Euler&rsquo;s conjecture holds for sixth and higher powers? We simply <strong>don&rsquo;t know</strong>.</p>
-<p>And that&rsquo;s what makes mathematics endlessly fascinating.</p>
-<hr>
-<h2 id="further-reading">Further Reading</h2>
-<ul>
-<li>
-<p><strong>Original Papers</strong>:</p>
-<ul>
-<li>Lander &amp; Parkin (1966): &ldquo;Counterexample to Euler&rsquo;s conjecture on sums of like powers&rdquo; - <em>Bull. Amer. Math. Soc.</em></li>
-<li>Elkies (1988): &ldquo;On $A^4 + B^4 + C^4 = D^4$&rdquo; - <em>Mathematics of Computation</em></li>
-</ul>
-</li>
-<li>
-<p><strong>Books</strong>:</p>
-<ul>
-<li>Wiles (1995): &ldquo;Modular elliptic curves and Fermat&rsquo;s Last Theorem&rdquo;</li>
-<li>Dunham (1999): &ldquo;Euler: The Master of Us All&rdquo;</li>
-<li>Guy (2004): &ldquo;Unsolved Problems in Number Theory&rdquo;</li>
-</ul>
-</li>
-<li>
-<p><strong>Online Resources</strong>:</p>
-<ul>
-<li><a href="http://euler.free.fr/">Jean-Charles Meyrignac&rsquo;s computational search</a></li>
-<li><a href="https://people.math.harvard.edu/~elkies/">Elkies&rsquo; catalog of elliptic curves</a></li>
-<li><a href="https://oeis.org/A347773">OEIS A347773</a>: Sequences related to sums of like powers</li>
-</ul>
-</li>
-</ul>
 </div>
 	</section>
 
@@ -936,7 +716,7 @@ $$414560^4 = 29{,}514{,}790{,}517{,}001{,}318{,}976{,}000$$</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		4989 words in this page.
+		3913 words in this page.
 	</div>
 </div>
 
