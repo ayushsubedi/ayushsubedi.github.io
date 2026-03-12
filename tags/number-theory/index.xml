@@ -18,8 +18,6 @@
       
       <guid>https://ayushsubedi.github.io/posts/euler_conjecture/</guid>
       <description>&lt;h1 id=&#34;the-counterexample-to-eulers-conjecture-on-sums-of-like-powers&#34;&gt;The Counterexample to Euler&amp;rsquo;s Conjecture on Sums of Like Powers&lt;/h1&gt;
-&lt;h2 id=&#34;a-simple-question&#34;&gt;A Simple Question&lt;/h2&gt;
-&lt;h2 id=&#34;the-mathematicians-behind-the-story&#34;&gt;The Mathematicians Behind the Story&lt;/h2&gt;
 &lt;p&gt;Before diving into the mathematics, let&amp;rsquo;s meet the key players across three centuries:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Pierre de Fermat (1607-1665)&lt;/strong&gt;: French lawyer and amateur mathematician who famously claimed to have proved that $a^n + b^n = c^n$ has no integer solutions for $n &amp;gt; 2$, writing in a margin that he had &amp;ldquo;a truly marvelous proof&amp;rdquo; that was &amp;ldquo;too large to fit.&amp;rdquo; His claim went unproven for 358 years, becoming the most famous unsolved problem in mathematics.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/f/f3/Pierre_de_Fermat.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -30,7 +28,7 @@
 &lt;p&gt;&lt;strong&gt;L.J. Lander &amp;amp; T.R. Parkin (1960s)&lt;/strong&gt;: American mathematicians who, using the CDC 6600 supercomputer, discovered the first counterexample to Euler&amp;rsquo;s conjecture in 1966, publishing their result in what may be the shortest research paper in mathematical history - just two sentences that demolished nearly two centuries of belief.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Noam Elkies (1966- )&lt;/strong&gt;: American mathematician at Harvard University who, at age 22, became the youngest full professor in Harvard&amp;rsquo;s history. In 1988, Elkies revolutionized the study of Diophantine equations by constructing an infinite family of counterexamples to Euler&amp;rsquo;s conjecture using elliptic curves, transforming a discrete arithmetic problem into elegant geometry.&lt;/p&gt;
 &lt;h2 id=&#34;httpsuploadwikimediaorgwikipediacommonsthumb22bnoam_elkiesjpg330px-noam_elkiesjpg&#34;&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Noam_Elkies.jpg/330px-Noam_Elkies.jpg&#34; alt=&#34;&#34;&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;a-simple-question-1&#34;&gt;A Simple Question&lt;/h2&gt;
+&lt;h2 id=&#34;a-simple-question&#34;&gt;A Simple Question&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s start with something that seems almost trivial:&lt;/p&gt;
 &lt;p&gt;Can three perfect squares add up to another perfect square?&lt;/p&gt;
 &lt;p&gt;Easy. The most famous example:&lt;/p&gt;
