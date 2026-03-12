@@ -6,51 +6,24 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Analysis</title>
-      <link>https://ayushsubedi.github.io/tags/analysis/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Communication</title>
-      <link>https://ayushsubedi.github.io/tags/communication/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/communication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Computational-Mathematics</title>
       <link>https://ayushsubedi.github.io/tags/computational-mathematics/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/computational-mathematics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Culture</title>
-      <link>https://ayushsubedi.github.io/tags/culture/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/culture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Diophantine-Equations</title>
       <link>https://ayushsubedi.github.io/tags/diophantine-equations/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/diophantine-equations/</guid>
       <description></description>
@@ -59,79 +32,106 @@
     <item>
       <title>Euler</title>
       <link>https://ayushsubedi.github.io/tags/euler/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/euler/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Fourier-Analysis</title>
-      <link>https://ayushsubedi.github.io/tags/fourier-analysis/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/fourier-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gaming</title>
-      <link>https://ayushsubedi.github.io/tags/gaming/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/gaming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Information-Theory</title>
-      <link>https://ayushsubedi.github.io/tags/information-theory/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/information-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Mathematics</title>
       <link>https://ayushsubedi.github.io/tags/mathematics/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/mathematics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Nepal</title>
-      <link>https://ayushsubedi.github.io/tags/nepal/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/nepal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Number-Theory</title>
       <link>https://ayushsubedi.github.io/tags/number-theory/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/number-theory/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Communication</title>
+      <link>https://ayushsubedi.github.io/tags/communication/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/communication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information-Theory</title>
+      <link>https://ayushsubedi.github.io/tags/information-theory/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/information-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Paper</title>
       <link>https://ayushsubedi.github.io/tags/paper/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/paper/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Analysis</title>
+      <link>https://ayushsubedi.github.io/tags/analysis/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fourier-Analysis</title>
+      <link>https://ayushsubedi.github.io/tags/fourier-analysis/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/fourier-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Culture</title>
+      <link>https://ayushsubedi.github.io/tags/culture/</link>
+      <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/culture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gaming</title>
+      <link>https://ayushsubedi.github.io/tags/gaming/</link>
+      <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/gaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nepal</title>
+      <link>https://ayushsubedi.github.io/tags/nepal/</link>
+      <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/nepal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Web Development</title>
       <link>https://ayushsubedi.github.io/tags/web-development/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/web-development/</guid>
       <description></description>
