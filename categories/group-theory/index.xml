@@ -31,10 +31,12 @@
 &lt;p&gt;A function is &lt;strong&gt;injective&lt;/strong&gt; (one-to-one) if distinct inputs map to distinct outputs: $f(x) = f(y)$ implies $x = y$. It is &lt;strong&gt;surjective&lt;/strong&gt; (onto) if every element of $B$ is hit by at least one input. A function that is both injective and surjective is a &lt;strong&gt;bijection&lt;/strong&gt;. Bijections are perfectly reversible: if $f$ is a bijection, there exists an inverse function $f^{-1}: B \to A$ such that $f^{-1}(f(x)) = x$ for all $x \in A$.&lt;/p&gt;
 &lt;h3 id=&#34;permutations&#34;&gt;Permutations&lt;/h3&gt;
 &lt;p&gt;A &lt;strong&gt;permutation&lt;/strong&gt; of a set $S$ is a bijection $\sigma: S \to S$, a rearrangement of $S$ onto itself. For $S = {1, 2, 3}$, here is one permutation written in two-row notation:&lt;/p&gt;
-&lt;p&gt;$$\sigma = \begin{pmatrix} 1 &amp;amp; 2 &amp;amp; 3 \ 2 &amp;amp; 3 &amp;amp; 1 \end{pmatrix}$$&lt;/p&gt;
+&lt;p&gt;$$
+\sigma = \begin{pmatrix} 1 &amp;amp; 2 &amp;amp; 3 \\ 2 &amp;amp; 3 &amp;amp; 1 \end{pmatrix}
+$$&lt;/p&gt;
 &lt;p&gt;This means $\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$. In &lt;strong&gt;cycle notation&lt;/strong&gt;: $\sigma = (1\ 2\ 3)$, meaning $1 \mapsto 2 \mapsto 3 \mapsto 1$. An element that maps to itself is a &lt;strong&gt;fixed point&lt;/strong&gt; and is omitted from the cycle notation.&lt;/p&gt;
 &lt;p&gt;Here is another permutation of ${1, 2, 3, 4}$:&lt;/p&gt;
-&lt;p&gt;$$\tau = \begin{pmatrix} 1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4 \ 1 &amp;amp; 4 &amp;amp; 2 &amp;amp; 3 \end{pmatrix} = (2\ 4\ 3)$$&lt;/p&gt;
+&lt;p&gt;$$\tau = \begin{pmatrix} 1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4 \\ 1 &amp;amp; 4 &amp;amp; 2 &amp;amp; 3 \end{pmatrix} = (2\ 4\ 3)$$&lt;/p&gt;
 &lt;p&gt;Element 1 is a fixed point. Elements 2, 4, 3 cycle among themselves.&lt;/p&gt;
 &lt;p&gt;The set of all permutations of an $n$-element set is called $S_n$, the &lt;strong&gt;symmetric group&lt;/strong&gt; on $n$ elements. It has exactly $n!$ elements.&lt;/p&gt;
 &lt;p&gt;$$|S_n| = n!$$&lt;/p&gt;

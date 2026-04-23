@@ -157,10 +157,12 @@
 <p>A function is <strong>injective</strong> (one-to-one) if distinct inputs map to distinct outputs: $f(x) = f(y)$ implies $x = y$. It is <strong>surjective</strong> (onto) if every element of $B$ is hit by at least one input. A function that is both injective and surjective is a <strong>bijection</strong>. Bijections are perfectly reversible: if $f$ is a bijection, there exists an inverse function $f^{-1}: B \to A$ such that $f^{-1}(f(x)) = x$ for all $x \in A$.</p>
 <h3 id="permutations">Permutations</h3>
 <p>A <strong>permutation</strong> of a set $S$ is a bijection $\sigma: S \to S$, a rearrangement of $S$ onto itself. For $S = {1, 2, 3}$, here is one permutation written in two-row notation:</p>
-<p>$$\sigma = \begin{pmatrix} 1 &amp; 2 &amp; 3 \ 2 &amp; 3 &amp; 1 \end{pmatrix}$$</p>
+<p>$$
+\sigma = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 \end{pmatrix}
+$$</p>
 <p>This means $\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$. In <strong>cycle notation</strong>: $\sigma = (1\ 2\ 3)$, meaning $1 \mapsto 2 \mapsto 3 \mapsto 1$. An element that maps to itself is a <strong>fixed point</strong> and is omitted from the cycle notation.</p>
 <p>Here is another permutation of ${1, 2, 3, 4}$:</p>
-<p>$$\tau = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \ 1 &amp; 4 &amp; 2 &amp; 3 \end{pmatrix} = (2\ 4\ 3)$$</p>
+<p>$$\tau = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \\ 1 &amp; 4 &amp; 2 &amp; 3 \end{pmatrix} = (2\ 4\ 3)$$</p>
 <p>Element 1 is a fixed point. Elements 2, 4, 3 cycle among themselves.</p>
 <p>The set of all permutations of an $n$-element set is called $S_n$, the <strong>symmetric group</strong> on $n$ elements. It has exactly $n!$ elements.</p>
 <p>$$|S_n| = n!$$</p>
@@ -564,7 +566,7 @@ $$(\sigma \circ \tau)(3) = \sigma(\tau(3)) = \sigma(3) = 1$$</p>
 	<div class="text-sm text-gray-500 leading-tight a-gray">
 		
 		<br />
-		3537 words in this page.
+		3539 words in this page.
 	</div>
 </div>
 
