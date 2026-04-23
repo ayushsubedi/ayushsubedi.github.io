@@ -50,7 +50,7 @@ $$(\sigma \circ \tau)(2) = \sigma(\tau(2)) = \sigma(1) = 2$$
 $$(\sigma \circ \tau)(3) = \sigma(\tau(3)) = \sigma(3) = 1$$&lt;/p&gt;
 &lt;p&gt;So $\sigma \circ \tau = (1\ 3)$. Since $(2\ 3) \neq (1\ 3)$, we see that $\tau \circ \sigma \neq \sigma \circ \tau$. &lt;strong&gt;Order matters.&lt;/strong&gt; This non-commutativity is a central feature of the Rubik&amp;rsquo;s Cube.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;what-ss-a-group&#34;&gt;What ss a Group?&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-a-group&#34;&gt;What is a Group?&lt;/h2&gt;
 &lt;p&gt;A &lt;strong&gt;group&lt;/strong&gt; is one of the most elegant ideas in all of mathematics. It captures the abstract essence of symmetry and reversibility, stripping away everything except the bare minimum structure needed for the concept to hold together.&lt;/p&gt;
 &lt;p&gt;Formally, a &lt;strong&gt;group&lt;/strong&gt; $(G, \cdot)$ is a set $G$ together with a binary operation $\cdot$ satisfying four axioms:&lt;/p&gt;
 &lt;table&gt;
