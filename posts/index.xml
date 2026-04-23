@@ -17,7 +17,10 @@
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/posts/group_theory_and_rubix_cube/</guid>
-      <description>&lt;h2 id=&#34;some-math-before-we-begin&#34;&gt;Some math before we begin&lt;/h2&gt;
+      <description>&lt;h1 id=&#34;gods-number-the-math-behind-the-rubiks-cube&#34;&gt;God&amp;rsquo;s Number: The Math Behind the Rubik&amp;rsquo;s Cube&lt;/h1&gt;
+&lt;iframe width=&#34;100%&#34; height =&#34;330&#34; src=&#34;https://ayushsubedi.github.io/pdfs/godsno.pdf#toolbar=0&#34;&gt;&lt;/iframe&gt;
+(generated with NotebookLM)
+&lt;h2 id=&#34;some-math-before-we-begin&#34;&gt;Some math before we begin&lt;/h2&gt;
 &lt;h3 id=&#34;sets&#34;&gt;Sets&lt;/h3&gt;
 &lt;p&gt;A &lt;strong&gt;set&lt;/strong&gt; is a collection of distinct objects. We list elements inside curly braces.&lt;/p&gt;
 &lt;p&gt;$$S = {1, 2, 3, 4, 5, 6}$$&lt;/p&gt;
