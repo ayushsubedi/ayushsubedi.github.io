@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Combinatorics on Ayush Subedi</title>
+    <link>https://ayushsubedi.github.io/tags/combinatorics/</link>
+    <description>Recent content in Combinatorics on Ayush Subedi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ayushsubedi.github.io/tags/combinatorics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>God&#39;s Number: The Math Behind the Rubik&#39;s Cube</title>
+      <link>https://ayushsubedi.github.io/posts/group_theory_and_rubix_cube/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/posts/group_theory_and_rubix_cube/</guid>
+      <description>&lt;h2 id=&#34;some-math-before-we-begin&#34;&gt;Some math before we begin&lt;/h2&gt;
+&lt;h3 id=&#34;sets&#34;&gt;Sets&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;set&lt;/strong&gt; is a collection of distinct objects. We list elements inside curly braces.&lt;/p&gt;
+&lt;p&gt;$$S = {1, 2, 3, 4, 5, 6}$$&lt;/p&gt;
+&lt;p&gt;The set $S$ has 6 elements. We write $|S| = 6$ and call this the &lt;strong&gt;cardinality&lt;/strong&gt; of $S$. Two sets are equal if they contain exactly the same elements: ${1, 2, 3} = {3, 1, 2}$.&lt;/p&gt;
+&lt;h3 id=&#34;functions-and-mappings&#34;&gt;Functions and mappings&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;function&lt;/strong&gt; $f: A \to B$ is a rule that assigns to every element of the set $A$ exactly one element in the set $B$. We call $A$ the &lt;strong&gt;domain&lt;/strong&gt; and $B$ the &lt;strong&gt;codomain&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;$$f: {1, 2, 3} \to {a, b, c}, \quad f(1) = a,\ f(2) = b,\ f(3) = c$$&lt;/p&gt;
+&lt;p&gt;A function is &lt;strong&gt;injective&lt;/strong&gt; (one-to-one) if distinct inputs map to distinct outputs: $f(x) = f(y)$ implies $x = y$. It is &lt;strong&gt;surjective&lt;/strong&gt; (onto) if every element of $B$ is hit by at least one input. A function that is both injective and surjective is a &lt;strong&gt;bijection&lt;/strong&gt;. Bijections are perfectly reversible: if $f$ is a bijection, there exists an inverse function $f^{-1}: B \to A$ such that $f^{-1}(f(x)) = x$ for all $x \in A$.&lt;/p&gt;
+&lt;h3 id=&#34;permutations&#34;&gt;Permutations&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;permutation&lt;/strong&gt; of a set $S$ is a bijection $\sigma: S \to S$, a rearrangement of $S$ onto itself. For $S = {1, 2, 3}$, here is one permutation written in two-row notation:&lt;/p&gt;
+&lt;p&gt;$$\sigma = \begin{pmatrix} 1 &amp;amp; 2 &amp;amp; 3 \ 2 &amp;amp; 3 &amp;amp; 1 \end{pmatrix}$$&lt;/p&gt;
+&lt;p&gt;This means $\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$. In &lt;strong&gt;cycle notation&lt;/strong&gt;: $\sigma = (1\ 2\ 3)$, meaning $1 \mapsto 2 \mapsto 3 \mapsto 1$. An element that maps to itself is a &lt;strong&gt;fixed point&lt;/strong&gt; and is omitted from the cycle notation.&lt;/p&gt;
+&lt;p&gt;Here is another permutation of ${1, 2, 3, 4}$:&lt;/p&gt;
+&lt;p&gt;$$\tau = \begin{pmatrix} 1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4 \ 1 &amp;amp; 4 &amp;amp; 2 &amp;amp; 3 \end{pmatrix} = (2\ 4\ 3)$$&lt;/p&gt;
+&lt;p&gt;Element 1 is a fixed point. Elements 2, 4, 3 cycle among themselves.&lt;/p&gt;
+&lt;p&gt;The set of all permutations of an $n$-element set is called $S_n$, the &lt;strong&gt;symmetric group&lt;/strong&gt; on $n$ elements. It has exactly $n!$ elements.&lt;/p&gt;
+&lt;p&gt;$$|S_n| = n!$$&lt;/p&gt;
+&lt;p&gt;So $|S_3| = 6$, $|S_4| = 24$, and $|S_{48}| = 48!$, a truly enormous number.&lt;/p&gt;
+&lt;h3 id=&#34;composition&#34;&gt;Composition&lt;/h3&gt;
+&lt;p&gt;If $\sigma$ and $\tau$ are two permutations of the same set, their &lt;strong&gt;composition&lt;/strong&gt; $\tau \circ \sigma$ means: first apply $\sigma$, then apply $\tau$. Let us compute an example with $\sigma = (1\ 2\ 3)$ and $\tau = (1\ 2)$ on the set ${1, 2, 3}$:&lt;/p&gt;
+&lt;p&gt;$$(\tau \circ \sigma)(1) = \tau(\sigma(1)) = \tau(2) = 1$$
+$$(\tau \circ \sigma)(2) = \tau(\sigma(2)) = \tau(3) = 3$$
+$$(\tau \circ \sigma)(3) = \tau(\sigma(3)) = \tau(1) = 2$$&lt;/p&gt;
+&lt;p&gt;So $\tau \circ \sigma = (2\ 3)$. Now try the other order:&lt;/p&gt;
+&lt;p&gt;$$(\sigma \circ \tau)(1) = \sigma(\tau(1)) = \sigma(2) = 3$$
+$$(\sigma \circ \tau)(2) = \sigma(\tau(2)) = \sigma(1) = 2$$
+$$(\sigma \circ \tau)(3) = \sigma(\tau(3)) = \sigma(3) = 1$$&lt;/p&gt;
+&lt;p&gt;So $\sigma \circ \tau = (1\ 3)$. Since $(2\ 3) \neq (1\ 3)$, we see that $\tau \circ \sigma \neq \sigma \circ \tau$. &lt;strong&gt;Order matters.&lt;/strong&gt; This non-commutativity is a central feature of the Rubik&amp;rsquo;s Cube.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;what-ss-a-group&#34;&gt;What ss a Group?&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;group&lt;/strong&gt; is one of the most elegant ideas in all of mathematics. It captures the abstract essence of symmetry and reversibility, stripping away everything except the bare minimum structure needed for the concept to hold together.&lt;/p&gt;
+&lt;p&gt;Formally, a &lt;strong&gt;group&lt;/strong&gt; $(G, \cdot)$ is a set $G$ together with a binary operation $\cdot$ satisfying four axioms:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Axiom&lt;/th&gt;
+&lt;th&gt;Formal Statement&lt;/th&gt;
+&lt;th&gt;Plain Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Closure&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;$\forall, a, b \in G:\ a \cdot b \in G$&lt;/td&gt;
+&lt;td&gt;Combining two elements stays inside $G$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Associativity&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;$(a \cdot b) \cdot c = a \cdot (b \cdot c)$&lt;/td&gt;
+&lt;td&gt;Grouping of operations does not matter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Identity&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;$\exists, e \in G:\ e \cdot a = a \cdot e = a$&lt;/td&gt;
+&lt;td&gt;There is a &amp;ldquo;do nothing&amp;rdquo; element&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Inverses&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;$\forall, a \in G,\ \exists, a^{-1} \in G:\ a \cdot a^{-1} = e$&lt;/td&gt;
+&lt;td&gt;Every action can be undone&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If additionally $a \cdot b = b \cdot a$ for all $a, b \in G$, the group is called &lt;strong&gt;abelian&lt;/strong&gt; (after the Norwegian mathematician Niels Abel). Most groups we encounter in everyday arithmetic are abelian. The interesting and hard cases, including the Rubik&amp;rsquo;s Cube, are not.&lt;/p&gt;
+&lt;h3 id=&#34;example-1-integers-under-addition&#34;&gt;Example 1: Integers under Addition&lt;/h3&gt;
+&lt;p&gt;$(\mathbb{Z}, +)$ is a group.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Closure:&lt;/strong&gt; $3 + 5 = 8 \in \mathbb{Z}$. The sum of two integers is an integer.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Associativity:&lt;/strong&gt; $(3 + 4) + 5 = 3 + (4 + 5) = 12$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identity:&lt;/strong&gt; $0$. We have $n + 0 = 0 + n = n$ for all $n$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inverses:&lt;/strong&gt; The inverse of $n$ is $-n$. We have $n + (-n) = 0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abelian:&lt;/strong&gt; $3 + 5 = 5 + 3$. Yes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This group is infinite and abelian.&lt;/p&gt;
+&lt;h3 id=&#34;example-2-integers-mod-n&#34;&gt;Example 2: Integers mod $n$&lt;/h3&gt;
+&lt;p&gt;Fix a positive integer $n$. Define $\mathbb{Z}/n\mathbb{Z} = {0, 1, 2, \ldots, n-1}$ with addition modulo $n$. For $n = 5$:&lt;/p&gt;
+&lt;p&gt;$$3 + 4 \equiv 2 \pmod{5}$$&lt;/p&gt;
+&lt;p&gt;This is a &lt;strong&gt;finite abelian group&lt;/strong&gt; of order $n$. The identity is $0$. The inverse of $k$ is $n - k$. For example, in $\mathbb{Z}/5\mathbb{Z}$, the inverse of $3$ is $2$, since $3 + 2 = 5 \equiv 0$.&lt;/p&gt;
+&lt;h3 id=&#34;example-3-nonzero-rationals-under-multiplication&#34;&gt;Example 3: Nonzero Rationals under Multiplication&lt;/h3&gt;
+&lt;p&gt;$(\mathbb{Q}^*, \times)$ is an abelian group. The identity is $1$. The inverse of $q$ is $\frac{1}{q}$, which exists since $q \neq 0$.&lt;/p&gt;
+&lt;h3 id=&#34;example-4-symmetries-of-an-equilateral-triangle&#34;&gt;Example 4: Symmetries of an Equilateral Triangle&lt;/h3&gt;
+&lt;p&gt;Take an equilateral triangle and label its vertices $1, 2, 3$.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;          1
+         / \
+        /   \
+       2-----3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A &lt;strong&gt;symmetry&lt;/strong&gt; is any rigid motion that maps the triangle back onto itself. There are exactly 6:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$e$: identity, do nothing&lt;/li&gt;
+&lt;li&gt;$r$: rotate $120°$ counterclockwise: $(1\ 2\ 3)$&lt;/li&gt;
+&lt;li&gt;$r^2$: rotate $240°$ counterclockwise: $(1\ 3\ 2)$&lt;/li&gt;
+&lt;li&gt;$s_1$: reflect through the axis from vertex $1$ to the midpoint of side $23$: $(2\ 3)$&lt;/li&gt;
+&lt;li&gt;$s_2$: reflect through the axis from vertex $2$ to the midpoint of side $13$: $(1\ 3)$&lt;/li&gt;
+&lt;li&gt;$s_3$: reflect through the axis from vertex $3$ to the midpoint of side $12$: $(1\ 2)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This set under composition is the &lt;strong&gt;dihedral group&lt;/strong&gt; $D_3$, of order 6. Let us verify it is non-abelian by computing $r \circ s_1$ and $s_1 \circ r$ explicitly:&lt;/p&gt;
+&lt;p&gt;$$r \circ s_1: \quad 1 \xrightarrow{s_1} 1 \xrightarrow{r} 2, \quad 2 \xrightarrow{s_1} 3 \xrightarrow{r} 1, \quad 3 \xrightarrow{s_1} 2 \xrightarrow{r} 3 \quad \Rightarrow \quad r \circ s_1 = (1\ 2) = s_3$$&lt;/p&gt;
+&lt;p&gt;$$s_1 \circ r: \quad 1 \xrightarrow{r} 2 \xrightarrow{s_1} 3, \quad 2 \xrightarrow{r} 3 \xrightarrow{s_1} 2, \quad 3 \xrightarrow{r} 1 \xrightarrow{s_1} 1 \quad \Rightarrow \quad s_1 \circ r = (1\ 3) = s_2$$&lt;/p&gt;
+&lt;p&gt;Since $s_3 \neq s_2$, we confirm $r \circ s_1 \neq s_1 \circ r$. Non-abelian.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;non-example-1-natural-numbers-under-addition&#34;&gt;Non-Example 1: Natural Numbers under Addition&lt;/h3&gt;
+&lt;p&gt;$(\mathbb{N}, +)$ where $\mathbb{N} = {1, 2, 3, \ldots}$ is &lt;strong&gt;not a group&lt;/strong&gt;. There is no identity element: no $e \in \mathbb{N}$ satisfies $n + e = n$ for all $n$, since $0 \notin \mathbb{N}$. The identity axiom fails.&lt;/p&gt;
+&lt;p&gt;If we include zero, $(\mathbb{N}_0, +)$ with $\mathbb{N}_0 = {0, 1, 2, \ldots}$, we restore the identity but still have no inverses: $5$ has no inverse in $\mathbb{N}_0$ since $-5 \notin \mathbb{N}_0$. Still not a group.&lt;/p&gt;
+&lt;h3 id=&#34;non-example-2-integers-under-multiplication&#34;&gt;Non-Example 2: Integers under Multiplication&lt;/h3&gt;
+&lt;p&gt;$(\mathbb{Z}, \times)$ is &lt;strong&gt;not a group&lt;/strong&gt;. The identity is $1$ and multiplication is closed and associative. But $2$ has no multiplicative inverse in $\mathbb{Z}$: we would need $\frac{1}{2}$, which is not an integer. The inverses axiom fails.&lt;/p&gt;
+&lt;h3 id=&#34;non-example-3-all-2-times-2-real-matrices-under-multiplication&#34;&gt;Non-Example 3: All $2 \times 2$ Real Matrices under Multiplication&lt;/h3&gt;
+&lt;p&gt;Let $M_{2}(\mathbb{R})$ be the set of all $2 \times 2$ matrices with real entries. $(M_2(\mathbb{R}), \times)$ is &lt;strong&gt;not a group&lt;/strong&gt; because singular matrices have no inverse. For example:&lt;/p&gt;
+&lt;p&gt;$$A = \begin{pmatrix} 1 &amp;amp; 0 \ 0 &amp;amp; 0 \end{pmatrix}$$&lt;/p&gt;
+&lt;p&gt;There is no matrix $B$ satisfying $AB = I$. The inverses axiom fails.&lt;/p&gt;
+&lt;p&gt;However, restricting to &lt;strong&gt;invertible&lt;/strong&gt; $2 \times 2$ matrices (those with nonzero determinant) gives the &lt;strong&gt;general linear group&lt;/strong&gt; $GL_2(\mathbb{R})$, which is a non-abelian group.&lt;/p&gt;
+&lt;h3 id=&#34;non-example-4-positive-reals-under-subtraction&#34;&gt;Non-Example 4: Positive Reals under Subtraction&lt;/h3&gt;
+&lt;p&gt;$(\mathbb{R}&lt;em&gt;{&amp;gt;0}, -)$ is &lt;strong&gt;not a group&lt;/strong&gt;. Subtraction is not even closed: $3 - 5 = -2 \notin \mathbb{R}&lt;/em&gt;{&amp;gt;0}$. The closure axiom fails immediately, and we need not check further.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;subgroups&#34;&gt;Subgroups&lt;/h3&gt;
+&lt;p&gt;A &lt;strong&gt;subgroup&lt;/strong&gt; $H \leq G$ is a subset of $G$ that is itself a group under the same operation. To verify $H$ is a subgroup, three conditions suffice:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$e \in H$&lt;/li&gt;
+&lt;li&gt;$a, b \in H \Rightarrow a \cdot b \in H$&lt;/li&gt;
+&lt;li&gt;$a \in H \Rightarrow a^{-1} \in H$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The even integers $2\mathbb{Z} = {\ldots, -4, -2, 0, 2, 4, \ldots}$ form a subgroup of $(\mathbb{Z}, +)$. The rotations ${e, r, r^2}$ form a subgroup of $D_3$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lagrange&amp;rsquo;s Theorem:&lt;/strong&gt; If $H \leq G$ and $G$ is finite, then $|H|$ divides $|G|$. This is one of the first great theorems of group theory, and it has an immediate implication for the Rubik&amp;rsquo;s Cube: the order of any subgroup of $G_{RC}$ must divide $43{,}252{,}003{,}274{,}489{,}856{,}000$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-rubiks-cube&#34;&gt;The Rubik&amp;rsquo;s Cube&lt;/h2&gt;
+&lt;p&gt;A standard $3 \times 3 \times 3$ Rubik&amp;rsquo;s Cube has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;6 faces&lt;/strong&gt;, each assigned a color&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;26 visible pieces&lt;/strong&gt;: 8 corner pieces, 12 edge pieces, 6 center pieces&lt;/li&gt;
+&lt;li&gt;The 6 center pieces never move relative to each other and define which color belongs to which face&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;         [U]
+          |
+  [L] -- [F] -- [R] -- [B]
+          |
+         [D]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The six face moves are &lt;strong&gt;U&lt;/strong&gt; (Up), &lt;strong&gt;D&lt;/strong&gt; (Down), &lt;strong&gt;L&lt;/strong&gt; (Left), &lt;strong&gt;R&lt;/strong&gt; (Right), &lt;strong&gt;F&lt;/strong&gt; (Front), &lt;strong&gt;B&lt;/strong&gt; (Back). Each turn rotates one face $90°$ clockwise. The prime notation $R&amp;rsquo;$ means $90°$ counterclockwise. The notation $R^2$ means $180°$.&lt;/p&gt;
+&lt;p&gt;The standard move set is:&lt;/p&gt;
+&lt;p&gt;$$\mathcal{M} = {U, U&amp;rsquo;, U^2, D, D&amp;rsquo;, D^2, L, L&amp;rsquo;, L^2, R, R&amp;rsquo;, R^2, F, F&amp;rsquo;, F^2, B, B&amp;rsquo;, B^2}$$&lt;/p&gt;
+&lt;p&gt;That is 18 possible single moves.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-rubiks-cube-group&#34;&gt;The Rubik&amp;rsquo;s Cube Group&lt;/h2&gt;
+&lt;p&gt;Every sequence of moves is a &lt;strong&gt;permutation&lt;/strong&gt; of the 48 colored facelets (each of the 6 faces has 9 stickers, minus the 6 fixed centers, leaving 48 stickers that can move). Since each move is a bijection from one cube state to another, and we can compose moves and invert them, the set of all reachable states forms a group.&lt;/p&gt;
+&lt;p&gt;This is the &lt;strong&gt;Rubik&amp;rsquo;s Cube Group&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;$$G_{RC} = \langle U, D, L, R, F, B \rangle$$&lt;/p&gt;
+&lt;p&gt;The angle brackets denote that the group is &lt;strong&gt;generated&lt;/strong&gt; by those six moves: every reachable state is some finite composition of these generators and their inverses. Let us verify the four group axioms.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Closure:&lt;/strong&gt; Performing any sequence of moves on a valid cube state produces another valid cube state.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Associativity:&lt;/strong&gt; Function composition is always associative: $(f \circ g) \circ h = f \circ (g \circ h)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identity:&lt;/strong&gt; The move sequence of length zero is the identity $e$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inverses:&lt;/strong&gt; The inverse of $R$ is $R&amp;rsquo;$. The inverse of the sequence $R \cdot U \cdot F$ is $F&amp;rsquo; \cdot U&amp;rsquo; \cdot R&amp;rsquo;$. Every sequence reverses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All four axioms hold. $G_{RC}$ is a group.&lt;/p&gt;
+&lt;p&gt;The order of this group is:&lt;/p&gt;
+&lt;p&gt;$$|G_{RC}| = 43{,}252{,}003{,}274{,}489{,}856{,}000 \approx 4.3 \times 10^{19}$$&lt;/p&gt;
+&lt;h3 id=&#34;counting-the-states&#34;&gt;Counting the States&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Corner pieces:&lt;/strong&gt; There are 8 corners. They can be placed in $8!$ arrangements. Each corner can sit in 3 orientations, giving $3^8$ possibilities. The total twist of all corners must equal zero modulo 3 (a physical constraint of the mechanism), so we divide by 3:&lt;/p&gt;
+&lt;p&gt;$$\frac{8! \times 3^8}{3} = 8! \times 3^7$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edge pieces:&lt;/strong&gt; There are 12 edges. They can be placed in $12!$ arrangements. Each edge can be flipped, giving $2^{12}$ possibilities. The total number of flipped edges must be even, so we divide by 2. The parity of the corner permutation must equal the parity of the edge permutation, giving another factor of $\frac{1}{2}$:&lt;/p&gt;
+&lt;p&gt;$$\frac{12! \times 2^{12}}{4}$$&lt;/p&gt;
+&lt;p&gt;Combining both:&lt;/p&gt;
+&lt;p&gt;$$|G_{RC}| = \frac{8! \times 3^8 \times 12! \times 2^{12}}{12} = 43{,}252{,}003{,}274{,}489{,}856{,}000$$&lt;/p&gt;
+&lt;p&gt;$G_{RC}$ is a proper subgroup of $S_{48}$: most permutations of 48 facelets are physically unreachable by legal moves.&lt;/p&gt;
+&lt;h3 id=&#34;why-it-is-not-abelian&#34;&gt;Why it is not abelian?&lt;/h3&gt;
+&lt;p&gt;$$R \cdot U \neq U \cdot R$$&lt;/p&gt;
+&lt;p&gt;Turn the Right face clockwise, then the Top face clockwise. Now undo both and try Top first, then Right. The resulting states are different. The group is non-abelian, and this is precisely what makes the cube hard: solving one part inevitably disturbs previously solved parts.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;permutations-nside-the-cube&#34;&gt;Permutations nside the Cube&lt;/h2&gt;
+&lt;p&gt;Every move is a permutation expressible in cycle notation. The move $U$ cycles four edge facelets and four corner pieces in two disjoint 4-cycles:&lt;/p&gt;
+&lt;p&gt;$$U = (\text{UF}\ \ \text{UR}\ \ \text{UB}\ \ \text{UL})(\text{UFR}\ \ \text{URB}\ \ \text{UBL}\ \ \text{ULF})$$&lt;/p&gt;
+&lt;p&gt;This is the same cycle notation from Section 1, now applied to physical stickers on a cube.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;commutator&lt;/strong&gt; $[A, B] = A \cdot B \cdot A^{-1} \cdot B^{-1}$ measures how far $A$ and $B$ are from commuting. If they commuted perfectly, $[A, B] = e$. When they do not commute, the commutator is a nontrivial permutation that moves only a small number of pieces, because most of the permutation cancels algebraically.&lt;/p&gt;
+&lt;p&gt;The sequence $R \cdot U \cdot R^{-1} \cdot U^{-1}$ is a commutator. Repeating it 6 times returns the cube to the solved state. It moves only a handful of corner pieces, which is exactly what is needed when solving the last layer without disturbing the rest of the cube. Most named speedcubing algorithms are commutators or &lt;strong&gt;conjugates&lt;/strong&gt; ($A \cdot X \cdot A^{-1}$) in disguise.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;could-a-newborn-solve-it&#34;&gt;Could a newborn solve it?&lt;/h2&gt;
+&lt;p&gt;Here is a philosophical question with mathematical teeth.&lt;/p&gt;
+&lt;p&gt;Imagine placing a Rubik&amp;rsquo;s Cube in front of a child raised in complete isolation, no mathematics, no culture, no algorithms. Can they solve it?&lt;/p&gt;
+&lt;p&gt;In principle, yes, by exhaustive search. The cube has $4.3 \times 10^{19}$ states. If our hypothetical solver tries one new state per second, the expected time is roughly $1.4 \times 10^{12}$ years. The universe is about $1.4 \times 10^{10}$ years old. Brute force takes approximately &lt;strong&gt;100 times the age of the universe&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;What about random moves? A &lt;strong&gt;random walk&lt;/strong&gt; on the Cayley graph of $G_{RC}$ will eventually reach the solved state with probability 1, since the graph is finite and connected. But the expected number of steps before hitting any specific target vertex in a graph of $4.3 \times 10^{19}$ nodes is of the same astronomical order.&lt;/p&gt;
+&lt;p&gt;What any solver actually needs, whether they know it or not, is to exploit the &lt;strong&gt;group structure&lt;/strong&gt;: that certain move sequences affect only a few pieces, that the problem decomposes into layers, that inverses are easy to compute. Every human solving method, from beginner layer-by-layer to CFOP to Roux, is implicitly navigating a subgroup tower of $G_{RC}$.&lt;/p&gt;
+&lt;p&gt;Memorized algorithms are shortcuts through the group. They encode mathematical insight as procedural memory. The cube is solvable without knowing group theory, but it is truly &lt;em&gt;understandable&lt;/em&gt; only with it.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-cayley-graph&#34;&gt;The Cayley Graph&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;Cayley graph&lt;/strong&gt; $\text{Cay}(G, S)$ of a group $G$ with generating set $S$ is a directed graph where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each &lt;strong&gt;vertex&lt;/strong&gt; is a group element&lt;/li&gt;
+&lt;li&gt;There is a directed edge from $g$ to $g \cdot s$ for each generator $s \in S$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For $G_{RC}$ with the 18-move generating set $\mathcal{M}$, every vertex has out-degree 18. The solved state is one distinguished vertex. Solving the cube from a scrambled state is finding a &lt;strong&gt;shortest path&lt;/strong&gt; in this graph from the current vertex to the solved vertex.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  [scrambled] --R--&amp;gt; [state A] --U--&amp;gt; [state B] -- ... --&amp;gt; [solved]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;strong&gt;diameter&lt;/strong&gt; of the Cayley graph, the length of the longest shortest path over all vertex pairs, is exactly God&amp;rsquo;s Number.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;gods-number&#34;&gt;God&amp;rsquo;s Number&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;God&amp;rsquo;s Number&lt;/strong&gt; is the maximum, over all $4.3 \times 10^{19}$ scrambled states, of the minimum number of moves needed to solve that state. In other words: if an omniscient solver always chose the optimal sequence, what is the worst case?&lt;/p&gt;
+&lt;p&gt;For decades this was an open problem. Bounds tightened steadily:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;th&gt;Lower Bound&lt;/th&gt;
+&lt;th&gt;Upper Bound&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1981&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;52&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1992&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;42&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2008&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;26&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2010&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In 2010, Rokicki, Kociemba, Davidson, and Dethridge proved:&lt;/p&gt;
+&lt;p&gt;$$\boxed{G_{\text{God}} = 20}$$&lt;/p&gt;
+&lt;p&gt;Every one of the $4.3 \times 10^{19}$ states can be solved in at most 20 moves. States requiring exactly 20 exist; the &lt;strong&gt;superflip&lt;/strong&gt; (every edge piece flipped in its correct position, every corner correct) is one known example.&lt;/p&gt;
+&lt;h3 id=&#34;how-was-it-proved&#34;&gt;How Was It Proved?&lt;/h3&gt;
+&lt;p&gt;Pure algebra alone could not do it. The proof combined group theory, coset decomposition, and large-scale computation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1: Symmetry reduction.&lt;/strong&gt; The cube has 48 symmetries (rotations and reflections of the physical object). Grouping states related by symmetry into equivalence classes reduces $4.3 \times 10^{19}$ states to about $2.2 \times 10^{18}$ distinct classes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2: Coset decomposition.&lt;/strong&gt; The team chose a subgroup $H \leq G_{RC}$ of order approximately $10^{10}$, consisting of all states reachable using only ${U, D, R, L, F^2, B^2}$. The left cosets of $H$ partition all of $G_{RC}$ into about $2 \times 10^{9}$ cosets, each of size approximately $10^{10}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3: Optimal coset solver.&lt;/strong&gt; For each coset, the team computed the optimal solution depth. This required approximately 35 CPU-years of computation, distributed across Google&amp;rsquo;s servers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 4: Conclusion.&lt;/strong&gt; No coset required more than 20 moves to bring into $H$, and no element of $H$ required more than 20 moves to solve from there. The lower bound of 20 came from a separate verification that the superflip requires exactly 20 moves. Therefore God&amp;rsquo;s Number is 20.&lt;/p&gt;
+&lt;p&gt;The group structure is what made the computation feasible. Without cosets and subgroups to partition the search space, no amount of computing power could check all $4.3 \times 10^{19}$ states individually in any reasonable time.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;is-there-a-formula&#34;&gt;Is There a Formula?&lt;/h2&gt;
+&lt;p&gt;There is no simple closed-form expression that maps a scrambled cube state to an optimal solution sequence. What exists are &lt;strong&gt;optimal solvers&lt;/strong&gt; like Kociemba&amp;rsquo;s algorithm, which operates in two phases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Phase 1:&lt;/strong&gt; Use the full move set $\mathcal{M}$ to reach the subgroup $H$ in a small number of moves&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Phase 2:&lt;/strong&gt; Solve within $H$ using only ${U, D, R, L, F^2, B^2}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is not brute force. It uses precomputed lookup tables encoding the group structure of $G_{RC}/H$ and $H$ separately. For any scramble, it finds an optimal or near-optimal solution typically in milliseconds on modern hardware.&lt;/p&gt;
+&lt;p&gt;The key insight is that $H$ is a subgroup, so the coset space $G_{RC}/H$ and the group $H$ itself can each be searched efficiently. Without the subgroup structure, there is no decomposition and no feasible algorithm.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;real-world-applications-of-group-theory&#34;&gt;Real-World Applications of Group Theory&lt;/h2&gt;
+&lt;p&gt;The Rubik&amp;rsquo;s Cube is a delightful example, but group theory is foundational across science and engineering.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cryptography.&lt;/strong&gt; RSA and elliptic curve cryptography rely on the group structure of modular arithmetic and elliptic curves. The security of HTTPS connections rests on the computational hardness of the discrete logarithm problem in certain groups: given $g$ and $g^k$ in a group, find $k$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Particle Physics.&lt;/strong&gt; The Standard Model of particle physics is organized by Lie groups: $U(1)$, $SU(2)$, $SU(3)$. Every elementary particle corresponds to a representation of one of these groups. The classification of quarks and leptons is, at its core, a classification of group representations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Error-Correcting Codes.&lt;/strong&gt; Linear codes are subspaces (and subgroups) of $\mathbb{F}_2^n$, the group of binary strings of length $n$ under componentwise XOR. The group structure guarantees that errors can be detected and corrected. Every digital communication system uses this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chemistry and Crystallography.&lt;/strong&gt; Molecular symmetry is described by &lt;strong&gt;point groups&lt;/strong&gt;. Benzene has $C_{6v}$ symmetry. Methane has $T_d$ symmetry. Chemists use these groups to predict infrared and Raman spectra, reaction pathways, and molecular orbital structure.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Robotics and Computer Graphics.&lt;/strong&gt; Rotations in 3D space form the group $SO(3)$, the special orthogonal group. Every rotation of a rigid body is an element of $SO(3)$. Every 3D game engine, robot arm controller, and satellite attitude system computes in this group continuously.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;does-knowing-group-theory-help-solve-the-cube&#34;&gt;Does knowing Group Theory help solve the Cube?&lt;/h2&gt;
+&lt;p&gt;Practically, not directly. Knowing that $G_{RC}$ is a subgroup of $S_{48}$ will not help finish the last layer faster. Competitive speedcubers memorize hundreds of algorithms without knowing their algebraic names.&lt;/p&gt;
+&lt;p&gt;Conceptually, the understanding is enormous. Group theory explains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Why&lt;/strong&gt; layer-by-layer methods work: each layer corresponds to a subgroup, and solving a layer means navigating into a coset&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why&lt;/strong&gt; commutators move so few pieces: most of the permutation cancels algebraically&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why&lt;/strong&gt; the cube is always solvable from any legal state: $G_{RC}$ is a single connected component in its Cayley graph&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Why&lt;/strong&gt; it is impossible to swap exactly two corners without swapping two more: this is a parity constraint, a consequence of how $G_{RC}$ sits inside the alternating group $A_{48}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That last point deserves emphasis. If a cube is disassembled and its pieces reassembled at random, there is a $\frac{11}{12}$ probability that the result is a state unreachable by any legal sequence of moves. The cube will look scrambled but will be physically unsolvable. Group theory reveals this fact before touching a cube, purely from the algebraic structure of permutation parities.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-bigger-picture&#34;&gt;The bigger picture&lt;/h2&gt;
+&lt;p&gt;The Rubik&amp;rsquo;s Cube sits at the intersection of several mathematical disciplines:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Group theory&lt;/strong&gt;: algebraic structure, generators, subgroups, cosets, conjugates, commutators&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combinatorics&lt;/strong&gt;: counting $4.3 \times 10^{19}$ states precisely from physical constraints&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Graph theory&lt;/strong&gt;: Cayley graphs, diameter, shortest paths, random walks&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Computational complexity&lt;/strong&gt;: optimal solving, and NP-hardness for the $n \times n \times n$ generalization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;God&amp;rsquo;s Number is not a curiosity about a toy. It is a theorem, proved with mathematical certainty, that a specific combinatorial object has Cayley graph diameter 20 in the half-turn metric. The proof required both the elegance of abstract algebra and the raw power of distributed computation. That combination is increasingly characteristic of modern mathematics.&lt;/p&gt;
+&lt;p&gt;In a follow-up post, we will go further.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

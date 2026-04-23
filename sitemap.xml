@@ -3,18 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ayushsubedi.github.io/</loc>
-    <lastmod>2026-03-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/combinatorics/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/posts/group_theory_and_rubix_cube/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/group-theory/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/categories/group-theory/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/math/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/</loc>
-    <lastmod>2026-03-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/puzzle/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ayushsubedi.github.io/tags/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/basel_problem/</loc>
     <lastmod>2026-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/analysis/</loc>
-    <lastmod>2026-02-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/categories/</loc>
     <lastmod>2026-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/euler/</loc>
@@ -30,9 +51,6 @@
     <lastmod>2026-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/number-theory/</loc>
-    <lastmod>2026-02-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/</loc>
     <lastmod>2026-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/culture/</loc>
@@ -876,9 +894,6 @@
     <lastmod>2013-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/tags/faro/</loc>
-    <lastmod>2012-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ayushsubedi.github.io/tags/group-theory/</loc>
     <lastmod>2012-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ayushsubedi.github.io/posts/faro_shuffle/</loc>

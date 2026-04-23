@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Ayush Subedi  | God&#39;s Number: The Math Behind the Rubik&#39;s Cube</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.123.7">
+	
+	
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<meta name="title" content="Ayush Subedi">
+	<meta name="description" content="… personal journey with mathematics, software engineering and data science">
+
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ayushsubedi.github.io/">
+	<meta property="og:title" content="Ayush Subedi">
+	<meta property="og:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="og:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ayushsubedi.github.io/">
+	<meta property="twitter:title" content="Ayush Subedi">
+	<meta property="twitter:description" content="… personal journey with mathematics, software engineering and data science">
+	<meta property="twitter:image" content="https://ayushsubedi.github.io/img/k.png">
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/png" />
+
+	
+
+	
+
+	
+	
+<link rel="stylesheet" href="https://ayushsubedi.github.io/lib/katex.min.css"
+      integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+      crossorigin="anonymous">
+
+
+<script defer src="https://ayushsubedi.github.io/lib/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+
+
+<script defer src="https://ayushsubedi.github.io/lib/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+        crossorigin="anonymous"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https://ayushsubedi.github.io/" title="Ayush Subedi" class="heading font-cursive icon">Ayush Subedi</a>
+	</h2>
+</div>
+<h1 class="pt-2">God&#39;s Number: The Math Behind the Rubik&#39;s Cube</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">A scrambled cube. 43 quintillion possible states. And a proof that no matter how badly it is scrambled, 20 moves is always enough. This is the story of God&#39;s Number and the group theory hiding inside a plastic toy.</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/group-theory'>group-theory</a>
+	
+	
+	
+
+	
+	&nbsp;&nbsp;
+	
+
+	
+	
+	
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/math'>math</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/group-theory'>group-theory</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/combinatorics'>combinatorics</a>&nbsp;&#47;
+	
+	<a class="post-taxonomy-tag text-eucalyptus-500"
+		href='/tags/puzzle'>puzzle</a>
+	
+	
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2026-04-23">2026-04-23</time>
+</div>
+
+<hr />
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h2 id="some-math-before-we-begin">Some math before we begin</h2>
+<h3 id="sets">Sets</h3>
+<p>A <strong>set</strong> is a collection of distinct objects. We list elements inside curly braces.</p>
+<p>$$S = {1, 2, 3, 4, 5, 6}$$</p>
+<p>The set $S$ has 6 elements. We write $|S| = 6$ and call this the <strong>cardinality</strong> of $S$. Two sets are equal if they contain exactly the same elements: ${1, 2, 3} = {3, 1, 2}$.</p>
+<h3 id="functions-and-mappings">Functions and mappings</h3>
+<p>A <strong>function</strong> $f: A \to B$ is a rule that assigns to every element of the set $A$ exactly one element in the set $B$. We call $A$ the <strong>domain</strong> and $B$ the <strong>codomain</strong>.</p>
+<p>$$f: {1, 2, 3} \to {a, b, c}, \quad f(1) = a,\ f(2) = b,\ f(3) = c$$</p>
+<p>A function is <strong>injective</strong> (one-to-one) if distinct inputs map to distinct outputs: $f(x) = f(y)$ implies $x = y$. It is <strong>surjective</strong> (onto) if every element of $B$ is hit by at least one input. A function that is both injective and surjective is a <strong>bijection</strong>. Bijections are perfectly reversible: if $f$ is a bijection, there exists an inverse function $f^{-1}: B \to A$ such that $f^{-1}(f(x)) = x$ for all $x \in A$.</p>
+<h3 id="permutations">Permutations</h3>
+<p>A <strong>permutation</strong> of a set $S$ is a bijection $\sigma: S \to S$, a rearrangement of $S$ onto itself. For $S = {1, 2, 3}$, here is one permutation written in two-row notation:</p>
+<p>$$\sigma = \begin{pmatrix} 1 &amp; 2 &amp; 3 \ 2 &amp; 3 &amp; 1 \end{pmatrix}$$</p>
+<p>This means $\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$. In <strong>cycle notation</strong>: $\sigma = (1\ 2\ 3)$, meaning $1 \mapsto 2 \mapsto 3 \mapsto 1$. An element that maps to itself is a <strong>fixed point</strong> and is omitted from the cycle notation.</p>
+<p>Here is another permutation of ${1, 2, 3, 4}$:</p>
+<p>$$\tau = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \ 1 &amp; 4 &amp; 2 &amp; 3 \end{pmatrix} = (2\ 4\ 3)$$</p>
+<p>Element 1 is a fixed point. Elements 2, 4, 3 cycle among themselves.</p>
+<p>The set of all permutations of an $n$-element set is called $S_n$, the <strong>symmetric group</strong> on $n$ elements. It has exactly $n!$ elements.</p>
+<p>$$|S_n| = n!$$</p>
+<p>So $|S_3| = 6$, $|S_4| = 24$, and $|S_{48}| = 48!$, a truly enormous number.</p>
+<h3 id="composition">Composition</h3>
+<p>If $\sigma$ and $\tau$ are two permutations of the same set, their <strong>composition</strong> $\tau \circ \sigma$ means: first apply $\sigma$, then apply $\tau$. Let us compute an example with $\sigma = (1\ 2\ 3)$ and $\tau = (1\ 2)$ on the set ${1, 2, 3}$:</p>
+<p>$$(\tau \circ \sigma)(1) = \tau(\sigma(1)) = \tau(2) = 1$$
+$$(\tau \circ \sigma)(2) = \tau(\sigma(2)) = \tau(3) = 3$$
+$$(\tau \circ \sigma)(3) = \tau(\sigma(3)) = \tau(1) = 2$$</p>
+<p>So $\tau \circ \sigma = (2\ 3)$. Now try the other order:</p>
+<p>$$(\sigma \circ \tau)(1) = \sigma(\tau(1)) = \sigma(2) = 3$$
+$$(\sigma \circ \tau)(2) = \sigma(\tau(2)) = \sigma(1) = 2$$
+$$(\sigma \circ \tau)(3) = \sigma(\tau(3)) = \sigma(3) = 1$$</p>
+<p>So $\sigma \circ \tau = (1\ 3)$. Since $(2\ 3) \neq (1\ 3)$, we see that $\tau \circ \sigma \neq \sigma \circ \tau$. <strong>Order matters.</strong> This non-commutativity is a central feature of the Rubik&rsquo;s Cube.</p>
+<hr>
+<h2 id="what-ss-a-group">What ss a Group?</h2>
+<p>A <strong>group</strong> is one of the most elegant ideas in all of mathematics. It captures the abstract essence of symmetry and reversibility, stripping away everything except the bare minimum structure needed for the concept to hold together.</p>
+<p>Formally, a <strong>group</strong> $(G, \cdot)$ is a set $G$ together with a binary operation $\cdot$ satisfying four axioms:</p>
+<table>
+<thead>
+<tr>
+<th>Axiom</th>
+<th>Formal Statement</th>
+<th>Plain Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Closure</strong></td>
+<td>$\forall, a, b \in G:\ a \cdot b \in G$</td>
+<td>Combining two elements stays inside $G$</td>
+</tr>
+<tr>
+<td><strong>Associativity</strong></td>
+<td>$(a \cdot b) \cdot c = a \cdot (b \cdot c)$</td>
+<td>Grouping of operations does not matter</td>
+</tr>
+<tr>
+<td><strong>Identity</strong></td>
+<td>$\exists, e \in G:\ e \cdot a = a \cdot e = a$</td>
+<td>There is a &ldquo;do nothing&rdquo; element</td>
+</tr>
+<tr>
+<td><strong>Inverses</strong></td>
+<td>$\forall, a \in G,\ \exists, a^{-1} \in G:\ a \cdot a^{-1} = e$</td>
+<td>Every action can be undone</td>
+</tr>
+</tbody>
+</table>
+<p>If additionally $a \cdot b = b \cdot a$ for all $a, b \in G$, the group is called <strong>abelian</strong> (after the Norwegian mathematician Niels Abel). Most groups we encounter in everyday arithmetic are abelian. The interesting and hard cases, including the Rubik&rsquo;s Cube, are not.</p>
+<h3 id="example-1-integers-under-addition">Example 1: Integers under Addition</h3>
+<p>$(\mathbb{Z}, +)$ is a group.</p>
+<ul>
+<li><strong>Closure:</strong> $3 + 5 = 8 \in \mathbb{Z}$. The sum of two integers is an integer.</li>
+<li><strong>Associativity:</strong> $(3 + 4) + 5 = 3 + (4 + 5) = 12$.</li>
+<li><strong>Identity:</strong> $0$. We have $n + 0 = 0 + n = n$ for all $n$.</li>
+<li><strong>Inverses:</strong> The inverse of $n$ is $-n$. We have $n + (-n) = 0$.</li>
+<li><strong>Abelian:</strong> $3 + 5 = 5 + 3$. Yes.</li>
+</ul>
+<p>This group is infinite and abelian.</p>
+<h3 id="example-2-integers-mod-n">Example 2: Integers mod $n$</h3>
+<p>Fix a positive integer $n$. Define $\mathbb{Z}/n\mathbb{Z} = {0, 1, 2, \ldots, n-1}$ with addition modulo $n$. For $n = 5$:</p>
+<p>$$3 + 4 \equiv 2 \pmod{5}$$</p>
+<p>This is a <strong>finite abelian group</strong> of order $n$. The identity is $0$. The inverse of $k$ is $n - k$. For example, in $\mathbb{Z}/5\mathbb{Z}$, the inverse of $3$ is $2$, since $3 + 2 = 5 \equiv 0$.</p>
+<h3 id="example-3-nonzero-rationals-under-multiplication">Example 3: Nonzero Rationals under Multiplication</h3>
+<p>$(\mathbb{Q}^*, \times)$ is an abelian group. The identity is $1$. The inverse of $q$ is $\frac{1}{q}$, which exists since $q \neq 0$.</p>
+<h3 id="example-4-symmetries-of-an-equilateral-triangle">Example 4: Symmetries of an Equilateral Triangle</h3>
+<p>Take an equilateral triangle and label its vertices $1, 2, 3$.</p>
+<pre tabindex="0"><code>          1
+         / \
+        /   \
+       2-----3
+</code></pre><p>A <strong>symmetry</strong> is any rigid motion that maps the triangle back onto itself. There are exactly 6:</p>
+<ul>
+<li>$e$: identity, do nothing</li>
+<li>$r$: rotate $120°$ counterclockwise: $(1\ 2\ 3)$</li>
+<li>$r^2$: rotate $240°$ counterclockwise: $(1\ 3\ 2)$</li>
+<li>$s_1$: reflect through the axis from vertex $1$ to the midpoint of side $23$: $(2\ 3)$</li>
+<li>$s_2$: reflect through the axis from vertex $2$ to the midpoint of side $13$: $(1\ 3)$</li>
+<li>$s_3$: reflect through the axis from vertex $3$ to the midpoint of side $12$: $(1\ 2)$</li>
+</ul>
+<p>This set under composition is the <strong>dihedral group</strong> $D_3$, of order 6. Let us verify it is non-abelian by computing $r \circ s_1$ and $s_1 \circ r$ explicitly:</p>
+<p>$$r \circ s_1: \quad 1 \xrightarrow{s_1} 1 \xrightarrow{r} 2, \quad 2 \xrightarrow{s_1} 3 \xrightarrow{r} 1, \quad 3 \xrightarrow{s_1} 2 \xrightarrow{r} 3 \quad \Rightarrow \quad r \circ s_1 = (1\ 2) = s_3$$</p>
+<p>$$s_1 \circ r: \quad 1 \xrightarrow{r} 2 \xrightarrow{s_1} 3, \quad 2 \xrightarrow{r} 3 \xrightarrow{s_1} 2, \quad 3 \xrightarrow{r} 1 \xrightarrow{s_1} 1 \quad \Rightarrow \quad s_1 \circ r = (1\ 3) = s_2$$</p>
+<p>Since $s_3 \neq s_2$, we confirm $r \circ s_1 \neq s_1 \circ r$. Non-abelian.</p>
+<hr>
+<h3 id="non-example-1-natural-numbers-under-addition">Non-Example 1: Natural Numbers under Addition</h3>
+<p>$(\mathbb{N}, +)$ where $\mathbb{N} = {1, 2, 3, \ldots}$ is <strong>not a group</strong>. There is no identity element: no $e \in \mathbb{N}$ satisfies $n + e = n$ for all $n$, since $0 \notin \mathbb{N}$. The identity axiom fails.</p>
+<p>If we include zero, $(\mathbb{N}_0, +)$ with $\mathbb{N}_0 = {0, 1, 2, \ldots}$, we restore the identity but still have no inverses: $5$ has no inverse in $\mathbb{N}_0$ since $-5 \notin \mathbb{N}_0$. Still not a group.</p>
+<h3 id="non-example-2-integers-under-multiplication">Non-Example 2: Integers under Multiplication</h3>
+<p>$(\mathbb{Z}, \times)$ is <strong>not a group</strong>. The identity is $1$ and multiplication is closed and associative. But $2$ has no multiplicative inverse in $\mathbb{Z}$: we would need $\frac{1}{2}$, which is not an integer. The inverses axiom fails.</p>
+<h3 id="non-example-3-all-2-times-2-real-matrices-under-multiplication">Non-Example 3: All $2 \times 2$ Real Matrices under Multiplication</h3>
+<p>Let $M_{2}(\mathbb{R})$ be the set of all $2 \times 2$ matrices with real entries. $(M_2(\mathbb{R}), \times)$ is <strong>not a group</strong> because singular matrices have no inverse. For example:</p>
+<p>$$A = \begin{pmatrix} 1 &amp; 0 \ 0 &amp; 0 \end{pmatrix}$$</p>
+<p>There is no matrix $B$ satisfying $AB = I$. The inverses axiom fails.</p>
+<p>However, restricting to <strong>invertible</strong> $2 \times 2$ matrices (those with nonzero determinant) gives the <strong>general linear group</strong> $GL_2(\mathbb{R})$, which is a non-abelian group.</p>
+<h3 id="non-example-4-positive-reals-under-subtraction">Non-Example 4: Positive Reals under Subtraction</h3>
+<p>$(\mathbb{R}<em>{&gt;0}, -)$ is <strong>not a group</strong>. Subtraction is not even closed: $3 - 5 = -2 \notin \mathbb{R}</em>{&gt;0}$. The closure axiom fails immediately, and we need not check further.</p>
+<hr>
+<h3 id="subgroups">Subgroups</h3>
+<p>A <strong>subgroup</strong> $H \leq G$ is a subset of $G$ that is itself a group under the same operation. To verify $H$ is a subgroup, three conditions suffice:</p>
+<ol>
+<li>$e \in H$</li>
+<li>$a, b \in H \Rightarrow a \cdot b \in H$</li>
+<li>$a \in H \Rightarrow a^{-1} \in H$</li>
+</ol>
+<p>The even integers $2\mathbb{Z} = {\ldots, -4, -2, 0, 2, 4, \ldots}$ form a subgroup of $(\mathbb{Z}, +)$. The rotations ${e, r, r^2}$ form a subgroup of $D_3$.</p>
+<p><strong>Lagrange&rsquo;s Theorem:</strong> If $H \leq G$ and $G$ is finite, then $|H|$ divides $|G|$. This is one of the first great theorems of group theory, and it has an immediate implication for the Rubik&rsquo;s Cube: the order of any subgroup of $G_{RC}$ must divide $43{,}252{,}003{,}274{,}489{,}856{,}000$.</p>
+<hr>
+<h2 id="the-rubiks-cube">The Rubik&rsquo;s Cube</h2>
+<p>A standard $3 \times 3 \times 3$ Rubik&rsquo;s Cube has:</p>
+<ul>
+<li><strong>6 faces</strong>, each assigned a color</li>
+<li><strong>26 visible pieces</strong>: 8 corner pieces, 12 edge pieces, 6 center pieces</li>
+<li>The 6 center pieces never move relative to each other and define which color belongs to which face</li>
+</ul>
+<pre tabindex="0"><code>         [U]
+          |
+  [L] -- [F] -- [R] -- [B]
+          |
+         [D]
+</code></pre><p>The six face moves are <strong>U</strong> (Up), <strong>D</strong> (Down), <strong>L</strong> (Left), <strong>R</strong> (Right), <strong>F</strong> (Front), <strong>B</strong> (Back). Each turn rotates one face $90°$ clockwise. The prime notation $R&rsquo;$ means $90°$ counterclockwise. The notation $R^2$ means $180°$.</p>
+<p>The standard move set is:</p>
+<p>$$\mathcal{M} = {U, U&rsquo;, U^2, D, D&rsquo;, D^2, L, L&rsquo;, L^2, R, R&rsquo;, R^2, F, F&rsquo;, F^2, B, B&rsquo;, B^2}$$</p>
+<p>That is 18 possible single moves.</p>
+<hr>
+<h2 id="the-rubiks-cube-group">The Rubik&rsquo;s Cube Group</h2>
+<p>Every sequence of moves is a <strong>permutation</strong> of the 48 colored facelets (each of the 6 faces has 9 stickers, minus the 6 fixed centers, leaving 48 stickers that can move). Since each move is a bijection from one cube state to another, and we can compose moves and invert them, the set of all reachable states forms a group.</p>
+<p>This is the <strong>Rubik&rsquo;s Cube Group</strong>:</p>
+<p>$$G_{RC} = \langle U, D, L, R, F, B \rangle$$</p>
+<p>The angle brackets denote that the group is <strong>generated</strong> by those six moves: every reachable state is some finite composition of these generators and their inverses. Let us verify the four group axioms.</p>
+<ul>
+<li><strong>Closure:</strong> Performing any sequence of moves on a valid cube state produces another valid cube state.</li>
+<li><strong>Associativity:</strong> Function composition is always associative: $(f \circ g) \circ h = f \circ (g \circ h)$.</li>
+<li><strong>Identity:</strong> The move sequence of length zero is the identity $e$.</li>
+<li><strong>Inverses:</strong> The inverse of $R$ is $R&rsquo;$. The inverse of the sequence $R \cdot U \cdot F$ is $F&rsquo; \cdot U&rsquo; \cdot R&rsquo;$. Every sequence reverses.</li>
+</ul>
+<p>All four axioms hold. $G_{RC}$ is a group.</p>
+<p>The order of this group is:</p>
+<p>$$|G_{RC}| = 43{,}252{,}003{,}274{,}489{,}856{,}000 \approx 4.3 \times 10^{19}$$</p>
+<h3 id="counting-the-states">Counting the States</h3>
+<p><strong>Corner pieces:</strong> There are 8 corners. They can be placed in $8!$ arrangements. Each corner can sit in 3 orientations, giving $3^8$ possibilities. The total twist of all corners must equal zero modulo 3 (a physical constraint of the mechanism), so we divide by 3:</p>
+<p>$$\frac{8! \times 3^8}{3} = 8! \times 3^7$$</p>
+<p><strong>Edge pieces:</strong> There are 12 edges. They can be placed in $12!$ arrangements. Each edge can be flipped, giving $2^{12}$ possibilities. The total number of flipped edges must be even, so we divide by 2. The parity of the corner permutation must equal the parity of the edge permutation, giving another factor of $\frac{1}{2}$:</p>
+<p>$$\frac{12! \times 2^{12}}{4}$$</p>
+<p>Combining both:</p>
+<p>$$|G_{RC}| = \frac{8! \times 3^8 \times 12! \times 2^{12}}{12} = 43{,}252{,}003{,}274{,}489{,}856{,}000$$</p>
+<p>$G_{RC}$ is a proper subgroup of $S_{48}$: most permutations of 48 facelets are physically unreachable by legal moves.</p>
+<h3 id="why-it-is-not-abelian">Why it is not abelian?</h3>
+<p>$$R \cdot U \neq U \cdot R$$</p>
+<p>Turn the Right face clockwise, then the Top face clockwise. Now undo both and try Top first, then Right. The resulting states are different. The group is non-abelian, and this is precisely what makes the cube hard: solving one part inevitably disturbs previously solved parts.</p>
+<hr>
+<h2 id="permutations-nside-the-cube">Permutations nside the Cube</h2>
+<p>Every move is a permutation expressible in cycle notation. The move $U$ cycles four edge facelets and four corner pieces in two disjoint 4-cycles:</p>
+<p>$$U = (\text{UF}\ \ \text{UR}\ \ \text{UB}\ \ \text{UL})(\text{UFR}\ \ \text{URB}\ \ \text{UBL}\ \ \text{ULF})$$</p>
+<p>This is the same cycle notation from Section 1, now applied to physical stickers on a cube.</p>
+<p>A <strong>commutator</strong> $[A, B] = A \cdot B \cdot A^{-1} \cdot B^{-1}$ measures how far $A$ and $B$ are from commuting. If they commuted perfectly, $[A, B] = e$. When they do not commute, the commutator is a nontrivial permutation that moves only a small number of pieces, because most of the permutation cancels algebraically.</p>
+<p>The sequence $R \cdot U \cdot R^{-1} \cdot U^{-1}$ is a commutator. Repeating it 6 times returns the cube to the solved state. It moves only a handful of corner pieces, which is exactly what is needed when solving the last layer without disturbing the rest of the cube. Most named speedcubing algorithms are commutators or <strong>conjugates</strong> ($A \cdot X \cdot A^{-1}$) in disguise.</p>
+<hr>
+<h2 id="could-a-newborn-solve-it">Could a newborn solve it?</h2>
+<p>Here is a philosophical question with mathematical teeth.</p>
+<p>Imagine placing a Rubik&rsquo;s Cube in front of a child raised in complete isolation, no mathematics, no culture, no algorithms. Can they solve it?</p>
+<p>In principle, yes, by exhaustive search. The cube has $4.3 \times 10^{19}$ states. If our hypothetical solver tries one new state per second, the expected time is roughly $1.4 \times 10^{12}$ years. The universe is about $1.4 \times 10^{10}$ years old. Brute force takes approximately <strong>100 times the age of the universe</strong>.</p>
+<p>What about random moves? A <strong>random walk</strong> on the Cayley graph of $G_{RC}$ will eventually reach the solved state with probability 1, since the graph is finite and connected. But the expected number of steps before hitting any specific target vertex in a graph of $4.3 \times 10^{19}$ nodes is of the same astronomical order.</p>
+<p>What any solver actually needs, whether they know it or not, is to exploit the <strong>group structure</strong>: that certain move sequences affect only a few pieces, that the problem decomposes into layers, that inverses are easy to compute. Every human solving method, from beginner layer-by-layer to CFOP to Roux, is implicitly navigating a subgroup tower of $G_{RC}$.</p>
+<p>Memorized algorithms are shortcuts through the group. They encode mathematical insight as procedural memory. The cube is solvable without knowing group theory, but it is truly <em>understandable</em> only with it.</p>
+<hr>
+<h2 id="the-cayley-graph">The Cayley Graph</h2>
+<p>The <strong>Cayley graph</strong> $\text{Cay}(G, S)$ of a group $G$ with generating set $S$ is a directed graph where:</p>
+<ul>
+<li>Each <strong>vertex</strong> is a group element</li>
+<li>There is a directed edge from $g$ to $g \cdot s$ for each generator $s \in S$</li>
+</ul>
+<p>For $G_{RC}$ with the 18-move generating set $\mathcal{M}$, every vertex has out-degree 18. The solved state is one distinguished vertex. Solving the cube from a scrambled state is finding a <strong>shortest path</strong> in this graph from the current vertex to the solved vertex.</p>
+<pre tabindex="0"><code>  [scrambled] --R--&gt; [state A] --U--&gt; [state B] -- ... --&gt; [solved]
+</code></pre><p>The <strong>diameter</strong> of the Cayley graph, the length of the longest shortest path over all vertex pairs, is exactly God&rsquo;s Number.</p>
+<hr>
+<h2 id="gods-number">God&rsquo;s Number</h2>
+<p><strong>God&rsquo;s Number</strong> is the maximum, over all $4.3 \times 10^{19}$ scrambled states, of the minimum number of moves needed to solve that state. In other words: if an omniscient solver always chose the optimal sequence, what is the worst case?</p>
+<p>For decades this was an open problem. Bounds tightened steadily:</p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Lower Bound</th>
+<th>Upper Bound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1981</td>
+<td>18</td>
+<td>52</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>18</td>
+<td>42</td>
+</tr>
+<tr>
+<td>2008</td>
+<td>20</td>
+<td>26</td>
+</tr>
+<tr>
+<td><strong>2010</strong></td>
+<td><strong>20</strong></td>
+<td><strong>20</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In 2010, Rokicki, Kociemba, Davidson, and Dethridge proved:</p>
+<p>$$\boxed{G_{\text{God}} = 20}$$</p>
+<p>Every one of the $4.3 \times 10^{19}$ states can be solved in at most 20 moves. States requiring exactly 20 exist; the <strong>superflip</strong> (every edge piece flipped in its correct position, every corner correct) is one known example.</p>
+<h3 id="how-was-it-proved">How Was It Proved?</h3>
+<p>Pure algebra alone could not do it. The proof combined group theory, coset decomposition, and large-scale computation.</p>
+<p><strong>Step 1: Symmetry reduction.</strong> The cube has 48 symmetries (rotations and reflections of the physical object). Grouping states related by symmetry into equivalence classes reduces $4.3 \times 10^{19}$ states to about $2.2 \times 10^{18}$ distinct classes.</p>
+<p><strong>Step 2: Coset decomposition.</strong> The team chose a subgroup $H \leq G_{RC}$ of order approximately $10^{10}$, consisting of all states reachable using only ${U, D, R, L, F^2, B^2}$. The left cosets of $H$ partition all of $G_{RC}$ into about $2 \times 10^{9}$ cosets, each of size approximately $10^{10}$.</p>
+<p><strong>Step 3: Optimal coset solver.</strong> For each coset, the team computed the optimal solution depth. This required approximately 35 CPU-years of computation, distributed across Google&rsquo;s servers.</p>
+<p><strong>Step 4: Conclusion.</strong> No coset required more than 20 moves to bring into $H$, and no element of $H$ required more than 20 moves to solve from there. The lower bound of 20 came from a separate verification that the superflip requires exactly 20 moves. Therefore God&rsquo;s Number is 20.</p>
+<p>The group structure is what made the computation feasible. Without cosets and subgroups to partition the search space, no amount of computing power could check all $4.3 \times 10^{19}$ states individually in any reasonable time.</p>
+<hr>
+<h2 id="is-there-a-formula">Is There a Formula?</h2>
+<p>There is no simple closed-form expression that maps a scrambled cube state to an optimal solution sequence. What exists are <strong>optimal solvers</strong> like Kociemba&rsquo;s algorithm, which operates in two phases:</p>
+<ul>
+<li><strong>Phase 1:</strong> Use the full move set $\mathcal{M}$ to reach the subgroup $H$ in a small number of moves</li>
+<li><strong>Phase 2:</strong> Solve within $H$ using only ${U, D, R, L, F^2, B^2}$</li>
+</ul>
+<p>This is not brute force. It uses precomputed lookup tables encoding the group structure of $G_{RC}/H$ and $H$ separately. For any scramble, it finds an optimal or near-optimal solution typically in milliseconds on modern hardware.</p>
+<p>The key insight is that $H$ is a subgroup, so the coset space $G_{RC}/H$ and the group $H$ itself can each be searched efficiently. Without the subgroup structure, there is no decomposition and no feasible algorithm.</p>
+<hr>
+<h2 id="real-world-applications-of-group-theory">Real-World Applications of Group Theory</h2>
+<p>The Rubik&rsquo;s Cube is a delightful example, but group theory is foundational across science and engineering.</p>
+<p><strong>Cryptography.</strong> RSA and elliptic curve cryptography rely on the group structure of modular arithmetic and elliptic curves. The security of HTTPS connections rests on the computational hardness of the discrete logarithm problem in certain groups: given $g$ and $g^k$ in a group, find $k$.</p>
+<p><strong>Particle Physics.</strong> The Standard Model of particle physics is organized by Lie groups: $U(1)$, $SU(2)$, $SU(3)$. Every elementary particle corresponds to a representation of one of these groups. The classification of quarks and leptons is, at its core, a classification of group representations.</p>
+<p><strong>Error-Correcting Codes.</strong> Linear codes are subspaces (and subgroups) of $\mathbb{F}_2^n$, the group of binary strings of length $n$ under componentwise XOR. The group structure guarantees that errors can be detected and corrected. Every digital communication system uses this.</p>
+<p><strong>Chemistry and Crystallography.</strong> Molecular symmetry is described by <strong>point groups</strong>. Benzene has $C_{6v}$ symmetry. Methane has $T_d$ symmetry. Chemists use these groups to predict infrared and Raman spectra, reaction pathways, and molecular orbital structure.</p>
+<p><strong>Robotics and Computer Graphics.</strong> Rotations in 3D space form the group $SO(3)$, the special orthogonal group. Every rotation of a rigid body is an element of $SO(3)$. Every 3D game engine, robot arm controller, and satellite attitude system computes in this group continuously.</p>
+<hr>
+<h2 id="does-knowing-group-theory-help-solve-the-cube">Does knowing Group Theory help solve the Cube?</h2>
+<p>Practically, not directly. Knowing that $G_{RC}$ is a subgroup of $S_{48}$ will not help finish the last layer faster. Competitive speedcubers memorize hundreds of algorithms without knowing their algebraic names.</p>
+<p>Conceptually, the understanding is enormous. Group theory explains:</p>
+<ul>
+<li><strong>Why</strong> layer-by-layer methods work: each layer corresponds to a subgroup, and solving a layer means navigating into a coset</li>
+<li><strong>Why</strong> commutators move so few pieces: most of the permutation cancels algebraically</li>
+<li><strong>Why</strong> the cube is always solvable from any legal state: $G_{RC}$ is a single connected component in its Cayley graph</li>
+<li><strong>Why</strong> it is impossible to swap exactly two corners without swapping two more: this is a parity constraint, a consequence of how $G_{RC}$ sits inside the alternating group $A_{48}$</li>
+</ul>
+<p>That last point deserves emphasis. If a cube is disassembled and its pieces reassembled at random, there is a $\frac{11}{12}$ probability that the result is a state unreachable by any legal sequence of moves. The cube will look scrambled but will be physically unsolvable. Group theory reveals this fact before touching a cube, purely from the algebraic structure of permutation parities.</p>
+<hr>
+<h2 id="the-bigger-picture">The bigger picture</h2>
+<p>The Rubik&rsquo;s Cube sits at the intersection of several mathematical disciplines:</p>
+<ul>
+<li><strong>Group theory</strong>: algebraic structure, generators, subgroups, cosets, conjugates, commutators</li>
+<li><strong>Combinatorics</strong>: counting $4.3 \times 10^{19}$ states precisely from physical constraints</li>
+<li><strong>Graph theory</strong>: Cayley graphs, diameter, shortest paths, random walks</li>
+<li><strong>Computational complexity</strong>: optimal solving, and NP-hardness for the $n \times n \times n$ generalization</li>
+</ul>
+<p>God&rsquo;s Number is not a curiosity about a toy. It is a theorem, proved with mathematical certainty, that a specific combinatorial object has Cayley graph diameter 20 in the half-turn metric. The proof required both the elegance of abstract algebra and the raw power of distributed computation. That combination is increasingly characteristic of modern mathematics.</p>
+<p>In a follow-up post, we will go further.</p>
+</div>
+	</section>
+
+</article>
+
+		</main>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+	<li class="px-1 md:px-0">
+		<a href="/posts/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+			Posts
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/resume/" title="Resume page" >
+			Resume
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/publications/" title="Publications page" >
+			Publications
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/tags/" title="Tags page" >
+			Tags
+		</a>
+	</li>
+	
+	<li class="px-1 md:px-0">
+		<a href="/categories/" title="Categories page" >
+			Categories
+		</a>
+	</li>
+	
+	
+	
+	
+	<div id="fastSearch" class="m-0">
+		<input id="searchInput" type="text" size=10 
+			class="bg-gray-100 focus:outline-none border-b border-gray-100 focus:border-eucalyptus-300 md:text-right
+			placeholder-java-500 min-w-0 max-w-xxxs"
+			placeholder="search" />
+		<ul id="searchResults" class="bg-gray-200 px-2 divide-y divide-gray-400">
+		</ul>
+	</div>
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start md:flex-col  max-h-16">
+	
+	<a href='https://github.com/ayushsubedi' target="_blank" class="github icon pl-1 text-eucalyptus-400 hover:text-java-400" title="github link" rel="noopener"
+		aria-label="follow on github——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M5.883 18.653c-.3-.2-.558-.455-.86-.816a50.32 50.32 0 0 1-.466-.579c-.463-.575-.755-.84-1.057-.949a1 1 0 0 1 .676-1.883c.752.27 1.261.735 1.947 1.588-.094-.117.34.427.433.539.19.227.33.365.44.438.204.137.587.196 1.15.14.023-.382.094-.753.202-1.095C5.38 15.31 3.7 13.396 3.7 9.64c0-1.24.37-2.356 1.058-3.292-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047.803-.123 1.937.17 3.415 1.096A11.731 11.731 0 0 1 12 3.315c.912 0 1.818.104 2.684.308 1.477-.933 2.613-1.226 3.422-1.096.085.013.157.03.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.297.302 3.19.691.936 1.058 2.045 1.058 3.293 0 3.757-1.674 5.665-4.642 6.392.125.415.19.879.19 1.38a300.492 300.492 0 0 1-.012 2.716 1 1 0 0 1-.019 1.958c-1.139.228-1.983-.532-1.983-1.525l.002-.446.005-.705c.005-.708.007-1.338.007-1.998 0-.697-.183-1.152-.425-1.36-.661-.57-.326-1.655.54-1.752 2.967-.333 4.337-1.482 4.337-4.66 0-.955-.312-1.744-.913-2.404a1 1 0 0 1-.19-1.045c.166-.414.237-.957.096-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135A9.626 9.626 0 0 0 12 5.315c-.89 0-1.772.119-2.592.35a1 1 0 0 1-.83-.134c-.752-.507-1.374-.807-1.868-.947-.144.653-.073 1.194.092 1.607a1 1 0 0 1-.189 1.045C6.016 7.89 5.7 8.694 5.7 9.64c0 3.172 1.371 4.328 4.322 4.66.865.097 1.201 1.177.544 1.748-.192.168-.429.732-.429 1.364v3.15c0 .986-.835 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.662-.088-2.254-.485z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.instagram.com/ayushsube_fit/' target="_blank" class="instagram icon pl-1 text-eucalyptus-400 hover:text-java-400" title="instagram link" rel="noopener"
+		aria-label="follow on instagram——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='https://www.linkedin.com/in/ayush-subedi/' target="_blank" class="linkedin icon pl-1 text-eucalyptus-400 hover:text-java-400" title="linkedin link" rel="noopener"
+		aria-label="follow on linkedin——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M12 9.55C12.917 8.613 14.111 8 15.5 8a5.5 5.5 0 0 1 5.5 5.5V21h-2v-7.5a3.5 3.5 0 0 0-7 0V21h-2V8.5h2v1.05zM5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-1 2h2V21H4V8.5z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+	<a href='mailto:ayush.subedi@gmail.com' target="_blank" class="mail icon pl-1 text-eucalyptus-400 hover:text-java-400" title="mail link" rel="noopener"
+		aria-label="follow on mail——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/>
+    </g>
+</svg>
+		</div>
+	</a>
+	
+	<a href='https://public.tableau.com/app/profile/ayush3339' target="_blank" class="tableau icon pl-1 text-eucalyptus-400 hover:text-java-400" title="tableau link" rel="noopener"
+		aria-label="follow on tableau——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"/></svg>
+		</div>
+	</a>
+	
+	<a href='https://twitter.com/ayushsubs' target="_blank" class="twitter icon pl-1 text-eucalyptus-400 hover:text-java-400" title="twitter link" rel="noopener"
+		aria-label="follow on twitter——Opens in a new window">
+		
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path fill-rule="nonzero" d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"/>
+    </g>
+</svg>
+
+		</div>
+	</a>
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		3526 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/posts/basel_problem/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        (wip) The Basel Problem: Euler&#39;s Triumph and the Birth of Modern Analysis
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+<script src="/lib/fuse.min.js"></script> 
+<script src="/lib/fastsearch.js"></script>
+
+	</div>
+</body>
+
+</html>

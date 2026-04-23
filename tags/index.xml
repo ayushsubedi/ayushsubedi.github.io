@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Ayush Subedi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ayushsubedi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Combinatorics</title>
+      <link>https://ayushsubedi.github.io/tags/combinatorics/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/combinatorics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Group-Theory</title>
+      <link>https://ayushsubedi.github.io/tags/group-theory/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/group-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://ayushsubedi.github.io/tags/math/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Puzzle</title>
+      <link>https://ayushsubedi.github.io/tags/puzzle/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://ayushsubedi.github.io/tags/puzzle/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Analysis</title>
@@ -1592,15 +1628,6 @@
       <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
       <guid>https://ayushsubedi.github.io/tags/faro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Group Theory</title>
-      <link>https://ayushsubedi.github.io/tags/group-theory/</link>
-      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://ayushsubedi.github.io/tags/group-theory/</guid>
       <description></description>
     </item>
     
