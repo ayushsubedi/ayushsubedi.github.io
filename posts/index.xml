@@ -189,7 +189,7 @@ $$(\sigma \circ \tau)(3) = \sigma(\tau(3)) = \sigma(3) = 1$$&lt;/p&gt;
 &lt;p&gt;$$R \cdot U \neq U \cdot R$$&lt;/p&gt;
 &lt;p&gt;Turn the Right face clockwise, then the Top face clockwise. Now undo both and try Top first, then Right. The resulting states are different. The group is non-abelian, and this is precisely what makes the cube hard: solving one part inevitably disturbs previously solved parts.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;permutations-nside-the-cube&#34;&gt;Permutations nside the Cube&lt;/h2&gt;
+&lt;h2 id=&#34;permutations-inside-the-cube&#34;&gt;Permutations inside the Cube&lt;/h2&gt;
 &lt;p&gt;Every move is a permutation expressible in cycle notation. The move $U$ cycles four edge facelets and four corner pieces in two disjoint 4-cycles:&lt;/p&gt;
 &lt;p&gt;$$U = (\text{UF}\ \ \text{UR}\ \ \text{UB}\ \ \text{UL})(\text{UFR}\ \ \text{URB}\ \ \text{UBL}\ \ \text{ULF})$$&lt;/p&gt;
 &lt;p&gt;This is the same cycle notation from Section 1, now applied to physical stickers on a cube.&lt;/p&gt;
